@@ -14,6 +14,7 @@ const elements = {
   statusSelect: document.getElementById("statusSelect"),
   recognitionFilterTags: document.getElementById("recognitionFilterTags"),
   detailModeToggle: document.getElementById("detailModeToggle"),
+  toolbarToggleButton: document.getElementById("toolbarToggleButton"),
   exportJsonButton: document.getElementById("exportJsonButton"),
   exportPanelTitle: document.getElementById("exportPanelTitle"),
   exportPanelDescription: document.getElementById("exportPanelDescription"),
@@ -41,6 +42,7 @@ const state = {
   statusFilter: "all",
   recognitionFilters: new Set(),
   detailMode: loadJson("detailModeV2", "compact"),
+  toolbarCollapsed: loadJson("mobileToolbarCollapsed", true),
   columns: DEFAULT_COLUMNS,
   imagesVisible: true,
   imageSize: DEFAULT_IMAGE_SIZE,
@@ -146,6 +148,34 @@ function filteredCases() {
       state.statuses.get(item.id) === state.statusFilter;
     return groupOk && recognitionOk && queryOk && favoriteOk && statusOk;
   });
+}
+
+
+function updateToolbarCollapsed() {
+  document.body.classList.toggle("toolbar-collapsed", state.toolbarCollapsed);
+  elements.toolbarToggleButton.setAttribute("aria-expanded", String(!state.toolbarCollapsed));
+  elements.toolbarToggleButton.textContent = state.toolbarCollapsed ? "설정 열기" : "설정 접기";
+}
+
+
+function closeCaseDetail() {
+  state.selectedCaseId = "";
+  state.editingCaseId = "";
+  render();
+}
+
+
+function moveSelectedCase(delta) {
+  const rows = filteredCases();
+  const currentIndex = rows.findIndex((item) => item.id === state.selectedCaseId);
+  if (currentIndex === -1) return;
+
+  const nextIndex = currentIndex + delta;
+  if (nextIndex < 0 || nextIndex >= rows.length) return;
+
+  state.selectedCaseId = rows[nextIndex].id;
+  state.editingCaseId = "";
+  render();
 }
 
 
@@ -413,6 +443,12 @@ elements.detailModeToggle.addEventListener("change", (event) => {
   render();
 });
 
+elements.toolbarToggleButton.addEventListener("click", () => {
+  state.toolbarCollapsed = !state.toolbarCollapsed;
+  saveJson("mobileToolbarCollapsed", state.toolbarCollapsed);
+  updateToolbarCollapsed();
+});
+
 elements.exportJsonButton.addEventListener("click", () => {
   state.exportMode = "full";
   updateExportPanel();
@@ -454,9 +490,7 @@ elements.clearFiltersButton.addEventListener("click", () => {
 
 function handleCaseAction(event) {
   if (event.target.closest(".close-detail-button")) {
-    state.selectedCaseId = "";
-    state.editingCaseId = "";
-    render();
+    closeCaseDetail();
     return;
   }
 
@@ -550,8 +584,30 @@ function handleCaseAction(event) {
 
 elements.caseGrid.addEventListener("click", handleCaseAction);
 elements.caseDetail.addEventListener("click", handleCaseAction);
+document.addEventListener("keydown", (event) => {
+  if (state.detailMode !== "compact" || !state.selectedCaseId) return;
+  if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
+
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closeCaseDetail();
+    return;
+  }
+
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    moveSelectedCase(-1);
+    return;
+  }
+
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    moveSelectedCase(1);
+  }
+});
 const datasetKeys = renderDatasetOptions();
 elements.detailModeToggle.checked = state.detailMode === "full";
+updateToolbarCollapsed();
 if (datasetKeys.length) {
   const lastKey = loadJson("lastBundledDataset", datasetKeys[0]);
   loadBundledDataset(datasetKeys.includes(lastKey) ? lastKey : datasetKeys[0]);

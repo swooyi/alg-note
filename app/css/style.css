@@ -113,6 +113,10 @@ h1 {
   gap: 8px;
 }
 
+.toolbar-toggle-button {
+  display: none;
+}
+
 .toolbar {
   display: grid;
   gap: 8px;
@@ -386,9 +390,10 @@ main {
 
 .case-group-title {
   border-radius: 6px;
-  background: #b9b070;
+  border: 1px solid #d2deee;
+  background: #e8eef7;
   padding: 7px 14px;
-  color: #141414;
+  color: #1f3044;
   font-size: 17px;
   font-weight: 850;
   text-align: left;
@@ -783,7 +788,9 @@ main {
 
 @media (max-width: 720px) {
   .header-main {
-    display: grid;
+    display: flex;
+    align-items: center;
+    padding: 10px 12px 8px;
   }
 
   .header-actions,
@@ -792,6 +799,34 @@ main {
   .export-panel-top,
   .export-actions {
     display: grid;
+  }
+
+  h1 {
+    font-size: 19px;
+  }
+
+  .header-main p {
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  .header-actions {
+    grid-template-columns: minmax(0, 1fr) auto;
+    min-width: 0;
+  }
+
+  .toolbar-toggle-button {
+    display: inline-grid;
+    place-items: center;
+    white-space: nowrap;
+  }
+
+  .toolbar {
+    padding: 0 12px 10px;
+  }
+
+  .toolbar-collapsed .toolbar {
+    display: none;
   }
 
   .control-row,
@@ -805,10 +840,43 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .case-grid[data-detail-mode="full"],
+  .case-grid[data-detail-mode="full"][data-columns] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .grouped-grid[data-detail-mode="compact"],
   .recognition-grid[data-detail-mode="compact"] {
-    grid-template-columns: repeat(auto-fill, var(--compact-card-width));
-    justify-content: start;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 6px;
+  }
+
+  .case-card.is-compact {
+    grid-template-rows: auto 64px;
+    width: 100%;
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .case-card.is-compact.has-recognition-badges {
+    grid-template-rows: auto 64px;
+  }
+
+  .is-compact .recognition-badges {
+    display: none;
+  }
+
+  .is-compact .case-name {
+    font-size: 13px;
+  }
+
+  .is-compact .svg-box {
+    min-height: 64px;
+  }
+
+  .is-compact .svg-box svg {
+    max-height: 60px;
   }
 }
 
@@ -819,7 +887,7 @@ main {
 
   .grouped-grid[data-detail-mode="compact"],
   .recognition-grid[data-detail-mode="compact"] {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
