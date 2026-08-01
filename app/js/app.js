@@ -14,6 +14,11 @@ const elements = {
   statusSelect: document.getElementById("statusSelect"),
   recognitionFilterTags: document.getElementById("recognitionFilterTags"),
   detailModeToggle: document.getElementById("detailModeToggle"),
+  favoritePresetSelect: document.getElementById("favoritePresetSelect"),
+  favoritePresetNameInput: document.getElementById("favoritePresetNameInput"),
+  saveFavoritePresetButton: document.getElementById("saveFavoritePresetButton"),
+  applyFavoritePresetButton: document.getElementById("applyFavoritePresetButton"),
+  deleteFavoritePresetButton: document.getElementById("deleteFavoritePresetButton"),
   toolbarToggleButton: document.getElementById("toolbarToggleButton"),
   exportJsonButton: document.getElementById("exportJsonButton"),
   exportPanelTitle: document.getElementById("exportPanelTitle"),
@@ -52,6 +57,8 @@ const state = {
   favorites: new Set(),
   statuses: new Map(),
   edits: new Map(),
+  favoritePresets: [],
+  activeFavoritePresetId: "",
 };
 
 
@@ -70,6 +77,62 @@ function loadPersonalState() {
   state.favorites = new Set(saved.favorites || []);
   state.statuses = new Map(Object.entries(saved.statuses || {}));
   state.edits = new Map(Object.entries(saved.edits || {}));
+}
+
+
+function favoritePresetKey() {
+  return `favoritePresets.${state.key}`;
+}
+
+
+function loadFavoritePresets() {
+  const saved = loadJson(favoritePresetKey(), { presets: [], activePresetId: "" });
+  state.favoritePresets = (saved.presets || [])
+    .filter((preset) => preset && preset.id && preset.name)
+    .map((preset) => ({
+      id: String(preset.id),
+      name: String(preset.name),
+      favorites: Array.isArray(preset.favorites) ? preset.favorites.map(String) : [],
+    }));
+  state.activeFavoritePresetId = state.favoritePresets.some((preset) => preset.id === saved.activePresetId)
+    ? saved.activePresetId
+    : "";
+}
+
+
+function saveFavoritePresets() {
+  if (!state.key) return;
+  saveJson(favoritePresetKey(), {
+    presets: state.favoritePresets,
+    activePresetId: state.activeFavoritePresetId,
+  });
+}
+
+
+function renderFavoritePresetOptions() {
+  elements.favoritePresetSelect.replaceChildren();
+
+  const empty = document.createElement("option");
+  empty.value = "";
+  empty.textContent = state.favoritePresets.length ? "프리셋 선택" : "프리셋 없음";
+  elements.favoritePresetSelect.append(empty);
+
+  for (const preset of state.favoritePresets) {
+    const option = document.createElement("option");
+    option.value = preset.id;
+    option.textContent = `${preset.name} (${preset.favorites.length})`;
+    elements.favoritePresetSelect.append(option);
+  }
+
+  elements.favoritePresetSelect.value = state.activeFavoritePresetId;
+  const hasSelection = Boolean(elements.favoritePresetSelect.value);
+  elements.applyFavoritePresetButton.disabled = !hasSelection;
+  elements.deleteFavoritePresetButton.disabled = !hasSelection;
+}
+
+
+function makePresetId() {
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
 
@@ -203,6 +266,7 @@ function render() {
   elements.caseGrid.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.caseDetail.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.datasetLabel.textContent = `${state.dataset.puzzle} · ${state.dataset.name}`;
+  renderFavoritePresetOptions();
 
   renderSummary(elements.summary, state.dataset, rows, state);
   if (state.detailMode === "compact") {
@@ -216,7 +280,13 @@ function render() {
       elements.caseDetail,
       elements.caseCardTemplate,
       rows.find((item) => item.id === state.selectedCaseId),
-      state,
+      {
+        ...state,
+        detailNav: {
+          hasPrev: rows.findIndex((item) => item.id === state.selectedCaseId) > 0,
+          hasNext: rows.findIndex((item) => item.id === state.selectedCaseId) < rows.length - 1,
+        },
+      },
     );
   } else {
     elements.caseDetail.hidden = true;
@@ -242,6 +312,7 @@ function setDataset(entries) {
   renderGroupOptions(elements.groupSelect, state.dataset.groups);
   elements.groupSelect.value = "all";
   loadPersonalState();
+  loadFavoritePresets();
   refreshRecognitionFilters();
   saveJson("lastDataset", state.key);
   render();
@@ -443,6 +514,50 @@ elements.detailModeToggle.addEventListener("change", (event) => {
   render();
 });
 
+elements.favoritePresetSelect.addEventListener("change", (event) => {
+  state.activeFavoritePresetId = event.target.value;
+  saveFavoritePresets();
+  renderFavoritePresetOptions();
+});
+
+elements.saveFavoritePresetButton.addEventListener("click", () => {
+  const name = elements.favoritePresetNameInput.value.trim();
+  if (!name) return;
+
+  const preset = {
+    id: makePresetId(),
+    name,
+    favorites: [...state.favorites],
+  };
+  state.favoritePresets.push(preset);
+  state.activeFavoritePresetId = preset.id;
+  elements.favoritePresetNameInput.value = "";
+  saveFavoritePresets();
+  render();
+});
+
+elements.applyFavoritePresetButton.addEventListener("click", () => {
+  const preset = state.favoritePresets.find((item) => item.id === elements.favoritePresetSelect.value);
+  if (!preset) return;
+
+  state.favorites = new Set(preset.favorites);
+  state.activeFavoritePresetId = preset.id;
+  saveFavoritePresets();
+  savePersonalState();
+  render();
+});
+
+elements.deleteFavoritePresetButton.addEventListener("click", () => {
+  const preset = state.favoritePresets.find((item) => item.id === elements.favoritePresetSelect.value);
+  if (!preset) return;
+  if (!window.confirm(`"${preset.name}" 프리셋을 삭제할까요?`)) return;
+
+  state.favoritePresets = state.favoritePresets.filter((item) => item.id !== preset.id);
+  if (state.activeFavoritePresetId === preset.id) state.activeFavoritePresetId = "";
+  saveFavoritePresets();
+  render();
+});
+
 elements.toolbarToggleButton.addEventListener("click", () => {
   state.toolbarCollapsed = !state.toolbarCollapsed;
   saveJson("mobileToolbarCollapsed", state.toolbarCollapsed);
@@ -491,6 +606,16 @@ elements.clearFiltersButton.addEventListener("click", () => {
 function handleCaseAction(event) {
   if (event.target.closest(".close-detail-button")) {
     closeCaseDetail();
+    return;
+  }
+
+  if (event.target.closest(".prev-detail-button")) {
+    moveSelectedCase(-1);
+    return;
+  }
+
+  if (event.target.closest(".next-detail-button")) {
+    moveSelectedCase(1);
     return;
   }
 
@@ -555,6 +680,8 @@ function handleCaseAction(event) {
     } else {
       state.favorites.add(caseId);
     }
+    state.activeFavoritePresetId = "";
+    saveFavoritePresets();
     savePersonalState();
     render();
     return;

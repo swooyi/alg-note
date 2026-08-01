@@ -1,0 +1,180 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Plan and implement mobile detail navigation buttons, darker settings panel styling, card-level status indicators, and a favorite preset workflow without changing bundled algorithm data.",
+  "assumptions": [
+    "The existing compact/full detail mode meaning remains unchanged.",
+    "Favorite and memorization state continue to use the current personal localStorage state unless a later task explicitly changes storage shape.",
+    "Mobile layout changes should preserve the recently verified compact 4-column and full 2-column behavior."
+  ],
+  "source_checklists": [
+    "C:\\dev\\alg-note\\.check-list\\archive\\[01] [07_of_07] task-checklist-alg-note-view-detail-tags.json",
+    "C:\\dev\\alg-note\\.check-list\\archive\\[02] [04_of_04] task-checklist-1l3t-sheet-algorithms.json"
+  ],
+  "tasks": [
+    {
+      "id": "01_inspect_current_status_ui",
+      "order": 1,
+      "title": "Inspect current card status UI and storage flow",
+      "check": true,
+      "targets": "app/js/app.js, app/js/render.js, app/css/style.css",
+      "allowed_fields": [
+        "read-only inspection",
+        "optional notes in this checklist"
+      ],
+      "protected_fields": [
+        "app/js/data.js",
+        "bundled algorithm case content"
+      ],
+      "summary": "Confirm how favorite, learning, and learned states are rendered and saved before editing UI.",
+      "verify": [
+        "Identify the render function responsible for card buttons and class names.",
+        "Identify the localStorage keys or helper functions used for personal state.",
+        "Leave check false until the inspection result is confirmed."
+      ]
+    },
+    {
+      "id": "02_add_detail_prev_next_buttons",
+      "order": 2,
+      "title": "Add previous and next buttons to detail view",
+      "check": true,
+      "targets": "app/js/render.js, app/js/app.js, app/css/style.css",
+      "allowed_fields": [
+        "detail view top controls",
+        "click handlers",
+        "mobile button styles"
+      ],
+      "protected_fields": [
+        "keyboard navigation behavior already implemented",
+        "case filtering rules"
+      ],
+      "summary": "Add visible previous/next controls so phone users can move between formulas by touch.",
+      "verify": [
+        "Clicking previous moves to the previous filtered case.",
+        "Clicking next moves to the next filtered case.",
+        "Buttons are disabled or inert at list boundaries.",
+        "Esc and arrow-key behavior still works."
+      ]
+    },
+    {
+      "id": "03_darken_settings_panel_background",
+      "order": 3,
+      "title": "Make settings panel background distinct",
+      "check": true,
+      "targets": "app/css/style.css",
+      "allowed_fields": [
+        "toolbar background",
+        "mobile toolbar collapsed/expanded styles",
+        "minor spacing needed for contrast"
+      ],
+      "protected_fields": [
+        "main app background palette",
+        "group bar blue-gray color unless directly coordinated"
+      ],
+      "summary": "Give the settings panel a slightly darker background so it reads as a separate control area.",
+      "verify": [
+        "Toolbar is visually distinct when expanded on mobile.",
+        "Desktop toolbar remains readable.",
+        "Collapsed mobile state still hides the toolbar."
+      ]
+    },
+    {
+      "id": "04_show_status_on_base_cards",
+      "order": 4,
+      "title": "Show favorite and memorization status on base cards",
+      "check": true,
+      "targets": "app/js/render.js, app/css/style.css",
+      "allowed_fields": [
+        "card status badge markup",
+        "card class toggles",
+        "status badge CSS"
+      ],
+      "protected_fields": [
+        "existing favorite/status buttons",
+        "personal state save format unless required"
+      ],
+      "summary": "Add clear card-level indicators for favorite, learning, and learned states beyond button active styling.",
+      "verify": [
+        "App cards show compact title-adjacent tag badges using simplified versions of the existing tag shapes.",
+        "Favorite cards show a small yellow star next to the card title.",
+        "Learning cards show a small title-adjacent icon badge with a recommended cool blue or blue-indigo color.",
+        "Learned cards show a small green check-shaped badge, with the completed state readable as 완료 where space allows.",
+        "Favorite cards show a visible marker on full cards.",
+        "Learning cards show a visible marker on full cards.",
+        "Learned cards show a visible marker on full cards.",
+        "Compact 4-column cards remain small and do not overflow."
+      ]
+    },
+    {
+      "id": "05_define_favorite_preset_plan",
+      "order": 5,
+      "title": "Define favorite preset implementation plan",
+      "check": true,
+      "targets": "design notes in this checklist, then app/js/app.js and app/css/style.css if implemented",
+      "allowed_fields": [
+        "preset naming",
+        "preset storage shape",
+        "preset selection workflow"
+      ],
+      "protected_fields": [
+        "current favorite set until migration behavior is decided",
+        "bundled data"
+      ],
+      "summary": "Decide the smallest useful preset feature: save current favorites as a named preset, switch presets, and restore favorites from the selected preset.",
+      "verify": [
+        "Plan states whether presets replace or merge with current favorites.",
+        "Plan states localStorage key shape.",
+        "Plan states how users create, select, rename, and delete presets.",
+        "Plan includes mobile space constraints."
+      ],
+      "result": "Favorite presets are stored per dataset under favoritePresets.${datasetKey}. Applying a preset replaces the current favorite set. Saving creates a named snapshot from current favorites. Deleting a preset removes only the preset and does not delete current favorites. Manual favorite changes clear the active preset selection so users can tell the current set has diverged. Controls are kept in the settings panel as select + save/apply/delete buttons for mobile compactness."
+    },
+    {
+      "id": "06_implement_favorite_presets",
+      "order": 6,
+      "title": "Implement favorite presets after plan approval",
+      "check": true,
+      "targets": "app/index.html, app/js/app.js, app/js/render.js if needed, app/css/style.css",
+      "allowed_fields": [
+        "favorite preset controls",
+        "localStorage preset helpers",
+        "preset apply/save/delete handlers",
+        "compact responsive styling"
+      ],
+      "protected_fields": [
+        "algorithm data",
+        "unrelated filter behavior",
+        "export JSON output unless explicitly requested"
+      ],
+      "summary": "Build the approved favorite preset workflow with minimal controls that fit the settings panel.",
+      "verify": [
+        "A preset can be saved from current favorites.",
+        "A preset can be selected and applied.",
+        "Deleting a preset does not delete current favorites unless explicitly confirmed by the UI behavior.",
+        "Existing favorite toggle still works."
+      ]
+    },
+    {
+      "id": "07_run_targeted_verification",
+      "order": 7,
+      "title": "Run targeted verification",
+      "check": true,
+      "targets": "app/index.html in local Chrome, app/js/app.js",
+      "allowed_fields": [
+        "verification only",
+        "small follow-up fixes if verification finds regressions"
+      ],
+      "protected_fields": [
+        "unrelated layout and data files"
+      ],
+      "summary": "Verify JavaScript syntax and mobile rendering after implementation.",
+      "verify": [
+        "Run node --check app/js/app.js.",
+        "Verify mobile compact mode still shows 4 cards per row.",
+        "Verify mobile full mode still shows 2 cards per row.",
+        "Verify detail previous/next buttons and keyboard navigation.",
+        "Verify settings panel expanded/collapsed styling."
+      ]
+    }
+  ]
+}

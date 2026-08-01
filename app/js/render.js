@@ -126,6 +126,7 @@ function makeCaseCard(template, item, state) {
   const node = template.content.firstElementChild.cloneNode(true);
   const favoriteButton = node.querySelector(".favorite-button");
   const currentStatus = state.statuses.get(item.id) || "";
+  const isFavorite = state.favorites.has(item.id);
   const isEditing = state.editingCaseId === item.id;
   const isCompact = state.detailMode === "compact" && !state.renderingDetail;
   const isDetail = Boolean(state.renderingDetail) || state.detailMode === "full";
@@ -138,7 +139,10 @@ function makeCaseCard(template, item, state) {
   node.classList.toggle("is-compact", isCompact);
   node.classList.toggle("images-hidden", !state.imagesVisible);
   node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact) && recognitions.length > 0);
-  node.querySelector(".case-name").textContent = isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name;
+  renderCaseTitle(node.querySelector(".case-name"), isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name, {
+    currentStatus,
+    isFavorite,
+  });
   node.querySelector(".case-meta").textContent = isDetail ? "" : caseMetaParts(item).filter(Boolean).join(" · ");
   renderSvgBox(node.querySelector(".svg-box"), item.svg);
 
@@ -162,8 +166,8 @@ function makeCaseCard(template, item, state) {
     if ((isDetail || isCompact) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
   }
 
-  favoriteButton.classList.toggle("is-active", state.favorites.has(item.id));
-  favoriteButton.textContent = state.favorites.has(item.id) ? "★" : "☆";
+  favoriteButton.classList.toggle("is-active", isFavorite);
+  favoriteButton.textContent = isFavorite ? "★" : "☆";
   node.querySelector(".edit-button").textContent = isEditing ? "×" : "✎";
   node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? "편집 닫기" : "편집");
   node.querySelector(".edit-button").title = isEditing ? "편집 닫기" : "편집";
@@ -173,6 +177,45 @@ function makeCaseCard(template, item, state) {
   }
 
   return node;
+}
+
+
+function renderCaseTitle(title, label, { currentStatus, isFavorite }) {
+  title.replaceChildren();
+
+  const labelNode = document.createElement("span");
+  labelNode.className = "case-title-text";
+  labelNode.textContent = label;
+  title.append(labelNode);
+
+  const badges = document.createElement("span");
+  badges.className = "case-title-badges";
+
+  if (isFavorite) {
+    const badge = document.createElement("span");
+    badge.className = "case-title-badge case-title-favorite";
+    badge.textContent = "★";
+    badge.title = "즐겨찾기";
+    badges.append(badge);
+  }
+
+  if (currentStatus === "learning") {
+    const badge = document.createElement("span");
+    badge.className = "case-title-badge case-title-learning";
+    badge.textContent = "◐";
+    badge.title = "암기 중";
+    badges.append(badge);
+  }
+
+  if (currentStatus === "learned") {
+    const badge = document.createElement("span");
+    badge.className = "case-title-badge case-title-learned";
+    badge.textContent = "✓ 완료";
+    badge.title = "암기 완료";
+    badges.append(badge);
+  }
+
+  if (badges.children.length) title.append(badges);
 }
 
 
@@ -319,12 +362,24 @@ function renderCaseDetail(container, template, item, state) {
   const top = document.createElement("div");
   top.className = "case-detail-top";
 
+  const prevButton = document.createElement("button");
+  prevButton.className = "detail-nav-button prev-detail-button";
+  prevButton.type = "button";
+  prevButton.textContent = "이전 공식";
+  prevButton.disabled = !state.detailNav?.hasPrev;
+
+  const nextButton = document.createElement("button");
+  nextButton.className = "detail-nav-button next-detail-button";
+  nextButton.type = "button";
+  nextButton.textContent = "다음 공식";
+  nextButton.disabled = !state.detailNav?.hasNext;
+
   const closeButton = document.createElement("button");
   closeButton.className = "close-detail-button";
   closeButton.type = "button";
   closeButton.textContent = "닫기";
 
-  top.append(closeButton);
+  top.append(prevButton, nextButton, closeButton);
 
   const card = makeCaseCard(template, item, detailState);
   container.replaceChildren(top, card);
