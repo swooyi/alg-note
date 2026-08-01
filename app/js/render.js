@@ -70,6 +70,7 @@ function renderSummary(element, dataset, rows, state) {
     makeSummaryItem("전체", dataset.cases.length),
     makeSummaryItem("표시", rows.length),
     makeSummaryItem("즐겨찾기", state.favorites.size),
+    makeSummaryItem("선택", state.selectedCards?.size || 0),
     makeSummaryItem("암기 중", [...state.statuses.values()].filter((value) => value === "learning").length),
     makeSummaryItem("암기 완료", [...state.statuses.values()].filter((value) => value === "learned").length),
   );
@@ -136,6 +137,7 @@ function makeCaseCard(template, item, state) {
   node.classList.toggle("is-editing", isEditing);
   node.classList.toggle("is-detail-card", isDetail);
   node.classList.toggle("is-selected", state.selectedCaseId === item.id);
+  node.classList.toggle("is-active-card", state.selectedCards?.has(item.id));
   node.classList.toggle("is-compact", isCompact);
   node.classList.toggle("images-hidden", !state.imagesVisible);
   node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact) && recognitions.length > 0);
@@ -418,6 +420,7 @@ function renderGroupedCases(grid, template, rows, state) {
 
     const title = document.createElement("h2");
     title.className = "case-group-title";
+    title.dataset.groupTitle = titleText;
     title.textContent = titleText;
     section.append(title);
 

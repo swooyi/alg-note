@@ -409,9 +409,15 @@ main {
   background: #e8eef7;
   padding: 7px 14px;
   color: #1f3044;
+  cursor: pointer;
   font-size: 17px;
   font-weight: 850;
   text-align: left;
+}
+
+.case-group-title:hover {
+  border-color: #b7c7dc;
+  background: #dde8f6;
 }
 
 .recognition-section {
@@ -462,6 +468,12 @@ main {
 .case-card.is-compact.is-selected {
   border-color: var(--accent);
   background: var(--accent-soft);
+}
+
+.case-card.is-active-card {
+  border-color: #f2c94c;
+  background: #fff8d7;
+  box-shadow: inset 0 0 0 2px rgba(242, 201, 76, 0.55);
 }
 
 .case-card.is-compact.images-hidden {
@@ -678,6 +690,13 @@ main {
 .favorite-preset-group button:disabled {
   cursor: default;
   opacity: 0.46;
+}
+
+#selectedOnlyButton.is-active {
+  border-color: #d6a100;
+  background: #fff0ae;
+  color: #684700;
+  font-weight: 850;
 }
 
 .case-detail .case-card {

@@ -19,6 +19,9 @@ const elements = {
   saveFavoritePresetButton: document.getElementById("saveFavoritePresetButton"),
   applyFavoritePresetButton: document.getElementById("applyFavoritePresetButton"),
   deleteFavoritePresetButton: document.getElementById("deleteFavoritePresetButton"),
+  selectedOnlyButton: document.getElementById("selectedOnlyButton"),
+  selectAllCardsButton: document.getElementById("selectAllCardsButton"),
+  clearSelectedCardsButton: document.getElementById("clearSelectedCardsButton"),
   toolbarToggleButton: document.getElementById("toolbarToggleButton"),
   exportJsonButton: document.getElementById("exportJsonButton"),
   exportPanelTitle: document.getElementById("exportPanelTitle"),
@@ -54,11 +57,13 @@ const state = {
   exportMode: "full",
   editingCaseId: "",
   selectedCaseId: "",
+  selectedCards: new Set(),
+  selectedOnly: false,
   favorites: new Set(),
   statuses: new Map(),
   edits: new Map(),
-  favoritePresets: [],
-  activeFavoritePresetId: "",
+  selectionPresets: [],
+  activeSelectionPresetId: "",
 };
 
 
@@ -80,54 +85,56 @@ function loadPersonalState() {
 }
 
 
-function favoritePresetKey() {
-  return `favoritePresets.${state.key}`;
+function selectionPresetKey() {
+  return `selectionPresets.${state.key}`;
 }
 
 
-function loadFavoritePresets() {
-  const saved = loadJson(favoritePresetKey(), { presets: [], activePresetId: "" });
-  state.favoritePresets = (saved.presets || [])
+function loadSelectionPresets() {
+  const saved = loadJson(selectionPresetKey(), { presets: [], activePresetId: "" });
+  state.selectionPresets = (saved.presets || [])
     .filter((preset) => preset && preset.id && preset.name)
     .map((preset) => ({
       id: String(preset.id),
       name: String(preset.name),
-      favorites: Array.isArray(preset.favorites) ? preset.favorites.map(String) : [],
+      selectedCards: Array.isArray(preset.selectedCards) ? preset.selectedCards.map(String) : [],
     }));
-  state.activeFavoritePresetId = state.favoritePresets.some((preset) => preset.id === saved.activePresetId)
+  state.activeSelectionPresetId = state.selectionPresets.some((preset) => preset.id === saved.activePresetId)
     ? saved.activePresetId
     : "";
 }
 
 
-function saveFavoritePresets() {
+function saveSelectionPresets() {
   if (!state.key) return;
-  saveJson(favoritePresetKey(), {
-    presets: state.favoritePresets,
-    activePresetId: state.activeFavoritePresetId,
+  saveJson(selectionPresetKey(), {
+    presets: state.selectionPresets,
+    activePresetId: state.activeSelectionPresetId,
   });
 }
 
 
-function renderFavoritePresetOptions() {
+function renderSelectionPresetOptions() {
   elements.favoritePresetSelect.replaceChildren();
 
   const empty = document.createElement("option");
   empty.value = "";
-  empty.textContent = state.favoritePresets.length ? "프리셋 선택" : "프리셋 없음";
+  empty.textContent = state.selectionPresets.length ? "프리셋 선택" : "프리셋 없음";
   elements.favoritePresetSelect.append(empty);
 
-  for (const preset of state.favoritePresets) {
+  for (const preset of state.selectionPresets) {
     const option = document.createElement("option");
     option.value = preset.id;
-    option.textContent = `${preset.name} (${preset.favorites.length})`;
+    option.textContent = `${preset.name} (${preset.selectedCards.length})`;
     elements.favoritePresetSelect.append(option);
   }
 
-  elements.favoritePresetSelect.value = state.activeFavoritePresetId;
+  elements.favoritePresetSelect.value = state.activeSelectionPresetId;
   const hasSelection = Boolean(elements.favoritePresetSelect.value);
   elements.applyFavoritePresetButton.disabled = !hasSelection;
   elements.deleteFavoritePresetButton.disabled = !hasSelection;
+  elements.selectedOnlyButton.classList.toggle("is-active", state.selectedOnly);
+  elements.selectedOnlyButton.setAttribute("aria-pressed", state.selectedOnly ? "true" : "false");
 }
 
 
@@ -205,12 +212,22 @@ function filteredCases() {
       recognitionList(item.tags?.recognition).some((value) => state.recognitionFilters.has(value));
     const queryOk = matchesQuery(item, query);
     const favoriteOk = state.statusFilter !== "favorite" || state.favorites.has(item.id);
+    const selectedOk = !state.selectedOnly || state.selectedCards.has(item.id);
     const statusOk =
       state.statusFilter === "all" ||
       state.statusFilter === "favorite" ||
       state.statuses.get(item.id) === state.statusFilter;
-    return groupOk && recognitionOk && queryOk && favoriteOk && statusOk;
+    return groupOk && recognitionOk && queryOk && favoriteOk && selectedOk && statusOk;
   });
+}
+
+
+function visibleCases() {
+  const savedSelectedOnly = state.selectedOnly;
+  state.selectedOnly = false;
+  const rows = filteredCases();
+  state.selectedOnly = savedSelectedOnly;
+  return rows;
 }
 
 
@@ -223,6 +240,13 @@ function updateToolbarCollapsed() {
 
 function closeCaseDetail() {
   state.selectedCaseId = "";
+  state.editingCaseId = "";
+  render();
+}
+
+
+function openCaseDetail(caseId) {
+  state.selectedCaseId = caseId;
   state.editingCaseId = "";
   render();
 }
@@ -266,7 +290,7 @@ function render() {
   elements.caseGrid.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.caseDetail.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.datasetLabel.textContent = `${state.dataset.puzzle} · ${state.dataset.name}`;
-  renderFavoritePresetOptions();
+  renderSelectionPresetOptions();
 
   renderSummary(elements.summary, state.dataset, rows, state);
   if (state.detailMode === "compact") {
@@ -275,7 +299,7 @@ function render() {
     renderCases(elements.caseGrid, elements.caseCardTemplate, rows, state);
   }
 
-  if (state.detailMode === "compact" && state.selectedCaseId) {
+  if (state.selectedCaseId) {
     renderCaseDetail(
       elements.caseDetail,
       elements.caseCardTemplate,
@@ -305,6 +329,8 @@ function setDataset(entries) {
   state.recognitionFilters = new Set();
   state.editingCaseId = "";
   state.selectedCaseId = "";
+  state.selectedCards = new Set();
+  state.selectedOnly = false;
   elements.searchInput.value = "";
   elements.statusSelect.value = "all";
   elements.exportPanel.hidden = true;
@@ -312,7 +338,7 @@ function setDataset(entries) {
   renderGroupOptions(elements.groupSelect, state.dataset.groups);
   elements.groupSelect.value = "all";
   loadPersonalState();
-  loadFavoritePresets();
+  loadSelectionPresets();
   refreshRecognitionFilters();
   saveJson("lastDataset", state.key);
   render();
@@ -515,9 +541,9 @@ elements.detailModeToggle.addEventListener("change", (event) => {
 });
 
 elements.favoritePresetSelect.addEventListener("change", (event) => {
-  state.activeFavoritePresetId = event.target.value;
-  saveFavoritePresets();
-  renderFavoritePresetOptions();
+  state.activeSelectionPresetId = event.target.value;
+  saveSelectionPresets();
+  renderSelectionPresetOptions();
 });
 
 elements.saveFavoritePresetButton.addEventListener("click", () => {
@@ -527,34 +553,59 @@ elements.saveFavoritePresetButton.addEventListener("click", () => {
   const preset = {
     id: makePresetId(),
     name,
-    favorites: [...state.favorites],
+    selectedCards: [...state.selectedCards],
   };
-  state.favoritePresets.push(preset);
-  state.activeFavoritePresetId = preset.id;
+  state.selectionPresets.push(preset);
+  state.activeSelectionPresetId = preset.id;
   elements.favoritePresetNameInput.value = "";
-  saveFavoritePresets();
+  saveSelectionPresets();
   render();
 });
 
 elements.applyFavoritePresetButton.addEventListener("click", () => {
-  const preset = state.favoritePresets.find((item) => item.id === elements.favoritePresetSelect.value);
+  const preset = state.selectionPresets.find((item) => item.id === elements.favoritePresetSelect.value);
   if (!preset) return;
 
-  state.favorites = new Set(preset.favorites);
-  state.activeFavoritePresetId = preset.id;
-  saveFavoritePresets();
-  savePersonalState();
+  state.selectedCards = new Set(preset.selectedCards);
+  state.selectedOnly = true;
+  state.selectedCaseId = "";
+  state.activeSelectionPresetId = preset.id;
+  saveSelectionPresets();
   render();
 });
 
 elements.deleteFavoritePresetButton.addEventListener("click", () => {
-  const preset = state.favoritePresets.find((item) => item.id === elements.favoritePresetSelect.value);
+  const preset = state.selectionPresets.find((item) => item.id === elements.favoritePresetSelect.value);
   if (!preset) return;
   if (!window.confirm(`"${preset.name}" 프리셋을 삭제할까요?`)) return;
 
-  state.favoritePresets = state.favoritePresets.filter((item) => item.id !== preset.id);
-  if (state.activeFavoritePresetId === preset.id) state.activeFavoritePresetId = "";
-  saveFavoritePresets();
+  state.selectionPresets = state.selectionPresets.filter((item) => item.id !== preset.id);
+  if (state.activeSelectionPresetId === preset.id) state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+  render();
+});
+
+elements.selectedOnlyButton.addEventListener("click", () => {
+  state.selectedOnly = !state.selectedOnly;
+  state.selectedCaseId = "";
+  render();
+});
+
+elements.selectAllCardsButton.addEventListener("click", () => {
+  for (const item of visibleCases()) {
+    state.selectedCards.add(item.id);
+  }
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+  render();
+});
+
+elements.clearSelectedCardsButton.addEventListener("click", () => {
+  state.selectedCards = new Set();
+  state.selectedOnly = false;
+  state.selectedCaseId = "";
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
   render();
 });
 
@@ -619,6 +670,24 @@ function handleCaseAction(event) {
     return;
   }
 
+  const groupTitle = event.target.closest(".case-group-title");
+  if (groupTitle) {
+    const groupCards = [...groupTitle.closest(".case-group-section").querySelectorAll(".case-card")];
+    const groupIds = groupCards.map((card) => card.dataset.caseId).filter(Boolean);
+    const shouldClear = groupIds.length > 0 && groupIds.every((id) => state.selectedCards.has(id));
+    for (const id of groupIds) {
+      if (shouldClear) {
+        state.selectedCards.delete(id);
+      } else {
+        state.selectedCards.add(id);
+      }
+    }
+    state.activeSelectionPresetId = "";
+    saveSelectionPresets();
+    render();
+    return;
+  }
+
   const card = event.target.closest(".case-card");
   if (!card) return;
 
@@ -680,8 +749,6 @@ function handleCaseAction(event) {
     } else {
       state.favorites.add(caseId);
     }
-    state.activeFavoritePresetId = "";
-    saveFavoritePresets();
     savePersonalState();
     render();
     return;
@@ -700,19 +767,28 @@ function handleCaseAction(event) {
     return;
   }
 
-  if (state.detailMode === "compact" && card.classList.contains("is-compact")) {
-    state.selectedCaseId = caseId;
-    state.editingCaseId = "";
-    render();
+  if (state.selectedCards.has(caseId)) {
+    state.selectedCards.delete(caseId);
+  } else {
+    state.selectedCards.add(caseId);
   }
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+  render();
 
 }
 
 
 elements.caseGrid.addEventListener("click", handleCaseAction);
 elements.caseDetail.addEventListener("click", handleCaseAction);
+elements.caseGrid.addEventListener("contextmenu", (event) => {
+  const card = event.target.closest(".case-card");
+  if (!card) return;
+  event.preventDefault();
+  openCaseDetail(card.dataset.caseId);
+});
 document.addEventListener("keydown", (event) => {
-  if (state.detailMode !== "compact" || !state.selectedCaseId) return;
+  if (!state.selectedCaseId) return;
   if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
 
   if (event.key === "Escape") {
