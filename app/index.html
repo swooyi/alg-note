@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALG Note</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main">
+      <div>
+        <h1>ALG Note</h1>
+        <p id="datasetLabel">FTO 공식 노트</p>
+      </div>
+      <div class="header-actions">
+        <select id="datasetSelect" aria-label="공식 폴더"></select>
+      </div>
+    </div>
+    <div class="toolbar">
+      <div class="search-row">
+        <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색">
+      </div>
+      <div class="control-row">
+        <div class="control-group filter-group">
+          <span class="control-label">필터</span>
+          <select id="groupSelect"></select>
+          <select id="statusSelect">
+            <option value="all">전체 상태</option>
+            <option value="favorite">즐겨찾기</option>
+            <option value="learning">암기 중</option>
+            <option value="learned">암기 완료</option>
+          </select>
+          <button id="clearFiltersButton" type="button">필터 초기화</button>
+        </div>
+        <div class="control-group tag-filter-group">
+          <span class="control-label">태그</span>
+          <div id="recognitionFilterTags" class="tag-filter-list" aria-label="recognition 필터"></div>
+        </div>
+        <div class="control-group view-group">
+          <span class="control-label">보기</span>
+          <label class="switch-control">
+            <span>자세히 보기</span>
+            <input id="detailModeToggle" type="checkbox" aria-label="자세히 보기">
+            <span class="switch-track" aria-hidden="true"></span>
+          </label>
+          <button id="exportJsonButton" type="button">출력</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="exportPanel" class="export-panel" hidden>
+      <div class="export-panel-top">
+        <div>
+          <h2 id="exportPanelTitle">cases.json 출력</h2>
+          <p id="exportPanelDescription">브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.</p>
+        </div>
+        <div class="export-actions">
+          <div class="export-mode-buttons" aria-label="출력 방식">
+            <button id="exportFullButton" class="is-active" type="button">전체 JSON</button>
+            <button id="exportEditsButton" type="button">편집분만</button>
+          </div>
+          <button id="copyJsonButton" type="button">복사</button>
+          <button id="downloadJsonButton" type="button">다운로드</button>
+          <button id="closeExportButton" type="button" aria-label="출력 닫기">닫기</button>
+        </div>
+      </div>
+      <textarea id="exportJsonText" spellcheck="false"></textarea>
+    </section>
+
+    <section id="emptyState" class="empty-state" hidden></section>
+
+    <section id="summary" class="summary" hidden></section>
+    <section id="caseGrid" class="case-grid" hidden></section>
+    <section id="caseDetail" class="case-detail" hidden></section>
+  </main>
+
+  <template id="caseCardTemplate">
+    <article class="case-card">
+      <div class="card-top">
+        <div>
+          <h2 class="case-name"></h2>
+          <p class="case-meta"></p>
+        </div>
+        <div class="quick-actions">
+          <button class="favorite-button icon-button" type="button" aria-label="즐겨찾기" title="즐겨찾기">☆</button>
+          <button class="status-button icon-button" type="button" data-status="learning" aria-label="암기 중" title="암기 중">◐</button>
+          <button class="status-button icon-button" type="button" data-status="learned" aria-label="암기 완료" title="암기 완료">✓</button>
+          <button class="edit-button icon-button" type="button" aria-label="편집" title="편집">✎</button>
+        </div>
+      </div>
+      <div class="svg-box"></div>
+      <div class="case-section setup-section">
+        <h3>setup</h3>
+        <p class="scramble"></p>
+      </div>
+      <div class="case-section alg-section">
+        <h3>alg</h3>
+        <ul class="algorithm-list"></ul>
+      </div>
+    </article>
+  </template>
+
+  <script src="./js/storage.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/normalize.js"></script>
+  <script src="./js/render.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

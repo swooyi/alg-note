@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "FTO",
+  "id": "lbt",
+  "name": "LBT",
+  "source": {
+    "legacyPath": "source",
+    "url": "https://mihlefeld.github.io/Alg-Trainers/FTO-LBT-Trainer/index.html?select"
+  },
+  "notes": [
+    "The source has 31 In Slot cases. Visible names skip IS21 and continue from IS22 to IS32."
+  ]
+}

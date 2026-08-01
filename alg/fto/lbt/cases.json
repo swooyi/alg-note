@@ -1,0 +1,2563 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "FTO",
+  "algset": "lbt",
+  "cases": [
+    {
+      "id": "1",
+      "name": "IS1",
+      "group": "in-slot",
+      "algorithms": [
+        "BL R' L' R L BL'"
+      ],
+      "scramble": "L U' B L B' L' U L'",
+      "scrambles": [
+        "L U' B L B' L' U L'",
+        "L U' L R' L R L U L'",
+        "L U R B L B' L' R' U' L'",
+        "B U' B U L U' B' U L' B'",
+        "R L U R' B' R' B R' U' L' R'",
+        "R' L R U' B L B' L' U L'",
+        "R L U' R' B' R B U L' R'",
+        "L U R L B L' B' R' U' L'",
+        "B L U B' L B L' U' L' B'",
+        "L U' L B L' B' U R' L' R",
+        "B L U' B U L' U' B' U B'",
+        "L R' L R L U' B L B' L'",
+        "R' L' R L U' B L B' L'",
+        "L U B' R' L' R L B U' L'",
+        "B' L U' L B' L' B U L' B",
+        "B' L U' B' L B L' U L' B"
+      ],
+      "svgId": "1",
+      "tags": []
+    },
+    {
+      "id": "2",
+      "name": "IS2",
+      "group": "in-slot",
+      "algorithms": [
+        "Uo' BR' L R L' R' BR (Uo)",
+        "L BL' R' L R L' BL L'"
+      ],
+      "scramble": "L' U R' L' R L U' L",
+      "scrambles": [
+        "B L' B' U R' L' R L U' L",
+        "L' U R' L' R L U' L",
+        "L' U' B' R' L' R L B U L",
+        "R L' U R L' R' L U' L R'",
+        "L' U' B' L' R' L R B U L",
+        "R' U R' U' L' U R U' L R",
+        "L' U' R B L B' L' R' U L",
+        "B L B' L' U R' L' R L",
+        "L' B L' B' L' U R' L' R L",
+        "L' U L' R' L R U' B L B'",
+        "L' U L' B L' B' L' U' L",
+        "R' L' U' R L' R' L U L R",
+        "R L' U L' R L R' U' L R'",
+        "R' L' U R' U' L U R U' R",
+        "B' L' U B R B' R' U' L B"
+      ],
+      "svgId": "2",
+      "tags": []
+    },
+    {
+      "id": "3",
+      "name": "IS3",
+      "group": "in-slot",
+      "algorithms": [
+        "F R' L R L' R B' R' B F'"
+      ],
+      "scramble": "L' U' B L' B' L U L' B L' B'",
+      "scrambles": [
+        "L' U L' B L B' L R' L' R U' L",
+        "B L B' L U L' B L B' U' L",
+        "L' U L B' R B R' B L' B' U' L",
+        "L' U B' R' B L' B L B' R U' L",
+        "L' U L R' L' R B' R B R' U' L",
+        "L' U B L' B' L U' L' B L' B'",
+        "L' U' B' R B R' U R B' R' B L",
+        "L' U L B' L R' L' R L' B U' L",
+        "L' U R' B L' B' L B' R B U' L",
+        "L' U B L B' R B' R' B L' U' L",
+        "L' U R B' R' B R' L R L' U' L",
+        "L' U R' L R L' B L' B' L U' L",
+        "L' U' B L' B' L U L' B L' B'",
+        "L' U B' L R' L R L' B L' U' L",
+        "L' B' R B R' U R B' R' B U' L",
+        "L' U' B L' B' L U L' B L B' L",
+        "L' B L' B' L U L' B L B' U' L"
+      ],
+      "svgId": "3",
+      "tags": []
+    },
+    {
+      "id": "4",
+      "name": "IS4",
+      "group": "in-slot",
+      "algorithms": [
+        "BL' R B' R' B R' L R L' BL"
+      ],
+      "scramble": "R' L' R L' U' L R' L' R U L'",
+      "scrambles": [
+        "L R B' R' B U' B' R B R' U L'",
+        "L U' R L' B L' B' L R' L U L'",
+        "L R' L R L' U' L R' L' R U L'",
+        "L U R B' R' B U' B' R B R' L'",
+        "L U R' L R L' U' L R' L' R L'",
+        "L U' R B R' L R' L' R B' U L'",
+        "R' L' R L' U' L R' L' R U L'",
+        "L U' L R' L' R L' B L B' U L'",
+        "L U' B L' B' L R' L R L' U L'",
+        "L U' B' R B R' B L' B' L U L'",
+        "L U R' L R L' U' L R' L R",
+        "L U' L' R L' B L B' L R' U L'",
+        "L U' R' L R L' U L R' L R",
+        "L U' R' L' R B' R B R' L U L'",
+        "L U' L' R B' R' B R' L R U L'",
+        "L U' L' B L B' R B' R' B U L'",
+        "L U' B R' L R L' R B' R' U L'"
+      ],
+      "svgId": "4",
+      "tags": []
+    },
+    {
+      "id": "5",
+      "name": "IS5",
+      "group": "in-slot",
+      "algorithms": [
+        "Uw' BL L' R' L R BL' Uw",
+        "BL L' R B' R' B L BL'",
+        "Uw L R' L' BL L' R L BL' Uw'"
+      ],
+      "scramble": "R L U L R L' R' U' L' R'",
+      "scrambles": [
+        "L U B' R B U' R L' R' U R'",
+        "R' L' R L U' B L B' R' L' R",
+        "L U' L B' R B R' L' U L'",
+        "R L U L R L' R' U' L' R'",
+        "L B L' B' U' R L B L' B' R'",
+        "L U B' L' R' L R B U' L'"
+      ],
+      "svgId": "5",
+      "tags": []
+    },
+    {
+      "id": "6",
+      "name": "IS6",
+      "group": "in-slot",
+      "algorithms": [
+        "D BR' R L R' L' BR D'",
+        "L BL' B' R B R' BL L'",
+        "Uw L BL' R B' R' B BL L' Uw'",
+        "Uw' R' L BL' L R L' BL L' Uw",
+        "Uw' L' U R' L' R L U' L Uw"
+      ],
+      "scramble": "B' L' U' L' B' L B U L B",
+      "scrambles": [
+        "L' U L' R B' R' B L U' L",
+        "L' U' R L B L' B' R' U L",
+        "B L B' L' U R' L' R B L B'",
+        "L' U' L R' L' R U L' B L' B'",
+        "B' L' U' L' B' L B U L B",
+        "L' R' L R U B' L' R' L R B",
+        "L' U' R B' R' U B' L B U' B"
+      ],
+      "svgId": "6",
+      "tags": []
+    },
+    {
+      "id": "7",
+      "name": "IS7",
+      "group": "in-slot",
+      "algorithms": [
+        "BLw' U' R B' R' B U B' BLw L",
+        "R' F' R L' R' L F L' R L"
+      ],
+      "scramble": "L' U B' R B R' U' R B' R' B L",
+      "scrambles": [
+        "L' U B' R B R' U' R B' R' B L",
+        "B L B' L U' L' B L B' U B L B'",
+        "L' U' B' R B R' U L U' L' R' L R",
+        "B' L B' L U' L' B L B' U B L B",
+        "L' U B L' B' L U' L' B L B' L",
+        "B L B' L' U' L U' R' L' R L U L'"
+      ],
+      "svgId": "7",
+      "tags": []
+    },
+    {
+      "id": "8",
+      "name": "IS8",
+      "group": "in-slot",
+      "algorithms": [
+        "Uo' BRw U L' B L B' U' B BRw' R' (Uo)",
+        "Uo' L F L' R L R' F' R L' R' (Uo)"
+      ],
+      "scramble": "L U' R B' R' B U B' R B R' L'",
+      "scrambles": [
+        "L U' R B' R' B U B' R B R' L'",
+        "L U' R' L R L' U L R' L' R L'",
+        "R' L' R L' U L R' L' R U' R' L' R",
+        "L U R B' R' B U' L' U L B L' B'",
+        "R L' R L' U L R' L' R U' R' L' R'"
+      ],
+      "svgId": "8",
+      "tags": []
+    },
+    {
+      "id": "9",
+      "name": "IS9",
+      "group": "in-slot",
+      "algorithms": [
+        "L R' L R U' B' R B R' U L"
+      ],
+      "scramble": "L U' L' B L B' U B L' B'",
+      "scrambles": [
+        "R B L B' U R B' R' B U' L' R'",
+        "L B' R B R' U R U' R L' R' U R'",
+        "R' L R U' L' B L B' U B L' B'",
+        "L U' L' B L B' U B L' B'",
+        "B' R B' L B' U R B' R' B U' L' R'",
+        "B L B' U R U' R L' R' U R'",
+        "L' U' R B' R' B U R' L' R L'",
+        "R L' R' L' R U L' B L B' U' L' R'",
+        "R' L' R U R' L R L' U' B L B'",
+        "L U' L R' L' R U R' L R L",
+        "L' B L' B' U R U' R L' R' U R'",
+        "R L' R L' R' U L' B L B' U' L' R'"
+      ],
+      "svgId": "9",
+      "tags": []
+    },
+    {
+      "id": "10",
+      "name": "IS10",
+      "group": "in-slot",
+      "algorithms": [
+        "(U) R' L' R U R' L R L' U' L"
+      ],
+      "scramble": "R' L' R U' B' U B' L B U' B",
+      "scrambles": [
+        "L' U L' B L' B' R' L' R U' R' L R",
+        "L' U L R' L' R U' R' L R",
+        "L U' L' B L B' U B L' B R B R'",
+        "L' U L' B L B' U' B L' B' L'",
+        "L U B' R B R' U' B L B' L",
+        "B' R' L' R U' B' R B R' U L B",
+        "L' U R L' R' L' R L' R' U' R' L R",
+        "B L' B' U L R' L' R U' R' L R",
+        "L' R' L' R U' R' L' R L U R' L' R",
+        "L' R' L' R U' R' L R L' U R' L' R",
+        "B L B' U' B L' B' L U R' L' R",
+        "L R' L R U' B' U B' L B U' B",
+        "L' B L' B' U' B L' B' L U R' L' R",
+        "R' L' R U' B' U B' L B U' B"
+      ],
+      "svgId": "10",
+      "tags": []
+    },
+    {
+      "id": "11",
+      "name": "IS11",
+      "group": "in-slot",
+      "algorithms": [
+        "(U') Uw L U R' L' R L U' L R' L R Uw'"
+      ],
+      "scramble": "L' U' R B' R' B U L' B L' B'",
+      "scrambles": [
+        "L U B L B' L' U L' B L B' U L'",
+        "B L' B' U' R B' R' B U L' B L' B'",
+        "L' U' L R' L' R B' U B' L B U' B",
+        "R' L' R L U' L U R' L R L' U' L'",
+        "L' U R' L R' B' R' B' L' B' U' L",
+        "L' U' R' L R L' U R B' R' B' L B'",
+        "L U' L' R' L R U B' R B R' L'",
+        "L U R' L R B L B' L U' R' L' R",
+        "L' B' R B R' U B L B' L' U' L",
+        "L U R B' R' B U L' B L B' U L'",
+        "L' U' R B' R' B U L' B L' B'",
+        "L' R' L R U L U L B L' B' U' L'",
+        "L U L' B L' B' R' L' R U' R' L' R",
+        "L U R' L' R L U R B' R' B U L'",
+        "R' L' R L' U R B' R' B U' R' L' R",
+        "L U B L' B' L U' L' U L B L' B'",
+        "L U B L' B' R' L' R L' U' R' L' R",
+        "L B L' B L' U R' L R L' U' L B"
+      ],
+      "svgId": "11",
+      "tags": []
+    },
+    {
+      "id": "12",
+      "name": "IS12",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' R L' U R B' R' B U' L'"
+      ],
+      "scramble": "L U B' R B R' U' L R' L R",
+      "scrambles": [
+        "L' R' L R' L U' B L' B' L U L' R'",
+        "R L R' U' L R B L B' L R' U L'",
+        "L U B L' B' L U' B' R B R L' R",
+        "L R B' R' B U' R' L' R L U L'",
+        "L U B' R B R' U' L R' L R",
+        "L' U L B L' B' U' R B' R' B L",
+        "L' U' R' L R L' U L U' L' R' L R",
+        "L U L' B L B' R U' R L' R' U R'",
+        "L' U' B L' B' R' L' R L' U B L B'",
+        "L U' B L' B R B R L R U L'",
+        "L U' L R B L B' L' R L' R U L'",
+        "R' L R U B' R B R' U' L R' L R",
+        "L' U' L R' L R B L B' U B L B'",
+        "L U' R B' R' L' B' L' B L' B U L'",
+        "B L B' L U' B' R B R' U B L B'",
+        "L U' R' L R B L' B R B R' U L'",
+        "L' U' R' L R B L B' L U B L B'"
+      ],
+      "svgId": "12",
+      "tags": []
+    },
+    {
+      "id": "13",
+      "name": "IS13",
+      "group": "in-slot",
+      "algorithms": [
+        "F' L' R U' R' U L R' F R",
+        "Uo' F BL R D R' D' BL' F' (Uo)"
+      ],
+      "scramble": "B L B' U' L R' L' R U L'",
+      "scrambles": [
+        "L' U' B L' B' L U R' L' R L'",
+        "L B L' B' L U' B' R B R' U L'",
+        "L U B U L B' L' B U' B' U' L'",
+        "L' U' R' U' R L' R' L U R U L",
+        "L' R' L' R U' B' R B R' U L'",
+        "L' B L' B' U' L R' L' R U L'",
+        "L U' L' U' B L B' L' U L U L'",
+        "L' U B L' B' L U' R' L' R L'",
+        "R B L B' U' L R' L' R U L' R'",
+        "B' L' U' B L' B' L U R' L R B",
+        "B L B' U' L R' L' R U L'",
+        "R B L B' U L R' L' R U' L' R'",
+        "L' U L U L' R' L R U' L' U' L",
+        "L B' R B R' U' L R' L' R U L'"
+      ],
+      "svgId": "13",
+      "tags": []
+    },
+    {
+      "id": "14",
+      "name": "IS14",
+      "group": "in-slot",
+      "algorithms": [
+        "F' BR' L' D' L D BR F",
+        "R F U L' R' L R U' F' R'"
+      ],
+      "scramble": "L U R' L R L' U' B L B' L",
+      "scrambles": [
+        "L U R B' R' B U' L' B L B' L'",
+        "L U' R' L R L' U R B' R' B L'",
+        "L U' L' U' L B L' B' U L U L'",
+        "L' R B' R' B U L' B L B' U' L",
+        "R' L' R U L' B L B' U' L",
+        "L B L B' U R B' R' B U' L",
+        "B' R' L' R U' L' B L B' U L B",
+        "L U R' L R L' U' B L B' L",
+        "L U' R B' R' B U L' B L B' L'",
+        "B' R' L' R U L' B L B' U' L B",
+        "L R' L R U L' B L B' U' L",
+        "L U B U B' L B L' U' B' U' L'",
+        "L U' R' L R L' U B L B' L",
+        "L' R' L R L' U R B' R' B U' L",
+        "R L U R' L R L' U' B L' B' R'",
+        "L U R' L R L' U' R B' R' B L'"
+      ],
+      "svgId": "14",
+      "tags": []
+    },
+    {
+      "id": "15",
+      "name": "IS15",
+      "group": "in-slot",
+      "algorithms": [
+        "L' R' L R U' L' R' L R"
+      ],
+      "scramble": "R' L' R L U R' L' R L",
+      "scrambles": [
+        "R' L' R U B' R B R' U' L",
+        "R L B L' B' R' U L B L' B'",
+        "L U L' B L B' U' B L' B'",
+        "L B L' B' U L B L' B'",
+        "L B L' B' U' R' L' R B L B'",
+        "L' R' L' R L' U L B L' B'",
+        "L B L U B' L B L' U' L B'",
+        "L B' L' B U L' B' L' B' L' B'",
+        "L U' L' R L R' U L R L R'",
+        "L R' L R L U R' L' R L",
+        "L U' B' R B R' U B L' B'",
+        "R' L' R L U R' L' R L",
+        "R' L R B L' B' U L B L' B'",
+        "R' L' R L U' R' L R B L' B'"
+      ],
+      "svgId": "15",
+      "tags": []
+    },
+    {
+      "id": "16",
+      "name": "IS16",
+      "group": "in-slot",
+      "algorithms": [
+        "BL' L R' L' BL L' R L"
+      ],
+      "scramble": "B L B' L' U' B L B' L'",
+      "scrambles": [
+        "L B L B' L U' L' R' L R",
+        "L' U L B' L' B U' L' B' L' B",
+        "L' B L' B' L' U' B L B' L'",
+        "L' R' L' U' R L' R' L U L' R",
+        "B L B' U' R B' R' B U L'",
+        "L' R L R' U' L R L R L R",
+        "B L' B' R' L R U' L' R' L R",
+        "L' R' L R U' L' R' L R",
+        "B' L' R' L R B U' L' R' L R",
+        "B L B' L' U B L' B' R' L R",
+        "L' U' L R' L' R U R' L R",
+        "L' U R B' R' B U' R' L R",
+        "B L B' L' U' B L B' L'",
+        "L' R' L R U B L B' R' L' R"
+      ],
+      "svgId": "16",
+      "tags": []
+    },
+    {
+      "id": "17",
+      "name": "IS17",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' R U L' B L B' U' L"
+      ],
+      "scramble": "L' U B L' B' L U' R' L R",
+      "scrambles": [
+        "B' L' U B L' B' L U' R' L R B",
+        "B L B' U' L R' L' R U R' L' R",
+        "B L' B' U B L' B' L U' R' L R",
+        "L' U B L' B' L U' R' L R",
+        "L' U B' R B R' U' B L' B' L'"
+      ],
+      "svgId": "17",
+      "tags": []
+    },
+    {
+      "id": "18",
+      "name": "IS18",
+      "group": "in-slot",
+      "algorithms": [
+        "Uo' L R L' U' R B' R' B U R' (Uo)"
+      ],
+      "scramble": "L U' R' L R L' U B L' B'",
+      "scrambles": [
+        "R' L R U' R' L R L' U B L' B'",
+        "R' L' R U L' B L B' U' B L B'",
+        "L U' R B' R' B U R' L R L",
+        "L U' R' L R L' U B L' B'",
+        "R L U' R' L R L' U B L' B' R'"
+      ],
+      "svgId": "18",
+      "tags": []
+    },
+    {
+      "id": "19",
+      "name": "IS19",
+      "group": "in-slot",
+      "algorithms": [
+        "R D R' U R' D' R"
+      ],
+      "scramble": "R' L' R U' R' L R L' U L",
+      "scrambles": [
+        "R' L' R U' R' L R L' U L",
+        "L B L' B' U' B' R' L' R L B",
+        "R B L B' L' R' U' L B L' B'",
+        "L R' L R L U L' B L' B' L'",
+        "R' L' R B L B' U' L B L' B'",
+        "R' L' R L U L' B L' B' L'",
+        "L' B' R B R' L U' L B L' B'"
+      ],
+      "svgId": "19",
+      "tags": []
+    },
+    {
+      "id": "20",
+      "name": "IS20",
+      "group": "in-slot",
+      "algorithms": [
+        "Uo' L' D' L U' L D L' (Uo)"
+      ],
+      "scramble": "B L B' U B L' B' L U' L'",
+      "scrambles": [
+        "B' R' L' R L B U L' R' L R",
+        "L R B' R' B L' U L' R' L R",
+        "B L B' R' L' R U L' R' L R",
+        "L' R' L' R U R' L R L' U' L'",
+        "L' R' L R U R B L B' L' R'",
+        "B L B' L' U' L R' L R L",
+        "B L B' U B L' B' L U' L'"
+      ],
+      "svgId": "20",
+      "tags": []
+    },
+    {
+      "id": "21",
+      "name": "IS22",
+      "group": "in-slot",
+      "algorithms": [
+        "R F' L' R U' R' U L R' F"
+      ],
+      "scramble": "R' U B L B' U L R' L' R U' L' U' R",
+      "scrambles": [
+        "R' U' L' U' B L' B' L U R' L R U R",
+        "R' U B L B' U L R' L' R U' L' U' R",
+        "L R' U' L' U R U' L R L R' L' U L'",
+        "R' L U' L' U R U' L R L R' L' U L'"
+      ],
+      "svgId": "21",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "22",
+      "name": "IS23",
+      "group": "in-slot",
+      "algorithms": [
+        "BL' R B' R' B U B' R B R' U' BL"
+      ],
+      "scramble": "B L B' L' U' L U' B' R B R' U L'",
+      "scrambles": [
+        "L U' R B' R' B U L' U L B L' B'",
+        "B L B' L' U' L U' B' R B R' U L'",
+        "L' U L' U B L B' L' U' L U' R' L R",
+        "R' L' R L U L' U R B' R' B U' L",
+        "L U' L U' R' L' R L U L' U B L' B'",
+        "L' U B' R B R' U' L U' L' R' L R"
+      ],
+      "svgId": "22",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "23",
+      "name": "IS24",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' R L' B L' B'"
+      ],
+      "scramble": "B L B' L R' L R",
+      "scrambles": [
+        "R' L' R L' B L' B'",
+        "L' R L' B L B' L R'",
+        "B L B' L R' L R",
+        "L R' L R L' B L' B'",
+        "L' B L' B' L R' L R"
+      ],
+      "svgId": "23",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "24",
+      "name": "IS25",
+      "group": "in-slot",
+      "algorithms": [
+        "L R' L R U' B' U L U' B"
+      ],
+      "scramble": "B' U L' U' B U R' L' R L'",
+      "scrambles": [
+        "B' U L' U' B U L R L' R L' R' L' R'",
+        "B' U L' U' B U R' L R U R' L R L'",
+        "L' B L B U L' U' B U R' L' R L'",
+        "R L U' R U B' U' L R' L' U B L' R'",
+        "B' U L' U' B U R' L' R L'",
+        "B' U L' U' B U R' L R U' R' L R L'",
+        "R B' R' U L' U' B U R' L' R L'",
+        "R' L' R U' B' U L B R B R' B U' B"
+      ],
+      "svgId": "24",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "25",
+      "name": "IS26",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' F' L' R L R' F R L"
+      ],
+      "scramble": "R L U B' R B R' U' B L' B' R'",
+      "scrambles": [
+        "L B L U' B U L' U' B' U L' B'",
+        "L' U L' B L B' U' B L' B' R' L' R",
+        "L' U' L' B L B' U L U' L' R' L R",
+        "B' R' L' R U L' B' L B U' L B",
+        "L' U' R' L' R L U L U' L B L' B'",
+        "L' R' L' U R' U' L U R U' L R",
+        "L U B L B' L' U' L' U L' R' L R",
+        "L' U' R' L' R L U L R' L' R L",
+        "L U' L' R' L R U L' B L B' L'",
+        "R B L B' U' L R L' R' U L' R'",
+        "L U B L B' L' U' L' B L B' L'",
+        "R L U B L' B' L U' R' L R L R'",
+        "R L U B' R B R' U' B L' B' R'",
+        "B' R B' L B' U' L R L' R' U L' R'",
+        "L' U L B L' B' U' L R' L' R L",
+        "B' L' U' R B' R' B U R' L R B"
+      ],
+      "svgId": "25",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "26",
+      "name": "IS27",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' R L' U L' R' L R U' L'"
+      ],
+      "scramble": "L U R' L' R L U' L R' L R",
+      "scrambles": [
+        "L U' B L' B' L R' L' R L U L'",
+        "L' U' R B' R' B U L' B L B' L",
+        "R' L R U R' L' R L U' L R' L R",
+        "L' U R' L R L' B L B' L' U' L",
+        "L U B L' B' L U' B' R B R' L'",
+        "L' R' U' R' U' L U R U' L' U' L R",
+        "L' R' L R' L U' L R L' R' U L' R'",
+        "L B U B U L' U' B' U L U L' B'",
+        "R L' R L' U' B L' B' L U R' L' R'",
+        "L' U' R' L R L' U R B' R' B L",
+        "L U R' L' R L U' L R' L R",
+        "R U' R L R' U R' U' L R' L R",
+        "B' U B' L' B U' B U L' B L' B'",
+        "L' U' B L B' L' U L' B L' B'",
+        "L U B' R B R' U' L R' L' R L'"
+      ],
+      "svgId": "26",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "27",
+      "name": "IS28",
+      "group": "in-slot",
+      "algorithms": [
+        "U' L' R' L F' L R L' R' F R"
+      ],
+      "scramble": "R' L' R L' U' B L' B' L U L'",
+      "scrambles": [
+        "L U' B' R B R' L R' L' R U L'",
+        "L' U R B' R' B L' B L B' U' L",
+        "B L B' L U R' L R L' U' L",
+        "L' U B L' B' L B' R B R' U' L",
+        "L R' L R L' U' B L' B' L U L'",
+        "L' U L R L' B L' B' L R' U' L",
+        "L' U R' L R L' R B' R' B U' L",
+        "L R B' R' B U' R' L R L' U L'",
+        "L U' R B' R' B L' B L B' U L'",
+        "L U B L B' L' U' B' R B R' L'",
+        "L U' R L' B L B' L R' L' U L'",
+        "L U' R' L R L' R B' R' B U L'",
+        "L' U B' R B R' L R' L' R U' L",
+        "L U' L' B' L R' L R L' B U L'",
+        "R' L' R L' U' B L' B' L U L'",
+        "L U' B L' B' L B' R B R' U L'",
+        "L U' L R L' B L' B' L R' U L'",
+        "L U' B' L R' L' R L' B L U L'",
+        "L' U L' B' L R' L R L' B U' L"
+      ],
+      "svgId": "27",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "28",
+      "name": "IS29",
+      "group": "in-slot",
+      "algorithms": [
+        "L BL' B' BL L R' L' R BL' B BL L'"
+      ],
+      "scramble": "B' L' U L R' L' R U' R' L R B",
+      "scrambles": [
+        "L' U B L' B' R' L' R L' U' R' L R",
+        "L U' R' L R B L B' L U B L' B'",
+        "B' L' U L R' L' R U' R' L R B",
+        "R L U' L R' L' R U R' L R L R'",
+        "R L U' L' B L B' U B L' B' R'",
+        "R' L' R U' L B L' B' U L' R' L' R"
+      ],
+      "svgId": "28",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "29",
+      "name": "IS30",
+      "group": "in-slot",
+      "algorithms": [
+        "R' L' R L U' F R B' R' F' B"
+      ],
+      "scramble": "L' U' R' L' R L U B L' B' R' L' R",
+      "scrambles": [
+        "L U L' R' L R U' L' U' L B L' B'",
+        "L' R' L' R U L B L' B' U' R' L' R",
+        "L' R' L R U L U R' L R L' U' L'",
+        "L' U' R' L' R L U B L' B' R' L' R",
+        "L U B L B' L' U' R' L R B L B'",
+        "L B L B' U' L' R' L R U B L B'",
+        "L' U' L B L' B' U L U L' R' L R"
+      ],
+      "svgId": "29",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "30",
+      "name": "IS31",
+      "group": "in-slot",
+      "algorithms": [
+        "R' F' R' B' R' B R' F L' R L"
+      ],
+      "scramble": "L B L' B' U' L' U B L B' L' U' L",
+      "scrambles": [
+        "L U B L' B' R L R' U' R B L' B' R'",
+        "L U L B L' B' R' L' R L U' R' L' R",
+        "L U' B L' B' L U L' U L' R' L R",
+        "L' R' L R U L U' R' L' R L U L'",
+        "L R B' R' B U L B L' B' U' R' L' R",
+        "L B L' B' U' L' U B L B' L' U' L",
+        "L' U R' L R L' U' L U' L B L' B'"
+      ],
+      "svgId": "30",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "31",
+      "name": "IS32",
+      "group": "in-slot",
+      "algorithms": [
+        "Uw' L U L' B L' B' R' L' R U' L' Uw"
+      ],
+      "scramble": "L' U B' L R' L R B L U' B' L B",
+      "scrambles": [
+        "R' L' R U L' R' L R U' B L' B' L'",
+        "L' U B' L R' L R B L U' B' L B",
+        "L' U L R' L' R U' L' R B' R' B L'",
+        "L U' L' B L B' U L B' R B R' L",
+        "L U' R L' B L' B' R' L' U R L' R'",
+        "L' R' L R U L U L' B L B' U' L'",
+        "L B L' B' U' L' U' L R' L' R U L"
+      ],
+      "svgId": "31",
+      "tags": [
+        "source-name-gap"
+      ]
+    },
+    {
+      "id": "32",
+      "name": "OS1",
+      "group": "one-solved",
+      "algorithms": [
+        "U' F R' L R L' F'"
+      ],
+      "scramble": "B L B' L' U L B L' B'",
+      "scrambles": [
+        "L' R' L R U' L' B L' B' L'",
+        "B L B' L' U L B L' B'",
+        "L' U' L B L' B' U B L B'",
+        "L' U L R' L R L U' L",
+        "B L' B' U B L B' L' U' L",
+        "L' R' L R U L' B L' B' L'",
+        "L' U B L B' L' U' L",
+        "L' U' L' B L B' U R' L R",
+        "L' U' L' R' L' R L' U L",
+        "L' R L R' U' R L' R' L",
+        "L' R L R' U R L' R' L",
+        "L' U' L R' L R L U L",
+        "L' R' U' R L' R' L U L R",
+        "L' B U L B' L' B U' L B'",
+        "L' R' L R U R' L' R L",
+        "L' B L' B' L' U L B L' B'",
+        "B L' U L B' L' B U' L B'",
+        "B L B' U' R' L' R L U L'"
+      ],
+      "svgId": "32",
+      "tags": []
+    },
+    {
+      "id": "33",
+      "name": "OS2",
+      "group": "one-solved",
+      "algorithms": [
+        "U BL' R B' R' B BL"
+      ],
+      "scramble": "L U' R' L' R L U L'",
+      "scrambles": [
+        "L U L R' L' R U' B L' B'",
+        "L B U B' L B L' U' L' B'",
+        "L B L' B' U' B L B' L'",
+        "L U L' R B' R' B L U' L'",
+        "L U' R' L' R L U L'",
+        "L B' L' B U B' L B L'",
+        "L B' L' B U' B' L B L'",
+        "R' L U' L' R L R' U L' R",
+        "L U L' R' L R U' R' L' R",
+        "L R' L R L U' L' R' L R",
+        "L U L' B L' B' L' U' L'",
+        "L U' L' B L' B' L' U L'",
+        "L R' U' L' R L R' U L' R",
+        "L U L B L B' L U' L'",
+        "R' L' R L U' L' R' L R"
+      ],
+      "svgId": "33",
+      "tags": []
+    },
+    {
+      "id": "34",
+      "name": "OS3",
+      "group": "one-solved",
+      "algorithms": [
+        "L' U' R' L R L' U R' L R"
+      ],
+      "scramble": "R' L' R U' L R' L' R U L",
+      "scrambles": [
+        "R' L' R U' L R' L' R U L",
+        "L' R B' R' B U' L R' L' R U L",
+        "L' U L B L' B' U' L U' B' R B R'",
+        "L U R' L R L' U' L' B L B' L'",
+        "L R' L R U' L R' L' R U L",
+        "R' L' R U L R' L' R U' L' B L' B'",
+        "L U' R B' R' B U R B' R' B L'",
+        "R' L' R U' L' B L B' U L' B L' B'",
+        "L U' R B' R' B U L' U' L B L' B'",
+        "R L U' R B' R' B U B L' B' R'",
+        "B' R' L' R U' L R' L' R U L B",
+        "L' U L U' R B' R' B U L' U' L",
+        "R L U R' L R L' U' R L R' L R'",
+        "L U' R B' R' B U B L' B R B R'",
+        "L U' R B' R' B U B L B' L"
+      ],
+      "svgId": "34",
+      "tags": []
+    },
+    {
+      "id": "35",
+      "name": "OS4",
+      "group": "one-solved",
+      "algorithms": [
+        "Uo' R U L R' L' R U' L R' L'"
+      ],
+      "scramble": "B L B' U L' B L B' U' L'",
+      "scrambles": [
+        "L B' R B R' U L' B L B' U' L'",
+        "B' L' U B' R B R' U' R' L R B",
+        "L' U B' R B R' U' B' R B R' L",
+        "L U' L' R' L R U L' U B' R B R'",
+        "L' U' B L' B' L U B L' B' R' L' R",
+        "L' U' B L' B' L U L R' L' R L",
+        "B L B' U L' B L B' U' L'",
+        "L' U B' R B R' U' L U L' R' L R",
+        "B' R B' L B' U L' B L B' U' L' R'",
+        "L' B L' B' U L' B L B' U' L'",
+        "R B L B' U L' B L B' U' L' R'",
+        "R L' R' L' R U' B L' B' L U L' R'",
+        "L' U B' R B R' U' R' L' R L'",
+        "L U' L' U B' R B R' U' L U L'",
+        "R L' R L' R' U' B L' B' L U L' R'"
+      ],
+      "svgId": "35",
+      "tags": []
+    },
+    {
+      "id": "36",
+      "name": "OS5",
+      "group": "one-solved",
+      "algorithms": [
+        "R B' R' F R B R' F'",
+        "Uw F R B' R' B F' Uw'",
+        "Uw' B' R F' R' B R F R' Uw"
+      ],
+      "scramble": "L' U L' R' L' R L' U' L",
+      "scrambles": [
+        "L' U L B' L' B U' B' L B",
+        "L' R' U' R L' R' L U L' R L'",
+        "L' U B L B' L' U' L' R' L' R",
+        "L' U L B L' B' U' B L B'",
+        "L' U L' R' L' R L' U' L",
+        "L' U L R B' R' B L' U' L",
+        "R' L' U L' R L' R' L' U' L R",
+        "L B L B' L U' R' L' R L",
+        "L' B U L B' L' B U' B' L",
+        "L' U' L' B L B' U R' L' R L'",
+        "L' R' L R U' R' L' R L",
+        "B L' U L B' L' B U' B' L",
+        "L' U R' U' R B L B' R' U R",
+        "L' U' R' L R L' U R' L R",
+        "L' U R L' R L' R' L' R' U' L"
+      ],
+      "svgId": "36",
+      "tags": []
+    },
+    {
+      "id": "37",
+      "name": "OS6",
+      "group": "one-solved",
+      "algorithms": [
+        "L R' L' BL' L R L' BL",
+        "Uw BL' L R' L' R BL Uw'",
+        "Uw' BL' B' R B R' BL Uw"
+      ],
+      "scramble": "L B L' B' U B L B' L'",
+      "scrambles": [
+        "L R' U' L' R L R' U R L'",
+        "L U' R' L' R B L' B' L' U L'",
+        "L U B L' B' L U' B L' B'",
+        "B L U' L B' L B L U L' B'",
+        "L U' B' L B' L B L B U L'",
+        "L' R' L' R L' U B L B' L'",
+        "L U' R' L' R L U L B L B'",
+        "L U' L' R' L R U R' L' R",
+        "L U' L B L B' L U L'",
+        "L U' L' R L R' U R L' R'",
+        "R' L U' L' R L R' U R L'",
+        "L U' B U B' R' L' R B U' B'",
+        "L B L' B' U B L B' L'",
+        "L' B' L' B U B' L B L' U' L'",
+        "L U' L' B' R B R' L U L'"
+      ],
+      "svgId": "37",
+      "tags": []
+    },
+    {
+      "id": "38",
+      "name": "OS7",
+      "group": "one-solved",
+      "algorithms": [
+        "Uw F U R B' R' B U' F' Uw'"
+      ],
+      "scramble": "L B L B' U B' R B R' U' L",
+      "scrambles": [
+        "L U R' L R B L B' L U' B L' B'",
+        "L' U' B L B' L' U L U L R' L' R",
+        "R' L' R L' U' L B L' B' U B L' B'",
+        "R L U B' R B R' U' R' L R L R'",
+        "L U' B' L' R' L R' B R' U B L' B'",
+        "L U' L B' R B R L' R U B L' B'",
+        "L B L B' U B' R B R' U' L",
+        "L' U' B L B' L' U L U' B' R B R'",
+        "L U' R' L R' B' R' B L' U B L' B'",
+        "L' U' R' L' R L U L U L' R' L R",
+        "B R B' U L' U' B U L U' R' B'",
+        "L' R' L R U' R' U' L' R L R' U R",
+        "R U L' U' B' R' B' R U L U' R' B'",
+        "L B L B' U R' L R L' U' B L B'",
+        "B' L' U' R' L R L' U R' L R B",
+        "L' U L U' R' L R L' U L' U' L",
+        "L U' R B' R L' R L B U B L' B'",
+        "L' R' L R L' U B' R B R' U' L"
+      ],
+      "svgId": "38",
+      "tags": []
+    },
+    {
+      "id": "39",
+      "name": "OS8",
+      "group": "one-solved",
+      "algorithms": [
+        "Uw' BL' U B' R B R' U' BL Uw"
+      ],
+      "scramble": "L' R' L' R U' R B' R' B U L'",
+      "scrambles": [
+        "L U' L' U B L' B' L U' L U L'",
+        "L U L' R' L R U' L' U B' R B R'",
+        "L' U' B L' B' R' L' R L' U R' L R",
+        "L U R U' R' L' B L' B' L R U R'",
+        "R' B' R U' L U R' U' L' U B R",
+        "B' U' L U R B R B' U' L' U B R",
+        "L' R' L' R U' B L' B' L U R' L' R",
+        "L B L' B' L U' R B' R' B U L'",
+        "L' U R L B L' B R' B U' R' L R",
+        "L' U L' R B' R' B' L B' U' R' L R",
+        "R L U B L' B' L U' B L' B' R'",
+        "L' R' L' R U' R B' R' B U L'",
+        "L' U B' R B' L B' L' R' U' R' L R",
+        "L U L' R' L R U' L' U' B' R B R'",
+        "L U' L' R' L R U L' U L R' L' R",
+        "B L B' L U L' R' L R U' R' L R",
+        "L' U B L' B R B R' L U' R' L R"
+      ],
+      "svgId": "39",
+      "tags": []
+    },
+    {
+      "id": "40",
+      "name": "OS9",
+      "group": "one-solved",
+      "algorithms": [
+        "U F U' L R' L' R U F'"
+      ],
+      "scramble": "L' U' R' L R L' U R' L' R L'",
+      "scrambles": [
+        "L' R' L R L' U R' L' R L U' L",
+        "L' U' R' L R L' U R' L' R L'",
+        "B' U B' L' B U' B U L B' R B R'",
+        "L' B U' B U L' U' B' U L' B'",
+        "B L' U' B U L' U' B' U L' B'",
+        "L' B U' B U L U' B' U L' B' L",
+        "L' U L U R B' R' B U' L' U' L",
+        "L' U' B L B' L' U L B L' B' L",
+        "B L' U' B U L U' B' U L' B' L",
+        "L U B' R B R' U' R' L R L",
+        "L' U' R' L R L' U B' R B R' L",
+        "L' U' B L B' L' U L B' R B R'",
+        "L U' B L B' R' L' R U B L' B'",
+        "L B L B' U R' L' R L U' L",
+        "L U L U' B' U B' L' B U' B L'"
+      ],
+      "svgId": "40",
+      "tags": []
+    },
+    {
+      "id": "41",
+      "name": "OS10",
+      "group": "one-solved",
+      "algorithms": [
+        "U BL' U R B' R' B U' BL"
+      ],
+      "scramble": "L U B L' B' L U' B L B' L",
+      "scrambles": [
+        "R' L U R' U' L U R U' L R",
+        "L' U' R B' R' B U B L' B' L'",
+        "L' U R' L' R B L B' U' R' L R",
+        "L U B L' B' L U' B L B' L",
+        "L R' U R' U' L U R U' L R",
+        "L B L' B' L U' B L B' L' U L'",
+        "L U B L' B' L U' R B' R' B L'",
+        "L U R' L' R L U' L' R B' R' B",
+        "B' L' U L' B L B' U' R' L R' B R'",
+        "L U' L' U' B' R B R' U L U L'",
+        "R' L U R' U' L' U R U' L R L'",
+        "L' U' L' U R U' R L R' U R' L",
+        "L U R' L' R L U' L' R' L R L'",
+        "L' R' L' R U' B L B' L' U L'",
+        "L R' U R' U' L' U R U' L R L'"
+      ],
+      "svgId": "41",
+      "tags": []
+    },
+    {
+      "id": "42",
+      "name": "OS11",
+      "group": "one-solved",
+      "algorithms": [
+        "Uo' U' R' U' R L R' L' U R (Uo)"
+      ],
+      "scramble": "L' U' B L B' L' U L",
+      "scrambles": [
+        "L' U' B L B' L' U L",
+        "L' U' B R L R' B' R L' R' U L",
+        "R B' R' U B' L' B U' B U L",
+        "L U R' L' R L U' L' B L B' L'",
+        "R L U' L R' L' R U B L' B' R'",
+        "B L' B' U' B L B' L' U L",
+        "L' B' U' B U B L B' U' B' U B",
+        "L' U L U L R' L' R U' L' U' L",
+        "B' U B' L' B U' B U L",
+        "L' U' L R B' R' B' L' B' U L",
+        "R' L R L U' B L B' L' U L",
+        "B' L B' U L' U' B U L U' L' B",
+        "B' R' L' R U' B' L' B L U L B",
+        "L U' L' U' L' R' L R U L U L'"
+      ],
+      "svgId": "42",
+      "tags": []
+    },
+    {
+      "id": "43",
+      "name": "OS12",
+      "group": "one-solved",
+      "algorithms": [
+        "U L U L' R' L R U' L'"
+      ],
+      "scramble": "L U R' L' R L U' L'",
+      "scrambles": [
+        "L R U R' U' R' L' R U R U' R'",
+        "B' R B U' R L R' U R' U' L'",
+        "B' L' U L' B L B' U' R' L R B",
+        "L R' L' R' U' R L R' U R' U' L'",
+        "R' L R U R' L' R L U' L'",
+        "B L' B' L' U R' L' R L U' L'",
+        "L U L' B' R B R L R U' L'",
+        "R B L B' U R L R' L' U' L' R'",
+        "R L' R U' L U R' U' L' U L R'",
+        "L U R' L' R L U' L'",
+        "L U B R' L' R L R B' R' U' L'",
+        "R U' R L R' U R' U' L'"
+      ],
+      "svgId": "43",
+      "tags": []
+    },
+    {
+      "id": "44",
+      "name": "OS13",
+      "group": "one-solved",
+      "algorithms": [
+        "Uo' U BR U L R' L' R U' BR' (Uo)"
+      ],
+      "scramble": "L U' L R' L' R U B L' B'",
+      "scrambles": [
+        "L' U L B L' B' U' L B' R B R'",
+        "L' U' L B L' B' U L U B' R B R'",
+        "L' U L B L' B' U' L B L' B' L",
+        "L' U L U L' B L B' U' L' U' L",
+        "B L U' B U L U' B' U B' L",
+        "B' L U L' U' B' U L U' B L' B",
+        "L' U L R' L' R U' L R' L' R L",
+        "L' B L' U' B U L U' B' U B' L",
+        "R' L R U' L R' L' R U B L' B'",
+        "R B L B' U' B' R B R' U L' R'",
+        "L U L' U' B' U B' L B U' B L'",
+        "L' U' R' L' R L U L' R' L R L",
+        "L U' L R' L' R U B L' B'",
+        "B' R B' L B' U' B' R B R' U L' R'",
+        "B' U L' U L B L' B' U B U L",
+        "R' L' R U' B L' B' L U B L B'"
+      ],
+      "svgId": "44",
+      "tags": []
+    },
+    {
+      "id": "45",
+      "name": "OS14",
+      "group": "one-solved",
+      "algorithms": [
+        "U' BL' U' R' L R L' U BL"
+      ],
+      "scramble": "R' L' U R' U' L' U R U' R L'",
+      "scrambles": [
+        "L' U' L U R U' R L' R' U R' L",
+        "R L' U' L U R U' L' U R' L R'",
+        "L R' L U R' U' L' U R U' R L'",
+        "R' L' U R' U' L' U R U' R L'",
+        "B L' B' U L' B L B' U' R' L R",
+        "L U B L B' L' U' L B L' B' L'",
+        "L U' L' U' L R' L' R U L U L'",
+        "L U' L' R' L R U L' R' L R L'",
+        "B' R' L' R U R B' R' B U' L B",
+        "L U' L' B L B' U L' B L B' L'",
+        "L' U L' B L B' U' R' L R",
+        "B L B' U R' L R L' U' R' L' R",
+        "R U' L U' L' R' L R U' R' U' L'",
+        "L U' L' R' L R U L' R B' R' B",
+        "R L U B R B' R B R B' U' L' R'",
+        "R L U B' R B R B' R B U' L' R'",
+        "R L U L R L' R L R L' U' L' R'"
+      ],
+      "svgId": "45",
+      "tags": []
+    },
+    {
+      "id": "46",
+      "name": "OS15",
+      "group": "one-solved",
+      "algorithms": [
+        "Uo' U BR U R B' R' B U' BR' (Uo)"
+      ],
+      "scramble": "R' L' R U' B L' B' L U L",
+      "scrambles": [
+        "L B L' B' L U L R' L' R U' L'",
+        "L R' L R U' B L' B' L U L",
+        "L' B L' B' U' B' U B' L' B U' B",
+        "L' U L B L' B' U' L R' L R L'",
+        "R' L' R U' B L' B' L U L",
+        "B L U' B U L U' B' U L B'",
+        "L U' L' R' L R U R B' R' B L'",
+        "L' U L B L' B' U' L R B' R' B",
+        "L' R' L' R U L R' L' R U' L'",
+        "L' R' L U R' U' L U R U' L' R",
+        "B L B' U' B' U B' L' B U' B",
+        "L U' L' R' L R U B L B' L",
+        "R' B' L' U B' R' B R U' L B R",
+        "L' B L' U' B U L U' B' U L B'",
+        "L B U' B U L' U' B' U L B' L'",
+        "L R L U' R' B' R B U L' R' L'"
+      ],
+      "svgId": "46",
+      "tags": []
+    },
+    {
+      "id": "47",
+      "name": "OS16",
+      "group": "one-solved",
+      "algorithms": [
+        "U BL' U' R B' R' B U BL"
+      ],
+      "scramble": "B L B' U R' L R L' U' L'",
+      "scrambles": [
+        "L B' R B R' U R' L R L' U' L'",
+        "L R' L R U R U' R L R' U R'",
+        "L' B L' B' U R' L R L' U' L'",
+        "L B L' U' B U L' U' B' U L B'",
+        "B R L U' R B R' B' U L' R' B'",
+        "L B L B' U' L' B L B' U L",
+        "L' U L B L' B' U' R' L' R L'",
+        "R' L' U R' U' L' U R U' L' R",
+        "R' L' R U R U' R L R' U R'",
+        "L R' L U R' U' L' U R U' L' R",
+        "L U' L' R' L R U L' B' R B R'",
+        "L U' L' U' B L' B' L U L U L'",
+        "B L B' U R' L R L' U' L'"
+      ],
+      "svgId": "47",
+      "tags": []
+    },
+    {
+      "id": "48",
+      "name": "OW1",
+      "group": "one-wrong",
+      "algorithms": [
+        "U' L' U' R' L R L' U L"
+      ],
+      "scramble": "L' U' L' R' L R U L",
+      "scrambles": [
+        "L' U R' L R L' U' B L B'",
+        "L' B L' B' L' U' L' R' L R",
+        "L' U' L R' L' R U L",
+        "B' L' U' R B R' B' U L B",
+        "L' U' L' R' L R U L",
+        "B L B' L' U' L' R' L' R L'",
+        "B L B' L' U L' R' L' R L'",
+        "B L B' L' U' L' R' L R",
+        "L' U' L R' L' R U L' R' L' R",
+        "L' U' L R' L' R U B L B'",
+        "L' U R' L R L' U' L' R' L' R",
+        "L' R' L R U' R L B L' B' R'",
+        "B L' B' U' L R' L' R U L",
+        "B L' B' U' L' R' L R U L",
+        "L' R' L R U R L B L' B' R'"
+      ],
+      "svgId": "48",
+      "tags": []
+    },
+    {
+      "id": "49",
+      "name": "OW2",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' U R U L R' L' R U' R' (Uo)"
+      ],
+      "scramble": "L U L' B L B' U' L'",
+      "scrambles": [
+        "L U L' B L B' U' L'",
+        "L U L' B L B' U' R' L' R",
+        "R' L' R L U' L B L B' L",
+        "L U' B L' B' L U R' L' R",
+        "L U' L' R' L' R L' U B L' B'",
+        "R L U B' R' B R U' L' R'",
+        "R' L' R L U L B L B' L",
+        "L R' L R L U L B L' B'",
+        "R' L R U L' B L B' U' L'",
+        "R' L R U L B L' B' U' L'",
+        "L U L B L' B' U' L'",
+        "R' L' R L U L B L' B'"
+      ],
+      "svgId": "49",
+      "tags": []
+    },
+    {
+      "id": "50",
+      "name": "OW3",
+      "group": "one-wrong",
+      "algorithms": [
+        "U L U B' R B R' U' L'"
+      ],
+      "scramble": "L U R B' R' B U' L'",
+      "scrambles": [
+        "L U R B' R' B U' L'",
+        "B' R B L U' R' L R L' U L' R'",
+        "R' L R U R B' R' B U' L'",
+        "B' R B L U R B' R' B U' L' R'",
+        "R' L' R L' U L' B L B' U' L'",
+        "L U' R' L R L' U L' B' R B R'",
+        "R L U' R' L R L' U L' R'",
+        "R L R U R B' R' B U' R' L' R'",
+        "L U' R B' R' B U L R' L R",
+        "R L U R B' R' B U' L' R'",
+        "B L' B' L' U R B' R' B U' L'"
+      ],
+      "svgId": "50",
+      "tags": []
+    },
+    {
+      "id": "51",
+      "name": "OW4",
+      "group": "one-wrong",
+      "algorithms": [
+        "U' L' U' R B' R' B U L"
+      ],
+      "scramble": "L' U' B' R B R' U L",
+      "scrambles": [
+        "L' U' B' R B R' U L B' R B R'",
+        "L' U' B' R B R' U L",
+        "B' L' U' B' R B R' U L R B R'",
+        "R' B' L' U B L' B' L U' L B R",
+        "L' U B L' B' L U' L R B' R' B",
+        "R B' R' L' U B L' B' L U' L B",
+        "B' L' U' B' R B R' U L B",
+        "L' U B' R B R' U' L' B L' B'",
+        "B L' B' U' B' R B R' U L",
+        "L' U B L' B' L U' L B' R B R'",
+        "R' L R L U' B' R B R' U L",
+        "B L B' L U' L R' L' R U L",
+        "B' L' U B L' B' L U' L B"
+      ],
+      "svgId": "51",
+      "tags": []
+    },
+    {
+      "id": "52",
+      "name": "OW5",
+      "group": "one-wrong",
+      "algorithms": [
+        "L' U L R' L' R U' L"
+      ],
+      "scramble": "L' U R' L R L' U' L",
+      "scrambles": [
+        "R' L R L U R' L R L' U' L",
+        "L' U' L' B L B' U L' B L' B'",
+        "L U L R B' R' B' L' B' U' L'",
+        "B L B' U' L R' L R L U L'",
+        "L U' L R' L' R U L R' L R",
+        "B' L' U R' L R L' U' L B",
+        "R L U B L' B' L U' L' R'",
+        "L' U L' B L B' U' B L B'",
+        "L' U' L' R' L R U L' R' L' R",
+        "B L' B' U R' L R L' U' L",
+        "L' U R' L R L' U' L",
+        "B L B' L U B L' B' L U' L",
+        "L' U' B L B' R' L' R U L"
+      ],
+      "svgId": "52",
+      "tags": []
+    },
+    {
+      "id": "53",
+      "name": "OW6",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' R U' R' L R L' U R' (Uo)"
+      ],
+      "scramble": "L U' B L' B' L U L'",
+      "scrambles": [
+        "R' L R U' B L' B' L U L'",
+        "L U' L R' L' R U R' L' R",
+        "R' U' R B L B' R' U R U' L'",
+        "R L U' B L' B' L U L' R'",
+        "R' L' R L' U' R' L R L' U L'",
+        "L U L B L' B' U' L B L B'",
+        "L U R' L' R B L B' U' L'",
+        "B' L' U' R' L R L' U L B",
+        "L' U L' B L B' U' L' B L' B'",
+        "L U L R' L' R U' L R' L R",
+        "B L' B' L' U' B L' B' L U L'",
+        "L U' B L' B' L U L'"
+      ],
+      "svgId": "53",
+      "tags": []
+    },
+    {
+      "id": "54",
+      "name": "OW7",
+      "group": "one-wrong",
+      "algorithms": [
+        "R' L R U B' R B R' U' L'"
+      ],
+      "scramble": "L U R B' R' B U' R' L' R",
+      "scrambles": [
+        "R' L' R U' L' B L B' U R' L R",
+        "L U' L' B L B' L' R' L R U L'",
+        "L U' L' R B L B' L' R' L U L'",
+        "B R L U B L' B' L U' L' R' B'",
+        "R L U' L' B L B' U L' B' R' B",
+        "L U' L' R B L B' R' U R L' R'",
+        "L U' R' L R L' U L B L B'",
+        "B' L' B' U L' B L B' U' B L B",
+        "L U' R L B' R B R' L' R' U L'",
+        "L U' R' L R B L B' L U L'",
+        "L U R B' R' B U' R' L' R",
+        "R L R' U R B' R' B U' R L' R'",
+        "L U L' R L B' R' B U' R L' R'",
+        "L U' B' L' B' R B R' L B U L'",
+        "R' L R U R B' R' B U' R' L' R",
+        "L U B L' B' L U' L' B' R B R'",
+        "L U' L B' L' R' L R B L' U L'"
+      ],
+      "svgId": "54",
+      "tags": []
+    },
+    {
+      "id": "55",
+      "name": "OW8",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' L R' L' U' B L' B' L U R (Uo)",
+        "R B' R F L' R L R' F' R B"
+      ],
+      "scramble": "L' U' B' R B R' U B L B'",
+      "scrambles": [
+        "R L R U' L R' L' R U R' L' R'",
+        "L' U B L' B' L U' L' R' L' R",
+        "B L B' U L R' L' R U' B L' B'",
+        "B' L' U L R' L' R U' L R B R'",
+        "L' U B L' B' R' L' R L' U' L",
+        "B' L' B U' B' R B R' U B' L B",
+        "B L' B' U' B' R B R' U B L B'",
+        "L' U' B' R B R' U L R' L R L'",
+        "L R L U B L' B' L U' L' R' L'",
+        "L B' L' U L R' L' R U' L B L'",
+        "L U B L' B' L U' L R' L' R L'",
+        "L' U' B' R B R' U B L B'",
+        "L' U' L B' L' R B R' U B' L B",
+        "L U L U' L R' L' R U L' U' L'",
+        "R' B' L' U' R' L R L' U L B R",
+        "L' U L B' R' L' R B U' B' L B",
+        "L' U' R' L R L' U L R B' R' B"
+      ],
+      "svgId": "55",
+      "tags": []
+    },
+    {
+      "id": "56",
+      "name": "OW9",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' B' R B U R' L R L' U' R' (Uo)",
+        "L R' L' F R L' R' L F' R"
+      ],
+      "scramble": "L U B L' B' L U' R' L' R",
+      "scrambles": [
+        "L U B L' B' L U' L B L B'",
+        "L U' L R' L R B L B' U L'",
+        "R L R' U' L' B L B' U R L' R'",
+        "L U' L' B R L R' B' U R L' R'",
+        "B' L' U L' B L B' U' L B",
+        "R' L R U B L' B' L U' R' L' R",
+        "L U' B' L B L B' L B U L'",
+        "L' U' R B' R' B U L B' R B R'",
+        "R' L' R U R B' R' B U' R' L R",
+        "L' U' R' L R L' U L' B L' B'",
+        "L U' R L R' L R L R' U L'",
+        "L U' B L B' L B L B' U L'",
+        "R L R' U R' B' R B U' R L' R'",
+        "L U B L' B' L U' R' L' R",
+        "R' L' R U' L B L' B' U R' L R",
+        "L U' R' L R L R' L R U L'"
+      ],
+      "svgId": "56",
+      "tags": []
+    },
+    {
+      "id": "57",
+      "name": "OW10",
+      "group": "one-wrong",
+      "algorithms": [
+        "R L U' R' L R L' U L' R'"
+      ],
+      "scramble": "R L U' L R' L' R U L' R'",
+      "scrambles": [
+        "L' U R' L' R L' R' L' R U' L",
+        "B L B' U L' R' L R U' B L' B'",
+        "L' U' R' L R L' U B L B'",
+        "L U B L' B' L U' L R' L R",
+        "L' U R L' R' L' R L' R' U' L",
+        "L' U L' B L' B' R' L' R U' L",
+        "B L B' U' B' R B R' U B L' B'",
+        "L' U B L' B' L' B L' B' U' L",
+        "B L' B' U' R' L R L' U B L B'",
+        "R L U' L R' L' R U L' R'",
+        "B' R B L U' L R' L' R U L' R'",
+        "L' U B' L' B L' B' L' B U' L",
+        "L' U' R' L R L' U L' R' L' R",
+        "L U B' R B R' U' L' R B' R' B"
+      ],
+      "svgId": "57",
+      "tags": []
+    },
+    {
+      "id": "58",
+      "name": "OW11",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' U R U R' L R L' U' R' (Uo)"
+      ],
+      "scramble": "L U B L' B' L U' L'",
+      "scrambles": [
+        "L' U' B L B' L R' L R U L",
+        "R' L' R L' U R' L R L' U' L'",
+        "L' U' R B' R' B U L",
+        "R' L R L U' R B' R' B U L",
+        "B L B' L U R U' R L R' U R'",
+        "B L' B' L' U B L' B' L U' L'",
+        "L U B L B' L R' L R U' L'",
+        "R L U R' B' R B U' L' R'",
+        "B L' B' U' R B' R' B U L",
+        "L U B L' B' L U' L'",
+        "R' L R U B L' B' L U' L'"
+      ],
+      "svgId": "58",
+      "tags": []
+    },
+    {
+      "id": "59",
+      "name": "OW12",
+      "group": "one-wrong",
+      "algorithms": [
+        "U L U R B' R' B U' L'"
+      ],
+      "scramble": "L' U' R' L R L' U L",
+      "scrambles": [
+        "L' U' R' L' R L' B L' B' U L",
+        "B L' B' U' R' L R L' U L",
+        "B' L' U' B R B' R' U L B",
+        "R' L' R L' U' B' U B' L' B U' B",
+        "L U R' L' R L' B L' B' U' L'",
+        "R' L R U B' R B R' U' L'",
+        "L' U' R' L R L' U L",
+        "B L B' L U' B L' B' L U L",
+        "L U B' R B R' U' L'",
+        "B L' B' L' U B' R B R' U' L'",
+        "R' L R L U' R' L R L' U L"
+      ],
+      "svgId": "59",
+      "tags": []
+    },
+    {
+      "id": "60",
+      "name": "OW13",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' U R' L F R F' R L' U' R' (Uo)"
+      ],
+      "scramble": "L U' L' B L B' U R' L' R",
+      "scrambles": [
+        "R' U L U' R L R' L' U L' U' R",
+        "L U' L' B L B' U L B L B'",
+        "R L U' R L R' L' U L' B' R' B",
+        "R L R' U B L' B' L U' R L' R'",
+        "R' L' R U' B' R B R' U R' L R",
+        "R U' L U R' B' R B U' L' U R'",
+        "R B' R' L' U' R B' R' B U L B",
+        "B' U' L U' L' B' L B U L' U B",
+        "L U' L' R B R L R' B' R' U L'",
+        "L' U L' B L B' U' L B' R B R'",
+        "L U B L B' L' U' L' B' R B R'",
+        "R' L R U' L' B L B' U R' L' R",
+        "B' L' U' R B' R' B U L B",
+        "R L R U' R L R' L' U R' L' R'",
+        "L U' L' B L B' U R' L' R"
+      ],
+      "svgId": "60",
+      "tags": []
+    },
+    {
+      "id": "61",
+      "name": "OW14",
+      "group": "one-wrong",
+      "algorithms": [
+        "U' L R' F' L' F L' R U L"
+      ],
+      "scramble": "L' U L R' L' R U' L' R' L' R",
+      "scrambles": [
+        "R U L' U L R L' R' U' L U' R'",
+        "B' U L' U' B R B' R' U L U' B",
+        "L' U L R' L' R U' B L B'",
+        "L' U L R' L' R U' L' R' L' R",
+        "B L' B' U L R' L' R U' B L B'",
+        "R L U B' R B R' U' L' R'",
+        "L U' L R' L' R U L' R B' R' B",
+        "B L B' U R B' R' B U' B L' B'",
+        "B U' L' U B' L' B L U' L U B'",
+        "L R L U L R L' R' U' L' R' L'",
+        "B' L' B U' R' L R L' U B' L B",
+        "L' U' R' L' R L U L R B' R' B",
+        "B' L' U B' L' B L U' L R B R'",
+        "B' R B L U B' R B R' U' L' R'",
+        "B' L' B' U B' L' B L U' B L B"
+      ],
+      "svgId": "61",
+      "tags": []
+    },
+    {
+      "id": "62",
+      "name": "OW15",
+      "group": "one-wrong",
+      "algorithms": [
+        "Uo' U R U R L R' L' U' R' (Uo)"
+      ],
+      "scramble": "L U B L B' L' U' L'",
+      "scrambles": [
+        "L U B L B' L' U' L'",
+        "R L U L R L' B' R' B U' L' R'",
+        "B R L U' L' B L B' U L' R' B'",
+        "R L R U B L' B' L U' R' L' R'",
+        "L U' L' R' L R U L R' L R",
+        "R L U B L' B' L U' L' B' R' B",
+        "L U B R L R' B' R L' R' U' L'",
+        "B L' B' L' U B L B' L' U' L'",
+        "R' B' L' U L' B L B' U' L B R",
+        "R' L R U B L B' L' U' L'",
+        "L U B R L B' L' B R' B' U' L'",
+        "L U' L' B L B' U L' B' R B R'",
+        "L' U L' B L B' U' L R B' R' B",
+        "B' L' U' R B' R' B U L R B R'",
+        "B' L' B' U' R B' R' B U B L B"
+      ],
+      "svgId": "62",
+      "tags": []
+    },
+    {
+      "id": "63",
+      "name": "OW16",
+      "group": "one-wrong",
+      "algorithms": [
+        "U' L' U' L' R' L R U L"
+      ],
+      "scramble": "L' U' R' L' R L U L",
+      "scrambles": [
+        "L U' L R' L' R U L' B' R B R'",
+        "R L R U B' R B R' U' R' L' R'",
+        "L' U L B L' B' U' L' B L' B'",
+        "B' L' U' L' B' L R B R' U L B",
+        "B R L U' L R' L' R U L' R' B'",
+        "L U' L' B L B' U B' R B R' L'",
+        "R' B' L' U L R' L' R U' L B R",
+        "L' U L R' L' R U' L R B' R' B",
+        "B' L' U' R' L R L' U L R B R'",
+        "L R L U' R' L R L' U L' R' L'",
+        "R' L R L U' R' L' R L U L",
+        "B' L' B' U' R' L R L' U B L B",
+        "B L' B' U' R' L' R L U L",
+        "L' U' R' L' R L U L",
+        "R L U B' R B R' U' L' B' R' B"
+      ],
+      "svgId": "63",
+      "tags": []
+    },
+    {
+      "id": "64",
+      "name": "OM1",
+      "group": "one-middle",
+      "algorithms": [
+        "(U) Uw' R' L' R L Uw",
+        "Uo' U L' D' L' D L' (Uo)"
+      ],
+      "scramble": "B L B' R' L' R",
+      "scrambles": [
+        "B' L' R' L R' B R'",
+        "R' L R' B' R' B L'",
+        "B L B' R' L R L",
+        "R L R B' R' B L' R'",
+        "L' R' L R B' R B R'",
+        "L' B L' B' R' L' R",
+        "L B' R B R L' R",
+        "L R B' R' B L'",
+        "B' R' L' R L B",
+        "R' B' R' L' R L B R",
+        "B L B R B R' L'",
+        "R B' R L' R L B",
+        "B L B' R' L' R"
+      ],
+      "svgId": "64",
+      "tags": []
+    },
+    {
+      "id": "65",
+      "name": "OM2",
+      "group": "one-middle",
+      "algorithms": [
+        "(U') D L R L' R' D'",
+        "(U') Uw L R' L R L Uw'",
+        "U' R D R D' R"
+      ],
+      "scramble": "R B L B' L' R'",
+      "scrambles": [
+        "B L' B R B R' L",
+        "L R B' R' B R' L' R",
+        "L' R B' R' B' L B'",
+        "L' B' R B R' L",
+        "B L B' L' B' R B R'",
+        "R' L' R B L B'",
+        "R L B L' B R' B",
+        "R' L' R B L' B' L'",
+        "B L B R B R L' R",
+        "L R' L R B L B'",
+        "R L B' R' B R L' R'",
+        "B' R B' L B' L' R'",
+        "R B L B' L' R'",
+        "R' L' R' B' R' B L",
+        "R L B' R B R' L' R'"
+      ],
+      "svgId": "65",
+      "tags": []
+    },
+    {
+      "id": "66",
+      "name": "OM3",
+      "group": "one-middle",
+      "algorithms": [
+        "Uw L U' B' R B R' U L' Uw'"
+      ],
+      "scramble": "L U L U' B L' B' L U L' U' L'",
+      "scrambles": [
+        "R L U R B' R' B U' B L' B' R'",
+        "L U R B' R' B U' L R' L' R L'",
+        "L U L U' B L' B' L U L' U' L'",
+        "R L R U' R B' R' B U R' L' R'",
+        "R L U' R B' R' B U L' R L R L'",
+        "L' U B' R B R' U' L U' B L B' L'",
+        "L U R B' R' B U' L' U' L B L' B'",
+        "R' L' R L U' L U' L' R' L R U L'",
+        "L U' L' R' L R U' B L B' L' U' L'",
+        "R L' R L' U' L' B L B' U R' L' R'",
+        "L' U B' R B R' U' L U' R B' R' B",
+        "R' L' R L U' L U' R B' R' B U L'",
+        "L U' L' R' L R U' B L' B' L U' L'",
+        "L U' R B' R' B U L' U L R' L' R",
+        "L U' L' B L B' U L' U' L B L' B'",
+        "L' R L U L' B L B' U' L' R L R"
+      ],
+      "svgId": "66",
+      "tags": []
+    },
+    {
+      "id": "67",
+      "name": "OM4",
+      "group": "one-middle",
+      "algorithms": [
+        "Uw' L' U R B' R' B U' L Uw"
+      ],
+      "scramble": "B' L' U' B' R B R' U R' L R B",
+      "scrambles": [
+        "L U R' L R L' U L B L' B' U L'",
+        "L U' R B' R' B U L' U B' R B R'",
+        "B' L' U' B' R B R' U R' L R B",
+        "L' U B' R B R' U' L U' L' B L B'",
+        "L' U L R' L' R U' L U L' R' L R",
+        "L B' L' U' L R' L' R U L B' L' B'",
+        "L' U L B L' B' U R' L R L' U L",
+        "L' U' B' R B R' U L U L' R' L R",
+        "B' L' B' U B' R B R' U' B L B",
+        "L' U L B L' B' U R' L' R L U L",
+        "B L B' L' U L' U B' R B R' U' L",
+        "L' U' L' U R' L R L' U' L U L",
+        "B L B' L' U L' U L B L' B' U' L",
+        "L U' R B' R' B U L' U R' L R L'",
+        "B' L B' L U L R' L' R U' B L B",
+        "L' U' B' R B R' U L' B L B' L",
+        "L U' R B' R' B U L' U R' L' R L"
+      ],
+      "svgId": "67",
+      "tags": []
+    },
+    {
+      "id": "68",
+      "name": "OM5",
+      "group": "one-middle",
+      "algorithms": [
+        "R B' R' B U R' L' R L"
+      ],
+      "scramble": "B L B' L' U' L R' L' R",
+      "scrambles": [
+        "L B L B' L U' B' R B R'",
+        "L' U B L' B' R' L R U' L",
+        "L' B L' B' L' U' L R' L' R",
+        "L' R' L R U' B' R B R'",
+        "B L B' L' U' L R' L' R",
+        "L' U' L' R B' R' B L U L",
+        "B L' B' R' L R U' B' R B R'",
+        "L' U B' R B R' U' B L B'",
+        "B' L' R' L R B U' B' R B R'",
+        "R U' L R B' R B R L' U R'",
+        "R U' B' R' L' R' L R' B U R'",
+        "L' U R' L R L' U' L' B L' B'",
+        "L B' R B R' L' U' L R' L' R",
+        "B' L' U' L' B L B' U L B"
+      ],
+      "svgId": "68",
+      "tags": []
+    },
+    {
+      "id": "69",
+      "name": "OM6",
+      "group": "one-middle",
+      "algorithms": [
+        "Uo' L R' L' R U' R L R' L' (Uo)"
+      ],
+      "scramble": "B L B' L' U L' B L B'",
+      "scrambles": [
+        "L U R' U' L R L' R' L' U R",
+        "L' R' L R U' B L B' L'",
+        "L' B L' B' L' U L' B L B'",
+        "L B' R B R' L' U L' B L B'",
+        "B L B' L' U L' B L B'",
+        "B' U B L' R' L R B' U' B",
+        "L' U' L B L' B' U R' L R",
+        "B' L' U R B' R' B U' L B",
+        "L B L B' L U' B L B' L'",
+        "L' U' B L' B' L U B L B'",
+        "B' U L B' L B L U' B",
+        "L' U L' R' L R U' L' B L' B'"
+      ],
+      "svgId": "69",
+      "tags": []
+    },
+    {
+      "id": "70",
+      "name": "OM7",
+      "group": "one-middle",
+      "algorithms": [
+        "(U) Uo' L R' L' R U' R' B' R B (Uo)",
+        "R' L R U' B' R B R' U L'"
+      ],
+      "scramble": "L B L' B' U R B' R' B",
+      "scrambles": [
+        "L' R' L' R L' U R B' R' B",
+        "B' U L' B' R B' R' B' L U' B",
+        "B' U R B L B L' B R' U' B",
+        "R L B L' B' R' U R B' R' B",
+        "L U' B L' B' L U L R' L R",
+        "R' L' R L U L' B L B'",
+        "R' L R B L' B' U R B' R' B",
+        "L U' R' L R B L' B' U L'",
+        "L U' R B' R' B U R' L' R",
+        "L U L B' R B R' L' U' L'",
+        "R L U L R' L' R U' L' R'",
+        "L B L' B' U R B' R' B",
+        "L R' L R L U L' B L B'",
+        "L' R B' R' B L U L' B L B'"
+      ],
+      "svgId": "70",
+      "tags": []
+    },
+    {
+      "id": "71",
+      "name": "OM8",
+      "group": "one-middle",
+      "algorithms": [
+        "R' L R U L R' L' R U' L'"
+      ],
+      "scramble": "L U R' L R L' U' R' L' R",
+      "scrambles": [
+        "B' R B U' L' R L' R' L' U R'",
+        "R' L' R L U' L R' L' R",
+        "L R' L R L U' L R' L' R",
+        "R U' R' L B L' B' R U R'",
+        "R' L' R B L B' U' B' R B R'",
+        "R L U' B' R B R' U L' R'",
+        "L' R' L' R L' U R' L' R L",
+        "R U' L' R L' R' L' U R'",
+        "L U R' L R L' U' R' L' R",
+        "R B L B' L' R' U' B' R B R'",
+        "L' B' R B R' L U' B' R B R'",
+        "L B L' B' U R' L' R L",
+        "L U L' R' L R U' B L' B'",
+        "R U' R' L' R' L' R L' R U R'"
+      ],
+      "svgId": "71",
+      "tags": []
+    },
+    {
+      "id": "72",
+      "name": "OM9",
+      "group": "one-middle",
+      "algorithms": [
+        "U L U R' L R L' U' L'"
+      ],
+      "scramble": "L U L R' L' R U' L'",
+      "scrambles": [
+        "L B U B' L B L' U' B' L'",
+        "L B L' B' U' L' B L B'",
+        "R' L' R U R' L' R L U' L",
+        "R' L R U L R' L' R U' L'",
+        "R L B L' B' R' U' L' B L B'",
+        "R B L B' L' R' U' R B' R' B",
+        "L' B' R B R' L U' R B' R' B",
+        "R' L R B L' B' U' L' B L B'",
+        "L U B L B' L' U' B L' B'",
+        "L' R' L' R L' U' L' B L B'",
+        "L U L R' L' R U' L'",
+        "L B' L' B U' L' B' L' B' L' B'",
+        "R' L' R B L B' U' R B' R' B",
+        "R' L' R L' U B' R B R' U' L'"
+      ],
+      "svgId": "72",
+      "tags": []
+    },
+    {
+      "id": "73",
+      "name": "OM10",
+      "group": "one-middle",
+      "algorithms": [
+        "(U') Uo' R' U' L R' L' R U R (Uo)"
+      ],
+      "scramble": "L' U' L' B L B' U L",
+      "scrambles": [
+        "L' R' L R U L R' L' R",
+        "B L B' U' B L B' L' U L'",
+        "B' L' R' L R B U L R' L' R",
+        "L' U' R' L' R L U R' L R",
+        "B L' B' U' L' B L B' U L",
+        "L' U' L' B L B' U L",
+        "L B L B' L U L R' L' R",
+        "B L' B' R' L R U L R' L' R",
+        "L' B L' B' U' B L B' L' U L'",
+        "B' R' L' R L B U B' R B R'",
+        "L R B' R' B L' U B' R B R'",
+        "L' R L R' U L R L R L R",
+        "L' R' U' R L' R' L U R L",
+        "B L B' R' L' R U B' R B R'"
+      ],
+      "svgId": "73",
+      "tags": []
+    },
+    {
+      "id": "74",
+      "name": "OM11",
+      "group": "one-middle",
+      "algorithms": [
+        "(U) D R' U' R' L R L' U R D'"
+      ],
+      "scramble": "L' U' B L' B' R' L R U L",
+      "scrambles": [
+        "L' U' B L' B R B R' L U L",
+        "L' U' B L' B' L U B L B R B R'",
+        "L' U' B L' B' R' L R U L",
+        "L U B L B' L' U' L R' L' R L'",
+        "B L' B' U' B L' B' R' L R U L",
+        "R L' R L' U' B' R' B R U R' L' R'",
+        "L' U' L' U' B L' B' L U L U L",
+        "R' U' R U' L U L R' L' U' L' U' R",
+        "L' U B L' B' L U' L' R' L R L",
+        "L' U' L' R B' R' B' L B' U L",
+        "L' U' R L B L' B R' B U L",
+        "L' U R L B L' B' U' R L R' U R'",
+        "L' U' L B L B' R' L' R L' U L",
+        "L' U' B' R B' L B' L' R' U L"
+      ],
+      "svgId": "74",
+      "tags": []
+    },
+    {
+      "id": "75",
+      "name": "OM12",
+      "group": "one-middle",
+      "algorithms": [
+        "Uw' U' L U L R' L' R U' L' Uw"
+      ],
+      "scramble": "L U R' L R B L' B' U' L'",
+      "scrambles": [
+        "L U L B' R B R L' R U' L'",
+        "L U R' L R' B' R' B L' U' L'",
+        "L U B' L' R' L R' B R' U' L'",
+        "L U B' L' R L B R' U' L R L R'",
+        "L U R B' R L' R L B U' L'",
+        "L U' R' L R L' U L B L' B' L'",
+        "L' U' R' L' R L U L' B L B' L",
+        "L U R' L R B L' B' U' L'",
+        "L U L' R' L' R B L B' L U' L'",
+        "L U L U R' L R L' U' L' U' L'",
+        "L B' L' U' B' L' B L U L B' L' B'",
+        "B U B' U L' U' L' B L U L U B'",
+        "R L R' U B' R B R' U' L R L R'",
+        "R' L R U R' L R B L' B' U' L'"
+      ],
+      "svgId": "75",
+      "tags": []
+    },
+    {
+      "id": "76",
+      "name": "OM13",
+      "group": "one-middle",
+      "algorithms": [
+        "U L R' L' R U' L' R' L R"
+      ],
+      "scramble": "L U L R' L R L U' L'",
+      "scrambles": [
+        "L U' B' L' R L B R' U R L' R'",
+        "L' R' L' R L' U B L' B' L",
+        "L R' L R L U R' L R L'",
+        "L B L B' U' R' L' R L U L",
+        "L' R B' R' B L U R' L R L'",
+        "L B L' B' U B L' B' L",
+        "L U R L R L R' L R' U' L'",
+        "R' L R U L R' L R L U' L'",
+        "R' L' R L U R' L R L'",
+        "R L B L' B' R' U B L' B' L",
+        "L U L R' L R L U' L'",
+        "R' L R B L' B' U B L' B' L"
+      ],
+      "svgId": "76",
+      "tags": []
+    },
+    {
+      "id": "77",
+      "name": "OM14",
+      "group": "one-middle",
+      "algorithms": [
+        "U' L R' L' R U R' L' R L"
+      ],
+      "scramble": "L' U' L' B L' B' L' U L",
+      "scrambles": [
+        "B L' B' R' L R U' R' L R L'",
+        "B L B' L' U' B L' B' L",
+        "L B L B' L U' R' L R L'",
+        "L' B L' B' L' U' B L' B' L",
+        "L B' R B R' L' U' B L' B' L",
+        "B L' B' U' L' B L' B' L' U L",
+        "L' U R U' L U' L' R' L R U' R'",
+        "L' R' L' R U B L B' L' U' L'",
+        "L' U' L' B L' B' L' U L",
+        "L' U' B' L' B' L' B L' B U L",
+        "L' R' L R U' R' L R L'",
+        "B' L' R' L R B U' R' L R L'"
+      ],
+      "svgId": "77",
+      "tags": []
+    },
+    {
+      "id": "78",
+      "name": "OM15",
+      "group": "one-middle",
+      "algorithms": [
+        "Uo' L R F L' R' L R F' L' R' (Uo)"
+      ],
+      "scramble": "R L U R' B' R B U' B L' B' R'",
+      "scrambles": [
+        "L' U' B L' B' L U L' B' R B R' L'",
+        "L' U' B L' B' L U R' L' R B L' B'",
+        "L' U' L' B L B' U L U R' L R L'",
+        "L B' R B R U R' U' L' U R U' R",
+        "L U L R' L' R U' L' U' L' R' L R",
+        "L' U B' R B R' U' L R' L R L'",
+        "R' L' R L U L' U' B L B' L' U L",
+        "L U R' L R L' U' L' U R B' R' B",
+        "L' U' B L' B' L U L' R' L R L",
+        "B L B' R' U R' U' L' U R U' R",
+        "B L B' L' U L' U L' R' L R U' L",
+        "L R L U' B L' B' L U L' R' L'",
+        "R L U R' B' R B U' B L' B' R'",
+        "L B' L' U R' L R L' U' L B' L' B'",
+        "L' B L' B' R' U R' U' L' U R U' R",
+        "R' L R' L U' B L' B' L U L' R' L'"
+      ],
+      "svgId": "78",
+      "tags": []
+    },
+    {
+      "id": "79",
+      "name": "OM16",
+      "group": "one-middle",
+      "algorithms": [
+        "R' L' F' R L R' L' F R L"
+      ],
+      "scramble": "R' L' R B U' B U L U' B' U B'",
+      "scrambles": [
+        "L U' L' B L B' U' B L B' L' U' L'",
+        "B' L' U' B R B' R' U R' L R B",
+        "L' U' B L' B' L U L U' B' R B R'",
+        "L U L R' L' R U' L' U' B L' B' L",
+        "L' U' L' B L B' U L U L B L' B'",
+        "L U R' L R L' U' B L B' R' L R",
+        "L' B' L' U R' L R L' U' L B L",
+        "L' R L U' B L' B' L U L' R L R",
+        "L' R B' R' B' U' B U L U' B' U B'",
+        "L R' L R B U' B U L U' B' U B'",
+        "B L B' L' U' L U R' L' R L U' L'",
+        "R' L' R L U' L U' L B L' B' U L'",
+        "L' U R' L R L' U' L U' B L B' L'",
+        "L U' R B' R' B U L' B L' B' L",
+        "L U R' L R L' U' L B L' B' L'",
+        "R' L' R B U' B U L U' B' U B'"
+      ],
+      "svgId": "79",
+      "tags": []
+    },
+    {
+      "id": "80",
+      "name": "AT1",
+      "group": "all-top",
+      "algorithms": [
+        "Uo' R L R' L' U' R L R' L' (Uo)",
+        "Uo' L R' L' R U B' R' B R (Uo)",
+        "U R' U' R L' R' L U R"
+      ],
+      "scramble": "R' U' L' R L R' U R",
+      "scrambles": [
+        "B L B' L' U B L B' L'",
+        "L' R' L R U L' R' L R",
+        "L' R' L R U' L R' L' R",
+        "B L B' L' U' R' L R L'",
+        "B' U' B L B L' B U B",
+        "L' R' L R U' L' B L B'",
+        "L' U R' L' R L U' R' L R",
+        "R' U' B' L' R L R' B U R",
+        "R' U' L' R L R' U R",
+        "B L B' L' U' R B' R' B",
+        "L' R' L U' R L' R' L U R",
+        "L B L B' L U' L R' L' R",
+        "L R' L' U' L' R L R' U R",
+        "L' U R U' R L R' U R'",
+        "R' U' B L' R L R' B' U R"
+      ],
+      "svgId": "80",
+      "tags": []
+    },
+    {
+      "id": "81",
+      "name": "AT2",
+      "group": "all-top",
+      "algorithms": [
+        "B' R B R' U L' R' L R"
+      ],
+      "scramble": "R' L' R L U' R B' R' B",
+      "scrambles": [
+        "L U' L B L' B' U B L' B'",
+        "L B L' B' U' B' R B R'",
+        "B' U' L' R B R' B' L U B",
+        "L R' L R L U B L B' L'",
+        "L' R' L' R L' U' B' R B R'",
+        "L R' L R L U' R B' R' B",
+        "L U B L B' R' L' R U' L'",
+        "L U' R B L B' L' R' U L'",
+        "L U' B' R' L' R L B U L'",
+        "R' L' R L U' R B' R' B",
+        "L B L' B' U' B L' B' L",
+        "R' L' R L U B L B' L'",
+        "L U L R' L' R U' R' L' R",
+        "L R' L R L U' R' L R L'",
+        "R' L' R L U' R' L R L'",
+        "L U L B L' B' U' B L' B'"
+      ],
+      "svgId": "81",
+      "tags": []
+    },
+    {
+      "id": "82",
+      "name": "AT3",
+      "group": "all-top",
+      "algorithms": [
+        "L R' L R U' R B' R' B U L"
+      ],
+      "scramble": "B' L' U B' R B R' U' L B",
+      "scrambles": [
+        "L' U' B L' B' L U L B L' B' L",
+        "B L B' U' L R' L' R U L R' L R",
+        "L' U' B' R B R' U L' B L' B'",
+        "L' U B' R B R' U' L B L B' L'",
+        "B' L' U B' R B R' U' L B",
+        "R L' R L' R' U B L' B' L U' L' R'",
+        "L' U' B' R B R' U B' R B R' L",
+        "R B' R' L' U B' R B R' U' L B",
+        "L' U' B' R B R' U R' L' R L'",
+        "L' U' B L' B' L U L B' R B R'",
+        "B' L' U' B U L U' L B' L' U B",
+        "R L' R' L' R U B L' B' L U' L' R'",
+        "B L' B' U' B' R B R' U L' B L' B'"
+      ],
+      "svgId": "82",
+      "tags": []
+    },
+    {
+      "id": "83",
+      "name": "AT4",
+      "group": "all-top",
+      "algorithms": [
+        "R L U L R' L' R U' L' R'",
+        "Uo' R' L R F R L' R' L F' L'"
+      ],
+      "scramble": "R L U R' L R L' U' L' R'",
+      "scrambles": [
+        "L R' L' R' L U R' L R L' U' L' R'",
+        "R B' R L' R U L R' L' R U' L B",
+        "R L U R' L R L' U' L' R'",
+        "L U' R B' R' B U L' R B' R' B",
+        "L U R B' R' B U' L B L' B' L'",
+        "L U' R' L R L' U L' B L B' L'",
+        "R U R' L' R L U L' U R' U' L",
+        "L' R L U' L' B L B' U L' R L R",
+        "R' L' R U' L R' L' R U L' B L' B'",
+        "L U' R' L R L' U B' R B R L' R",
+        "L U' R B' R' B U L' R' L R L'",
+        "L U R' L R L' U' L' R' L' R L",
+        "B' R B L U R' L R L' U' L' R'",
+        "B' R' L' R U L R' L' R U' L B"
+      ],
+      "svgId": "83",
+      "tags": []
+    },
+    {
+      "id": "84",
+      "name": "AT5",
+      "group": "all-top",
+      "algorithms": [
+        "B' R B R' U' R' L' R L"
+      ],
+      "scramble": "L' R' L R U R B' R' B",
+      "scrambles": [
+        "B L B' L' U' R' L' R L",
+        "L' R' L R U R' L R L'",
+        "L' U L' R' L R U' R' L R",
+        "B L B' U R' L' R L U' L'",
+        "L' U' R' L' R B L B' U L",
+        "L B L B' L U R B' R' B",
+        "L' U R B L B' L' R' U' L",
+        "L' U' L' R' L R U R' L R",
+        "L' B L' B' L' U' R' L' R L",
+        "L' U' L' B L B' U B L B'",
+        "B L B' L' U B L' B' L",
+        "L' R' L R U R B' R' B",
+        "L' U B' R' L' R L B U' L",
+        "L' B L' B' L' U B' R B R'",
+        "L B L B' L U R' L R L'",
+        "R U L B' R' B R L' U' R'",
+        "B L B' L' U B' R B R'"
+      ],
+      "svgId": "84",
+      "tags": []
+    },
+    {
+      "id": "85",
+      "name": "AT6",
+      "group": "all-top",
+      "algorithms": [
+        "Uo' L U L' R L R' U' L' (Uo)"
+      ],
+      "scramble": "B U L B' L' B U' B'",
+      "scrambles": [
+        "R' L' R L U B' R B R'",
+        "L B L' B' U L' B L B'",
+        "B U L B' L' B U' B'",
+        "B U R L B' L' B R' U' B'",
+        "L U' B' R B R' U R' L' R",
+        "R U R' L' R' L R' U' R'",
+        "R' L' R L U' R' L' R L",
+        "L B L' B' U' L B L' B'",
+        "L B L' B' U L R' L' R",
+        "R' L' R L U B L' B' L",
+        "L' R' L' R L' U L R' L' R",
+        "B U R' L B' L' B R U' B'",
+        "L U' B' U B' L' B U' B",
+        "L R' L R L U B' R B R'",
+        "L' B L U L B' L' B U' B'"
+      ],
+      "svgId": "85",
+      "tags": []
+    },
+    {
+      "id": "86",
+      "name": "AT7",
+      "group": "all-top",
+      "algorithms": [
+        "Uo' U L' R' U' R' L R L' U R L (Uo)"
+      ],
+      "scramble": "B' L' U' B L' B' L U L B",
+      "scrambles": [
+        "B' L' U' B L' B' L U L B",
+        "B' R B' L B' U' L' B L B' U L' R'",
+        "B' U' B L B' L' U' L U' B U L'",
+        "B L B' U L' B L B' U' L R' L R",
+        "L' U B L' B' L U' L R' L' R L",
+        "R B' R' L' U' B L' B' L U L B",
+        "L' U B' R B R' U' L B' R B R'",
+        "L' U' B' R B R' U L' R' L R L",
+        "R B L B' U' L' B L B' U L' R'",
+        "L' U B' R B R' U' L B L' B' L",
+        "L' U B L' B' L U' R B' R' B' L B'",
+        "L B' L' U L R' L' R U' L B' L' B'",
+        "L' B L B L' U' B L' B' L U L B",
+        "L' U' B L' B' L U L B L B' L'"
+      ],
+      "svgId": "86",
+      "tags": []
+    },
+    {
+      "id": "87",
+      "name": "AT8",
+      "group": "all-top",
+      "algorithms": [
+        "U R L U' B' R B R' U L' R'"
+      ],
+      "scramble": "R L U' R B' R' B U L' R'",
+      "scrambles": [
+        "L U R B' R' B U' B L' B R B R'",
+        "L U R B' R' B U' L R' L R",
+        "L R' L' R' L U' R B' R' B U L' R'",
+        "L U R' L R L' U' L' R B' R' B",
+        "L U' R B' R' B U L' U' B' R B R'",
+        "L' R' L R' L U' L' B L B' U L' R'",
+        "R L U R' U' L' U L' R L U' R'",
+        "R L U' R B' R' B U L' R'",
+        "L U' R B' R' B U L' R' L' R L",
+        "L U R B' R' B U' R B' R' B L'",
+        "B' R B L U' R B' R' B U L' R'",
+        "L U R' L R L' U' L' R' L R L'",
+        "L U R B' R' B U' B L B' L"
+      ],
+      "svgId": "87",
+      "tags": []
+    },
+    {
+      "id": "88",
+      "name": "AT9",
+      "group": "all-top",
+      "algorithms": [
+        "Uo' L U F L' R L R' F' U' L' (Uo)"
+      ],
+      "scramble": "L B U' B U L' U' B' U B'",
+      "scrambles": [
+        "L' U' R' L' R L U B' R B R' L",
+        "L U L' B' R B L R' U' L R L R'",
+        "L U R' L R L R' L' R L' U' L'",
+        "L U R' L' R L' R' L R L U' L'",
+        "L B U' B U L' U' B' U B'",
+        "R' L R B U' B U L' U' B' U B'",
+        "L U R' L' R L B L B' L' U' L'",
+        "L U B L B' L' R B' R' B U' L'",
+        "L U B' R B R' L B L' B' U' L'",
+        "L U L U' B L B' L' U L' U' L'",
+        "R L' R L' R' U L R L' R' U' L' R'",
+        "L U L R' L R L' R' L' R U' L'",
+        "L U R B R L R' B' R' L' U' L'",
+        "L' U' R' L' R L U R' L' R L'",
+        "L' U L' B L B' U' L B L B' L'",
+        "L U L' R' L' R L R' L R U' L'",
+        "R L' R' L' R U L R L' R' U' L' R'"
+      ],
+      "svgId": "88",
+      "tags": []
+    },
+    {
+      "id": "89",
+      "name": "AT10",
+      "group": "all-top",
+      "algorithms": [
+        "L B U' L U B L' BL L' BL' B"
+      ],
+      "scramble": "L' U' L B L' U L U' B L B L'",
+      "scrambles": [
+        "B L' B' U' L B L' U L U' B L B L'",
+        "B' L U R' L' R L U' L' B L' R' L R",
+        "B L U' R B R' B' U L B' R' L R",
+        "L' U' L B L' U L U' B L B L'",
+        "B U L B' L' U R B R' B' U' B U' B'",
+        "L' R' L R U' B U' B L' B L B U B'",
+        "B U L U' L R' L' R U B' L' B U' B'",
+        "L' B L' U' R B R' B' U L B' R' L R"
+      ],
+      "svgId": "89",
+      "tags": []
+    },
+    {
+      "id": "90",
+      "name": "AT11",
+      "group": "all-top",
+      "algorithms": [
+        "F' BL' F' B L' B' L F BL F"
+      ],
+      "scramble": "L' R' U R' U' L U R U' R",
+      "scrambles": [
+        "L U' L R' L' R U L' R' L' R L",
+        "L U B L B' L' U' B L B' L",
+        "L' U' B L B' L B L' B' L' U L",
+        "L' U' R' L' R L B' R B R' U L",
+        "L' U' L' B L' B' L B L B' U L",
+        "L' R' U R' U' L U R U' R",
+        "L' U' B' R' B' L' B R B L U L",
+        "L' U' B L B' L' R' L' R L U L",
+        "L U R' L R L' U' L' U' B' R B R'",
+        "L U L R' L' R U' L' U B' R B R'",
+        "B L' B' R' U R' U' L U R U' R",
+        "L U B L B' L' U' R B' R' B L'",
+        "L' U' B L' B' L' B L B' L U L",
+        "L' U' L B L B' L' B L' B' U L",
+        "L' U' L' U R' L' R L U' L U L",
+        "L U B L B' L' U' B L' B R B R'",
+        "L' U' R B' R' B L' R' L R U L"
+      ],
+      "svgId": "90",
+      "tags": []
+    },
+    {
+      "id": "91",
+      "name": "AT12",
+      "group": "all-top",
+      "algorithms": [
+        "Uo' BR R' L R BR' L' U' R L R' L' (Uo)"
+      ],
+      "scramble": "L' U' R' L R L' U L' R' L R L",
+      "scrambles": [
+        "L' U' R' L R L' U L' R' L R L",
+        "L' U L B L' B' U' L U R' L' R L",
+        "L' U' B' R B R' U' R' L' R L U' L",
+        "L B' L' U R B' R' B U' L B' L' B'",
+        "L U L' R' L R U' L' U L' R' L R",
+        "L U R' L' R L U' L B L' B' L'",
+        "L' U' R B' R' B U L U L' R' L R",
+        "L U B L' B' L U' L' U' L' R' L R",
+        "L' U' R B' R' B U L B L B' L'",
+        "R U' R L R' U R' U' L B L' B' L'",
+        "L U B L' B' L U' L' U B L B' L'",
+        "R L' U' R' U' L' U R U' L U' L R'",
+        "L' R L U' L R L' R' U L' R L R",
+        "L' U' B L' B' L U' R' L' R L U' L",
+        "R' U' L' U' B U R L R' U' B' U' R",
+        "L U B' R B R' U' B L B' R' L R",
+        "L U' L' R B L B' R' U L R L R'"
+      ],
+      "svgId": "91",
+      "tags": []
+    },
+    {
+      "id": "92",
+      "name": "AT13",
+      "group": "all-top",
+      "algorithms": [
+        "BL' U' BL R' L R L' BL' U BL"
+      ],
+      "scramble": "L' U' R' L R B L B' L U R' L R",
+      "scrambles": [
+        "L U B U' L' R L R' U B' U' R L' R'",
+        "R' L U' R U' L U R' U' L' U' R L'",
+        "L U' R U' R L' R' U R' U' L U' L'",
+        "R' L' R U' L' B L' B' R' L' R U L",
+        "L' U' L R' L R B L B' U R' L R",
+        "B L' U' L' U' B' U L U' B U' L B'",
+        "R' U L R U' L' U R' U' L U L' U' R",
+        "L' U' R' L R B L B' L U R' L R",
+        "R' L U L U R U' L' U R' U R L'",
+        "R' U L R' U' L' U R U' L U L' U' R",
+        "L' B U' L' U' B' U L U' B U' L B'",
+        "R' L' R U' B L' B' R' L' R L' U L",
+        "L U L' U R U' R L R' U R' U L'",
+        "L' R U' L U R' U' L' U' R U' L U R'",
+        "L R' U L U R U' L' U R' U R L'",
+        "R' L' R L U' L U L R' L' R U' L'",
+        "L R' U' R U' L U R' U' L' U' L' R",
+        "R' L U' R U' L U R' U' L' U' L' R",
+        "L U R' L R L' U' L' U L' R' L R",
+        "L R' U' R U' L U R' U' L' U' R L'"
+      ],
+      "svgId": "92",
+      "tags": []
+    },
+    {
+      "id": "93",
+      "name": "AT14",
+      "group": "all-top",
+      "algorithms": [
+        "L' U' R B' R L' R L B U L"
+      ],
+      "scramble": "L' U' L B' R B R L' R U L",
+      "scrambles": [
+        "L' U' R' L R' B' R' B L' U L",
+        "L U B L' B R B L R' U' R L' R'",
+        "L U' L B L' B' L' B L B' U L'",
+        "L' U' B' R B R' L B L' B' U L",
+        "L' U' L' R' L' R L R' L R U L",
+        "L' U' R' L' R L' R' L R L U L",
+        "L' U' R B' R L' R L B U L",
+        "L U' B L' B' L B L B' L' U L'",
+        "L' U' B L B' L' R B' R' B U L",
+        "L' U' B' L' R' L R' B R' U L",
+        "L' U' L B' R B R L' R U L",
+        "L U' L' R' L R L R' L' R U L'",
+        "L U R B' R' B R U' R L' R' U R'",
+        "L' U' L R' L R L' R' L' R U L",
+        "L' U' R' L R L R' L' R L' U L",
+        "L U' R' L R L' R' L' R L U L'"
+      ],
+      "svgId": "93",
+      "tags": []
+    },
+    {
+      "id": "94",
+      "name": "AT15",
+      "group": "all-top",
+      "algorithms": [
+        "BL' U BL R' L R L' BL' U' BL",
+        "BL' U' BL R B' R' B BL' U BL"
+      ],
+      "scramble": "L U B L' B' R' L' R L' U' B L' B'",
+      "scrambles": [
+        "B L B' U L R' L R B L B' U' L'",
+        "B L' U B' U L' U' B U L U L B'",
+        "B L' U B' U L' U' B U L U B' L",
+        "R' U L U' L' U R U' L U R' L' U' R",
+        "L U B U' L' B' R B L U B' U' L' R'",
+        "L U B L' B' R' L' R L' U' B L' B'",
+        "R' U L U' L' U R' U' L U R L' U' R",
+        "L R' U L U R U' L' U R' U L' R",
+        "R' L U L U R U' L' U R' U L' R",
+        "B L B' L' U L' U' L' B L B' U L",
+        "B L B' U R' L R B L B' L U' L'",
+        "L' B U B' U L' U' B U L U L B'",
+        "L' B U' L' U' B' U L U' B U' B' L",
+        "L' U' B L' B' L U L U' L B L' B'",
+        "L' U' L U' B' U B' L' B U' B U' L",
+        "L' B U B' U L' U' B U L U B' L",
+        "L U L' B L' B' R' L' R U' B L' B'",
+        "B L' U' L' U' B' U L U' B U' B' L",
+        "L' U B' U B' L B U' B U L' U L"
+      ],
+      "svgId": "94",
+      "tags": []
+    },
+    {
+      "id": "95",
+      "name": "AT16",
+      "group": "all-top",
+      "algorithms": [
+        "U L U L' R B' R' B' L B' U' L'"
+      ],
+      "scramble": "L U L' R B' R' B' L B' U' L'",
+      "scrambles": [
+        "L' U B L' B' L B L B' L' U' L",
+        "L' U L' R' L R L R' L' R U' L",
+        "L U B L' B R B R' L U' L'",
+        "L U R' L' R L B' R B R' U' L'",
+        "L U B L' B' L' B L B' L U' L'",
+        "R L U B' R B' L' B' L R' U' L' R'",
+        "L U L' B L' B' L B L B' U' L'",
+        "R L U L' R' B' R B' L B' U' L' R'",
+        "L U R L B L' B R' B U' L'",
+        "L U R B' R' B L' R' L R U' L'",
+        "L U B L B' L B L' B' L' U' L'",
+        "L U B' R B' L B' L' R' U' L'",
+        "L U L' R B' R' B' L B' U' L'",
+        "L' U L B L' B' L' B L B' U' L",
+        "L U L B L B' L' B L' B' U' L'",
+        "L' U R' L R L' R' L' R L U' L"
+      ],
+      "svgId": "95",
+      "tags": []
+    }
+  ]
+}

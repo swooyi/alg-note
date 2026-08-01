@@ -1,0 +1,84 @@
+{
+  "target_file": "C:\\dev\\alg-note\\alg\\fto\\1l3t\\cases.json",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Add formulas from the provided L3T Google Sheet to matching 1L3T JSON cases as the first algorithm, preserving existing algorithms and avoiding duplicate entries.",
+  "assumptions": [
+    "Match sheet rows to JSON cases by group + case, e.g. V + s+ matches case name Vs+.",
+    "Use the sheet Algorithm column as the new algorithm text.",
+    "Do not modify scrambles, setup values, SVGs, groups, metadata, or app bundle output."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_prepare_comparison",
+      "order": 1,
+      "title": "Prepare sheet and JSON comparison",
+      "check": true,
+      "targets": "Google Sheet gid 903615086 and alg/fto/1l3t/cases.json",
+      "allowed_fields": [],
+      "protected_fields": [
+        "all repository files"
+      ],
+      "summary": "Fetch and parse sheet rows, then confirm all sheet case keys exist in JSON.",
+      "verify": [
+        "Sheet row count is confirmed.",
+        "No sheet case key is missing from JSON."
+      ]
+    },
+    {
+      "id": "02_insert_algorithms",
+      "order": 2,
+      "title": "Insert sheet algorithms first",
+      "check": true,
+      "targets": "Matched JSON cases from the sheet",
+      "allowed_fields": [
+        "cases[*].algorithms"
+      ],
+      "protected_fields": [
+        "cases[*].id",
+        "cases[*].name",
+        "cases[*].group",
+        "cases[*].scramble",
+        "cases[*].scrambles",
+        "cases[*].svgId",
+        "cases[*].tags"
+      ],
+      "summary": "For each matched sheet row, add or move the sheet Algorithm value to algorithms[0].",
+      "verify": [
+        "All non-empty sheet algorithms are at algorithms[0].",
+        "Existing algorithms remain present unless they were duplicate values."
+      ]
+    },
+    {
+      "id": "03_validate_json",
+      "order": 3,
+      "title": "Validate changed JSON",
+      "check": true,
+      "targets": "alg/fto/1l3t/cases.json",
+      "allowed_fields": [],
+      "protected_fields": [],
+      "summary": "Parse JSON and confirm expected counts and protected-field stability.",
+      "verify": [
+        "cases.json parses successfully.",
+        "Case count remains 179.",
+        "Only algorithms arrays changed."
+      ]
+    },
+    {
+      "id": "04_finalize_checklist",
+      "order": 4,
+      "title": "Finalize checklist",
+      "check": true,
+      "targets": ".check-list checklist file",
+      "allowed_fields": [
+        "tasks[*].check"
+      ],
+      "protected_fields": [],
+      "summary": "Mark verified tasks complete and archive the checklist with a matching filename count.",
+      "verify": [
+        "Checklist JSON parses successfully.",
+        "Filename count matches completed task count."
+      ]
+    }
+  ]
+}

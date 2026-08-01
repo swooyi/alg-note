@@ -1,0 +1,5204 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "FTO",
+  "algset": "1l3t",
+  "cases": [
+    {
+      "id": "1",
+      "name": "Os+",
+      "group": "o",
+      "algorithms": [
+        "{L,F} R' U R' D' R U' R' D R2"
+      ],
+      "scramble": "R BR' R L R' BR R L' R",
+      "scrambles": [
+        "R BR' R L R' BR R L' R",
+        "B L' B BR B' L B BR' B",
+        "R' U' R' BR' R' BR' B' BR' B' U' B'"
+      ],
+      "svgId": "1",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Os-",
+      "group": "o",
+      "algorithms": [
+        "{L,F} R2' D' R U R' D R U' R"
+      ],
+      "scramble": "B' BR B' L' B BR' B' L B'",
+      "scrambles": [
+        "B' BR B' L' B BR' B' L B'",
+        "R' L R' BR' R L' R' BR R'",
+        "B U B BR B BR R BR R U R"
+      ],
+      "svgId": "2",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Oc0",
+      "group": "o",
+      "algorithms": [
+        "{B,U} U' R U' R' Rw U R' U' R Rw' U'"
+      ],
+      "scramble": "B L' B BR' L R' L R BR L' B",
+      "scrambles": [
+        "R L' B L B' BR' L R L' R' BR R'",
+        "R BR L B L' B' BR' L R L R' L R'",
+        "R BR L' B L B' BR' L R L' R",
+        "B' BR B' L' B BR' L R' L R L' B",
+        "B L' B BR' L R' L R BR L' B"
+      ],
+      "svgId": "3",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Oc+",
+      "group": "o",
+      "algorithms": [
+        "L R' L' R' B' R' B"
+      ],
+      "scramble": "B' R B R L R L'",
+      "scrambles": [
+        "B' R B R L R L'",
+        "R' L R L B L B'",
+        "L' B L B R B R'",
+        "R' L' R' B R L R' B' R'"
+      ],
+      "svgId": "4",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Oc-",
+      "group": "o",
+      "algorithms": [
+        "{B,U} R U' R' U' {U,BL} R D' R U' R' D R'"
+      ],
+      "scramble": "R BR' R L R' BR R' L B L B'",
+      "scrambles": [
+        "L' B' BR B' L B BR' B U B' R B R'",
+        "R BR L' B L B' BR L R L' R' BR R'",
+        "B L' B' L' R BR L' B L' B' BR' L R'",
+        "R' L R L B' BR B' L B BR' B",
+        "R BR' R L R' BR R' L B L B'"
+      ],
+      "svgId": "5",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Oa0",
+      "group": "o",
+      "algorithms": [
+        "{B,U} U Rw R' U R U' Rw' R U R' U"
+      ],
+      "scramble": "B' BR' L R' L' R BR L' B' L B'",
+      "scrambles": [
+        "B' BR' L R' L' R BR L' B' L B'",
+        "R BR' L' R L' R' BR L' B L B' L' R'",
+        "R BR' R L R' BR L' B L' B' L R'",
+        "B' L R' L' R BR L' B' L B BR' B",
+        "R' L R' BR L' B L' B' BR' L R'"
+      ],
+      "svgId": "6",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Oa+",
+      "group": "o",
+      "algorithms": [
+        "{B,U} U' R U R {R,F} R' D R' U R D' R"
+      ],
+      "scramble": "B' BR B' L' B BR' B L' R' L' R",
+      "scrambles": [
+        "B L' B' L' R BR' R L' R' BR R'",
+        "R BR' R L R' BR' L' B L' B' BR' L R'",
+        "B' BR B' L' B BR' B L' R' L' R"
+      ],
+      "svgId": "7",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Oa-",
+      "group": "o",
+      "algorithms": [
+        "B' R B R L R L'"
+      ],
+      "scramble": "R B' R' B' L' B' L",
+      "scrambles": [
+        "R B' R' B' L' B' L",
+        "L R' L' R' B' R' B",
+        "B L' B' L' R' L' R",
+        "R' L R' L' B L' B' L R'"
+      ],
+      "svgId": "8",
+      "tags": {
+        "sourceGroup": "O-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "9",
+      "name": "Ob0",
+      "group": "o",
+      "algorithms": [
+        "{B,BR} Rw U R' U' Rw' R U R U' R'"
+      ],
+      "scramble": "BR' R' U R U' B' R BR' R' BR B BR",
+      "scrambles": [
+        "R U' B' U R L' R' U' B U R L R",
+        "R' L R' L' B BR B L' B' BR' B' L R'",
+        "B' BR' B' R B R' BR L' B' L R B' R'",
+        "B' L B L' U R' L B' L B L R",
+        "BR' R' U R U' B' R BR' R' BR B BR",
+        "R' L R' BR' R BR R L' R' BR' R' BR R'"
+      ],
+      "svgId": "9",
+      "tags": {
+        "sourceGroup": "O-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Ob+",
+      "group": "o",
+      "algorithms": [
+        "{BL,F} R' U B' S' B U' R"
+      ],
+      "scramble": "BR' U BR R' L R BR' R' L' R U' BR",
+      "scrambles": [
+        "B R B R' B U B' L' B' L R B' R'",
+        "B R B R' B U B R' L R L' B'",
+        "L R' L' R' B R' B' U B' R B' R' B'",
+        "BR' U BR R' L R BR' R' L' R U' BR",
+        "B R B' R L R L' U B' R B' R' B'",
+        "R' L' B' L B R U' R' L' B' L B R",
+        "R BR' R BR L R L' R' BR' R' BR R'"
+      ],
+      "svgId": "10",
+      "tags": {
+        "sourceGroup": "O-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "11",
+      "name": "Ob-",
+      "group": "o",
+      "algorithms": [
+        "{BR,U} R U' L H' L' U R'"
+      ],
+      "scramble": "R BR' L R' B R' B' R' BR L' R'",
+      "scrambles": [
+        "R BR' R' L B R B' R' L' R BR R'",
+        "R BR' R' L R' L' R B R B' BR R'",
+        "R BR' L R L' R B R' B' R' BR R'",
+        "R BR' L R' B R' B' R' BR L' R'",
+        "R BR' B R' B L R' L' R' B BR R'",
+        "R BR' B' R' L' B L B' R B BR R'"
+      ],
+      "svgId": "11",
+      "tags": {
+        "sourceGroup": "O-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "12",
+      "name": "Vs0",
+      "group": "v",
+      "algorithms": [
+        "{L, D} [D' R' U'  : S H ]\n(시점변경, 노란세모 좌상단)",
+        "{L,D} D' R' U' S H U R D",
+        "(U) Rw' U' R' F' U Rw' F Rw U' F U' R U Rw"
+      ],
+      "scramble": "B U B' R BR B' BR' R' B U' B' R B R'",
+      "scrambles": [
+        "R' U' R B' BR' R BR B R' U R B' R' B",
+        "R B' R' B U B' R BR B BR' R' B U' B'",
+        "B' R B R' U' R B' BR' R' BR B R' U R",
+        "B U B' R BR B' BR' R' B U' B' R B R'"
+      ],
+      "svgId": "12",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Vs+",
+      "group": "v",
+      "algorithms": [
+        "{Uo} [B' : R Br' R'] U [B' : R Br' R']\nS U x4",
+        "Rw U  R' U' R F R' U R F' U' Rw'",
+        "{B,R} R' U R' U' R D R' U R D' U' R"
+      ],
+      "scramble": "R B' BR B R' U' R B' BR B R'",
+      "scrambles": [
+        "R' U' BR B U' BR' U' R' U BR U B BR'",
+        "B U B BR' R BR U' B U B BR' R BR",
+        "B' R BR R' B U' B' R BR R' B",
+        "B U B' R BR R' U B U B' R BR R'",
+        "R U R' U' BR B BR' U R' U' BR B BR' R'",
+        "B' R BR' B R' B' R BR' B BR' R' B U' B'",
+        "B' BR B R' U R U B' BR B R' U R",
+        "R B' BR B R' U' R B' BR B R'",
+        "R BR B BR' U R' U' BR B BR' U R' U' R'",
+        "R' U' R B' BR' R BR' B R' B' R BR' B R'",
+        "BR' R U BR U B' U' BR' U' R BR U' B'",
+        "BR B BR' R U R U' BR B BR' R U R"
+      ],
+      "svgId": "13",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Vs-",
+      "group": "v",
+      "algorithms": [
+        "{Uo} [B' : R Br R'] U' [B' : R Br R']",
+        "Rw U F R' U' R F' R' U R U' Rw'",
+        "{L,B} R' U D R' U' R D' R' U R U' R"
+      ],
+      "scramble": "B' R BR' R' B U B' R BR' R' B",
+      "scrambles": [
+        "R BR' R' B U' B' U' R BR' R' B U' B'",
+        "B' BR' R' BR U' B U BR' R' BR U' B U B",
+        "R U R U' BR B' BR' U R U' BR B' BR' R'",
+        "R BR B' BR' U R U' BR B' BR' U R U' R'",
+        "BR B' U' BR' U' R U BR U B' BR' U R",
+        "R B' BR R' B R B' BR R' BR B R' U R",
+        "R' U' R' BR B' BR' U R' U' R' BR B' BR'",
+        "B U BR' R' U BR U B U' BR' U' R' BR",
+        "R B' BR' B R' U R B' BR' B R'",
+        "BR' R' BR B' U' B' U BR' R' BR B' U' B'",
+        "R' U' R B' BR' B U' R' U' R B' BR' B",
+        "B' R BR' R' B U B' R BR' R' B"
+      ],
+      "svgId": "14",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Vc0",
+      "group": "v",
+      "algorithms": [
+        "{Uo} Br' Rw / [S', U' ] / Rw' Br\n(셋업후 OLP4)",
+        "{R,BR} D' Rw U R' U' R BR' R' U R U' BR Rw' D"
+      ],
+      "scramble": "R B' R' B U B' U B' U' R U B U' R B R",
+      "scrambles": [
+        "R B' R' B U B' U B' U' R U B U' R B R"
+      ],
+      "svgId": "15",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "16",
+      "name": "Vc+",
+      "group": "v",
+      "algorithms": [
+        "R' U' S U R / L R' L' B' R B",
+        "R' U' S U R L R' L' B' R B"
+      ],
+      "scramble": "B' R' B L R L' R' U' L R' L' R U R",
+      "scrambles": [
+        "B' R' B L R L' R' U' L R' L' R U R"
+      ],
+      "svgId": "16",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "17",
+      "name": "Vc-",
+      "group": "v",
+      "algorithms": [
+        "{Bl,U} L' R / U S U S U/ L R'\n{Bro'}",
+        "{L,U} U' R BR R' U R U' BR R' U R U' BR U R'"
+      ],
+      "scramble": "B' R BR R' B U' L' B L B R BR B R'",
+      "scrambles": [
+        "R' U R BR U R B' R' B U' BR' R' U' R",
+        "BR' R' U' R U R B' R' B U' R' U R BR",
+        "BR B U B' U' R B' R' B U B U' B' BR'",
+        "B' R BR R' B U' L' B L B R BR B R'",
+        "L' B L B R BR B R' U' R B' BR B R'",
+        "L U' R' BR U' R' L' R L U BR' R U L'",
+        "B U' B' BR' U' R B' R' B U BR B U B'",
+        "B' R BR B R L R L' U' R B' BR B R'",
+        "B' R' BR R' B U R' B' U R B' BR B' R'",
+        "L' U B BR' U L B L' B' U' BR B' U' L",
+        "B' R BR R' B U' B' R BR B R L R L'"
+      ],
+      "svgId": "17",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "18",
+      "name": "Va0",
+      "group": "v",
+      "algorithms": [
+        "{Uo'} Br' Rw / [S', U ] / Rw' Br\n(셋업후 OLP4)",
+        "{B,BL} D' Rw U R' U' R BR R' U R U' BR' Rw' D"
+      ],
+      "scramble": "BR F' BL D L' D' L BL' L' D L D' F BR'",
+      "scrambles": [
+        "F' BR BL D L' D' L BL' L' D L D' BR' F",
+        "BR F' BL D L' D' L BL' L' D L D' F BR'"
+      ],
+      "svgId": "18",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "19",
+      "name": "Va+",
+      "group": "v",
+      "algorithms": [
+        "{Br,U} R L' / U' S' U' S' U'/ R' L\n{Blo}",
+        "{B,U} R U' BR' U R' U' R BR' U R' U' R BR' R' U"
+      ],
+      "scramble": "R' U R BR U B' R B R' U' BR' R' U' R",
+      "scrambles": [
+        "B U' B' BR' U' B' R B R' U BR B U B'",
+        "R B' BR' R' B' L' B' L U B' R BR' R' B",
+        "L' U B BR' U B L B' L' U' BR B' U' L",
+        "R B' BR' B R' U L R' L' R' B' BR' R' B",
+        "R B' BR' B R' U R B' BR' R' B' L' B' L",
+        "R' U R BR U B' R B R' U' BR' R' U' R",
+        "BR' R' U' R U B' R B R' U' R' U R BR",
+        "R B BR' B R' U' B R U' B' R BR' R B",
+        "L U' R' BR U' L' R' L R U BR' R U L'",
+        "BR B U B' U' B' R B R' U B U' B' BR'",
+        "L R' L' R' B' BR' R' B U B' R BR' R' B"
+      ],
+      "svgId": "19",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Va-",
+      "group": "v",
+      "algorithms": [
+        "L U S' U' L' / R' L R {Uo'} L R' L'\n{U,BL} R U H U' H L R L' R",
+        "{U,BL} R U H U' H L R L' R"
+      ],
+      "scramble": "B L B' R' L' R L U R' L R L' U' L'",
+      "scrambles": [
+        "B L B' R' L' R L U R' L R L' U' L'"
+      ],
+      "svgId": "20",
+      "tags": {
+        "sourceGroup": "V-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Vb0",
+      "group": "v",
+      "algorithms": [
+        "{Uo'} Rw' L R L' /Rw R'/ U S'\n(Swap R에 두고 꼭짓점 우상단)",
+        "[U] {U,BR} Rw' L R L' Rw R' U S'"
+      ],
+      "scramble": "L B' R BR' B' BR R BR' B BR R' B R' L'",
+      "scrambles": [
+        "L B' R BR' B' BR R BR' B BR R' B R' L'"
+      ],
+      "svgId": "21",
+      "tags": {
+        "sourceGroup": "V-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "22",
+      "name": "Vb+",
+      "group": "v",
+      "algorithms": [
+        "{Uo'} S U S U' Hl'\n(Swap R에 두고 두고 꼭짓점 우상단)",
+        "{BL,F} B R' U' S U B' R",
+        "[U] {U,BL} H U' S U S"
+      ],
+      "scramble": "BR' R U' B L' B' L U L R' BR L'",
+      "scrambles": [
+        "B BR' R B U' R U B' U' R' U R' BR B'",
+        "B' R BR R' B R B' BR' B R' L R' L' R",
+        "BR' R U' B L' B' L U L R' BR L'",
+        "B' R BR R B' R L R' L' B R' BR' B R'",
+        "R B' R' B U L R' L' R U' L' B L B'",
+        "R B' BR' B R' B' R BR R' B L R' L' R",
+        "B' R BR B R' L' B L B' R B' BR' B R'",
+        "B L' B' L U' B L' B' L U R' L R L'",
+        "B' R BR R' B L R' L' R' B' BR' B R'",
+        "R B' BR' B R' B' R BR B R' L' B L B'",
+        "B' R BR B R' B' R BR R BR R' B U R'",
+        "B L' B' L U' B' R B R' U B L' B' L",
+        "B' R B R' U' L R' L' R U B L' B' L",
+        "R' L R L' U R B' R' B U' R B' R' B",
+        "L' U BR U' B U L' U' B' U BR' L U' L",
+        "R B' R' B U L' B L B' U' R B' R' B",
+        "B' R BR B' R' L R' L' R B R BR' B R'"
+      ],
+      "svgId": "22",
+      "tags": {
+        "sourceGroup": "V-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "23",
+      "name": "Vb-",
+      "group": "v",
+      "algorithms": [
+        "[U] S' U' S' U {Uo'} HL\n(Swap L로 두고 꼭짓점  좌상단)",
+        "B' BLw U H U' L BLw'",
+        "[U'] {U,BL} S' U' S' U H'"
+      ],
+      "scramble": "R B' BR B R L R L' B' R BR' R' B",
+      "scrambles": [
+        "L' B L B' U' R' L R L' U R B' R' B",
+        "B BR' R U' R U B U' R' U B' R' BR B'",
+        "R U' B' R BR' R' BR' R' B R B' BR' R' B",
+        "R' L R L' R B' BR B R' B' R BR' R' B",
+        "R B' BR B R' B L' B' L R B' BR' R' B",
+        "B' R B R' U B L' B' L U' B' R B R'",
+        "L' B L B' U' R B' R' B U L' B L B'",
+        "L' U BR L' U' B U L U' B' U BR' U' L",
+        "R B' BR R' B' R' L R L' R B BR' R' B",
+        "B L' B' L R B' BR' R' B R B' BR B R'",
+        "BR U L' U L' U' B U L U' B' L U' BR'",
+        "B L' B' L U R' L R L' U' B' R B R'",
+        "R B' BR R B' L R L' R' B R' BR' R' B",
+        "R' L R L' B' R BR' R' B R B' BR B R'",
+        "L R' L' R U' L' B L B' U L' B L B'",
+        "R B' BR B R L R L' B' R BR' R' B",
+        "BR' L R L' U' L' B L B' U R' BR",
+        "B' R B R' U B' R B R' U' L R' L' R"
+      ],
+      "svgId": "23",
+      "tags": {
+        "sourceGroup": "V-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "24",
+      "name": "Qs0",
+      "group": "q",
+      "algorithms": [
+        "[U] {L,F} R U R' U' Rw R' U R U' Rw'"
+      ],
+      "scramble": "L' U' R B' BR' R BR R' B U R' L",
+      "scrambles": [
+        "L U L R' B' R' B L R' L U' R L' R'",
+        "R BR' B BR B L B' BR' B' BR B L' B' R'",
+        "R' U' L' R' BR L' B L B' BR' L R U R",
+        "R U R' BR L' B L' B' BR' L R L U' R'",
+        "L U B' R' L' R' L R' B U' R L' R'",
+        "L U L R L' B L B' R' L' U' R L' R'",
+        "L' B' R B BR R' L R BR' R' L' R' L R",
+        "L U L' R L R B' R' B R' U' R L' R'",
+        "R B R L U' B L B' L' U R' L' B' R'",
+        "L R BR' B' BR R' L' R BR' L B BR L' R'",
+        "L' U' R B' BR' R BR R' B U R' L",
+        "L' B' R B R L' U' L' R L R' U L' R",
+        "L U R' L' R' L R B' R B U' R L' R'",
+        "B' L B' BR' R' L' R BR L B L B L",
+        "BR' B L B' BR L' R BR' L B L' B' BR R'",
+        "B' R' L' R' BR L' B L B' BR' L R' B",
+        "B U L B' L' B U' B' R L B L' B' R'",
+        "L U R B' R' L' R L B R' U' R L' R'"
+      ],
+      "svgId": "24",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "25",
+      "name": "Qs+",
+      "group": "q",
+      "algorithms": [
+        "[U'] {U,BR} H U' S'"
+      ],
+      "scramble": "B' R B R' U L' B L B'",
+      "scrambles": [
+        "B' U R' BR R L R' BR' R L' U' B",
+        "B' R B R' U L' B L B'",
+        "B L' B' L U L B' R B R' B L' B'",
+        "B' R B R' U B L' B' L B L' B' L",
+        "L R' L' R B L' B' L U L' B L B'",
+        "B L' B' L U R' L R L' B L' B' L",
+        "B L' B' L U L' B L B' L R' L' R",
+        "B L' B' L U B' R' B L' B L B' R",
+        "B L' B' L U L R' L' R B' R B R'",
+        "B L' B' L U B L B' R B' R' B L'",
+        "R B' R' B R B' R' B U L' B L B'",
+        "R' U L R U' R' U' L' U' L R U L'",
+        "B' R B R' U R B' R' B L R' L' R",
+        "B' BR B' L' B BR' B L U' R B' R' B",
+        "B L' B' L U R B' R' B R' L R L'"
+      ],
+      "svgId": "25",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "26",
+      "name": "Qs-",
+      "group": "q",
+      "algorithms": [
+        "[U] {U,BR} S U H'"
+      ],
+      "scramble": "B L' B' L U' R B' R' B",
+      "scrambles": [
+        "B' U L R' BR R L' R' BR' R U' B",
+        "L' B L B' L R' L' R U' L' B L B'",
+        "R B' R' B R' L R L' U' L' B L B'",
+        "B' R B R' U' R B' R' B R' L R L'",
+        "L R' L' R B' R B R' U' L' B L B'",
+        "B L B' R B' R' B L' U' L' B L B'",
+        "B' R B R' U' L B' R B R' B L' B'",
+        "B' R B R' U' B L B' R B' R' B L'",
+        "B L' B' L U' B' R B R' B' R B R'",
+        "L U' R' L' U L U R U R' L' U' R",
+        "B L' B' L U' R B' R' B",
+        "B' R B R' U' R' L R L' B L' B' L",
+        "B' R B R' U' L' B L B' L R' L' R",
+        "B L' B' L U' L' B L B' R' L R L'",
+        "B' R B R' U' B' R' B L' B L B' R",
+        "B' R B R' U' L R' L' R B' R B R'",
+        "B' R' B L' B L B' R U' L' B L B'"
+      ],
+      "svgId": "26",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "27",
+      "name": "Qc0",
+      "group": "q",
+      "algorithms": [
+        "[U] H' U S'"
+      ],
+      "scramble": "R' L R L' U' R B' R' B",
+      "scrambles": [
+        "R' L R L' U' R B' R' B",
+        "B' R B R' B' R B R' U' L' B L B'",
+        "L' B L B' R' L R L' U' L' B L B'",
+        "R' L R L' U' L' B L B' R' L R L'",
+        "B U B BR' R BR' B BR' R U L R L'",
+        "R B' R' B U' B L' B' L B L' B' L",
+        "R B' R' B U' L' B L B'",
+        "R' U L R L' U' R B' BR' R' BR B",
+        "R' L R L' U' B' R B R' B' R B R'",
+        "R BR B' BR' R' B U' L' B L U B'",
+        "L' B L U B BR' R BR' B BR' R U R",
+        "R B' R' B U' R B' R' B L R' L' R"
+      ],
+      "svgId": "27",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "28",
+      "name": "Qc+",
+      "group": "q",
+      "algorithms": [
+        "[U'] {B,U} U' R' D R' U R D' R U' R U R'"
+      ],
+      "scramble": "R B' R' B U' L' B' BR B' L B BR' B",
+      "scrambles": [
+        "B' R B R' BR R BR' R' L R BR R' BR' L'",
+        "BR B R BR B BR' R' B U' B' U B BR'",
+        "R BR' R L R' BR R' L' U' R B' R' B",
+        "B U B' R BR R L R L' B' R BR' B R'",
+        "R B' R' B U' L' B' BR B' L B BR' B",
+        "B' R BR' B R' L' B L B BR B R' U R",
+        "R U' B' R BR' R' BR R B L' B L B' R",
+        "B' R B L R' B U' R L' R' L U B' L'",
+        "R' L R L' B' U R B' BR B BR' B R'",
+        "R' U R' U B' R B R' U' B' R B U' R",
+        "BR' R U R' U' R B' BR' R BR B R BR",
+        "BR' L' B' BR B L B' BR' B BR B' R B R'",
+        "BR B' L' U L' R' L R U' B BR' B L B'",
+        "BR' R B' R' B BR B U' B' L' B L U B'",
+        "L' R' U L B' L' B U' R B' L R B R'",
+        "BR R' BR R L R' BR' R BR' L' B' R B R'",
+        "B' R BR' R BR R' B U R' L' B L B'",
+        "B U' R B R' U' B' R B R' U B' U B'"
+      ],
+      "svgId": "28",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "29",
+      "name": "Qc-",
+      "group": "q",
+      "algorithms": [
+        "[U'] {U,BR} S U' S"
+      ],
+      "scramble": "R B' R' B U R B' R' B",
+      "scrambles": [
+        "R' L R L' U B' R' B L' B L B' R",
+        "R' L R L' U L B' R B R' B L' B'",
+        "B L' B' L R' L R L' U L' B L B'",
+        "R B' BR' R' BR B R' U R' B' R' B",
+        "R' L R L' U L R' L' R B' R B R'",
+        "R B' R' B' U B' R BR B' BR' R' B",
+        "B L' B' L U L R BR R' L' R BR' R'",
+        "R' L R L' U R B' R' B R' L R L'",
+        "R' L R L' U B L B' R B' R' B L'",
+        "R' L R L' U L' B L B' L R' L' R",
+        "B' BR' B L' B' BR B L U L R' L' R",
+        "R B' R' B U L' B L B' R' L R L'",
+        "R B' R' B U R B' R' B",
+        "L' R B' R' B R' L R U L' B L B'",
+        "R' L R L' U R' L R L' B L' B' L",
+        "R B' R' B U B' R B R' B' R B R'",
+        "B R' L R L' R B' R' U L' B L B'"
+      ],
+      "svgId": "29",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "30",
+      "name": "Qa0",
+      "group": "q",
+      "algorithms": [
+        "[U'] {U,BR} S U' H"
+      ],
+      "scramble": "L' B L B' U R B' R' B",
+      "scrambles": [
+        "L R BR R' L' R BR' R' U B' R B R'",
+        "L' B L B' U B' R B R' B' R B R'",
+        "L' B L B' U R B' R' B",
+        "L R' L' R U L' B L B'",
+        "L' B L B' U L' B L B' R' L R L'",
+        "L' B L U B' R BR B' BR' R' B",
+        "L R' L' R U R B' R' B L R' L' R",
+        "B' R B R' L' B L B' U L' B L B'",
+        "R' L R L' U L R BR R' L' R BR' R'",
+        "L R' L' R U B L' B' L B L' B' L",
+        "L' B L U B' R BR B BR' B R' U' B",
+        "R' L R L' R' L R L' U L' B L B'"
+      ],
+      "svgId": "30",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "31",
+      "name": "Qa+",
+      "group": "q",
+      "algorithms": [
+        "[U] {U,BL} S' U S'"
+      ],
+      "scramble": "L' B L B' U' L' B L B'",
+      "scrambles": [
+        "L R' L' R U' L R' L' R B' R B R'",
+        "L R L' B L' B' L R' U' R B' R' B",
+        "L' B L B' U' R B' R' B L R' L' R",
+        "L R' L' R U' B L B' R B' R' B L'",
+        "B L' B' L B' R B R' U' R B' R' B",
+        "L' B L B' U' L' B L B'",
+        "L R' L' R U' R B' R' B R' L R L'",
+        "L R' L' R U' B' R' B L' B L B' R",
+        "L R' L' R U' R' L R L' B L' B' L",
+        "L' B L B' U' B L' B' L B L' B' L",
+        "L' B' BR' B L B' BR B U' R' L R L'",
+        "L R' L' R U' L B' R B R' B L' B'",
+        "B' R B R' L R' L' R U' R B' R' B",
+        "B L' B' L B L' B' L U' L' B L B'",
+        "R B' R' B L R' L' R U' L' B L B'",
+        "L R' L' R U' L' B L B' L R' L' R"
+      ],
+      "svgId": "31",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "32",
+      "name": "Qa-",
+      "group": "q",
+      "algorithms": [
+        "[U] {B,BL} U R D' R U' R' D R' U R' U' R",
+        "[U] {L,U} R U' R' U R' D R' U' R D' R U"
+      ],
+      "scramble": "L R' L' R' B' BR B' BR' B R' U' B",
+      "scrambles": [
+        "B L' U' R BR' R' L' R BR R' L U B' L",
+        "L R BR L' B L' B' BR' L B' R' B",
+        "L' B' BR B' L B BR' B L' B L B'",
+        "BR' R' BR R' L R BR' R BR L B L B'",
+        "B L' B' BR L' R BR' R' L' R BR R' BR'",
+        "L R BR' R L' R' BR B' R' B L R' L' R",
+        "L' R B' BR R' L' R BR' R' L B R' L R",
+        "L R' L' R' B' BR B' BR' B R' U' B",
+        "B L' B' R' L B' U L' R L R' U' B R",
+        "BR B BR' B L' B' BR B' BR' B L B'",
+        "B L R BR' L' B L' B' BR L R' B'",
+        "L' B L B' U' L' B' BR B' L B BR' B",
+        "L R BR' R L' R' BR R' L' B L B'",
+        "L U' L U' B L' B' L U B L' B' U L'"
+      ],
+      "svgId": "32",
+      "tags": {
+        "sourceGroup": "Q-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "33",
+      "name": "Qb0",
+      "group": "q",
+      "algorithms": [
+        "[U] {R,U} U' R BR' U R' U' R BR' U R' U' R BR' U R'"
+      ],
+      "scramble": "L R B' R' L' B U' B' R' L R B L'",
+      "scrambles": [
+        "B L' B BR B L B' BR B R B' R' BR B",
+        "L B' R' L' R B U B' L R B R' L'",
+        "R' L' B L R B' U B L R' L' B' R",
+        "L R B' R' L' B U' B' R' L R B L'",
+        "R' B L R L' B' U' B R' L' B' L R",
+        "B' BR' R B R' B' BR' B L' B' BR' B' L B'",
+        "BR' R BR U R' U' R' BR B' BR' U' B U B",
+        "B' U' B' U BR B BR' R U R U' BR' R' BR"
+      ],
+      "svgId": "33",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "34",
+      "name": "Qb+",
+      "group": "q",
+      "algorithms": [
+        "[U] {L,F} U R D R' U' R D' R' U R' U' R",
+        "{B,U} U R BR' R' U' R U BR R' U'"
+      ],
+      "scramble": "L' B L B R BR B BR' R' B U' B'",
+      "scrambles": [
+        "R' L' B' L' R U' R' B R B' U L B L",
+        "BR L' U' L' U' B U L U' B' U' BR' L",
+        "L R' L' R U R B' R' B U B' R B R'",
+        "R' L R L' R L R' U R L' R' L U' L'",
+        "L' B L B R BR B BR' R' B U' B'",
+        "R' L R' BR B' L B BR B' L' B BR R' L'",
+        "R' BR' U' BR R' BR' B' BR R BR' B U BR R",
+        "R' L R L' R BR R' L R BR' R' L'",
+        "L R' L' R U R' L R L' U L R' L' R",
+        "R' L R L' B' U' B R' B' R U R' B R",
+        "L B L' U L B' L' B U' B' R' L R L'",
+        "R' BR U' L R' L' R U R B' R' B BR' R",
+        "R B R U B' L B L' U' L R' B' R' L'",
+        "L' B L B' U B L' B' L U L R' L' R",
+        "R' L R B' L' R BR' R' L R BR R' B L'",
+        "R' U' R L' R' L U L' R L R' L R L'",
+        "B L' B BR' B L B' BR B R B' R' B"
+      ],
+      "svgId": "34",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "35",
+      "name": "Qb-",
+      "group": "q",
+      "algorithms": [
+        "{R,D} R U R' U Rw BR Rw' U R U' R'"
+      ],
+      "scramble": "BR R BR' R' L R' L' R' BR R' BR'",
+      "scrambles": [
+        "BR' L' B BR' B' L B' L' B' BR B' BR L",
+        "R' L U R U' R' L' R L U R' U' L' R",
+        "B' BR B' BR' U' B R B' R' U BR B BR' B",
+        "BR R BR' R' L R' L' R' BR R' BR'",
+        "BR' B BR' B U L' B L B' U' B' BR B' BR",
+        "BR' B' U B' BR' B' L' B BR B L U' B BR",
+        "B R B U' L' B' L B U B' R' B'",
+        "B' R' B R U L R L' R' U' R' B' R B",
+        "BR R BR' L' R' L' R' L R' BR L R' BR'"
+      ],
+      "svgId": "35",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "36",
+      "name": "Qr0",
+      "group": "q",
+      "algorithms": [
+        "[U] {R,U} U R Rw' U' R U R' Rw U' R'"
+      ],
+      "scramble": "R B' BR B BR' R' B U' B'",
+      "scrambles": [
+        "L U' B L' R L' R' L' B' U R L' R'",
+        "B BR B BR' B' L' B BR B' BR' B' L",
+        "R B' BR' B R' U' B U B' R BR R'",
+        "L R BR' L R' L B L' B' R BR L R'",
+        "B L R BR' R' L' R BR R' L' B' L",
+        "L R BR' L' R B L' B' L' R' BR L' R'",
+        "L' U' R U L B' L' U' R' U L B",
+        "B' L' R BR' L B' L' B BR R' B L",
+        "B R BR L' B' L B BR' L R' L' B'",
+        "R BR R' L R BR' R' L' B L' B' L",
+        "R B BR R L R' BR' L B' L' R' L'",
+        "L R BR' R' L' B L' B' L R BR R'",
+        "R B' BR B BR' R' B U' B'",
+        "B L' B' L R BR R' L R BR' R' L'",
+        "L' R' U' R B' BR' R BR R' B U L",
+        "L B U R' U' B' L' B U R U' B'",
+        "BR B BR' L R' L' R BR L' B' BR' L"
+      ],
+      "svgId": "36",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "37",
+      "name": "Qr+",
+      "group": "q",
+      "algorithms": [
+        "{U,BL} S U S' U S"
+      ],
+      "scramble": "B' BR' B L' B' BR B' L B' R B' R' B",
+      "scrambles": [
+        "R B' BR B R' B' R BR' B R' B' R B R'",
+        "L U' R' L' R L' B L B' L U R' L' R",
+        "B' R' BR R' B U B' R' B' U B' R BR R'",
+        "L' R L B' BR B L' B' BR' R' B R' L R",
+        "L U' L' B L' B' L R' L R U R' L' R",
+        "B' BR' R BR' B' L' B BR R' BR B' L' B' L'",
+        "L R' L' R B' BR' B L' B' BR B' L B'",
+        "B' BR' B L' B' BR B' L B' R B' R' B",
+        "L U' L R' L R L' B L' B' U R' L' R",
+        "B L' B' L U' L R' L' R U' R' L R L'",
+        "B' R' BR' B' L' B BR L' R' L B L' R' L'",
+        "B L' B BR' B' BR' B' L B BR B BR B",
+        "B' R BR R' B R BR' R' B U' L' B' L",
+        "B' BR' B L' B' BR B R B' R' B R' L R",
+        "L B L B' L R' U' L' R L R' U R",
+        "L U' B L B' L R' L' R L' U R' L' R",
+        "R U R' B R B' U' R' B L' B L B",
+        "B' R' BR' B' L' B BR R' B R L' R L'"
+      ],
+      "svgId": "37",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "38",
+      "name": "Qr-",
+      "group": "q",
+      "algorithms": [
+        "{B,BL} R D R' U R D' R2' U' R BR' U R' U' R"
+      ],
+      "scramble": "R U' B' R BR' R' B R' B' R BR B R'",
+      "scrambles": [
+        "R BR R' L R BR' R L' R U' L' B L B'",
+        "R U' B' R BR' R' B R' B' R BR B R'",
+        "B' BR' B L' B' BR B' L B' U L' B L B'",
+        "L' B L B' U B' BR' B L' B' BR B' L B'"
+      ],
+      "svgId": "38",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "39",
+      "name": "Ql0",
+      "group": "q",
+      "algorithms": [
+        "[U'] {L,U} R U Rw' R U' R' U Rw R' U'"
+      ],
+      "scramble": "R' B BR' B R' U' B U B' R BR B R",
+      "scrambles": [
+        "R U R' BR L' B L B' BR' L R L' U' R'",
+        "R' U B' R L' R L R B U' L' R L",
+        "R U L' U' R' B R U L U' R' B'",
+        "R' B BR' B R' U' B U B' R BR B R",
+        "B' R' B R B U' R' B R' B' R' U B'",
+        "R U R BR R' U' R' U L R BR' R' L'",
+        "L B L' U' R B L B L' B R' U B'",
+        "R' B' U' L U B R B' U' L' U B",
+        "R U' R U' B' R BR' R' BR B R' U' R'",
+        "L' B' BR' B L U B' U' B' BR B U B",
+        "B R BR B R' U R U' B' R BR' R B'",
+        "R' U B' R' B' R B' U' R B R B' R'",
+        "R B L B' R' BR B' R B R' BR' R L' R'",
+        "B' U B U B' R BR B' BR' B R' U B",
+        "R U B' R BR' R' BR B R' U R U R'",
+        "B' U' B' R BR B' BR' B R' U' B U' B"
+      ],
+      "svgId": "39",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "40",
+      "name": "Ql+",
+      "group": "q",
+      "algorithms": [
+        "[U] {B,BL} U Rw' U' R U R' Rw U' BR U R' U' R"
+      ],
+      "scramble": "L' B L B' U' B BR' L R' L' R BR B'",
+      "scrambles": [
+        "L' B L B' U' B BR' L R' L' R BR B'"
+      ],
+      "svgId": "40",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "41",
+      "name": "Ql-",
+      "group": "q",
+      "algorithms": [
+        "{U,BR} S' U' S U' S'"
+      ],
+      "scramble": "B' R BR B R' U R' U' R B' BR' B",
+      "scrambles": [
+        "B' R B R' U R B' R' B U B' R B R'",
+        "R' B' R' B R' L U R L' R' L U' L'",
+        "R' U L R L' R B' R' B R' U' L R L'",
+        "L' U' L B' L' B U L B' R B' R' B'",
+        "B L' B' L U L' B L B' U B' R B R'",
+        "L U R L B' BR' B L' B' BR B R' U' L'",
+        "B' R B R' U R' L R L' U L R' L' R",
+        "L U R' L B' BR B L' B' BR' B R U' L'",
+        "L R L' B L' B' BR L R' L R BR' R' L'",
+        "L' B' BR' B L B' BR R B R' L R' L' R",
+        "R' B' R' B' BR' B' R' L R L' B BR B' R'",
+        "B L' B' L B' R B BR R' L R BR' R' L'",
+        "L R B L B' BR L R' L' R BR' L' R' L'",
+        "B' R BR B R' U R' U' R B' BR' B",
+        "R BR' R' B U' B' U B' R BR B R'",
+        "BR' R U' R B' R' B U L R' BR R' L' R"
+      ],
+      "svgId": "41",
+      "tags": {
+        "sourceGroup": "Q-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "42",
+      "name": "Js0",
+      "group": "j",
+      "algorithms": [
+        "{Uo'} [D Rs : H S ]",
+        "[U'] {B,BL} Rw' U R U' R' Rw BR Rw' R U R' U' Rw",
+        "{U,BL} R U B R' L R' L' R B' R U' R'"
+      ],
+      "scramble": "BR' R L R' BR L' U' BR' L R L' R' BR",
+      "scrambles": [
+        "BR' R L R' BR L' U' BR' L R L' R' BR"
+      ],
+      "svgId": "42",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "43",
+      "name": "Js+",
+      "group": "j",
+      "algorithms": [
+        "[U] {LDt}\n(Rw U' Rw') (R Br R') (Rw U Rw') R Br'",
+        "[U] {B,L} Rw U' Rw' R BR R' Rw U Rw' R BR'"
+      ],
+      "scramble": "R U BR' B' L' B BR' B' L B BR' U' R'",
+      "scrambles": [
+        "L R' L' R U L R' L' R U B' R B R'",
+        "R U BR L' R' L R BR' R' L' R L U' R'",
+        "R U BR R B' R' B BR' B' R B R' U' R'",
+        "R U BR' B' L' B BR' B' L B BR' U' R'",
+        "B' R' L R B L' U' L B' R' L' R B",
+        "R BR B' R' B' U' B R B BR' B' BR' B R'",
+        "B' U R B' BR' R BR' B BR R' BR R' B",
+        "R B' BR' B L R B' R' BR R B R' L' R'",
+        "B L R' L' B' R U' R' B L R L' B'",
+        "L' R B L B' R' U' R B L' B' R' L",
+        "R L R B' R' BR R B R' L' B' BR' B R'",
+        "R U BR L R' L' R BR' R' L R L' U' R'",
+        "R U R' B' R' BR R B R U' B' BR B R'",
+        "R U R' U R L' R' L U' L' R L U' R'",
+        "L' R' L R U' L' U B' R B R' U' L",
+        "L R' L' R U R' L R' BR R' L' R BR' R'",
+        "R L' B' R' B L U' L' B' R B L R'",
+        "R' L R' BR R' L' R BR' R' U L R' L' R"
+      ],
+      "svgId": "43",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "44",
+      "name": "Js-",
+      "group": "j",
+      "algorithms": [
+        "[U] {Uo} [L : R B R']\n[U] {R,Br} [U : R D R']",
+        "[U] {L,U} R' D' R U' R' D R U"
+      ],
+      "scramble": "L' B' BR' B L B' BR B",
+      "scrambles": [
+        "B R B' U B R' B' R U' R'",
+        "B R B' U L' B R' B' R L U' R'",
+        "R' BR' L R' BR R L' R' BR' R BR R",
+        "B R B' U L B R' B' R L' U' R'",
+        "L B' L' R' BR R L R' BR' R B L'",
+        "R' B' BR B L' B' BR' B L R",
+        "B' BR B R B R' B BR' B' R B' R'",
+        "R BR R' U' R U R BR' R' U' R'",
+        "B' R' BR R B L B' R' BR' R B L'",
+        "L' U' L B' L' B U B' L B",
+        "L' B' BR' B L B' BR B"
+      ],
+      "svgId": "44",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "45",
+      "name": "Jc0",
+      "group": "j",
+      "algorithms": [
+        "{R,U}\nRw' (R U' R') D (R' U R) D' Rw",
+        "{R,U} Rw' R U' R' D R' U R D' Rw"
+      ],
+      "scramble": "B BR L R L' U' L R' L' R U R' BR' B'",
+      "scrambles": [
+        "B BR L R L' U' L R' L' R U R' BR' B'",
+        "R' L R L R' U B L B' L' U' R L"
+      ],
+      "svgId": "45",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "46",
+      "name": "Jc+",
+      "group": "j",
+      "algorithms": [
+        "[U] {Bl,F /Fo}\nB R' U / S {Uo'} U' R' L",
+        "[U] {BL,F} B R' U S U' B' R"
+      ],
+      "scramble": "B L' B' L R U' B' R BR' R' BR B R'",
+      "scrambles": [
+        "B' U R B' BR B BR' R' B U L R' L' R",
+        "BR B BR R' BR' B' BR R BR U R' L R L'",
+        "L R' L' R U B U B' R BR B' BR' B R'",
+        "B L' B' L R U' B' R BR' R' BR B R'",
+        "B' R BR R' B L R' L' R' BR' R' B U' B'",
+        "L R' L' U B' R BR B' BR' B R' U' B R",
+        "R B' BR B R' B' R BR' B R' L' B L B'",
+        "B U R BR B' BR' R' B U' B U B' U' B'",
+        "B' R BR' R' BR B R' U R U B L' B' L",
+        "R' BR R B' R' B U L R' L' R U' BR' R",
+        "R' U' R B' BR' B' L' B' L R B' BR B R'",
+        "B' R BR B' BR' B R' U' B L R' L' R",
+        "R B' BR B R' B' R BR' R' B L R' L' R"
+      ],
+      "svgId": "46",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "47",
+      "name": "Jc-",
+      "group": "j",
+      "algorithms": [
+        "{Uo} S' U' S' U' {Uo'}  [Hl]",
+        "{U,BR} S' U' S' U' H'"
+      ],
+      "scramble": "B' R B R' U L' B L B' U L R' L' R",
+      "scrambles": [
+        "B' R B R' U R' L R' BR R' L' R BR' R'",
+        "B L' B' L U B' R B R' U B' R B R'",
+        "B' R B R' U L' B L B' U L R' L' R",
+        "B' BR' B L' B' BR B' L B' U B' R B R'",
+        "B' R B R' U L R' L' R U B' R B R'"
+      ],
+      "svgId": "47",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "48",
+      "name": "Ja0",
+      "group": "j",
+      "algorithms": [
+        "[U'] {L,F}\nRw D (R' U R) D' (R U' R') Rw'",
+        "[U'] {L,F} Rw D R' U R D' R U' Rw' R'"
+      ],
+      "scramble": "BL R D R' U R' D' R U' BL'",
+      "scrambles": [
+        "BL D' R D' BR R D R D' R BR' R' D' BL'",
+        "BL' U BL' U' R D R' U R' D' BL R U' BL",
+        "BL R' D' BL' D R' D' BL D' R D' BL' R",
+        "BL' BR BL' R D R D' BL D' R' D R' BR' BL",
+        "BR' BL BR R D R' U R' D' R U' BR' BL' BR",
+        "BR' BL' BR' BL' D R' D' BL D' R D BR BL BR",
+        "BL' BR BL' D R' D' BL D' R D BR' BL",
+        "BL U BR D R' D' BL D' R D BL' BR' U' BL'",
+        "BL D' R D' R' U R' D R D U' BL'",
+        "BL R D R' U R' D' R U' BL'"
+      ],
+      "svgId": "48",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "49",
+      "name": "Ja+",
+      "group": "j",
+      "algorithms": [
+        "U' S' {Uo'} U S U S",
+        "{U,F} S U H' U S'",
+        "{U,BL} H U S U S"
+      ],
+      "scramble": "R B' R' B' L' B BR' B L B' BR B",
+      "scrambles": [
+        "R B' R' B U' L' B L B' U' L R' L' R",
+        "B' R BR B R L R' BR' R L' R B U' B'",
+        "L' B L B' R B' BR B R' B' R BR' B R'",
+        "B L' B' L U' B' R B R' U' B L' B' L",
+        "B' R B R' U' L R' L' R U' B L' B' L",
+        "L' B L R' B BR' R' B R B' BR B' R B'",
+        "B L' B BR' B L B' BR B L R' L' R",
+        "B L' B' L U' B L' B' L U' R' L R L'",
+        "R' L R L' U' R B' R' B U' L R' L' R",
+        "B' L B' L B R' BR' B' L' B BR L' R B",
+        "R' L R L' U' R BR R' L R BR' R' L'",
+        "B L' B L' R' BR' L B' L B BR R B",
+        "R B' R' B U' L R' L' R U' B' R B R'",
+        "L R L B' L' R' BR' L B L B' BR B",
+        "B BR' U' B R B' R' U B' L' B BR B' L",
+        "B L' B' L U R' U' R B' BR' R BR R' B",
+        "R B' R' B' L' B BR' B L B' BR B"
+      ],
+      "svgId": "49",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "50",
+      "name": "Ja-",
+      "group": "j",
+      "algorithms": [
+        "[U] {F,Br / Ro}\nR' B (U S' U') R B'",
+        "[U] {F,BR} R' B U S' U' R B'"
+      ],
+      "scramble": "BR B' U B' R B R' U' L' B BR' L",
+      "scrambles": [
+        "B' R B U R' B R' L R L' R B' U' R'",
+        "R' U' R L' R B' R' B R' L U L R L'",
+        "R' U' L' R B' R B R' L R' U L R L'",
+        "R' L R L' R U' B' R BR' R' BR B R'",
+        "B' R B U B R' L R' L' R B' R U' R'",
+        "R U' B' R BR' R' BR B R' U' B' R B R'",
+        "B' R BR R' B R U' B' R BR' R' BR' R' B",
+        "B U B' R BR B' BR' B R' U' R' L R L'",
+        "BR B' U B' R B R' U' L' B BR' L",
+        "R B' BR' R BR R' B U R' B' R B R'",
+        "B' R B R' U B U B' R BR B' BR' B R'",
+        "B' R B BR' R' B U' B' U R B' BR B R'"
+      ],
+      "svgId": "50",
+      "tags": {
+        "sourceGroup": "J-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "51",
+      "name": "Jb0",
+      "group": "j",
+      "algorithms": [
+        "[R' U R : S, H ]\n(캔슬하면) R' U F로 시작",
+        "R' U R B' R B R' L R' L' U' R"
+      ],
+      "scramble": "R' U B' R' B R' L R L' R U' R",
+      "scrambles": [
+        "R' U R' L' B L B' L R' L' R' U' R",
+        "L' B L B' BR' R' BR' B BR R BR' B' BR'",
+        "R' U R' L R' L' R B' R B U' R",
+        "L' B L B R BR' R' B R B' BR R' B",
+        "R' U R B' L R' L' R L' B L R' U' R",
+        "R' U L R L' R B' R' B R' U' R",
+        "L' B L B R BR' R' B U B' R BR' B R'",
+        "R' U R L R L' B L' B' L R U' R",
+        "R' U R B' R B R' L R' L' U' R",
+        "B' R BR' B R' B' R BR R' B' L' B' L",
+        "R' U R' B' R' B L' B L B' R' U' R",
+        "R' U B' R' B R' L R L' R U' R",
+        "L R' L' R U B' R BR' R BR R' B U R'",
+        "R' U R B L' B' L B' R B R U' R"
+      ],
+      "svgId": "51",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "52",
+      "name": "Jb+",
+      "group": "j",
+      "algorithms": [
+        "{Uo} U S' U H",
+        "[U] {U,BR} S' U H"
+      ],
+      "scramble": "L' B L B' U' B' R B R'",
+      "scrambles": [
+        "L R' L' R U' R' L' R B' R B R' L",
+        "L R L' B L' B' L R' U' L R' L' R",
+        "B' R B R' L R' L' R U' L R' L' R",
+        "R L' B L B' L R' L' U' L R' L' R",
+        "BR' U BR' B BR R BR' B' BR R' U' BR",
+        "L R' L' R U' L' R B' R' B R' L R",
+        "R B' R' B L R' L' R U' B' R B R'",
+        "R B' R' B L' B L B' U' L R' L' R",
+        "L' B' L R' L R L' B U' L R' L' R",
+        "L R' L' R U' B L' B' L R' L R L'",
+        "R' L R L' R B' R' B U' L R' L' R",
+        "B L' B' L B' R B R' U' L R' L' R",
+        "B' L R' L' R L' B L U' L R' L' R",
+        "L' B L B' U' B' R B R'",
+        "B L' B' L B L' B' L U' B' R B R'",
+        "L R' L' R U' B R' L R L' R B' R'"
+      ],
+      "svgId": "52",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "53",
+      "name": "Jb-",
+      "group": "j",
+      "algorithms": [
+        "{Uo'} U [B' Bl : S]\n U' Rs' U' S' U Rs",
+        "[U] {R,U} U' R' Rw U R U' Rw' U"
+      ],
+      "scramble": "R' BR B L' B' BR' L R",
+      "scrambles": [
+        "R' BR R' L R L' B' R B R' BR' R",
+        "B R U B R B' R' U' R' B'",
+        "R' BR L' B L B' L' B L B' BR' R",
+        "L' R' L' R L' R' BR B L B' BR' L' R",
+        "R' B L' B' BR' L R L R' BR R L'",
+        "R' BR B' L B' L B' L' B' L' B BR' R",
+        "R' BR' B L' B' BR' L R L R' BR' R L'",
+        "R B' R BR' B L' B' BR R' B R L R",
+        "B' R U B' L R L' R' B U' R' B",
+        "R' BR B L' B' BR' L R",
+        "R' BR L B' L' B' L' B L' B BR' L' R"
+      ],
+      "svgId": "53",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "54",
+      "name": "Jr0",
+      "group": "j",
+      "algorithms": [
+        "[U] S U S'"
+      ],
+      "scramble": "R B' R' B U' B' R B R'",
+      "scrambles": [
+        "R' L R L' U' B' R B R' L' B L B'",
+        "B' R B U' B' R BR' R BR B R' U R",
+        "B' R B R' B' R B R' U' B' R B R'",
+        "R' L R L' U' L R' L' R",
+        "B L' B' L R B' R' B U' L R' L' R",
+        "R B' R' B U' R B' R' B R B' R' B",
+        "R B' R' B U' L R' L' R B L' B' L",
+        "L R' L' R L R' L' R U' L R' L' R",
+        "R' L R L' U' R L' R' L' R' L R' L R'",
+        "R B' R' B U' B' R B R'",
+        "L' B L B' R' L R L' U' B' R B R'",
+        "R' L R L' U' R' L R L' R' L R L'"
+      ],
+      "svgId": "54",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "55",
+      "name": "Jr+",
+      "group": "j",
+      "algorithms": [
+        "[U] {Uo'} S'(끝에w) S' Rw' R2",
+        "[U] {B,BL} U R' U' Rw U R' U' Rw2 R'"
+      ],
+      "scramble": "BR B' R' L R L B BR' B L B'",
+      "scrambles": [
+        "L' B U R' L B' L B L R U' L B'",
+        "B L R L B' BR L' R L' R' BR' B R' B'",
+        "L' B U L R' L R L' B' L' B U' L B'",
+        "L' B L B' R' BR' B' R' L R L' B BR R",
+        "L' B U R' L' R L' B' L B L U' L B'",
+        "BR B R B R L R L' B BR' L' B L B'",
+        "L' B U B L R B' R' B L' B' U' L B'",
+        "B R B' BR' R L R' BR L B L' R' L' B'",
+        "L' B U L R' B' L' B L R L' U' L B'",
+        "BR B' R' L R L B BR' B L B'",
+        "BR L B L' R' L R B' BR' L B L B'",
+        "BR R' L R L' R B R' B' BR' L' B L B'",
+        "L' B U B' L B' R' L R L B' U' L B'",
+        "BR B R' B' L B R B' BR' L B L B'",
+        "BR R L B R B' R' L' R' BR' L' B L B'",
+        "BR L' B L R' L R L' B' BR' L' B L B'"
+      ],
+      "svgId": "55",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "56",
+      "name": "Jr-",
+      "group": "j",
+      "algorithms": [
+        "[U'] {Blo} L' R [U' : S']  L R'\n(U'이후 F면 노랑 - 2,0이 R쪽)",
+        "[U'] {B,U} U' R BR' U R' U' R BR U R'"
+      ],
+      "scramble": "R B' BR' R' B R B' BR R' B",
+      "scrambles": [
+        "R B' BR' L' R' B R B' BR L R' B",
+        "B' R B' BR' B R' U' B U B' R BR B R'",
+        "R' L R L' U' L R BR' R L' R' BR R'",
+        "R B' BR' R' B U' R' U' R B' BR' R B R'",
+        "R B' BR' L R' B R B' BR L' R' B",
+        "R B' BR' R' B U B' R BR' B R'",
+        "R B' R' B BR' R' BR' B BR R BR' B' BR'",
+        "R B' BR' R' B R B' BR R' B",
+        "B' R B R' U B' R BR' R' BR B R' U R",
+        "B' R BR B R' U' B' BR B R' U L R L'",
+        "B' R BR R' B U' R B' R' BR B R' U R"
+      ],
+      "svgId": "56",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "57",
+      "name": "Jl0",
+      "group": "j",
+      "algorithms": [
+        "[U,D] {R,Br}\nR' U R / D' / R U' R' / D+ ABF\n(축회전은 LDt2 -- 깔끔한3선, L 내려간형)",
+        "[U] {R,BR} L R' U R D' R U' R' D L'",
+        "{L,F} U R' U' R BR' U Rw'",
+        "R U' R' U Rw U'"
+      ],
+      "scramble": "R' B' R' BR' B L' B' BR B L' R' L'",
+      "scrambles": [
+        "BR' R U B' R B R' U' R' BR R' L R L'",
+        "BR R' B' R' BR' B L' B' BR B L' R' BR' L'",
+        "R' B' R' BR' B L' B' BR B L' R' L'",
+        "R B' R BR' R' B U' B U B' R BR R",
+        "B' U' R' B R B' U R B L R L' R",
+        "L' B BR' B' L B BR B' R L' B L B' R'",
+        "R L' U' B' BR B' L B BR' B L' U L R'",
+        "R B' L' U' B R' B R B U L R' B",
+        "BR' R' B' R' BR' B L' B' BR B L' R' BR L'",
+        "R' L R BR' R B L B' R' BR B L' B' L'",
+        "L' B' R' L' R' L R' BR B L B' BR' B",
+        "R' B' R' L' B U' B' L B L' U L' R' L'",
+        "R L' B L B BR' B L' B' BR B L R'",
+        "L' B' R' L' R BR' R L R' BR B L"
+      ],
+      "svgId": "57",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "58",
+      "name": "Jl+",
+      "group": "j",
+      "algorithms": [
+        "[U'] {R,U} R U' BR' R' U R U' BR R' U"
+      ],
+      "scramble": "R B' BR' R' B U' R U' B' R BR' R B",
+      "scrambles": [
+        "B L' B' L U B L' B' L U' R' L R L'",
+        "L R' L' R U B' R BR' R' BR B R' U R",
+        "B R B' U' B R' B R' BR' R' BR R' B",
+        "B' R B R' U L R' L' R U' B L' B' L",
+        "B L' B' L U' L R BR' R L' R' BR R'",
+        "R B' BR' R' B U' R U' B' R BR' R B",
+        "R B' BR B' BR' B' R B' R U' R' B R",
+        "B' U R B' BR B R' B U' R B' BR B R'",
+        "B' BR B' L' B BR' B L U' L R' L' R",
+        "B L' B' L U B' R B R' U' B L' B' L",
+        "B' R B R' U B' R BR' R BR R' B U R'",
+        "B' U R B' BR B BR' B R' U B' R B R'",
+        "B' R BR R' BR B R' U R B' R BR' B R'",
+        "B' R BR R' B U' R B' R BR R' B U R'",
+        "R B' BR B BR' R' B U' B' L R' L' R",
+        "R B' R' B U B L' B' L U R' L R L'"
+      ],
+      "svgId": "58",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "59",
+      "name": "Jl-",
+      "group": "j",
+      "algorithms": [
+        "[U] S U [Hl]",
+        "[U] {U,BL} H' U S"
+      ],
+      "scramble": "B L' B' L U' L R' L' R",
+      "scrambles": [
+        "R' L R L' B' R B R' U' L R' L' R",
+        "R' L R L' B L' B' L U' B' R B R'",
+        "B' R B R' U' B R' L R L' R B' R'",
+        "B L' B' L U' L R' L' R",
+        "B L B' R B' R' B L' U' B' R B R'",
+        "L R' L' R B' R B R' U' B' R B R'",
+        "R' B L' B' L B' R B U' B' R B R'",
+        "L' B L B' L' B L B' U' L R' L' R",
+        "R B' BR' R' U R B' BR B BR B R'",
+        "L' B L B' L R' L' R U' B' R B R'",
+        "R B' R' B R' L R L' U' B' R B R'",
+        "B' R B R' U' L' R B' R' B R' L R",
+        "B' R' B L' B L B' R U' B' R B R'",
+        "L B' R B R' B L' B' U' B' R B R'",
+        "B' R BR' R' BR B R' U R B' R B R'"
+      ],
+      "svgId": "59",
+      "tags": {
+        "sourceGroup": "J-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "60",
+      "name": "Ls0",
+      "group": "l",
+      "algorithms": [
+        "R' U' L' R B' R B R' L R' U R",
+        "D Rw H S Rw' D'"
+      ],
+      "scramble": "R' U' R L' R B' R' B R' L U R",
+      "scrambles": [
+        "R' U' R B L' B' L R' L R L' R' U R",
+        "R' U' R B R' L R L' R B' R U R",
+        "R' U' L R L B L B R B R U R",
+        "R' U' R' B' R' B' L' B' L' R' L' U R",
+        "R' U' L' R B' R B R' L R' U R",
+        "R' U' R L' B L B' R B' R' B R' U R",
+        "R' U' R B' R B R' B L' B' L R' U R",
+        "R' U' R L R' L' R L' B L B' R' U R",
+        "R' U' R' B R' L R' L' R B' R' U R",
+        "BR' R' BR' B BR R BR' B' BR' U' B' R B R'",
+        "R' U' R L' R B' R' B R' L U R",
+        "R B' R' B' U B' R BR R' B' R BR' B R'"
+      ],
+      "svgId": "60",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "61",
+      "name": "Ls+",
+      "group": "l",
+      "algorithms": [
+        "[U'] {L,U} U' R' D' R U R' D R"
+      ],
+      "scramble": "B' BR' B L' B' BR B L",
+      "scrambles": [
+        "R' L' B' BR B L B' BR' B R",
+        "B' L' B U' R' B' L B L' R U L",
+        "R U R BR R' U' R' U R BR' R'",
+        "B' L' B U' B' L B L' U L",
+        "L' R L B' BR B L' B' BR' B R' L",
+        "R U R' B R B' U' B R' B'",
+        "B' BR' B L' B' BR B L",
+        "B' L' B U' R B' L B L' R' U L",
+        "R' BR' R' BR R L R' BR' R BR L' R",
+        "R' B BR' B' BR R' BR' B BR R B' R",
+        "L B' R' BR R L' R' BR' R L B L'"
+      ],
+      "svgId": "61",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "62",
+      "name": "Ls-",
+      "group": "l",
+      "algorithms": [
+        "[U'] {B,L} BR R' Rw U' Rw' R BR' R' Rw U Rw'",
+        "{U,BL} S U H U H"
+      ],
+      "scramble": "R L U' BR' R L R' BR R L' R' U L' R'",
+      "scrambles": [
+        "R L' B' R' B L U L' B' R B L R'",
+        "R B' BR B L R B' R' BR' R B R' L' R'",
+        "R L R' L' U R U' B L' B' L U R'",
+        "R B' BR' B U R' B' R' BR' R B R U' R'",
+        "R L U' BR' R L R' BR R L' R' U L' R'",
+        "R L R B' R' BR' R B R' L' B' BR B R'",
+        "R' B' R' BR R BR R' B U B' BR' R B R",
+        "R' L R L' U' R B' R' B U' R' L R L'",
+        "L' U' L U' L' R L R' U R L' R' U L",
+        "R B' R' B U' L' B L B' U' R' L R L'",
+        "R BR R' L R BR' R L' R U' R' L R L'",
+        "R B' BR' B BR B U B' BR' B' BR B U' R'",
+        "B L R' L' B' R U R' B L R L' B'",
+        "R B' BR B BR B' R' B' U B R B BR' R'",
+        "L' R B L B' R' U R B L' B' R' L",
+        "B' R' L R B L' U L B' R' L' R B",
+        "R BR U B' L' B BR B' L B BR' U' BR' R'",
+        "R' L R L' U' R BR R' L R BR' R L' R"
+      ],
+      "svgId": "62",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "63",
+      "name": "Lc0",
+      "group": "l",
+      "algorithms": [
+        "[U] {R,U} Rw' D' R U' R' D R' U R Rw"
+      ],
+      "scramble": "L R' L' R U B' R' U' R' B R B' U R B",
+      "scrambles": [
+        "L R' L' R U B' R' U' R' B R B' U R B"
+      ],
+      "svgId": "63",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "64",
+      "name": "Lc+",
+      "group": "l",
+      "algorithms": [
+        "{U,F} Rw' S H Rw S"
+      ],
+      "scramble": "L' R' L' R B BR' R' L R B L B' BR B'",
+      "scrambles": [
+        "B BR' U' B' R BR' R BR R' B U R' BR B'",
+        "L' R' L' R B BR' R' L R B L B' BR B'",
+        "R' B' L R L' U' R' B R' B R' B U B"
+      ],
+      "svgId": "64",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "65",
+      "name": "Lc-",
+      "group": "l",
+      "algorithms": [
+        "[U] S U' H U' H"
+      ],
+      "scramble": "B' R B R' B' R BR' R' BR B R' U R",
+      "scrambles": [
+        "L' B' R BR' B' L B BR R B R' L' R' L",
+        "L' B L B' U R B' R' B U R' L R L'",
+        "B' R B R' U B' R B R' U L R' L' R",
+        "R B' R' B R B' BR' R' BR B R' U R",
+        "B' R B R' U B L' B' L U B' R B R'",
+        "L B' L' B' R B BR R L R' BR' B R' L'",
+        "L' B' L' R BR R' L B' L B R BR' B R'",
+        "B U B' R BR B' BR' B R' B' R B R'",
+        "B U B' R BR B' BR' R' B R B' R' B",
+        "B' R B R' B' R BR' R' BR B R' U R",
+        "B L' B' L U R' L R L' U B' R B R'",
+        "B' R BR' B R L R' L B' BR B L' R' L'",
+        "L R' L' R U L' B L B' U R' L R L'",
+        "L' B' R BR' B' L B BR L' R' L R B R'",
+        "R' L' B BR' B' BR L R' BR' B BR R B' R",
+        "B' R B L B' BR L' R L R' BR' B R' L'",
+        "L R' L' R B' R BR' B R' B' R BR B R'"
+      ],
+      "svgId": "65",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "66",
+      "name": "La0",
+      "group": "l",
+      "algorithms": [
+        "{L,F} Rw R' U R D' R U' R' D Rw'"
+      ],
+      "scramble": "L R' L' R' L U' B' R' B R U L' R'",
+      "scrambles": [
+        "L R' L' R' L U' B' R' B R U L' R'"
+      ],
+      "svgId": "66",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "67",
+      "name": "La+",
+      "group": "l",
+      "algorithms": [
+        "{R,U} U' R U Rw' U' R' D R' U R D' Rw"
+      ],
+      "scramble": "B L' B' L U' R' L R BR' R L' R' BR",
+      "scrambles": [
+        "L' R L R U' L B L R L R' B' U R",
+        "B L' B' L U' R' L R BR' R L' R' BR",
+        "R' U R' U' B' R B R' U B' R B U' R",
+        "B' R B R' U' B L' B' BR' L' R L' R' BR"
+      ],
+      "svgId": "67",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "68",
+      "name": "La-",
+      "group": "l",
+      "algorithms": [
+        "[U'] B' BLw U' H U L BLw'",
+        "{L,F} U R' U' R BR R U R' U' Rw R' U R U' Rw'"
+      ],
+      "scramble": "B' R BR B' BR' B R' U' B R' L R L'",
+      "scrambles": [
+        "B' U R B' BR B BR' R' B U R' L R L'",
+        "B' R BR B' BR' B R' U' B R' L R L'",
+        "R B' BR' B R' B L' B' L R B' BR R' B",
+        "R B' BR' R B' L R L' R' B R' BR R' B",
+        "R B' BR' B R L R L' B' R BR R' B",
+        "R B' BR' R' B' R' L R L' R B BR R' B",
+        "R' L R L' R B' BR' B R' B' R BR R' B",
+        "R' U' R B' BR' R BR R' B U B' R B R'",
+        "R' L R L' U R B' BR' R BR R' B U R'"
+      ],
+      "svgId": "68",
+      "tags": {
+        "sourceGroup": "L-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "69",
+      "name": "Lb0",
+      "group": "l",
+      "algorithms": [
+        "{U,BL} R U' R' L R' L' R B' R B U R'"
+      ],
+      "scramble": "L U' R' L' R L' B L B' L U L'",
+      "scrambles": [
+        "L U' L' B L' B' L R' L R U L'",
+        "BR B BR R' BR' B' BR R BR B L' B' L",
+        "L U' L R' L R L' B L' B' U L'",
+        "R' L R L' U' L R BR R' L' R BR' R'",
+        "R B BR R' L R' L' R B' R B BR' B' R'",
+        "R B BR B' R' B R' L R L' R BR' B' R'",
+        "B' R B R' U' R' L R L' U' B' R B R'",
+        "R B BR L R L' R B' R' B R' BR' B' R'",
+        "B' R BR B R U' R B' BR' R BR' R' B",
+        "R B BR R B' R B R' L R' BR' L' B' R'",
+        "L U' L R B' R' B R' L R L U L'",
+        "L U' R' L' R L' B L B' L U L'",
+        "L U' B L B' L R' L' R L' U L'",
+        "L U' L' R' L' R B' R B R' L' U L'",
+        "L U' L' B' R B R' B L' B' L' U L'",
+        "L U' L B L B' R B' R' B L U L'"
+      ],
+      "svgId": "69",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "70",
+      "name": "Lb+",
+      "group": "l",
+      "algorithms": [
+        "[U'] {L,F} U Rw' R U' R' U Rw U'"
+      ],
+      "scramble": "B' L' U' B' L' B L U L B",
+      "scrambles": [
+        "L' B L B' U' L' U L B L B' L U' L",
+        "R L' R BR L' B L' B' BR' L' R' L R'",
+        "L' B L' B' R' L R U' R' L' R L U L",
+        "R L' R BR B L B' BR' L' R' L' R L' R",
+        "L R B' L U B R' B' R U' L' B R' L'",
+        "R L' R BR B L B' BR' R L' R L' R' L'",
+        "R' L B BR' B L' R' L R B' BR B' L' R",
+        "B' L' U' B' L' B L U L B",
+        "B L' U' B R' L' R L B' U L B'",
+        "R L' U L' R' B' R' B R' L U' L R'",
+        "R L' U R L' B L' B' L' R' U' L R'",
+        "R' BR' L' R BR' B L B' BR L' R' BR L R",
+        "L B' L U L' R B R' B' L U' L' B L'"
+      ],
+      "svgId": "70",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "71",
+      "name": "Lb-",
+      "group": "l",
+      "algorithms": [
+        "[U'] {U,BR} H' U' S"
+      ],
+      "scramble": "R B' R' B U B L' B' L",
+      "scrambles": [
+        "L R' L' R L' B L B' U R' L R L'",
+        "R' L R L' U B L' B' L B' R B R'",
+        "BR' U R BR' B BR R' BR' B' BR U' BR",
+        "R' L R L' U L R L' B L' B' L R'",
+        "R B' BR B BR' R' B U' B' R' L R L'",
+        "R B' R' B U B L' B' L",
+        "L' R B' R' B R' L R U R' L R L'",
+        "R B R' L R' L' R B' U R' L R L'",
+        "R' L R L' U B' R B R' L R' L' R",
+        "B R' L R L' R B' R' U R' L R L'",
+        "R' L R L' U R L' B L B' L R' L'",
+        "B' R B R' B L' B' L U R' L R L'",
+        "L' B L B' R B' R' B U R' L R L'",
+        "R' L' R B' R B R' L U R' L R L'",
+        "R B' R' B U R' L R L' B' R B R'",
+        "B L' B' L R' L R L' U R' L R L'",
+        "B' R B R' B' R B R' U B L' B' L"
+      ],
+      "svgId": "71",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "72",
+      "name": "Lr0",
+      "group": "l",
+      "algorithms": [
+        "{R,BR} Rw' R U R' U' Rw BR Rw' U R U' R' Rw"
+      ],
+      "scramble": "R B' R' B R' U' R B' BR' R BR B R'",
+      "scrambles": [
+        "B U B' R BR B' BR' R' B U B' R B R'",
+        "B R BR B' R' L R L B BR' L' R' L' B'",
+        "B R BR L B L' R' L R B' BR' R' L' B'",
+        "L B L B BR' B R L R' L' B' BR B L",
+        "B L' B L R BR R L R' BR' R' L' B",
+        "L B R L R' B' R BR B L' B' BR' R' L'",
+        "L' R B' R' BR R' B R' B' R' BR' B L",
+        "R B' R' B R' U' R B' BR' R BR B R'",
+        "B' U R B' BR B BR' B R' B L' B' L",
+        "L B L B' L' R BR L B L' B' BR' R' L'",
+        "L B' R B' L B BR' B L' B' BR R' B L'",
+        "B L' B BR B BR B L B' BR' B' BR' B",
+        "B U' R U' B' L B L' U R' U L B' L'",
+        "R B R L R' BR' L' B' L' B BR L B' R'",
+        "B R BR B R' B' L B R B' BR' R' L' B'",
+        "B L' B' L R BR L' B L B' BR' L R' L'",
+        "R' B L' B' L B' R BR B' L' B BR' B L"
+      ],
+      "svgId": "72",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "73",
+      "name": "Lr+",
+      "group": "l",
+      "algorithms": [
+        "[U'] {U,F} S' U' H"
+      ],
+      "scramble": "B' R B R' U R' L R L'",
+      "scrambles": [
+        "R' L R L' B L' B' L U B L' B' L",
+        "B' R B R' U R' L R L'",
+        "L B' R B R' B L' B' U B L' B' L",
+        "B L' B' L U B L' B' L B' R B R'",
+        "L R' L' R B' R B R' U B L' B' L",
+        "R' B L' B' L B' R B U B L' B' L",
+        "B L' B' L U B' R B R' L R' L' R",
+        "B L' B' L U R L' B L B' L R' L'",
+        "B' R B R' U L R' L' R L R' L' R",
+        "B' R' B L' B L B' R U B L' B' L",
+        "B L B' R B' R' B L' U B L' B' L",
+        "L' B L B' L R' L' R U B L' B' L",
+        "R B' R' B R' L R L' U B L' B' L",
+        "B L' B' L U L R L' B L' B' L R'",
+        "L R' L' R B L' B' L U R' L R L'",
+        "R B' R' B R B' R' B U R' L R L'"
+      ],
+      "svgId": "73",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "74",
+      "name": "Lr-",
+      "group": "l",
+      "algorithms": [
+        "[U] {R,U} U' R BR U R' U' R BR' U R'"
+      ],
+      "scramble": "R B' BR' B R' U R BR' R' B U' B'",
+      "scrambles": [
+        "R' L R U R B' BR B BR' R' B U' B' L'",
+        "L R' L' R U' R' L R L' U' B' R B R'",
+        "B' R B R' U' B' R B R' U L R' L' R",
+        "B' BR B' L' B' BR B L B' BR' B' BR' B",
+        "B R' B BR R BR' B' BR R' BR' R L' B' L",
+        "R' BR U' BR' R' BR U R' U' R' U R BR' R'",
+        "B' R BR B R' U' R B' BR B R L R L'",
+        "R B' BR' B R' U R BR' R' B U' B'",
+        "B L' B' L U' L R BR R' L' R BR' R'",
+        "R' L R L' R' U' R B' BR' R BR R' B",
+        "B' R B R' U' B L' B' L U B' R B R'",
+        "B L' B' L U' R' L R L' U B' R B R'",
+        "B' R B R' U' R BR' R L R' BR R' L'",
+        "R B' BR B' BR' B R' U' B U' B L' B' L",
+        "L' B L B' U' B' R B R' U' L R' L' R",
+        "L' B L B' U' B L' B' L U' B' R B R'"
+      ],
+      "svgId": "74",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "75",
+      "name": "Ll0",
+      "group": "l",
+      "algorithms": [
+        "[U'] {U,F} S' U' S"
+      ],
+      "scramble": "L R' L' R U R' L R L'",
+      "scrambles": [
+        "L' B L B' U B L' B' L",
+        "B L' B' L B L' B' L U B L' B' L",
+        "R B' R' B L R' L' R U B L' B' L",
+        "L' B L B' U R' L R L' B' R B R'",
+        "B' R BR' R' B R B' R BR R' B U R'",
+        "L' B L B' U L' B L B' L' B L B'",
+        "L R' L' R U R' L R L'",
+        "R' L R L' R' L R L' U R' L R L'",
+        "B' R BR B R' U' B' BR B R' U R",
+        "B' R B R' L' B L B' U R' L R L'",
+        "L R' L' R U L R' L' R L R' L' R"
+      ],
+      "svgId": "75",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "76",
+      "name": "Ll+",
+      "group": "l",
+      "algorithms": [
+        "[U] {L,U} R U' BR R' U R U' BR' R' U"
+      ],
+      "scramble": "R B' R' B U' B' R B R' U' L R' L' R",
+      "scrambles": [
+        "R B BR' B R' U' B U' R B' BR' R' B",
+        "L' B L B' U' L R' L' R U L R' L' R",
+        "R B' R' B U' B' R B R' U' L R' L' R",
+        "BR B U L R' BR R L' R' BR' R U' B' BR'",
+        "R B' R' B U' B L' B' L U' B' R B R'",
+        "B L' B' L R' U' R B' BR' R BR R' B",
+        "R' L R L' U' L R' L' R U' L R' L' R",
+        "R B' R BR R' B U R' U R B' BR B R'",
+        "L R' L' R U' B' R B R' U L R' L' R",
+        "L' B' BR B' L B BR' B U' B L' B' L",
+        "L R' L' R U' R BR' R L R' BR R' L'",
+        "B R BR' R' U' R U R BR R' U' R' U B'",
+        "L R' L' R U' B L' B' L U B' R B R'",
+        "B U B' R BR B' BR' B R' U B L' B' L"
+      ],
+      "svgId": "76",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "77",
+      "name": "Ll-",
+      "group": "l",
+      "algorithms": [
+        "[U'] {B,U} U' R U Rw' U' R U Rw R2'"
+      ],
+      "scramble": "B' R BR R L R' BR' B R' B' L' B",
+      "scrambles": [
+        "B BR' R' L R BR B L' R' L R B' L' B'",
+        "B' R BR R L R' BR' B R' B' L' B",
+        "R B' U' R' L B R B' R' L' R U R' B",
+        "R B' U' B' R' L' B L B' R B U R' B",
+        "R B' U' L R' B R' B' R' L' U R' B",
+        "B BR' R' L R BR L B L R' L R L' B",
+        "R B' U' L R L' R B R' B' R' U R' B",
+        "B' R B BR B BR' R' B U' B' U R B' R'",
+        "B BR' R' L R BR L' B R B R L R L'",
+        "R B' U' B R' B L R' L' R' B U R' B",
+        "R B' U' R' L R' L' R B R B' U R' B"
+      ],
+      "svgId": "77",
+      "tags": {
+        "sourceGroup": "L-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "78",
+      "name": "Ws0",
+      "group": "w",
+      "algorithms": [
+        "[U'] S U' / Hl {Uo} U S\n[U] S' U H U' {Uo'} S'",
+        "[U] {U,F} S' U H U' {U,BL} S'"
+      ],
+      "scramble": "L' B L B' U B' R B R' U' R' L R L'",
+      "scrambles": [
+        "L' B L B' U B' R B R' U' R' L R L'",
+        "R B' R' B U' B L' B' L U L R' L' R",
+        "B' R BR R' B U R U' B' R BR' R' B R'",
+        "R' L R L' U' L' B L B' U B' R B R'",
+        "L R' L' R U R B' R' B U' B L' B' L"
+      ],
+      "svgId": "78",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "79",
+      "name": "Ws+",
+      "group": "w",
+      "algorithms": [
+        "[U] {B,U} BR' R' U' R D R' U R D' BR",
+        "[U] {BR,U} U' R' U' R D R' U R D' U"
+      ],
+      "scramble": "BR' L R' BR' R L' R' BR R BR",
+      "scrambles": [
+        "BR' R B' BR B' L' B BR' B' L B' R' BR",
+        "R' U' R' U R L' R' L U' L' R L U R",
+        "BR' L R' B L B' BR B L' B' BR' R BR L'",
+        "BR' B' L' B R U B' L B L' U' R' BR L",
+        "BR' L B' R' BR' R L' R' BR R L B BR L'",
+        "R' U' BR L' R' L R BR' R' L' R L U R",
+        "L R' U' BR' R L' R' BR R L R' U R L'",
+        "L R' U' B L B' BR B L' B' BR' U R L'",
+        "BR' L R U' R' L' R' L R' U R L' R BR",
+        "R' U' BR R B' R' B BR' B' R B R' U R",
+        "BR' L B R' BR' R L' R' BR R L B' BR L'",
+        "R' U' BR L R' L' R BR' R' L R L' U R",
+        "BR' L R' BR' R L' R' BR R BR",
+        "BR' B' R' BR R B' R' B BR' B' R B' BR",
+        "R' U' BR' B' L' B BR' B' L B BR' U R"
+      ],
+      "svgId": "79",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "80",
+      "name": "Ws-",
+      "group": "w",
+      "algorithms": [
+        "[U'] {Fo} U R U R' D' R U' R' U' D",
+        "[U'] {BL,F} U R U R' D' R U' R' U' D"
+      ],
+      "scramble": "R L U L' B BR' B' L B BR B' U' L' R'",
+      "scrambles": [
+        "L U L U' L' R L R' U R L' R' U' L'",
+        "R L U L' B BR' B' L B BR B' U' L' R'"
+      ],
+      "svgId": "80",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "81",
+      "name": "Wc0",
+      "group": "w",
+      "algorithms": [
+        "[U'] {B,U} R U' R' U R U' (BR') R' U R U' (BR) R' U",
+        "[U'] {B,U} R U' R' U R U' BR' R' U R U' BR R' U"
+      ],
+      "scramble": "L' B L B' U BR' R' BR' B BR R BR' B' BR'",
+      "scrambles": [
+        "R' L R L' U R B' BR' R' BR B R' U R",
+        "B U B' R BR B' BR' R' B U L' B L B'",
+        "B' R BR' B R' B' R BR B R' B' R B R'",
+        "B' R BR' B R' B' R BR R' B R B' R' B",
+        "B BR' U BR B BR' U' BR B U B' L' B' L",
+        "L' B L B' U BR' R' BR' B BR R BR' B' BR'",
+        "L R' L' R' U R BR U' BR' R BR U BR' R"
+      ],
+      "svgId": "81",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "82",
+      "name": "Wc+",
+      "group": "w",
+      "algorithms": [
+        "[U'] S U' / S' U S",
+        "[U'] S U' S' U S"
+      ],
+      "scramble": "R' U' R' U R U' R B' BR' R' BR B U R",
+      "scrambles": [
+        "L R' L' R U' R B' R' B U B' R B R'",
+        "B' R B R' U R B' R' B U' B L' B' L",
+        "L R' L' R U' R' L R L' U L R' L' R",
+        "R' U' R' U R U' R B' BR' R' BR B U R",
+        "L' B L B' U' B L' B' L U L R' L' R",
+        "B L' B' L U L' B L B' U' B L' B' L",
+        "B L' B' L U L R' L' R U' R' L R L'"
+      ],
+      "svgId": "82",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "83",
+      "name": "Wc-",
+      "group": "w",
+      "algorithms": [
+        "[U'] Rw' L R L' / U' H' U / (Rw R')",
+        "[U'] Rw' L R L' U' H' U Rw R'"
+      ],
+      "scramble": "B BR' U L' B L B' U' BR B' R B' R' B",
+      "scrambles": [
+        "B BR' U L' B L B' U' BR B' R B' R' B"
+      ],
+      "svgId": "83",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "84",
+      "name": "Wa0",
+      "group": "w",
+      "algorithms": [
+        "[U] {R,U} R U' R' U /R U' BR /R' U R U' /BR' R' U",
+        "[U] {R,U} R U' R' U R U' BR R' U R U' BR' R' U"
+      ],
+      "scramble": "B' R BR' R' B' U B' R BR B' BR R' B",
+      "scrambles": [
+        "B' R BR' R' B' U B' R BR B' BR R' B",
+        "R' U B' R' B U' B' R BR' R BR R' B R",
+        "B' R BR B R' B' R' BR' B' BR R' BR' B' R'",
+        "B' U' B' BR' U BR B' BR' U' BR B R B R'"
+      ],
+      "svgId": "84",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "85",
+      "name": "Wa+",
+      "group": "w",
+      "algorithms": [
+        "[U] {Uo'} Rw B' R' B /U S' U'/ (Rw' R)",
+        "[U] {U,BL} Rw B' R' B U S' U' Rw' R"
+      ],
+      "scramble": "BR B' U' R B' R' B U B BR' L' B L B'",
+      "scrambles": [
+        "BR B' U' R B' R' B U B BR' L' B L B'"
+      ],
+      "svgId": "85",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "86",
+      "name": "Wa-",
+      "group": "w",
+      "algorithms": [
+        "[U] S' U S U' S'"
+      ],
+      "scramble": "B' R B R' U' R B' R' B U B' R B R'",
+      "scrambles": [
+        "R' L R L' U L' B L B' U' B L' B' L",
+        "B' R B R' U' R' L R L' U L R' L' R",
+        "R' L R L' U L R' L' R U' R' L R L'",
+        "B' R B R' U' R B' R' B U B' R B R'",
+        "B L' B' L U' L' B L B' U B' R B R'",
+        "R B' R' B U B' R B R' U' R' L R L'"
+      ],
+      "svgId": "86",
+      "tags": {
+        "sourceGroup": "W-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "87",
+      "name": "Wb0",
+      "group": "w",
+      "algorithms": [
+        "[U'] H' / U S U S\nU' S U ' 8회전 olp4a",
+        "[U'] H' U S U S"
+      ],
+      "scramble": "B' R BR R' BR B R' U R' B' BR' R' B",
+      "scrambles": [
+        "R' U BR B' R' B L' B L B' R BR' U' R",
+        "R' U BR L R' L' R B' R B R' BR' U' R",
+        "R' U BR R' B L' B' L B' R B BR' U' R",
+        "R B' R' B U L R' L' R U R B' R' B",
+        "R BR R' L R BR' R' L' U L R' L' R",
+        "R' L R L' U R' L R L' U L' B L B'",
+        "L' B L B' U' R' L R L' U' L' B L B'",
+        "R' U BR L B' R B R' B L' B' BR' U' R",
+        "R' U BR B L B' R B' R' B BR' L' U' R",
+        "R' U BR R' L R L' B L' B' BR' L U' R",
+        "R' U BR L' B L B' L R' L' R BR' U' R",
+        "L R' L' R U' L R' L' R U' R B' R' B",
+        "B' R BR R' BR B R' U R' B' BR' R' B",
+        "R' U BR R B' R' B R' L R BR' L' U' R"
+      ],
+      "svgId": "87",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "88",
+      "name": "Wb+",
+      "group": "w",
+      "algorithms": [
+        "{Uo} [U'] Rw B' R' B (Rw' R) U S'\n--> {Uo} U' Hw' Rs' U S'",
+        "[U'] {U,BR} BR' R U' S' U R' BR"
+      ],
+      "scramble": "B BR' U' B' R B R' U BR B'",
+      "scrambles": [
+        "BR L' R' BR' U R' L' R L U' BR R BR' L",
+        "B BR' U' L R' L' R B L' B' L U BR B'",
+        "R' B' U' R' U B' R B R' U' R U B R",
+        "B BR' U' BR B' L R' L' R B BR' U BR B'",
+        "B BR' U' B' R B R' U BR B'",
+        "B BR' U' R B' R' B R B' R' B U BR B'"
+      ],
+      "svgId": "88",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "89",
+      "name": "Wb-",
+      "group": "w",
+      "algorithms": [
+        "{Uo} [U] Rw' L R L' (Rw R') U' H'\n--> {Uo} U Sw Rs U' H'",
+        "[U] {U,BR} Rw' L R L' Rw R' U' H'"
+      ],
+      "scramble": "B L' B' L U L BL' L' B L B' BL L'",
+      "scrambles": [
+        "B L' B' L U L BL' L' B L B' BL L'",
+        "L' B' L' BL U' L' B L B' U BL' L B L",
+        "L U' L U BL R' L' R L BL' U' L' U L'"
+      ],
+      "svgId": "89",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "90",
+      "name": "Wr0",
+      "group": "w",
+      "algorithms": [
+        "[U'] Rw' L R L' / U S' U' Rw R'\n-> [U'] Sw U S' U'  Rs",
+        "[U'] {U,F} Rw' L R L' U S' U' Rw R'"
+      ],
+      "scramble": "B BR' B' R BR R' B R B' BR' B R' BR B'",
+      "scrambles": [
+        "B BR' B' R BR R' B R B' BR' B R' BR B'"
+      ],
+      "svgId": "90",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "91",
+      "name": "Wr+",
+      "group": "w",
+      "algorithms": [
+        "{Uo'} (Rw' R) U S' U' / L R' L' Rw\n-> {Uo'} Rs' U S' U' Sw'\nU R' / U H' U' /R U / B L' B' L",
+        "{U,BL} Rw' R U S' U' L R' L' Rw"
+      ],
+      "scramble": "L' B L B' U' R' U R' B' R B U' R",
+      "scrambles": [
+        "L' B L B' U' R' U R' B' R B U' R"
+      ],
+      "svgId": "91",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "92",
+      "name": "Wr-",
+      "group": "w",
+      "algorithms": [
+        "{Uo} U S / U' S' U' S'",
+        "[U] {U,BR} S U' S' U' S'"
+      ],
+      "scramble": "L R BR R' L' R BR' R' U' B L' B' L",
+      "scrambles": [
+        "L R BR R' L' R BR' R' U' B L' B' L",
+        "B L' B' L U R' L R L' U L' B L B'",
+        "B' R B R' U B L' B' L U L' B L B'",
+        "B' R B R' U B' R B R' U R B' R' B",
+        "R' L R L' U' B L' B' L U' L' B L B'",
+        "L U' BR' B' BR B L B' BR' B BR L' U L'",
+        "R' L R L' U' B' R B R' U' R B' R' B",
+        "R B' R' B U' R' L R L' U' L' B L B'"
+      ],
+      "svgId": "92",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "93",
+      "name": "Wl0",
+      "group": "w",
+      "algorithms": [
+        "[U] (Rw' R) L R' L' Rw / U' / Rw' L R L' (R' Rw)\n-> [U] Rs' Sw' U' Sw Rs",
+        "[U] Rw' R L R' L' Rw U' Rw' L R L' R' Rw"
+      ],
+      "scramble": "B U B' R BR R' U' B' R BR B R'",
+      "scrambles": [
+        "B U B' R BR R' U' B' R BR B R'",
+        "R' U' R L R' L' U R BR B L' B' BR' L",
+        "BR' R' U' R L R' L' U R BR B L' B' L",
+        "R B' BR B U' B' R BR B' BR R' BR' B' R'"
+      ],
+      "svgId": "93",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "94",
+      "name": "Wl+",
+      "group": "w",
+      "algorithms": [
+        "{Uo'} U' S' / U S U S",
+        "[U'] {U,BL} S' U S U S"
+      ],
+      "scramble": "BR B L' B' BR' L U' BR L R' L' R BR'",
+      "scrambles": [
+        "BR B L' B' BR' L U' BR L R' L' R BR'",
+        "L R' L' R U B L' B' L U L' B L B'",
+        "B L' B' L U' B' R B R' U' R B' R' B",
+        "BR' R' U' B BR' B' L' B BR B' L U R BR",
+        "B' R B R' U' L R' L' R U' R B' R' B",
+        "L' B L B' U L R' L' R U R B' R' B",
+        "B' R BR R' B U B' U R B' BR B R' B",
+        "R' U B' U' B' BR B U B U' B' BR' B R",
+        "BR' B L' B' BR L U' BR' L R' L' R BR",
+        "B' R BR' B R' B U B' R BR B' BR B R'",
+        "L R' L' R U B' R B R' U R B' R' B",
+        "B L' B' L U' B L' B' L U' L' B L B'"
+      ],
+      "svgId": "94",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "95",
+      "name": "Wl-",
+      "group": "w",
+      "algorithms": [
+        "(Rw R') U' H' U / B' R B Rw'\n-> Rs {Uo} U' S U (R' L R Br')",
+        "Rw R' U' H' U B' R B Rw'"
+      ],
+      "scramble": "R B' R' B U L U' L B L' B' U L'",
+      "scrambles": [
+        "R B' R' B U L U' L B L' B' U L'"
+      ],
+      "svgId": "95",
+      "tags": {
+        "sourceGroup": "W-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "96",
+      "name": "Bs0",
+      "group": "b",
+      "algorithms": [
+        "{Uo'} R' U' / L R L' / U' H U / R' U R\n-> R U / B' R' B / U S U' / R U' R'",
+        "{U,BL} R' U' L R L' U' R B' R' B U R' U R",
+        "[U] {U,F} U H U H U' S U' S"
+      ],
+      "scramble": "L' U' L U' R' L R L' U B L' B' U L",
+      "scrambles": [
+        "L' U' L U' R' L R L' U B L' B' U L",
+        "B' U R B' BR' R BR' B BR R' BR B R'",
+        "R U R' U L R' L' R U' B' R B U' R'",
+        "L' U' B L B' U' L R' L' R U L' U L",
+        "R U B' R' B U R' L R L' U' R U' R'"
+      ],
+      "svgId": "96",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "97",
+      "name": "Bs+",
+      "group": "b",
+      "algorithms": [
+        "{Uo'} U S U S / U H",
+        "[U] {U,BL} S U S U H"
+      ],
+      "scramble": "B U B' R BR R' U' B' R BR R' B",
+      "scrambles": [
+        "L' B L B' U L' B' BR' B L B' BR B",
+        "L' B' BR' B L B' BR B U B' R B R'",
+        "B U B' R BR R' U' B' R BR R' B",
+        "R' L U' R' U' L U R U' L' U' R L'",
+        "R' L R L' U' B L' B' L U' B L' B' L",
+        "R B' R' B U' R' L R L' U' B L' B' L",
+        "R B' R' B U' R B' R' B U' R' L R L'"
+      ],
+      "svgId": "97",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "98",
+      "name": "Bs-",
+      "group": "b",
+      "algorithms": [
+        "U' S {Uo'} U' S' U' S'",
+        "[U'] {U,BL} H' U' S' U' S'",
+        "[U'] H U' H U' S"
+      ],
+      "scramble": "B' R BR' R' B U R BR' R' B U' B'",
+      "scrambles": [
+        "L R' U L U R' U' L' U R U L' R",
+        "L R' L' R U B' R B R' U B' R B R'",
+        "B' R BR' R' B U R BR' R' B U' B'",
+        "L' B L B' U L' B L B' U L R' L' R",
+        "R B' R' B U' B' BR' B L' B' BR B L",
+        "B' BR' B L' B' BR B L U' B L' B' L",
+        "L' B L B' U L R' L' R U B' R B R'"
+      ],
+      "svgId": "98",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "99",
+      "name": "Bc0",
+      "group": "b",
+      "algorithms": [
+        "{Uo} U' S' / U' S' / U' S'",
+        "[U'] {U,BR} S' U' S' U' S'"
+      ],
+      "scramble": "L R BR R' L' R BR' R' U' R' L R L'",
+      "scrambles": [
+        "B' R B R' U B' R B R' U B' R B R'",
+        "B L' B' L U R B' R' B U L R' L' R",
+        "L' B L B' U' B' BR' B L' B' BR B L",
+        "L R BR R' L' R BR' R' U' R' L R L'"
+      ],
+      "svgId": "99",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "100",
+      "name": "Bc+",
+      "group": "b",
+      "algorithms": [
+        "[U] {Uo'} Br' R' U' / R L R' L' / U R Br",
+        "[U'] {L,F} U R D' R U' R' D' R' U R D' R' U'",
+        "[U] {F,U} U' BLw' U' R L R' L' U BLw U",
+        "[U] {B,BL} D' R' BR' R U R' U' BR R D"
+      ],
+      "scramble": "L R BR R' L' R BR R L R' BR R' L'",
+      "scrambles": [
+        "L' R BR R' U B L B' L' U' R BR' R' L",
+        "L R BR R' L' R BR R L R' BR R' L'",
+        "B' U' BR' U BR B R B' R' BR' U' BR U B",
+        "R U BR U' BR' B' R' B R BR U BR' U' R'",
+        "L B' BR' B U' L' R' L R U B' BR B L'",
+        "L' U' R BR' R' B L B' L' R BR R' U L",
+        "L U L' R L R' U R L' R L R U L'",
+        "L' B' BR B' L B BR B L' B' BR B L",
+        "L' U B L B L' B U B' L B L' U L",
+        "L U B' BR B L' R' L R B' BR' B U' L'"
+      ],
+      "svgId": "100",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "101",
+      "name": "Bc-",
+      "group": "b",
+      "algorithms": [
+        "{Uo'} U S (U H) U S'",
+        "[U] {U,BL} S U H U S'"
+      ],
+      "scramble": "R' U' R B' BR' R BR' B R' B' R BR' R' B",
+      "scrambles": [
+        "R B' BR' B R' B' R BR' B BR' R' B U' B'",
+        "L' B L B' U' R' L R L' U' B L' B' L",
+        "L R' L' R U' L' B L B' U' R' L R L'",
+        "L' B L B' U' R B' R' B U' R' L R L'",
+        "R' U' R B' BR' R BR' B R' B' R BR' R' B"
+      ],
+      "svgId": "101",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "102",
+      "name": "Ba0",
+      "group": "b",
+      "algorithms": [
+        "{Uo'} U S / U S / U S",
+        "[U] {U,BL} S U S U S",
+        "{U,BR} S' U' Rw' R H' R' Rw"
+      ],
+      "scramble": "R B' R' B U L' B' BR' B L B' BR B",
+      "scrambles": [
+        "R' BR R B' R' U L U' B U L' U' BR' R",
+        "BR L' B BR' B' BR' B L B' BR B BR B' BR'",
+        "B L' B' L U' B L' B' L U' B L' B' L",
+        "B' BR B R U' L R L' R' U B' R' BR' B",
+        "R B' R' B U L' B' BR' B L B' BR B",
+        "B' R B R' U' L' B L B' U' R' L R L'"
+      ],
+      "svgId": "102",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "103",
+      "name": "Ba+",
+      "group": "b",
+      "algorithms": [
+        "U' S (U' H') U' S'",
+        "[U] S' U Rw R' L R' L' R' Rw2",
+        "[U'] {U,F} H U' S U' H'",
+        "[U'] {U,F} S U' H' U' S'"
+      ],
+      "scramble": "BL R D R D' BL' R U' R' L R L'",
+      "scrambles": [
+        "BL R D R D' BL' R U' R' L R L'"
+      ],
+      "svgId": "103",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "104",
+      "name": "Ba-",
+      "group": "b",
+      "algorithms": [
+        "[U] Br' R' U' / L R L' R' / U R Br",
+        "[U] {BR,U} U' BLw' U' L R L' R' U BLw U"
+      ],
+      "scramble": "BR' R' U' R L R' L' U R BR",
+      "scrambles": [
+        "R' BR R' U B' R' B R U' R BR' R",
+        "R U' R BR' R' B' R' B R' BR R' U R'",
+        "R' U' R L' R' L U' L' R L' R' L' U' R",
+        "R U' B' R' B' R B' U' B R' B' R U' R'",
+        "BR' R' U' L R L' R' L R L' R' U R BR",
+        "BR' R' U' L B L' R L R' B' L' U R BR",
+        "BR' R' U' B R B' L B R' B' L' U R BR",
+        "BR' R' U' L B' L' R L R' B L' U R BR",
+        "BR' R' U' R L R' L' U R BR",
+        "B U B' R BR B' BR' R' B U' L R' L' R",
+        "R' U R BR L R' L' R BR' R' U' R"
+      ],
+      "svgId": "104",
+      "tags": {
+        "sourceGroup": "B-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "105",
+      "name": "Bb0",
+      "group": "b",
+      "algorithms": [
+        "{Uo} H' U' / S U S",
+        "S' U' H U S'",
+        "{U,BR} H' U' S U S"
+      ],
+      "scramble": "R B' BR' R BR' B' BR R' BR B R' U' B",
+      "scrambles": [
+        "R B' R' B U' R B' R' B U B L' B' L",
+        "L R' L' R U' R B' R' B U L R' L' R",
+        "L' B L B' U' B' R B R' U B' R B R'",
+        "L' B L B' U L' B L B' U' B' R B R'",
+        "R' L R L' U' B' R B R' U R' L R L'",
+        "R B' R' B U B L' B' L U' B L' B' L",
+        "R' L R L' U L' B L B' U' R' L R L'",
+        "R B' BR' R BR' B' BR R' BR B R' U' B",
+        "BR R' B BR' R B R' B' BR B' L R BR' L'",
+        "L R' L' R U B L' B' L U' L R' L' R",
+        "BR L R' L' B BR' B R B' R' BR B' R BR'"
+      ],
+      "svgId": "105",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "106",
+      "name": "Bb+",
+      "group": "b",
+      "algorithms": [
+        "U H / Rs' U' S' U Rs\nU H / {Uo'} U' B' Bl S Bl' B //// olp4a (sl.a)",
+        "[U] H Rw' R U' S' U Rw R'"
+      ],
+      "scramble": "L' BL B' BL' B' L B L' BL B BL' L",
+      "scrambles": [
+        "L' BL B' BL' B' L B L' BL B BL' L",
+        "L' BL B' BL' R B' L B L' BL R' B BL' L",
+        "L' BL B' BL' R' B' L B L' BL R B BL' L"
+      ],
+      "svgId": "106",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "107",
+      "name": "Bb-",
+      "group": "b",
+      "algorithms": [
+        "U S / x' R U' Br' S Br U R'",
+        "S U Rw' R B' R B R2' Rw"
+      ],
+      "scramble": "BL' B L R' L' R' B' BL R' U' L R' L' R",
+      "scrambles": [
+        "L' BL' B' L U B' L' B L U' L' B BL L",
+        "BL' B L R' L' R' B' BL R' U' L R' L' R",
+        "L' BL B L U' L' B L B' U L' B' BL' L"
+      ],
+      "svgId": "107",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "108",
+      "name": "Br0",
+      "group": "b",
+      "algorithms": [
+        "U S U' / B' Bl S Bl' B //// olp4a (sl.a)]",
+        "[U'] {F,BR} R' B S' U R B' R' B U' R B'"
+      ],
+      "scramble": "B U B' R BR B' BR R BR R' B U R'",
+      "scrambles": [
+        "B' BR' B R U' L R L' R' U B' R' BR B",
+        "B' R BR B R' L' B L B R BR' B R'",
+        "B L' B' L R B' BR' R' B R B' BR R' B",
+        "B U B' R BR B' BR R BR R' B U R'",
+        "B' R BR R' B L R' L' R B' R BR' B R'",
+        "R' L R L' B' R BR' R' B R B' BR R' B",
+        "B' R BR B' R B' L' B L R' B BR' B R'",
+        "B' R BR B R' B' R BR' B R L R L'",
+        "BR B' U L R' L' R U' B' R B R' B BR'",
+        "BR' R B L' B' L U B' R B R' U' R' BR",
+        "R' BR U' R' L R L' U B L' B' BR' L R",
+        "R' U' R B' BR' R BR B R' U' B L' B' L",
+        "B' R BR R B L' B L B' R' B' BR' B R'",
+        "BR B' U L' B L B' U' L R' L' R B BR'",
+        "BR' R B' R B R' U L R' L' R U' R' BR",
+        "L R' L' U BR' B BR R BR' B' BR R' U' R",
+        "R' BR U' R B' R' B U R' L R BR' L' R"
+      ],
+      "svgId": "108",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "109",
+      "name": "Br+",
+      "group": "b",
+      "algorithms": [
+        "{T'2} L' R U S' U' R' L",
+        "{U,BL} B' BLw U S' U' BLw' B"
+      ],
+      "scramble": "R B' BR' R' B R B' BR B R'",
+      "scrambles": [
+        "R B' BR' B R' B' R B R' B' R BR B R'",
+        "B' BR B R' U R' U' B' R BR' R B",
+        "R B' BR' L' R' B R B' BR L B R'",
+        "R B' BR' L R' B R B' BR L' B R'",
+        "B R' B BR B R' B' R BR' B' R B'",
+        "R B' BR' R' B R B' BR B R'",
+        "R L B R U' R B' R' B U R' B' L' R'",
+        "R B' BR' L' R' L B L' R L B' BR B R'",
+        "R' B' L' R' U L R' L' R U' R L B R",
+        "R B' BR' R' L B L' R L B' BR L' B R'"
+      ],
+      "svgId": "109",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "110",
+      "name": "Br-",
+      "group": "b",
+      "algorithms": [
+        "S U / S' U' S'",
+        "[U] {U,BR} S' U' S' U S"
+      ],
+      "scramble": "R B R B' U' L R' L' R U B R' B' R'",
+      "scrambles": [
+        "R' L R L' U' L' B L B' U L R' L' R",
+        "R B' R' B U L' B L B' U' B' R B R'",
+        "B' R B R' U R' L R L' U' B L' B' L",
+        "R L B' R' BR R' B R B' BR' R B L' R'",
+        "R' L R L' U' L R' L' R U B' R B R'",
+        "R' L R L' U R B' R' B U' B' R B R'",
+        "R' L' R' L U R B' R' B U' L' R L R",
+        "B' R B R' U R B' R' B U' R' L R L'",
+        "B L' B' L U' B' R B R' U R' L R L'",
+        "L' R L R U R B' R' B U' R' L' R' L",
+        "R B R B' U R B' R' B U' B R' B' R'",
+        "R B' R' B U' B' R B R' U B' R B R'",
+        "B' R B R' U' L' B L B' U B L' B' L",
+        "B' R B R' U' L R' L' R U R' L R L'",
+        "R' L R L' U R' L R L' U' L R' L' R",
+        "L' R L R U' L R' L' R U R' L' R' L",
+        "R' L' R' L U' L R' L' R U L' R L R",
+        "R' U' B' BR B L R L' R' B' BR' B U R",
+        "B L' B' L U L' B L B' U' R' L R L'",
+        "R B R B' U' L R' L' R U B R' B' R'"
+      ],
+      "svgId": "110",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "111",
+      "name": "Bl0",
+      "group": "b",
+      "algorithms": [
+        "BLw' B U S U' BLw L'"
+      ],
+      "scramble": "R' BR L' B L B' U R B' R' B U' BR' R",
+      "scrambles": [
+        "B BR' U' R B' R' B U R' L R BR L' B'",
+        "R B BR' B R' U' R B U' B' R BR' R B",
+        "R' BR L R' L' R U L' B L B' U' BR' R",
+        "R' BR L' B L B' U R B' R' B U' BR' R",
+        "B BR' U' R' L R L' U B L' B' BR L B'"
+      ],
+      "svgId": "111",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "112",
+      "name": "Bl+",
+      "group": "b",
+      "algorithms": [
+        "S' U' / S U S",
+        "S' U' S U S"
+      ],
+      "scramble": "L R L R' U R' L R L' U' R L' R' L'",
+      "scrambles": [
+        "L' B L B' U B L' B' L U' B L' B' L",
+        "L R' L' R U' L R' L' R U R' L R L'",
+        "L R' L' U R L R' BR R' L' R BR' U' R",
+        "L R' L' R U R B' R' B U' R' L R L'",
+        "B L' B' L U R' L R L' U' L R' L' R",
+        "L R' L' R U R' L R L' U' B L' B' L",
+        "B L' B' L U R B' R' B U' B' R B R'",
+        "B L' B' L U' L R' L' R U B' R B R'",
+        "B U' BR' B L' B' BR B' L B U L' B' L",
+        "L R L R' U R' L R L' U' R L' R' L'",
+        "R B BR' B R' U' B U R B' BR B R'",
+        "B' R B R' U B L' B' L U' L R' L' R",
+        "B' R BR R' B U R U' B' R BR' R B",
+        "B' R B R' U' R B' R' B U L R' L' R",
+        "R' BR' B' U B' R B R' U' L' B BR L R",
+        "B L' B' L U' L' B L B' U L R' L' R",
+        "R L' R' L' U R' L R L' U' L R L R'",
+        "R L' R' L' U' L' B L B' U L R L R'",
+        "L R L R' U' L' B L B' U R L' R' L'"
+      ],
+      "svgId": "112",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "113",
+      "name": "Bl-",
+      "group": "b",
+      "algorithms": [
+        "{T'2} R L' U' S U L R'",
+        "[U'] {U,BR} B' BLw U S U' BLw' B"
+      ],
+      "scramble": "B' R BR' R' B' L' B' L R B' BR R' B",
+      "scrambles": [
+        "B' R BR' R' B' L' B' L U B' R BR' B R'",
+        "B' R BR' B R' U L R' L' R' B' BR' B R'",
+        "R B' BR B R' L' B L B' R B' BR' B R'",
+        "R B' BR R B' R L R' L' B R' BR' B R'",
+        "B' R BR' B R B L' B' L B' R' BR R' B",
+        "B L' B' L B' R BR' R' B R B' BR R' B",
+        "R' U R BR U' R B' R' B U BR' R' U' R",
+        "B R L B U R' L R L' U' B' L' R' B'",
+        "B' R BR' R' B' L' B' L R B' BR R' B",
+        "B' R BR' R' B R' L R L' B' R BR R' B",
+        "R' B' L' R' U' L' B L B' U R L B R",
+        "L B R L U' R' L R L' U L' R' B' L'",
+        "L' R' B' L' U L' B L B' U' L B R L",
+        "B U' B' BR' U R B' R' B U' BR B U B'",
+        "R B' BR R' B L R' L' R' B' BR' B R'",
+        "R B' BR B' R' L R' L' R B R BR' B R'",
+        "B' R BR' B' R L' B' L B R' B BR R' B",
+        "R B' BR R' B R B' BR' B R' L R' L' R"
+      ],
+      "svgId": "113",
+      "tags": {
+        "sourceGroup": "B-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "114",
+      "name": "Zs0",
+      "group": "z",
+      "algorithms": [
+        "Rw U' Rw' H S Rw U Rw'"
+      ],
+      "scramble": "L' B' BR' B L B' BR B' L' B' L",
+      "scrambles": [
+        "B L' B' L R' B BR' B' L' B BR B' L R",
+        "R' B' R L' U' B' R' B' R B' U L B",
+        "L' U' L B' L' B U B' L B' L' B' L",
+        "L R' L' R U R' U' R B' BR' R BR B R'",
+        "R' U' R B' BR' R BR R B L' B L B' R",
+        "R BR' R L' B BR' B L B' BR B' R' BR R'",
+        "L' U' L B' BR B' L' B BR' B U L",
+        "L' B' BR' B L B' BR B' L' B' L",
+        "R' L' B' BR' R L' R' BR R' L R B L R",
+        "L R' U' R' U' L U R U' L' U' L' R",
+        "R BR' R' B U' B' U B' R BR R' B",
+        "R B' BR' B R' U R B BR' B R' U' B",
+        "R L R' L' B' R' U' B R' B' R U B R",
+        "R' L R L B' BR' B L B' BR R B R'"
+      ],
+      "svgId": "114",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "115",
+      "name": "Zs+",
+      "group": "z",
+      "algorithms": [
+        "U' B U' R B' R' B U R' L R L' B R B R'",
+        "U' {BL,F} B R' L R' L' R U' L R' L' R U B' R"
+      ],
+      "scramble": "R' BR' B BR R B R B' R BR' B' BR R",
+      "scrambles": [
+        "R BR R' U' R' L R L' U R BR' B R' B'",
+        "R' BR' B BR R B R B' R BR' B' BR R",
+        "BR U B' R' BR R L R' BR' L' R B U' BR'"
+      ],
+      "svgId": "115",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "116",
+      "name": "Zs-",
+      "group": "z",
+      "algorithms": [
+        "[U] {U,BR} H U' S' U S"
+      ],
+      "scramble": "B U B' BR B BR' U' B' U BR B' BR'",
+      "scrambles": [
+        "R' L R' BR R' L' R BR' R' U B' R B R'",
+        "L' R B L B' R' U' R L' B' R' B' L B'",
+        "B BR R U' B L' B' L U L R' BR' L' B'",
+        "BR U' L' B' L U L U' L B L' U BR' L'",
+        "B' R' U R' B' R U' R U R B R' U' B",
+        "R' L R L' U' L R' L' R U L' B L B'",
+        "R' L R L' U' L' B L B' U R B' R' B",
+        "B' R BR' R' B R B BR R BR' B BR R B",
+        "R B' R' B U' B' R B R' U L' B L B'",
+        "B L R' L' B' R U' L R' L B L R B'",
+        "B L R' L' B' R U' R' B L R L B' L",
+        "R BR' R' B U' B' U' B' R BR' R' B",
+        "L' R B L B' R' U' B' R B' L' B' R' L",
+        "B U B' BR B BR' U' B' U BR B' BR'"
+      ],
+      "svgId": "116",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "117",
+      "name": "Zc0",
+      "group": "z",
+      "algorithms": [
+        "[U] H' U' H' U S",
+        "[U'] {U,BR} H U' S' U H"
+      ],
+      "scramble": "R B' BR' B R' U R B' BR' R' B",
+      "scrambles": [
+        "R U' B' R BR' R' B R' B' BR B R' U R",
+        "L' B L B' U' B' R B R' U L' B L B'",
+        "R' L' B L R B' U' B R' L' B' L' R L'",
+        "L B' R' L' R B U' R B' R L R B L'",
+        "BR B' U L' B BR' B L B' BR B' U' B BR'",
+        "L B' R' L' R B U' B' L R B R L' R",
+        "R' L' B L R B' U' L' B L' R' L' B' R",
+        "R U' R L R BR' R L' R' BR R U R'",
+        "R B' R' B' U B BR B BR R BR R U R",
+        "L R' L' R U' R B' R' B U R B' R' B",
+        "R B' BR' B R' U R B' BR' R' B"
+      ],
+      "svgId": "117",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "118",
+      "name": "Zc+",
+      "group": "z",
+      "algorithms": [
+        "U' {L,F} U R' U' R U R D R' U' R D' R'"
+      ],
+      "scramble": "R BR R' L R BR' R' L' R' L R L'",
+      "scrambles": [
+        "B' R B R' U R' U' R B' BR' R BR B R'",
+        "R BR R' L R BR' B R' L' R' L R B' L'",
+        "B L R BR' R' L' R BR R' B' R' L R L'",
+        "R BR U BR' U' B' R' B R U BR U' BR' R'",
+        "B' L R' L' R BR' L' B L B' BR R B R'",
+        "R BR R' L R BR' B' R' L' R' L R B L'",
+        "R' L R L' R' B BR' B' L' B BR B' L R",
+        "B' U' L' B R' B' R L U R' B L R L'",
+        "B' U' L B R' B' R L' U R' B L R L'",
+        "R BR R' L R BR' R L' R L R' L' R",
+        "R L R' U R L' R' L U' L' R' L R L'",
+        "R BR R' L R BR' R' L' R' L R L'",
+        "R B BR R L R' BR' B R' B' L' B'",
+        "B' U' B R' B' R U R' B L R L'"
+      ],
+      "svgId": "118",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "119",
+      "name": "Zc-",
+      "group": "z",
+      "algorithms": [
+        "[U] {B,U} U' R BR' R' U R U' BR R' U"
+      ],
+      "scramble": "R B' BR B R' U' R B' BR R' B",
+      "scrambles": [
+        "R B' BR B R' B' R BR' B R'",
+        "B' R BR' L B R' B' R BR L' R' B",
+        "R B' BR R' B U' B' R BR R' B",
+        "R B' BR L' B R' B' R BR' L B R'",
+        "B R' B BR' R' B R B' BR B' R B'",
+        "R' B R' BR R' B R B' BR' R B' R",
+        "B' R BR' L' B R' B' R BR L R' B",
+        "R B' BR B R' U' R B' BR R' B",
+        "R B' BR L B R' B' R BR' L' B R'",
+        "B' R BR' B R' B' R BR R' B"
+      ],
+      "svgId": "119",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "120",
+      "name": "Za0",
+      "group": "z",
+      "algorithms": [
+        "[U] {F,BR} B R' U' S' U B' R"
+      ],
+      "scramble": "L' B L B R BR B R' B' R BR' B R'",
+      "scrambles": [
+        "B' R BR B R L R L' B' R BR' B R'",
+        "L R' L' R' B' BR R BR' B' BR R' BR' B' R'",
+        "R BR' R' B' L' B L B' R B BR B R' B'",
+        "L' B L B R BR B R' U' R B' BR R' B",
+        "L' B L B R BR R' B U' B' R BR R' B",
+        "R BR' B' R' B L' B L R B' BR B R' B'",
+        "B' R BR R' B U' L' B L B R BR R' B",
+        "L' B L B R BR B R' B' R BR' B R'",
+        "B' R BR B R L R L' U' R B' BR R' B",
+        "B' R BR R' B' R' L R L' R B BR' B R'",
+        "B' R BR R B' L R L' R' B R' BR' B R'",
+        "B' R BR B R' B L' B' L R B' BR' B R'",
+        "L R' L' R U BR B BR R' BR' B' BR R BR"
+      ],
+      "svgId": "120",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "121",
+      "name": "Za+",
+      "group": "z",
+      "algorithms": [
+        "[U] {U,BR} S U' S U S'"
+      ],
+      "scramble": "B U B' R BR B BR' B R' U' B",
+      "scrambles": [
+        "BR' R' U' R U R' L R L' U' R' U R BR",
+        "B U B' R BR B BR' B R' U' B",
+        "B' R BR' R' B U L' B L B R BR' R' B",
+        "L' B L U B BR B BR R BR R U R",
+        "B' BR B' L' B BR B L B' BR R B R'",
+        "B L' B' L U' L R' L' R U L' B L B'",
+        "B L' B' L U' L' B L B' U R B' R' B",
+        "L B' L' B' U B' R B R' U' B L B L'",
+        "R' B R B U B' R B R' U' B' R' B' R",
+        "B' R B R' U' R B' R' B U R B' R' B",
+        "B' R' B' R U B' R B R' U' R' B R B",
+        "L' B L B R BR' B R' U R B' BR' R' B",
+        "R' U R BR U R' L R L' U' BR' R' U' R",
+        "B' R BR' B R L R L' U R B' BR' R' B",
+        "B L B L' U B' R B R' U' L B' L' B'"
+      ],
+      "svgId": "121",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "122",
+      "name": "Za-",
+      "group": "z",
+      "algorithms": [
+        "[U'] {B,BL} R' U' R U R' Rw U' R' U Rw U R' U' Rw",
+        "[U'] {BR,U} D R' U R U' R D' R' U R' U' R"
+      ],
+      "scramble": "BR' R L' B L B' R' BR' B' L' B BR' L",
+      "scrambles": [
+        "BR' R' B' R' B L R' BR' L' B' L' B BR' L",
+        "BR' R L' B L B' R' BR' B' L' B BR' L",
+        "BR' R B L B' R' BR' B R B R' L' B BR'"
+      ],
+      "svgId": "122",
+      "tags": {
+        "sourceGroup": "Z-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "123",
+      "name": "Zb0",
+      "group": "z",
+      "algorithms": [
+        "{R,U} U' R BR' R' U R U' BR U R'"
+      ],
+      "scramble": "R' L R BR R' BR R L' R' BR' R BR'",
+      "scrambles": [
+        "R' BR' B BR L R L' R' BR' L' B' BR L R",
+        "R' B BR R B' R B R BR' B' L R' L' R'",
+        "R' B BR B' L R L' R' L' B BR' B' L R",
+        "R' B BR B L R L' R' L' B' BR' B' L R",
+        "R' B BR L R L' R' BR' L' B' L R",
+        "R' BR B BR L R L' R' BR' L' B' BR' L R",
+        "L' B L B' R U' B' R BR' R' BR R' B",
+        "L' R' U L B' L R' L' R L' B U' R L",
+        "R' L U L B' BR B L' B' BR' B U' R L'",
+        "L R BR L' B L' B' BR' L R' B' R B R'",
+        "R' B R' U R' L' B' L B' R B' U' R' B'",
+        "R' L R BR' L' B' BR B L' B' BR' B BR L",
+        "B R U B R' B L' B' L B' R U' R' B'",
+        "R B' R' B L' B' BR B' L B BR' R B R'",
+        "R' L R BR R' BR R L' R' BR' R BR'",
+        "L' R' U B' L R' L R L' B L' U' R L",
+        "L' B' BR B' L B BR' R B R' B L' B' L"
+      ],
+      "svgId": "123",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "124",
+      "name": "Zb+",
+      "group": "z",
+      "algorithms": [
+        "[U'] {U,BL} S' U H' U' H'",
+        "[U'] {U,BR} S U S U' H"
+      ],
+      "scramble": "L R' L' R U' L R BR' R L' R' BR R'",
+      "scrambles": [
+        "L' U L' R' L U' L R L R' L' U R",
+        "L R BR' R L' R' BR R' U L R' L' R",
+        "B' R BR' R' B' L' B BR B' L B' R' U R",
+        "L U R' L' R L R U' R L' R' U R'",
+        "R B BR B BR R' B U R B' BR' R' U B",
+        "BR B' U R' L R L' U' L' B BR' B L B'",
+        "L' B L B' U R B' R' B U' R B' R' B",
+        "L R' L' R U L R' L' R U' L' B L B'",
+        "L R' L' R U B L' B BR' B L B' BR B",
+        "B' R' BR' B' BR R' BR' B' R' B' R BR R' B",
+        "L R' L' R U' L R BR' R L' R' BR R'",
+        "L' B L B' U B' R BR' R BR R' B U R'",
+        "L R' L' R U L' B L B' U' R B' R' B",
+        "B' R BR R' B R B' BR' B R' B L' B' L"
+      ],
+      "svgId": "124",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "125",
+      "name": "Zb-",
+      "group": "z",
+      "algorithms": [
+        "[U'] S U S"
+      ],
+      "scramble": "L R' L' R U' L R' L' R",
+      "scrambles": [
+        "L' B L B' U' B R' L R L' R B' R'",
+        "L' B L B' U' L' R B' R' B R' L R",
+        "B' L R' L' R L' B L U' B' R B R'",
+        "L R L' B L' B' L R' U' B' R B R'",
+        "L' B L B' U' B L' B' L R' L R L'",
+        "R B' R' B L' B L B' U' B' R B R'",
+        "R L' B L B' L R' L' U' B' R B R'",
+        "B L' B' L B' R B R' U' B' R B R'",
+        "R' L R L' R' L R L' U' L R' L' R",
+        "B' R B R' L' B L B' U' L R' L' R",
+        "L R' L' R U' L R' L' R",
+        "L' B L B' U' R' L' R B' R B R' L",
+        "L R' L' R U' R' L R L' R' L R L'",
+        "R' L R L' R B' R' B U' B' R B R'",
+        "L' B' L R' L R L' B U' B' R B R'",
+        "B' R B R' L R' L' R U' B' R B R'"
+      ],
+      "svgId": "125",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "126",
+      "name": "Zr0",
+      "group": "z",
+      "algorithms": [
+        "[U'] {U,BR} S U S U' S"
+      ],
+      "scramble": "B U' B' L' B BR' B L B' BR U B'",
+      "scrambles": [
+        "BR' R' U' L R L' R' U R BR R' L R L'",
+        "R B' R' B U R B' R' B U' R B' R' B",
+        "R' U R BR R' L R BR' L' R' U' L R L'",
+        "R' L R L' U B' R B R' U' L' B L B'",
+        "B U' B' L' B BR' B L B' BR U B'",
+        "B U' L B' L B BR' B L' B' BR L' U B'",
+        "B' R BR' R BR R' B U R' U L R' L' R",
+        "R B' R' B U B' R BR' R BR R' B U R'"
+      ],
+      "svgId": "126",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "127",
+      "name": "Zr+",
+      "group": "z",
+      "algorithms": [
+        "[U'] H U S'"
+      ],
+      "scramble": "R' L R L' U' B' R B R'",
+      "scrambles": [
+        "L' R B' R' B R' L R U' L R' L' R",
+        "L' B L B' R B' R' B U' L R' L' R",
+        "B L' B' L R B' R' B U' B' R B R'",
+        "R B' R' B U' R' L' R B' R B R' L",
+        "B L' B' L R' L R L' U' L R' L' R",
+        "R' L' R B' R B R' L U' L R' L' R",
+        "B' R B R' B L' B' L U' L R' L' R",
+        "R B R' L R' L' R B' U' L R' L' R",
+        "R B' R' B U' B L' B' L R' L R L'",
+        "L R' L' R L' B L B' U' L R' L' R",
+        "R B' R' B U' B' R B R' B L' B' L",
+        "R B' R' B U' L' R B' R' B R' L R",
+        "R' L R L' U' B' R B R'",
+        "B R' L R L' R B' R' U' L R' L' R",
+        "R B' R' B U' B R' L R L' R B' R'",
+        "L R' L' R L R' L' R U' B' R B R'"
+      ],
+      "svgId": "127",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "128",
+      "name": "Zr-",
+      "group": "z",
+      "algorithms": [
+        "[U'] {U,BL} Rw R' L R' L' Rw2 R'"
+      ],
+      "scramble": "BR B' R' L R L B BR' L",
+      "scrambles": [
+        "BR B' R' L R L B BR' L",
+        "BR R L R' L' R B R B' R BR'",
+        "B R B' BR' R L R' BR B R' B' L'",
+        "BR R' L R L' R B R' B' BR'",
+        "BR L' B L R' L R L' B' BR'",
+        "BR R B' R' L R L B L' R' BR' L'",
+        "BR B R B R L R L' B BR'",
+        "BR B' L' B L B R B R' B BR'",
+        "BR B R' B' L B R B' BR' L'",
+        "BR R' L R' B R' B' R' L' R BR'",
+        "BR R L B R B' R' L' R' BR'",
+        "BR L B L' R' L R B' BR' L'"
+      ],
+      "svgId": "128",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "129",
+      "name": "Zl0",
+      "group": "z",
+      "algorithms": [
+        "[U'] S U H"
+      ],
+      "scramble": "B L' B' L U' B' R B R'",
+      "scrambles": [
+        "B' R B R' U' B' R B R' L' B L B'",
+        "B' R B R' U' L R' L' R",
+        "B L' B' L U' B' R B R'",
+        "R B' R' B R B' R' B U' L R' L' R",
+        "B' R BR' R' B U' R U' B' R BR' R B",
+        "B L' B' L U' R B' R' B R B' R' B",
+        "B L' B' L U' L R' L' R B L' B' L",
+        "B' R B R' U' R' L R L' R' L R L'",
+        "L R' L' R B L' B' L U' L R' L' R",
+        "L' B L B' L' B L B' U' B' R B R'",
+        "R' L R L' B' R B R' U' B' R B R'",
+        "B' R BR B BR' R' B U' B' L R' L' R"
+      ],
+      "svgId": "129",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "130",
+      "name": "Zl+",
+      "group": "z",
+      "algorithms": [
+        "{BL,F} B R' U' S' U R B'"
+      ],
+      "scramble": "B' R BR R BR R' B U BR' R' B U' B'",
+      "scrambles": [
+        "B' R BR R BR R' B U BR' R' B U' B'",
+        "R B' R' BR B L' B' BR' B BR B L B' BR'",
+        "B L' B' L U' R' L R' BR R' L' R BR' R'",
+        "L' B L B' L' B' BR B' L B BR' R B R'",
+        "R' B R' B U R' B' L' B L R U' R' B",
+        "B' U R B' BR B BR' R' B U' R B' R' B",
+        "R B' R' B U R U' B' R BR' R' BR B R'",
+        "B' R B BR' R L R' BR R' L' R' L R L'",
+        "B' L' R' B' U B L' B' L U' B R L B",
+        "BR' R' L R BR R BR' R' L' R BR B' R' B",
+        "R L B R U L R' L' R U' R' B' L' R'",
+        "B' R BR B' BR' B R' U' B U R B' R' B"
+      ],
+      "svgId": "130",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "131",
+      "name": "Zl-",
+      "group": "z",
+      "algorithms": [
+        "[U'] {BR,U} U R U' R' L' R L U R' U'"
+      ],
+      "scramble": "BR R BR' B' R' B R BR R' BR'",
+      "scrambles": [
+        "BR R BR' B' L' R' B R B' L B BR R' BR'",
+        "BR R BR' L' B' R' B R B L B' BR R' BR'",
+        "BR' L' B BR' L' B R B' R' BR L B' BR L",
+        "BR R BR' B' L R' B R B' L' B BR R' BR'",
+        "BR R BR' B' R' B R BR R' BR'",
+        "L' B BR B' L B U' R B R' B' U BR' B'",
+        "BR R BR' R BR R' B U B R' B' U' B' BR'",
+        "BR R BR' R' B' R B R' B' R B BR R' BR'",
+        "R' BR B' R BR R' B R B' BR' R' B BR' R",
+        "BR R BR' L B' R' B R B L' B' BR R' BR'",
+        "BR' B BR' B U R' L R L' U' B' BR B' BR",
+        "BR R BR' B' L' R' L B L' R BR L R' BR'"
+      ],
+      "svgId": "131",
+      "tags": {
+        "sourceGroup": "Z-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "132",
+      "name": "Ss0",
+      "group": "s",
+      "algorithms": [
+        "[U] {R,BR} U R' U' R' D R' U R D' R' U'",
+        "[U] {B,U} U R' U' R D' R U' R' D R' U' R U'"
+      ],
+      "scramble": "B' R BR R' B R BR' R' B U' B'",
+      "scrambles": [
+        "B' BR' L B L B' BR B L' B' L' R B R'",
+        "B' BR' B L' B' BR B L B' R B R'",
+        "L B L' R U B L B L' B U' R' B'",
+        "B' R BR' B' BR' B R' U' R BR B R'",
+        "B' R' BR' B' L' B BR B' L B R' B R'",
+        "L B' R' BR R B L' B' R' BR' R' B R'",
+        "B' R B' R L R BR' R' L' R BR R B' R'",
+        "B' R' BR' B' L' B BR R' B' R L R' B' R'",
+        "B' R B' BR R BR' B BR R' BR' B R'",
+        "R U R' B R B' U' B R' B R B R'",
+        "B' R B R L' B BR' B' L B BR B' R",
+        "B' R BR R' B R BR' R' B U' B'",
+        "R' L U L U R' U' L' U R U R L'"
+      ],
+      "svgId": "132",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "133",
+      "name": "Ss+",
+      "group": "s",
+      "algorithms": [
+        "[U'] H' U S' U' S",
+        "[U] {R,F} D' U R' U' Rw R' U' R U Rw' R D"
+      ],
+      "scramble": "B' R BR R' B U B U B' R BR R'",
+      "scrambles": [
+        "B' R' L R B L' U L B' R' L' R' B R'",
+        "L R' L' R U R B' R' B U' L' B L B'",
+        "R L' B' R' B L U B L' B R B L R'",
+        "R L' B' R' B L U L' R B L B R' B",
+        "R BR R' L R BR' R L' R U' B L' B' L",
+        "B' R' L R B L' U R' L R' B' R' L' B",
+        "R B' BR R' B U R U' B' R BR' R' B R'",
+        "B' R BR' B R' U' R U' B' R BR' R' B R'",
+        "B R' B BR' B R' U' B' U R B' BR R B'",
+        "B L U' L B L' U L' U' L' B' L U B'",
+        "L' B L B' U B L' B' L U' R B' R' B",
+        "B' R BR R' B U B U B' R BR R'",
+        "R' B BR' U B' U' R' U B U' R BR B' R",
+        "L R' L' R U R' L R L' U' R B' R' B"
+      ],
+      "svgId": "133",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "134",
+      "name": "Ss-",
+      "group": "s",
+      "algorithms": [
+        "[U'] {BR,BL} B R' L R' L' R U H U' R B'"
+      ],
+      "scramble": "BR' R U L' B L B' U' B' R B R BR",
+      "scrambles": [
+        "B' R BR' B R' L R' L' R B' R BR B R'",
+        "L' B L B' U B' R BR B' BR' B R' U' B",
+        "B R' BR' B R' U' B U R B' BR B' R B'",
+        "B L' B' L B' R BR' B R' B' R BR B R'",
+        "L U' L U' R B' R' B U B L' B' U L'",
+        "B' R BR' R' B R B' BR B R L R L'",
+        "BR' R' BR' B BR R BR' B' BR' U' R B' R' B",
+        "B' R BR' R' B R' L R L' R B' BR B R'",
+        "R' U B' R' B U B L' B' L U' R U' R",
+        "R B' R BR R' B U R' U' B' R BR' B R'",
+        "BR' R U L' B L B' U' B' R B R BR",
+        "R B' R BR R' B U R' U R B' BR R' B",
+        "R B' BR B BR' R' B U' B' U' L' B L B'"
+      ],
+      "svgId": "134",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "135",
+      "name": "Sc0",
+      "group": "s",
+      "algorithms": [
+        "[U] {BL,F} R' B U' S U R B'",
+        "[U] Rw' L R L' U H U' Rw R'"
+      ],
+      "scramble": "B' U B BR B' L' B BR' B L B U' B",
+      "scrambles": [
+        "B' R BR B R' B' R BR' B R' L' B L B'",
+        "B L' B' L R B' BR' B R' B' R BR B R'",
+        "B U B' R BR R' B' R B' BR' B R' U' B",
+        "BR' R U' R' BR R' L R BR' R L' U R' BR",
+        "B' R BR B R' B' R BR' R' B L R' L' R",
+        "B' R BR B' BR' B' R' B L' B' L B' U' B",
+        "B' U B BR B' L' B BR' B L B U' B",
+        "R' L R L' B' R BR' B R' B' R BR B R'",
+        "R' U' R B' BR' R BR' R' B R B' BR' B R'"
+      ],
+      "svgId": "135",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "136",
+      "name": "Sc+",
+      "group": "s",
+      "algorithms": [
+        "[U] {BL,F} D' R U' R' U R' D R U' R U R'"
+      ],
+      "scramble": "B U B' R BR B' BR' R' B",
+      "scrambles": [
+        "B' R B U R' B R B' U' B R' L' B' L",
+        "R B R' L R' BR L' R L R' BR' R L' B'",
+        "L' R B' R' B R' B BR' B' L B BR B' R",
+        "B R B' BR R' B U' R B' BR' B' BR' R' B",
+        "B L' B' L' R BR R' L' R BR' R L R L'",
+        "L' R' L R L B U B' L B L' U' B' L'",
+        "B L R' L' R BR' L R' L' R BR R B' R'",
+        "B R BR' R' L R BR L' B L' B' L R' B'",
+        "B' R B R' U B' R BR B BR' R' B U' B'",
+        "R B R' BR' R' U R L R' L' U' R BR B'",
+        "B U B' R BR B' BR' R' B",
+        "L R BR R' L' R BR' B R' L R' L' R B'",
+        "L R L B BR L' R L' R' BR' B R' B",
+        "R' U' R B' BR' R BR B R' U B' R B R'",
+        "L' B L B' L R BR R' L' R BR' B' R' B"
+      ],
+      "svgId": "136",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "137",
+      "name": "Sc-",
+      "group": "s",
+      "algorithms": [
+        "[U'] H' U S' U' H"
+      ],
+      "scramble": "R U' B' R BR' R' B' BR R BR' B BR R B",
+      "scrambles": [
+        "B' R B R' U R' L R L' U' R B' R' B",
+        "R U' B' R BR' R' B' BR R BR' B BR R B",
+        "B L' B' L U L' B L B' U' L' B L B'",
+        "B' R B BR B' BR' R' B U' L' B L U B'",
+        "BR B U L B L' R' L R B' L' U' B' BR'",
+        "L B' L' B' U' B L' B' L U B L B L'",
+        "B L B L' U' B L' B' L U L B' L' B'",
+        "BR B U B' R' L R L B L U' B' BR'",
+        "B' R B R' U R B' R' B U' L' B L B'",
+        "BR B U R L B R B' R' L' R' U' B' BR'",
+        "R B L R' BR' B R' B' R BR R L' B' R'",
+        "B' L' R B BR R' B R B' BR' B' R' L B",
+        "B' R BR B R' L R BR' R L' R B U' B'",
+        "B L' B BR' B L B' BR B U' R' L R L'",
+        "B' R' B' R U' B L' B' L U R' B R B",
+        "R' U' R B L' B BR' B L B' R BR B R'",
+        "BR U R BR B' BR' R' B U' B U B' U' BR'",
+        "BR B U B R' B' L B R B' L' U' B' BR'",
+        "R' B R B U' B L' B' L U B' R' B' R",
+        "B R BR R' U' B' L' B L U R BR' R' B'"
+      ],
+      "svgId": "137",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "138",
+      "name": "Sa0",
+      "group": "s",
+      "algorithms": [
+        "[U'] {U,BL} S' U S' U' H"
+      ],
+      "scramble": "R U' B' R BR' R B U R B' BR' B R'",
+      "scrambles": [
+        "L R B' R' L' B U R B' R L R B L'",
+        "R BR' R L R' BR' R' L' R BR' R L R L'",
+        "R BR' R' B U' B' U' R B BR' B R' U' B",
+        "R' B L R L' B' U L' B L' R' L' B' R",
+        "R B' R' B U B L' B' L U' R B' R' B",
+        "R U' B' R BR' R B U R B' BR' B R'",
+        "R' L R L' U L' B L B' U' L' B L B'",
+        "L R B' R' L' B U B' L R B R L' R",
+        "R' B L R L' B' U B R' L' B' L' R L'"
+      ],
+      "svgId": "138",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "139",
+      "name": "Sa+",
+      "group": "s",
+      "algorithms": [
+        "[U'] {L,U} R U' BR U R' U' R BR' U R'"
+      ],
+      "scramble": "R B' BR R' B U B' U R B' BR B' R'",
+      "scrambles": [
+        "R L B R U' B L' B' L U R' B' L' R'",
+        "R' L R L' R B' BR' B R' B' R BR B R'",
+        "R B' BR' B R' U' R' U' R B' BR' R B R'",
+        "B' R BR' B R' U' B' U R B' BR B' R'",
+        "R' U' R B' BR' R BR R' B U R B' R' B",
+        "R B' BR' B R L R L' B' R BR B R'",
+        "B' R BR' B R' B' U R B' BR B BR R' B",
+        "R' B' L' R' U B L' B' L U' R L B R",
+        "R B' R' B U B' R BR B' BR' B R' U' B",
+        "R B' BR' R B' L R L' R' B R' BR B R'",
+        "R B' BR' B R' B L' B' L R B' BR B R'",
+        "B' L' R' B' U' R B' R' B U B R L B",
+        "R B' BR R' B U B' U R B' BR B' R'",
+        "R B' BR' R' B' R' L R L' R B BR B R'",
+        "L B R L U L R' L' R U' L' R' B' L'"
+      ],
+      "svgId": "139",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "140",
+      "name": "Sa-",
+      "group": "s",
+      "algorithms": [
+        "[U] {R,U} U' R U R' U' R' D' R U R' D R"
+      ],
+      "scramble": "L R' L B BR' B' L B BR B' R",
+      "scrambles": [
+        "R' BR B' BR B' L' B BR' B BR' L' R L'",
+        "R' L R' BR R' L' R BR' R L R L'",
+        "L R' L B BR' B' L B BR B' R",
+        "L R' L' R' B BR R BR' B BR R' BR' B R'",
+        "B U B' L B L' U' L B' R' L' R",
+        "B' BR B R' U L R L' U B' R BR B R'",
+        "L' R' L U' L' R L R' U R L R' L' R",
+        "B U R B' L B L' R' U' L B' R' L' R",
+        "L R L' R L R' U L' R L R' U' L' R'",
+        "L R L' R BR L R' L' R BR' L R' L' R'",
+        "L' R' B R L' R' BR' L B' L B BR B' R",
+        "B L B R B' R' BR' R' L' R BR R B' R'",
+        "L R' BR' L' R BR' R' L R BR R' BR L' R",
+        "B U R' B' L B L' R U' L B' R' L' R"
+      ],
+      "svgId": "140",
+      "tags": {
+        "sourceGroup": "S-even",
+        "parity": "even",
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "141",
+      "name": "Sb0",
+      "group": "s",
+      "algorithms": [
+        "{R,U} R U' BR U R' U' R BR' R' U"
+      ],
+      "scramble": "R' L' B BR L R L R' BR' L' B' R",
+      "scrambles": [
+        "BR' L' B' BR B L B' BR' B BR L R' L' R",
+        "BR R' BR R L R' BR' R BR' R' L' R",
+        "B' R BR' R BR R' B U R' B L' B' L",
+        "B' R' B BR' R' B' R' B L R' BR R' L' R'",
+        "R L R L' B BR R' B' R' B R' BR' B' R",
+        "L R' U B' BR B L B' BR' B L' U' L' R",
+        "R B' R' BR B' L' B BR' B L B' R B R'",
+        "R' L' B BR L R L R' BR' L' B' R",
+        "R' B BR R L' R B' R' B R' BR' L B' R",
+        "R' BR L' B BR L R L R' BR' L' B' BR' R",
+        "R L U' R' B R' L R L' R B' U L' R'",
+        "R' L' B BR B' L R L R' L' B BR' B' R",
+        "R' B BR L' R B' R B R' L R' BR' B' R",
+        "R' L' B BR B L R L R' L' B' BR' B' R",
+        "B R' B' BR' R L R' BR B R B' R' L' R",
+        "R L U' B R' L R' L' R B' R U L' R'"
+      ],
+      "svgId": "141",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "142",
+      "name": "Sb+",
+      "group": "s",
+      "algorithms": [
+        "[U] S' U' S'"
+      ],
+      "scramble": "R' L R L' U R' L R L'",
+      "scrambles": [
+        "L R' L' R L' B L B' U B L' B' L",
+        "B L' B' L R' L R L' U B L' B' L",
+        "R B' R' B U L R L' B L' B' L R'",
+        "R' L R L' U L R' L' R L R' L' R",
+        "R B' U R U B' U' R' U B U B R'",
+        "R B' R' B U R L' B L B' L R' L'",
+        "R B R' L R' L' R B' U B L' B' L",
+        "R B' R' B U B' R B R' L R' L' R",
+        "B' R B R' B L' B' L U B L' B' L",
+        "R' L' R B' R B R' L U B L' B' L",
+        "R B' R' B U B L' B' L B' R B R'",
+        "B L' B' L R B' R' B U R' L R L'",
+        "L' R B' R' B R' L R U B L' B' L",
+        "L R' L' R L R' L' R U R' L R L'",
+        "R' L R L' U R' L R L'",
+        "B R' L R L' R B' R' U B L' B' L"
+      ],
+      "svgId": "142",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "143",
+      "name": "Sb-",
+      "group": "s",
+      "algorithms": [
+        "[U] H' U' S' U S'"
+      ],
+      "scramble": "R' U' L R L' R' L' U L' R L U' L",
+      "scrambles": [
+        "R U' R L R' U R' L' R' L R U' L'",
+        "R B' R' B U' L' B L B' U L' B L B'",
+        "R' L R L' U' R' L R L' U R B' R' B",
+        "R' U' L R L' R' L' U L' R L U' L",
+        "R' BR U' R B' R' B U R' L R BR' R L'",
+        "R BR' R L R' BR R' L' U R' L R L'",
+        "R B' BR B R' U' B' R BR R' B' L' B' L",
+        "BR B U B' L' B L U' B' BR' L R' L' R",
+        "R U' B' R BR' R' BR R' B U' B L' B' L",
+        "R' L R L' U' R B' R' B U L' B L B'",
+        "R' L R L' U' R BR' R L R' BR R' L'",
+        "B' R BR B R U' R B' BR' R BR' B R'"
+      ],
+      "svgId": "143",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "144",
+      "name": "Sr0",
+      "group": "s",
+      "algorithms": [
+        "[U] {U,BR} H' U' S'",
+        "[U] {U,BL} H U' S"
+      ],
+      "scramble": "B L' B' L U R' L R L'",
+      "scrambles": [
+        "B' R B R' U L' B L B' L' B L B'",
+        "B L' B' L U B L' B' L R B' R' B",
+        "L R BR R' L' R BR' R' U' L' B L B'",
+        "L' B L B' L' B L B' U R' L R L'",
+        "B L' B' L U R' L R L'",
+        "L R' L' R B L' B' L U B L' B' L",
+        "B' R B R' U R' L R L' B' R B R'",
+        "B L' B' L U R L' R L' R L R L R'",
+        "B L' B' L U L R' L' R L R' L' R",
+        "R' L R L' B' R B R' U R' L R L'",
+        "B' R B R' U B L' B' L",
+        "R B' R' B R B' R' B U B L' B' L"
+      ],
+      "svgId": "144",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "145",
+      "name": "Sr+",
+      "group": "s",
+      "algorithms": [
+        "[U] {BL,F} U' R' U R B R' B' U' R U"
+      ],
+      "scramble": "B' L' B' R BR R' B' R B BR' R' B L B",
+      "scrambles": [
+        "B' L' B' R BR R' B' R B BR' R' B L B"
+      ],
+      "svgId": "145",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "146",
+      "name": "Sr-",
+      "group": "s",
+      "algorithms": [
+        "B' BLw U H' U' BLw' B",
+        "{F,BR} B R' U R' L R L' U' R B'"
+      ],
+      "scramble": "B' R BR R' B R B' BR' R' B' L' B' L",
+      "scrambles": [
+        "R B' R' B R B' R' BR B' L' B BR' B L",
+        "B' L' B' L R' BR R B' R B R BR' R B'",
+        "L' R' B' L' U' R' L R L' U L B R L",
+        "L' B L B' U' R B' BR' R BR R' B U R'",
+        "B' R B R' U R BR R' L R BR' R L' R",
+        "L' B' L' R BR' R' B R B' BR R' L B L",
+        "R B R' BR' B' R B R' BR L' B L B",
+        "B R L B U' B' R B R' U B' L' R' B'",
+        "B' U R B' BR B BR' R' B L' B L B'",
+        "B' R BR R' B L R' L' R' B' BR' R' B",
+        "B' BR B' L' B BR' B L U R' L R L'",
+        "L B' L B' U' L B R B' R' L' U L B'",
+        "B' R BR R' B R B' BR' R' B' L' B' L",
+        "B L R' BR R' L' B L' B' L R BR' R B'",
+        "B' R B R' B' BR B' L' B BR' B L",
+        "R BR' L B U L R L' R' U' B' BR L' R'"
+      ],
+      "svgId": "146",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "147",
+      "name": "Sl0",
+      "group": "s",
+      "algorithms": [
+        "[U] {U,BL} S' U' S' U S'"
+      ],
+      "scramble": "R B BR' B R' U' B U' R B' BR' B R'",
+      "scrambles": [
+        "L R BR' R L' R' BR' R' L R BR' R L' R",
+        "B R' B BR R' B R B' BR' B' R L' B' L",
+        "R B BR' B R' U' B U' R B' BR' B R'",
+        "BR R' L R L' B' U L' B' L B U' B BR'",
+        "L' B L B' U' L' B L B' U L' B L B'",
+        "L R' L' R U' B L' B' L U R B' R' B",
+        "R B' BR' B R' B' R BR B R' B L' B' L",
+        "B L' B' L R' U' R B' BR' R BR B R'"
+      ],
+      "svgId": "147",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "148",
+      "name": "Sl+",
+      "group": "s",
+      "algorithms": [
+        "[U] {B,U} Rw' R U' R U Rw R"
+      ],
+      "scramble": "B BR' R B' R' B' L' B' BR L B'",
+      "scrambles": [
+        "B BR' L R L B' L' R' L B BR L B'",
+        "B BR' U B L' B' L' R' L' R U' BR B'",
+        "B BR' U R B' R' B' L' B' L U' BR B'",
+        "L R' L' R L' B BR' B L B' BR B'",
+        "B BR' R B' R' B' L' B' BR L B'",
+        "R B' R' U R' U' R B' BR' R BR R' B'",
+        "R' L B' U L' R L' R' L' U' B L' R",
+        "L B' U L B' R' L R L B U' B L'",
+        "R B' U' L R' B R' B' R' L' U B R'",
+        "L' R' L R B BR' L' B L' B' BR L' B'",
+        "B BR' L' B L' B' R B' R' B BR L' B'",
+        "B BR' L R' L' R' B' R' B BR B'",
+        "B BR' B L' B' L' R' L' R BR B'",
+        "B BR' L' R B' R' B R' L' R BR L' B'",
+        "B BR' R' L R BR L B' L R' L R L'",
+        "L' R' L B' U' L' R L' R' L' U B R"
+      ],
+      "svgId": "148",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "149",
+      "name": "Sl-",
+      "group": "s",
+      "algorithms": [
+        "[U] {U,BL} S U' H'"
+      ],
+      "scramble": "L R' L' R U B L' B' L",
+      "scrambles": [
+        "B L' B' L B' R B R' U R' L R L'",
+        "R B' R' B L' B L B' U R' L R L'",
+        "B' R B R' L R' L' R U R' L R L'",
+        "L' B L B' U B L' B' L B' R B R'",
+        "L' B' L R' L R L' B U R' L R L'",
+        "L' B L B' U R L' B L B' L R' L'",
+        "R' L R L' R B' R' B U R' L R L'",
+        "L R' L' R U R' L R L' B' R B R'",
+        "R L' B L B' L R' L' U R' L R L'",
+        "R' L R L' R' L R L' U B L' B' L",
+        "L R' L' R U B L' B' L",
+        "B' L R' L' R L' B L U R' L R L'",
+        "L R L' B L' B' L R' U R' L R L'",
+        "L' B L B' U L R L' B L' B' L R'",
+        "L' B L B' U B' R B R' L R' L' R",
+        "B' R B R' L' B L B' U B L' B' L"
+      ],
+      "svgId": "149",
+      "tags": {
+        "sourceGroup": "S-odd",
+        "parity": "odd",
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "150",
+      "name": "Ts0",
+      "group": "t",
+      "algorithms": [
+        "H S"
+      ],
+      "scramble": "L B' R B R' B L' B'",
+      "scrambles": [
+        "L' R' L' R L' B L B' L'",
+        "B L B' R B' R' B L'",
+        "L B L' B' L R' L R L",
+        "L' B L B' L R' L' R",
+        "R' B L' B' L B' R B",
+        "R' L R L' B L' B' L",
+        "L R' L' R B' R B R'",
+        "R' B' R B R' L R' L' R'",
+        "L B' R B R' B L' B'",
+        "B' R' B L' B L B' R",
+        "R L R L' R B' R' B R",
+        "R B' R' B R' L R L'"
+      ],
+      "svgId": "150",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "151",
+      "name": "Ts+",
+      "group": "t",
+      "algorithms": [
+        "{R,Br}\nR' U' (Rw' R) U' / R U (Rw R') U\n내땡내땡 올밀올밀",
+        "{R,BR} R' U' R Rw' U' R U R' Rw U"
+      ],
+      "scramble": "R B' BR B' BR' B R' U' B",
+      "scrambles": [
+        "L' B' BR B' L B BR' B U L R' L' R",
+        "R' L R' BR L' B L' B' BR' L B' R' B",
+        "R' B' R U' B R' L R' L' R' B' U B",
+        "R B' R' B U R BR' R L R' BR R' L'",
+        "R BR' L' R L' R' BR L' R' B L B' L'",
+        "B' R B BR' R L R' BR R' L B L B'",
+        "R B' BR B' BR' B R' U' B",
+        "R BR' R L R' BR R' L' B L' B' L",
+        "B U B' L' R' L' R L' B U' L B' L'",
+        "B U L B' R B' R' B' L' U' L B' L'",
+        "R' B' R U' R' B' L' B' L B' R U B",
+        "BR B BR' U' B U BR B' BR' B U' B'",
+        "R' B' R B U R BR' R L R' BR L' R'",
+        "R BR' R B L' B' L R' BR R B' R B"
+      ],
+      "svgId": "151",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "152",
+      "name": "Ts-",
+      "group": "t",
+      "algorithms": [
+        "{L,U}\nR U (Rw R') U / R' U' (Rw' R) U'\n올밀올밀 내땡내땡",
+        "{L,U} R U R' Rw U R' U' R Rw' U'"
+      ],
+      "scramble": "B' U R B' BR B BR' B R'",
+      "scrambles": [
+        "B' R B BR L' B L B' BR' L R L' R",
+        "R' L R L' U' B' BR B' L' B BR' B L",
+        "B' U R B' BR B BR' B R'",
+        "L' B L B' L R BR' R L' R' BR R'",
+        "B' R B' L' B' R' L U' L' B' R B L R'",
+        "L B L' U B' L R' L R L B U' B'",
+        "L B L' U L B R B R' B L' U' B'",
+        "B' U' B R L R L' R B' U R' B R",
+        "B L' B' L' R BR' R L' R' BR B' R' B",
+        "B' R' B R' BR' R' B' R' B L R' BR L' R'",
+        "B' U' R' B L' B L B R U R' B R",
+        "L R BR' R L' R' BR R' U' B' R B R'",
+        "B' R' B R' BR' R L' B L B' R' BR R'",
+        "R BR' L R L' R' BR R' U' B' R' B R",
+        "L B L' B' R BR' L R L R' BR L R'"
+      ],
+      "svgId": "152",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "153",
+      "name": "Tc0",
+      "group": "t",
+      "algorithms": [
+        "{B,U}\nU' R' D R' / U R D' R\n떙내땡내 / 밀올밀올",
+        "{B,U} U' R' D R' U R D' R"
+      ],
+      "scramble": "R BR B' R B R' BR' R B' R B",
+      "scrambles": [
+        "R U R BR' R' U' B' R' B U R BR R'",
+        "R B' BR' R' B U' R' U' R B' BR' B",
+        "R' L R' BR' R L' R' BR B' R' B",
+        "R U' B' R' B' R B' U B R' B'",
+        "L' R' L R B' BR' R' L' R BR L B",
+        "R B' R' BR B' L' B BR' B' L B'",
+        "R BR B' R B R' BR' R B' R B",
+        "R B' BR' R' B U B' R BR' R' B",
+        "R B' R' B R' L R' BR' R L' R' BR R'",
+        "R BR L B L' B' BR' R' B L B' L'",
+        "R BR' R' B U' B' U' R B' BR' R' B",
+        "R B R' B BR' B' R B R' BR B",
+        "R' B' R U R' B R' B' R' U' B"
+      ],
+      "svgId": "153",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "c0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "154",
+      "name": "Tc+",
+      "group": "t",
+      "algorithms": [
+        "H'"
+      ],
+      "scramble": "R B' R' B",
+      "scrambles": [
+        "B L B' R B' R' B R' L' R",
+        "R L' B' R' B R B L B' R'",
+        "L' B L B' R' L R L'",
+        "R' B R' B R' B' R' B' R",
+        "R B' L R' B R B' L' B R'",
+        "R B' L' R' B R B' L B R'",
+        "B' R L B R' B' R L' B R'",
+        "R B' BR' R' BR B R' U R",
+        "R L B' R' B R B L' B' R'",
+        "R B' R' B",
+        "B' R L' B R' B' R L B R'",
+        "R B' L' R' L B L' R L R'",
+        "B' R B R' B' R B R'",
+        "B R' B' R' B' R B' R B'"
+      ],
+      "svgId": "154",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "c+",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "155",
+      "name": "Tc-",
+      "group": "t",
+      "algorithms": [
+        "{B,U} 오반왼시\nU' R U R D R' U' R D' R' U R'\n[U' R U R' + R'DR' 시작 A펌 캔슬]",
+        "{B,U} U' R U R D R' U' R D' R' U R'"
+      ],
+      "scramble": "R BR' R L R' BR R L' R' B' R' B",
+      "scrambles": [
+        "L R L B' L' R' BR L B' L B BR' B",
+        "R BR' R L R' BR L B' L' R' L B L",
+        "R B' R' B' L' B BR B' L B BR' B",
+        "B' R B BR B L B' R B' R' B BR' L' R'",
+        "R L B' R' BR' R' B R B' BR R B L' R'",
+        "R U' B' R BR' R' BR B R L R L'",
+        "L' B L B' U R BR' R L R' BR R' L'",
+        "R B' R' B R BR' R L R' BR R L' R",
+        "B' R B BR R' L R L' B L' B' BR' L R'",
+        "B' R B BR R B' R' B R' L R BR' L' R'",
+        "BR' R' U' L R L B L B' R' U R BR",
+        "L' B L B R BR B' BR' B R' U' B",
+        "L' B' BR B' L B BR' B U R' L R L'",
+        "R BR' R L R' BR R L' R' B' R' B",
+        "B L' B BR B' L B BR' B R B' R' B",
+        "R BR' L' R L' R' BR B' R' B L R L R'"
+      ],
+      "svgId": "155",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "c-",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "156",
+      "name": "Ta0",
+      "group": "t",
+      "algorithms": [
+        "{BL,L}\nU R D' R  / U' R' D R'\n미롤미롤 / 땡내땡내",
+        "{B,BL} U R D' R U' R' D R'"
+      ],
+      "scramble": "L' B' BR B' L B BR' B",
+      "scrambles": [
+        "L' B' BR R' B' L B L' R BR' L B",
+        "L' B' BR R' B' R L R' B R BR' B",
+        "L' B' BR R B' L B L' R' BR' L B",
+        "L' B L B' R BR' R L R' BR R L' R",
+        "L' U B L B BR' B L' B' BR B U' L",
+        "BR' R' L R' U R L' R' L U' R' BR L'",
+        "L' B' BR B' L B BR' B",
+        "B' L B L B' BR B' L' B BR' L' B",
+        "L B L' U' L B' L B L U B'",
+        "L' U B L B L' B U' B' L B",
+        "BR' R' BR R' L R BR' R BR L'"
+      ],
+      "svgId": "156",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "a0",
+        "recognition": "E_onlyT"
+      }
+    },
+    {
+      "id": "157",
+      "name": "Ta+",
+      "group": "t",
+      "algorithms": [
+        "{L,U}\nR U' R' U + (RU'R 시작 A펌)",
+        "{B,BL} U R' U' R' D' R U R' D R U' R"
+      ],
+      "scramble": "B' BR B' L' B BR' B L B L' B' L",
+      "scrambles": [
+        "B R' BR' L' B' L B BR L R L B' L",
+        "L U' B L B' BR' R L R' BR L U L'",
+        "L' B L B BR B' L' B BR' B' L B'",
+        "R BR B' R B R' BR' B' R' B L R L' R'",
+        "L R' L' R' B' R' U R B' BR B BR' B R'",
+        "R L R BR L B L B' BR' R' L R' L'",
+        "R B' R' B U R' L R' BR R' L' R BR' R'",
+        "R' L R' BR' R L' R' BR R' L' B L B'",
+        "B L' B' L U' B' BR B' L' B BR' B L",
+        "B' BR B' L' B BR' B L B L' B' L",
+        "B' R BR' R BR R' B U R' U' B' R B R'",
+        "R L' R' L' U' R' L R L' U L R L R'",
+        "R B' R' B L R BR' R L' R' BR R'",
+        "L' B' BR' R' L' R BR R' L R B' L B'",
+        "B' BR B' L' B BR' B' L B' L' B L B'",
+        "R' L R L' U' B' R BR' R BR R' B U R'",
+        "L' B L B' R' L R' BR' R L' R' BR R'"
+      ],
+      "svgId": "157",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "a+",
+        "recognition": "E_opp"
+      }
+    },
+    {
+      "id": "158",
+      "name": "Ta-",
+      "group": "t",
+      "algorithms": [
+        "{U,Bl} S'",
+        "{U,BL} S'"
+      ],
+      "scramble": "L' B L B'",
+      "scrambles": [
+        "L R L B L' R L' R' B' R'",
+        "B L' R B' L B L' R' B' L",
+        "L' R' B' R B L B' R' B R",
+        "L R' L R' B R L R' B' R'",
+        "R B' R' B L R' L' R",
+        "L' B R L R' B' R L' R' L",
+        "L' B R L B' L' B R' B' L",
+        "B L' B' L B L' B' L",
+        "B' R B L' B L B' L R' L'",
+        "B' R' B L' B L B' L R L'",
+        "B' L B L B L' B L' B",
+        "L' R' B R B L B' R' B' R",
+        "L B' L B' L B L B L'",
+        "L' B L B'"
+      ],
+      "svgId": "158",
+      "tags": {
+        "sourceGroup": "T-even/Even TCP",
+        "parity": "even",
+        "tcp": true,
+        "typeCode": "a-",
+        "recognition": "E_same"
+      }
+    },
+    {
+      "id": "159",
+      "name": "Tb0",
+      "group": "t",
+      "algorithms": [
+        "{B,Br} R' U' R /D' R U' R' D/ R' U' R",
+        "{B,BR} R' U' R D' R U' R' D R' U' R"
+      ],
+      "scramble": "B' R' U R B' BR B BR' B R' U' R",
+      "scrambles": [
+        "L R' BR B L' B' BR' L' R L B L B' L'",
+        "BR L B R B' BR B R' B' R BR' R' BR' L'",
+        "R' U' B' R BR' R BR R' B U B' R' B R",
+        "L' B L' R' BR R' L' R BR' R L' B' L",
+        "B' R' U R B' BR B BR' B R' U' R",
+        "L B BR L' B' BR B' L B BR' B BR' B' L'",
+        "L' B BR L B' BR B' L' B BR' B BR' B' L",
+        "B' R B R' U R' BR R' L R BR' L' R",
+        "L B L' R U' L B' L B L U R' B'",
+        "L B R' BR R' L R BR' R L' B' L'",
+        "L R' BR L B L B' BR' R B L' B' L",
+        "R B' R' B L R U' L U R' U' L' U L'"
+      ],
+      "svgId": "159",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "160",
+      "name": "Tb+",
+      "group": "t",
+      "algorithms": [
+        "{R,Br} U / Rw' U' R U / Rw R2' U' R",
+        "{R,BR} U Rw' U' R U Rw R2' U' R"
+      ],
+      "scramble": "B' R B R' BR' R B L' B' L R' BR",
+      "scrambles": [
+        "L' B L B' BR' B' L' B' R' B R L B BR",
+        "L' B L B' BR' R L' B L B R B R BR",
+        "B' R BR B R' U' L R L' B' BR R B R",
+        "L' B L B' BR' R' BR' R L R' BR R BR L'",
+        "B L' B R' U' B R' B' R U R' B R' L",
+        "B' R B R' BR' L R L' B' R B R BR",
+        "L' B L B' BR' R' L' B L B' L R BR L'",
+        "B L' B R B R' BR' R B' R B R BR L",
+        "B' R B R' BR' R B L' B' L R' BR",
+        "L' B L B' BR' R' B' R B L' B L B' BR",
+        "L' B L B' BR' L' R' B L B' L' R BR L",
+        "R U R U' B' R BR' R' BR B R' B' R' B",
+        "L' B L B' BR' L R L B L B' R' BR",
+        "B' R' U' R' B' L' B' L B' R U R' B R'",
+        "B' R' U' B R' L R' L' R' B' U R' B R'",
+        "L' B L B' BR' L' R' B R L R' B' R BR"
+      ],
+      "svgId": "160",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "161",
+      "name": "Tb-",
+      "group": "t",
+      "algorithms": [
+        "{L,U} U' / Rw U R' U' / Rw' R2 U R'",
+        "{L,U} U' Rw U R' U' Rw2 R' U R'"
+      ],
+      "scramble": "L B' BR' R' L' R BR B' L' B L' B L'",
+      "scrambles": [
+        "B L U B' L R' L R L B U' L B' L",
+        "L B' BR' R' L' R BR B' L' B L' B L'",
+        "L B' BR' R' L' R BR L B L' B L' B' L",
+        "B L U L B R B R' B L' U' L B' L",
+        "R BR' R L' R' BR B' R' B L' B L' B'",
+        "B' R B' L U B' L B L' U' L B' L R'"
+      ],
+      "svgId": "161",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "162",
+      "name": "Tr0",
+      "group": "t",
+      "algorithms": [
+        "{U,Bl} [U]\nR Br R' / F / R Br' / R2' F' R",
+        "[U] {B,BL} R D R' U R D' R U' R"
+      ],
+      "scramble": "B' BR' B L' B' BR B' L B'",
+      "scrambles": [
+        "B' R' BR R' B U R' U R B' BR B R'",
+        "R B' BR' R' B U R B' BR' B R'",
+        "B' L' B U' B' L B L' U B L B'",
+        "L' B L B' U' L R BR R' L' R BR' R'",
+        "B' BR' L B L B' BR B' L' B L' B",
+        "B BR' L R BR' R L' R' BR R' BR B'",
+        "B' BR' B L' B' BR B' L B'",
+        "L' B L U B' L B L' U' L B' L'"
+      ],
+      "svgId": "162",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "r0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "163",
+      "name": "Tr+",
+      "group": "t",
+      "algorithms": [
+        "{U,Bl} [U]\nR Br R' / F / R Br / R2' F' / R2 Br R'",
+        "[U] {B,BL} R D R' U R D R U' R' D R'"
+      ],
+      "scramble": "B' BR' B L' B' BR' B' L B BR' B",
+      "scrambles": [
+        "B R BR L' B' L B BR' L R' L B' L",
+        "R BR R' L R BR' R' L B L B'",
+        "L R' BR' L B BR' B L B' BR B' BR R",
+        "R B' BR R' B U' B' R' BR R' B U R'",
+        "L' B L' R BR' R' L' R BR R' B'",
+        "B' U B' BR B' L' B BR' L B U' B",
+        "L' B L B U' B R' B' R U R' B R",
+        "B' R BR' B R' B' R' BR R' B U R'",
+        "B U B' R BR U' B' R BR' R' BR' B R'",
+        "R' L R L' B' R BR B BR' R' B U' B'",
+        "L' R B L B' R' U R L' B' R' B L",
+        "L' B L B' R BR R' L R BR' R' L'",
+        "B L' B' L R B' BR B BR' R' B U' B'",
+        "L U B' BR L B' L B BR' L B U' L'",
+        "B' BR' B L' B' BR' B' L B BR' B"
+      ],
+      "svgId": "163",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "r+",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "164",
+      "name": "Tr-",
+      "group": "t",
+      "algorithms": [
+        "{L,U} D / U' R' U R / D'\n{F, D} S",
+        "{L,U} U' D R' U R D' {L,D} R' U R U'"
+      ],
+      "scramble": "R B' R' B BR B' L' B BR' L",
+      "scrambles": [
+        "L R' L' R BR B R B R' B BR'",
+        "L' R' L R BR B' R' L' R B BR' L",
+        "R BR B' R' L' R B BR' B' R' B L",
+        "R B' R' L' B BR' L R' L R BR R' L' R",
+        "L R' L' B U' R' B R B' U B' R",
+        "L R' L' B U' L R' B R B' L' U B' R",
+        "R B' R' B BR B' L' B BR' L",
+        "L R' L' B U' L' R' B R B' L U B' R",
+        "L R' L' R U R' BR' L' B' L B BR R",
+        "R' B R B BR L R' L' R BR' R' B R",
+        "L R' L' R BR R' B R' B R B R BR'"
+      ],
+      "svgId": "164",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "r-",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "165",
+      "name": "Tl0",
+      "group": "t",
+      "algorithms": [
+        "{U,Br} [U']\nR' F / R2 Br R' /F' / R Br' R'",
+        "[U'] {B,U} R' D' R U' R' D R' U R'"
+      ],
+      "scramble": "B U' B' U' R B' BR' R' B U R BR' R'",
+      "scrambles": [
+        "B L' B' L B' R BR B BR' R' B U' B'",
+        "B' BR' B U R B' BR' R' B U' R' U' R",
+        "L B L' U L B' L' R BR B' BR' R' B",
+        "R B' R B R' BR' R B' R B R BR R'",
+        "R B' BR' R' BR B L' R' L U L' R L",
+        "R B' R' U' B' BR' B U B U' B' BR B",
+        "R BR R' U' R U R BR' R' U' B' R' B",
+        "B R B' U B R' B' R U' B' R' B",
+        "B' BR B R B R' B BR' B' R B R' B",
+        "L' B' BR' B L B' BR B R B' R' B",
+        "R B' R' B' L R BR' R' L' R BR R' B'",
+        "R' U' R B' BR' R BR B R' L R' L' R",
+        "R' B' BR B L' B' BR' B L R' B' R' B",
+        "B U' B' U' R B' BR' R' B U R BR' R'",
+        "R B' R' B R BR R' L R BR' R' L'",
+        "R B' R' U' B R' B' R U R' B R"
+      ],
+      "svgId": "165",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "l0",
+        "recognition": "O_side"
+      }
+    },
+    {
+      "id": "166",
+      "name": "Tl+",
+      "group": "t",
+      "algorithms": [
+        "{L,Br} D' / U R U' R' / D\n{Br, U} H",
+        "{R,BR} U D' R U' R' D {BR,F} R B' R' B"
+      ],
+      "scramble": "L' B BR' L R B' R' B BR B'",
+      "scrambles": [
+        "L' B BR' B L B' R' L R BR L' B'",
+        "R' B' U R U' L' B L B' U R' U' B R",
+        "R' L R B' U L B' L' B U' B L'",
+        "B L' B' L B BR L' B' L B BR' R B' R'",
+        "R' L R B' U R' L B' L' B R U' B L'",
+        "L' B BR' R' L R BR R' L' R L R B' R'",
+        "L' B BR' R' L R BR B' R' L' R L",
+        "L' B L B' L' B BR B' L B BR' R B' R'",
+        "L' B BR' L R B' R' B BR B'",
+        "R' L R B' U R L B' L' B R' U' B L'",
+        "R' L R L' B BR' B L' B' BR L B'"
+      ],
+      "svgId": "166",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "l+",
+        "recognition": "O_opp"
+      }
+    },
+    {
+      "id": "167",
+      "name": "Tl-",
+      "group": "t",
+      "algorithms": [
+        "{U,Br}\nR Br'/ R2' F / R2 Br' /R' F' / R Br' R'",
+        "[U'] {B,U} R' D' R U' R' D' R' U R D' R"
+      ],
+      "scramble": "B' R BR B R' U' B' R BR B R'",
+      "scrambles": [
+        "B' BR R' U R B R B' R U' R BR' B",
+        "R B' R' B U' L R BR R' L' R BR' R'",
+        "R B' R' B' U B' L B L' U' L B' L'",
+        "B' R' L R B L' U' L R B' R' L' B",
+        "R BR B' R' B R BR R' L R BR R' L'",
+        "B U' B' BR' R B' R' B BR B U B'",
+        "BR B U B' R B' R' B' U' B' BR'",
+        "B' R BR B R' U' B' R BR B R'",
+        "R' U R BR R B' R' B BR' R' U' R",
+        "BR' R' U' R' B' R' B R' U R BR",
+        "R L' B' R' B L U' L' R B L B' R'",
+        "L' B' BR B L B' BR B R B' R' BR B",
+        "L' R' L U' L' R L R' U R' B' R' B",
+        "R BR' B U' B R' B R B U B' BR R'"
+      ],
+      "svgId": "167",
+      "tags": {
+        "sourceGroup": "T-odd/Odd TCP",
+        "parity": "odd",
+        "tcp": true,
+        "typeCode": "l-",
+        "recognition": "O_same"
+      }
+    },
+    {
+      "id": "168",
+      "name": "Xs0",
+      "group": "x",
+      "algorithms": [
+        "S U S U / S' U' H",
+        "S U S U S' U' H"
+      ],
+      "scramble": "B' R BR B' BR R BR' B BR R' BR B R'",
+      "scrambles": [
+        "B' R BR B' BR R BR' B BR R' BR B R'",
+        "R B' BR' R BR' B' BR R' BR' B BR' R' B"
+      ],
+      "svgId": "168",
+      "tags": {
+        "sourceGroup": "X-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "169",
+      "name": "Xs+",
+      "group": "x",
+      "algorithms": [
+        "[U'] S' U' S' U' / S U / S'",
+        "[U'] S' U' S' U' S U S'"
+      ],
+      "scramble": "BR B' U R' U R' B' R U R' BR B' BR R'",
+      "scrambles": [
+        "R B' BR B R U' R B' BR' R BR' R' B",
+        "BR B' U R' U R' B' R U R' BR B' BR R'"
+      ],
+      "svgId": "169",
+      "tags": {
+        "sourceGroup": "X-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "170",
+      "name": "Xs-",
+      "group": "x",
+      "algorithms": [
+        "[U] S U S U / S' U' / S",
+        "[U] S U S U S' U' S"
+      ],
+      "scramble": "B' R BR' R' B' U B' R BR B' BR B R'",
+      "scrambles": [
+        "BR' R U' B U' B R B' U' B BR' R BR' B",
+        "B' R BR' R' B' U B' R BR B' BR B R'"
+      ],
+      "svgId": "170",
+      "tags": {
+        "sourceGroup": "X-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "171",
+      "name": "Xb0",
+      "group": "x",
+      "algorithms": [
+        "{Uo} S {Uo'} U S / U' S' U' S'",
+        "H' U S U' S' U' S'"
+      ],
+      "scramble": "R' L F' L' R U R' L' F L' R U R' F' R L'",
+      "scrambles": [
+        "R' L F' L' R U R' L' F L' R U R' F' R L'",
+        "R' L R F R U F' U' R U F U' R F' R L'",
+        "L R' L' F' L' U' F U L' U' F' U L' F L' R",
+        "L R' F R L' U' L R F' R L' U' L F L' R"
+      ],
+      "svgId": "171",
+      "tags": {
+        "sourceGroup": "X-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "172",
+      "name": "Xb+",
+      "group": "x",
+      "algorithms": [
+        "[U'] S' / U S / U' S' U' S'",
+        "[U'] S' U S U' S' U' S'"
+      ],
+      "scramble": "B' BR R' BR B' U B R' B' U B' U R' BR",
+      "scrambles": [
+        "R B' BR' B BR' R' B U' B R BR R' B",
+        "B' BR R' BR B' U B R' B' U B' U R' BR"
+      ],
+      "svgId": "172",
+      "tags": {
+        "sourceGroup": "X-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "173",
+      "name": "Xb-",
+      "group": "x",
+      "algorithms": [
+        "[U] S / U' S' / U S U S",
+        "[U] S U' S' U S U S"
+      ],
+      "scramble": "B' R BR R' BR B R' U R' B' BR' B R'",
+      "scrambles": [
+        "R BR' B BR' R U' R' B R U' R U' B BR'",
+        "B' R BR R' BR B R' U R' B' BR' B R'"
+      ],
+      "svgId": "173",
+      "tags": {
+        "sourceGroup": "X-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "174",
+      "name": "Ys0",
+      "group": "y",
+      "algorithms": [
+        "[U] S {Uo'} U' S U' S",
+        "[U'] S' U H U H"
+      ],
+      "scramble": "B' R BR B' BR' B' R B' R U' R' B R",
+      "scrambles": [
+        "B' U R' BR R L R' BR' R L' U' R B R'",
+        "BR' R B' R' B BR R BR' B' R' B R BR R'",
+        "R BR' R' B U' L' B' L R' U' R B' BR' B",
+        "R' L R BR' L' R' BR' B BR R BR' B' BR'",
+        "B' R B R' U' B' R B R' U' R' L R L'",
+        "B L' B' L U B L' B' L U L R' L' R",
+        "R B' R BR R' B U R' U B' R BR B R'",
+        "R BR R' L R BR' R' L' U' R B' R' B",
+        "B' R B R' U L' B L B' U B' R B R'",
+        "B L' B' L U' R B' R' B U' B L' B' L",
+        "B' R BR B' BR' B' R B' R U' R' B R"
+      ],
+      "svgId": "174",
+      "tags": {
+        "sourceGroup": "Y-even",
+        "parity": "even",
+        "typeCode": "s0",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "175",
+      "name": "Ys+",
+      "group": "y",
+      "algorithms": [
+        "{Uo'} S' / U' S U' S",
+        "{U,BL} S' U' S U' S"
+      ],
+      "scramble": "B' R BR B' BR' B R' U' B' L' B' L",
+      "scrambles": [
+        "R BR R' L R BR' R' L' U' R' L R L'",
+        "B' U R' U B' U B R' B' BR B' BR R' BR",
+        "B' R B R' U' B L' B' L U' L R' L' R",
+        "B L' B' L U' R' L R L' U' L R' L' R",
+        "B' U R B' BR B BR' R' B U B L' B' L",
+        "B L' B' L U' R B' R' B U' B' R B R'",
+        "B L' B' L U B' R BR' R' BR B R' U R",
+        "B' R BR B R' L' B' L' R BR' R' L B L",
+        "B' R BR B' BR' B R' U' B' L' B' L",
+        "B L' B' L U' R B' BR B BR' R' B U' B'",
+        "B' R B R' U L R' L' R U R B' R' B",
+        "B L' B' L U B L' B' L U L' B L B'",
+        "B L' B' L U B' R B R' U R B' R' B"
+      ],
+      "svgId": "175",
+      "tags": {
+        "sourceGroup": "Y-even",
+        "parity": "even",
+        "typeCode": "s+",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "176",
+      "name": "Ys-",
+      "group": "y",
+      "algorithms": [
+        "{Uo} S / U S' U S'",
+        "{U,BR} S U S' U S'"
+      ],
+      "scramble": "B' R BR B' BR' B R' U' R B R'",
+      "scrambles": [
+        "L' B' L' R BR' R L B' L B R' BR B R'",
+        "B' R B R' U L R' L' R U R' L R L'",
+        "B' R BR B' BR' B R' U' R B R'",
+        "B' R B R' U L' B L B' U B L' B' L",
+        "B L' B' L U' R' L R L' U' L' B L B'",
+        "B L' B' L U B' R B R' U R' L R L'",
+        "B' U R B' BR B BR' R' B U B' R B R'",
+        "B' R B R' U' B L' B' L U' L' B L B'",
+        "B' R B R' U' B' R B R' U' R B' R' B",
+        "B' R B R U' R B' BR' R BR R' B"
+      ],
+      "svgId": "176",
+      "tags": {
+        "sourceGroup": "Y-even",
+        "parity": "even",
+        "typeCode": "s-",
+        "recognition": "E_noT"
+      }
+    },
+    {
+      "id": "177",
+      "name": "Yb0",
+      "group": "y",
+      "algorithms": [
+        "{Uo} [U] S U' S U' [Hl]\n{Uo'} [U'] S' U S' U H",
+        "[U'] {U,BL} S' U S' U H"
+      ],
+      "scramble": "B' R B R' U L R BR R' L' R BR' R'",
+      "scrambles": [
+        "L R' L' R U R B' R' B U R B' R' B",
+        "R B' BR' R' B U B' R B' BR' B R' U' B",
+        "BR' R B' R' B BR R BR R L R' BR' R' L'",
+        "B' R B R' U L R BR R' L' R BR' R'",
+        "R' L R L' U' L' B L B' U' L' B L B'",
+        "B' R BR R' B U' B' BR B R' U L R L'",
+        "L' B L B' U B' R B R' U L' B L B'",
+        "R BR' R' B U' B' L R' L' U' R B' BR' B",
+        "R B' R' B U' B L' B' L U' R B' R' B",
+        "R BR' R' B' R B BR R' BR' B' R B R' BR"
+      ],
+      "svgId": "177",
+      "tags": {
+        "sourceGroup": "Y-odd",
+        "parity": "odd",
+        "typeCode": "b0",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "178",
+      "name": "Yb+",
+      "group": "y",
+      "algorithms": [
+        "{Uo'} S U' S U' / S'",
+        "{U,BL} S U' S U' S'"
+      ],
+      "scramble": "B' R BR R BR R' B U B' BR' B R'",
+      "scrambles": [
+        "B' R BR R BR R' B U B' BR' B R'",
+        "L R' L' R U R B' BR' R BR R' B U R'",
+        "R B' R' B U' B' R B R' U' B L' B' L",
+        "R B' R' B U' B' R BR B' BR' B R' U' B",
+        "B' R BR R B' L' B L' R' BR' R' L B L",
+        "R' L R L' U' L R' L' R U' B L' B' L",
+        "B U B' R BR B' BR' B R' U L R' L' R",
+        "BR B' BR R' BR R' B' R U R' U B' U R'",
+        "L' B L B' U B L' B' L U B L' B' L",
+        "B' R B R' U' R BR R' L R BR' R' L'",
+        "L R' L' R U R B' R' B U R' L R L'",
+        "L R' L' R U R' L R L' U B L' B' L",
+        "BR' L R' L' R BR R BR R' B' R B BR' R'",
+        "R B' R' B U' B L' B' L U' R' L R L'"
+      ],
+      "svgId": "178",
+      "tags": {
+        "sourceGroup": "Y-odd",
+        "parity": "odd",
+        "typeCode": "b+",
+        "recognition": "O_back"
+      }
+    },
+    {
+      "id": "179",
+      "name": "Yb-",
+      "group": "y",
+      "algorithms": [
+        "{Uo} S' U S' U / S",
+        "{U,BR} S' U S' U S"
+      ],
+      "scramble": "L' B L B U R B' BR B BR' R' B",
+      "scrambles": [
+        "R' L R L' U' L R' L' R U' B' R B R'",
+        "R B' R' B U' B' R B R' U' B' R B R'",
+        "L' B L B' U B' R B R' U L R' L' R",
+        "B U B' R BR B' BR' B R' U L' B L B'",
+        "R' L R L' U' L' B L B' U' L R' L' R",
+        "B' R BR B' R L R' L B BR' B L' R' L'",
+        "L' B L B' U B L' B' L U B' R B R'",
+        "L R' L' R U R' L R L' U B' R B R'",
+        "L' B L B R BR B BR' R' B U' L' B' L",
+        "L' B L B U R B' BR B BR' R' B"
+      ],
+      "svgId": "179",
+      "tags": {
+        "sourceGroup": "Y-odd",
+        "parity": "odd",
+        "typeCode": "b-",
+        "recognition": "O_back"
+      }
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Improve ALG Note view layout, detail modal behavior, recognition badge display, and recognition editing.",
+  "assumptions": [
+    "1L3T detail headers include group and parity, for example [O-even] Os+.",
+    "LBT and future algsets show only the group name in detail headers until a later rule is defined.",
+    "Recognition editing is limited to tags.recognition, not other tag metadata such as sourceGroup, parity, or typeCode."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_stack_group_sections_vertically",
+      "order": 1,
+      "title": "Stack compact group sections vertically",
+      "check": true,
+      "targets": "app/css/style.css, app/js/render.js",
+      "allowed_fields": [
+        "compact view group layout",
+        "group section rendering"
+      ],
+      "protected_fields": [
+        "case data content",
+        "favorite/status storage behavior",
+        "algorithm/setup edit behavior"
+      ],
+      "summary": "In compact view, stack group sections vertically and keep only cards inside each group arranged in a horizontal grid.",
+      "verify": [
+        "Compact view shows O-even, O-odd, V-even, and V-odd as vertical sections.",
+        "Cards inside each group still wrap horizontally.",
+        "No group header column stretches down beside unrelated groups."
+      ]
+    },
+    {
+      "id": "02_remove_developer_empty_state_text",
+      "order": 2,
+      "title": "Remove developer empty-state text",
+      "check": true,
+      "targets": "app/index.html",
+      "allowed_fields": [
+        "empty state copy"
+      ],
+      "protected_fields": [
+        "data loading scripts",
+        "bundled data structure"
+      ],
+      "summary": "Remove internal developer script path text from the user-facing empty state.",
+      "verify": [
+        "Empty state does not show scripts/build_app_data.py.",
+        "A short user-facing failure message remains or the empty state is otherwise unobtrusive."
+      ]
+    },
+    {
+      "id": "03_center_floating_detail_modal",
+      "order": 3,
+      "title": "Center detail modal",
+      "check": true,
+      "targets": "app/js/app.js, app/css/style.css",
+      "allowed_fields": [
+        "compact card click behavior",
+        "detail modal positioning",
+        "detail modal scroll behavior"
+      ],
+      "protected_fields": [
+        "JSON export behavior",
+        "stored edits schema except fields needed by this task"
+      ],
+      "summary": "Open compact card details with left click in a viewport-centered floating modal. Long content scrolls inside the modal.",
+      "verify": [
+        "Left-clicking a compact card opens details.",
+        "The modal stays centered regardless of page scroll position.",
+        "Long detail content scrolls inside the modal instead of the page.",
+        "The modal can be closed."
+      ]
+    },
+    {
+      "id": "04_simplify_detail_header",
+      "order": 4,
+      "title": "Simplify detail header",
+      "check": true,
+      "targets": "app/js/render.js, app/css/style.css",
+      "allowed_fields": [
+        "detail card header rendering",
+        "detail card metadata display"
+      ],
+      "protected_fields": [
+        "normal full-view card metadata unless explicitly needed",
+        "case identifiers in data"
+      ],
+      "summary": "Show concise detail headers: [group-parity] case name for 1L3T and [group] case name for LBT or other algsets.",
+      "verify": [
+        "1L3T detail header shows values like [O-even] Os+.",
+        "LBT detail header shows only group name and case name.",
+        "The old id/type/parity meta line is not shown in the detail header."
+      ]
+    },
+    {
+      "id": "05_recognition_badges",
+      "order": 5,
+      "title": "Add recognition badges",
+      "check": true,
+      "targets": "app/js/render.js, app/css/style.css",
+      "allowed_fields": [
+        "detail card recognition display",
+        "recognition badge colors"
+      ],
+      "protected_fields": [
+        "non-recognition tag fields",
+        "filter option generation except recognition label display if needed"
+      ],
+      "summary": "Show only recognition badges at the bottom of the detail modal and apply the chosen tag colors.",
+      "tag_colors": {
+        "E_noT": "white",
+        "E_onlyT": "pink",
+        "E_opp": "light-green",
+        "E_same": "sky-blue",
+        "O_back": "black",
+        "O_opp": "green",
+        "O_same": "blue",
+        "O_side": "red"
+      },
+      "verify": [
+        "Detail modal shows recognition as a badge near the bottom.",
+        "E_noT is white with readable text and border.",
+        "E_onlyT is pink.",
+        "E_opp is light green.",
+        "E_same is sky blue.",
+        "O_back is black with readable text.",
+        "O_opp is green.",
+        "O_same is blue.",
+        "O_side is red."
+      ]
+    },
+    {
+      "id": "06_edit_recognition_tag",
+      "order": 6,
+      "title": "Edit recognition tag",
+      "check": true,
+      "targets": "app/js/app.js, app/js/render.js",
+      "allowed_fields": [
+        "tags.recognition edit UI",
+        "localStorage edit override schema",
+        "merged JSON export for tags.recognition"
+      ],
+      "protected_fields": [
+        "tags.sourceGroup",
+        "tags.parity",
+        "tags.typeCode",
+        "tags.tcp",
+        "case ids",
+        "group ids",
+        "svg ids"
+      ],
+      "summary": "In edit mode, allow adding, changing, or removing tags.recognition along with setup and algorithms.",
+      "verify": [
+        "Editing recognition persists after reload.",
+        "Removing recognition persists after reload.",
+        "JSON export includes the edited tags.recognition.",
+        "Other tag fields are preserved unchanged."
+      ]
+    },
+    {
+      "id": "07_fix_recognition_view_overlap",
+      "order": 7,
+      "title": "Fix recognition view overlap",
+      "check": true,
+      "targets": "app/css/style.css, app/js/render.js",
+      "allowed_fields": [
+        "recognition section layout",
+        "recognition grid layout"
+      ],
+      "protected_fields": [
+        "recognition grouping logic except layout metadata",
+        "case data content"
+      ],
+      "summary": "In detailed recognition view, stack recognition sections vertically and arrange cards horizontally inside each section to prevent overlap.",
+      "verify": [
+        "Detailed view ON with recognition view shows sections stacked vertically.",
+        "Cards inside each recognition section do not overlap.",
+        "Column count still applies within each recognition section where appropriate."
+      ]
+    }
+  ]
+}

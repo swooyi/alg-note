@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "FTO",
+  "id": "1l3t",
+  "name": "1L3T",
+  "source": {
+    "legacyPath": "source/legacy/1l3t",
+    "url": "https://mihlefeld.github.io/Alg-Trainers/FTO-L3T-Trainer/?select"
+  },
+  "notes": []
+}

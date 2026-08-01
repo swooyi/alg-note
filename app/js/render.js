@@ -1,0 +1,430 @@
+window.AlgNoteRender = (() => {
+function text(value) {
+  return value == null ? "" : String(value);
+}
+
+
+function makeSummaryItem(label, value) {
+  const element = document.createElement("span");
+  element.textContent = `${label}: ${value}`;
+  return element;
+}
+
+
+function renderGroupOptions(select, groups) {
+  select.innerHTML = "";
+  const all = document.createElement("option");
+  all.value = "all";
+  all.textContent = "전체 그룹";
+  select.append(all);
+
+  for (const group of groups) {
+    const option = document.createElement("option");
+    option.value = group.id;
+    option.textContent = group.name;
+    select.append(option);
+  }
+}
+
+
+function renderRecognitionOptions(select, cases) {
+  const values = [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+  select.innerHTML = "";
+
+  const all = document.createElement("option");
+  all.value = "all";
+  all.textContent = values.length ? "전체 recognition" : "recognition 없음";
+  select.append(all);
+
+  for (const value of values) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.textContent = value;
+    select.append(option);
+  }
+
+  select.disabled = values.length === 0;
+}
+
+
+function renderRecognitionFilterTags(container, cases, selectedValues) {
+  const values = [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+  container.innerHTML = "";
+
+  for (const value of values) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `tag-filter-button tag-badge ${recognitionClassName(value)}`;
+    button.dataset.recognition = value;
+    button.textContent = value;
+    button.classList.toggle("is-active", selectedValues.has(value));
+    button.setAttribute("aria-pressed", selectedValues.has(value) ? "true" : "false");
+    container.append(button);
+  }
+}
+
+
+function renderSummary(element, dataset, rows, state) {
+  element.replaceChildren(
+    makeSummaryItem("세트", dataset.name),
+    makeSummaryItem("전체", dataset.cases.length),
+    makeSummaryItem("표시", rows.length),
+    makeSummaryItem("즐겨찾기", state.favorites.size),
+    makeSummaryItem("암기 중", [...state.statuses.values()].filter((value) => value === "learning").length),
+    makeSummaryItem("암기 완료", [...state.statuses.values()].filter((value) => value === "learned").length),
+  );
+}
+
+
+function caseMetaParts(item) {
+  const tags = typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {};
+  const parts = [item.id, item.groupName];
+  parts.push(...recognitionList(tags.recognition));
+  if (tags.typeCode) parts.push(tags.typeCode);
+  if (tags.parity) parts.push(tags.parity);
+  if (tags.tcp) parts.push("TCP");
+  return parts;
+}
+
+
+function caseGroupTitle(item, state) {
+  const tags = typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {};
+  if (state.dataset?.algset === "1l3t" && tags.parity) {
+    return `${item.groupName} - ${tags.parity}`;
+  }
+  return item.groupName || "기타";
+}
+
+
+function detailGroupLabel(item, state) {
+  const tags = typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {};
+  if (state.dataset?.algset === "1l3t" && tags.parity) {
+    return `${item.groupName}-${tags.parity}`;
+  }
+  return item.groupName || "기타";
+}
+
+
+function recognitionValues(state) {
+  const cases = state.dataset?.cases || [];
+  return [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+}
+
+
+function recognitionList(value) {
+  if (Array.isArray(value)) return value.filter(Boolean).map(text);
+  return value ? [text(value)] : [];
+}
+
+
+function recognitionClassName(value) {
+  return `tag-${text(value).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+}
+
+
+function makeCaseCard(template, item, state) {
+  const node = template.content.firstElementChild.cloneNode(true);
+  const favoriteButton = node.querySelector(".favorite-button");
+  const currentStatus = state.statuses.get(item.id) || "";
+  const isEditing = state.editingCaseId === item.id;
+  const isCompact = state.detailMode === "compact" && !state.renderingDetail;
+  const isDetail = Boolean(state.renderingDetail) || state.detailMode === "full";
+  const recognitions = typeof item.tags === "object" && !Array.isArray(item.tags) ? recognitionList(item.tags.recognition) : [];
+
+  node.dataset.caseId = item.id;
+  node.classList.toggle("is-editing", isEditing);
+  node.classList.toggle("is-detail-card", isDetail);
+  node.classList.toggle("is-selected", state.selectedCaseId === item.id);
+  node.classList.toggle("is-compact", isCompact);
+  node.classList.toggle("images-hidden", !state.imagesVisible);
+  node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact) && recognitions.length > 0);
+  node.querySelector(".case-name").textContent = isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name;
+  node.querySelector(".case-meta").textContent = isDetail ? "" : caseMetaParts(item).filter(Boolean).join(" · ");
+  renderSvgBox(node.querySelector(".svg-box"), item.svg);
+
+  const cardTop = node.querySelector(".card-top");
+  const setupSection = node.querySelector(".setup-section");
+  const algSection = node.querySelector(".alg-section");
+
+  if (isEditing) {
+    setupSection.querySelector(".scramble").replaceWith(makeSetupEditor(item.scramble));
+    algSection.querySelector(".algorithm-list").replaceWith(makeAlgorithmEditor(item.algorithms));
+    node.append(makeRecognitionEditor(recognitions, recognitionValues(state)));
+  } else {
+    node.querySelector(".scramble").textContent = item.scramble || "-";
+
+    const algorithmList = node.querySelector(".algorithm-list");
+    for (const algorithm of item.algorithms) {
+      const li = document.createElement("li");
+      li.textContent = text(algorithm);
+      algorithmList.append(li);
+    }
+    if ((isDetail || isCompact) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
+  }
+
+  favoriteButton.classList.toggle("is-active", state.favorites.has(item.id));
+  favoriteButton.textContent = state.favorites.has(item.id) ? "★" : "☆";
+  node.querySelector(".edit-button").textContent = isEditing ? "×" : "✎";
+  node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? "편집 닫기" : "편집");
+  node.querySelector(".edit-button").title = isEditing ? "편집 닫기" : "편집";
+
+  for (const button of node.querySelectorAll(".status-button")) {
+    button.classList.toggle("is-active", button.dataset.status === currentStatus);
+  }
+
+  return node;
+}
+
+
+function renderSvgBox(box, svg) {
+  if (text(svg).trim()) {
+    box.innerHTML = svg;
+    box.classList.remove("is-missing");
+    return;
+  }
+
+  box.replaceChildren();
+  box.classList.add("is-missing");
+  const message = document.createElement("span");
+  message.className = "image-missing-message";
+  message.textContent = "이미지없음";
+  box.append(message);
+}
+
+
+function makeSetupEditor(scramble) {
+  const textarea = document.createElement("textarea");
+  textarea.className = "setup-editor";
+  textarea.rows = 3;
+  textarea.value = text(scramble);
+  textarea.setAttribute("aria-label", "setup 편집");
+  return textarea;
+}
+
+
+function makeAlgorithmEditor(algorithms) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "algorithm-editor-list";
+
+  const values = algorithms.length ? algorithms : [""];
+  for (const algorithm of values) {
+    wrapper.append(makeAlgorithmEditorRow(algorithm));
+  }
+
+  const actions = document.createElement("div");
+  actions.className = "edit-actions";
+
+  const addButton = document.createElement("button");
+  addButton.className = "add-algorithm-button";
+  addButton.type = "button";
+  addButton.textContent = "+ 알고리즘";
+
+  const saveButton = document.createElement("button");
+  saveButton.className = "save-edit-button";
+  saveButton.type = "button";
+  saveButton.textContent = "저장";
+
+  const cancelButton = document.createElement("button");
+  cancelButton.className = "cancel-edit-button";
+  cancelButton.type = "button";
+  cancelButton.textContent = "취소";
+
+  actions.append(addButton, saveButton, cancelButton);
+  wrapper.append(actions);
+  return wrapper;
+}
+
+
+function makeAlgorithmEditorRow(algorithm) {
+  const row = document.createElement("div");
+  row.className = "algorithm-editor-row";
+
+  const textarea = document.createElement("textarea");
+  textarea.className = "algorithm-editor";
+  textarea.rows = 2;
+  textarea.value = text(algorithm);
+  textarea.setAttribute("aria-label", "알고리즘 편집");
+
+  const removeButton = document.createElement("button");
+  removeButton.className = "remove-algorithm-button icon-button";
+  removeButton.type = "button";
+  removeButton.textContent = "×";
+  removeButton.setAttribute("aria-label", "알고리즘 삭제");
+  removeButton.title = "알고리즘 삭제";
+
+  row.append(textarea, removeButton);
+  return row;
+}
+
+
+function makeRecognitionBadges(recognitions) {
+  const section = document.createElement("div");
+  section.className = "recognition-badges";
+
+  for (const recognition of recognitions) {
+    const badge = document.createElement("span");
+    badge.className = `tag-badge ${recognitionClassName(recognition)}`;
+    badge.textContent = recognition;
+    section.append(badge);
+  }
+  return section;
+}
+
+
+function makeRecognitionEditor(recognitions, values) {
+  const section = document.createElement("div");
+  section.className = "case-section recognition-edit-section";
+
+  const title = document.createElement("h3");
+  title.textContent = "recognition";
+
+  const badges = document.createElement("div");
+  badges.className = "recognition-toggle-list";
+
+  const selected = new Set(recognitions);
+  for (const value of values) {
+    const label = document.createElement("label");
+    label.className = "recognition-toggle";
+
+    const input = document.createElement("input");
+    input.className = "recognition-editor";
+    input.type = "checkbox";
+    input.value = value;
+    input.checked = selected.has(value);
+
+    const badge = document.createElement("span");
+    badge.className = `tag-badge ${recognitionClassName(value)}`;
+    badge.textContent = value;
+
+    label.append(input, badge);
+    badges.append(label);
+  }
+
+  section.append(title, badges);
+  return section;
+}
+
+
+function renderCaseDetail(container, template, item, state) {
+  if (!item) {
+    container.hidden = true;
+    container.replaceChildren();
+    return;
+  }
+
+  const detailState = {
+    ...state,
+    renderingDetail: true,
+  };
+  const top = document.createElement("div");
+  top.className = "case-detail-top";
+
+  const closeButton = document.createElement("button");
+  closeButton.className = "close-detail-button";
+  closeButton.type = "button";
+  closeButton.textContent = "닫기";
+
+  top.append(closeButton);
+
+  const card = makeCaseCard(template, item, detailState);
+  container.replaceChildren(top, card);
+  container.hidden = false;
+}
+
+
+function renderCases(grid, template, rows, state) {
+  const fragment = document.createDocumentFragment();
+
+  for (const item of rows) {
+    fragment.append(makeCaseCard(template, item, state));
+  }
+
+  grid.replaceChildren(fragment);
+}
+
+
+function renderGroupedCases(grid, template, rows, state) {
+  const fragment = document.createDocumentFragment();
+  const groupOrder = [];
+  const byGroup = new Map();
+
+  for (const item of rows) {
+    const title = caseGroupTitle(item, state);
+    if (!byGroup.has(title)) {
+      byGroup.set(title, []);
+      groupOrder.push(title);
+    }
+    byGroup.get(title).push(item);
+  }
+
+  for (const titleText of groupOrder) {
+    const section = document.createElement("section");
+    section.className = "case-group-section";
+
+    const title = document.createElement("h2");
+    title.className = "case-group-title";
+    title.textContent = titleText;
+    section.append(title);
+
+    const groupGrid = document.createElement("div");
+    groupGrid.className = "case-grid grouped-grid";
+    groupGrid.dataset.detailMode = state.detailMode;
+    groupGrid.dataset.columns = state.columns;
+    groupGrid.style.setProperty("--image-size", `${state.imageSize}px`);
+
+    for (const item of byGroup.get(titleText)) {
+      groupGrid.append(makeCaseCard(template, item, state));
+    }
+
+    section.append(groupGrid);
+    fragment.append(section);
+  }
+
+  grid.replaceChildren(fragment);
+}
+
+
+function renderCasesByRecognition(grid, template, rows, state) {
+  const fragment = document.createDocumentFragment();
+  const groupOrder = [...new Set(rows.flatMap((item) => recognitionList(item.tags?.recognition).length ? recognitionList(item.tags?.recognition) : ["기타"]))].sort();
+
+  for (const recognition of groupOrder) {
+    const section = document.createElement("section");
+    section.className = "recognition-section";
+
+    const title = document.createElement("h2");
+    title.className = "recognition-title";
+    title.textContent = recognition;
+    section.append(title);
+
+    const groupGrid = document.createElement("div");
+    groupGrid.className = "case-grid recognition-grid";
+    groupGrid.dataset.columns = state.columns;
+    groupGrid.dataset.detailMode = state.detailMode;
+
+    for (const item of rows.filter((candidate) => {
+      const values = recognitionList(candidate.tags?.recognition);
+      return values.length ? values.includes(recognition) : recognition === "기타";
+    })) {
+      groupGrid.append(makeCaseCard(template, item, state));
+    }
+
+    section.append(groupGrid);
+    fragment.append(section);
+  }
+
+  grid.replaceChildren(fragment);
+}
+
+
+return {
+  renderCases,
+  renderGroupedCases,
+  renderCasesByRecognition,
+  renderCaseDetail,
+  renderGroupOptions,
+  renderRecognitionOptions,
+  renderRecognitionFilterTags,
+  renderSummary,
+};
+})();
