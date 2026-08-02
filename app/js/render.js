@@ -1,4 +1,14 @@
 window.AlgNoteRender = (() => {
+const RECOGNITION_ORDER = [
+  "is-corner-only",
+  "is-corner-flipped-only",
+  "is-pair-solved",
+  "is-flipped-pair-solved",
+  "is-pair-wrong",
+  "is-flipped-pair-wrong",
+];
+
+
 function text(value) {
   return value == null ? "" : String(value);
 }
@@ -28,7 +38,7 @@ function renderGroupOptions(select, groups) {
 
 
 function renderRecognitionOptions(select, cases) {
-  const values = [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+  const values = sortedRecognitionValues(cases);
   select.innerHTML = "";
 
   const all = document.createElement("option");
@@ -48,7 +58,7 @@ function renderRecognitionOptions(select, cases) {
 
 
 function renderRecognitionFilterTags(container, cases, selectedValues) {
-  const values = [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+  const values = sortedRecognitionValues(cases);
   container.innerHTML = "";
 
   for (const value of values) {
@@ -108,13 +118,28 @@ function detailGroupLabel(item, state) {
 
 function recognitionValues(state) {
   const cases = state.dataset?.cases || [];
-  return [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))].sort();
+  return sortedRecognitionValues(cases);
 }
 
 
 function recognitionList(value) {
   if (Array.isArray(value)) return value.filter(Boolean).map(text);
   return value ? [text(value)] : [];
+}
+
+
+function sortedRecognitionValues(cases) {
+  return [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))]
+    .sort((a, b) => {
+      const indexA = RECOGNITION_ORDER.indexOf(a);
+      const indexB = RECOGNITION_ORDER.indexOf(b);
+      if (indexA !== -1 || indexB !== -1) {
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+      }
+      return a.localeCompare(b);
+    });
 }
 
 
@@ -212,7 +237,7 @@ function renderCaseTitle(title, label, { currentStatus, isFavorite }) {
   if (currentStatus === "learned") {
     const badge = document.createElement("span");
     badge.className = "case-title-badge case-title-learned";
-    badge.textContent = "✓ 완료";
+    badge.textContent = "✓";
     badge.title = "암기 완료";
     badges.append(badge);
   }

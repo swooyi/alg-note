@@ -536,6 +536,8 @@ main {
 }
 
 .case-title-learned {
+  width: 20px;
+  padding: 1px;
   border-color: #8ed5a2;
   background: #e9f7ee;
   color: #287d3c;
