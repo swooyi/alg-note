@@ -534,7 +534,7 @@ main {
 
 .case-card.is-list-card {
   grid-template-areas: "title recognition setup alg";
-  grid-template-columns: minmax(230px, 0.55fr) minmax(96px, 0.22fr) minmax(220px, 0.55fr) minmax(280px, 1fr);
+  grid-template-columns: minmax(120px, 0.24fr) minmax(86px, 0.16fr) minmax(220px, 0.55fr) minmax(280px, 1fr);
   grid-template-rows: auto;
   align-items: stretch;
   gap: 8px;
@@ -593,7 +593,7 @@ main {
 
 .case-card.is-list-card .recognition-badges {
   align-items: center;
-  max-width: 180px;
+  max-width: 120px;
   overflow: hidden;
 }
 
