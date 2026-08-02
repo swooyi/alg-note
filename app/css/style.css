@@ -533,16 +533,13 @@ main {
 }
 
 .case-card.is-list-card {
-  grid-template-columns: minmax(160px, 0.45fr) minmax(180px, 0.75fr) minmax(240px, 1fr);
+  grid-template-areas: "title recognition setup alg";
+  grid-template-columns: minmax(230px, 0.55fr) minmax(96px, 0.22fr) minmax(220px, 0.55fr) minmax(280px, 1fr);
   grid-template-rows: auto;
   align-items: stretch;
   gap: 8px;
   padding: 9px 10px;
   cursor: pointer;
-}
-
-.case-card.is-list-card.has-recognition-badges {
-  grid-template-columns: minmax(160px, 0.45fr) auto minmax(180px, 0.75fr) minmax(240px, 1fr);
 }
 
 .case-card.is-list-card.is-selected {
@@ -551,8 +548,21 @@ main {
 }
 
 .case-card.is-list-card .card-top {
+  grid-area: title;
   align-items: center;
   min-width: 0;
+}
+
+.case-card.is-list-card .recognition-badges {
+  grid-area: recognition;
+}
+
+.case-card.is-list-card .setup-section {
+  grid-area: setup;
+}
+
+.case-card.is-list-card .alg-section {
+  grid-area: alg;
 }
 
 .case-card.is-list-card .case-name {
@@ -573,13 +583,7 @@ main {
 }
 
 .case-card.is-list-card .quick-actions {
-  gap: 4px;
-}
-
-.case-card.is-list-card .icon-button {
-  width: 30px;
-  min-height: 30px;
-  font-size: 15px;
+  display: none;
 }
 
 .case-card.is-list-card .recognition-badges,
@@ -1203,6 +1207,11 @@ main {
 
   .case-card.is-list-card,
   .case-card.is-list-card.has-recognition-badges {
+    grid-template-areas:
+      "title"
+      "recognition"
+      "setup"
+      "alg";
     grid-template-columns: 1fr;
     gap: 6px;
   }

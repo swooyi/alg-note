@@ -192,7 +192,7 @@ function makeCaseCard(template, item, state) {
       li.textContent = text(algorithm);
       algorithmList.append(li);
     }
-    if ((isDetail || isCompact) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
+    if ((isDetail || isCompact || isList) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
   }
 
   favoriteButton.classList.toggle("is-active", isFavorite);
