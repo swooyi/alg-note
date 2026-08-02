@@ -5,15 +5,23 @@ const { datasetKey, loadJson, saveJson } = window.AlgNoteStorage;
 
 const DEFAULT_COLUMNS = "4";
 const DEFAULT_IMAGE_SIZE = 190;
+const VIEW_MODES = new Set(["compact", "list", "full"]);
+const STATUS_FILTERS = ["favorite", "learning", "learned"];
+
+function initialViewMode() {
+  const saved = loadJson("viewModeV3", "");
+  if (VIEW_MODES.has(saved)) return saved;
+  return loadJson("detailModeV2", "compact") === "full" ? "full" : "compact";
+}
 
 const elements = {
   datasetLabel: document.getElementById("datasetLabel"),
   datasetSelect: document.getElementById("datasetSelect"),
   searchInput: document.getElementById("searchInput"),
   groupSelect: document.getElementById("groupSelect"),
-  statusSelect: document.getElementById("statusSelect"),
+  filterToggleButtons: [...document.querySelectorAll(".filter-toggle-button")],
   recognitionFilterTags: document.getElementById("recognitionFilterTags"),
-  detailModeToggle: document.getElementById("detailModeToggle"),
+  viewModeButtons: [...document.querySelectorAll(".view-mode-button")],
   favoritePresetSelect: document.getElementById("favoritePresetSelect"),
   favoritePresetNameInput: document.getElementById("favoritePresetNameInput"),
   saveFavoritePresetButton: document.getElementById("saveFavoritePresetButton"),
@@ -47,9 +55,9 @@ const state = {
   key: "",
   query: "",
   group: "all",
-  statusFilter: "all",
+  statusFilters: new Set(),
   recognitionFilters: new Set(),
-  detailMode: loadJson("detailModeV2", "compact"),
+  viewMode: initialViewMode(),
   toolbarCollapsed: loadJson("mobileToolbarCollapsed", true),
   columns: DEFAULT_COLUMNS,
   imagesVisible: true,
@@ -64,6 +72,8 @@ const state = {
   edits: new Map(),
   selectionPresets: [],
   activeSelectionPresetId: "",
+  pendingScrollY: null,
+  scrollSaveTimer: 0,
 };
 
 
@@ -211,12 +221,11 @@ function filteredCases() {
       state.recognitionFilters.size === 0 ||
       recognitionList(item.tags?.recognition).some((value) => state.recognitionFilters.has(value));
     const queryOk = matchesQuery(item, query);
-    const favoriteOk = state.statusFilter !== "favorite" || state.favorites.has(item.id);
+    const favoriteOk = !state.statusFilters.has("favorite") || state.favorites.has(item.id);
     const selectedOk = !state.selectedOnly || state.selectedCards.has(item.id);
-    const statusOk =
-      state.statusFilter === "all" ||
-      state.statusFilter === "favorite" ||
-      state.statuses.get(item.id) === state.statusFilter;
+    const learningOk = !state.statusFilters.has("learning") || state.statuses.get(item.id) === "learning";
+    const learnedOk = !state.statusFilters.has("learned") || state.statuses.get(item.id) === "learned";
+    const statusOk = learningOk && learnedOk;
     return groupOk && recognitionOk && queryOk && favoriteOk && selectedOk && statusOk;
   });
 }
@@ -235,6 +244,60 @@ function updateToolbarCollapsed() {
   document.body.classList.toggle("toolbar-collapsed", state.toolbarCollapsed);
   elements.toolbarToggleButton.setAttribute("aria-expanded", String(!state.toolbarCollapsed));
   elements.toolbarToggleButton.textContent = state.toolbarCollapsed ? "설정 열기" : "설정 접기";
+}
+
+function updateFilterToggleButtons() {
+  for (const button of elements.filterToggleButtons) {
+    const active = state.statusFilters.has(button.dataset.filter);
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+
+function updateViewModeButtons() {
+  for (const button of elements.viewModeButtons) {
+    const active = button.dataset.viewMode === state.viewMode;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+
+function viewStateKey(key = state.key) {
+  return `viewState.${key}`;
+}
+
+
+function saveCurrentViewState() {
+  if (!state.key) return;
+  saveJson(viewStateKey(), {
+    query: state.query,
+    group: state.group,
+    statusFilters: [...state.statusFilters],
+    recognitionFilters: [...state.recognitionFilters],
+    viewMode: state.viewMode,
+    selectedCaseId: state.selectedCaseId,
+    scrollY: Math.max(0, Math.round(window.scrollY || 0)),
+  });
+}
+
+
+function restoreCurrentViewState() {
+  const saved = loadJson(viewStateKey(), {});
+  const groupIds = new Set(state.dataset.groups.map((group) => group.id));
+  const availableRecognitions = new Set(effectiveCases().flatMap((item) => recognitionList(item.tags?.recognition)));
+
+  state.query = typeof saved.query === "string" ? saved.query : "";
+  state.group = groupIds.has(saved.group) ? saved.group : "all";
+  state.statusFilters = new Set((Array.isArray(saved.statusFilters) ? saved.statusFilters : []).filter((value) => STATUS_FILTERS.includes(value)));
+  state.recognitionFilters = new Set((Array.isArray(saved.recognitionFilters) ? saved.recognitionFilters : []).filter((value) => availableRecognitions.has(value)));
+  state.viewMode = VIEW_MODES.has(saved.viewMode) ? saved.viewMode : state.viewMode;
+  state.selectedCaseId = typeof saved.selectedCaseId === "string" ? saved.selectedCaseId : "";
+  state.pendingScrollY = Number.isFinite(saved.scrollY) ? saved.scrollY : null;
+
+  elements.searchInput.value = state.query;
+  elements.groupSelect.value = state.group;
 }
 
 
@@ -285,15 +348,16 @@ function render() {
   elements.caseGrid.hidden = false;
   refreshRecognitionFilters();
   elements.caseGrid.dataset.columns = state.columns;
-  delete elements.caseGrid.dataset.viewMode;
-  elements.caseGrid.dataset.detailMode = state.detailMode;
+  elements.caseGrid.dataset.viewMode = state.viewMode;
   elements.caseGrid.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.caseDetail.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.datasetLabel.textContent = `${state.dataset.puzzle} · ${state.dataset.name}`;
   renderSelectionPresetOptions();
+  updateFilterToggleButtons();
+  updateViewModeButtons();
 
   renderSummary(elements.summary, state.dataset, rows, state);
-  if (state.detailMode === "compact") {
+  if (state.viewMode === "compact") {
     renderGroupedCases(elements.caseGrid, elements.caseCardTemplate, rows, state);
   } else {
     renderCases(elements.caseGrid, elements.caseCardTemplate, rows, state);
@@ -316,23 +380,29 @@ function render() {
     elements.caseDetail.hidden = true;
     elements.caseDetail.replaceChildren();
   }
+
+  if (state.pendingScrollY !== null) {
+    const scrollY = state.pendingScrollY;
+    state.pendingScrollY = null;
+    requestAnimationFrame(() => window.scrollTo({ top: scrollY, left: 0 }));
+  }
 }
 
 
 function setDataset(entries) {
+  saveCurrentViewState();
   state.entries = entries;
   state.dataset = normalizeDataset(entries);
   state.key = datasetKey(state.dataset);
   state.query = "";
   state.group = "all";
-  state.statusFilter = "all";
+  state.statusFilters = new Set();
   state.recognitionFilters = new Set();
   state.editingCaseId = "";
   state.selectedCaseId = "";
   state.selectedCards = new Set();
   state.selectedOnly = false;
   elements.searchInput.value = "";
-  elements.statusSelect.value = "all";
   elements.exportPanel.hidden = true;
   elements.exportJsonText.value = "";
   renderGroupOptions(elements.groupSelect, state.dataset.groups);
@@ -340,6 +410,7 @@ function setDataset(entries) {
   loadPersonalState();
   loadSelectionPresets();
   refreshRecognitionFilters();
+  restoreCurrentViewState();
   saveJson("lastDataset", state.key);
   render();
 }
@@ -512,11 +583,18 @@ elements.groupSelect.addEventListener("change", (event) => {
   render();
 });
 
-elements.statusSelect.addEventListener("change", (event) => {
-  state.statusFilter = event.target.value;
-  state.selectedCaseId = "";
-  render();
-});
+for (const button of elements.filterToggleButtons) {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    if (state.statusFilters.has(filter)) {
+      state.statusFilters.delete(filter);
+    } else {
+      state.statusFilters.add(filter);
+    }
+    state.selectedCaseId = "";
+    render();
+  });
+}
 
 elements.recognitionFilterTags.addEventListener("click", (event) => {
   const button = event.target.closest(".tag-filter-button");
@@ -532,13 +610,17 @@ elements.recognitionFilterTags.addEventListener("click", (event) => {
   render();
 });
 
-elements.detailModeToggle.addEventListener("change", (event) => {
-  state.detailMode = event.target.checked ? "full" : "compact";
-  state.editingCaseId = "";
-  state.selectedCaseId = "";
-  saveJson("detailModeV2", state.detailMode);
-  render();
-});
+for (const button of elements.viewModeButtons) {
+  button.addEventListener("click", () => {
+    const nextMode = button.dataset.viewMode;
+    if (!VIEW_MODES.has(nextMode) || state.viewMode === nextMode) return;
+    state.viewMode = nextMode;
+    state.editingCaseId = "";
+    state.selectedCaseId = "";
+    saveJson("viewModeV3", state.viewMode);
+    render();
+  });
+}
 
 elements.favoritePresetSelect.addEventListener("change", (event) => {
   state.activeSelectionPresetId = event.target.value;
@@ -645,12 +727,11 @@ elements.closeExportButton.addEventListener("click", () => {
 elements.clearFiltersButton.addEventListener("click", () => {
   state.query = "";
   state.group = "all";
-  state.statusFilter = "all";
+  state.statusFilters = new Set();
   state.recognitionFilters = new Set();
   state.selectedCaseId = "";
   elements.searchInput.value = "";
   elements.groupSelect.value = "all";
-  elements.statusSelect.value = "all";
   render();
 });
 
@@ -703,6 +784,22 @@ function handleCaseAction(event) {
     const row = document.createElement("div");
     row.className = "algorithm-editor-row";
 
+    const moveUpButton = document.createElement("button");
+    moveUpButton.className = "move-algorithm-button move-algorithm-up-button icon-button";
+    moveUpButton.type = "button";
+    moveUpButton.dataset.direction = "up";
+    moveUpButton.textContent = "↑";
+    moveUpButton.setAttribute("aria-label", "알고리즘 위로 이동");
+    moveUpButton.title = "알고리즘 위로 이동";
+
+    const moveDownButton = document.createElement("button");
+    moveDownButton.className = "move-algorithm-button move-algorithm-down-button icon-button";
+    moveDownButton.type = "button";
+    moveDownButton.dataset.direction = "down";
+    moveDownButton.textContent = "↓";
+    moveDownButton.setAttribute("aria-label", "알고리즘 아래로 이동");
+    moveDownButton.title = "알고리즘 아래로 이동";
+
     const textarea = document.createElement("textarea");
     textarea.className = "algorithm-editor";
     textarea.rows = 2;
@@ -715,9 +812,24 @@ function handleCaseAction(event) {
     removeButton.setAttribute("aria-label", "알고리즘 삭제");
     removeButton.title = "알고리즘 삭제";
 
-    row.append(textarea, removeButton);
+    row.append(moveUpButton, moveDownButton, textarea, removeButton);
     list.insertBefore(row, card.querySelector(".edit-actions"));
     row.querySelector(".algorithm-editor").focus();
+    return;
+  }
+
+  const moveAlgorithmButton = event.target.closest(".move-algorithm-button");
+  if (moveAlgorithmButton) {
+    const row = moveAlgorithmButton.closest(".algorithm-editor-row");
+    const direction = moveAlgorithmButton.dataset.direction;
+    if (direction === "up" && row.previousElementSibling?.classList.contains("algorithm-editor-row")) {
+      row.parentNode.insertBefore(row, row.previousElementSibling);
+      row.querySelector(".algorithm-editor").focus();
+    }
+    if (direction === "down" && row.nextElementSibling?.classList.contains("algorithm-editor-row")) {
+      row.parentNode.insertBefore(row.nextElementSibling, row);
+      row.querySelector(".algorithm-editor").focus();
+    }
     return;
   }
 
@@ -771,6 +883,10 @@ function handleCaseAction(event) {
     return;
   }
 
+  if (card.closest("#caseDetail")) {
+    return;
+  }
+
   if (state.selectedCards.has(caseId)) {
     state.selectedCards.delete(caseId);
   } else {
@@ -813,8 +929,8 @@ document.addEventListener("keydown", (event) => {
   }
 });
 const datasetKeys = renderDatasetOptions();
-elements.detailModeToggle.checked = state.detailMode === "full";
 updateToolbarCollapsed();
+updateViewModeButtons();
 if (datasetKeys.length) {
   const lastKey = loadJson("lastBundledDataset", datasetKeys[0]);
   loadBundledDataset(datasetKeys.includes(lastKey) ? lastKey : datasetKeys[0]);
@@ -824,4 +940,10 @@ if (datasetKeys.length) {
 } else {
   elements.emptyState.hidden = true;
 }
+window.addEventListener("beforeunload", saveCurrentViewState);
+window.addEventListener("scroll", () => {
+  if (!state.key || state.pendingScrollY !== null) return;
+  window.clearTimeout(state.scrollSaveTimer);
+  state.scrollSaveTimer = window.setTimeout(saveCurrentViewState, 150);
+}, { passive: true });
 })();

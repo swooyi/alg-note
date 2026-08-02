@@ -1,0 +1,272 @@
+{
+  "target_file": "C:\\dev\\alg-note",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Apply the pending 1L3T algorithm edits, then improve card/detail click behavior, filter controls, view modes, dataset view-state memory, mobile detail layout, and algorithm editor ordering without converting the app to a mobile native app or PWA.",
+  "assumptions": [
+    "The app remains a static GitHub Pages app under C:\\dev\\alg-note\\app.",
+    "PWA/mobile app installation work is out of scope for this checklist.",
+    "Existing personal states in localStorage should be migrated or tolerated when field names change.",
+    "The list view should omit puzzle images and prioritize fast scanning of case name, badges, setup, and algorithm text.",
+    "GitHub push is requested for completed implementation batches unless the user says otherwise."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_commit_current_alg_edits",
+      "order": 1,
+      "title": "Commit and push current 1L3T algorithm edits",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\alg\\fto\\1l3t\\cases.json; C:\\dev\\alg-note\\app\\js\\data.js",
+      "allowed_fields": [
+        "alg/fto/1l3t/cases.json cases[*].scramble",
+        "alg/fto/1l3t/cases.json cases[*].algorithms",
+        "alg/fto/1l3t/cases.json cases[*].tags.recognition",
+        "app/js/data.js bundled mirror of the same data",
+        "git staging, commit, push for these changes"
+      ],
+      "protected_fields": [
+        "case ids",
+        "case names",
+        "group membership",
+        "svg ids",
+        "scrambles arrays except representative scramble already edited",
+        "app behavior code"
+      ],
+      "summary": "Commit the already-applied 16-case 1L3T algorithm edit batch and push it to origin/main.",
+      "verify": [
+        "Run python .\\scripts\\validate_alg_json.py .\\alg\\fto\\1l3t.",
+        "Confirm git diff before commit contains only the expected data changes plus this checklist if intentionally included.",
+        "Confirm git status shows local main synced with origin/main after push."
+      ]
+    },
+    {
+      "id": "02_disable_detail_background_selection_toggle",
+      "order": 2,
+      "title": "Disable selection toggle inside detail view background",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js",
+      "allowed_fields": [
+        "detail-view click handling",
+        "card selection toggle guard conditions"
+      ],
+      "protected_fields": [
+        "favorite button behavior",
+        "learning/learned status button behavior",
+        "edit/save/cancel behavior",
+        "previous/next detail navigation"
+      ],
+      "summary": "Prevent clicks on the detail card/background from toggling the yellow selected state while keeping intentional controls active.",
+      "verify": [
+        "Click a normal list card and confirm selection still toggles.",
+        "Open detail view and click empty/card background; confirm selected state does not change.",
+        "Confirm favorite, status, edit, save, cancel, previous, and next controls still work in detail view."
+      ]
+    },
+    {
+      "id": "03_convert_status_filters_to_toggles",
+      "order": 3,
+      "title": "Convert favorite and status filters to on/off toggles",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html; C:\\dev\\alg-note\\app\\js\\app.js; C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "filter control markup",
+        "filter state model",
+        "filter predicate logic",
+        "filter reset behavior",
+        "toggle styling"
+      ],
+      "protected_fields": [
+        "dataset loading",
+        "recognition tag filtering",
+        "selection preset data model",
+        "algorithm data"
+      ],
+      "summary": "Replace the current status select with independent on/off toggles for favorites, learning, and learned filters.",
+      "verify": [
+        "Confirm each toggle can be turned on and off.",
+        "Confirm combinations filter predictably, including favorites plus learning.",
+        "Confirm filter reset clears the new toggles.",
+        "Confirm summary counts remain accurate."
+      ]
+    },
+    {
+      "id": "04_move_export_button_to_top_action",
+      "order": 4,
+      "title": "Move output button to a prominent top action",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html; C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "top toolbar/search area markup",
+        "export button placement",
+        "export button color and responsive styling"
+      ],
+      "protected_fields": [
+        "export JSON generation logic",
+        "export panel contents",
+        "download/copy behavior"
+      ],
+      "summary": "Place the output/export button near the top with a distinct color so it is not visually mixed with filters.",
+      "verify": [
+        "Confirm the export panel still opens.",
+        "Confirm full JSON and edits-only modes still switch.",
+        "Confirm mobile layout does not overflow horizontally."
+      ]
+    },
+    {
+      "id": "05_replace_detail_toggle_with_view_mode_switcher",
+      "order": 5,
+      "title": "Replace view toggle with three-mode switcher",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html; C:\\dev\\alg-note\\app\\js\\app.js; C:\\dev\\alg-note\\app\\js\\render.js; C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "view mode state",
+        "view mode buttons",
+        "render branching for compact, list, and detail modes",
+        "selected button styling"
+      ],
+      "protected_fields": [
+        "case data normalization",
+        "filtering semantics except view mode",
+        "edit persistence"
+      ],
+      "summary": "Change the current detail-view toggle into a segmented control with 간단히 보기, 목록형 보기, and 자세히 보기.",
+      "verify": [
+        "Confirm exactly one view mode is active at a time.",
+        "Confirm mode changes preserve current filters and selection where appropriate.",
+        "Confirm labels fit on mobile without overlapping."
+      ]
+    },
+    {
+      "id": "06_add_list_view_card_layout",
+      "order": 6,
+      "title": "Add image-free list view cards",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\render.js; C:\\dev\\alg-note\\app\\css\\style.css; C:\\dev\\alg-note\\app\\index.html if template changes are needed",
+      "allowed_fields": [
+        "list view card rendering",
+        "list view CSS",
+        "case title and badge presentation",
+        "setup and algorithm summary presentation"
+      ],
+      "protected_fields": [
+        "compact view image rendering",
+        "detail view image rendering",
+        "edit form controls",
+        "raw algorithm data"
+      ],
+      "summary": "Implement a new horizontally long, vertically compact list-card view showing case name, badges, setup, and algorithm text without images.",
+      "verify": [
+        "Confirm list view renders no puzzle images.",
+        "Confirm each row shows case name, recognition/status badges, setup, and at least the first algorithm.",
+        "Confirm multiple algorithms are indicated clearly without making rows too tall.",
+        "Confirm mobile and desktop rows do not overlap or overflow incoherently."
+      ]
+    },
+    {
+      "id": "07_persist_dataset_view_state",
+      "order": 7,
+      "title": "Remember filters and position per algset",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js",
+      "allowed_fields": [
+        "localStorage view-state keys",
+        "dataset switch save/restore logic",
+        "filter/search/view mode restoration",
+        "selected case restoration",
+        "scroll position restoration"
+      ],
+      "protected_fields": [
+        "personal favorite/status storage",
+        "selection preset storage",
+        "algorithm edits storage",
+        "dataset files"
+      ],
+      "summary": "Remember the current filter, search, view mode, selected/detail case, and scroll position separately for 1L3T and LBT when switching datasets.",
+      "verify": [
+        "Set filters and scroll in 1L3T, switch to LBT, then return and confirm the previous 1L3T state is restored.",
+        "Repeat the same check from LBT back to 1L3T.",
+        "Confirm missing or filtered-out selected cases fall back without errors.",
+        "Confirm restoration occurs after render so scroll position is effective."
+      ]
+    },
+    {
+      "id": "08_improve_mobile_detail_layout",
+      "order": 8,
+      "title": "Improve mobile detail view layout",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html; C:\\dev\\alg-note\\app\\js\\render.js; C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "mobile detail layout CSS",
+        "detail navigation/control placement",
+        "image sizing",
+        "setup/algorithm overflow handling"
+      ],
+      "protected_fields": [
+        "desktop detail behavior unless required for consistency",
+        "card data",
+        "edit save semantics"
+      ],
+      "summary": "On mobile, make detail view behave as a clean single detail panel instead of overlapping card-like columns.",
+      "verify": [
+        "Inspect a mobile-width viewport and confirm no adjacent card overlaps the detail panel.",
+        "Confirm previous/next/edit/favorite/status controls are reachable and not floating over content awkwardly.",
+        "Confirm puzzle image fits within the viewport.",
+        "Confirm setup and algorithm text remain readable."
+      ]
+    },
+    {
+      "id": "09_add_algorithm_editor_reordering",
+      "order": 9,
+      "title": "Allow algorithm order changes in edit mode",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\render.js; C:\\dev\\alg-note\\app\\js\\app.js; C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "algorithm editor row controls",
+        "row order change handlers",
+        "drag handle or up/down controls",
+        "editor styling"
+      ],
+      "protected_fields": [
+        "textarea text editing behavior",
+        "saveCardEdit data shape",
+        "non-edit card rendering",
+        "JSON schema"
+      ],
+      "summary": "In edit mode, allow multiple algorithm rows to be reordered while preserving textarea focus and mobile scrolling usability.",
+      "verify": [
+        "Create or open a case with multiple algorithms.",
+        "Change row order and save; confirm exported/merged algorithms preserve the new order.",
+        "Confirm textarea clicks still place the cursor and do not start dragging.",
+        "Confirm cancel discards order changes."
+      ]
+    },
+    {
+      "id": "10_update_site_branding",
+      "order": 10,
+      "title": "Update site name and icon branding",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html; C:\\dev\\alg-note\\app\\css\\style.css; C:\\dev\\alg-note\\app icons/favicon files as needed",
+      "allowed_fields": [
+        "browser title text",
+        "visible app header name",
+        "metadata title fields if present",
+        "favicon and app icon assets",
+        "icon link tags"
+      ],
+      "protected_fields": [
+        "app data",
+        "filter behavior",
+        "view mode behavior",
+        "export behavior",
+        "PWA/native app conversion"
+      ],
+      "summary": "Rename the site to swooyi's ALG note and replace the default browser icon with a simple sA monogram icon.",
+      "verify": [
+        "Confirm the browser tab title uses swooyi's ALG note.",
+        "Confirm the visible app header uses swooyi's ALG note.",
+        "Confirm favicon/icon links resolve without 404 in the app.",
+        "Confirm the sA monogram remains legible at favicon size."
+      ]
+    }
+  ]
+}

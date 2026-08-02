@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ALG Note</title>
+  <title>swooyi's ALG note</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <header class="app-header">
     <div class="header-main">
       <div>
-        <h1>ALG Note</h1>
+        <h1>swooyi's ALG note</h1>
         <p id="datasetLabel">FTO 공식 노트</p>
       </div>
       <div class="header-actions">
@@ -21,17 +22,15 @@
     <div id="appToolbar" class="toolbar">
       <div class="search-row">
         <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색">
+        <button id="exportJsonButton" class="primary-export-button" type="button">출력</button>
       </div>
       <div class="control-row">
         <div class="control-group filter-group">
           <span class="control-label">필터</span>
           <select id="groupSelect"></select>
-          <select id="statusSelect">
-            <option value="all">전체 상태</option>
-            <option value="favorite">즐겨찾기</option>
-            <option value="learning">암기 중</option>
-            <option value="learned">암기 완료</option>
-          </select>
+          <button id="favoriteFilterButton" class="filter-toggle-button" type="button" data-filter="favorite" aria-pressed="false">☆ 즐겨찾기</button>
+          <button id="learningFilterButton" class="filter-toggle-button" type="button" data-filter="learning" aria-pressed="false">◐ 암기 중</button>
+          <button id="learnedFilterButton" class="filter-toggle-button" type="button" data-filter="learned" aria-pressed="false">✓ 암기 완료</button>
           <button id="clearFiltersButton" type="button">필터 초기화</button>
         </div>
         <div class="control-group tag-filter-group">
@@ -40,12 +39,11 @@
         </div>
         <div class="control-group view-group">
           <span class="control-label">보기</span>
-          <label class="switch-control">
-            <span>자세히 보기</span>
-            <input id="detailModeToggle" type="checkbox" aria-label="자세히 보기">
-            <span class="switch-track" aria-hidden="true"></span>
-          </label>
-          <button id="exportJsonButton" type="button">출력</button>
+          <div class="view-mode-switcher" aria-label="보기 모드">
+            <button class="view-mode-button" type="button" data-view-mode="compact">간단히 보기</button>
+            <button class="view-mode-button" type="button" data-view-mode="list">목록형 보기</button>
+            <button class="view-mode-button" type="button" data-view-mode="full">자세히 보기</button>
+          </div>
         </div>
         <div class="control-group favorite-preset-group">
           <span class="control-label">선택</span>

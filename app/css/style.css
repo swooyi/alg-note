@@ -10,11 +10,14 @@
   color-scheme: light;
   --bg: #f4f5f7;
   --panel: #ffffff;
+  --soft: #f8fafc;
   --ink: #1f2328;
   --muted: #667085;
   --line: #d6dbe3;
   --accent: #1769aa;
   --accent-soft: #e7f2fb;
+  --export: #7a3f14;
+  --export-soft: #fff0df;
   --toolbar-bg: #e8edf4;
   --toolbar-line: #c9d3e0;
   --ok: #287d3c;
@@ -131,6 +134,8 @@ h1 {
 
 .search-row {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
 }
 
 .control-row,
@@ -177,10 +182,6 @@ h1 {
   width: 150px;
 }
 
-.filter-group select:nth-of-type(2) {
-  width: 135px;
-}
-
 .tag-filter-group {
   flex: 1 1 100%;
   align-items: flex-start;
@@ -203,6 +204,73 @@ h1 {
 .tag-filter-button.tag-badge.is-active {
   box-shadow: 0 0 0 2px var(--accent);
   opacity: 1;
+}
+
+.filter-toggle-button,
+.view-mode-button {
+  white-space: nowrap;
+}
+
+.filter-toggle-button.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.filter-toggle-button[data-filter="favorite"].is-active {
+  border-color: #d6a100;
+  background: #fff0ae;
+  color: #684700;
+}
+
+.filter-toggle-button[data-filter="learning"].is-active {
+  border-color: #93b4ff;
+  background: #e8f0ff;
+  color: #1d4ed8;
+}
+
+.filter-toggle-button[data-filter="learned"].is-active {
+  border-color: var(--ok);
+  background: #e9f7ee;
+  color: var(--ok);
+}
+
+.view-mode-switcher,
+.export-mode-buttons {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #eef2f7;
+}
+
+.view-mode-button,
+.export-mode-buttons button {
+  min-height: 30px;
+  border-color: transparent;
+  background: transparent;
+}
+
+.view-mode-button.is-active,
+.export-mode-buttons button.is-active {
+  border-color: var(--line);
+  background: var(--panel);
+  color: var(--accent);
+  font-weight: 850;
+}
+
+.primary-export-button {
+  border-color: var(--export);
+  background: var(--export);
+  color: #fff;
+  font-weight: 850;
+}
+
+.primary-export-button:hover {
+  border-color: #5f2f0d;
+  background: #5f2f0d;
 }
 
 .switch-control {
@@ -316,27 +384,6 @@ main {
   gap: 8px;
 }
 
-.export-mode-buttons {
-  display: flex;
-  gap: 4px;
-  padding: 3px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--soft);
-}
-
-.export-mode-buttons button {
-  min-height: 30px;
-  border-color: transparent;
-  background: transparent;
-}
-
-.export-mode-buttons button.is-active {
-  border-color: var(--line);
-  background: var(--panel);
-  color: var(--accent);
-}
-
 .export-panel textarea {
   min-height: 260px;
   font-family: Consolas, "Courier New", monospace;
@@ -367,12 +414,17 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.case-grid[data-detail-mode="compact"] {
+.case-grid[data-view-mode="compact"] {
   grid-template-columns: 1fr;
 }
 
-.grouped-grid[data-detail-mode="compact"],
-.recognition-grid[data-detail-mode="compact"] {
+.case-grid[data-view-mode="list"],
+.case-grid[data-view-mode="list"][data-columns] {
+  grid-template-columns: 1fr;
+}
+
+.grouped-grid[data-view-mode="compact"],
+.recognition-grid[data-view-mode="compact"] {
   grid-template-columns: repeat(auto-fill, var(--compact-card-width));
   justify-content: start;
   gap: 6px;
@@ -390,7 +442,7 @@ main {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.recognition-grid[data-detail-mode="compact"] {
+.recognition-grid[data-view-mode="compact"] {
   grid-template-columns: repeat(auto-fill, var(--compact-card-width));
 }
 
@@ -478,6 +530,97 @@ main {
 
 .case-card.is-compact.images-hidden {
   grid-template-rows: auto;
+}
+
+.case-card.is-list-card {
+  grid-template-columns: minmax(160px, 0.45fr) minmax(180px, 0.75fr) minmax(240px, 1fr);
+  grid-template-rows: auto;
+  align-items: stretch;
+  gap: 8px;
+  padding: 9px 10px;
+  cursor: pointer;
+}
+
+.case-card.is-list-card.has-recognition-badges {
+  grid-template-columns: minmax(160px, 0.45fr) auto minmax(180px, 0.75fr) minmax(240px, 1fr);
+}
+
+.case-card.is-list-card.is-selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.case-card.is-list-card .card-top {
+  align-items: center;
+  min-width: 0;
+}
+
+.case-card.is-list-card .case-name {
+  font-size: 15px;
+}
+
+.case-card.is-list-card .case-title-text,
+.case-card.is-list-card .scramble,
+.case-card.is-list-card .algorithm-list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.case-card.is-list-card .case-meta,
+.case-card.is-list-card .svg-box {
+  display: none;
+}
+
+.case-card.is-list-card .quick-actions {
+  gap: 4px;
+}
+
+.case-card.is-list-card .icon-button {
+  width: 30px;
+  min-height: 30px;
+  font-size: 15px;
+}
+
+.case-card.is-list-card .recognition-badges,
+.case-card.is-list-card .case-section {
+  align-self: stretch;
+}
+
+.case-card.is-list-card .recognition-badges {
+  align-items: center;
+  max-width: 180px;
+  overflow: hidden;
+}
+
+.case-card.is-list-card .tag-badge {
+  min-height: 22px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.case-card.is-list-card .case-section {
+  min-width: 0;
+  padding: 7px 9px;
+}
+
+.case-card.is-list-card .case-section h3 {
+  font-size: 11px;
+}
+
+.case-card.is-list-card .algorithm-list {
+  gap: 2px;
+}
+
+.case-card.is-list-card .algorithm-list li:nth-child(n + 2) {
+  display: none;
+}
+
+.case-card.is-list-card .algorithm-list:has(li:nth-child(2))::after {
+  color: var(--muted);
+  content: "추가 alg 있음";
+  font-size: 11px;
+  font-weight: 800;
 }
 
 .card-top {
@@ -661,6 +804,7 @@ main {
   left: 50%;
   z-index: 30;
   display: grid;
+  align-content: start;
   gap: 10px;
   width: min(760px, calc(100vw - 32px));
   max-height: calc(100vh - 48px);
@@ -775,9 +919,15 @@ main {
 
 .algorithm-editor-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 36px;
+  grid-template-columns: 32px 32px minmax(0, 1fr) 36px;
   gap: 6px;
   align-items: start;
+}
+
+.move-algorithm-button {
+  width: 32px;
+  min-height: 32px;
+  font-size: 15px;
 }
 
 .edit-actions {
@@ -951,6 +1101,10 @@ main {
     display: grid;
   }
 
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+
   h1 {
     font-size: 19px;
   }
@@ -997,6 +1151,35 @@ main {
     gap: 6px;
   }
 
+  .case-detail {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    transform: none;
+    border: 0;
+    border-radius: 0;
+    padding: 8px;
+  }
+
+  .case-detail .case-card {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .case-detail .svg-box {
+    min-height: min(58vw, 300px);
+  }
+
+  .case-detail .svg-box svg {
+    max-height: calc(min(58vw, 300px) - 10px);
+  }
+
+  .case-detail .case-name {
+    font-size: 18px;
+  }
+
   .detail-nav-button {
     min-width: 0;
   }
@@ -1006,16 +1189,30 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .case-grid[data-detail-mode="full"],
-  .case-grid[data-detail-mode="full"][data-columns] {
+  .case-grid[data-view-mode="full"],
+  .case-grid[data-view-mode="full"][data-columns] {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grouped-grid[data-detail-mode="compact"],
-  .recognition-grid[data-detail-mode="compact"] {
+  .grouped-grid[data-view-mode="compact"],
+  .recognition-grid[data-view-mode="compact"] {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     justify-content: stretch;
     gap: 6px;
+  }
+
+  .case-card.is-list-card,
+  .case-card.is-list-card.has-recognition-badges {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .case-card.is-list-card .card-top {
+    gap: 8px;
+  }
+
+  .case-card.is-list-card .recognition-badges {
+    max-width: none;
   }
 
   .case-card.is-compact {
@@ -1051,8 +1248,8 @@ main {
     width: 100%;
   }
 
-  .grouped-grid[data-detail-mode="compact"],
-  .recognition-grid[data-detail-mode="compact"] {
+  .grouped-grid[data-view-mode="compact"],
+  .recognition-grid[data-view-mode="compact"] {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
@@ -1063,8 +1260,8 @@ main {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grouped-grid[data-detail-mode="compact"],
-  .recognition-grid[data-detail-mode="compact"] {
+  .grouped-grid[data-view-mode="compact"],
+  .recognition-grid[data-view-mode="compact"] {
     grid-template-columns: repeat(auto-fill, var(--compact-card-width));
     justify-content: start;
   }

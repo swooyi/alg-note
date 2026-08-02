@@ -154,18 +154,20 @@ function makeCaseCard(template, item, state) {
   const currentStatus = state.statuses.get(item.id) || "";
   const isFavorite = state.favorites.has(item.id);
   const isEditing = state.editingCaseId === item.id;
-  const isCompact = state.detailMode === "compact" && !state.renderingDetail;
-  const isDetail = Boolean(state.renderingDetail) || state.detailMode === "full";
+  const isCompact = state.viewMode === "compact" && !state.renderingDetail;
+  const isList = state.viewMode === "list" && !state.renderingDetail;
+  const isDetail = Boolean(state.renderingDetail) || state.viewMode === "full";
   const recognitions = typeof item.tags === "object" && !Array.isArray(item.tags) ? recognitionList(item.tags.recognition) : [];
 
   node.dataset.caseId = item.id;
   node.classList.toggle("is-editing", isEditing);
   node.classList.toggle("is-detail-card", isDetail);
+  node.classList.toggle("is-list-card", isList);
   node.classList.toggle("is-selected", state.selectedCaseId === item.id);
   node.classList.toggle("is-active-card", state.selectedCards?.has(item.id));
   node.classList.toggle("is-compact", isCompact);
-  node.classList.toggle("images-hidden", !state.imagesVisible);
-  node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact) && recognitions.length > 0);
+  node.classList.toggle("images-hidden", !state.imagesVisible || isList);
+  node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact || isList) && recognitions.length > 0);
   renderCaseTitle(node.querySelector(".case-name"), isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name, {
     currentStatus,
     isFavorite,
@@ -309,6 +311,22 @@ function makeAlgorithmEditorRow(algorithm) {
   const row = document.createElement("div");
   row.className = "algorithm-editor-row";
 
+  const moveUpButton = document.createElement("button");
+  moveUpButton.className = "move-algorithm-button move-algorithm-up-button icon-button";
+  moveUpButton.type = "button";
+  moveUpButton.dataset.direction = "up";
+  moveUpButton.textContent = "↑";
+  moveUpButton.setAttribute("aria-label", "알고리즘 위로 이동");
+  moveUpButton.title = "알고리즘 위로 이동";
+
+  const moveDownButton = document.createElement("button");
+  moveDownButton.className = "move-algorithm-button move-algorithm-down-button icon-button";
+  moveDownButton.type = "button";
+  moveDownButton.dataset.direction = "down";
+  moveDownButton.textContent = "↓";
+  moveDownButton.setAttribute("aria-label", "알고리즘 아래로 이동");
+  moveDownButton.title = "알고리즘 아래로 이동";
+
   const textarea = document.createElement("textarea");
   textarea.className = "algorithm-editor";
   textarea.rows = 2;
@@ -322,7 +340,7 @@ function makeAlgorithmEditorRow(algorithm) {
   removeButton.setAttribute("aria-label", "알고리즘 삭제");
   removeButton.title = "알고리즘 삭제";
 
-  row.append(textarea, removeButton);
+  row.append(moveUpButton, moveDownButton, textarea, removeButton);
   return row;
 }
 
@@ -451,7 +469,7 @@ function renderGroupedCases(grid, template, rows, state) {
 
     const groupGrid = document.createElement("div");
     groupGrid.className = "case-grid grouped-grid";
-    groupGrid.dataset.detailMode = state.detailMode;
+    groupGrid.dataset.viewMode = state.viewMode;
     groupGrid.dataset.columns = state.columns;
     groupGrid.style.setProperty("--image-size", `${state.imageSize}px`);
 
@@ -483,7 +501,7 @@ function renderCasesByRecognition(grid, template, rows, state) {
     const groupGrid = document.createElement("div");
     groupGrid.className = "case-grid recognition-grid";
     groupGrid.dataset.columns = state.columns;
-    groupGrid.dataset.detailMode = state.detailMode;
+    groupGrid.dataset.viewMode = state.viewMode;
 
     for (const item of rows.filter((candidate) => {
       const values = recognitionList(candidate.tags?.recognition);
