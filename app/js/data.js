@@ -5855,7 +5855,9 @@ window.AlgNoteBundledData = {
             "B' L U' B' L B L' U L' B"
           ],
           "svgId": "1",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-solved"
+          }
         },
         {
           "id": "2",
@@ -5884,7 +5886,9 @@ window.AlgNoteBundledData = {
             "B' L' U B R B' R' U' L B"
           ],
           "svgId": "2",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-solved"
+          }
         },
         {
           "id": "3",
@@ -5914,7 +5918,9 @@ window.AlgNoteBundledData = {
             "L' B L' B' L U L' B L B' U' L"
           ],
           "svgId": "3",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-wrong"
+          }
         },
         {
           "id": "4",
@@ -5944,7 +5950,9 @@ window.AlgNoteBundledData = {
             "L U' B R' L R L' R B' R' U L'"
           ],
           "svgId": "4",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-wrong"
+          }
         },
         {
           "id": "5",
@@ -5965,7 +5973,9 @@ window.AlgNoteBundledData = {
             "L U B' L' R' L R B U' L'"
           ],
           "svgId": "5",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-solved"
+          }
         },
         {
           "id": "6",
@@ -5989,7 +5999,9 @@ window.AlgNoteBundledData = {
             "L' U' R B' R' U B' L B U' B"
           ],
           "svgId": "6",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-solved"
+          }
         },
         {
           "id": "7",
@@ -6009,7 +6021,9 @@ window.AlgNoteBundledData = {
             "B L B' L' U' L U' R' L' R L U L'"
           ],
           "svgId": "7",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-wrong"
+          }
         },
         {
           "id": "8",
@@ -6028,7 +6042,9 @@ window.AlgNoteBundledData = {
             "R L' R L' U L R' L' R U' R' L' R'"
           ],
           "svgId": "8",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-wrong"
+          }
         },
         {
           "id": "9",
@@ -6053,7 +6069,9 @@ window.AlgNoteBundledData = {
             "R L' R L' R' U L' B L B' U' L' R'"
           ],
           "svgId": "9",
-          "tags": []
+          "tags": {
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "10",
@@ -6080,7 +6098,9 @@ window.AlgNoteBundledData = {
             "R' L' R U' B' U B' L B U' B"
           ],
           "svgId": "10",
-          "tags": []
+          "tags": {
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "11",
@@ -6111,7 +6131,9 @@ window.AlgNoteBundledData = {
             "L B L' B L' U R' L R L' U' L B"
           ],
           "svgId": "11",
-          "tags": []
+          "tags": {
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "12",
@@ -6141,7 +6163,9 @@ window.AlgNoteBundledData = {
             "L' U' R' L R B L B' L U B L B'"
           ],
           "svgId": "12",
-          "tags": []
+          "tags": {
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "13",
@@ -6169,7 +6193,9 @@ window.AlgNoteBundledData = {
             "L B' R B R' U' L R' L' R U L'"
           ],
           "svgId": "13",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-wrong"
+          }
         },
         {
           "id": "14",
@@ -6199,7 +6225,9 @@ window.AlgNoteBundledData = {
             "L U R' L R L' U' R B' R' B L'"
           ],
           "svgId": "14",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-wrong"
+          }
         },
         {
           "id": "15",
@@ -6226,7 +6254,9 @@ window.AlgNoteBundledData = {
             "R' L' R L U' R' L R B L' B'"
           ],
           "svgId": "15",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-solved"
+          }
         },
         {
           "id": "16",
@@ -6253,7 +6283,9 @@ window.AlgNoteBundledData = {
             "L' R' L R U B L B' R' L' R"
           ],
           "svgId": "16",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-solved"
+          }
         },
         {
           "id": "17",
@@ -6271,7 +6303,9 @@ window.AlgNoteBundledData = {
             "L' U B' R B R' U' B L' B' L'"
           ],
           "svgId": "17",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-wrong"
+          }
         },
         {
           "id": "18",
@@ -6289,7 +6323,9 @@ window.AlgNoteBundledData = {
             "R L U' R' L R L' U B L' B' R'"
           ],
           "svgId": "18",
-          "tags": []
+          "tags": {
+            "recognition": "is-pair-wrong"
+          }
         },
         {
           "id": "19",
@@ -6309,7 +6345,9 @@ window.AlgNoteBundledData = {
             "L' B' R B R' L U' L B L' B'"
           ],
           "svgId": "19",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-solved"
+          }
         },
         {
           "id": "20",
@@ -6329,7 +6367,9 @@ window.AlgNoteBundledData = {
             "B L B' U B L' B' L U' L'"
           ],
           "svgId": "20",
-          "tags": []
+          "tags": {
+            "recognition": "is-flipped-pair-solved"
+          }
         },
         {
           "id": "21",
@@ -6346,9 +6386,10 @@ window.AlgNoteBundledData = {
             "R' L U' L' U R U' L R L R' L' U L'"
           ],
           "svgId": "21",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-pair-wrong"
+          }
         },
         {
           "id": "22",
@@ -6367,9 +6408,10 @@ window.AlgNoteBundledData = {
             "L' U B' R B R' U' L U' L' R' L R"
           ],
           "svgId": "22",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-flipped-pair-wrong"
+          }
         },
         {
           "id": "23",
@@ -6387,9 +6429,10 @@ window.AlgNoteBundledData = {
             "L' B L' B' L R' L R"
           ],
           "svgId": "23",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-flipped-pair-solved"
+          }
         },
         {
           "id": "24",
@@ -6410,9 +6453,10 @@ window.AlgNoteBundledData = {
             "R' L' R U' B' U L B R B R' B U' B"
           ],
           "svgId": "24",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "25",
@@ -6441,9 +6485,10 @@ window.AlgNoteBundledData = {
             "B' L' U' R B' R' B U R' L R B"
           ],
           "svgId": "25",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "26",
@@ -6471,9 +6516,10 @@ window.AlgNoteBundledData = {
             "L U B' R B R' U' L R' L' R L'"
           ],
           "svgId": "26",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "27",
@@ -6505,9 +6551,10 @@ window.AlgNoteBundledData = {
             "L' U L' B' L R' L R L' B U' L"
           ],
           "svgId": "27",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "28",
@@ -6526,9 +6573,10 @@ window.AlgNoteBundledData = {
             "R' L' R U' L B L' B' U L' R' L' R"
           ],
           "svgId": "28",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "29",
@@ -6548,9 +6596,10 @@ window.AlgNoteBundledData = {
             "L' U' L B L' B' U L U L' R' L R"
           ],
           "svgId": "29",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-only"
+          }
         },
         {
           "id": "30",
@@ -6570,9 +6619,10 @@ window.AlgNoteBundledData = {
             "L' U R' L R L' U' L U' L B L' B'"
           ],
           "svgId": "30",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "31",
@@ -6592,9 +6642,10 @@ window.AlgNoteBundledData = {
             "L B L' B' U' L' U' L R' L' R U L"
           ],
           "svgId": "31",
-          "tags": [
-            "source-name-gap"
-          ]
+          "tags": {
+            "sourceNameGap": "source-name-gap",
+            "recognition": "is-corner-flipped-only"
+          }
         },
         {
           "id": "32",

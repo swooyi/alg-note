@@ -898,6 +898,42 @@ main {
   color: #fff;
 }
 
+.tag-is-corner-only {
+  border-color: #a7b0bd;
+  background: #eef1f5;
+  color: #303846;
+}
+
+.tag-is-corner-flipped-only {
+  border-color: #b497e7;
+  background: #efe7ff;
+  color: #56319a;
+}
+
+.tag-is-pair-solved {
+  border-color: #39a867;
+  background: #ddf7e7;
+  color: #17613a;
+}
+
+.tag-is-flipped-pair-solved {
+  border-color: #31a7a7;
+  background: #dcf7f5;
+  color: #126464;
+}
+
+.tag-is-pair-wrong {
+  border-color: #f0a045;
+  background: #fff0d9;
+  color: #8a4b00;
+}
+
+.tag-is-flipped-pair-wrong {
+  border-color: #de5b63;
+  background: #ffe2e5;
+  color: #9e1f2a;
+}
+
 @media (max-width: 720px) {
   .header-main {
     display: flex;
