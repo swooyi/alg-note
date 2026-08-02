@@ -743,6 +743,10 @@ function handleCaseAction(event) {
     return;
   }
 
+  if (event.target.closest(".setup-editor, .algorithm-editor, .recognition-edit-section")) {
+    return;
+  }
+
   if (event.target.closest(".favorite-button")) {
     if (state.favorites.has(caseId)) {
       state.favorites.delete(caseId);
