@@ -57,13 +57,18 @@ const elements = {
   drillStartButton: document.getElementById("drillStartButton"),
   drillOverlay: document.getElementById("drillOverlay"),
   drillProgress: document.getElementById("drillProgress"),
+  drillRecapModeButton: document.getElementById("drillRecapModeButton"),
+  drillTrainModeButton: document.getElementById("drillTrainModeButton"),
   drillSetupText: document.getElementById("drillSetupText"),
+  drillTimerText: document.getElementById("drillTimerText"),
+  drillHintText: document.getElementById("drillHintText"),
+  drillTimesText: document.getElementById("drillTimesText"),
+  drillAverageText: document.getElementById("drillAverageText"),
+  drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillNextButton: document.getElementById("drillNextButton"),
+  drillUndoButton: document.getElementById("drillUndoButton"),
   drillCloseButton: document.getElementById("drillCloseButton"),
-  drillPreviousBlock: document.getElementById("drillPreviousBlock"),
-  drillPreviousSetupText: document.getElementById("drillPreviousSetupText"),
-  drillPreviousAnswerButton: document.getElementById("drillPreviousAnswerButton"),
 };
 
 const state = {
@@ -94,10 +99,16 @@ const state = {
   isHomeView: true,
   drill: {
     active: false,
+    mode: "recap",
+    source: [],
     queue: [],
     index: 0,
     currentSetup: "",
-    previous: null,
+    timerStatus: "idle",
+    startedAt: 0,
+    elapsedMs: 0,
+    results: [],
+    tickHandle: 0,
     completed: false,
   },
 };
@@ -323,11 +334,129 @@ function currentDrillItem() {
 }
 
 
+function setDrillMode(mode) {
+  if (!["recap", "train"].includes(mode) || state.drill.mode === mode) return;
+  state.drill.mode = mode;
+  if (!state.drill.active) return;
+
+  const source = state.drill.source.length ? state.drill.source : selectedDrillCases();
+  state.drill.source = source;
+  state.drill.queue = mode === "recap" ? shuffledItems(source) : [source[Math.floor(Math.random() * source.length)]].filter(Boolean);
+  state.drill.index = 0;
+  state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+  state.drill.completed = false;
+  resetDrillTimer();
+  renderDrill();
+}
+
+
+function formatDrillTime(ms) {
+  return (Math.max(0, ms) / 1000).toFixed(2);
+}
+
+
+function averageDrillMs() {
+  if (!state.drill.results.length) return 0;
+  const total = state.drill.results.reduce((sum, result) => sum + result.elapsedMs, 0);
+  return total / state.drill.results.length;
+}
+
+
+function stopDrillTicker() {
+  if (!state.drill.tickHandle) return;
+  window.cancelAnimationFrame(state.drill.tickHandle);
+  state.drill.tickHandle = 0;
+}
+
+
+function updateDrillTimerDisplay() {
+  if (state.drill.timerStatus === "running") {
+    state.drill.elapsedMs = performance.now() - state.drill.startedAt;
+  }
+  elements.drillTimerText.textContent = formatDrillTime(state.drill.elapsedMs);
+}
+
+
+function tickDrillTimer() {
+  if (!state.drill.active || state.drill.timerStatus !== "running") return;
+  updateDrillTimerDisplay();
+  state.drill.tickHandle = window.requestAnimationFrame(tickDrillTimer);
+}
+
+
+function resetDrillTimer() {
+  stopDrillTicker();
+  state.drill.timerStatus = "idle";
+  state.drill.startedAt = 0;
+  state.drill.elapsedMs = 0;
+}
+
+
+function makeDrillResult(item, elapsedMs) {
+  return {
+    id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
+    caseId: item.id,
+    caseName: item.name || item.id,
+    groupName: item.groupName || "",
+    setup: state.drill.currentSetup,
+    elapsedMs,
+    createdAt: Date.now(),
+  };
+}
+
+
+function drillItemById(caseId) {
+  return state.drill.queue.find((item) => item.id === caseId)
+    || state.drill.source.find((item) => item.id === caseId)
+    || null;
+}
+
+
+function renderDrillResults() {
+  elements.drillResultList.replaceChildren();
+
+  const results = [...state.drill.results].reverse();
+  if (!results.length) {
+    const empty = document.createElement("p");
+    empty.className = "drill-result-empty";
+    empty.textContent = "아직 기록 없음";
+    elements.drillResultList.append(empty);
+    return;
+  }
+
+  for (const result of results) {
+    const row = document.createElement("div");
+    row.className = "drill-result-row";
+    const body = document.createElement("div");
+    body.className = "drill-result-body";
+    const top = document.createElement("div");
+    top.className = "drill-result-top";
+    const name = document.createElement("span");
+    name.textContent = result.groupName ? `${result.groupName} ${result.caseName}` : result.caseName;
+    const time = document.createElement("strong");
+    time.textContent = formatDrillTime(result.elapsedMs);
+    const setup = document.createElement("p");
+    setup.textContent = result.setup;
+    top.append(name, time);
+    body.append(top, setup);
+
+    const detailButton = document.createElement("button");
+    detailButton.className = "drill-detail-button";
+    detailButton.type = "button";
+    detailButton.dataset.resultId = result.id;
+    detailButton.textContent = "세부정보";
+
+    row.append(body, detailButton);
+    elements.drillResultList.append(row);
+  }
+}
+
+
 function updateDrillStartButton() {
-  const canStart = !state.isHomeView && state.selectedCards.size > 0;
-  elements.drillStartButton.disabled = !canStart;
+  const canShow = !state.isHomeView;
+  elements.drillStartButton.disabled = false;
   elements.drillStartButton.hidden = state.isHomeView || state.drill.active;
-  elements.drillStartButton.title = canStart ? "드릴 시작" : "선택한 공식 없음";
+  elements.drillStartButton.title = canShow && state.selectedCards.size > 0 ? "드릴 시작" : "케이스를 선택하세요.";
   elements.drillStartButton.setAttribute("aria-label", elements.drillStartButton.title);
 }
 
@@ -343,35 +472,53 @@ function renderDrill() {
   updateDrillStartButton();
 
   const total = state.drill.queue.length;
-  const remaining = Math.max(0, total - state.drill.index);
-  elements.drillProgress.textContent = `${remaining} / ${total}`;
+  elements.drillRecapModeButton.classList.toggle("is-active", state.drill.mode === "recap");
+  elements.drillTrainModeButton.classList.toggle("is-active", state.drill.mode === "train");
+  elements.drillRecapModeButton.setAttribute("aria-pressed", state.drill.mode === "recap" ? "true" : "false");
+  elements.drillTrainModeButton.setAttribute("aria-pressed", state.drill.mode === "train" ? "true" : "false");
+
+  if (state.drill.mode === "recap") {
+    elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} cases`;
+  } else {
+    elements.drillProgress.textContent = `Train · ${state.drill.source.length} cases`;
+  }
 
   if (state.drill.completed) {
     elements.drillSetupText.textContent = "드릴 완료";
     elements.drillShowAnswerButton.disabled = true;
     elements.drillNextButton.textContent = "다시 섞기";
+    elements.drillHintText.textContent = "Space로 다시 섞기";
   } else {
     elements.drillSetupText.textContent = state.drill.currentSetup;
     elements.drillShowAnswerButton.disabled = false;
-    elements.drillNextButton.textContent = "다음";
+    elements.drillNextButton.textContent = "스킵";
+    elements.drillHintText.textContent = state.drill.timerStatus === "running" ? "Space로 정지" : "Space로 시작";
   }
 
-  const previous = state.drill.previous;
-  elements.drillPreviousBlock.hidden = !previous;
-  if (previous) {
-    elements.drillPreviousSetupText.textContent = previous.setup;
-  }
+  updateDrillTimerDisplay();
+  elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
+  elements.drillAverageText.textContent = state.drill.results.length ? `Avg ${formatDrillTime(averageDrillMs())}` : "Avg -";
+  elements.drillUndoButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
+  renderDrillResults();
 }
 
 
 function startDrill() {
-  const queue = shuffledItems(selectedDrillCases());
-  if (!queue.length) return;
+  const source = selectedDrillCases();
+  if (!source.length) {
+    window.alert("케이스를 선택하세요.");
+    return;
+  }
+  const queue = state.drill.mode === "recap"
+    ? shuffledItems(source)
+    : [source[Math.floor(Math.random() * source.length)]];
 
   state.drill.active = true;
+  state.drill.source = source;
   state.drill.queue = queue;
   state.drill.index = 0;
-  state.drill.previous = null;
+  resetDrillTimer();
+  state.drill.results = [];
   state.drill.completed = false;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   state.selectedCaseId = "";
@@ -381,29 +528,32 @@ function startDrill() {
 
 
 function closeDrill() {
+  stopDrillTicker();
   state.drill.active = false;
+  state.drill.source = [];
   state.drill.queue = [];
   state.drill.index = 0;
   state.drill.currentSetup = "";
-  state.drill.previous = null;
+  state.drill.results = [];
   state.drill.completed = false;
+  resetDrillTimer();
   renderDrill();
 }
 
 
-function advanceDrill() {
+function moveToNextDrillCase() {
   if (!state.drill.active) return;
-  if (state.drill.completed) {
-    startDrill();
-    return;
-  }
 
-  const current = currentDrillItem();
-  if (current) {
-    state.drill.previous = {
-      caseId: current.id,
-      setup: state.drill.currentSetup,
-    };
+  if (state.drill.mode === "train") {
+    const source = state.drill.source.length ? state.drill.source : selectedDrillCases();
+    state.drill.source = source;
+    state.drill.queue = source.length ? [source[Math.floor(Math.random() * source.length)]] : [];
+    state.drill.index = 0;
+    state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+    state.drill.completed = false;
+    resetDrillTimer();
+    renderDrill();
+    return;
   }
 
   state.drill.index += 1;
@@ -413,11 +563,79 @@ function advanceDrill() {
   } else {
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   }
+  resetDrillTimer();
   renderDrill();
 }
 
 
-function showDrillAnswer(item) {
+function skipDrillCase() {
+  if (!state.drill.active) return;
+  if (state.drill.completed) {
+    startDrill();
+    return;
+  }
+  moveToNextDrillCase();
+}
+
+
+function toggleDrillTimer() {
+  if (!state.drill.active) return;
+  if (state.drill.completed) {
+    startDrill();
+    return;
+  }
+
+  if (state.drill.timerStatus !== "running") {
+    state.drill.timerStatus = "running";
+    state.drill.startedAt = performance.now() - state.drill.elapsedMs;
+    stopDrillTicker();
+    tickDrillTimer();
+    renderDrill();
+    return;
+  }
+
+  stopDrillTicker();
+  updateDrillTimerDisplay();
+  const item = currentDrillItem();
+  const result = item ? makeDrillResult(item, state.drill.elapsedMs) : null;
+  if (result) state.drill.results.push(result);
+  moveToNextDrillCase();
+}
+
+
+function undoDrillResult() {
+  if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
+  const last = state.drill.results.pop();
+  const lastItem = drillItemById(last.caseId);
+  if (state.drill.mode === "train" && lastItem) {
+    state.drill.queue = [lastItem];
+    state.drill.index = 0;
+    state.drill.currentSetup = last.setup;
+    state.drill.completed = false;
+  }
+  const index = state.drill.queue.findIndex((item) => item.id === last.caseId);
+  if (index !== -1) {
+    state.drill.index = index;
+    state.drill.currentSetup = last.setup;
+    state.drill.completed = false;
+  }
+  resetDrillTimer();
+  renderDrill();
+}
+
+
+function toggleDrillAnswer() {
+  const item = currentDrillItem();
+  if (!item || state.drill.completed) return;
+  state.selectedCaseId = item.id;
+  state.editingCaseId = "";
+  render();
+}
+
+
+function showDrillResultDetail(resultId) {
+  const result = state.drill.results.find((item) => item.id === resultId);
+  const item = result ? drillItemById(result.caseId) : null;
   if (!item) return;
   state.selectedCaseId = item.id;
   state.editingCaseId = "";
@@ -1025,22 +1243,34 @@ elements.drillStartButton.addEventListener("click", () => {
   startDrill();
 });
 
+elements.drillRecapModeButton.addEventListener("click", () => {
+  setDrillMode("recap");
+});
+
+elements.drillTrainModeButton.addEventListener("click", () => {
+  setDrillMode("train");
+});
+
 elements.drillCloseButton.addEventListener("click", () => {
   closeDrill();
 });
 
 elements.drillNextButton.addEventListener("click", () => {
-  advanceDrill();
+  skipDrillCase();
 });
 
 elements.drillShowAnswerButton.addEventListener("click", () => {
-  showDrillAnswer(currentDrillItem());
+  toggleDrillAnswer();
 });
 
-elements.drillPreviousAnswerButton.addEventListener("click", () => {
-  const previous = state.drill.previous;
-  if (!previous) return;
-  showDrillAnswer(state.drill.queue.find((item) => item.id === previous.caseId));
+elements.drillUndoButton.addEventListener("click", () => {
+  undoDrillResult();
+});
+
+elements.drillResultList.addEventListener("click", (event) => {
+  const button = event.target.closest(".drill-detail-button");
+  if (!button) return;
+  showDrillResultDetail(button.dataset.resultId);
 });
 
 elements.sidebarOpenButton.addEventListener("click", () => {
@@ -1276,7 +1506,7 @@ document.addEventListener("keydown", (event) => {
 
   if (state.drill.active && event.code === "Space") {
     event.preventDefault();
-    advanceDrill();
+    toggleDrillTimer();
     return;
   }
 

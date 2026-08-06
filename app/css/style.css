@@ -495,7 +495,8 @@ h1 {
 }
 
 .view-mode-switcher,
-.export-mode-buttons {
+.export-mode-buttons,
+.selection-action-buttons {
   display: flex;
   gap: 4px;
   padding: 3px;
@@ -505,18 +506,28 @@ h1 {
 }
 
 .view-mode-button,
-.export-mode-buttons button {
+.export-mode-buttons button,
+.selection-action-buttons button {
   min-height: 30px;
   border-color: transparent;
   background: transparent;
 }
 
 .view-mode-button.is-active,
-.export-mode-buttons button.is-active {
+.export-mode-buttons button.is-active,
+.selection-action-buttons button.is-active {
   border-color: var(--line);
   background: var(--panel);
   color: var(--accent);
   font-weight: 850;
+}
+
+.selection-action-group {
+  align-items: center;
+}
+
+.selection-action-buttons {
+  flex-wrap: nowrap;
 }
 
 .primary-export-button {
@@ -646,6 +657,252 @@ h1 {
 
 .drill-previous[hidden] {
   display: none;
+}
+
+.drill-overlay {
+  align-items: stretch;
+  justify-items: stretch;
+  padding: 0;
+  pointer-events: auto;
+}
+
+.drill-panel {
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  width: 100%;
+  min-height: 100vh;
+  border: 0;
+  border-radius: 0;
+  background: var(--bg);
+  box-shadow: none;
+  padding: 0;
+}
+
+.drill-top {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  padding: 8px 12px;
+}
+
+.drill-mode-tabs {
+  justify-self: center;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #eef2f7;
+}
+
+.drill-mode-tabs button {
+  min-width: 92px;
+  min-height: 34px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.drill-mode-tabs button.is-active {
+  border-color: var(--line);
+  background: var(--panel);
+  color: var(--accent);
+}
+
+.drill-progress {
+  border-bottom: 1px solid var(--line);
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 850;
+  padding: 7px 14px;
+  text-align: center;
+}
+
+.drill-top strong {
+  justify-self: center;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 28px;
+  padding: 0;
+}
+
+.drill-icon-button,
+.drill-help-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 850;
+  line-height: 1;
+  padding: 0;
+}
+
+.drill-top-spacer {
+  width: 44px;
+  height: 44px;
+}
+
+.drill-scramble-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+  padding: 10px 14px;
+}
+
+.drill-scramble-row p {
+  min-height: 44px;
+  overflow-wrap: anywhere;
+  font-family: "Pretendard", Consolas, "Courier New", monospace;
+  font-size: 30px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.drill-help-button {
+  justify-self: end;
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+  box-shadow: none;
+}
+
+.drill-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 30vw);
+  min-height: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.drill-main {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 12px;
+  min-height: 420px;
+  border-right: 1px solid var(--line);
+}
+
+.drill-timer {
+  font-size: clamp(72px, 13vw, 150px);
+  font-weight: 850;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-hint {
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.drill-history-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+  background: var(--panel);
+  padding: 14px;
+}
+
+.drill-history-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.drill-result-list {
+  display: grid;
+  align-content: start;
+  overflow: auto;
+}
+
+.drill-result-empty {
+  color: var(--muted);
+  padding: 14px 0;
+}
+
+.drill-result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 64px;
+  border-width: 0 0 1px;
+  border-color: var(--line);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 8px 0;
+  text-align: left;
+}
+
+.drill-result-row.is-active {
+  background: var(--accent-soft);
+}
+
+.drill-result-body {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.drill-result-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  min-width: 0;
+}
+
+.drill-result-row span,
+.drill-result-row p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drill-result-row p {
+  color: var(--muted);
+  font-family: "Pretendard", Consolas, "Courier New", monospace;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.drill-result-row strong {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-detail-button {
+  min-height: 30px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.drill-actions {
+  justify-content: center;
+  background: var(--panel);
+  padding: 10px 14px;
+}
+
+.drill-actions button {
+  min-width: 120px;
 }
 
 .switch-control {
@@ -909,8 +1166,8 @@ main {
 
 .grouped-grid[data-view-mode="compact"],
 .recognition-grid[data-view-mode="compact"] {
-  grid-template-columns: repeat(auto-fit, minmax(var(--compact-card-width), 1fr));
-  justify-content: stretch;
+  grid-template-columns: repeat(auto-fill, var(--compact-card-width));
+  justify-content: start;
   gap: 6px;
 }
 
@@ -927,7 +1184,7 @@ main {
 }
 
 .recognition-grid[data-view-mode="compact"] {
-  grid-template-columns: repeat(auto-fit, minmax(var(--compact-card-width), 1fr));
+  grid-template-columns: repeat(auto-fill, var(--compact-card-width));
 }
 
 .case-group-section {
@@ -1737,15 +1994,24 @@ main {
     max-width: none;
   }
 
+  .control-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
   .filter-group {
-    align-items: start;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .filter-group .control-label {
-    flex-basis: 100%;
+  .filter-group .control-label,
+  .view-group .control-label,
+  .selection-action-group .control-label {
+    flex: 0 0 auto;
+    flex-basis: auto;
   }
 
   .filter-menu,
@@ -1779,8 +2045,12 @@ main {
     width: max-content;
   }
 
-  .view-group {
-    grid-template-columns: 1fr;
+  .view-group,
+  .selection-action-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .favorite-preset-group {
@@ -1788,12 +2058,31 @@ main {
     width: 100%;
   }
 
-  .view-group .control-label,
   .view-mode-switcher,
   .favorite-preset-group .control-label,
   .favorite-preset-group h2,
   .favorite-preset-group input {
-    flex-basis: 100%;
+    flex-basis: auto;
+  }
+
+  .view-mode-switcher,
+  .selection-action-buttons {
+    min-width: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .view-mode-switcher::-webkit-scrollbar,
+  .selection-action-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+  .view-mode-button,
+  .selection-action-buttons button {
+    flex: 0 0 auto;
+    min-width: auto;
+    padding: 0 10px;
+    white-space: nowrap;
   }
 
   .favorite-preset-group > button {
@@ -1848,21 +2137,65 @@ main {
   }
 
   .drill-overlay {
-    padding: 10px;
+    padding: 0;
   }
 
   .drill-panel {
     width: 100%;
-    padding: 10px;
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .drill-top {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    padding: 7px 10px;
+  }
+
+  .drill-mode-tabs button {
+    min-width: 76px;
+    min-height: 32px;
+    font-size: 16px;
+  }
+
+  .drill-progress {
+    padding: 6px 10px;
+  }
+
+  .drill-icon-button,
+  .drill-help-button,
+  .drill-top-spacer {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 26px;
+  }
+
+  .drill-scramble-row {
+    grid-template-columns: minmax(0, 1fr) 42px;
+    padding: 8px 10px;
+  }
+
+  .drill-scramble-row p {
+    font-size: 22px;
+  }
+
+  .drill-body {
+    grid-template-columns: 1fr;
+  }
+
+  .drill-main {
+    min-height: 300px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .drill-history-panel {
+    max-height: 260px;
   }
 
   .drill-actions {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-
-  .drill-setup-block p {
-    font-size: 18px;
   }
 
   .case-grid,
@@ -1948,7 +2281,7 @@ main {
 
   .grouped-grid[data-view-mode="compact"],
   .recognition-grid[data-view-mode="compact"] {
-    grid-template-columns: repeat(auto-fit, minmax(var(--compact-card-width), 1fr));
-    justify-content: stretch;
+    grid-template-columns: repeat(auto-fill, var(--compact-card-width));
+    justify-content: start;
   }
 }

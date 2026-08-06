@@ -69,11 +69,6 @@
           <input id="favoritePresetNameInput" type="text" placeholder="선택 프리셋 이름" aria-label="새 선택 프리셋 이름">
           <button id="saveFavoritePresetButton" type="button">저장</button>
           <div id="favoritePresetList" class="preset-list" role="list" aria-label="저장한 프리셋"></div>
-          <div class="sidebar-button-grid">
-            <button id="selectedOnlyButton" type="button">선택만</button>
-            <button id="selectAllCardsButton" type="button">전체 선택</button>
-            <button id="clearSelectedCardsButton" type="button">선택 해제</button>
-          </div>
         </section>
 
       </div>
@@ -107,6 +102,14 @@
               <button class="view-mode-button" type="button" data-view-mode="full">자세히 보기</button>
             </div>
           </div>
+          <div class="control-group selection-action-group">
+            <span class="control-label">선택</span>
+            <div class="selection-action-buttons">
+              <button id="selectedOnlyButton" type="button">선택만</button>
+              <button id="selectAllCardsButton" type="button">전체 선택</button>
+              <button id="clearSelectedCardsButton" type="button">선택 해제</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -123,21 +126,34 @@
   <section id="drillOverlay" class="drill-overlay" hidden>
     <div class="drill-panel">
       <div class="drill-top">
-        <strong id="drillProgress">0 / 0</strong>
-        <button id="drillCloseButton" type="button">닫기</button>
+        <button id="drillCloseButton" class="drill-icon-button" type="button" aria-label="드릴 닫기" title="드릴 닫기">←</button>
+        <div class="drill-mode-tabs" aria-label="드릴 모드">
+          <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
+          <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
+        </div>
+        <span class="drill-top-spacer" aria-hidden="true"></span>
       </div>
-      <div class="drill-setup-block">
-        <span>SETUP</span>
+      <div id="drillProgress" class="drill-progress">Recap 0 / 0</div>
+      <div class="drill-scramble-row">
         <p id="drillSetupText"></p>
+        <button id="drillShowAnswerButton" class="drill-help-button" type="button" aria-label="정답 패널" title="정답 패널">?</button>
+      </div>
+      <div class="drill-body">
+        <div class="drill-main">
+          <div id="drillTimerText" class="drill-timer">0.00</div>
+          <div id="drillHintText" class="drill-hint">Space로 시작</div>
+        </div>
+        <aside class="drill-history-panel">
+          <div class="drill-history-summary">
+            <span id="drillTimesText">Times 0</span>
+            <span id="drillAverageText">Avg -</span>
+          </div>
+          <div id="drillResultList" class="drill-result-list"></div>
+        </aside>
       </div>
       <div class="drill-actions">
-        <button id="drillShowAnswerButton" type="button">공식보기</button>
-        <button id="drillNextButton" type="button">다음</button>
-      </div>
-      <div id="drillPreviousBlock" class="drill-previous" hidden>
-        <span>이전 setup</span>
-        <p id="drillPreviousSetupText"></p>
-        <button id="drillPreviousAnswerButton" type="button">이전 공식보기</button>
+        <button id="drillUndoButton" type="button">직전 취소</button>
+        <button id="drillNextButton" type="button">스킵</button>
       </div>
     </div>
   </section>
