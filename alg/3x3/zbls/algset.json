@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "id": "zbls",
+  "name": "ZBLS(FR)",
+  "source": {
+    "url": "https://morganyeh06.github.io/zbls-trainer/",
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1UudEP0beD-gQzTklUcA4Wcxd9KieXZ3ROQjFzMxDPMo/edit?gid=1106894307#gid=1106894307"
+  },
+  "notes": [
+    "Images are stored as base64 PNGs wrapped in SVG image elements for compatibility with svgs.json."
+  ]
+}

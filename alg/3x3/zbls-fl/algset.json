@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "id": "zbls-fl",
+  "name": "ZBLS(FL)",
+  "source": {
+    "spreadsheetUrl": "https://docs.google.com/spreadsheets/d/1UudEP0beD-gQzTklUcA4Wcxd9KieXZ3ROQjFzMxDPMo/edit?gid=1772488318#gid=1772488318",
+    "sheetName": "ZBLS(FL) NEW"
+  },
+  "notes": [
+    "Algorithms and images are extracted from the Google Sheet.",
+    "Setups are transformed from ZBLS(FR) by preserving U/D and suffix direction, with R->F, F->L, L->B, B->R.",
+    "Images are stored as base64 PNGs wrapped in SVG image elements for compatibility with svgs.json."
+  ]
+}

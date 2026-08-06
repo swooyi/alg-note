@@ -7,6 +7,12 @@ const RECOGNITION_ORDER = [
   "is-pair-wrong",
   "is-flipped-pair-wrong",
 ];
+const BOOKMARK_TYPES = [
+  { id: "red-sun", label: "빨간 해", mark: "☀" },
+  { id: "green-moon", label: "초록 달", mark: "☾" },
+  { id: "yellow-star", label: "노란 별", mark: "★" },
+  { id: "blue-cloud", label: "파란 구름", mark: "☁" },
+];
 
 
 function text(value) {
@@ -21,55 +27,80 @@ function makeSummaryItem(label, value) {
 }
 
 
-function renderGroupOptions(select, groups) {
-  select.innerHTML = "";
-  const all = document.createElement("option");
-  all.value = "all";
-  all.textContent = "전체 그룹";
-  select.append(all);
+function makeFilterOption({ value, label, checked, className = "", mark = "" }) {
+  const option = document.createElement("label");
+  option.className = `filter-option ${className}`.trim();
 
-  for (const group of groups) {
-    const option = document.createElement("option");
-    option.value = group.id;
-    option.textContent = group.name;
-    select.append(option);
-  }
+  const input = document.createElement("input");
+  input.type = "checkbox";
+  input.value = value;
+  input.checked = checked;
+
+  const textNode = document.createElement("span");
+  textNode.textContent = mark ? `${mark} ${label}` : label;
+
+  option.append(input, textNode);
+  return option;
 }
 
 
-function renderRecognitionOptions(select, cases) {
-  const values = sortedRecognitionValues(cases);
-  select.innerHTML = "";
-
-  const all = document.createElement("option");
-  all.value = "all";
-  all.textContent = values.length ? "전체 recognition" : "recognition 없음";
-  select.append(all);
-
-  for (const value of values) {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = value;
-    select.append(option);
-  }
-
-  select.disabled = values.length === 0;
+function makeFilterButton({ value, label, selected, className = "", mark = "" }) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = `filter-choice-button ${className}`.trim();
+  button.dataset.value = value;
+  button.classList.toggle("is-active", selected);
+  button.setAttribute("aria-pressed", selected ? "true" : "false");
+  button.setAttribute("aria-label", label);
+  button.title = label;
+  button.textContent = mark || label;
+  return button;
 }
 
 
-function renderRecognitionFilterTags(container, cases, selectedValues) {
-  const values = sortedRecognitionValues(cases);
+function renderGroupFilterOptions(container, groups, selectedValues) {
   container.innerHTML = "";
 
+  for (const group of groups) {
+    container.append(makeFilterOption({
+      value: group.id,
+      label: group.name,
+      checked: selectedValues.has(group.id),
+    }));
+  }
+}
+
+
+function renderRecognitionFilterOptions(container, cases, selectedValues) {
+  const values = sortedRecognitionValues(cases);
+  container.innerHTML = "";
+  container.classList.remove("bookmark-filter-panel");
+  container.classList.add("recognition-filter-panel");
+
   for (const value of values) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `tag-filter-button tag-badge ${recognitionClassName(value)}`;
-    button.dataset.recognition = value;
-    button.textContent = value;
-    button.classList.toggle("is-active", selectedValues.has(value));
-    button.setAttribute("aria-pressed", selectedValues.has(value) ? "true" : "false");
-    container.append(button);
+    container.append(makeFilterButton({
+      value,
+      label: value,
+      selected: selectedValues.has(value),
+      className: `tag-badge ${recognitionClassName(value)}`,
+    }));
+  }
+}
+
+
+function renderBookmarkFilterOptions(container, selectedValues) {
+  container.innerHTML = "";
+  container.classList.remove("recognition-filter-panel");
+  container.classList.add("bookmark-filter-panel");
+
+  for (const bookmark of BOOKMARK_TYPES) {
+    container.append(makeFilterButton({
+      value: bookmark.id,
+      label: bookmark.label,
+      selected: selectedValues.has(bookmark.id),
+      className: `bookmark-choice bookmark-${bookmark.id}`,
+      mark: bookmark.mark,
+    }));
   }
 }
 
@@ -79,10 +110,8 @@ function renderSummary(element, dataset, rows, state) {
     makeSummaryItem("세트", dataset.name),
     makeSummaryItem("전체", dataset.cases.length),
     makeSummaryItem("표시", rows.length),
-    makeSummaryItem("즐겨찾기", state.favorites.size),
+    makeSummaryItem("북마크", state.bookmarks?.size || 0),
     makeSummaryItem("선택", state.selectedCards?.size || 0),
-    makeSummaryItem("암기 중", [...state.statuses.values()].filter((value) => value === "learning").length),
-    makeSummaryItem("암기 완료", [...state.statuses.values()].filter((value) => value === "learned").length),
   );
 }
 
@@ -150,9 +179,7 @@ function recognitionClassName(value) {
 
 function makeCaseCard(template, item, state) {
   const node = template.content.firstElementChild.cloneNode(true);
-  const favoriteButton = node.querySelector(".favorite-button");
-  const currentStatus = state.statuses.get(item.id) || "";
-  const isFavorite = state.favorites.has(item.id);
+  const currentBookmark = state.bookmarks?.get(item.id) || "";
   const isEditing = state.editingCaseId === item.id;
   const isCompact = state.viewMode === "compact" && !state.renderingDetail;
   const isList = state.viewMode === "list" && !state.renderingDetail;
@@ -169,8 +196,7 @@ function makeCaseCard(template, item, state) {
   node.classList.toggle("images-hidden", !state.imagesVisible || isList);
   node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact || isList) && recognitions.length > 0);
   renderCaseTitle(node.querySelector(".case-name"), isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name, {
-    currentStatus,
-    isFavorite,
+    currentBookmark,
   });
   node.querySelector(".case-meta").textContent = isDetail ? "" : caseMetaParts(item).filter(Boolean).join(" · ");
   renderSvgBox(node.querySelector(".svg-box"), item.svg);
@@ -195,21 +221,20 @@ function makeCaseCard(template, item, state) {
     if ((isDetail || isCompact || isList) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
   }
 
-  favoriteButton.classList.toggle("is-active", isFavorite);
-  favoriteButton.textContent = isFavorite ? "★" : "☆";
+  for (const button of node.querySelectorAll(".bookmark-button")) {
+    const active = button.dataset.bookmark === currentBookmark;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
   node.querySelector(".edit-button").textContent = isEditing ? "×" : "✎";
   node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? "편집 닫기" : "편집");
   node.querySelector(".edit-button").title = isEditing ? "편집 닫기" : "편집";
-
-  for (const button of node.querySelectorAll(".status-button")) {
-    button.classList.toggle("is-active", button.dataset.status === currentStatus);
-  }
 
   return node;
 }
 
 
-function renderCaseTitle(title, label, { currentStatus, isFavorite }) {
+function renderCaseTitle(title, label, { currentBookmark }) {
   title.replaceChildren();
 
   const labelNode = document.createElement("span");
@@ -220,27 +245,12 @@ function renderCaseTitle(title, label, { currentStatus, isFavorite }) {
   const badges = document.createElement("span");
   badges.className = "case-title-badges";
 
-  if (isFavorite) {
+  const bookmark = BOOKMARK_TYPES.find((item) => item.id === currentBookmark);
+  if (bookmark) {
     const badge = document.createElement("span");
-    badge.className = "case-title-badge case-title-favorite";
-    badge.textContent = "★";
-    badge.title = "즐겨찾기";
-    badges.append(badge);
-  }
-
-  if (currentStatus === "learning") {
-    const badge = document.createElement("span");
-    badge.className = "case-title-badge case-title-learning";
-    badge.textContent = "◐";
-    badge.title = "암기 중";
-    badges.append(badge);
-  }
-
-  if (currentStatus === "learned") {
-    const badge = document.createElement("span");
-    badge.className = "case-title-badge case-title-learned";
-    badge.textContent = "✓";
-    badge.title = "암기 완료";
+    badge.className = `case-title-badge case-title-bookmark bookmark-${bookmark.id}`;
+    badge.textContent = bookmark.mark;
+    badge.title = bookmark.label;
     badges.append(badge);
   }
 
@@ -523,9 +533,9 @@ return {
   renderGroupedCases,
   renderCasesByRecognition,
   renderCaseDetail,
-  renderGroupOptions,
-  renderRecognitionOptions,
-  renderRecognitionFilterTags,
+  renderGroupFilterOptions,
+  renderRecognitionFilterOptions,
+  renderBookmarkFilterOptions,
   renderSummary,
 };
 })();

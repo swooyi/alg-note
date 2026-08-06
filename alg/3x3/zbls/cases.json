@@ -1,0 +1,6574 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "algset": "zbls",
+  "cases": [
+    {
+      "id": "1",
+      "name": "F2L 1-1",
+      "group": "f2l-1",
+      "algorithms": [
+        "U R U' R'"
+      ],
+      "scramble": "D R F' U R' U' R F R' D'",
+      "scrambles": [
+        "D R F' U R' U' R F R' D'",
+        "L U B' U' R U R' B U' L'",
+        "B' R2 F R D R' D' F' R2 B",
+        "R U R L2 U2 D2 R2 L2 D2"
+      ],
+      "svgId": "1",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-1",
+        "imagePath": "Images/F2L 1-1.png"
+      }
+    },
+    {
+      "id": "2",
+      "name": "F2L 1-2",
+      "group": "f2l-1",
+      "algorithms": [
+        "R' F R F'"
+      ],
+      "scramble": "R' F2 D' L' F L F2 D F' R",
+      "scrambles": [
+        "R' F2 D' L' F L F2 D F' R",
+        "F U' R' U2 F' L' U L U2 R",
+        "B2 L2 F B2 R' F' R B2 L2 B2",
+        "L2 B2 L2 F R' F' R L2 B2 L2"
+      ],
+      "svgId": "2",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-2",
+        "imagePath": "Images/F2L 1-2.png"
+      }
+    },
+    {
+      "id": "3",
+      "name": "F2L 1-3",
+      "group": "f2l-1",
+      "algorithms": [
+        "U2' R' F R F' R U2 R'",
+        "U R B U' B' R'",
+        "U R' F R F2 U F"
+      ],
+      "scramble": "F U' B U B' R' F' U' R",
+      "scrambles": [
+        "F U' B U B' R' F' U' R",
+        "R U' L U B U B' R' U' L'",
+        "F B' R' U R U' R' F' U' R B",
+        "L F U F' U' L' U2 R U R'"
+      ],
+      "svgId": "3",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-3",
+        "imagePath": "Images/F2L 1-3.png"
+      }
+    },
+    {
+      "id": "4",
+      "name": "F2L 1-4",
+      "group": "f2l-1",
+      "algorithms": [
+        "R' U' F U R U' F'",
+        "U F' L' U' L F",
+        "U2 R U2 B U B' U' R'"
+      ],
+      "scramble": "D' L D F' R' D' L' F D R",
+      "scrambles": [
+        "D' L D F' R' D' L' F D R",
+        "L U L' F B' R' F' U' R B",
+        "F2 R' D' F D F L' U L U' R",
+        "F' U F U' R' U' F' U F R"
+      ],
+      "svgId": "4",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-4",
+        "imagePath": "Images/F2L 1-4.png"
+      }
+    },
+    {
+      "id": "5",
+      "name": "F2L 1-5",
+      "group": "f2l-1",
+      "algorithms": [
+        "R' U' F U R2 U' R' F'",
+        "U R U R' U2' R' F R F'",
+        "U R U R' U2 M' U R U' r'"
+      ],
+      "scramble": "L F R' F R F' R' F' R L'",
+      "scrambles": [
+        "L F R' F R F' R' F' R L'",
+        "F R' U' D B2 U B2 D' F' U R",
+        "B U L U2 L' U F B' R' F' U R",
+        "R B U B' U R' U' F' U2 F"
+      ],
+      "svgId": "5",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-5",
+        "imagePath": "Images/F2L 1-5.png"
+      }
+    },
+    {
+      "id": "6",
+      "name": "F2L 1-6",
+      "group": "f2l-1",
+      "algorithms": [
+        "r' R U R U' R' U' M'",
+        "U S' R U' R' S",
+        "U2 R U' B U' B' R'"
+      ],
+      "scramble": "R L' B R B R' B' R' L",
+      "scrambles": [
+        "R L' B R B R' B' R' L",
+        "F2 B D' L D L2 F L2 F B'",
+        "R2 D2 F' B R2 U' L U' L2 F B'",
+        "R' L F' R F R' F R L'"
+      ],
+      "svgId": "6",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-6",
+        "imagePath": "Images/F2L 1-6.png"
+      }
+    },
+    {
+      "id": "7",
+      "name": "F2L 1-7",
+      "group": "f2l-1",
+      "algorithms": [
+        "R' F R2 U R' U' F'",
+        "U2 R U' R' U' R' F R F'"
+      ],
+      "scramble": "L U F U' F' L' U' F R' F' R",
+      "scrambles": [
+        "L U F U' F' L' U' F R' F' R",
+        "B U L U' L' B' U2 F R' F' R",
+        "R2 D' B' D R2 U' R U D' B D R'",
+        "F U R' U2 D2 L2 U' L2 U2 D2 F' R"
+      ],
+      "svgId": "7",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-7",
+        "imagePath": "Images/F2L 1-7.png"
+      }
+    },
+    {
+      "id": "8",
+      "name": "F2L 1-8",
+      "group": "f2l-1",
+      "algorithms": [
+        "M' U R U' r2 U2' R U R' U r",
+        "U2 R' F R F' U2 R' F R F'"
+      ],
+      "scramble": "B L F' L F L2 F B' R' F' R",
+      "scrambles": [
+        "B L F' L F L2 F B' R' F' R",
+        "R' F' L F2 L' F2 R2 U2 R' F",
+        "F R2 F' B' R' B R' U2 B' R B R'",
+        "R B U2 F2 L2 F L2 F2 B' R' F'"
+      ],
+      "svgId": "8",
+      "tags": {
+        "sourceGroup": "F2L 1",
+        "sourceId": "F2L 1-8",
+        "imagePath": "Images/F2L 1-8.png"
+      }
+    },
+    {
+      "id": "9",
+      "name": "F2L 2-1",
+      "group": "f2l-2",
+      "algorithms": [
+        "y U' L' U L"
+      ],
+      "scramble": "R U F' L' U' L U F U' R'",
+      "scrambles": [
+        "R U F' L' U' L U F U' R'",
+        "F' U' L F L2 U B L' B' L2",
+        "L B' L' F' U' F U L B L'",
+        "D' F' R U' F U F' R' F D"
+      ],
+      "svgId": "9",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-1",
+        "imagePath": "Images/F2L 2-1.png"
+      }
+    },
+    {
+      "id": "10",
+      "name": "F2L 2-2",
+      "group": "f2l-2",
+      "algorithms": [
+        "F R' F' R"
+      ],
+      "scramble": "R2 F2 D' L' F L F2 D R2 F'",
+      "scrambles": [
+        "R2 F2 D' L' F L F2 D R2 F'",
+        "F R2 D B R' B' R2 D' R F'",
+        "D R' F B' R F' R' B R D'",
+        "B2 L2 B2 R' F R F' B2 L2 B2"
+      ],
+      "svgId": "10",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-2",
+        "imagePath": "Images/F2L 2-2.png"
+      }
+    },
+    {
+      "id": "11",
+      "name": "F2L 2-3",
+      "group": "f2l-2",
+      "algorithms": [
+        "U' r U' r' U r U r'"
+      ],
+      "scramble": "L2 F' D' L' U' L D F L2",
+      "scrambles": [
+        "L2 F' D' L' U' L D F L2",
+        "B U' F' U2 F R U' R' U' B'",
+        "R B L U' B' R B L' B' R2",
+        "F' U2 R' F R U' R' F' R F"
+      ],
+      "svgId": "11",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-3",
+        "imagePath": "Images/F2L 2-3.png"
+      }
+    },
+    {
+      "id": "12",
+      "name": "F2L 2-4",
+      "group": "f2l-2",
+      "algorithms": [
+        "U' R B U B' R'",
+        "y U' F R U R' F'",
+        "U2' R U R' U' R' F R F' R U' R'"
+      ],
+      "scramble": "R B U L U L' B' U2 R'",
+      "scrambles": [
+        "R B U L U L' B' U2 R'",
+        "B' R2 F D R' D' R' F' B",
+        "F D R F' U' F R' D' F'",
+        "D B' D' R F D B R' D' F'"
+      ],
+      "svgId": "12",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-4",
+        "imagePath": "Images/F2L 2-4.png"
+      }
+    },
+    {
+      "id": "13",
+      "name": "F2L 2-5",
+      "group": "f2l-2",
+      "algorithms": [
+        "U R' D' r U' r' D R",
+        "U' R2 D r' U r D' R2"
+      ],
+      "scramble": "L2 D F D' F' L2 U L F L'",
+      "scrambles": [
+        "L2 D F D' F' L2 U L F L'",
+        "R' D' F2 U' R' F R F2 U D R",
+        "F' U2 B' R B' D2 L' D2 B2 R' U F",
+        "L U' F2 U' F U F U F L'"
+      ],
+      "svgId": "13",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-5",
+        "imagePath": "Images/F2L 2-5.png"
+      }
+    },
+    {
+      "id": "14",
+      "name": "F2L 2-6",
+      "group": "f2l-2",
+      "algorithms": [
+        "U' R' D' r U r' D R",
+        "U' F2 r U r' U F"
+      ],
+      "scramble": "R L2 D' B D R2 L2 F R U' F'",
+      "scrambles": [
+        "R L2 D' B D R2 L2 F R U' F'",
+        "L F' U' F' U' F' U F2 U L'",
+        "B L D' F L F' L' F' D L' B'",
+        "F' B D L' F' L' F L D' F B'"
+      ],
+      "svgId": "14",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-6",
+        "imagePath": "Images/F2L 2-6.png"
+      }
+    },
+    {
+      "id": "15",
+      "name": "F2L 2-7",
+      "group": "f2l-2",
+      "algorithms": [
+        "R U2 R D r' U' r D' R2"
+      ],
+      "scramble": "R U R' U' R' F R F2 U' F",
+      "scrambles": [
+        "R U R' U' R' F R F2 U' F",
+        "F' R U2 L' U L U2 R' U2 F",
+        "L2 D F' D' R2 L2 B' R' U B U' R'",
+        "F U F' L' U' L F U' F2 U' F"
+      ],
+      "svgId": "15",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-7",
+        "imagePath": "Images/F2L 2-7.png"
+      }
+    },
+    {
+      "id": "16",
+      "name": "F2L 2-8",
+      "group": "f2l-2",
+      "algorithms": [
+        "U' R U' R2' D' r U r' D R",
+        "r U r' U2 M' U R r'"
+      ],
+      "scramble": "R' D' L F' L' U F2 U F2 U' D R",
+      "scrambles": [
+        "R' D' L F' L' U F2 U F2 U' D R",
+        "R' D' L F' L' D R2 U R'"
+      ],
+      "svgId": "16",
+      "tags": {
+        "sourceGroup": "F2L 2",
+        "sourceId": "F2L 2-8",
+        "imagePath": "Images/F2L 2-8.png"
+      }
+    },
+    {
+      "id": "17",
+      "name": "F2L 3-1",
+      "group": "f2l-3",
+      "algorithms": [
+        "y L' U' L"
+      ],
+      "scramble": "F2 L D F' D' F2 L' F",
+      "scrambles": [
+        "F2 L D F' D' F2 L' F",
+        "B U2 F' B' U' F B U2 B'",
+        "D2 F2 B2 U2 F' D2 F2 B2 U' F",
+        "B' R2 B' R2 F' B U2 B U' F"
+      ],
+      "svgId": "17",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-1",
+        "imagePath": "Images/F2L 3-1.png"
+      }
+    },
+    {
+      "id": "18",
+      "name": "F2L 3-2",
+      "group": "f2l-3",
+      "algorithms": [
+        "S U R U' R' S'",
+        "R U' R' F' r U' r' F2"
+      ],
+      "scramble": "F' U R U B U' B' R' U' F",
+      "scrambles": [
+        "F' U R U B U' B' R' U' F",
+        "B L' F B L' D' L D F' L B2",
+        "R2 D2 F B' L2 D' R D' R F' B",
+        "D2 F' B R2 U L U' R2 L' F B' D2"
+      ],
+      "svgId": "18",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-2",
+        "imagePath": "Images/F2L 3-2.png"
+      }
+    },
+    {
+      "id": "19",
+      "name": "F2L 3-3",
+      "group": "f2l-3",
+      "algorithms": [
+        "F' r U' r' F2 R U' R'"
+      ],
+      "scramble": "F' R U2 L' U L U2 R' F",
+      "scrambles": [
+        "F' R U2 L' U L U2 R' F",
+        "R U L' U2 L U2 R' L F' L' F",
+        "B' R' U R F' U B L U' L' F",
+        "D R U F' L' U2 L U2 F R' D'"
+      ],
+      "svgId": "19",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-3",
+        "imagePath": "Images/F2L 3-3.png"
+      }
+    },
+    {
+      "id": "20",
+      "name": "F2L 3-4",
+      "group": "f2l-3",
+      "algorithms": [
+        "U' R' F R U R U' R2 F' R"
+      ],
+      "scramble": "F' R U2 R' U' F' L' U' L F2",
+      "scrambles": [
+        "F' R U2 R' U' F' L' U' L F2",
+        "R' U' R U R B' R' F' B U F",
+        "B U F' U L U' L' U' B' U F",
+        "D' F' R U2 B U' B' U' R' F D"
+      ],
+      "svgId": "20",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-4",
+        "imagePath": "Images/F2L 3-4.png"
+      }
+    },
+    {
+      "id": "21",
+      "name": "F2L 3-5",
+      "group": "f2l-3",
+      "algorithms": [
+        "y' S' R' U' R S"
+      ],
+      "scramble": "D' L D R' D' F L' D R",
+      "scrambles": [
+        "D' L D R' D' F L' D R",
+        "L F2 U F U' R' F2 R L'",
+        "R' D L D2 F D R' D L' D' R2",
+        "F2 U2 R' U' F U R L' U2 L F2"
+      ],
+      "svgId": "21",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-5",
+        "imagePath": "Images/F2L 3-5.png"
+      }
+    },
+    {
+      "id": "22",
+      "name": "F2L 3-6",
+      "group": "f2l-3",
+      "algorithms": [
+        "U R2 D r' U' r D' R2"
+      ],
+      "scramble": "D' F2 U R' F R U' F2 D",
+      "scrambles": [
+        "D' F2 U R' F R U' F2 D",
+        "R2 D L' B L U' B2 U' B2 U D' R2",
+        "D2 L2 D R2 U2 D2 L B L D' R2",
+        "L2 U2 R2 D' L' B L D R2 U2 L2"
+      ],
+      "svgId": "22",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-6",
+        "imagePath": "Images/F2L 3-6.png"
+      }
+    },
+    {
+      "id": "23",
+      "name": "F2L 3-7",
+      "group": "f2l-3",
+      "algorithms": [
+        "U2 R' D' r U' r' D R2 U' R'"
+      ],
+      "scramble": "R D B2 U' R B R' U B2 U D' R'",
+      "scrambles": [
+        "R D B2 U' R B R' U B2 U D' R'",
+        "R' U D' F2 U F2 U' L F L' D R"
+      ],
+      "svgId": "23",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-7",
+        "imagePath": "Images/F2L 3-7.png"
+      }
+    },
+    {
+      "id": "24",
+      "name": "F2L 3-8",
+      "group": "f2l-3",
+      "algorithms": [
+        "R' F R2 U' M' U2 r' U' F'"
+      ],
+      "scramble": "F U R' F2 R2 U' R2 F' R L F2 L'",
+      "scrambles": [
+        "F U R' F2 R2 U' R2 F' R L F2 L'",
+        "F U L2 F2 R L' U2 L' U' R2 F' R",
+        "F U L' F2 R L' U2 L2 U' R2 F' R",
+        "F U' B2 R L' D2 B2 L U' R2 F' R"
+      ],
+      "svgId": "24",
+      "tags": {
+        "sourceGroup": "F2L 3",
+        "sourceId": "F2L 3-8",
+        "imagePath": "Images/F2L 3-8.png"
+      }
+    },
+    {
+      "id": "25",
+      "name": "F2L 4-1",
+      "group": "f2l-4",
+      "algorithms": [
+        "R U R'"
+      ],
+      "scramble": "R F2 L F L' U' F2 R' F'",
+      "scrambles": [
+        "R F2 L F L' U' F2 R' F'",
+        "L' U2 R L U R' L' U2 L",
+        "D2 R2 L2 U2 R D2 R2 L2 U R'",
+        "F R F2 U L F' L' F2 U2 R'"
+      ],
+      "svgId": "25",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-1",
+        "imagePath": "Images/F2L 4-1.png"
+      }
+    },
+    {
+      "id": "26",
+      "name": "F2L 4-2",
+      "group": "f2l-4",
+      "algorithms": [
+        "U M U' R U R' M'",
+        "R U2 R' U' R' F R F'",
+        "R U R' F R U R' U' F'"
+      ],
+      "scramble": "R U2 R' L F R' F' R L'",
+      "scrambles": [
+        "R U2 R' L F R' F' R L'",
+        "L' U F R' F' R2 U' R' L",
+        "F' U R B U B' U' R' U' F",
+        "F B' R' D R' D L2 F' B D2 R2"
+      ],
+      "svgId": "26",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-2",
+        "imagePath": "Images/F2L 4-2.png"
+      }
+    },
+    {
+      "id": "27",
+      "name": "F2L 4-3",
+      "group": "f2l-4",
+      "algorithms": [
+        "U' F' U2 F U R U' R'",
+        "R U R' F U R U' R' F'"
+      ],
+      "scramble": "L F U F' U' L' U' R U' R'",
+      "scrambles": [
+        "L F U F' U' L' U' R U' R'",
+        "B L U L' U' B' U2 R U' R'",
+        "D2 F R U R' U' F' D2 R U' R'",
+        "R B U B' U' R' U R U' R'"
+      ],
+      "svgId": "27",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-3",
+        "imagePath": "Images/F2L 4-3.png"
+      }
+    },
+    {
+      "id": "28",
+      "name": "F2L 4-4",
+      "group": "f2l-4",
+      "algorithms": [
+        "U2 r U' r' U' r U r'",
+        "R U' R' U2 R' F R F'"
+      ],
+      "scramble": "F R' F' R F' L' U L U2 F",
+      "scrambles": [
+        "F R' F' R F' L' U L U2 F",
+        "R U R' F' U F U R U R'",
+        "R2 B' R' B U R' U2 R U R'",
+        "F' U2 F U2 F' U' L' U' L U2 F"
+      ],
+      "svgId": "28",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-4",
+        "imagePath": "Images/F2L 4-4.png"
+      }
+    },
+    {
+      "id": "29",
+      "name": "F2L 4-5",
+      "group": "f2l-4",
+      "algorithms": [
+        "R U R' U' F R U R' U' F'",
+        "R U y R U R' U' F'",
+        "S' R U R' S"
+      ],
+      "scramble": "D B' D' F D R' B D' F'",
+      "scrambles": [
+        "D B' D' F D R' B D' F'",
+        "B' R2 U' R' U F R2 F' B",
+        "R F R' D B' R' B' D B2 D2 F'",
+        "F D' B' D2 R' D' F D' B D F2"
+      ],
+      "svgId": "29",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-5",
+        "imagePath": "Images/F2L 4-5.png"
+      }
+    },
+    {
+      "id": "30",
+      "name": "F2L 4-6",
+      "group": "f2l-4",
+      "algorithms": [
+        "R U2 B U' B' R'",
+        "U F U R U' R2' F' R",
+        "R U R' U' r' U2 R U R' U r"
+      ],
+      "scramble": "L F U F' U' L' U2 R U' R'",
+      "scrambles": [
+        "L F U F' U' L' U2 R U' R'",
+        "D R B U B' U' R' D' R U' R'",
+        "R F U F R' F' U' R F' U2 R'",
+        "F' U' F R U2 B U2 B' U2 R'"
+      ],
+      "svgId": "30",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-6",
+        "imagePath": "Images/F2L 4-6.png"
+      }
+    },
+    {
+      "id": "31",
+      "name": "F2L 4-7",
+      "group": "f2l-4",
+      "algorithms": [
+        "R U' R2' F R F' R U2' R'",
+        "R U' R' F2 r U r' F"
+      ],
+      "scramble": "F' L F' L' F L' U2 L F R U R'",
+      "scrambles": [
+        "F' L F' L' F L' U2 L F R U R'",
+        "F' L' U' B L2 B2 R B' R' B2 L' F",
+        "R U B' R2 D' R' D R' B U2 R'",
+        "R B L2 F' L' F L' U2 B' U R'"
+      ],
+      "svgId": "31",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-7",
+        "imagePath": "Images/F2L 4-7.png"
+      }
+    },
+    {
+      "id": "32",
+      "name": "F2L 4-8",
+      "group": "f2l-4",
+      "algorithms": [
+        "R' D' r U r' D R2 U R'",
+        "R' D' r U' r' D R2 U R'"
+      ],
+      "scramble": "R B2 L' B' L U2 B' U' R'",
+      "scrambles": [
+        "R B2 L' B' L U2 B' U' R'",
+        "R' U D' F2 U' F2 U' L F' L' D R",
+        "L F U2 F L D F' D' F' L' U2 L'",
+        "L F U2 F' U' F' U L F L' U2 L'"
+      ],
+      "svgId": "32",
+      "tags": {
+        "sourceGroup": "F2L 4",
+        "sourceId": "F2L 4-8",
+        "imagePath": "Images/F2L 4-8.png"
+      }
+    },
+    {
+      "id": "33",
+      "name": "F2L 5-1",
+      "group": "f2l-5",
+      "algorithms": [
+        "U' R U R' U2 R U' R'"
+      ],
+      "scramble": "B U R B' U2 B R' U' B'",
+      "scrambles": [
+        "B U R B' U2 B R' U' B'",
+        "R U R' U2 R' F D R' D' R2 F'",
+        "F' L' U L U2 F U2 R U' R'",
+        "R U' R' L F2 R' F2 R2 L' U' R'"
+      ],
+      "svgId": "33",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-1",
+        "imagePath": "Images/F2L 5-1.png"
+      }
+    },
+    {
+      "id": "34",
+      "name": "F2L 5-2",
+      "group": "f2l-5",
+      "algorithms": [
+        "U2 R U' R' U2 R U' R' U R' F R F'",
+        "R U' R B2 r' U' r B' R2"
+      ],
+      "scramble": "D2 L U' F U F' U L' D2 R U R'",
+      "scrambles": [
+        "D2 L U' F U F' U L' D2 R U R'",
+        "R U' B U B' U R' U2 R U R'"
+      ],
+      "svgId": "34",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-2",
+        "imagePath": "Images/F2L 5-2.png"
+      }
+    },
+    {
+      "id": "35",
+      "name": "F2L 5-3",
+      "group": "f2l-5",
+      "algorithms": [
+        "y' U r' U R U' R' U' r",
+        "r U' r' U' r U r' F' r U' r' F2"
+      ],
+      "scramble": "B2 D' R D F B R' F' U' R B",
+      "scrambles": [
+        "B2 D' R D F B R' F' U' R B",
+        "L2 D2 B' R B D2 R U R' U' L2",
+        "F' U R' L D F D' R L' U' F",
+        "D' B' D R D' B D F R F' R'"
+      ],
+      "svgId": "35",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-3",
+        "imagePath": "Images/F2L 5-3.png"
+      }
+    },
+    {
+      "id": "36",
+      "name": "F2L 5-4",
+      "group": "f2l-5",
+      "algorithms": [
+        "R' D' R U R' D F R F'"
+      ],
+      "scramble": "R B' R' B' R' D B D' B' R B2",
+      "scrambles": [
+        "R B' R' B' R' D B D' B' R B2",
+        "F' B U F' U L U' L' U' F2 B'",
+        "F R B' L B R2 B' L' F' B R",
+        "R U' R' U' F' L' U L U F"
+      ],
+      "svgId": "36",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-4",
+        "imagePath": "Images/F2L 5-4.png"
+      }
+    },
+    {
+      "id": "37",
+      "name": "F2L 5-5",
+      "group": "f2l-5",
+      "algorithms": [
+        "U' R U R' U R' F R F'"
+      ],
+      "scramble": "R2 B2 D B D' R' B U' R'",
+      "scrambles": [
+        "R2 B2 D B D' R' B U' R'",
+        "F' L' U L U' F U2 R U' R'",
+        "F R' D' F D F' R2 U R' U' F'",
+        "R U' R' U2 L F U F' U' L'"
+      ],
+      "svgId": "37",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-5",
+        "imagePath": "Images/F2L 5-5.png"
+      }
+    },
+    {
+      "id": "38",
+      "name": "F2L 5-6",
+      "group": "f2l-5",
+      "algorithms": [
+        "U' r U R' U' R2 r' U2 R'"
+      ],
+      "scramble": "R2 L2 D2 R D2 L' F R F' L'",
+      "scrambles": [
+        "R2 L2 D2 R D2 L' F R F' L'",
+        "D2 R2 L2 U2 R D2 L' F R F' L'",
+        "F' R' F' L F R L2 U2 L U2 F",
+        "R' L F2 R F2 R' F R F' L'"
+      ],
+      "svgId": "38",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-6",
+        "imagePath": "Images/F2L 5-6.png"
+      }
+    },
+    {
+      "id": "39",
+      "name": "F2L 5-7",
+      "group": "f2l-5",
+      "algorithms": [
+        "U' F R U R' U' F' R U2 R'",
+        "U R U' R' U' R' F R F' R U R'"
+      ],
+      "scramble": "R U2 R' U D2 L U F U' F' L' D2",
+      "scrambles": [
+        "R U2 R' U D2 L U F U' F' L' D2",
+        "R U2 R2 F' U F L U F' U' F R L'",
+        "R U' L F U' R' U R F' U' R' U L'",
+        "R B L U' L' U2 B' U B U' B' R'"
+      ],
+      "svgId": "39",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-7",
+        "imagePath": "Images/F2L 5-7.png"
+      }
+    },
+    {
+      "id": "40",
+      "name": "F2L 5-8",
+      "group": "f2l-5",
+      "algorithms": [
+        "U2 R2 D r' U' r D' R' U' R'",
+        "U' r U' r' U2 r U r' U' R U' R'"
+      ],
+      "scramble": "R U R' U2 B U' F' L' U2 L F U B'",
+      "scrambles": [
+        "R U R' U2 B U' F' L' U2 L F U B'",
+        "R U R' U L F' L' U2 L F L'"
+      ],
+      "svgId": "40",
+      "tags": {
+        "sourceGroup": "F2L 5",
+        "sourceId": "F2L 5-8",
+        "imagePath": "Images/F2L 5-8.png"
+      }
+    },
+    {
+      "id": "41",
+      "name": "F2L 6-1",
+      "group": "f2l-6",
+      "algorithms": [
+        "y' U R' U' R U R' U2' R"
+      ],
+      "scramble": "B' R2 F R2 F' B U F' U F",
+      "scrambles": [
+        "B' R2 F R2 F' B U F' U F",
+        "F B2 D2 F D2 F2 B2 U F' U F",
+        "F2 B L2 F L2 F B' U F' U F",
+        "F' U2 L' U L' B L B' U' L F"
+      ],
+      "svgId": "41",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-1",
+        "imagePath": "Images/F2L 6-1.png"
+      }
+    },
+    {
+      "id": "42",
+      "name": "F2L 6-2",
+      "group": "f2l-6",
+      "algorithms": [
+        "U R U' R' d' L' U L U' L' U L",
+        "U' R' F R2 U R' U' F' R U R'",
+        "R U R' U' R U R' U' F' U' F"
+      ],
+      "scramble": "L' B2 R B R2 U R2 U' R' B L",
+      "scrambles": [
+        "L' B2 R B R2 U R2 U' R' B L",
+        "R U R2 U' F' U2 F U2 R B U' B'",
+        "R' U' D B2 U B2 D' F' U F R",
+        "B' R2 F R D R2 D' R2 F' R B"
+      ],
+      "svgId": "42",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-2",
+        "imagePath": "Images/F2L 6-2.png"
+      }
+    },
+    {
+      "id": "43",
+      "name": "F2L 6-3",
+      "group": "f2l-6",
+      "algorithms": [
+        "U' r U' R' U R U r'"
+      ],
+      "scramble": "D L D' F' D L' D' R' F' R F",
+      "scrambles": [
+        "D L D' F' D L' D' R' F' R F",
+        "L F2 U' R2 B' R' B U R' F L'",
+        "R U' F B' D' R' D F' B U R'",
+        "F U2 L F' L B L B' L2 F' L'"
+      ],
+      "svgId": "43",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-3",
+        "imagePath": "Images/F2L 6-3.png"
+      }
+    },
+    {
+      "id": "44",
+      "name": "F2L 6-4",
+      "group": "f2l-6",
+      "algorithms": [
+        "R' D' F r U2 r' F D R"
+      ],
+      "scramble": "F' L' F' B L2 B' L2 F L F",
+      "scrambles": [
+        "F' L' F' B L2 B' L2 F L F",
+        "B' U' R2 U B U' R' U' R2 U R",
+        "F2 L F2 U F D F' U' F2 D' L' F2",
+        "R' F2 L F L' U' F2 R F' R' U R"
+      ],
+      "svgId": "44",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-4",
+        "imagePath": "Images/F2L 6-4.png"
+      }
+    },
+    {
+      "id": "45",
+      "name": "F2L 6-5",
+      "group": "f2l-6",
+      "algorithms": [
+        "y U L' U' L U' L F' L' F",
+        "U F' U' L' U L U' F",
+        "F R U' R' U' R U R' F2 U F"
+      ],
+      "scramble": "R' F R F' U F R' D' F D F2 R",
+      "scrambles": [
+        "R' F R F' U F R' D' F D F2 R",
+        "F' U F U2 B' R' U' R U B",
+        "F2 L2 D' L' D F L' U F",
+        "R U' R' U F R' F2 U' F U R"
+      ],
+      "svgId": "45",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-5",
+        "imagePath": "Images/F2L 6-5.png"
+      }
+    },
+    {
+      "id": "46",
+      "name": "F2L 6-6",
+      "group": "f2l-6",
+      "algorithms": [
+        "U' R' F R F' R U2' R2' F R F'",
+        "R2 D r' U' r D' R' U R'"
+      ],
+      "scramble": "R2 B' R' B U' R' F R' F' R",
+      "scrambles": [
+        "R2 B' R' B U' R' F R' F' R",
+        "F R' F' R2 U2 R' F' U L F' L' F2",
+        "R2 B' R' B U' R' F' U L F' L' F2",
+        "F R' F' R2 B U B L' B' L B' U2 R'"
+      ],
+      "svgId": "46",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-6",
+        "imagePath": "Images/F2L 6-6.png"
+      }
+    },
+    {
+      "id": "47",
+      "name": "F2L 6-7",
+      "group": "f2l-6",
+      "algorithms": [
+        "U2 y' R' F' U' F U2' R",
+        "U2 F' L' U' L U2' F",
+        "U R U R2' F R F' r U' r' U' r U r'"
+      ],
+      "scramble": "F' D2 R2 L2 U2 D2 R2 L U L F",
+      "scrambles": [
+        "F' D2 R2 L2 U2 D2 R2 L U L F",
+        "D F' U2 L' U2 L U2 F D' R U' R'",
+        "R U2 B L U2 F U' F' L' U2 B' R'",
+        "D2 F' U2 L' U2 L U2 F D2 R U' R'"
+      ],
+      "svgId": "47",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-7",
+        "imagePath": "Images/F2L 6-7.png"
+      }
+    },
+    {
+      "id": "48",
+      "name": "F2L 6-8",
+      "group": "f2l-6",
+      "algorithms": [
+        "U R U R D r' U' r D' R2' U' R U R'",
+        "U R U' R' d' L' U L2 F' L' F",
+        "U R U' R' F' L' U2 L U' F"
+      ],
+      "scramble": "F2 L F L' U2 F U R U R'",
+      "scrambles": [
+        "F2 L F L' U2 F U R U R'",
+        "F' U F L' U R U' R2 L F R F'"
+      ],
+      "svgId": "48",
+      "tags": {
+        "sourceGroup": "F2L 6",
+        "sourceId": "F2L 6-8",
+        "imagePath": "Images/F2L 6-8.png"
+      }
+    },
+    {
+      "id": "49",
+      "name": "F2L 7-1",
+      "group": "f2l-7",
+      "algorithms": [
+        "U' R U2 R' U2 R U' R'"
+      ],
+      "scramble": "R U R L2 D2 R D2 R L2",
+      "scrambles": [
+        "R U R L2 D2 R D2 R L2",
+        "L F R' F2 R F2 R' F R L'",
+        "R2 L' B R' B2 R B2 R' B R' L",
+        "F' L' U2 L U2 L' U L U' F"
+      ],
+      "svgId": "49",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-1",
+        "imagePath": "Images/F2L 7-1.png"
+      }
+    },
+    {
+      "id": "50",
+      "name": "F2L 7-2",
+      "group": "f2l-7",
+      "algorithms": [
+        "R U R' U R U' R2 F R F'",
+        "U R' F R F' R U' R' U R U R'",
+        "U R F U R U' R' F' R'"
+      ],
+      "scramble": "R2 B' R' B2 L U' L' U2 B' U' R'",
+      "scrambles": [
+        "R2 B' R' B2 L U' L' U2 B' U' R'",
+        "R2 B' R' B U2 R' U' R U' R'",
+        "R2 D B' L' B' L B2 D' B' R' B R'"
+      ],
+      "svgId": "50",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-2",
+        "imagePath": "Images/F2L 7-2.png"
+      }
+    },
+    {
+      "id": "51",
+      "name": "F2L 7-3",
+      "group": "f2l-7",
+      "algorithms": [
+        "R' D' R U2 R' D F R F'"
+      ],
+      "scramble": "L2 F2 L2 B L' B' L' F2 L2",
+      "scrambles": [
+        "L2 F2 L2 B L' B' L' F2 L2",
+        "B2 R2 B' L' B' L B2 R2 B2",
+        "F2 R2 F L' U L U' F' R2 F2",
+        "R F U' D B U B' D' F' R'"
+      ],
+      "svgId": "51",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-3",
+        "imagePath": "Images/F2L 7-3.png"
+      }
+    },
+    {
+      "id": "52",
+      "name": "F2L 7-4",
+      "group": "f2l-7",
+      "algorithms": [
+        "R' D' r U2 r' D F R F'",
+        "r R' U' R U2 R' U' R U2 r'",
+        "y' R2' F R F' U R U2' R' U R"
+      ],
+      "scramble": "F' U' F U2 F' U2 F2 R' F' R",
+      "scrambles": [
+        "F' U' F U2 F' U2 F2 R' F' R",
+        "R U' R' U R' F' L F2 R F L' F2",
+        "F' U' B L2 F' L2 F' B' R' F' R",
+        "F' R' L F' D F2 D' F' R F' L' F2"
+      ],
+      "svgId": "52",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-4",
+        "imagePath": "Images/F2L 7-4.png"
+      }
+    },
+    {
+      "id": "53",
+      "name": "F2L 7-5",
+      "group": "f2l-7",
+      "algorithms": [
+        "U' R U2 R' U R' F R F'"
+      ],
+      "scramble": "R2 B2 D B D' R' B U2 R'",
+      "scrambles": [
+        "R2 B2 D B D' R' B U2 R'",
+        "F' U L F' L' F2 U2 R U2 R'",
+        "F R' F' R U R' L F2 R F2 L'",
+        "R U' B U L U' L' U2 B' R'"
+      ],
+      "svgId": "53",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-5",
+        "imagePath": "Images/F2L 7-5.png"
+      }
+    },
+    {
+      "id": "54",
+      "name": "F2L 7-6",
+      "group": "f2l-7",
+      "algorithms": [
+        "F R' F' R U2 R U' R' U R U' R'",
+        "r' F' R2 U R' U2 R U' R2 F r"
+      ],
+      "scramble": "R U R' U2 R' F R F2 U' L' U L F",
+      "scrambles": [
+        "R U R' U2 R' F R F2 U' L' U L F",
+        "R U R' U' F2 L F L' U2 L' U L F",
+        "F2 L F L' U2 L' U L U' L' U L F"
+      ],
+      "svgId": "54",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-6",
+        "imagePath": "Images/F2L 7-6.png"
+      }
+    },
+    {
+      "id": "55",
+      "name": "F2L 7-7",
+      "group": "f2l-7",
+      "algorithms": [
+        "U R U' R' U R' F R F' R U R'",
+        "U F U R U' R' F' U R U' R'"
+      ],
+      "scramble": "R U' R' U2 D B U' L U L' U B' D'",
+      "scrambles": [
+        "R U' R' U2 D B U' L U L' U B' D'",
+        "R U' R' D' F U' R U R' U F' D",
+        "F2 L F2 U' R U R2 F' L' F2 R F'",
+        "F2 L F' R2 D R D' F2 L' F2 R F'"
+      ],
+      "svgId": "55",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-7",
+        "imagePath": "Images/F2L 7-7.png"
+      }
+    },
+    {
+      "id": "56",
+      "name": "F2L 7-8",
+      "group": "f2l-7",
+      "algorithms": [
+        "r R' U' R r' U2 r U' r'"
+      ],
+      "scramble": "F2 U' R' F R F2 U' R' L F R L'",
+      "scrambles": [
+        "F2 U' R' F R F2 U' R' L F R L'",
+        "L F R U2 R' L F2 R' L' F' R L'",
+        "L' U2 R2 B' R2 U2 R B R' L",
+        "L F' R2 D2 L2 B2 L2 D2 R F' R L'"
+      ],
+      "svgId": "56",
+      "tags": {
+        "sourceGroup": "F2L 7",
+        "sourceId": "F2L 7-8",
+        "imagePath": "Images/F2L 7-8.png"
+      }
+    },
+    {
+      "id": "57",
+      "name": "F2L 8-1",
+      "group": "f2l-8",
+      "algorithms": [
+        "y' U R' U2 R U2 R' U R"
+      ],
+      "scramble": "F' U' F U2 B' R2 F R2 F' B",
+      "scrambles": [
+        "F' U' F U2 B' R2 F R2 F' B",
+        "B' R' F2 B' D2 F' D2 B R' F' B",
+        "R B U' B' U2 R' U2 F' U2 F",
+        "F2 B L' B D2 F' D2 F2 B' L' F B'"
+      ],
+      "svgId": "57",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-1",
+        "imagePath": "Images/F2L 8-1.png"
+      }
+    },
+    {
+      "id": "58",
+      "name": "F2L 8-2",
+      "group": "f2l-8",
+      "algorithms": [
+        "U2 R U' R' F' U' F U' R U R'",
+        "F' U' L' U2 L U' F"
+      ],
+      "scramble": "F' U' L' U' L' B L B' L F",
+      "scrambles": [
+        "F' U' L' U' L' B L B' L F",
+        "B' R U D2 L2 U L2 U2 D2 R' B",
+        "R2 B' R U' R2 U R' B R2 B' R2 B",
+        "L' U' B U L U' F2 L2 B' L2 F2"
+      ],
+      "svgId": "58",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-2",
+        "imagePath": "Images/F2L 8-2.png"
+      }
+    },
+    {
+      "id": "59",
+      "name": "F2L 8-3",
+      "group": "f2l-8",
+      "algorithms": [
+        "r' U2 R2 U R2' U r",
+        "U2 r' D' r U r' D r2 U' R' U R U r'"
+      ],
+      "scramble": "R2 L' F B' D2 B' D2 F' R2 B2 L",
+      "scrambles": [
+        "R2 L' F B' D2 B' D2 F' R2 B2 L",
+        "R' D2 R L' B L2 B' R' L' D2 R",
+        "L F B' U2 F2 B U2 F' L2 F2 L",
+        "B2 R B R' U' R2 B' R2 B2"
+      ],
+      "svgId": "59",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-3",
+        "imagePath": "Images/F2L 8-3.png"
+      }
+    },
+    {
+      "id": "60",
+      "name": "F2L 8-4",
+      "group": "f2l-8",
+      "algorithms": [
+        "U R U' R' d R' U R U' R' U R",
+        "r' U2 R2 U R' U' R' U2 r",
+        "R l U' R' U F' l' U2 R U' R'"
+      ],
+      "scramble": "L' B L U' F' U L2 B' L2 U2 F",
+      "scrambles": [
+        "L' B L U' F' U L2 B' L2 U2 F",
+        "F' L F' L D' L' D L' F U' F",
+        "F' U' B L F' D F' D' F L' F2 B'",
+        "F' L F2 L' F2 U2 R' F R F R' F' R"
+      ],
+      "svgId": "60",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-4",
+        "imagePath": "Images/F2L 8-4.png"
+      }
+    },
+    {
+      "id": "61",
+      "name": "F2L 8-5",
+      "group": "f2l-8",
+      "algorithms": [
+        "U y L' U2 L U' L F' L' F",
+        "U F' U2 L' U L U' F"
+      ],
+      "scramble": "F2 L2 D' L' D F L' U2 F",
+      "scrambles": [
+        "F2 L2 D' L' D F L' U2 F",
+        "R U' B' R B R2 U2 F' U2 F",
+        "F' U L' U2 L F U2 R U R'",
+        "R' F R F' U B' R2 F R2 F' B"
+      ],
+      "svgId": "61",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-5",
+        "imagePath": "Images/F2L 8-5.png"
+      }
+    },
+    {
+      "id": "62",
+      "name": "F2L 8-6",
+      "group": "f2l-8",
+      "algorithms": [
+        "U F R' F' R2 U2 R' U R' F R F'",
+        "F R' F' R U' R U R' U' F' U' F",
+        "R2 D R' U' R r' U' r D' R' U R'"
+      ],
+      "scramble": "F' U F U2 D' F U' R U' R' U F' D",
+      "scrambles": [
+        "F' U F U2 D' F U' R U' R' U F' D",
+        "F' U F D B U' L U' L' U B' D'",
+        "F' U F U R U' R' U R' F R F'",
+        "F' U F U R U' B U' B' U R'"
+      ],
+      "svgId": "62",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-6",
+        "imagePath": "Images/F2L 8-6.png"
+      }
+    },
+    {
+      "id": "63",
+      "name": "F2L 8-7",
+      "group": "f2l-8",
+      "algorithms": [
+        "U2 r' U r2 U' r2' U' r U2' r U r'",
+        "U' r' F' r U r U' r2' F2 r F",
+        "r' U2 R U R' U r2 U' R' U' R U r'"
+      ],
+      "scramble": "F B2 R' D2 R F2 B2 L F U L U' L'",
+      "scrambles": [
+        "F B2 R' D2 R F2 B2 L F U L U' L'",
+        "F' U2 R' F2 R F U' F2 U' F2 U F2",
+        "D' F L F2 L' U2 F' L2 U' L2 D F2",
+        "F' L' U2 L U' F R U B U B' R'"
+      ],
+      "svgId": "63",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-7",
+        "imagePath": "Images/F2L 8-7.png"
+      }
+    },
+    {
+      "id": "64",
+      "name": "F2L 8-8",
+      "group": "f2l-8",
+      "algorithms": [
+        "r U r' U' R U' M' U r'"
+      ],
+      "scramble": "L' B' R' B L U F' U F B' R' B",
+      "scrambles": [
+        "L' B' R' B L U F' U F B' R' B",
+        "F R' F' D' F D' L2 F' D2 R2 B' R'",
+        "F2 R' F2 L F' R L' U R' F R U F2",
+        "L F' U2 R' U2 R U R' U F2 R F L'"
+      ],
+      "svgId": "64",
+      "tags": {
+        "sourceGroup": "F2L 8",
+        "sourceId": "F2L 8-8",
+        "imagePath": "Images/F2L 8-8.png"
+      }
+    },
+    {
+      "id": "65",
+      "name": "F2L 9-1",
+      "group": "f2l-9",
+      "algorithms": [
+        "y' U2' R' U R U R' U' R",
+        "d R' U' R U' R' U' R"
+      ],
+      "scramble": "R U2 B U B' R' U' F' U F",
+      "scrambles": [
+        "R U2 B U B' R' U' F' U F",
+        "F' U F U R U2 B U B' R'",
+        "R U F' L' F R' F' U L U F",
+        "F R' D' F D F2 R U2 F' U F"
+      ],
+      "svgId": "65",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-1",
+        "imagePath": "Images/F2L 9-1.png"
+      }
+    },
+    {
+      "id": "66",
+      "name": "F2L 9-2",
+      "group": "f2l-9",
+      "algorithms": [
+        "F R U R' U' F' R U' R'"
+      ],
+      "scramble": "F' L' U L U2 F2 U R U' R' F'",
+      "scrambles": [
+        "F' L' U L U2 F2 U R U' R' F'",
+        "F R' F D' F' D R U R U' R' F'",
+        "R U R' D2 F U R U' R' F' D2",
+        "B U L U' F2 L F L' F L' B'"
+      ],
+      "svgId": "66",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-2",
+        "imagePath": "Images/F2L 9-2.png"
+      }
+    },
+    {
+      "id": "67",
+      "name": "F2L 9-3",
+      "group": "f2l-9",
+      "algorithms": [
+        "U' R U' R' d R' U' R",
+        "U' R U' R' U F' U' F"
+      ],
+      "scramble": "F' D R2 U R2 D' F2 U F L F2 L'",
+      "scrambles": [
+        "F' D R2 U R2 D' F2 U F L F2 L'",
+        "R U2 B U2 R' F' R B' R' U F",
+        "R' F D R' D' R F' R2 U R'",
+        "F R' D' F D F2 R2 U R'"
+      ],
+      "svgId": "67",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-3",
+        "imagePath": "Images/F2L 9-3.png"
+      }
+    },
+    {
+      "id": "68",
+      "name": "F2L 9-4",
+      "group": "f2l-9",
+      "algorithms": [
+        "U r U R' U' M R U' R'",
+        "R' F R U2 r U2 r' U2 F'"
+      ],
+      "scramble": "F R2 L2 D2 L B2 L' D2 R L2 F' R",
+      "scrambles": [
+        "F R2 L2 D2 L B2 L' D2 R L2 F' R",
+        "F' R L' U2 B2 R B2 R L2 F2 L' F' R",
+        "F D2 R B2 R' U2 L' B' L B U2 D2 F'",
+        "F B2 R L' D2 B2 L U2 R' U2 R' F' R"
+      ],
+      "svgId": "68",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-4",
+        "imagePath": "Images/F2L 9-4.png"
+      }
+    },
+    {
+      "id": "69",
+      "name": "F2L 9-5",
+      "group": "f2l-9",
+      "algorithms": [
+        "F R U R' U' F' U' R' F R F'",
+        "F' U L' U' L U2 F"
+      ],
+      "scramble": "R2 B' R' B U2 B U' B' R'",
+      "scrambles": [
+        "R2 B' R' B U2 B U' B' R'",
+        "F R' F' R U F U R U' R' F'",
+        "B L U' L' F' B' R' U R U F",
+        "L' B L B' U' L F' U F2 U F' L'"
+      ],
+      "svgId": "69",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-5",
+        "imagePath": "Images/F2L 9-5.png"
+      }
+    },
+    {
+      "id": "70",
+      "name": "F2L 9-6",
+      "group": "f2l-9",
+      "algorithms": [
+        "U' r U2 r' U' r U' r' U r U2 r'",
+        "U r U' r' U2' r U r' R U' R'"
+      ],
+      "scramble": "R' F R D R2 B R2 D2 F L2 D F2",
+      "scrambles": [
+        "R' F R D R2 B R2 D2 F L2 D F2",
+        "L U2 R U R' L F' L' U2 F L'",
+        "F' B L' B' L' U F L' U' L U L",
+        "R U2 B U2 B' R' F' B U' F U B'"
+      ],
+      "svgId": "70",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-6",
+        "imagePath": "Images/F2L 9-6.png"
+      }
+    },
+    {
+      "id": "71",
+      "name": "F2L 9-7",
+      "group": "f2l-9",
+      "algorithms": [
+        "R' F R2 U' R' U' r U2 r' U' F'",
+        "U' R2 D r' U r D' R' U' R' U R U' R'"
+      ],
+      "scramble": "F U L F2 L' U2 F R2 D R D' F2 R",
+      "scrambles": [
+        "F U L F2 L' U2 F R2 D R D' F2 R",
+        "F U L F2 L' U R U R2 F' R"
+      ],
+      "svgId": "71",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-7",
+        "imagePath": "Images/F2L 9-7.png"
+      }
+    },
+    {
+      "id": "72",
+      "name": "F2L 9-8",
+      "group": "f2l-9",
+      "algorithms": [
+        "U r U r' U2 M' U M R U' R'",
+        "U2 R U R' U' R' F R F' R U2' R2' F R F'",
+        "U2 R U R D r' U' r D' R' U R'"
+      ],
+      "scramble": "F2 R U' R2 F R U R U R2 F2 R",
+      "scrambles": [
+        "F2 R U' R2 F R U R U R2 F2 R",
+        "R U R2 L F' R L' U2 L F' L'"
+      ],
+      "svgId": "72",
+      "tags": {
+        "sourceGroup": "F2L 9",
+        "sourceId": "F2L 9-8",
+        "imagePath": "Images/F2L 9-8.png"
+      }
+    },
+    {
+      "id": "73",
+      "name": "F2L 10-1",
+      "group": "f2l-10",
+      "algorithms": [
+        "U2 R U' R' U' R U R'",
+        "U' R U R' U R U R'"
+      ],
+      "scramble": "R F' U' F U' F' U2 F U' R'",
+      "scrambles": [
+        "R F' U' F U' F' U2 F U' R'",
+        "F' U2 L' U' L F U R U' R'",
+        "D R F' U' R' F U' R F R' D' F'",
+        "R F' U' R' F U' F' R U F U' R'"
+      ],
+      "svgId": "73",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-1",
+        "imagePath": "Images/F2L 10-1.png"
+      }
+    },
+    {
+      "id": "74",
+      "name": "F2L 10-2",
+      "group": "f2l-10",
+      "algorithms": [
+        "F R' F' R U R' F R F' R U R'",
+        "r' D' r U r' D R r U R'"
+      ],
+      "scramble": "R U2 R' F R U R2 D R' D' R2 U' F'",
+      "scrambles": [
+        "R U2 R' F R U R2 D R' D' R2 U' F'",
+        "R U' R' U' R U' B U B' R2 F R F'",
+        "R U' R' F R' F' R F2 L F L' U' F",
+        "R F' U' F U' F' U' B U' F U2 B' R'"
+      ],
+      "svgId": "74",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-2",
+        "imagePath": "Images/F2L 10-2.png"
+      }
+    },
+    {
+      "id": "75",
+      "name": "F2L 10-3",
+      "group": "f2l-10",
+      "algorithms": [
+        "R U R2 F R F' R U R'",
+        "U2' r U' R' U' R U r'",
+        "U F' U' F' U' R U R'"
+      ],
+      "scramble": "R F' U' F R' F D R2 D' R2 F'",
+      "scrambles": [
+        "R F' U' F R' F D R2 D' R2 F'",
+        "F' U L F L' U2 F2 R' F' R F'",
+        "D2 R U' R' F R' F' R D2 R U' R'",
+        "D' R U' R' F R' F' R D R U' R'"
+      ],
+      "svgId": "75",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-3",
+        "imagePath": "Images/F2L 10-3.png"
+      }
+    },
+    {
+      "id": "76",
+      "name": "F2L 10-4",
+      "group": "f2l-10",
+      "algorithms": [
+        "U' r' D' r U' r' D r2 U' r' U' r U r'",
+        "U' F' U' F r U' r' U' r U r'",
+        "R' F R F' U2' R U R' U' R U R'"
+      ],
+      "scramble": "R U' R' U F' U2 L' U' L F2 R' F' R",
+      "scrambles": [
+        "R U' R' U F' U2 L' U' L F2 R' F' R",
+        "F' U2 L' U B' U' B U' L F2 R' F' R"
+      ],
+      "svgId": "76",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-4",
+        "imagePath": "Images/F2L 10-4.png"
+      }
+    },
+    {
+      "id": "77",
+      "name": "F2L 10-5",
+      "group": "f2l-10",
+      "algorithms": [
+        "U F R' F' R U2 R U' R'",
+        "R U R' F' U F U R U' R'"
+      ],
+      "scramble": "L U L' B' U R U' R2 U' R B",
+      "scrambles": [
+        "L U L' B' U R U' R2 U' R B",
+        "R B' R B U R' F' U2 F R U' R2",
+        "R2 U R' F' R' U' R U' F R U' R2",
+        "L' B' U B R L F U' F' U' R'"
+      ],
+      "svgId": "77",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-5",
+        "imagePath": "Images/F2L 10-5.png"
+      }
+    },
+    {
+      "id": "78",
+      "name": "F2L 10-6",
+      "group": "f2l-10",
+      "algorithms": [
+        "U2 R U' R' U r U' r' U' r U r'",
+        "U' R U r' U R U R' U' r R'",
+        "F U R U' R2 F' R U R U R'"
+      ],
+      "scramble": "D R U' R' U' F' U F D' R U' R'",
+      "scrambles": [
+        "D R U' R' U' F' U F D' R U' R'",
+        "R U' D' R' U' F' U F R U' D R'",
+        "R D2 F' U' L' U L F U2 D2 R'",
+        "R D' F' U' L' U L F U2 D R'"
+      ],
+      "svgId": "78",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-6",
+        "imagePath": "Images/F2L 10-6.png"
+      }
+    },
+    {
+      "id": "79",
+      "name": "F2L 10-7",
+      "group": "f2l-10",
+      "algorithms": [
+        "U' R U R' U' r U' r' U' r U r'",
+        "R' F' R U R U' R' F' r U r' F"
+      ],
+      "scramble": "F' L F' L' F R U R' U' R' F R",
+      "scrambles": [
+        "F' L F' L' F R U R' U' R' F R",
+        "F' B2 L F R' D R F2 L' B2 U' F2",
+        "F U2 F' U' R L' U' R' L F U' F'",
+        "R' F2 L D F' L D L' D' R L' F'"
+      ],
+      "svgId": "79",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-7",
+        "imagePath": "Images/F2L 10-7.png"
+      }
+    },
+    {
+      "id": "80",
+      "name": "F2L 10-8",
+      "group": "f2l-10",
+      "algorithms": [
+        "r U' r' U' r U r' U2' R' F R F'",
+        "R U' R D r' U' r D' R' U' R'",
+        "R' D' R U M' U r' D R2 U R'"
+      ],
+      "scramble": "R U2 L F' L' F R' F' U2 L F L'",
+      "scrambles": [
+        "R U2 L F' L' F R' F' U2 L F L'",
+        "F R' F' R U2 L F' L' U L F L'"
+      ],
+      "svgId": "80",
+      "tags": {
+        "sourceGroup": "F2L 10",
+        "sourceId": "F2L 10-8",
+        "imagePath": "Images/F2L 10-8.png"
+      }
+    },
+    {
+      "id": "81",
+      "name": "F2L 11-1",
+      "group": "f2l-11",
+      "algorithms": [
+        "y' R U2 R2 U' R2 U' R'",
+        "R U2' R' U R U R' F' U' F"
+      ],
+      "scramble": "L F2 D F D' L' U F2 U2 F'",
+      "scrambles": [
+        "L F2 D F D' L' U F2 U2 F'",
+        "F U F2 U B2 D2 F' U2 F2 B2 D2",
+        "B' R2 B' L2 F2 D' F2 L2 B R2 B",
+        "R F R2 D B R' B' U R2 U' D' F'"
+      ],
+      "svgId": "81",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-1",
+        "imagePath": "Images/F2L 11-1.png"
+      }
+    },
+    {
+      "id": "82",
+      "name": "F2L 11-2",
+      "group": "f2l-11",
+      "algorithms": [
+        "U' R U R' U' R U' R' U' F' U' F",
+        "R U' R' U R U' R2' F R F' R U' R'"
+      ],
+      "scramble": "R U R' F R' F' R2 U R' U' R U R'",
+      "scrambles": [
+        "R U R' F R' F' R2 U R' U' R U R'",
+        "L' U2 L U' F U2 F L F2 L' F U' F'"
+      ],
+      "svgId": "82",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-2",
+        "imagePath": "Images/F2L 11-2.png"
+      }
+    },
+    {
+      "id": "83",
+      "name": "F2L 11-3",
+      "group": "f2l-11",
+      "algorithms": [
+        "R U R' U' R U' R' F' U' F",
+        "F R' F' R U' R U' R' U R U' R'"
+      ],
+      "scramble": "F' U F R U R B' D' R D R2 B R'",
+      "scrambles": [
+        "F' U F R U R B' D' R D R2 B R'",
+        "F' U F R U B U2 L U L' B' U R'",
+        "F' R B U B' U' R' U F U2 R U' R'"
+      ],
+      "svgId": "83",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-3",
+        "imagePath": "Images/F2L 11-3.png"
+      }
+    },
+    {
+      "id": "84",
+      "name": "F2L 11-4",
+      "group": "f2l-11",
+      "algorithms": [
+        "U' R U2 R' U F' U' F"
+      ],
+      "scramble": "R U' R' U F R' F' R2 U2 R'",
+      "scrambles": [
+        "R U' R' U F R' F' R2 U2 R'",
+        "R' F D R' D' R F' R2 U2 R'",
+        "F' U F U R' L F2 R F2 L'",
+        "F R' D' F D F2 R2 U2 R'"
+      ],
+      "svgId": "84",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-4",
+        "imagePath": "Images/F2L 11-4.png"
+      }
+    },
+    {
+      "id": "85",
+      "name": "F2L 11-5",
+      "group": "f2l-11",
+      "algorithms": [
+        "F' U L' U2 L U2 F",
+        "F' U r' F2 r U2 F"
+      ],
+      "scramble": "F' U' F' B L' D' L2 D L' F2 B'",
+      "scrambles": [
+        "F' U' F' B L' D' L2 D L' F2 B'",
+        "D' F R U2 R' U2 F' D F' U' F",
+        "R U' R' U2 F' L' U' L U' F",
+        "F R L' U2 R' L U2 R' F2 R U' F"
+      ],
+      "svgId": "85",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-5",
+        "imagePath": "Images/F2L 11-5.png"
+      }
+    },
+    {
+      "id": "86",
+      "name": "F2L 11-6",
+      "group": "f2l-11",
+      "algorithms": [
+        "R U2 R' U' r U' r' U2 r U r'"
+      ],
+      "scramble": "B U' F' L' U2 L F U B' R U2 R'",
+      "scrambles": [
+        "B U' F' L' U2 L F U B' R U2 R'",
+        "L2 F' D' L' U2 L D F L2 U R U2 R'"
+      ],
+      "svgId": "86",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-6",
+        "imagePath": "Images/F2L 11-6.png"
+      }
+    },
+    {
+      "id": "87",
+      "name": "F2L 11-7",
+      "group": "f2l-11",
+      "algorithms": [
+        "F' L' U' L U' L' U L U' F",
+        "F' r' F' r U' r' F r U' F",
+        "R' D' r U r U R U' r2' D"
+      ],
+      "scramble": "R' F R F' U F' U L' U L F",
+      "scrambles": [
+        "R' F R F' U F' U L' U L F",
+        "F2 L2 D' L' D F L' U L' U L F",
+        "R B L U L' U B' U B' R B R2"
+      ],
+      "svgId": "87",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-7",
+        "imagePath": "Images/F2L 11-7.png"
+      }
+    },
+    {
+      "id": "88",
+      "name": "F2L 11-8",
+      "group": "f2l-11",
+      "algorithms": [
+        "F R' F' R U' R U' R2 F R F'"
+      ],
+      "scramble": "R2 B' R' B U2 R' U R' F R F'",
+      "scrambles": [
+        "R2 B' R' B U2 R' U R' F R F'",
+        "R2 B' R' B U2 B U' B' U R'",
+        "F' U' F U R2 B' R' B U2 R'",
+        "F' U' F U2 F R' F' R2 U R'"
+      ],
+      "svgId": "88",
+      "tags": {
+        "sourceGroup": "F2L 11",
+        "sourceId": "F2L 11-8",
+        "imagePath": "Images/F2L 11-8.png"
+      }
+    },
+    {
+      "id": "89",
+      "name": "F2L 12-1",
+      "group": "f2l-12",
+      "algorithms": [
+        "R' U2' R2 U R2' U R",
+        "R U' R' U R U' R' U2 R U' R'"
+      ],
+      "scramble": "R B' U2 B U2 R' U' B' R U R' B",
+      "scrambles": [
+        "R B' U2 B U2 R' U' B' R U R' B",
+        "D B U B' U2 B U B' D' R U R'",
+        "R U R' F' L' U B' U B U' L U2 F",
+        "R U' R U2 R2 F U' F2 D R2 D' R2 F"
+      ],
+      "svgId": "89",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-1",
+        "imagePath": "Images/F2L 12-1.png"
+      }
+    },
+    {
+      "id": "90",
+      "name": "F2L 12-2",
+      "group": "f2l-12",
+      "algorithms": [
+        "R U' r' U R U' R' U' r U2 R'"
+      ],
+      "scramble": "R' D' F D R U' D' F U F' D",
+      "scrambles": [
+        "R' D' F D R U' D' F U F' D",
+        "R U2 L' B R B R' B' L U R'"
+      ],
+      "svgId": "90",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-2",
+        "imagePath": "Images/F2L 12-2.png"
+      }
+    },
+    {
+      "id": "91",
+      "name": "F2L 12-3",
+      "group": "f2l-12",
+      "algorithms": [
+        "R U' R' U R U' R' U R' F R F'"
+      ],
+      "scramble": "R2 B2 D B2 R' U R B' D' B R2",
+      "scrambles": [
+        "R2 B2 D B2 R' U R B' D' B R2",
+        "R U' B L' B L B' U B' U R'",
+        "D B U' L U L' U B' D' R U R'",
+        "R U' B U B' U R' U' R U R'"
+      ],
+      "svgId": "91",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-3",
+        "imagePath": "Images/F2L 12-3.png"
+      }
+    },
+    {
+      "id": "92",
+      "name": "F2L 12-4",
+      "group": "f2l-12",
+      "algorithms": [
+        "U F' U2 F U' R U R'"
+      ],
+      "scramble": "R D' F' U L' U2 L U' F U' D R'",
+      "scrambles": [
+        "R D' F' U L' U2 L U' F U' D R'",
+        "F' U2 L' U' L F U' F' U2 F",
+        "F R' D' F D F' R F2 U2 F",
+        "R' F D R' D' R2 F2 U2 F"
+      ],
+      "svgId": "92",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-4",
+        "imagePath": "Images/F2L 12-4.png"
+      }
+    },
+    {
+      "id": "93",
+      "name": "F2L 12-5",
+      "group": "f2l-12",
+      "algorithms": [
+        "R d' R U2 R' U2 F'"
+      ],
+      "scramble": "R U2 B U' B2 R D B' D' B2 R2",
+      "scrambles": [
+        "R U2 B U' B2 R D B' D' B2 R2",
+        "D R' F' U2 F U2 R D' R U R'",
+        "F' L' U2 L U' L F' L' F U' F",
+        "R U B L U2 F U F' L' B' U R'"
+      ],
+      "svgId": "93",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-5",
+        "imagePath": "Images/F2L 12-5.png"
+      }
+    },
+    {
+      "id": "94",
+      "name": "F2L 12-6",
+      "group": "f2l-12",
+      "algorithms": [
+        "U2 R' F2 r U r' F R2 U R'",
+        "R U2 F U R U' R' F' R'",
+        "R U2 r U R' U R U2 r' U R'"
+      ],
+      "scramble": "R U' R' U2 L' B' R B' R' B2 L",
+      "scrambles": [
+        "R U' R' U2 L' B' R B' R' B2 L",
+        "B' U' R L U' R2 U L' U R B",
+        "B2 R B2 L U L2 B L B R' B2",
+        "R U' R2 L F2 R' F' R F' L' U2 R"
+      ],
+      "svgId": "94",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-6",
+        "imagePath": "Images/F2L 12-6.png"
+      }
+    },
+    {
+      "id": "95",
+      "name": "F2L 12-7",
+      "group": "f2l-12",
+      "algorithms": [
+        "R U R' U R' F R F' R U R'"
+      ],
+      "scramble": "R U' R' U' R U' B U B' U' R'",
+      "scrambles": [
+        "R U' R' U' R U' B U B' U' R'",
+        "R U' R' U' R2 B2 D B D' R' B U' R'",
+        "R U' R' F' U L F' L' F2 U2 R U' R'",
+        "R2 U B' U' R' U B U' R' U2 R U' R'"
+      ],
+      "svgId": "95",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-7",
+        "imagePath": "Images/F2L 12-7.png"
+      }
+    },
+    {
+      "id": "96",
+      "name": "F2L 12-8",
+      "group": "f2l-12",
+      "algorithms": [
+        "R' D' R U2 M' U r' D R2 U R'",
+        "U F R' F' R2 U R' U R' F R F'"
+      ],
+      "scramble": "R2 B' R' B U' R' U F' U' F",
+      "scrambles": [
+        "R2 B' R' B U' R' U F' U' F",
+        "F R' F' R2 U B' R B R' U R'",
+        "R2 B' R' B U2 B' R B R' U R'",
+        "F R' F' R2 U2 R2 F2 D' F' D R F'"
+      ],
+      "svgId": "96",
+      "tags": {
+        "sourceGroup": "F2L 12",
+        "sourceId": "F2L 12-8",
+        "imagePath": "Images/F2L 12-8.png"
+      }
+    },
+    {
+      "id": "97",
+      "name": "F2L 13-1",
+      "group": "f2l-13",
+      "algorithms": [
+        "y' U R' U R U' R' U' R",
+        "R' D' R U R' D R F' U' F",
+        "R' D' r U r' D F R F'"
+      ],
+      "scramble": "R F U F' R' F U' R' F' R",
+      "scrambles": [
+        "R F U F' R' F U' R' F' R",
+        "F' B' R' U R F2 R' F' U' R B",
+        "R F R' F' R U R U' R' U R'",
+        "R2 F R2 F' R U R2 U' R2 U R'"
+      ],
+      "svgId": "97",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-1",
+        "imagePath": "Images/F2L 13-1.png"
+      }
+    },
+    {
+      "id": "98",
+      "name": "F2L 13-2",
+      "group": "f2l-13",
+      "algorithms": [
+        "R2 D R' U R D' R2 F' U' F",
+        "U R U' R' U R U' R' d' R' U R",
+        "F U R U' R2 F' R U2 R U' R'"
+      ],
+      "scramble": "F' U' L2 D' L U' L' D L2 F",
+      "scrambles": [
+        "F' U' L2 D' L U' L' D L2 F",
+        "F' R U R2 F D R2 U' R D' R2",
+        "B' R U' D' B' D R' D' B U D B"
+      ],
+      "svgId": "98",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-2",
+        "imagePath": "Images/F2L 13-2.png"
+      }
+    },
+    {
+      "id": "99",
+      "name": "F2L 13-3",
+      "group": "f2l-13",
+      "algorithms": [
+        "M' U' R U R' U2 R U' r'",
+        "R U' R' U R' F R F' R U' R'",
+        "R U R' U R U' R' F' U' F"
+      ],
+      "scramble": "L F R' F2 R L F' R' F R L2",
+      "scrambles": [
+        "L F R' F2 R L F' R' F R L2",
+        "L F L F R' L' F2 L F R L2",
+        "R L' U' B U R B R' B' L U' R'",
+        "F' R B U B' U' R' U F R U' R'"
+      ],
+      "svgId": "99",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-3",
+        "imagePath": "Images/F2L 13-3.png"
+      }
+    },
+    {
+      "id": "100",
+      "name": "F2L 13-4",
+      "group": "f2l-13",
+      "algorithms": [
+        "M' U' R U R' U' R U2 r'",
+        "R' F' r U R U2 r' F2"
+      ],
+      "scramble": "R' L D2 L D2 L' F' L' F R",
+      "scrambles": [
+        "R' L D2 L D2 L' F' L' F R",
+        "F2 U2 L F L' F' L' U2 L F2",
+        "R L' U2 L U2 R2 L F' L' F R",
+        "R2 L2 B2 L B2 R L2 F' L' F R"
+      ],
+      "svgId": "100",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-4",
+        "imagePath": "Images/F2L 13-4.png"
+      }
+    },
+    {
+      "id": "101",
+      "name": "F2L 13-5",
+      "group": "f2l-13",
+      "algorithms": [
+        "R' D' r U r' D R U R U' R'",
+        "R' F R F' U' R' F R F' R U R'"
+      ],
+      "scramble": "L F2 U F' U' R' F2 R L'",
+      "scrambles": [
+        "L F2 U F' U' R' F2 R L'",
+        "R U2 R L' D B' D' R2 L",
+        "L F2 U F' U' F2 R L' U2 R'",
+        "R L' B2 R B2 D B' D' R2 L"
+      ],
+      "svgId": "101",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-5",
+        "imagePath": "Images/F2L 13-5.png"
+      }
+    },
+    {
+      "id": "102",
+      "name": "F2L 13-6",
+      "group": "f2l-13",
+      "algorithms": [
+        "M' U' R U' r' U2 r U' r'",
+        "R U R' F' U r' F2 r F"
+      ],
+      "scramble": "L F U F2 B' R2 F' R2 B U F L'",
+      "scrambles": [
+        "L F U F2 B' R2 F' R2 B U F L'",
+        "L F U B L2 F' L2 F2 B' U F L'",
+        "L2 F L' F R U2 R' F L'",
+        "L F R L' U2 F R' F R F2 R' F2"
+      ],
+      "svgId": "102",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-6",
+        "imagePath": "Images/F2L 13-6.png"
+      }
+    },
+    {
+      "id": "103",
+      "name": "F2L 13-7",
+      "group": "f2l-13",
+      "algorithms": [
+        "R' F R U2 r U' r' U2 F'",
+        "U2' r U2' r' U' r U r' U r U2' r'"
+      ],
+      "scramble": "F D2 B' R' B2 R B2 R B D2 F'",
+      "scrambles": [
+        "F D2 B' R' B2 R B2 R B D2 F'",
+        "F D2 B' L' D2 R D2 L B D2 F'",
+        "F U2 F2 U' R' F R F2 U' R' F' R",
+        "R' L D2 B' D F D' B D2 R L'"
+      ],
+      "svgId": "103",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-7",
+        "imagePath": "Images/F2L 13-7.png"
+      }
+    },
+    {
+      "id": "104",
+      "name": "F2L 13-8",
+      "group": "f2l-13",
+      "algorithms": [
+        "U2 R U R D r' U r D' R' U R'"
+      ],
+      "scramble": "R U' R D L' B' L D' R' U' R'",
+      "scrambles": [
+        "R U' R D L' B' L D' R' U' R'"
+      ],
+      "svgId": "104",
+      "tags": {
+        "sourceGroup": "F2L 13",
+        "sourceId": "F2L 13-8",
+        "imagePath": "Images/F2L 13-8.png"
+      }
+    },
+    {
+      "id": "105",
+      "name": "F2L 14-1",
+      "group": "f2l-14",
+      "algorithms": [
+        "U' R U' R' U R U R'"
+      ],
+      "scramble": "F' R' U' R F R' U F R F'",
+      "scrambles": [
+        "F' R' U' R F R' U F R F'",
+        "R U B L U' L' U2 B' U R'",
+        "R L F U' F' R2 F R U F' L'",
+        "F' U2 L' U' L F U R U R'"
+      ],
+      "svgId": "105",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-1",
+        "imagePath": "Images/F2L 14-1.png"
+      }
+    },
+    {
+      "id": "106",
+      "name": "F2L 14-2",
+      "group": "f2l-14",
+      "algorithms": [
+        "U' R' F R2 U R' U' R' F' R",
+        "r' D' r U' r' D r R U R'",
+        "U F R U R' D R2 U' R2 D' F'"
+      ],
+      "scramble": "D' F' R U B U B' U2 R' F D",
+      "scrambles": [
+        "D' F' R U B U B' U2 R' F D",
+        "F2 L D F U F U' F2 D' L' F2",
+        "U F' L U F U' R' F R F2 L' F",
+        "R U' B' R' F R B R2 F' R"
+      ],
+      "svgId": "106",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-2",
+        "imagePath": "Images/F2L 14-2.png"
+      }
+    },
+    {
+      "id": "107",
+      "name": "F2L 14-3",
+      "group": "f2l-14",
+      "algorithms": [
+        "M' U' R U' R' U R U R' U' M",
+        "U' R U' r' U R U R' U' M'"
+      ],
+      "scramble": "R' U' F D R D' B2 L' D L F' B2",
+      "scrambles": [
+        "R' U' F D R D' B2 L' D L F' B2",
+        "R' L F R F' R' F' R F R' F R L'"
+      ],
+      "svgId": "107",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-3",
+        "imagePath": "Images/F2L 14-3.png"
+      }
+    },
+    {
+      "id": "108",
+      "name": "F2L 14-4",
+      "group": "f2l-14",
+      "algorithms": [
+        "U2 R U R' U R U2 R2 F R F'",
+        "U2 r R' U R U' r' U R U R'"
+      ],
+      "scramble": "R2 B' R' B U' R' U' R U' R'",
+      "scrambles": [
+        "R2 B' R' B U' R' U' R U' R'",
+        "F R' F' R U2 L U2 L' U' L U' L'"
+      ],
+      "svgId": "108",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-4",
+        "imagePath": "Images/F2L 14-4.png"
+      }
+    },
+    {
+      "id": "109",
+      "name": "F2L 14-5",
+      "group": "f2l-14",
+      "algorithms": [
+        "R U R' U' R' F R F' R U R'"
+      ],
+      "scramble": "R' F R2 F U F' R' F U' F2",
+      "scrambles": [
+        "R' F R2 F U F' R' F U' F2",
+        "R U B U B L' B' L B' U R'",
+        "L F' U F2 U' F' L' U2 R U R'",
+        "R2 L' B' R' U R' U' R B L U' R'"
+      ],
+      "svgId": "109",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-5",
+        "imagePath": "Images/F2L 14-5.png"
+      }
+    },
+    {
+      "id": "110",
+      "name": "F2L 14-6",
+      "group": "f2l-14",
+      "algorithms": [
+        "R U R' U' F' U' F U R U R'",
+        "U2 r U R' U R U2 r' U R U' R'",
+        "U2 F R' F' R U R U' R' U R U R'"
+      ],
+      "scramble": "R U' R' U' F' R U B U' B' R' U F",
+      "scrambles": [
+        "R U' R' U' F' R U B U' B' R' U F",
+        "R U' R' U' D F' U F U R U' R' D'",
+        "R U' R' U' D2 F' U F U R U' R' D2",
+        "R U' R' U' D' F' U F U R U' R' D"
+      ],
+      "svgId": "110",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-6",
+        "imagePath": "Images/F2L 14-6.png"
+      }
+    },
+    {
+      "id": "111",
+      "name": "F2L 14-7",
+      "group": "f2l-14",
+      "algorithms": [
+        "U' R U' R' U' r U' r' U' r U r'",
+        "U' R U' R' U R U' R' U2 R' F R F'"
+      ],
+      "scramble": "R U2 B2 D B D2 R D R2 B",
+      "scrambles": [
+        "R U2 B2 D B D2 R D R2 B",
+        "R U2 B2 D B D' B R2 U R",
+        "R' F D R' D' R2 F L F L' F",
+        "F' U2 L2 B L B2 U' B L U' F"
+      ],
+      "svgId": "111",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-7",
+        "imagePath": "Images/F2L 14-7.png"
+      }
+    },
+    {
+      "id": "112",
+      "name": "F2L 14-8",
+      "group": "f2l-14",
+      "algorithms": [
+        "U2 r U' r' U M' U2' R U r'",
+        "U2 r U' r' U2 r U r' U R U R'",
+        "U2 r U' r' U' R U2 R' r U' r'"
+      ],
+      "scramble": "L F R U2 R2 F' R2 U2 L' U R'",
+      "scrambles": [
+        "L F R U2 R2 F' R2 U2 L' U R'",
+        "L F R L' U2 R' U L F L'",
+        "L F' R' F2 R L' U' L F L'",
+        "L' U2 R2 B' R2 U2 R B L U R'"
+      ],
+      "svgId": "112",
+      "tags": {
+        "sourceGroup": "F2L 14",
+        "sourceId": "F2L 14-8",
+        "imagePath": "Images/F2L 14-8.png"
+      }
+    },
+    {
+      "id": "113",
+      "name": "F2L 15-1",
+      "group": "f2l-15",
+      "algorithms": [
+        "R' D' R U' R' D R U R U' R'",
+        "R U2 R' U R U R' U R U' R'",
+        "R U R' U2 R U' R' U R U' R'"
+      ],
+      "scramble": "L' F' L2 F R F' L2 F L U R'",
+      "scrambles": [
+        "L' F' L2 F R F' L2 F L U R'",
+        "B2 D' L' B2 U' R U B2 L D B2",
+        "R U R B R' F R B' R' F' R'",
+        "F R2 F' D' F D R D' F' D R"
+      ],
+      "svgId": "113",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-1",
+        "imagePath": "Images/F2L 15-1.png"
+      }
+    },
+    {
+      "id": "114",
+      "name": "F2L 15-2",
+      "group": "f2l-15",
+      "algorithms": [
+        "M U r U' r' U' M'",
+        "F D R U R U' R2 D' F'"
+      ],
+      "scramble": "R L' B U2 B' R' U R U2 R' L",
+      "scrambles": [
+        "R L' B U2 B' R' U R U2 R' L",
+        "F' R2 L' B' R' B U R2 L F R",
+        "F' L' B' R' U R U B L F",
+        "R L' B U2 B' R' U' R' L F2 R F2"
+      ],
+      "svgId": "114",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-2",
+        "imagePath": "Images/F2L 15-2.png"
+      }
+    },
+    {
+      "id": "115",
+      "name": "F2L 15-3",
+      "group": "f2l-15",
+      "algorithms": [
+        "F' U L' U L U2' F",
+        "F' U F U2 R U R'",
+        "U R' F R F' U R U R'"
+      ],
+      "scramble": "R U' R' U2 R U' B U B' R'",
+      "scrambles": [
+        "R U' R' U2 R U' B U B' R'",
+        "R U' R' F' L' U L U' F",
+        "R U' R' U' F' U L F' L' F2",
+        "F' U' R B U' B' R' F' U F2"
+      ],
+      "svgId": "115",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-3",
+        "imagePath": "Images/F2L 15-3.png"
+      }
+    },
+    {
+      "id": "116",
+      "name": "F2L 15-4",
+      "group": "f2l-15",
+      "algorithms": [
+        "R U2' R' U R U R2' F R F'",
+        "R' D' R U' R' D F R F'",
+        "U' R' F R F' R U R' U2' R U R'"
+      ],
+      "scramble": "L F' L' F R U F U' F' R'",
+      "scrambles": [
+        "L F' L' F R U F U' F' R'",
+        "F' R' F R U R' F' R U F",
+        "L F' L' F' L D F D' F' L' F2",
+        "F' R' F R U F2 U L F' L' F'"
+      ],
+      "svgId": "116",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-4",
+        "imagePath": "Images/F2L 15-4.png"
+      }
+    },
+    {
+      "id": "117",
+      "name": "F2L 15-5",
+      "group": "f2l-15",
+      "algorithms": [
+        "R U R' U2 R U' R2 F R F'"
+      ],
+      "scramble": "R2 B' R' B U2 R' U2 R U' R'",
+      "scrambles": [
+        "R2 B' R' B U2 R' U2 R U' R'",
+        "R2 B' R' B R L' B2 R' B2 L U' R'"
+      ],
+      "svgId": "117",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-5",
+        "imagePath": "Images/F2L 15-5.png"
+      }
+    },
+    {
+      "id": "118",
+      "name": "F2L 15-6",
+      "group": "f2l-15",
+      "algorithms": [
+        "R U2' R2' F R F' U' R U2' R'"
+      ],
+      "scramble": "R B L U' L F' L' F U2 L' B' R'",
+      "scrambles": [
+        "R B L U' L F' L' F U2 L' B' R'",
+        "R B2 L' D' B D B2 L2 U L' B' R'",
+        "L F2 R F2 R L' U2 B' R' B U' R'",
+        "L F' U L F L' U' L' U' R U2 R'"
+      ],
+      "svgId": "118",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-6",
+        "imagePath": "Images/F2L 15-6.png"
+      }
+    },
+    {
+      "id": "119",
+      "name": "F2L 15-7",
+      "group": "f2l-15",
+      "algorithms": [
+        "M U R U R' U' r U' R'"
+      ],
+      "scramble": "R U R' U F B' D R' D' F' B",
+      "scrambles": [
+        "R U R' U F B' D R' D' F' B",
+        "R U L' B R B' R' B' R' L",
+        "L' B' U B R U L' D' B' D R' L2",
+        "R U L' B U' B2 L' B' L U B R' L"
+      ],
+      "svgId": "119",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-7",
+        "imagePath": "Images/F2L 15-7.png"
+      }
+    },
+    {
+      "id": "120",
+      "name": "F2L 15-8",
+      "group": "f2l-15",
+      "algorithms": [
+        "U R U' R D r' U r D' R' U' R'",
+        "r' U' R U M' U' R' F U R U' F'"
+      ],
+      "scramble": "R U R D L' B' L D' R' U R'",
+      "scrambles": [
+        "R U R D L' B' L D' R' U R'"
+      ],
+      "svgId": "120",
+      "tags": {
+        "sourceGroup": "F2L 15",
+        "sourceId": "F2L 15-8",
+        "imagePath": "Images/F2L 15-8.png"
+      }
+    },
+    {
+      "id": "121",
+      "name": "F2L 16-1",
+      "group": "f2l-16",
+      "algorithms": [
+        "U M' U R U' r' U' R U R'",
+        "U F R' F' R2 U' R' U R' F R F'",
+        "r U r' U r U2 r' U' r U' r'"
+      ],
+      "scramble": "R U' B L' B L B2 U R'",
+      "scrambles": [
+        "R U' B L' B L B2 U R'",
+        "R2 U R2 F D' F D F2",
+        "F R' F' R U' R B' R B R2",
+        "L2 F2 B2 R2 L2 F2 D B D' B R2"
+      ],
+      "svgId": "121",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-1",
+        "imagePath": "Images/F2L 16-1.png"
+      }
+    },
+    {
+      "id": "122",
+      "name": "F2L 16-2",
+      "group": "f2l-16",
+      "algorithms": [
+        "R U R' U2' R U' R' U' F' U F",
+        "U F R U R' U' F' U R U' R'",
+        "U R F R U R' U' F' R'"
+      ],
+      "scramble": "B L' B' U R U2 B U L B' R'",
+      "scrambles": [
+        "B L' B' U R U2 B U L B' R'",
+        "R U R' U2 D R U B U' B' R' D'",
+        "R U R' U B U L U' L' B'",
+        "R U R' U' F U R U' R' F'"
+      ],
+      "svgId": "122",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-2",
+        "imagePath": "Images/F2L 16-2.png"
+      }
+    },
+    {
+      "id": "123",
+      "name": "F2L 16-3",
+      "group": "f2l-16",
+      "algorithms": [
+        "F' U2 L' U' L U' F",
+        "R U' R' U2 F' U' F"
+      ],
+      "scramble": "F' U L' U B' U B U2 L F",
+      "scrambles": [
+        "F' U L' U B' U B U2 L F",
+        "L F' U D' L' U L U2 D F L'",
+        "R F R2 D B' D B D2 F' R",
+        "F R' D2 L D L' D F2 R F"
+      ],
+      "svgId": "123",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-3",
+        "imagePath": "Images/F2L 16-3.png"
+      }
+    },
+    {
+      "id": "124",
+      "name": "F2L 16-4",
+      "group": "f2l-16",
+      "algorithms": [
+        "U F U R U' R' F' R U R'",
+        "R' D' R U R' D R F R' F' R"
+      ],
+      "scramble": "R' U' B U F U' B' U R F'",
+      "scrambles": [
+        "R' U' B U F U' B' U R F'",
+        "D B D' R' F R D B' D' F'",
+        "R U' R' U2 B L U L' U' B'",
+        "F2 U' L' U L F L' U' L F"
+      ],
+      "svgId": "124",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-4",
+        "imagePath": "Images/F2L 16-4.png"
+      }
+    },
+    {
+      "id": "125",
+      "name": "F2L 16-5",
+      "group": "f2l-16",
+      "algorithms": [
+        "r U' r' U l' U2 R U' R' U2 l",
+        "U2 r' F' r U' r' F2' r2 U' r' U2' r U r'",
+        "U r U' r' U2 r U r' U r U' r' U' r U r'"
+      ],
+      "scramble": "F' U' L' U L U F U2 R U R'",
+      "scrambles": [
+        "F' U' L' U L U F U2 R U R'",
+        "F' U' F B' U' R U R U' R U R2 B",
+        "F' U' L' U L F R U2 B U B' U R'",
+        "F' U' L' F U F' U F U2 F' U L F"
+      ],
+      "svgId": "125",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-5",
+        "imagePath": "Images/F2L 16-5.png"
+      }
+    },
+    {
+      "id": "126",
+      "name": "F2L 16-6",
+      "group": "f2l-16",
+      "algorithms": [
+        "U2 R' D' r U' M U' R' D R",
+        "U r U' r' U2' r U r' U' R U R'"
+      ],
+      "scramble": "L D' L' D R' D' L F D R L'",
+      "scrambles": [
+        "L D' L' D R' D' L F D R L'",
+        "R' D' R U R' L F L' D R"
+      ],
+      "svgId": "126",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-6",
+        "imagePath": "Images/F2L 16-6.png"
+      }
+    },
+    {
+      "id": "127",
+      "name": "F2L 16-7",
+      "group": "f2l-16",
+      "algorithms": [
+        "F' U R U R' U' R' F2 R F'",
+        "U2 R U R' r U' r' U2' r U r'"
+      ],
+      "scramble": "R U' R U B U' B' R2 F R' F' R",
+      "scrambles": [
+        "R U' R U B U' B' R2 F R' F' R",
+        "F U R U' B' R' F2 R B R' U' F",
+        "F U2 L' U' R U L U2 R' F2 U' F",
+        "F' R' F' U F2 U' F' R B U' F B'"
+      ],
+      "svgId": "127",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-7",
+        "imagePath": "Images/F2L 16-7.png"
+      }
+    },
+    {
+      "id": "128",
+      "name": "F2L 16-8",
+      "group": "f2l-16",
+      "algorithms": [
+        "U' r U' R' U' M U2 r U r'",
+        "U R U2' R' r U' r' U2' r U r'",
+        "R U' R2 D' r U' r' D R2 U' R'"
+      ],
+      "scramble": "F' L' U2 L F R B U B' R'",
+      "scrambles": [
+        "F' L' U2 L F R B U B' R'",
+        "R' F R F' U2 R' L F R F' L'",
+        "R' F' L' F R F' U B' U2 B L F",
+        "F' L' U2 L F L F2 R' F2 R L'"
+      ],
+      "svgId": "128",
+      "tags": {
+        "sourceGroup": "F2L 16",
+        "sourceId": "F2L 16-8",
+        "imagePath": "Images/F2L 16-8.png"
+      }
+    },
+    {
+      "id": "129",
+      "name": "F2L 17-1",
+      "group": "f2l-17",
+      "algorithms": [
+        "R U2 R' U' R U R'"
+      ],
+      "scramble": "F' U F' L F L' U' F R U2 R'",
+      "scrambles": [
+        "F' U F' L F L' U' F R U2 R'",
+        "L F' U F2 U' F2 U F U' L'",
+        "R U' R' U' R' L F2 R F2 L'",
+        "R' F D R' D' R2 F' R U2 R'"
+      ],
+      "svgId": "129",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-1",
+        "imagePath": "Images/F2L 17-1.png"
+      }
+    },
+    {
+      "id": "130",
+      "name": "F2L 17-2",
+      "group": "f2l-17",
+      "algorithms": [
+        "F' U' F U R U' R' U R U' R'",
+        "R U2' R' U r U' r' U' r U r'"
+      ],
+      "scramble": "R U R' U' R B' U' R' U R B U R'",
+      "scrambles": [
+        "R U R' U' R B' U' R' U R B U R'",
+        "R U R' U' F' U L F U F' U' L' F"
+      ],
+      "svgId": "130",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-2",
+        "imagePath": "Images/F2L 17-2.png"
+      }
+    },
+    {
+      "id": "131",
+      "name": "F2L 17-3",
+      "group": "f2l-17",
+      "algorithms": [
+        "R U R' U' F R' F' R2 U R'",
+        "U2 F' U2 F R U R' U' R U R'",
+        "U2 r U' r' U R U R' U r U' r'"
+      ],
+      "scramble": "R U2 B' R B R2 U2 R U' R'",
+      "scrambles": [
+        "R U2 B' R B R2 U2 R U' R'",
+        "R U' R2 F R F' U R U' R'",
+        "F' U F' L F L2 U' L F R U' R'",
+        "F' U2 L2 B L B' U2 L F R U' R'"
+      ],
+      "svgId": "131",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-3",
+        "imagePath": "Images/F2L 17-3.png"
+      }
+    },
+    {
+      "id": "132",
+      "name": "F2L 17-4",
+      "group": "f2l-17",
+      "algorithms": [
+        "F' U2' F R U R' U2 R U' R'",
+        "r' R2 U2 R' U' R U R' U' r R'"
+      ],
+      "scramble": "R U L' B U' B2 U R B R2 L",
+      "scrambles": [
+        "R U L' B U' B2 U R B R2 L",
+        "R U R' U F' U2 B U L U' L' F B'",
+        "R U R' U2 R U2 R' U2 F' L' U L F",
+        "R U L' B2 R B2 R' L U R' F' U2 F"
+      ],
+      "svgId": "132",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-4",
+        "imagePath": "Images/F2L 17-4.png"
+      }
+    },
+    {
+      "id": "133",
+      "name": "F2L 17-5",
+      "group": "f2l-17",
+      "algorithms": [
+        "U R U2 R' U' R U R' U R' F R F'",
+        "U' R U2 R' U' F' U' F R U R'",
+        "R U' R' U' F R' F' R U2 R U' R'"
+      ],
+      "scramble": "R B U2 B' R' F D F' U2 F D' F'",
+      "scrambles": [
+        "R B U2 B' R' F D F' U2 F D' F'",
+        "F2 L F' R U' R' U F' L2 U L",
+        "L F2 R' F2 R F' L' F U2 F U2 F'",
+        "L F2 R' F2 R F' L' B L2 F L2 B'"
+      ],
+      "svgId": "133",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-5",
+        "imagePath": "Images/F2L 17-5.png"
+      }
+    },
+    {
+      "id": "134",
+      "name": "F2L 17-6",
+      "group": "f2l-17",
+      "algorithms": [
+        "R U2 R' F U R U' R2 F' R",
+        "U' R U' R' U2 R U2 R2' F R F'",
+        "R U R' U2 F' U F R U R'"
+      ],
+      "scramble": "L' U2 R B' U' R' U R2 B R' U2 R' L",
+      "scrambles": [
+        "L' U2 R B' U' R' U R2 B R' U2 R' L",
+        "R' F R2 U R' U' F' R U2 R'"
+      ],
+      "svgId": "134",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-6",
+        "imagePath": "Images/F2L 17-6.png"
+      }
+    },
+    {
+      "id": "135",
+      "name": "F2L 17-7",
+      "group": "f2l-17",
+      "algorithms": [
+        "R U' R' r U' R' U' R U r'",
+        "R U2 r' U' R U R' M'"
+      ],
+      "scramble": "D2 B' L2 D2 R' D2 L2 B D2",
+      "scrambles": [
+        "D2 B' L2 D2 R' D2 L2 B D2",
+        "R2 U R2 B' R' B U R2 U2 R2",
+        "R2 U2 F R' F B2 D2 L2 D2 F2 B2",
+        "F2 U2 R2 D2 B' L' B D2 R2 U2 F2"
+      ],
+      "svgId": "135",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-7",
+        "imagePath": "Images/F2L 17-7.png"
+      }
+    },
+    {
+      "id": "136",
+      "name": "F2L 17-8",
+      "group": "f2l-17",
+      "algorithms": [
+        "r' D' r U2' r' D r2 U' R' U2' R U r'",
+        "F' r U' r' F2 R U2' R2 F R F'",
+        "U2 F' U2 F U' F R' F' R2 U R'"
+      ],
+      "scramble": "R U2 B' R B R2 U2 F' U2 F",
+      "scrambles": [
+        "R U2 B' R B R2 U2 F' U2 F",
+        "R U' R2 F R F' U F' U2 F",
+        "F' U F' L F L2 U' L U2 F",
+        "F' U2 L2 B L B' U2 L U2 F"
+      ],
+      "svgId": "136",
+      "tags": {
+        "sourceGroup": "F2L 17",
+        "sourceId": "F2L 17-8",
+        "imagePath": "Images/F2L 17-8.png"
+      }
+    },
+    {
+      "id": "137",
+      "name": "F2L 18-1",
+      "group": "f2l-18",
+      "algorithms": [
+        "R' F R F' R U' R' U R U' R'",
+        "y' R' U2 R U R' U' R"
+      ],
+      "scramble": "R U R' F R' F D' F' D F' R",
+      "scrambles": [
+        "R U R' F R' F D' F' D F' R",
+        "R U2 F' L F U' R' U F2 L' F2",
+        "F R' F D' F' D F D' F' D F' R"
+      ],
+      "svgId": "137",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-1",
+        "imagePath": "Images/F2L 18-1.png"
+      }
+    },
+    {
+      "id": "138",
+      "name": "F2L 18-2",
+      "group": "f2l-18",
+      "algorithms": [
+        "R U' R' F' U' F U R U' R'",
+        "R U R' d' L' U L U' L' U L"
+      ],
+      "scramble": "R B' U' R' U2 R U2 B L U' R' L'",
+      "scrambles": [
+        "R B' U' R' U2 R U2 B L U' R' L'",
+        "R2 B U' B' U2 R' F' L' U L F R'",
+        "F' U L F U F' U' L' F R U R'",
+        "R D' B' U' R' U R B U2 D R'"
+      ],
+      "svgId": "138",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-2",
+        "imagePath": "Images/F2L 18-2.png"
+      }
+    },
+    {
+      "id": "139",
+      "name": "F2L 18-3",
+      "group": "f2l-18",
+      "algorithms": [
+        "R U' R' F' U F U R U R'",
+        "U R U' R2' F R F' U R U' R'",
+        "U R' F R F' R U' R' U F' U' F"
+      ],
+      "scramble": "R U' R' U R B U' B' U' R'",
+      "scrambles": [
+        "R U' R' U R B U' B' U' R'",
+        "R U' B U' L' B' L U L U' R' L'",
+        "R U' B L U' F' L' B' L F R' L'",
+        "R B U' L' U' B' U B L B' U' R'"
+      ],
+      "svgId": "139",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-3",
+        "imagePath": "Images/F2L 18-3.png"
+      }
+    },
+    {
+      "id": "140",
+      "name": "F2L 18-4",
+      "group": "f2l-18",
+      "algorithms": [
+        "R' F R F' R U' R2' F R F'",
+        "R U R' U' R U2 R' F' U2 F"
+      ],
+      "scramble": "R2 B' R' B U2 R' F R' F' R",
+      "scrambles": [
+        "R2 B' R' B U2 R' F R' F' R",
+        "F' L' U L2 F' L' F L F' L' F2",
+        "F' L' U2 B L' B' L2 U2 F2 R' F' R",
+        "R U F R' F' U2 R U2 R U2 R2"
+      ],
+      "svgId": "140",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-4",
+        "imagePath": "Images/F2L 18-4.png"
+      }
+    },
+    {
+      "id": "141",
+      "name": "F2L 18-5",
+      "group": "f2l-18",
+      "algorithms": [
+        "U2 R U R2 D' r U' r' D R U R U' R'",
+        "r U R' U R U r' U M' U2 R U r'",
+        "R' D' R U2 R' D R r U' r' U2' r U r'"
+      ],
+      "scramble": "R2 B' R F' U F U' R B2 U' B'",
+      "scrambles": [
+        "R2 B' R F' U F U' R B2 U' B'",
+        "F' U L F2 R' F L' F2 R2 U' R'",
+        "B' R2 F R2 F' R B R' U2 R' U2 R",
+        "B' R2 F R2 F' R B L' B2 R' B2 L"
+      ],
+      "svgId": "141",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-5",
+        "imagePath": "Images/F2L 18-5.png"
+      }
+    },
+    {
+      "id": "142",
+      "name": "F2L 18-6",
+      "group": "f2l-18",
+      "algorithms": [
+        "R U' R2' F R F' r U' r' U' r U r'",
+        "R' D R2 U2' r' U2 R U r D' R2"
+      ],
+      "scramble": "R2 D L' B' R' B2 L U2 R2 D' R",
+      "scrambles": [
+        "R2 D L' B' R' B2 L U2 R2 D' R",
+        "R U2 B U' B' R' U' R U' B U2 B' R'"
+      ],
+      "svgId": "142",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-6",
+        "imagePath": "Images/F2L 18-6.png"
+      }
+    },
+    {
+      "id": "143",
+      "name": "F2L 18-7",
+      "group": "f2l-18",
+      "algorithms": [
+        "R U R' d' r' F r2 U' r' F",
+        "R U R' F' L' U2 L U' F",
+        "R U' R D r' U' r D' R2' U' R U R'"
+      ],
+      "scramble": "F' U2 F B' R' F R' F' R2 B",
+      "scrambles": [
+        "F' U2 F B' R' F R' F' R2 B",
+        "B U' R' F R F2 U B' U2 F",
+        "F U2 F B' R2 F2 R F R' F' R2 B",
+        "F2 U2 F B' R2 F R F R' F' R2 B"
+      ],
+      "svgId": "143",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-7",
+        "imagePath": "Images/F2L 18-7.png"
+      }
+    },
+    {
+      "id": "144",
+      "name": "F2L 18-8",
+      "group": "f2l-18",
+      "algorithms": [
+        "F R' F' R2 U' R' U R U2' R2' F R F'",
+        "F R U R' U' F' R U2' R2 F R F'"
+      ],
+      "scramble": "R2 B' R' B U' R' F U R U' R' F'",
+      "scrambles": [
+        "R2 B' R' B U' R' F U R U' R' F'",
+        "F R' F' R2 U2 R' F U R U' R' F'"
+      ],
+      "svgId": "144",
+      "tags": {
+        "sourceGroup": "F2L 18",
+        "sourceId": "F2L 18-8",
+        "imagePath": "Images/F2L 18-8.png"
+      }
+    },
+    {
+      "id": "145",
+      "name": "F2L 19-1",
+      "group": "f2l-19",
+      "algorithms": [
+        "U R U2 R' U R U' R'"
+      ],
+      "scramble": "F' L' U L U2 F U' R U2 R'",
+      "scrambles": [
+        "F' L' U L U2 F U' R U2 R'",
+        "R U R' U R L' B2 R B2 R2 L",
+        "R U R' U R2 L2 D2 R D2 R L2",
+        "R U R' U' R B L U' L' U2 B' R'"
+      ],
+      "svgId": "145",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-1",
+        "imagePath": "Images/F2L 19-1.png"
+      }
+    },
+    {
+      "id": "146",
+      "name": "F2L 19-2",
+      "group": "f2l-19",
+      "algorithms": [
+        "U R U2 R2 U' F U R U' F'",
+        "U' R U' R' U r U' R' U2' R U r'",
+        "R' U R U' R2 F R2 U R' U' R F'"
+      ],
+      "scramble": "F' U' F2 U R U' B' R B R2 F'",
+      "scrambles": [
+        "F' U' F2 U R U' B' R B R2 F'",
+        "F' U' F2 U2 F' U' F R U' R' F'",
+        "R U R B' R' B R' U' R U2 R'",
+        "F' U' F2 U R' F R F' U' F'"
+      ],
+      "svgId": "146",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-2",
+        "imagePath": "Images/F2L 19-2.png"
+      }
+    },
+    {
+      "id": "147",
+      "name": "F2L 19-3",
+      "group": "f2l-19",
+      "algorithms": [
+        "U R' F R F' R U' R' U2 R U' R'",
+        "F' U R U R' U' R' F R2 U R'",
+        "U R U2' r' U R U' R' U' M'"
+      ],
+      "scramble": "R U' R' U F' L' U' B' U' B L F",
+      "scrambles": [
+        "R U' R' U F' L' U' B' U' B L F",
+        "R U B L U L' B' U R' U F' U2 F",
+        "R U' R' U F' L' U L F U' F' U2 F",
+        "R U' L2 B' R D R D' R' D' B R2 L2"
+      ],
+      "svgId": "147",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-3",
+        "imagePath": "Images/F2L 19-3.png"
+      }
+    },
+    {
+      "id": "148",
+      "name": "F2L 19-4",
+      "group": "f2l-19",
+      "algorithms": [
+        "F' U' F U2 R U' R' U R U' R'",
+        "U' r U' R' U' R U r' U R U' R'",
+        "U R U2' R' U R U R' U2' R' F R F'"
+      ],
+      "scramble": "R U B U B' R' U' R U R'",
+      "scrambles": [
+        "R U B U B' R' U' R U R'",
+        "R U2 R B' R' U2 B U B' U B U R'",
+        "R U2 R B' R' B U R' U2 R U R'",
+        "R U2 R' U F R' F' R U2 R U R'"
+      ],
+      "svgId": "148",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-4",
+        "imagePath": "Images/F2L 19-4.png"
+      }
+    },
+    {
+      "id": "149",
+      "name": "F2L 19-5",
+      "group": "f2l-19",
+      "algorithms": [
+        "U' x' R2 U' R' U x U' R' U2 R U R'",
+        "U F R' F' R r U' R' U R U r'",
+        "F R' F' R2 U2 R' U2 R U R'"
+      ],
+      "scramble": "R U' R L2 D2 R D2 L2 F R F'",
+      "scrambles": [
+        "R U' R L2 D2 R D2 L2 F R F'",
+        "R U' R' U2 R U B' R B R2",
+        "R U' L' B2 R B2 R L F R F'",
+        "F' U2 L' U' L F R U2 R2 F R F'"
+      ],
+      "svgId": "149",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-5",
+        "imagePath": "Images/F2L 19-5.png"
+      }
+    },
+    {
+      "id": "150",
+      "name": "F2L 19-6",
+      "group": "f2l-19",
+      "algorithms": [
+        "U F R U R' U' F' R U R'"
+      ],
+      "scramble": "R U' R' U L U F U' F' L'",
+      "scrambles": [
+        "R U' R' U L U F U' F' L'",
+        "R U' R' U2 B U L U' L' B'",
+        "R U' R' U' R U B U' B' R'",
+        "R U' B U' L' B' U' B U L B' R'"
+      ],
+      "svgId": "150",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-6",
+        "imagePath": "Images/F2L 19-6.png"
+      }
+    },
+    {
+      "id": "151",
+      "name": "F2L 19-7",
+      "group": "f2l-19",
+      "algorithms": [
+        "U R U2 R2 F R F'"
+      ],
+      "scramble": "F R' F R L F2 L2 U2 L",
+      "scrambles": [
+        "F R' F R L F2 L2 U2 L",
+        "F R' F' L2 D2 R' D2 R2 L2",
+        "F' U L F' L' F2 U' R U2 R'",
+        "F' L' U L U' F U' R U2 R'"
+      ],
+      "svgId": "151",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-7",
+        "imagePath": "Images/F2L 19-7.png"
+      }
+    },
+    {
+      "id": "152",
+      "name": "F2L 19-8",
+      "group": "f2l-19",
+      "algorithms": [
+        "U2 R U R2' r U' M U2' r U' r'",
+        "R' U' F' U F2 R2 U R' U' R' F' R"
+      ],
+      "scramble": "R U2 B' R B R2 U F' U' F",
+      "scrambles": [
+        "R U2 B' R B R2 U F' U' F",
+        "R U' R' U F2 L F L' U2 F",
+        "R U B L U' L2 B L B2 U2 R'",
+        "F' U2 L2 B L B2 U' B L U F"
+      ],
+      "svgId": "152",
+      "tags": {
+        "sourceGroup": "F2L 19",
+        "sourceId": "F2L 19-8",
+        "imagePath": "Images/F2L 19-8.png"
+      }
+    },
+    {
+      "id": "153",
+      "name": "F2L 20-1",
+      "group": "f2l-20",
+      "algorithms": [
+        "y' U' R' U2 R U' R' U R",
+        "d' L' U2 L U' L' U L"
+      ],
+      "scramble": "F' U' F U B' R2 F R2 F' B",
+      "scrambles": [
+        "F' U' F U B' R2 F R2 F' B",
+        "F' U' F U' F B' R2 F' R2 B",
+        "F' L F2 D F D' L' F U2 F",
+        "R B U' B' U2 R' U F' U2 F"
+      ],
+      "svgId": "153",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-1",
+        "imagePath": "Images/F2L 20-1.png"
+      }
+    },
+    {
+      "id": "154",
+      "name": "F2L 20-2",
+      "group": "f2l-20",
+      "algorithms": [
+        "R' U' R' F R F' U R2 U' R'",
+        "U2' r U' R' U R U r' F' U' F"
+      ],
+      "scramble": "R' U' F U R U' F2 U2 F",
+      "scrambles": [
+        "R' U' F U R U' F2 U2 F",
+        "R U R2 U2 R U R' F' U F R",
+        "F' U2 F U R U2 R' U F' U2 F",
+        "F' U2 B L U L2 U' L B' U2 F"
+      ],
+      "svgId": "154",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-2",
+        "imagePath": "Images/F2L 20-2.png"
+      }
+    },
+    {
+      "id": "155",
+      "name": "F2L 20-3",
+      "group": "f2l-20",
+      "algorithms": [
+        "U' R U' R' U R U' R' d R' U R",
+        "U' F R' F' R2 U R' U2 R U R'"
+      ],
+      "scramble": "F' B L' U L' U' L U L2 U' F B'",
+      "scrambles": [
+        "F' B L' U L' U' L U L2 U' F B'",
+        "L' U2 R' F D R' B' D' R2 F' U2 L",
+        "B' U2 F2 L D2 R' D2 F2 L' U2 B",
+        "R' U2 D' F U2 F' U2 F' U2 D R"
+      ],
+      "svgId": "155",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-3",
+        "imagePath": "Images/F2L 20-3.png"
+      }
+    },
+    {
+      "id": "156",
+      "name": "F2L 20-4",
+      "group": "f2l-20",
+      "algorithms": [
+        "U' R U' R2 F R F' R U' R'"
+      ],
+      "scramble": "R U R' U' R2 B' R' B U2 R'",
+      "scrambles": [
+        "R U R' U' R2 B' R' B U2 R'",
+        "R B' R2 D' R' D R' B U2 R'",
+        "F R' F D' F' D F' R2 U R'",
+        "F' L' U L U2 F2 R' F' R2 U R'"
+      ],
+      "svgId": "156",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-4",
+        "imagePath": "Images/F2L 20-4.png"
+      }
+    },
+    {
+      "id": "157",
+      "name": "F2L 20-5",
+      "group": "f2l-20",
+      "algorithms": [
+        "R' F2 R U' F U R' F2 R",
+        "U' r U' r' U2 r U r' R U R' U R U' R'"
+      ],
+      "scramble": "L' U2 R2 L' D' B' D R2 L U2 L",
+      "scrambles": [
+        "L' U2 R2 L' D' B' D R2 L U2 L",
+        "R' L D' F' D' L D2 L' F2 L' F2 R"
+      ],
+      "svgId": "157",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-5",
+        "imagePath": "Images/F2L 20-5.png"
+      }
+    },
+    {
+      "id": "158",
+      "name": "F2L 20-6",
+      "group": "f2l-20",
+      "algorithms": [
+        "r' D' r U r' D r2 U' r' U2' r U r'",
+        "U' R U' r' U r U2' r' U' r U R'",
+        "F D R2 U' R' U2 R U R2 D' F'"
+      ],
+      "scramble": "F D R2 U' R' U2 R U R2 D' F'",
+      "scrambles": [
+        "F D R2 U' R' U2 R U R2 D' F'",
+        "D' F2 U F L' U2 L F' U' F2 D",
+        "L F' D' L2 U2 L2 D F L'",
+        "R U' B L U2 L' B' U R'"
+      ],
+      "svgId": "158",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-6",
+        "imagePath": "Images/F2L 20-6.png"
+      }
+    },
+    {
+      "id": "159",
+      "name": "F2L 20-7",
+      "group": "f2l-20",
+      "algorithms": [
+        "U' F' U' r U' r' F2",
+        "y U' L' U2 L2 F' L' F"
+      ],
+      "scramble": "R' F R' F' B' R2 B2 U2 B'",
+      "scrambles": [
+        "R' F R' F' B' R2 B2 U2 B'",
+        "F' U L2 B L B' U' L U F",
+        "R L' U2 L U2 R' L F' L' U F",
+        "R2 L2 B2 L B2 R2 L2 F' L' U F"
+      ],
+      "svgId": "159",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-7",
+        "imagePath": "Images/F2L 20-7.png"
+      }
+    },
+    {
+      "id": "160",
+      "name": "F2L 20-8",
+      "group": "f2l-20",
+      "algorithms": [
+        "U' R U' R2' F R F' U' R' F R F'",
+        "U' R U R' U r U' r' U2 r U r'",
+        "U2 R U' R' U' r U' r' U2 r U r'"
+      ],
+      "scramble": "R U2 B2 L' B' L2 U L' B' U' R'",
+      "scrambles": [
+        "R U2 B2 L' B' L2 U L' B' U' R'",
+        "F' U' L' B' U B2 L' B' L2 U2 F",
+        "F' U F U' R2 B' R' B U2 R'",
+        "F' U2 L F' L' F2 U' R U R'"
+      ],
+      "svgId": "160",
+      "tags": {
+        "sourceGroup": "F2L 20",
+        "sourceId": "F2L 20-8",
+        "imagePath": "Images/F2L 20-8.png"
+      }
+    },
+    {
+      "id": "161",
+      "name": "F2L 21-1",
+      "group": "f2l-21",
+      "algorithms": [
+        "U2 R U R' U R U' R'"
+      ],
+      "scramble": "F U F2 U' F' L F' U F' U' L'",
+      "scrambles": [
+        "F U F2 U' F' L F' U F' U' L'",
+        "U2 F' L' U L U2 F U' R U' R'",
+        "U2 L U2 R U' L' U' L U R' U2 L'",
+        "R U R' U' R' F D R' D' R2 F'"
+      ],
+      "svgId": "161",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-1",
+        "imagePath": "Images/F2L 21-1.png"
+      }
+    },
+    {
+      "id": "162",
+      "name": "F2L 21-2",
+      "group": "f2l-21",
+      "algorithms": [
+        "U R' F R F' U' R U2 R'",
+        "U2 F' U' F R U R'"
+      ],
+      "scramble": "B U' R U B U B' R' B'",
+      "scrambles": [
+        "B U' R U B U B' R' B'",
+        "R B L U B' R' B L' B'",
+        "F' U L F L' U' L' U L",
+        "L2 F D F2 D' L' U F U L'"
+      ],
+      "svgId": "162",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-2",
+        "imagePath": "Images/F2L 21-2.png"
+      }
+    },
+    {
+      "id": "163",
+      "name": "F2L 21-3",
+      "group": "f2l-21",
+      "algorithms": [
+        "U2' R U R2' F R F'"
+      ],
+      "scramble": "F' B U2 B' U2 F B' R B R'",
+      "scrambles": [
+        "F' B U2 B' U2 F B' R B R'",
+        "D R F' R B' R' F B R' D'",
+        "L2 F2 B2 R2 L2 F2 B R' B R'",
+        "B' R' U R2 U' R' U' B L U' L'"
+      ],
+      "svgId": "163",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-3",
+        "imagePath": "Images/F2L 21-3.png"
+      }
+    },
+    {
+      "id": "164",
+      "name": "F2L 21-4",
+      "group": "f2l-21",
+      "algorithms": [
+        "U R U' R' U2 R U' R2' F R F'",
+        "R U R' U' F' U F R U R'",
+        "U2 F' r U R' U' r' F2 R F'"
+      ],
+      "scramble": "R U2 D B' R' U' R U B D' R'",
+      "scrambles": [
+        "R U2 D B' R' U' R U B D' R'",
+        "R U2 D2 B' R' U' R U B D2 R'",
+        "R U2 D' B' R' U' R U B D R'",
+        "R D F' L' U' L U F U2 D' R'"
+      ],
+      "svgId": "164",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-4",
+        "imagePath": "Images/F2L 21-4.png"
+      }
+    },
+    {
+      "id": "165",
+      "name": "F2L 21-5",
+      "group": "f2l-21",
+      "algorithms": [
+        "r U' R' U2 R U r'",
+        "y F R U2 R' F'"
+      ],
+      "scramble": "R B L U L' B' U2 R'",
+      "scrambles": [
+        "R B L U L' B' U2 R'",
+        "B' R D B U2 B' D' R' B",
+        "L' F' B' D2 L' U2 L D2 F B L",
+        "B U R2 F R F' U' R2 U2 B' R'"
+      ],
+      "svgId": "165",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-5",
+        "imagePath": "Images/F2L 21-5.png"
+      }
+    },
+    {
+      "id": "166",
+      "name": "F2L 21-6",
+      "group": "f2l-21",
+      "algorithms": [
+        "U2 F R U R' U' F' U' R U2 R'",
+        "U2 R U R2 U' F U R U' F'",
+        "y U F R U R' U F'"
+      ],
+      "scramble": "R2 B2 D B D' R' B2 U2 B' R'",
+      "scrambles": [
+        "R2 B2 D B D' R' B2 U2 B' R'",
+        "F' U2 L' U B' U2 B L U' F",
+        "L F2 R' F2 R U F U' F' L'",
+        "R U2 R' U' B U L U' L' B'"
+      ],
+      "svgId": "166",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-6",
+        "imagePath": "Images/F2L 21-6.png"
+      }
+    },
+    {
+      "id": "167",
+      "name": "F2L 21-7",
+      "group": "f2l-21",
+      "algorithms": [
+        "U F R' F' R2 U' R' U R U R'",
+        "U2' R U r' U R U' R' U' M'",
+        "r' U2 R' U R2 U' R U2 r"
+      ],
+      "scramble": "F' U2 F U R U' B U' B' R'",
+      "scrambles": [
+        "F' U2 F U R U' B U' B' R'",
+        "R' L F R F R' F' R F' L'",
+        "R B' R2 B R' U' R' U' F R' F'",
+        "F' U2 F R B U' B L' B' L B' R'"
+      ],
+      "svgId": "167",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-7",
+        "imagePath": "Images/F2L 21-7.png"
+      }
+    },
+    {
+      "id": "168",
+      "name": "F2L 21-8",
+      "group": "f2l-21",
+      "algorithms": [
+        "U2' F' r' F2 r2 U' r' F2",
+        "U R' F R F2 U' F R U2 R'",
+        "U M' U R U' r' U R U R2' F R F'"
+      ],
+      "scramble": "R U' R2 F R F L F L' U' F",
+      "scrambles": [
+        "R U' R2 F R F L F L' U' F",
+        "R U' R2 F R F' U' R' F R F'",
+        "R U' R F D R F' U' F D' R F'",
+        "R U' R2 F R F2 U L' U' L F"
+      ],
+      "svgId": "168",
+      "tags": {
+        "sourceGroup": "F2L 21",
+        "sourceId": "F2L 21-8",
+        "imagePath": "Images/F2L 21-8.png"
+      }
+    },
+    {
+      "id": "169",
+      "name": "F2L 22-1",
+      "group": "f2l-22",
+      "algorithms": [
+        "y' U2 R' U' R U' R' U R",
+        "y U2 L' U2 L U' L' U L",
+        "U2 R' F R F' R U R' U R U' R'"
+      ],
+      "scramble": "F' L2 D2 R2 B U2 R2 D L2 D F2",
+      "scrambles": [
+        "F' L2 D2 R2 B U2 R2 D L2 D F2",
+        "D' F' R U F U2 F' U' R' F D",
+        "B' U' D R2 U D' B U' F2 U F2",
+        "R F U F' L' U2 L F U' F' R'"
+      ],
+      "svgId": "169",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-1",
+        "imagePath": "Images/F2L 22-1.png"
+      }
+    },
+    {
+      "id": "170",
+      "name": "F2L 22-2",
+      "group": "f2l-22",
+      "algorithms": [
+        "U2' R U R' F' U' F",
+        "y' R' F' U F U R",
+        "F' L' U L U F"
+      ],
+      "scramble": "R B U' L' B' R' B L B'",
+      "scrambles": [
+        "R B U' L' B' R' B L B'",
+        "F' U2 F' L F' D F D' L' F2",
+        "L2 U F' U' L' U' L F L2",
+        "B2 R' D' R2 D B U' R' U' B"
+      ],
+      "svgId": "170",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-2",
+        "imagePath": "Images/F2L 22-2.png"
+      }
+    },
+    {
+      "id": "171",
+      "name": "F2L 22-3",
+      "group": "f2l-22",
+      "algorithms": [
+        "U2 F' r U' r' F2",
+        "y' U2 R' F R' F' R2",
+        "y U2 L' U' L2 F' L' F"
+      ],
+      "scramble": "R U2 B U B2 R B R' U' R'",
+      "scrambles": [
+        "R U2 B U B2 R B R' U' R'",
+        "F2 L F2 L2 U B L' B' L2",
+        "F' U L2 B L B' U' L F",
+        "L F2 R' L F L' F R U2 L'"
+      ],
+      "svgId": "171",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-3",
+        "imagePath": "Images/F2L 22-3.png"
+      }
+    },
+    {
+      "id": "172",
+      "name": "F2L 22-4",
+      "group": "f2l-22",
+      "algorithms": [
+        "U R U' R' U' R U' R' y' R' U' R",
+        "U R U' R' U' R U' R' F' U' F"
+      ],
+      "scramble": "R2 B L2 F' L' F L' U2 B' U2 R2",
+      "scrambles": [
+        "R2 B L2 F' L' F L' U2 B' U2 R2",
+        "R' L' B2 L' B L B2 R' L' B R2 L2",
+        "R B' U2 B L' B L B2 U2 B U2 R'",
+        "R2 U2 R' F R' F B2 L2 D2 L2 F2 B2"
+      ],
+      "svgId": "172",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-4",
+        "imagePath": "Images/F2L 22-4.png"
+      }
+    },
+    {
+      "id": "173",
+      "name": "F2L 22-5",
+      "group": "f2l-22",
+      "algorithms": [
+        "r U' r' U2' r U r'",
+        "F' L' U2 L F"
+      ],
+      "scramble": "F' L' B' U' B L U2 F",
+      "scrambles": [
+        "F' L' B' U' B L U2 F",
+        "L F' D' L' U2 L D F L'",
+        "B' R2 B R U2 R' B' R2 B",
+        "R U2 B U2 B' R' U F' U2 F"
+      ],
+      "svgId": "173",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-5",
+        "imagePath": "Images/F2L 22-5.png"
+      }
+    },
+    {
+      "id": "174",
+      "name": "F2L 22-6",
+      "group": "f2l-22",
+      "algorithms": [
+        "U2 R' F R F2 U' F R U R'",
+        "U' r U' r' U' r U r' F' U' F",
+        "U' F' L' U' L U' F"
+      ],
+      "scramble": "F' L' U L' B L B' L F",
+      "scrambles": [
+        "F' L' U L' B L B' L F",
+        "R U2 B U B' U R' F' U2 F",
+        "F2 U L U F U' R' L' F R",
+        "F' U F U2 R U R' F' U2 F"
+      ],
+      "svgId": "174",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-6",
+        "imagePath": "Images/F2L 22-6.png"
+      }
+    },
+    {
+      "id": "175",
+      "name": "F2L 22-7",
+      "group": "f2l-22",
+      "algorithms": [
+        "U2' R' F R F' R U R2' F R F'",
+        "r U' r' U2 r U' R' U' R U' r'"
+      ],
+      "scramble": "R2 B' R' B R' F R' F' R",
+      "scrambles": [
+        "R2 B' R' B R' F R' F' R",
+        "F' U L F2 R' F' R F2 L' F2",
+        "F R' L D F' R' D' R2 F2 L' F2",
+        "F2 L D F' D' R' F' R F2 L' F2"
+      ],
+      "svgId": "175",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-7",
+        "imagePath": "Images/F2L 22-7.png"
+      }
+    },
+    {
+      "id": "176",
+      "name": "F2L 22-8",
+      "group": "f2l-22",
+      "algorithms": [
+        "U' R U2 r' U r U2 r' U' r U R'",
+        "U' F R' F' R U2' r U' r' U r U r'",
+        "M' U R U' r' F2 r U r' U2 F"
+      ],
+      "scramble": "F' U F2 R' F' R U F R' F' R",
+      "scrambles": [
+        "F' U F2 R' F' R U F R' F' R",
+        "F' U F2 R' F' R' B' R' B U R'",
+        "R L F L' B L U2 F' L' U2 B' R'",
+        "F' U F U F' L' U L2 F' L' F2"
+      ],
+      "svgId": "176",
+      "tags": {
+        "sourceGroup": "F2L 22",
+        "sourceId": "F2L 22-8",
+        "imagePath": "Images/F2L 22-8.png"
+      }
+    },
+    {
+      "id": "177",
+      "name": "F2L 23-1",
+      "group": "f2l-23",
+      "algorithms": [
+        "U R U' R' U' R U' R' U R U' R'",
+        "U2 R2 U2' R' U' R U' R2'",
+        "R U' R2' D' R U2 R' D R"
+      ],
+      "scramble": "R2 U R' U' R2 L2 D2 R D2 L2",
+      "scrambles": [
+        "R2 U R' U' R2 L2 D2 R D2 L2",
+        "F2 R' B2 L2 D L' D F2 L' B2 R",
+        "R D2 R U R' U R U2 R' D2 R'",
+        "R D' R U R' U R U2 R' D R'"
+      ],
+      "svgId": "177",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-1",
+        "imagePath": "Images/F2L 23-1.png"
+      }
+    },
+    {
+      "id": "178",
+      "name": "F2L 23-2",
+      "group": "f2l-23",
+      "algorithms": [
+        "U2 R U2 R' U' R U' R2 F R F'",
+        "U2 R U R' U' R U' R' U R' F R F'",
+        "U2 r U' r' U r U r' R' F R F'"
+      ],
+      "scramble": "R2 B' R' B U2 R' U R U2 R'",
+      "scrambles": [
+        "R2 B' R' B U2 R' U R U2 R'",
+        "F R' F' R U2 L U L' U L U2 L'"
+      ],
+      "svgId": "178",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-2",
+        "imagePath": "Images/F2L 23-2.png"
+      }
+    },
+    {
+      "id": "179",
+      "name": "F2L 23-3",
+      "group": "f2l-23",
+      "algorithms": [
+        "U R U' R' U' R U' R2' F R F'",
+        "F' U' F U' R U' R' U R U' R'"
+      ],
+      "scramble": "R2 B' R' B U2 R' U R U R'",
+      "scrambles": [
+        "R2 B' R' B U2 R' U R U R'",
+        "F R' F' R2 U R' U R U R'"
+      ],
+      "svgId": "179",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-3",
+        "imagePath": "Images/F2L 23-3.png"
+      }
+    },
+    {
+      "id": "180",
+      "name": "F2L 23-4",
+      "group": "f2l-23",
+      "algorithms": [
+        "U R' F R F' R U R' U2 R U' R'",
+        "F U R U' R' F' U' F' U' F"
+      ],
+      "scramble": "F' U F U2 L F U F' U' L'",
+      "scrambles": [
+        "F' U F U2 L F U F' U' L'",
+        "F' U F U' B L U L' U' B'",
+        "F' U F U D2 F R U R' U' F' D2",
+        "F' U F U D' F R U R' U' F' D"
+      ],
+      "svgId": "180",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-4",
+        "imagePath": "Images/F2L 23-4.png"
+      }
+    },
+    {
+      "id": "181",
+      "name": "F2L 23-5",
+      "group": "f2l-23",
+      "algorithms": [
+        "U F R' F' R U R U R'",
+        "R U R' F' U F R U R'"
+      ],
+      "scramble": "R' F R F2 L' U' L U F",
+      "scrambles": [
+        "R' F R F2 L' U' L U F",
+        "R U R' U2 R U B U2 B' R'",
+        "R U L' B' R D B2 D' B' R2 L",
+        "R B' U' R U B U' R' U' R'"
+      ],
+      "svgId": "181",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-5",
+        "imagePath": "Images/F2L 23-5.png"
+      }
+    },
+    {
+      "id": "182",
+      "name": "F2L 23-6",
+      "group": "f2l-23",
+      "algorithms": [
+        "R U2' R' U r U' R' U' R U r'",
+        "R U2 R' F' U F U' R U R'"
+      ],
+      "scramble": "R U R' U R B' R B R' U' R'",
+      "scrambles": [
+        "R U R' U R B' R B R' U' R'",
+        "R U B2 R B2 R' B U B2 U' B R'",
+        "R U2 B U' L' U' B' U B2 L B2 R'",
+        "R B' U R U B U' R2 U2 L U2 L'"
+      ],
+      "svgId": "182",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-6",
+        "imagePath": "Images/F2L 23-6.png"
+      }
+    },
+    {
+      "id": "183",
+      "name": "F2L 23-7",
+      "group": "f2l-23",
+      "algorithms": [
+        "U2 r U' r' U r U r' U R U' R'",
+        "M U2 R U R' U r U' R'",
+        "U2' r U' r' U r U r' U R U' R'"
+      ],
+      "scramble": "R U L' B' R B' R' B2 R' L",
+      "scrambles": [
+        "R U L' B' R B' R' B2 R' L",
+        "R F' L' B L' B' L2 F U R'",
+        "R U' R' U2 R B2 L' B' L B' R'",
+        "R U' R' F' L F' L' F2 R U2 R'"
+      ],
+      "svgId": "183",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-7",
+        "imagePath": "Images/F2L 23-7.png"
+      }
+    },
+    {
+      "id": "184",
+      "name": "F2L 23-8",
+      "group": "f2l-23",
+      "algorithms": [
+        "F' U' F U' R U' R2' F R F'",
+        "U' R' F R F' U2' R U' R' U R' F R F'",
+        "U F R' F' R2 r' U R U R' U' M'"
+      ],
+      "scramble": "F B' D R' D' F2 B U' F R U' R'",
+      "scrambles": [
+        "F B' D R' D' F2 B U' F R U' R'",
+        "R2 B' R' B U2 R' U F' U F"
+      ],
+      "svgId": "184",
+      "tags": {
+        "sourceGroup": "F2L 23",
+        "sourceId": "F2L 23-8",
+        "imagePath": "Images/F2L 23-8.png"
+      }
+    },
+    {
+      "id": "185",
+      "name": "F2L 24-1",
+      "group": "f2l-24",
+      "algorithms": [
+        "U' R U R2' F R F' R U' R'"
+      ],
+      "scramble": "F R2 D2 B' D' B D' R2 F'",
+      "scrambles": [
+        "F R2 D2 B' D' B D' R2 F'",
+        "R U R' U' R2 B' R' B R'",
+        "F R' F' U' R2 B' R' B2 U' B'",
+        "B U2 F' U2 F B' U' B U' B'"
+      ],
+      "svgId": "185",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-1",
+        "imagePath": "Images/F2L 24-1.png"
+      }
+    },
+    {
+      "id": "186",
+      "name": "F2L 24-2",
+      "group": "f2l-24",
+      "algorithms": [
+        "R U' R' U r U' R' U R U r'"
+      ],
+      "scramble": "L F' R' F' R F L' U' R U R'",
+      "scrambles": [
+        "L F' R' F' R F L' U' R U R'"
+      ],
+      "svgId": "186",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-2",
+        "imagePath": "Images/F2L 24-2.png"
+      }
+    },
+    {
+      "id": "187",
+      "name": "F2L 24-3",
+      "group": "f2l-24",
+      "algorithms": [
+        "R U R' d R' U R U' R' U R",
+        "y U' L' U L U L' U L2 F' L' F",
+        "R U' R2 F' U' F U R2 U' R'"
+      ],
+      "scramble": "R U' R' U' R U B' R B R2",
+      "scrambles": [
+        "R U' R' U' R U B' R B R2",
+        "R U' R' U' R U2 R2 F R F'"
+      ],
+      "svgId": "187",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-3",
+        "imagePath": "Images/F2L 24-3.png"
+      }
+    },
+    {
+      "id": "188",
+      "name": "F2L 24-4",
+      "group": "f2l-24",
+      "algorithms": [
+        "F U R U' R' F' R U' R'"
+      ],
+      "scramble": "R U R' D F R U R' U' F' D'",
+      "scrambles": [
+        "R U R' D F R U R' U' F' D'",
+        "R U R' D2 F R U R' U' F' D2",
+        "R U R' D' F R U R' U' F' D",
+        "R U' B L U' L' U' B' U' R'"
+      ],
+      "svgId": "188",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-4",
+        "imagePath": "Images/F2L 24-4.png"
+      }
+    },
+    {
+      "id": "189",
+      "name": "F2L 24-5",
+      "group": "f2l-24",
+      "algorithms": [
+        "U' R U R2' F R F' U' R' F R F'",
+        "U' R U' R' U r U' r' U2' r U r'",
+        "F U R U' R' F2 U' F R U' R'"
+      ],
+      "scramble": "F' U F R2 B' R' B U R'",
+      "scrambles": [
+        "F' U F R2 B' R' B U R'",
+        "R U R' F' U F2 R U R' U' F'",
+        "R2 B' R' B U B U B' U' R'",
+        "F R' F' R U F R U R' U' F'"
+      ],
+      "svgId": "189",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-5",
+        "imagePath": "Images/F2L 24-5.png"
+      }
+    },
+    {
+      "id": "190",
+      "name": "F2L 24-6",
+      "group": "f2l-24",
+      "algorithms": [
+        "r U' r' U' r U r2' D' r U2' r' D r",
+        "r U R' U R U r' U' r U r'",
+        "r U' r' U' r U r' F' U2' F"
+      ],
+      "scramble": "R U F' L' F R' F' U2 L F",
+      "scrambles": [
+        "R U F' L' F R' F' U2 L F",
+        "F' U F U' R U R' F' U2 F",
+        "F' U F2 R' F' R U F' U F",
+        "R U2 B U2 R' F' R B' R' U' F"
+      ],
+      "svgId": "190",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-6",
+        "imagePath": "Images/F2L 24-6.png"
+      }
+    },
+    {
+      "id": "191",
+      "name": "F2L 24-7",
+      "group": "f2l-24",
+      "algorithms": [
+        "U r U' r' U2' r U r' R U2' R' U R U' R'",
+        "F' U' r U2 R' U' R U' r' U2' F",
+        "U' R U' R' F' L' U' L U' F"
+      ],
+      "scramble": "F2 U' F U' F' U2 F' R' F' R",
+      "scrambles": [
+        "F2 U' F U' F' U2 F' R' F' R",
+        "F' U F U2 F' L2 B L B' L F",
+        "F' U F R B' R B R2 F' U2 F",
+        "F' R U2 R' F2 L F L' F U F"
+      ],
+      "svgId": "191",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-7",
+        "imagePath": "Images/F2L 24-7.png"
+      }
+    },
+    {
+      "id": "192",
+      "name": "F2L 24-8",
+      "group": "f2l-24",
+      "algorithms": [
+        "R U' R2 D' r U r' R U R' D R",
+        "R U R' U2 F' r' F2 r U' F"
+      ],
+      "scramble": "R B U' L U2 L' U2 B' U' R'",
+      "scrambles": [
+        "R B U' L U2 L' U2 B' U' R'",
+        "R' F R F' U F' U2 F R U2 R'",
+        "R U2 B U' L F U F' U2 L' B' R'",
+        "F2 L2 D' L' D F L' U2 F R U2 R'"
+      ],
+      "svgId": "192",
+      "tags": {
+        "sourceGroup": "F2L 24",
+        "sourceId": "F2L 24-8",
+        "imagePath": "Images/F2L 24-8.png"
+      }
+    },
+    {
+      "id": "193",
+      "name": "F2L 25-1",
+      "group": "f2l-25",
+      "algorithms": [
+        "R' F' R U R U' R' F",
+        "U' F' R U R' U' R' F R",
+        "R' U' R' U' R' U R U R"
+      ],
+      "scramble": "R' B' D' R' D B2 U' B' U R2",
+      "scrambles": [
+        "R' B' D' R' D B2 U' B' U R2",
+        "F2 U' B U' L' U L U F2 B'",
+        "D2 F' R U R' U' R' F R D2",
+        "D' R F U F' R' F U' F' D"
+      ],
+      "svgId": "193",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-1",
+        "imagePath": "Images/F2L 25-1.png"
+      }
+    },
+    {
+      "id": "194",
+      "name": "F2L 25-2",
+      "group": "f2l-25",
+      "algorithms": [
+        "U' R' F R F' R U R'",
+        "U' M' U R U' r' R U R'"
+      ],
+      "scramble": "D' R U' R' F R' F' R D",
+      "scrambles": [
+        "D' R U' R' F R' F' R D",
+        "L F' R' D R' D' R F R L'",
+        "R L F U' F' R' F U F' L'",
+        "F2 L' U2 L U F U2 F' U' F2"
+      ],
+      "svgId": "194",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-2",
+        "imagePath": "Images/F2L 25-2.png"
+      }
+    },
+    {
+      "id": "195",
+      "name": "F2L 25-3",
+      "group": "f2l-25",
+      "algorithms": [
+        "U' F' U F U R U' R'"
+      ],
+      "scramble": "F' U' R B U B' U' R' F",
+      "scrambles": [
+        "F' U' R B U B' U' R' F",
+        "D R U R' U' F' U' F D'",
+        "D2 R U R' U' F' U' F D2",
+        "R U R' U R B U' B' U2 R'"
+      ],
+      "svgId": "195",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-3",
+        "imagePath": "Images/F2L 25-3.png"
+      }
+    },
+    {
+      "id": "196",
+      "name": "F2L 25-4",
+      "group": "f2l-25",
+      "algorithms": [
+        "U' F' U' F U R U R'"
+      ],
+      "scramble": "R F' U' L' U L F U' R'",
+      "scrambles": [
+        "R F' U' L' U L F U' R'",
+        "F' R' U' R F B L U L' B'",
+        "D R U' R' U' F' U F D'",
+        "D2 R U' R' U' F' U F D2"
+      ],
+      "svgId": "196",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-4",
+        "imagePath": "Images/F2L 25-4.png"
+      }
+    },
+    {
+      "id": "197",
+      "name": "F2L 25-5",
+      "group": "f2l-25",
+      "algorithms": [
+        "r U r' U2 r U R' U2 R U' r'",
+        "U2 r' U' R' U' R U R U r"
+      ],
+      "scramble": "B' U' B' D' R' D B U B",
+      "scrambles": [
+        "B' U' B' D' R' D B U B",
+        "F D F' U F B' R' B D' F'",
+        "L' D' B' R' B' D B L U B",
+        "L' B' D' R' B' D L B U B"
+      ],
+      "svgId": "197",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-5",
+        "imagePath": "Images/F2L 25-5.png"
+      }
+    },
+    {
+      "id": "198",
+      "name": "F2L 25-6",
+      "group": "f2l-25",
+      "algorithms": [
+        "U2 r U2' R' U R U' R' U2' R U' r'",
+        "r' U' R' U' R' U R U r"
+      ],
+      "scramble": "F D B' R F' B U' F D' F'",
+      "scrambles": [
+        "F D B' R F' B U' F D' F'",
+        "B' U' L' B' D' B R B D L",
+        "D L' B' R' B' R B R B L D'",
+        "D2 L' B' R' B' R B R B L D2"
+      ],
+      "svgId": "198",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-6",
+        "imagePath": "Images/F2L 25-6.png"
+      }
+    },
+    {
+      "id": "199",
+      "name": "F2L 25-7",
+      "group": "f2l-25",
+      "algorithms": [
+        "U2 r U' r' R U' R' U' r U' r'",
+        "U r U r' U R U M' U r'",
+        "U2 F' L' U' L U R U R' U' R' F R"
+      ],
+      "scramble": "R2 U2 F L2 U R U' L2 F' U2 R2",
+      "scrambles": [
+        "R2 U2 F L2 U R U' L2 F' U2 R2",
+        "F' U2 F U2 F B' D R D' F' B",
+        "D' B' R2 U' R U R2 B D",
+        "B' R2 F R2 D R D' F' B"
+      ],
+      "svgId": "199",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-7",
+        "imagePath": "Images/F2L 25-7.png"
+      }
+    },
+    {
+      "id": "200",
+      "name": "F2L 25-8",
+      "group": "f2l-25",
+      "algorithms": [
+        "U R2 D r' U r D' R' U' R'",
+        "r U r' U2 r U R' U' R U2 r'",
+        "r U2 R' U r' R U2 r U' r'"
+      ],
+      "scramble": "R B' U' R B R2 L2 D F D' L2",
+      "scrambles": [
+        "R B' U' R B R2 L2 D F D' L2",
+        "D R U R D L' B' L D' R2 D'",
+        "D2 R U R D L' B' L D' R2 D2",
+        "D' R U R D L' B' L D' R2 D"
+      ],
+      "svgId": "200",
+      "tags": {
+        "sourceGroup": "F2L 25",
+        "sourceId": "F2L 25-8",
+        "imagePath": "Images/F2L 25-8.png"
+      }
+    },
+    {
+      "id": "201",
+      "name": "F2L 26-1",
+      "group": "f2l-26",
+      "algorithms": [
+        "U2 R U' R' U' r U' R' U R U r'",
+        "r2 U2' R2' F R2 U2' r2' F"
+      ],
+      "scramble": "R F B' D' R' D F' B R'",
+      "scrambles": [
+        "R F B' D' R' D F' B R'",
+        "F U F U F' U' F' U' F'",
+        "L U' D F' U' F U D' L'",
+        "B U2 D2 F' U' F U2 D2 B'"
+      ],
+      "svgId": "201",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-1",
+        "imagePath": "Images/F2L 26-1.png"
+      }
+    },
+    {
+      "id": "202",
+      "name": "F2L 26-2",
+      "group": "f2l-26",
+      "algorithms": [
+        "U R U' R' F R' F' R",
+        "U R U' M' U R' U' M",
+        "R2 U R' U' R' F R F' R'"
+      ],
+      "scramble": "R U B' U' R U B U' R2",
+      "scrambles": [
+        "R U B' U' R U B U' R2",
+        "F U' F2 U F R' F2 R F2",
+        "F2 U' F U F R' F' R F",
+        "R' F R2 F2 U L F' L' F2 R'"
+      ],
+      "svgId": "202",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-2",
+        "imagePath": "Images/F2L 26-2.png"
+      }
+    },
+    {
+      "id": "203",
+      "name": "F2L 26-3",
+      "group": "f2l-26",
+      "algorithms": [
+        "U R U' R' U' F' U F"
+      ],
+      "scramble": "R U' B' R' U' R U B U2 R'",
+      "scrambles": [
+        "R U' B' R' U' R U B U2 R'",
+        "F' U' F U' F' L' U L U2 F",
+        "D F' U' F U R U R' D'",
+        "D2 F' U' F U R U R' D2"
+      ],
+      "svgId": "203",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-3",
+        "imagePath": "Images/F2L 26-3.png"
+      }
+    },
+    {
+      "id": "204",
+      "name": "F2L 26-4",
+      "group": "f2l-26",
+      "algorithms": [
+        "U R U R' U' F' U' F",
+        "F U' r U M U' R' U F'"
+      ],
+      "scramble": "R F U F' R' L' B' U' B L",
+      "scrambles": [
+        "R F U F' R' L' B' U' B L",
+        "F' U' B U L U' L' B' U2 F",
+        "D F' R U F D B R' U' B' D2",
+        "D2 F' R U F D B R' U' B' D"
+      ],
+      "svgId": "204",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-4",
+        "imagePath": "Images/F2L 26-4.png"
+      }
+    },
+    {
+      "id": "205",
+      "name": "F2L 26-5",
+      "group": "f2l-26",
+      "algorithms": [
+        "U R U' R' U R' D' r U' r' D R",
+        "r U R' U2 R U r' U2 r U' r'",
+        "R' D' R U M' U' r' D R"
+      ],
+      "scramble": "R U' R' U2 F' L' U' L U2 F",
+      "scrambles": [
+        "R U' R' U2 F' L' U' L U2 F",
+        "F' U2 R L2 B2 L B2 R' L F",
+        "D F' U2 L' U2 L U2 F D'",
+        "D2 F' U2 L' U2 L U2 F D2"
+      ],
+      "svgId": "205",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-5",
+        "imagePath": "Images/F2L 26-5.png"
+      }
+    },
+    {
+      "id": "206",
+      "name": "F2L 26-6",
+      "group": "f2l-26",
+      "algorithms": [
+        "r U r' U2' r U' R' U2' R U' r'",
+        "R' D' R U' M' U r' D R"
+      ],
+      "scramble": "D2 B L F L F' L' F' L' B' D2",
+      "scrambles": [
+        "D2 B L F L F' L' F' L' B' D2",
+        "D' B L F L F' L' F' L' B' D",
+        "R' D' R U R' L F' L' D R",
+        "L U B L D L' F' L' D' B'"
+      ],
+      "svgId": "206",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-6",
+        "imagePath": "Images/F2L 26-6.png"
+      }
+    },
+    {
+      "id": "207",
+      "name": "F2L 26-7",
+      "group": "f2l-26",
+      "algorithms": [
+        "R' D' r U r' D R U' R U R'",
+        "U F R U' R' r U2 r' U' F'",
+        "R' D r2 U r' U' r U' r2 D' R"
+      ],
+      "scramble": "D F2 R U' R2 F' R2 U R' F2 D'",
+      "scrambles": [
+        "D F2 R U' R2 F' R2 U R' F2 D'",
+        "D2 F2 R U' R2 F' R2 U R' F2 D2",
+        "D' F2 R U' R2 F' R2 U R' F2 D",
+        "F2 R U' R2 F' R2 U R' F2"
+      ],
+      "svgId": "207",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-7",
+        "imagePath": "Images/F2L 26-7.png"
+      }
+    },
+    {
+      "id": "208",
+      "name": "F2L 26-8",
+      "group": "f2l-26",
+      "algorithms": [
+        "r U2 R' U R U' r' U2 r U' r'",
+        "U R U R D r' U' r D' R2'"
+      ],
+      "scramble": "D R2 D L' B L D' R' U' R' D'",
+      "scrambles": [
+        "D R2 D L' B L D' R' U' R' D'",
+        "D2 R2 D L' B L D' R' U' R' D2",
+        "D' R2 D L' B L D' R' U' R' D",
+        "L2 D F' D' R2 L2 B' R' U B R'"
+      ],
+      "svgId": "208",
+      "tags": {
+        "sourceGroup": "F2L 26",
+        "sourceId": "F2L 26-8",
+        "imagePath": "Images/F2L 26-8.png"
+      }
+    },
+    {
+      "id": "209",
+      "name": "F2L 27-1",
+      "group": "f2l-27",
+      "algorithms": [
+        "R U' R' U R U' R'"
+      ],
+      "scramble": "F' L' U L U2 F U' R U R'",
+      "scrambles": [
+        "F' L' U L U2 F U' R U R'",
+        "F' L' U B' U B U' L U2 F",
+        "R U R' F R' F D' F' D R F'",
+        "R U R' F R' F' R U F' U' F"
+      ],
+      "svgId": "209",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-1",
+        "imagePath": "Images/F2L 27-1.png"
+      }
+    },
+    {
+      "id": "210",
+      "name": "F2L 27-2",
+      "group": "f2l-27",
+      "algorithms": [
+        "R U' R2 F R2 U R' U' F'",
+        "F' U' F U' R U2 R'"
+      ],
+      "scramble": "R U' R' F' U F' L F L' F",
+      "scrambles": [
+        "R U' R' F' U F' L F L' F",
+        "L F2 R' F2 R L' U' F' U F",
+        "R' L F2 R F2 L' U F' U F",
+        "F' B L U L2 U' L B' U F"
+      ],
+      "svgId": "210",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-2",
+        "imagePath": "Images/F2L 27-2.png"
+      }
+    },
+    {
+      "id": "211",
+      "name": "F2L 27-3",
+      "group": "f2l-27",
+      "algorithms": [
+        "R' D' R U' R' D R U R' F R F'",
+        "R' D' R U R' D R U' R' F R F'",
+        "R U2 R' U2 r U' R' U2 R U r'"
+      ],
+      "scramble": "R U F' L F R' F2 L' F U' F",
+      "scrambles": [
+        "R U F' L F R' F2 L' F U' F",
+        "F U' B U B' R' F' U' R2 U R'",
+        "R U R B' R' B U R' U2 R U R'",
+        "R U R' U F R' F' R U2 R U R'"
+      ],
+      "svgId": "211",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-3",
+        "imagePath": "Images/F2L 27-3.png"
+      }
+    },
+    {
+      "id": "212",
+      "name": "F2L 27-4",
+      "group": "f2l-27",
+      "algorithms": [
+        "R U' r' U R U' R' U' M'",
+        "F' U2 F R U2 R'"
+      ],
+      "scramble": "R L' B R B R' B' L U R'",
+      "scrambles": [
+        "R L' B R B R' B' L U R'",
+        "F B' D R D' F' B U' R U R'",
+        "F B' D R D' B R2 D R D' F' R"
+      ],
+      "svgId": "212",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-4",
+        "imagePath": "Images/F2L 27-4.png"
+      }
+    },
+    {
+      "id": "213",
+      "name": "F2L 27-5",
+      "group": "f2l-27",
+      "algorithms": [
+        "R U' R2 F R F'"
+      ],
+      "scramble": "R U' B' R2 D' R' D R' B U2 R'",
+      "scrambles": [
+        "R U' B' R2 D' R' D R' B U2 R'",
+        "F R F B' D2 F' D2 F' B U R'",
+        "F' L' U L U' F U' R U R'",
+        "R U R' F' U F U' R U R'"
+      ],
+      "svgId": "213",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-5",
+        "imagePath": "Images/F2L 27-5.png"
+      }
+    },
+    {
+      "id": "214",
+      "name": "F2L 27-6",
+      "group": "f2l-27",
+      "algorithms": [
+        "U2 r U' r' U r U r' R U2' R'",
+        "R U' R2 U' F U R2 U' R' F'",
+        "R U' R' U R U R' U2' R' F R F'"
+      ],
+      "scramble": "F' L' U' L U F2 R' F' R2 U R'",
+      "scrambles": [
+        "F' L' U' L U F2 R' F' R2 U R'",
+        "R' F' U' F U R' B' R' B U2 R'",
+        "F R' F' R U2 R U' R' U' R U R'"
+      ],
+      "svgId": "214",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-6",
+        "imagePath": "Images/F2L 27-6.png"
+      }
+    },
+    {
+      "id": "215",
+      "name": "F2L 27-7",
+      "group": "f2l-27",
+      "algorithms": [
+        "R U' R2 U' F U R U' F'",
+        "U2 R U R' U R U R2' F R F'"
+      ],
+      "scramble": "R B2 U' B R' B' U B R2 B R2",
+      "scrambles": [
+        "R B2 U' B R' B' U B R2 B R2",
+        "R U2 R' U' F' U2 F U' R U R'",
+        "R U2 L' B' U' B2 U B' L U R'",
+        "F' L F' L' F U F U R U R'"
+      ],
+      "svgId": "215",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-7",
+        "imagePath": "Images/F2L 27-7.png"
+      }
+    },
+    {
+      "id": "216",
+      "name": "F2L 27-8",
+      "group": "f2l-27",
+      "algorithms": [
+        "U' R U' R2 r U' M U2 r U' r'",
+        "U' R' D' r U' r' D R U' R U2 R'"
+      ],
+      "scramble": "F' U L' B' U2 B U' L F",
+      "scrambles": [
+        "F' U L' B' U2 B U' L F",
+        "R B U' L U2 L' B' U R'",
+        "R B U B' R' U2 F' L' U L F",
+        "F' L' U2 B' R' U R B U' L F"
+      ],
+      "svgId": "216",
+      "tags": {
+        "sourceGroup": "F2L 27",
+        "sourceId": "F2L 27-8",
+        "imagePath": "Images/F2L 27-8.png"
+      }
+    },
+    {
+      "id": "217",
+      "name": "F2L 28-1",
+      "group": "f2l-28",
+      "algorithms": [
+        "y' R' U R U' R' U R",
+        "y L' U L U' L' U L"
+      ],
+      "scramble": "R B U' L U' L' U B' U2 R'",
+      "scrambles": [
+        "R B U' L U' L' U B' U2 R'",
+        "R B U' B' U2 R' U F' U' F",
+        "F' U' F R U' B' R B R' U R'",
+        "F' U' F R' F R F' U' R U R'"
+      ],
+      "svgId": "217",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-1",
+        "imagePath": "Images/F2L 28-1.png"
+      }
+    },
+    {
+      "id": "218",
+      "name": "F2L 28-2",
+      "group": "f2l-28",
+      "algorithms": [
+        "R U R' d R' U2 R",
+        "R U R' r' D' r U' r' D r",
+        "F U R U' R2 F' R2 U R'"
+      ],
+      "scramble": "R B U' B' U2 R' U2 R U' R'",
+      "scrambles": [
+        "R B U' B' U2 R' U2 R U' R'",
+        "F' U' F U2 F' U2 L' U' L F",
+        "R' F2 D' F' D R F' U2 R U' R'",
+        "F' U' L' U L U2 F R U2 R'"
+      ],
+      "svgId": "218",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-2",
+        "imagePath": "Images/F2L 28-2.png"
+      }
+    },
+    {
+      "id": "219",
+      "name": "F2L 28-3",
+      "group": "f2l-28",
+      "algorithms": [
+        "R U2 l U' R' U l'",
+        "R U2 R' U r U' r' U r U r'",
+        "R U2 R' U F R' F' R2 U' R'"
+      ],
+      "scramble": "R U B' U F' U' F R B U R2",
+      "scrambles": [
+        "R U B' U F' U' F R B U R2",
+        "R U2 R' L U L F' L' U' F L'",
+        "R2 L' B2 R' B2 L B U' B' U' R'",
+        "L F2 R' F2 R2 L' B U' B' U' R'"
+      ],
+      "svgId": "219",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-3",
+        "imagePath": "Images/F2L 28-3.png"
+      }
+    },
+    {
+      "id": "220",
+      "name": "F2L 28-4",
+      "group": "f2l-28",
+      "algorithms": [
+        "R U2 R' F' U2 F",
+        "U2 R' F R F' r U' r' U2' r U r'"
+      ],
+      "scramble": "F' U2 F L F2 R' F2 R L'",
+      "scrambles": [
+        "F' U2 F L F2 R' F2 R L'",
+        "B' R2 F R2 F' B U2 R U2 R'",
+        "R U' B L U2 L' U2 B' U' R'",
+        "F2 B2 D2 F' D2 F' B2 R U2 R'"
+      ],
+      "svgId": "220",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-4",
+        "imagePath": "Images/F2L 28-4.png"
+      }
+    },
+    {
+      "id": "221",
+      "name": "F2L 28-5",
+      "group": "f2l-28",
+      "algorithms": [
+        "y L' U L2 F' L' F",
+        "F' U2' r U' r' F2",
+        "R U R2 D' r U' r' D R"
+      ],
+      "scramble": "F' U' F R U' R' U F' U' F",
+      "scrambles": [
+        "F' U' F R U' R' U F' U' F",
+        "U' R B U' B' U R' U F' U' F",
+        "R U2 B L U' L2 B L B2 U2 R'",
+        "R' F R U D' L2 U' L2 U' D F'"
+      ],
+      "svgId": "221",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-5",
+        "imagePath": "Images/F2L 28-5.png"
+      }
+    },
+    {
+      "id": "222",
+      "name": "F2L 28-6",
+      "group": "f2l-28",
+      "algorithms": [
+        "R U2 R' U R2 D r' U r D' R2'",
+        "R U R' F R U R' U' F2 U' F"
+      ],
+      "scramble": "R U2 B U B' U R' F' U' F",
+      "scrambles": [
+        "R U2 B U B' U R' F' U' F",
+        "F2 L F2 R U' R' U F' L' U F",
+        "F' U F U2 R U R' F' U' F",
+        "F' L' U L' B L B' L U F"
+      ],
+      "svgId": "222",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-6",
+        "imagePath": "Images/F2L 28-6.png"
+      }
+    },
+    {
+      "id": "223",
+      "name": "F2L 28-7",
+      "group": "f2l-28",
+      "algorithms": [
+        "y L' U L U' F R U R' F'",
+        "R U2 R' U' F R U R' U' F2 U' F",
+        "R U' R' r U' R' U' R r' U' r U r'"
+      ],
+      "scramble": "R B' R B R' U' R' U' F' U' F",
+      "scrambles": [
+        "R B' R B R' U' R' U' F' U' F",
+        "F' U2 F U R U2 R' U F' U' F",
+        "F' U2 B L U L2 U' L B' U' F",
+        "F' L2 U L' F L U' L' F2 L' F2"
+      ],
+      "svgId": "223",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-7",
+        "imagePath": "Images/F2L 28-7.png"
+      }
+    },
+    {
+      "id": "224",
+      "name": "F2L 28-8",
+      "group": "f2l-28",
+      "algorithms": [
+        "U r U r' U2 r R' U r' R2 U R'",
+        "R U2 R' U R' D' r U r' D R",
+        "R U2' R2' F R F2 U2' F"
+      ],
+      "scramble": "F' U2 F U' R2 B' R' B U' R'",
+      "scrambles": [
+        "F' U2 F U' R2 B' R' B U' R'",
+        "F' U' L F' L' F2 U' R U2 R'",
+        "F' U2 F2 R' F R L F2 L2 U2 L",
+        "B U2 B2 R2 F B R F' R2 U2 R'"
+      ],
+      "svgId": "224",
+      "tags": {
+        "sourceGroup": "F2L 28",
+        "sourceId": "F2L 28-8",
+        "imagePath": "Images/F2L 28-8.png"
+      }
+    },
+    {
+      "id": "225",
+      "name": "F2L 29-1",
+      "group": "f2l-29",
+      "algorithms": [
+        "R' F R F' U R U' R'",
+        "y' R' U' R U R' U' R",
+        "y L' U' L U L' U' L"
+      ],
+      "scramble": "R U R' U2 R U R' F' U F",
+      "scrambles": [
+        "R U R' U2 R U R' F' U F",
+        "R U R' U2 R U' B U B' R'",
+        "R U R' U' F' U L F' L' F2",
+        "F' U L F U F' U' F' L' F2"
+      ],
+      "svgId": "225",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-1",
+        "imagePath": "Images/F2L 29-1.png"
+      }
+    },
+    {
+      "id": "226",
+      "name": "F2L 29-2",
+      "group": "f2l-29",
+      "algorithms": [
+        "U2 R U' R' F' U' F"
+      ],
+      "scramble": "R U F' U' L' U L F R'",
+      "scrambles": [
+        "R U F' U' L' U L F R'",
+        "R U2 B U B' R' U2 R U R'",
+        "F' U F U2 F' L' U L U2 F",
+        "F' U2 F U2 R B U' B' U' R'"
+      ],
+      "svgId": "226",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-2",
+        "imagePath": "Images/F2L 29-2.png"
+      }
+    },
+    {
+      "id": "227",
+      "name": "F2L 29-3",
+      "group": "f2l-29",
+      "algorithms": [
+        "R' F R F' R' F R F'"
+      ],
+      "scramble": "R2 B' R D' R' D R' B U R'",
+      "scrambles": [
+        "R2 B' R D' R' D R' B U R'",
+        "U' R2 B' R' B U R' F R' F' R",
+        "F R' F D' L' F L F2 D F' R",
+        "F R' F' R U' R2 B' R' B U R'"
+      ],
+      "svgId": "227",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-3",
+        "imagePath": "Images/F2L 29-3.png"
+      }
+    },
+    {
+      "id": "228",
+      "name": "F2L 29-4",
+      "group": "f2l-29",
+      "algorithms": [
+        "R' F R F' U R U R' U2' R' F R F'",
+        "R U' R2' D' r U' r' D F R F'",
+        "U2 R U' R' U' R' F R U R U' R2' F' R"
+      ],
+      "scramble": "F' U F R' U' D' F2 U F2 D R",
+      "scrambles": [
+        "F' U F R' U' D' F2 U F2 D R",
+        "F' U F R' D2 L2 U L2 U' D2 R",
+        "F U F2 U F2 U2 F' R U R'"
+      ],
+      "svgId": "228",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-4",
+        "imagePath": "Images/F2L 29-4.png"
+      }
+    },
+    {
+      "id": "229",
+      "name": "F2L 29-5",
+      "group": "f2l-29",
+      "algorithms": [
+        "U R' D' r U r' D R2 U' R'",
+        "U R' F R F2 U' F"
+      ],
+      "scramble": "R U2 B2 L' B' L U2 B' R'",
+      "scrambles": [
+        "R U2 B2 L' B' L U2 B' R'",
+        "R U' R B' R' B2 U B' R'",
+        "F' U F U F' L' U L U' F",
+        "F' U F U' R U R' F' U F"
+      ],
+      "svgId": "229",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-5",
+        "imagePath": "Images/F2L 29-5.png"
+      }
+    },
+    {
+      "id": "230",
+      "name": "F2L 29-6",
+      "group": "f2l-29",
+      "algorithms": [
+        "U R2 D r' U' r D' R2' U' R U2 R'",
+        "F' r2 D2 r' U r D2 r' U2 r' F2",
+        "U2 r U' r' U2 r U r' U' R U2 R' U R U R'"
+      ],
+      "scramble": "B U' R' F R F2 U B' U F",
+      "scrambles": [
+        "B U' R' F R F2 U B' U F",
+        "F2 U' L U L F L' U' L' U2 F",
+        "F' U R U' F' L F L' U R' F",
+        "F' U R L' U B' U' B R' L F"
+      ],
+      "svgId": "230",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-6",
+        "imagePath": "Images/F2L 29-6.png"
+      }
+    },
+    {
+      "id": "231",
+      "name": "F2L 29-7",
+      "group": "f2l-29",
+      "algorithms": [
+        "U' R U R' U' r U' r' U2 r U r'",
+        "U F' U L' U2 L F"
+      ],
+      "scramble": "F' R' F2 L F2 R L' U F",
+      "scrambles": [
+        "F' R' F2 L F2 R L' U F",
+        "F' L' U L F U' F R' F' R",
+        "R B U2 L U2 L' U B' R'",
+        "R U2 B L U L' U B' R'"
+      ],
+      "svgId": "231",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-7",
+        "imagePath": "Images/F2L 29-7.png"
+      }
+    },
+    {
+      "id": "232",
+      "name": "F2L 29-8",
+      "group": "f2l-29",
+      "algorithms": [
+        "R U' R2' D' r U' r' D R U R U' R'",
+        "M' U' M U2 r U' R' U R U' r'"
+      ],
+      "scramble": "R U L' B' R' D2 L2 F' L2 D2 L",
+      "scrambles": [
+        "R U L' B' R' D2 L2 F' L2 D2 L",
+        "F2 U2 R' F D2 B2 L2 D2 R D2 L D2"
+      ],
+      "svgId": "232",
+      "tags": {
+        "sourceGroup": "F2L 29",
+        "sourceId": "F2L 29-8",
+        "imagePath": "Images/F2L 29-8.png"
+      }
+    },
+    {
+      "id": "233",
+      "name": "F2L 30-1",
+      "group": "f2l-30",
+      "algorithms": [
+        "R U R' U' R U R'"
+      ],
+      "scramble": "R U' R B' D' R D R2 B R'",
+      "scrambles": [
+        "R U' R B' D' R D R2 B R'",
+        "R U' B U2 L U L' B' U R'",
+        "R' F D R' D' R2 F' R U' R'",
+        "F' U2 L' U' L F U' R U' R'"
+      ],
+      "svgId": "233",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-1",
+        "imagePath": "Images/F2L 30-1.png"
+      }
+    },
+    {
+      "id": "234",
+      "name": "F2L 30-2",
+      "group": "f2l-30",
+      "algorithms": [
+        "U2' F' U F R U R'",
+        "R U R' F U R U' R2 F' R"
+      ],
+      "scramble": "F' U' R U B U' B' R' F",
+      "scrambles": [
+        "F' U' R U B U' B' R' F",
+        "R U L' B' U' B U L U2 R'",
+        "R U B U B' R' U2 F' U2 F",
+        "F' U2 L' U' L F U2 F' U' F"
+      ],
+      "svgId": "234",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-2",
+        "imagePath": "Images/F2L 30-2.png"
+      }
+    },
+    {
+      "id": "235",
+      "name": "F2L 30-3",
+      "group": "f2l-30",
+      "algorithms": [
+        "x U R' U' R U R' U' l",
+        "r U R' U' R U R' U' r' R"
+      ],
+      "scramble": "F2 L F L' U' F R' F R F'",
+      "scrambles": [
+        "F2 L F L' U' F R' F R F'",
+        "F2 L F' D F D' F L' U' F",
+        "R U' B' R B R2 U R' F R F'",
+        "R' F R F' U F2 L F L' U' F"
+      ],
+      "svgId": "235",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-3",
+        "imagePath": "Images/F2L 30-3.png"
+      }
+    },
+    {
+      "id": "236",
+      "name": "F2L 30-4",
+      "group": "f2l-30",
+      "algorithms": [
+        "U2 R' F R F' R U' R' U2 R U R'"
+      ],
+      "scramble": "R F R' U R2 U' R' F' U' R'",
+      "scrambles": [
+        "R F R' U R2 U' R' F' U' R'",
+        "R B U' L U2 L' U' B' U' R'",
+        "F' U L F R F2 L' F2 R U2 R2"
+      ],
+      "svgId": "236",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-4",
+        "imagePath": "Images/F2L 30-4.png"
+      }
+    },
+    {
+      "id": "237",
+      "name": "F2L 30-5",
+      "group": "f2l-30",
+      "algorithms": [
+        "U' F R' F' R2 U R'"
+      ],
+      "scramble": "F' U F' L F L2 U' L F",
+      "scrambles": [
+        "F' U F' L F L2 U' L F",
+        "F' U2 L2 B L B' U2 L F",
+        "R U B L U' L' U B' U R'",
+        "R U2 B U' L' B L B2 U R'"
+      ],
+      "svgId": "237",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-5",
+        "imagePath": "Images/F2L 30-5.png"
+      }
+    },
+    {
+      "id": "238",
+      "name": "F2L 30-6",
+      "group": "f2l-30",
+      "algorithms": [
+        "R U r' U' R U R2 r"
+      ],
+      "scramble": "L' U F R' F' R2 U' L U' R'",
+      "scrambles": [
+        "L' U F R' F' R2 U' L U' R'",
+        "R U' F' U R B' R' B U' F R'",
+        "R U' F' B U' L U L' F B' R'",
+        "R2 U B' U' B' R' B U B U2 R'"
+      ],
+      "svgId": "238",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-6",
+        "imagePath": "Images/F2L 30-6.png"
+      }
+    },
+    {
+      "id": "239",
+      "name": "F2L 30-7",
+      "group": "f2l-30",
+      "algorithms": [
+        "R U R' U r U' r' U' r U r'",
+        "U' R U' R' r U' R' U2 R U r'",
+        "U' R d' R U2' R' F'"
+      ],
+      "scramble": "R F R2 B' R2 F' B U' R'",
+      "scrambles": [
+        "R F R2 B' R2 F' B U' R'",
+        "R B U' B' R' U R' F R F'",
+        "R U2 B L U' L' B' U R'",
+        "F' U2 L' B' U' B U' L F"
+      ],
+      "svgId": "239",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-7",
+        "imagePath": "Images/F2L 30-7.png"
+      }
+    },
+    {
+      "id": "240",
+      "name": "F2L 30-8",
+      "group": "f2l-30",
+      "algorithms": [
+        "R U R' U' R' D' r U r' D R2 U R'",
+        "r U R' U' R U r' U2' M' U M",
+        "U2 F R' F' R U F R' F' R U' R U2 R'"
+      ],
+      "scramble": "D B' D' F D R' B D' F2 U' F",
+      "scrambles": [
+        "D B' D' F D R' B D' F2 U' F",
+        "B' R2 U' R' U F R2 F2 B U' F",
+        "R U' R2 D' L F L' D R U R U' R'",
+        "R2 F' U2 F U' R' U' F R2 F2 U' F"
+      ],
+      "svgId": "240",
+      "tags": {
+        "sourceGroup": "F2L 30",
+        "sourceId": "F2L 30-8",
+        "imagePath": "Images/F2L 30-8.png"
+      }
+    },
+    {
+      "id": "241",
+      "name": "F2L 31-1",
+      "group": "f2l-31",
+      "algorithms": [
+        "R U' R' U F' U F"
+      ],
+      "scramble": "R B U' B' U2 R' U' R U R'",
+      "scrambles": [
+        "R B U' B' U2 R' U' R U R'",
+        "F B' R F' U F' U' F R' B",
+        "R2 B L' B L B' U B' U' R2",
+        "F' U2 F R U' R B' R' B U2 R'"
+      ],
+      "svgId": "241",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-1",
+        "imagePath": "Images/F2L 31-1.png"
+      }
+    },
+    {
+      "id": "242",
+      "name": "F2L 31-2",
+      "group": "f2l-31",
+      "algorithms": [
+        "U' R' F R F' R U' R'"
+      ],
+      "scramble": "R B' R2 D' R' D R' B U R'",
+      "scrambles": [
+        "R B' R2 D' R' D R' B U R'",
+        "R2 B R' U' B L U L' B2 U2 R'",
+        "L U' F' U2 F U R' F2 R F2 L'",
+        "F' L' U L U' L F' L' F2"
+      ],
+      "svgId": "242",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-2",
+        "imagePath": "Images/F2L 31-2.png"
+      }
+    },
+    {
+      "id": "243",
+      "name": "F2L 31-3",
+      "group": "f2l-31",
+      "algorithms": [
+        "R U2 R' U' F R' F' R"
+      ],
+      "scramble": "F2 L F L' U' F U R U2 R'",
+      "scrambles": [
+        "F2 L F L' U' F U R U2 R'",
+        "F' U' F R U' R' U2 R U2 R'",
+        "R B U' B' U R' U2 R U2 R'",
+        "R U' B' R B R L F2 R F2 L'"
+      ],
+      "svgId": "243",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-3",
+        "imagePath": "Images/F2L 31-3.png"
+      }
+    },
+    {
+      "id": "244",
+      "name": "F2L 31-4",
+      "group": "f2l-31",
+      "algorithms": [
+        "F' U F R U2' R'",
+        "R' F' R U R U' R' U2 F"
+      ],
+      "scramble": "R L' B' U' B U L U2 R'",
+      "scrambles": [
+        "R L' B' U' B U L U2 R'",
+        "L F2 R' F2 R L' U2 F' U' F",
+        "R' L F D' F D R F2 L'",
+        "F' U L' B' U2 B U2 L U2 F"
+      ],
+      "svgId": "244",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-4",
+        "imagePath": "Images/F2L 31-4.png"
+      }
+    },
+    {
+      "id": "245",
+      "name": "F2L 31-5",
+      "group": "f2l-31",
+      "algorithms": [
+        "r U' r' U M' U R U r'"
+      ],
+      "scramble": "B U2 B2 R2 F B R F' R2 U R'",
+      "scrambles": [
+        "B U2 B2 R2 F B R F' R2 U R'",
+        "F2 B2 D2 F' D2 B2 R' F' R2 U R'",
+        "F' U' L' B L2 B' L2 U2 F' L F2",
+        "F R2 L2 B2 D2 B2 R L2 F' R2 U R'"
+      ],
+      "svgId": "245",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-5",
+        "imagePath": "Images/F2L 31-5.png"
+      }
+    },
+    {
+      "id": "246",
+      "name": "F2L 31-6",
+      "group": "f2l-31",
+      "algorithms": [
+        "U' R' F R F' U' R' F R F'",
+        "F' U' F R U' R2 F R F'",
+        "U' R U2 R' U r U' r' U2 r U r'"
+      ],
+      "scramble": "F' L' U2 B L' B' L2 U' F",
+      "scrambles": [
+        "F' L' U2 B L' B' L2 U' F",
+        "R U R' F' U2 L F' L' F2",
+        "R2 B' R' B U2 R' F' U F",
+        "F' U L F' L' F' R' F' R"
+      ],
+      "svgId": "246",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-6",
+        "imagePath": "Images/F2L 31-6.png"
+      }
+    },
+    {
+      "id": "247",
+      "name": "F2L 31-7",
+      "group": "f2l-31",
+      "algorithms": [
+        "R U2 R2 D' r U' r' D R"
+      ],
+      "scramble": "R' D' L F L U2 D2 R2 D L2 D2 R'",
+      "scrambles": [
+        "R' D' L F L U2 D2 R2 D L2 D2 R'",
+        "R' D' L F L D2 R' U2 R2 D L2 D2",
+        "R' D' L F L D2 R' D2 L2 D R2",
+        "R' D' L F L' U F2 U2 F2 U' D R"
+      ],
+      "svgId": "247",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-7",
+        "imagePath": "Images/F2L 31-7.png"
+      }
+    },
+    {
+      "id": "248",
+      "name": "F2L 31-8",
+      "group": "f2l-31",
+      "algorithms": [
+        "r U' R' U' M U' r U r'",
+        "R U' R' U R U R2 D' r U r' D R"
+      ],
+      "scramble": "L' U2 L2 F2 R' L' F' R F2 U' F",
+      "scrambles": [
+        "L' U2 L2 F2 R' L' F' R F2 U' F",
+        "R2 L2 D2 R D2 L2 F R F2 U' F",
+        "R U B' R B R F2 D' F' D R F'",
+        "R D2 R2 L2 U2 D2 L2 F R F2 U' F"
+      ],
+      "svgId": "248",
+      "tags": {
+        "sourceGroup": "F2L 31",
+        "sourceId": "F2L 31-8",
+        "imagePath": "Images/F2L 31-8.png"
+      }
+    },
+    {
+      "id": "249",
+      "name": "F2L 32-1",
+      "group": "f2l-32",
+      "algorithms": [
+        "U R U' R' U R U' R' U R U' R'"
+      ],
+      "scramble": "D' F2 U F2 D R2 U2 R2",
+      "scrambles": [
+        "D' F2 U F2 D R2 U2 R2",
+        "R2 U R2 D B2 U2 B2 D'",
+        "R2 U2 D' F2 U F2 U D R2",
+        "D B2 U B2 U2 D' R2 U2 R2"
+      ],
+      "svgId": "249",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-1",
+        "imagePath": "Images/F2L 32-1.png"
+      }
+    },
+    {
+      "id": "250",
+      "name": "F2L 32-2",
+      "group": "f2l-32",
+      "algorithms": [
+        "U' F' U L' U2 L U' F",
+        "U2 R U r' U R U R' U' r U' R'",
+        "U R U' R' U R U' r' U R U' R' U' M'"
+      ],
+      "scramble": "D2 B' U R' U2 R U' B D2",
+      "scrambles": [
+        "D2 B' U R' U2 R U' B D2",
+        "U' D R' U F' U2 F U' R D'",
+        "R U2 B U' L U2 L' U B' R'",
+        "F' U R' F2 L F2 R L' U F"
+      ],
+      "svgId": "250",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-2",
+        "imagePath": "Images/F2L 32-2.png"
+      }
+    },
+    {
+      "id": "251",
+      "name": "F2L 32-3",
+      "group": "f2l-32",
+      "algorithms": [
+        "U R U' R' U R U' R2 F R F'"
+      ],
+      "scramble": "R2 B' R' B U2 R' U' R U R'",
+      "scrambles": [
+        "R2 B' R' B U2 R' U' R U R'",
+        "D B2 L' B' L U2 B' U' B U B' D'",
+        "R2 B' R' B2 L U' L' U2 B' U R'",
+        "D R B' R' B2 U B' U' B U B' D'"
+      ],
+      "svgId": "251",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-3",
+        "imagePath": "Images/F2L 32-3.png"
+      }
+    },
+    {
+      "id": "252",
+      "name": "F2L 32-4",
+      "group": "f2l-32",
+      "algorithms": [
+        "F R' F' R2 U R' U' R U R'",
+        "U' R U R' U' R U R2 F R F'"
+      ],
+      "scramble": "R U' R' U R U2 B' R B R2",
+      "scrambles": [
+        "R U' R' U R U2 B' R B R2",
+        "R U' B U2 L U L' B2 R B R2",
+        "D' F U' F' U F U2 R' F R F2 D"
+      ],
+      "svgId": "252",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-4",
+        "imagePath": "Images/F2L 32-4.png"
+      }
+    },
+    {
+      "id": "253",
+      "name": "F2L 32-5",
+      "group": "f2l-32",
+      "algorithms": [
+        "U R' F R F' d R' U' R",
+        "U2 F' U r' F' r U' F",
+        "U2 R' F R F2 r U' r' F2"
+      ],
+      "scramble": "D2 B' U R' U R U' B D2",
+      "scrambles": [
+        "D2 B' U R' U R U' B D2",
+        "R U2 B U B' U' B U B' R'",
+        "F' U F U2 R U' B U B' R'",
+        "F' U L F' D' L D L2 F2"
+      ],
+      "svgId": "253",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-5",
+        "imagePath": "Images/F2L 32-5.png"
+      }
+    },
+    {
+      "id": "254",
+      "name": "F2L 32-6",
+      "group": "f2l-32",
+      "algorithms": [
+        "U' F R' F' R U' R U R'",
+        "U' r U r' R' F R F' r U' r'",
+        "r U' R2 U' R U' R' U2 R2 U r'"
+      ],
+      "scramble": "D B U' L U' L' U B' D'",
+      "scrambles": [
+        "D B U' L U' L' U B' D'",
+        "R U' R B' D' R D R' B R2",
+        "R U' R' U R U' B' R B R2",
+        "F' U2 L' U' L U' F R U' R'"
+      ],
+      "svgId": "254",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-6",
+        "imagePath": "Images/F2L 32-6.png"
+      }
+    },
+    {
+      "id": "255",
+      "name": "F2L 32-7",
+      "group": "f2l-32",
+      "algorithms": [
+        "U2 F R' F' R2 U R' U R U' R'",
+        "U2 R U2 R' U2 R U' R2 F R F'",
+        "R U R' U F' U F R U R'"
+      ],
+      "scramble": "R U R' U' R U2 B' R B R2",
+      "scrambles": [
+        "R U R' U' R U2 B' R B R2",
+        "D2 L U L' U' L U' L2 B L B' D2",
+        "D B U B' U' B U2 L' B L B2 D'"
+      ],
+      "svgId": "255",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-7",
+        "imagePath": "Images/F2L 32-7.png"
+      }
+    },
+    {
+      "id": "256",
+      "name": "F2L 32-8",
+      "group": "f2l-32",
+      "algorithms": [
+        "U2' r U2' r' U2 r U' r' U2 r U2' r'",
+        "U2' R' F R F' U2' r U' r' U2' r U r'"
+      ],
+      "scramble": "D2 B' R' U2 R B U2 B L' B' L D2",
+      "scrambles": [
+        "D2 B' R' U2 R B U2 B L' B' L D2",
+        "F' L' U' B L B' U' B' U B U2 F",
+        "F' L' B' U' B L U2 L' U L U' F",
+        "F' L' U2 L F U R2 B' R' B U R'"
+      ],
+      "svgId": "256",
+      "tags": {
+        "sourceGroup": "F2L 32",
+        "sourceId": "F2L 32-8",
+        "imagePath": "Images/F2L 32-8.png"
+      }
+    },
+    {
+      "id": "257",
+      "name": "F2L 33-1",
+      "group": "f2l-33",
+      "algorithms": [
+        "U' R U' R' U2 R U' R'"
+      ],
+      "scramble": "D' F U F' U2 F U F' D",
+      "scrambles": [
+        "D' F U F' U2 F U F' D",
+        "R U R' F' L' U L U2 F",
+        "R B' U2 B U B' U B U R'",
+        "D2 L U L' U2 L U L' D2"
+      ],
+      "svgId": "257",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-1",
+        "imagePath": "Images/F2L 33-1.png"
+      }
+    },
+    {
+      "id": "258",
+      "name": "F2L 33-2",
+      "group": "f2l-33",
+      "algorithms": [
+        "R U M U' R' U r U' R'",
+        "R U r' R U' R' U r U' R'",
+        "U' R U' R' F' U' F R U2 R'"
+      ],
+      "scramble": "D' F U2 F' L' U L F U F' D",
+      "scrambles": [
+        "D' F U2 F' L' U L F U F' D",
+        "D' F R U R' F' U2 F U F' D",
+        "R U R' B' R2 U' R U R2 B",
+        "R B U B' R' F' L' U L U2 F"
+      ],
+      "svgId": "258",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-2",
+        "imagePath": "Images/F2L 33-2.png"
+      }
+    },
+    {
+      "id": "259",
+      "name": "F2L 33-3",
+      "group": "f2l-33",
+      "algorithms": [
+        "U' R U' R' U2' R U R' U2' R' F R F'",
+        "R' F R F' R2 U R' U' R' F R F' R'"
+      ],
+      "scramble": "D B' U' D' R' U R D B D'",
+      "scrambles": [
+        "D B' U' D' R' U R D B D'",
+        "R' U' R F' R' F' U F R F",
+        "F' L' F' L U' L' U F L F",
+        "D' F' U' D' L' U L D F D"
+      ],
+      "svgId": "259",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-3",
+        "imagePath": "Images/F2L 33-3.png"
+      }
+    },
+    {
+      "id": "260",
+      "name": "F2L 33-4",
+      "group": "f2l-33",
+      "algorithms": [
+        "U R U' R2 F R F' R U R'",
+        "F R' F' R2 U' R' U R U' R'",
+        "r U r' R U' R' U r U' r'"
+      ],
+      "scramble": "R U' R' U' R2 B' R' B U2 R'",
+      "scrambles": [
+        "R U' R' U' R2 B' R' B U2 R'",
+        "D B U' B' R B' R' B2 U B' D'",
+        "R U2 B' R2 D' R' D R' B U2 R'"
+      ],
+      "svgId": "260",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-4",
+        "imagePath": "Images/F2L 33-4.png"
+      }
+    },
+    {
+      "id": "261",
+      "name": "F2L 33-5",
+      "group": "f2l-33",
+      "algorithms": [
+        "U r U' r' U r U r' R U' R'",
+        "M' U' R U r' U2 r U' r'",
+        "U' R U' R' U' F R' F' R2 U2 R'"
+      ],
+      "scramble": "R U2 B L U L' U' B' U' R'",
+      "scrambles": [
+        "R U2 B L U L' U' B' U' R'",
+        "R U' R B U B' U' R' U2 R'",
+        "D2 L U R B U B' U' R' L' D2",
+        "D2 L B L U L' U' B' U L' D2"
+      ],
+      "svgId": "261",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-5",
+        "imagePath": "Images/F2L 33-5.png"
+      }
+    },
+    {
+      "id": "262",
+      "name": "F2L 33-6",
+      "group": "f2l-33",
+      "algorithms": [
+        "U' R U' R' U R' F R F'"
+      ],
+      "scramble": "D B U' L U L' U B' U2 D'",
+      "scrambles": [
+        "D B U' L U L' U B' U2 D'",
+        "R2 B2 D B D' R' B U R'",
+        "F' U L F' L' F2 U2 R U R'",
+        "D' F2 R2 D R D' F' R U F' D"
+      ],
+      "svgId": "262",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-6",
+        "imagePath": "Images/F2L 33-6.png"
+      }
+    },
+    {
+      "id": "263",
+      "name": "F2L 33-7",
+      "group": "f2l-33",
+      "algorithms": [
+        "y U2 F R U2 R' U2 F'",
+        "R U R' U' F' U' F U' R U2 R'",
+        "U' F' U2 L' U2 L F"
+      ],
+      "scramble": "D' L' F' L2 B L2 F B' L D",
+      "scrambles": [
+        "D' L' F' L2 B L2 F B' L D",
+        "L F2 L' B L F L F L2 B'",
+        "L' B' U' F' U' B U F U L",
+        "R B U2 L U L' U2 B' R'"
+      ],
+      "svgId": "263",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-7",
+        "imagePath": "Images/F2L 33-7.png"
+      }
+    },
+    {
+      "id": "264",
+      "name": "F2L 33-8",
+      "group": "f2l-33",
+      "algorithms": [
+        "U' F R' F' R2 U2' R2' F R F'",
+        "D' r U' r' F2 U R' F R F2 D"
+      ],
+      "scramble": "R2 B' R' B U' R2 F R F'",
+      "scrambles": [
+        "R2 B' R' B U' R2 F R F'",
+        "D' F2 R' F' R U' F2 L F L' D",
+        "D2 L2 F' L' F U2 F' L F L2 D2",
+        "D' L F' L' F2 U2 F2 L F L' D"
+      ],
+      "svgId": "264",
+      "tags": {
+        "sourceGroup": "F2L 33",
+        "sourceId": "F2L 33-8",
+        "imagePath": "Images/F2L 33-8.png"
+      }
+    },
+    {
+      "id": "265",
+      "name": "F2L 34-1",
+      "group": "f2l-34",
+      "algorithms": [
+        "U R' D' R U' R' D R",
+        "U' R' D' R U R' D R"
+      ],
+      "scramble": "B U L D' L' U' L D L' B'",
+      "scrambles": [
+        "B U L D' L' U' L D L' B'",
+        "L2 F' U' B2 U F U' B2 U L2",
+        "R' U' R F' R' U R U' F",
+        "D L D2 L' U' L D2 L' D'"
+      ],
+      "svgId": "265",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-1",
+        "imagePath": "Images/F2L 34-1.png"
+      }
+    },
+    {
+      "id": "266",
+      "name": "F2L 34-2",
+      "group": "f2l-34",
+      "algorithms": [
+        "r U r' U' R U R' r U' r'"
+      ],
+      "scramble": "R2 B' R2 U' R U R B R2",
+      "scrambles": [
+        "R2 B' R2 U' R U R B R2",
+        "D' F2 R' F2 U' F U F R F2 D",
+        "L U F2 U' R' D' F D R F L'",
+        "L U D' F U' R' F R F2 D L'"
+      ],
+      "svgId": "266",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-2",
+        "imagePath": "Images/F2L 34-2.png"
+      }
+    },
+    {
+      "id": "267",
+      "name": "F2L 34-3",
+      "group": "f2l-34",
+      "algorithms": [
+        "U R U' R' F R' F' R2 U R'",
+        "U' R U2' R' U' r U' r' U' r U r'",
+        "R U' R' U' R' F R F' U R U R'"
+      ],
+      "scramble": "D B U L U L' U2 B' D'",
+      "scrambles": [
+        "D B U L U L' U2 B' D'",
+        "R U B U L U' L' U2 B' R'",
+        "F R D2 B U' B' U D2 R' F'",
+        "B U R L U L' U' R' U' B'"
+      ],
+      "svgId": "267",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-3",
+        "imagePath": "Images/F2L 34-3.png"
+      }
+    },
+    {
+      "id": "268",
+      "name": "F2L 34-4",
+      "group": "f2l-34",
+      "algorithms": [
+        "U r U' R' U R U r' U' R U R'",
+        "U R U' R' U' F' U F R U R'"
+      ],
+      "scramble": "F U2 L2 U2 R U R' U2 L2 U F'",
+      "scrambles": [
+        "F U2 L2 U2 R U R' U2 L2 U F'",
+        "F' U' R' L' F2 D' L D F2 R L F",
+        "L F U F' U' D' L' U L D L'",
+        "B L U L' U' D2 B' U B D2 B'"
+      ],
+      "svgId": "268",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-4",
+        "imagePath": "Images/F2L 34-4.png"
+      }
+    },
+    {
+      "id": "269",
+      "name": "F2L 34-5",
+      "group": "f2l-34",
+      "algorithms": [
+        "y U L' U L U' L F' L' F",
+        "U r U R' U' M U' R U R'"
+      ],
+      "scramble": "R' F R F' U F' U' F",
+      "scrambles": [
+        "R' F R F' U F' U' F",
+        "D R' U F' U' F U' R D'",
+        "F2 L2 D' L' D F L' U' F",
+        "F' U' F R U' B U' B' U2 R'"
+      ],
+      "svgId": "269",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-5",
+        "imagePath": "Images/F2L 34-5.png"
+      }
+    },
+    {
+      "id": "270",
+      "name": "F2L 34-6",
+      "group": "f2l-34",
+      "algorithms": [
+        "U R U M' U' r' U' r U r'",
+        "F U' R2 D2 R' U' R D2 R2 U F'"
+      ],
+      "scramble": "R' F' U D2 L' U' L D2 F R",
+      "scrambles": [
+        "R' F' U D2 L' U' L D2 F R",
+        "L' U' F' U' B' U F B U L",
+        "D2 B' U2 R' U R U B D2",
+        "D R' U2 F' U F U R D'"
+      ],
+      "svgId": "270",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-6",
+        "imagePath": "Images/F2L 34-6.png"
+      }
+    },
+    {
+      "id": "271",
+      "name": "F2L 34-7",
+      "group": "f2l-34",
+      "algorithms": [
+        "R U R' U2 R' F R F' R U R'",
+        "U2 R U' R' U r U' R' U' R U r'"
+      ],
+      "scramble": "R U2 B L U2 L' U2 B' R'",
+      "scrambles": [
+        "R U2 B L U2 L' U2 B' R'",
+        "F' R' L F2 L' F2 R F",
+        "U D' F R U2 R' U2 F' D",
+        "D2 L F U2 F' U2 L' U D2"
+      ],
+      "svgId": "271",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-7",
+        "imagePath": "Images/F2L 34-7.png"
+      }
+    },
+    {
+      "id": "272",
+      "name": "F2L 34-8",
+      "group": "f2l-34",
+      "algorithms": [
+        "U r U2' r' U2' r U r' U2' r U2' r'",
+        "R U R D r' U r D' R' U' R'"
+      ],
+      "scramble": "R L' U B2 U B' U' B' U' B' R' L",
+      "scrambles": [
+        "R L' U B2 U B' U' B' U' B' R' L",
+        "F' R B L B L' B' L' B' R' F",
+        "B U B R D F' B' L' F D' B' R'"
+      ],
+      "svgId": "272",
+      "tags": {
+        "sourceGroup": "F2L 34",
+        "sourceId": "F2L 34-8",
+        "imagePath": "Images/F2L 34-8.png"
+      }
+    },
+    {
+      "id": "273",
+      "name": "F2L 35-1",
+      "group": "f2l-35",
+      "algorithms": [
+        "U2' R U R' y' U' R' U R",
+        "R' D' r U' r' D F R F'"
+      ],
+      "scramble": "R U' B' R' U' R U B R'",
+      "scrambles": [
+        "R U' B' R' U' R U B R'",
+        "F' U' F U F' U2 L' U' L F",
+        "F' L U F U' F' L' U' F",
+        "R U2 L' B' U' B U L U R'"
+      ],
+      "svgId": "273",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-1",
+        "imagePath": "Images/F2L 35-1.png"
+      }
+    },
+    {
+      "id": "274",
+      "name": "F2L 35-2",
+      "group": "f2l-35",
+      "algorithms": [
+        "U' R U R' d R' U' R",
+        "U M' U R U' M U' R'",
+        "R U R2 F R F' R' F R F'"
+      ],
+      "scramble": "R U' B U B' R B' R' B R'",
+      "scrambles": [
+        "R U' B U B' R B' R' B R'",
+        "R L U' R B' R' B R' U L'",
+        "L F' U F U' R U' R' U L'",
+        "L2 F' R U' R' U R' F R L2"
+      ],
+      "svgId": "274",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-2",
+        "imagePath": "Images/F2L 35-2.png"
+      }
+    },
+    {
+      "id": "275",
+      "name": "F2L 35-3",
+      "group": "f2l-35",
+      "algorithms": [
+        "U2 R U' R' U' F' U' F",
+        "R U R2 F R F' U R U' R'"
+      ],
+      "scramble": "R U2 B U B' R' U' R U R'",
+      "scrambles": [
+        "R U2 B U B' R' U' R U R'",
+        "F' U F U' F' L' U L U2 F",
+        "F R' D' F D F2 R U2 R U R'",
+        "F' U F U2 F R2 D R D' F' R"
+      ],
+      "svgId": "275",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-3",
+        "imagePath": "Images/F2L 35-3.png"
+      }
+    },
+    {
+      "id": "276",
+      "name": "F2L 35-4",
+      "group": "f2l-35",
+      "algorithms": [
+        "U2' R U R' F R' F' R",
+        "R2 D R' U2 R D' R2 F' U' F"
+      ],
+      "scramble": "F2 L F L' U' F R U' R'",
+      "scrambles": [
+        "F2 L F L' U' F R U' R'",
+        "F' U L' U B' U' B U' L F",
+        "R U' B' R D' R D R2 B R'",
+        "R U' B' R B R2 U R U' R'"
+      ],
+      "svgId": "276",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-4",
+        "imagePath": "Images/F2L 35-4.png"
+      }
+    },
+    {
+      "id": "277",
+      "name": "F2L 35-5",
+      "group": "f2l-35",
+      "algorithms": [
+        "R2 D r' U' r D' R2 U R U' R'",
+        "U2 r U' r' U R' F R F' r U2' r'",
+        "U2 R U' r' U r U2 r' U' r R'"
+      ],
+      "scramble": "R U R' D' F2 U R' F R U' F2 D",
+      "scrambles": [
+        "R U R' D' F2 U R' F R U' F2 D",
+        "R B' R2 D' R' D B D L' B L D' R2"
+      ],
+      "svgId": "277",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-5",
+        "imagePath": "Images/F2L 35-5.png"
+      }
+    },
+    {
+      "id": "278",
+      "name": "F2L 35-6",
+      "group": "f2l-35",
+      "algorithms": [
+        "U2 R U' R D r' U' r D' R2"
+      ],
+      "scramble": "L2 D F' D' R2 L2 B' R' U B U2 R'",
+      "scrambles": [
+        "L2 D F' D' R2 L2 B' R' U B U2 R'",
+        "R2 D L' B L D' R' U R'"
+      ],
+      "svgId": "278",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-6",
+        "imagePath": "Images/F2L 35-6.png"
+      }
+    },
+    {
+      "id": "279",
+      "name": "F2L 35-7",
+      "group": "f2l-35",
+      "algorithms": [
+        "R' D' r U' r' D R U R U' R'"
+      ],
+      "scramble": "F' U F R U R' U R' F R F'",
+      "scrambles": [
+        "F' U F R U R' U R' F R F'",
+        "F' U F R U B U' B' U R'"
+      ],
+      "svgId": "279",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-7",
+        "imagePath": "Images/F2L 35-7.png"
+      }
+    },
+    {
+      "id": "280",
+      "name": "F2L 35-8",
+      "group": "f2l-35",
+      "algorithms": [
+        "U R' D' r U r' D R2 U2' R'",
+        "R' F R F' U2' R' F R F' R U R'"
+      ],
+      "scramble": "R U' F' U2 F2 R2 B' R2 B R' F'",
+      "scrambles": [
+        "R U' F' U2 F2 R2 B' R2 B R' F'",
+        "R U' B U2 B2 R2 F R2 B R' F'",
+        "R U' B' R2 F B R2 F' U2 F R' F'",
+        "R2 U B' U' R' U B R' F' U F"
+      ],
+      "svgId": "280",
+      "tags": {
+        "sourceGroup": "F2L 35",
+        "sourceId": "F2L 35-8",
+        "imagePath": "Images/F2L 35-8.png"
+      }
+    },
+    {
+      "id": "281",
+      "name": "F2L 36-1",
+      "group": "f2l-36",
+      "algorithms": [
+        "U F' U' F U' R U R'"
+      ],
+      "scramble": "R' F D R' D' R2 F2 U F",
+      "scrambles": [
+        "R' F D R' D' R2 F2 U F",
+        "F' U2 L2 B L B' U' L F",
+        "B' R F' U F U' F R' F' B",
+        "R U' B U2 L U L' U B' R'"
+      ],
+      "svgId": "281",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-1",
+        "imagePath": "Images/F2L 36-1.png"
+      }
+    },
+    {
+      "id": "282",
+      "name": "F2L 36-2",
+      "group": "f2l-36",
+      "algorithms": [
+        "U2 F' U' F U R U' R'",
+        "R U R' U R U' R' d' r' F r",
+        "R U R' F U2' r U r' U2' F'"
+      ],
+      "scramble": "R U2 F' U' L' U L F U' R'",
+      "scrambles": [
+        "R U2 F' U' L' U L F U' R'",
+        "R U' L' U' B' U B L U2 R'",
+        "F' U2 B L U L' U' B' U' F",
+        "F' U' R B U B' U' R' U2 F"
+      ],
+      "svgId": "282",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-2",
+        "imagePath": "Images/F2L 36-2.png"
+      }
+    },
+    {
+      "id": "283",
+      "name": "F2L 36-3",
+      "group": "f2l-36",
+      "algorithms": [
+        "U2 F' U' F R' F R F'",
+        "U2' R' F R F' U2 R U R'",
+        "R U R2 U' R F' R' U R F"
+      ],
+      "scramble": "R2 B' R' B U R' F' U F",
+      "scrambles": [
+        "R2 B' R' B U R' F' U F",
+        "R L' U R' F R' F' R U' L",
+        "F R' D' F L D' L' D2 F2 R",
+        "F' U L F' D F' D' F2 L' F"
+      ],
+      "svgId": "283",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-3",
+        "imagePath": "Images/F2L 36-3.png"
+      }
+    },
+    {
+      "id": "284",
+      "name": "F2L 36-4",
+      "group": "f2l-36",
+      "algorithms": [
+        "F' U' F R U R' U' R U R'",
+        "R U R U R' U' R' F R F' R'",
+        "U2 F' U F U R U R'"
+      ],
+      "scramble": "R U' R' U R U B U B' R'",
+      "scrambles": [
+        "R U' R' U R U B U B' R'",
+        "F' U F' L F2 L' U' L' U L",
+        "R U' R' U L F' U L F L' U' L'",
+        "R U' R' F' U L U F U' F' L' F"
+      ],
+      "svgId": "284",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-4",
+        "imagePath": "Images/F2L 36-4.png"
+      }
+    },
+    {
+      "id": "285",
+      "name": "F2L 36-5",
+      "group": "f2l-36",
+      "algorithms": [
+        "R2 D r' U r D' R' U R'"
+      ],
+      "scramble": "R U2 B' U' R B R2 L2 D F D' L2",
+      "scrambles": [
+        "R U2 B' U' R B R2 L2 D F D' L2",
+        "R U' R D L' B' L D' R2"
+      ],
+      "svgId": "285",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-5",
+        "imagePath": "Images/F2L 36-5.png"
+      }
+    },
+    {
+      "id": "286",
+      "name": "F2L 36-6",
+      "group": "f2l-36",
+      "algorithms": [
+        "U2 R' F R F' r U' r' U' r U r'"
+      ],
+      "scramble": "R U2 B' R B R2 U2 F' U F",
+      "scrambles": [
+        "R U2 B' R B R2 U2 F' U F",
+        "R U' R2 F R F' U F' U F",
+        "F' U F' L F L2 U' L U F",
+        "F' U2 L2 B L B' U2 L U F"
+      ],
+      "svgId": "286",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-6",
+        "imagePath": "Images/F2L 36-6.png"
+      }
+    },
+    {
+      "id": "287",
+      "name": "F2L 36-7",
+      "group": "f2l-36",
+      "algorithms": [
+        "U2 R2 D r' U' r D' R2' U' R U R'",
+        "F' U2' r' F2 r2 U' r' F U' F",
+        "R2 D R' U2 R r' U' r D' R' U R'"
+      ],
+      "scramble": "R U2 B U B' U2 B' R B R2",
+      "scrambles": [
+        "R U2 B U B' U2 B' R B R2",
+        "R U2 B U B' U' R2 F R F'",
+        "F' U F U2 R U2 B' R B R2",
+        "F' U F U2 R U' R2 F R F'"
+      ],
+      "svgId": "287",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-7",
+        "imagePath": "Images/F2L 36-7.png"
+      }
+    },
+    {
+      "id": "288",
+      "name": "F2L 36-8",
+      "group": "f2l-36",
+      "algorithms": [
+        "R U R2' D' r U r' D R U' R U R'",
+        "R U R2' D' r U' r' D R U R U R'",
+        "R' F R F' U F' U F R U R'"
+      ],
+      "scramble": "R U' R' F' U' L' U L U' F",
+      "scrambles": [
+        "R U' R' F' U' L' U L U' F",
+        "R U' R' F' U' F U2 R2 B' R' B U R'",
+        "R U' R' F' U' L F' D' L D L2 F2"
+      ],
+      "svgId": "288",
+      "tags": {
+        "sourceGroup": "F2L 36",
+        "sourceId": "F2L 36-8",
+        "imagePath": "Images/F2L 36-8.png"
+      }
+    },
+    {
+      "id": "289",
+      "name": "F2L 37-1",
+      "group": "f2l-37",
+      "algorithms": [
+        "U' R' F R F' R U' R' U R U' R' U2 R U' R'",
+        "U' R' F R F' R' U2' R2 U R2' U R"
+      ],
+      "scramble": "R' U D2 L2 U' L2 D2 R F R' F' R",
+      "scrambles": [
+        "R' U D2 L2 U' L2 D2 R F R' F' R",
+        "R' U' R2 U' R2 U2 R F' U L F' L' F2",
+        "R' F D' F D L2 D2 L' D2 L' F2 R",
+        "R' D' F2 U' F2 U D R F R' F' R"
+      ],
+      "svgId": "289",
+      "tags": {
+        "sourceGroup": "F2L 37",
+        "sourceId": "F2L 37-1",
+        "imagePath": "Images/F2L 37-1.png"
+      }
+    },
+    {
+      "id": "290",
+      "name": "F2L 37-2",
+      "group": "f2l-37",
+      "algorithms": [
+        "U' r U' r' R U R' U r U' r' R U R'",
+        "R' F R F' U F' U2' F U' R U R'"
+      ],
+      "scramble": "R U' R' U F' U2 L' U L U' F",
+      "scrambles": [
+        "R U' R' U F' U2 L' U L U' F",
+        "F' U2 L' U B' U' B U L U' F"
+      ],
+      "svgId": "290",
+      "tags": {
+        "sourceGroup": "F2L 37",
+        "sourceId": "F2L 37-2",
+        "imagePath": "Images/F2L 37-2.png"
+      }
+    },
+    {
+      "id": "291",
+      "name": "F2L 38-1",
+      "group": "f2l-38",
+      "algorithms": [
+        "R2 U2 R' U' R U' R' U2 R'",
+        "R U' R' U' R U R' U2 R U' R'"
+      ],
+      "scramble": "F2 U2 F U F' U F U2 F",
+      "scrambles": [
+        "F2 U2 F U F' U F U2 F",
+        "R U B U B' U B U2 B' U R'",
+        "R U2 R U B U2 L U L' B' R2",
+        "R U' F U F' U F U2 F' U' R'"
+      ],
+      "svgId": "291",
+      "tags": {
+        "sourceGroup": "F2L 38",
+        "sourceId": "F2L 38-1",
+        "imagePath": "Images/F2L 38-1.png"
+      }
+    },
+    {
+      "id": "292",
+      "name": "F2L 38-2",
+      "group": "f2l-38",
+      "algorithms": [
+        "U R U' R' U' R U R' U R' F R F'",
+        "R' F R U R U' R2 F' R U' R U2' R'"
+      ],
+      "scramble": "R U' B U B' U' R' U R U R'",
+      "scrambles": [
+        "R U' B U B' U' R' U R U R'"
+      ],
+      "svgId": "292",
+      "tags": {
+        "sourceGroup": "F2L 38",
+        "sourceId": "F2L 38-2",
+        "imagePath": "Images/F2L 38-2.png"
+      }
+    },
+    {
+      "id": "293",
+      "name": "F2L 38-3",
+      "group": "f2l-38",
+      "algorithms": [
+        "F R' F' R2 U2' R' U' R U R'"
+      ],
+      "scramble": "R U' R' U R U B' R B R2",
+      "scrambles": [
+        "R U' R' U R U B' R B R2",
+        "R' F R F2 U2 F U F' U' F",
+        "F2 L F L' U F U F' U' F",
+        "R U' B U2 L U L' B' R2 F R F'"
+      ],
+      "svgId": "293",
+      "tags": {
+        "sourceGroup": "F2L 38",
+        "sourceId": "F2L 38-3",
+        "imagePath": "Images/F2L 38-3.png"
+      }
+    },
+    {
+      "id": "294",
+      "name": "F2L 38-4",
+      "group": "f2l-38",
+      "algorithms": [
+        "M' U R U' R' U' R U' r' U2 r U' r'",
+        "R U' R' U' r U' r' U2' r U r' R U2 R'",
+        "R U' R' U2 R2 D r' U' r D' R' U' R'"
+      ],
+      "scramble": "F R' F' R2 B U B2 R B R' U R'",
+      "scrambles": [
+        "F R' F' R2 B U B2 R B R' U R'",
+        "R2 B' R' B U B L' B L B2 U2 R'"
+      ],
+      "svgId": "294",
+      "tags": {
+        "sourceGroup": "F2L 38",
+        "sourceId": "F2L 38-4",
+        "imagePath": "Images/F2L 38-4.png"
+      }
+    },
+    {
+      "id": "295",
+      "name": "F2L 39-1",
+      "group": "f2l-39",
+      "algorithms": [
+        "R U2 R' U R U' R' U R U R'",
+        "R U' R' U R U2' R' U R U' R'"
+      ],
+      "scramble": "R U2 D' F' U' F U2 F' U' F D R'",
+      "scrambles": [
+        "R U2 D' F' U' F U2 F' U' F D R'",
+        "R D B' U' B U2 B' U' B U2 D' R'"
+      ],
+      "svgId": "295",
+      "tags": {
+        "sourceGroup": "F2L 39",
+        "sourceId": "F2L 39-1",
+        "imagePath": "Images/F2L 39-1.png"
+      }
+    },
+    {
+      "id": "296",
+      "name": "F2L 39-2",
+      "group": "f2l-39",
+      "algorithms": [
+        "R U2' R' U R' F R2 U R' U' R' F' R"
+      ],
+      "scramble": "F' U L' U' L U F U' F' U' F",
+      "scrambles": [
+        "F' U L' U' L U F U' F' U' F",
+        "R' F R F' U F' U F U' F' U' F"
+      ],
+      "svgId": "296",
+      "tags": {
+        "sourceGroup": "F2L 39",
+        "sourceId": "F2L 39-2",
+        "imagePath": "Images/F2L 39-2.png"
+      }
+    },
+    {
+      "id": "297",
+      "name": "F2L 39-3",
+      "group": "f2l-39",
+      "algorithms": [
+        "R U' R' U R U2 R2 F R F'"
+      ],
+      "scramble": "R2 B' R' B U' R' U' R U R'",
+      "scrambles": [
+        "R2 B' R' B U' R' U' R U R'",
+        "F' U F U' F' U2 F2 R' F' R",
+        "F' U F U' F' U' L F' L' F2"
+      ],
+      "svgId": "297",
+      "tags": {
+        "sourceGroup": "F2L 39",
+        "sourceId": "F2L 39-3",
+        "imagePath": "Images/F2L 39-3.png"
+      }
+    },
+    {
+      "id": "298",
+      "name": "F2L 39-4",
+      "group": "f2l-39",
+      "algorithms": [
+        "R U2' R' r U' r' U M' U2' R U r'",
+        "R U R D r' U r D' R2' U2' R U R'",
+        "R U2' R' r U' r' U' R U2 R' r U' r'"
+      ],
+      "scramble": "F' R L' U B U' B L' B2 R' L2 F",
+      "scrambles": [
+        "F' R L' U B U' B L' B2 R' L2 F",
+        "R U' R' U2 R2 D L' B' L D' R' U' R'"
+      ],
+      "svgId": "298",
+      "tags": {
+        "sourceGroup": "F2L 39",
+        "sourceId": "F2L 39-4",
+        "imagePath": "Images/F2L 39-4.png"
+      }
+    },
+    {
+      "id": "299",
+      "name": "F2L 40-1",
+      "group": "f2l-40",
+      "algorithms": [
+        "U R U' R' F R U R' U' F' R U' R'",
+        "U2 R U' R' U' R U' R' U y' R' U' R"
+      ],
+      "scramble": "R2 B' R' B R' U2 F' U' F",
+      "scrambles": [
+        "R2 B' R' B R' U2 F' U' F",
+        "R2 B' D B' D' B2 R' U R'",
+        "F' U F' L2 D' L' D L' F2",
+        "F' U2 L' B L' B' L2 U' F"
+      ],
+      "svgId": "299",
+      "tags": {
+        "sourceGroup": "F2L 40",
+        "sourceId": "F2L 40-1",
+        "imagePath": "Images/F2L 40-1.png"
+      }
+    },
+    {
+      "id": "300",
+      "name": "F2L 40-2",
+      "group": "f2l-40",
+      "algorithms": [
+        "r U' r' U2' r U r' R U R'"
+      ],
+      "scramble": "R U' R' F' U2 R' L F2 L' F2 R F",
+      "scrambles": [
+        "R U' R' F' U2 R' L F2 L' F2 R F",
+        "R U' R' F' R' F2 L F2 R L' U2 F",
+        "R U' R' F' L' B' U' B L U2 F",
+        "R U' R' L F' D' L' U2 L D F L'"
+      ],
+      "svgId": "300",
+      "tags": {
+        "sourceGroup": "F2L 40",
+        "sourceId": "F2L 40-2",
+        "imagePath": "Images/F2L 40-2.png"
+      }
+    },
+    {
+      "id": "301",
+      "name": "F2L 41-1",
+      "group": "f2l-41",
+      "algorithms": [
+        "U' R U R' F U R U' R' F' R U R'",
+        "R U R' U' R U' R' U2 F' U' F"
+      ],
+      "scramble": "R U2 B U L U' L' B' U R'",
+      "scrambles": [
+        "R U2 B U L U' L' B' U R'",
+        "B R U' R U B U' B' R2 B'",
+        "B2 R U' R U B U' B' R2 B2",
+        "B' R U' R U B U' B' R2 B"
+      ],
+      "svgId": "301",
+      "tags": {
+        "sourceGroup": "F2L 41",
+        "sourceId": "F2L 41-1",
+        "imagePath": "Images/F2L 41-1.png"
+      }
+    },
+    {
+      "id": "302",
+      "name": "F2L 41-2",
+      "group": "f2l-41",
+      "algorithms": [
+        "R U' R' r U' r' U2 r U r'"
+      ],
+      "scramble": "F' U2 L' B' U B L F R U R'",
+      "scrambles": [
+        "F' U2 L' B' U B L F R U R'",
+        "F' U2 R' L F2 L' F2 R F R U R'",
+        "F' R' F2 L F2 R L' U2 F R U R'",
+        "F' L' U2 F' L D F R U F R' D'"
+      ],
+      "svgId": "302",
+      "tags": {
+        "sourceGroup": "F2L 41",
+        "sourceId": "F2L 41-2",
+        "imagePath": "Images/F2L 41-2.png"
+      }
+    }
+  ]
+}

@@ -7,85 +7,140 @@
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body class="is-home-view sidebar-closed">
   <header class="app-header">
     <div class="header-main">
-      <div>
-        <h1>swooyi's ALG note</h1>
-        <p id="datasetLabel">FTO 공식 노트</p>
-      </div>
-      <div class="header-actions">
-        <select id="datasetSelect" aria-label="공식 폴더"></select>
-        <button id="toolbarToggleButton" class="toolbar-toggle-button" type="button" aria-controls="appToolbar" aria-expanded="false">설정</button>
-      </div>
-    </div>
-    <div id="appToolbar" class="toolbar">
-      <div class="search-row">
-        <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색">
-        <button id="exportJsonButton" class="primary-export-button" type="button">출력</button>
-      </div>
-      <div class="control-row">
-        <div class="control-group filter-group">
-          <span class="control-label">필터</span>
-          <select id="groupSelect"></select>
-          <button id="favoriteFilterButton" class="filter-toggle-button" type="button" data-filter="favorite" aria-pressed="false">☆ 즐겨찾기</button>
-          <button id="learningFilterButton" class="filter-toggle-button" type="button" data-filter="learning" aria-pressed="false">◐ 암기 중</button>
-          <button id="learnedFilterButton" class="filter-toggle-button" type="button" data-filter="learned" aria-pressed="false">✓ 암기 완료</button>
-          <button id="clearFiltersButton" type="button">필터 초기화</button>
-        </div>
-        <div class="control-group tag-filter-group">
-          <span class="control-label">태그</span>
-          <div id="recognitionFilterTags" class="tag-filter-list" aria-label="recognition 필터"></div>
-        </div>
-        <div class="control-group view-group">
-          <span class="control-label">보기</span>
-          <div class="view-mode-switcher" aria-label="보기 모드">
-            <button class="view-mode-button" type="button" data-view-mode="compact">간단히 보기</button>
-            <button class="view-mode-button" type="button" data-view-mode="list">목록형 보기</button>
-            <button class="view-mode-button" type="button" data-view-mode="full">자세히 보기</button>
-          </div>
-        </div>
-        <div class="control-group favorite-preset-group">
-          <span class="control-label">선택</span>
-          <select id="favoritePresetSelect" aria-label="선택 프리셋"></select>
-          <input id="favoritePresetNameInput" type="text" placeholder="선택 프리셋 이름" aria-label="새 선택 프리셋 이름">
-          <button id="saveFavoritePresetButton" type="button">프리셋 저장</button>
-          <button id="applyFavoritePresetButton" type="button">프리셋 보기</button>
-          <button id="deleteFavoritePresetButton" type="button">삭제</button>
-          <button id="selectedOnlyButton" type="button">선택만 보기</button>
-          <button id="selectAllCardsButton" type="button">전체 선택</button>
-          <button id="clearSelectedCardsButton" type="button">선택 해제</button>
+      <div class="header-title-row">
+        <button id="sidebarOpenButton" class="sidebar-icon-button" type="button" aria-controls="appSidebar" aria-expanded="true" aria-label="패널 닫기" title="패널">
+          <span class="panel-icon" aria-hidden="true"></span>
+        </button>
+        <div>
+          <h1>swooyi's ALG note</h1>
+          <p id="datasetLabel">FTO 공식 노트</p>
         </div>
       </div>
+      <button id="homeButton" class="home-button" type="button">해법 목록</button>
+      <select id="datasetSelect" class="dataset-select" aria-label="공식 폴더" hidden></select>
     </div>
   </header>
 
-  <main>
-    <section id="exportPanel" class="export-panel" hidden>
-      <div class="export-panel-top">
+  <section id="homeView" class="home-view">
+    <div class="home-inner">
+      <div class="home-title">
         <div>
-          <h2 id="exportPanelTitle">cases.json 출력</h2>
-          <p id="exportPanelDescription">브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.</p>
+          <h2>해법 선택</h2>
+          <p>FTO · 공식 노트</p>
         </div>
-        <div class="export-actions">
-          <div class="export-mode-buttons" aria-label="출력 방식">
-            <button id="exportFullButton" class="is-active" type="button">전체 JSON</button>
-            <button id="exportEditsButton" type="button">편집분만</button>
+        <button id="exportJsonButton" class="primary-export-button" type="button">수정 json</button>
+      </div>
+      <div id="datasetHomeGrid" class="dataset-home-grid"></div>
+    </div>
+  </section>
+
+  <section id="exportPanel" class="export-panel" hidden>
+    <div class="export-panel-top">
+      <div>
+        <h2 id="exportPanelTitle">수정 json</h2>
+        <p id="exportPanelDescription">브라우저에 저장된 수정 내용을 모은 결과입니다.</p>
+      </div>
+      <div class="export-actions">
+        <div class="export-mode-buttons" aria-label="출력 방식">
+          <button id="exportFullButton" class="is-active" type="button">전체 JSON</button>
+          <button id="exportEditsButton" type="button">편집분만</button>
+        </div>
+        <button id="copyJsonButton" type="button">복사</button>
+        <button id="downloadJsonButton" type="button">다운로드</button>
+        <button id="closeExportButton" type="button" aria-label="출력 닫기">닫기</button>
+      </div>
+    </div>
+    <textarea id="exportJsonText" spellcheck="false"></textarea>
+  </section>
+
+  <div class="app-shell">
+    <aside id="appSidebar" class="app-sidebar">
+      <div class="sidebar-inner">
+        <section class="sidebar-section">
+          <h2>검색</h2>
+          <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색">
+        </section>
+
+        <section class="sidebar-section favorite-preset-group">
+          <h2>프리셋</h2>
+          <input id="favoritePresetNameInput" type="text" placeholder="선택 프리셋 이름" aria-label="새 선택 프리셋 이름">
+          <button id="saveFavoritePresetButton" type="button">저장</button>
+          <div id="favoritePresetList" class="preset-list" role="list" aria-label="저장한 프리셋"></div>
+          <div class="sidebar-button-grid">
+            <button id="selectedOnlyButton" type="button">선택만</button>
+            <button id="selectAllCardsButton" type="button">전체 선택</button>
+            <button id="clearSelectedCardsButton" type="button">선택 해제</button>
           </div>
-          <button id="copyJsonButton" type="button">복사</button>
-          <button id="downloadJsonButton" type="button">다운로드</button>
-          <button id="closeExportButton" type="button" aria-label="출력 닫기">닫기</button>
+        </section>
+
+      </div>
+      <div id="sidebarResizeHandle" class="sidebar-resize-handle" role="separator" aria-orientation="vertical" aria-label="패널 폭 조절"></div>
+    </aside>
+
+    <main>
+      <div id="appToolbar" class="toolbar">
+        <div class="control-row">
+          <div class="control-group filter-group">
+            <span class="control-label">필터</span>
+            <div class="filter-menu">
+              <button id="groupFilterButton" class="filter-menu-button" type="button" data-filter-menu="group" aria-expanded="false">group</button>
+              <div id="groupFilterOptions" class="filter-option-panel" hidden></div>
+            </div>
+            <div class="filter-menu">
+              <button id="recognitionFilterButton" class="filter-menu-button" type="button" data-filter-menu="recognition" aria-expanded="false">recog</button>
+              <div id="recognitionFilterOptions" class="filter-option-panel" hidden></div>
+            </div>
+            <div class="filter-menu">
+              <button id="bookmarkFilterButton" class="filter-menu-button" type="button" data-filter-menu="bookmark" aria-expanded="false">bookmark</button>
+              <div id="bookmarkFilterOptions" class="filter-option-panel" hidden></div>
+            </div>
+            <button id="clearFiltersButton" type="button">필터 초기화</button>
+          </div>
+          <div class="control-group view-group">
+            <span class="control-label">보기</span>
+            <div class="view-mode-switcher" aria-label="보기 모드">
+              <button class="view-mode-button" type="button" data-view-mode="compact">간단히 보기</button>
+              <button class="view-mode-button" type="button" data-view-mode="list">목록형 보기</button>
+              <button class="view-mode-button" type="button" data-view-mode="full">자세히 보기</button>
+            </div>
+          </div>
         </div>
       </div>
-      <textarea id="exportJsonText" spellcheck="false"></textarea>
-    </section>
 
-    <section id="emptyState" class="empty-state" hidden></section>
+      <section id="emptyState" class="empty-state" hidden></section>
 
-    <section id="summary" class="summary" hidden></section>
-    <section id="caseGrid" class="case-grid" hidden></section>
-    <section id="caseDetail" class="case-detail" hidden></section>
-  </main>
+      <section id="summary" class="summary" hidden></section>
+      <section id="caseGrid" class="case-grid" hidden></section>
+    </main>
+  </div>
+
+  <section id="caseDetail" class="case-detail" hidden></section>
+  <button id="drillStartButton" class="drill-fab" type="button" aria-label="드릴 시작" title="드릴 시작">▶</button>
+
+  <section id="drillOverlay" class="drill-overlay" hidden>
+    <div class="drill-panel">
+      <div class="drill-top">
+        <strong id="drillProgress">0 / 0</strong>
+        <button id="drillCloseButton" type="button">닫기</button>
+      </div>
+      <div class="drill-setup-block">
+        <span>SETUP</span>
+        <p id="drillSetupText"></p>
+      </div>
+      <div class="drill-actions">
+        <button id="drillShowAnswerButton" type="button">공식보기</button>
+        <button id="drillNextButton" type="button">다음</button>
+      </div>
+      <div id="drillPreviousBlock" class="drill-previous" hidden>
+        <span>이전 setup</span>
+        <p id="drillPreviousSetupText"></p>
+        <button id="drillPreviousAnswerButton" type="button">이전 공식보기</button>
+      </div>
+    </div>
+  </section>
 
   <template id="caseCardTemplate">
     <article class="case-card">
@@ -95,9 +150,10 @@
           <p class="case-meta"></p>
         </div>
         <div class="quick-actions">
-          <button class="favorite-button icon-button" type="button" aria-label="즐겨찾기" title="즐겨찾기">☆</button>
-          <button class="status-button icon-button" type="button" data-status="learning" aria-label="암기 중" title="암기 중">◐</button>
-          <button class="status-button icon-button" type="button" data-status="learned" aria-label="암기 완료" title="암기 완료">✓</button>
+          <button class="bookmark-button bookmark-red-sun icon-button" type="button" data-bookmark="red-sun" aria-label="빨간 해 북마크" title="빨간 해 북마크">☀</button>
+          <button class="bookmark-button bookmark-green-moon icon-button" type="button" data-bookmark="green-moon" aria-label="초록 달 북마크" title="초록 달 북마크">☾</button>
+          <button class="bookmark-button bookmark-yellow-star icon-button" type="button" data-bookmark="yellow-star" aria-label="노란 별 북마크" title="노란 별 북마크">★</button>
+          <button class="bookmark-button bookmark-blue-cloud icon-button" type="button" data-bookmark="blue-cloud" aria-label="파란 구름 북마크" title="파란 구름 북마크">☁</button>
           <button class="edit-button icon-button" type="button" aria-label="편집" title="편집">✎</button>
         </div>
       </div>

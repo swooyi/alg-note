@@ -1,6 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="sA">
-  <rect width="64" height="64" rx="14" fill="#f8fafc"/>
-  <path d="M13 50 32 10l19 40H40l-3-8H27l-3 8H13Zm17-17h4l-2-6-2 6Z" fill="#1769aa"/>
-  <path d="M18 42c2 2 5 3 8 3 4 0 6-1 6-3 0-5-16-2-16-12 0-6 5-10 13-10 4 0 8 1 11 3l-4 8c-2-1-4-2-7-2s-4 1-4 2c0 4 16 2 16 12 0 7-6 11-15 11-5 0-10-1-13-4l5-8Z" fill="#1f2328"/>
-  <rect x="2" y="2" width="60" height="60" rx="12" fill="none" stroke="#d6dbe3" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ALG note">
+  <rect width="64" height="64" rx="12" fill="#ffffff"/>
+  <g fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 8 48 16.5v18L32 44 16 34.5v-18Z" stroke-width="4"/>
+    <path d="M16 16.5 32 26l16-9.5" stroke-width="4"/>
+    <path d="M32 26v18" stroke-width="4"/>
+  </g>
+  <text x="32" y="56" fill="#111111" font-family="Arial Black, Arial, sans-serif" font-size="16" font-weight="900" letter-spacing="3" text-anchor="middle">ALG</text>
+  <path d="M23 60h18" stroke="#8a63e6" stroke-width="3.5" stroke-linecap="round"/>
 </svg>
