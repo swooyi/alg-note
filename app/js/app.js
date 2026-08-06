@@ -60,6 +60,7 @@ const elements = {
   drillRecapModeButton: document.getElementById("drillRecapModeButton"),
   drillTrainModeButton: document.getElementById("drillTrainModeButton"),
   drillSetupText: document.getElementById("drillSetupText"),
+  drillMain: document.getElementById("drillMain"),
   drillTimerText: document.getElementById("drillTimerText"),
   drillHintText: document.getElementById("drillHintText"),
   drillTimesText: document.getElementById("drillTimesText"),
@@ -706,6 +707,15 @@ function updateFilterMenuButtons() {
 }
 
 
+function closeFilterMenus() {
+  for (const button of elements.filterMenuButtons) {
+    const panel = document.getElementById(`${button.dataset.filterMenu}FilterOptions`);
+    panel.hidden = true;
+    button.setAttribute("aria-expanded", "false");
+  }
+}
+
+
 function updateViewModeButtons() {
   for (const button of elements.viewModeButtons) {
     const active = button.dataset.viewMode === state.viewMode;
@@ -1063,6 +1073,7 @@ function renderDatasetOptions() {
   for (const key of keys) {
     const algset = bundled[key]["algset.json"] || {};
     const cases = bundled[key]["cases.json"]?.cases || [];
+    const previewCase = normalizeDataset(bundled[key]).cases.find((item) => (item.svg || "").trim());
     const option = document.createElement("option");
     option.value = key;
     option.textContent = algset.name || key;
@@ -1078,7 +1089,20 @@ function renderDatasetOptions() {
     const meta = document.createElement("span");
     meta.textContent = `${algset.puzzle || "FTO"} · ${cases.length}개`;
 
-    button.append(name, meta);
+    const preview = document.createElement("div");
+    preview.className = "dataset-choice-preview";
+    if (previewCase?.svg) {
+      preview.innerHTML = previewCase.svg;
+    } else {
+      preview.classList.add("is-missing");
+      preview.textContent = "이미지없음";
+    }
+
+    const textBlock = document.createElement("div");
+    textBlock.className = "dataset-choice-text";
+    textBlock.append(name, meta);
+
+    button.append(preview, textBlock);
     elements.datasetHomeGrid.append(button);
   }
 
@@ -1128,15 +1152,16 @@ for (const button of elements.filterMenuButtons) {
   button.addEventListener("click", () => {
     const panel = document.getElementById(`${button.dataset.filterMenu}FilterOptions`);
     const willOpen = panel.hidden;
-    for (const menuButton of elements.filterMenuButtons) {
-      const menuPanel = document.getElementById(`${menuButton.dataset.filterMenu}FilterOptions`);
-      menuPanel.hidden = true;
-      menuButton.setAttribute("aria-expanded", "false");
-    }
+    closeFilterMenus();
     panel.hidden = !willOpen;
     button.setAttribute("aria-expanded", willOpen ? "true" : "false");
   });
 }
+
+document.addEventListener("click", (event) => {
+  if (event.target instanceof Element && event.target.closest(".filter-menu")) return;
+  closeFilterMenus();
+});
 
 function toggleFilterValue(set, value) {
   if (set.has(value)) {
@@ -1261,6 +1286,10 @@ elements.drillNextButton.addEventListener("click", () => {
 
 elements.drillShowAnswerButton.addEventListener("click", () => {
   toggleDrillAnswer();
+});
+
+elements.drillMain.addEventListener("click", () => {
+  toggleDrillTimer();
 });
 
 elements.drillUndoButton.addEventListener("click", () => {
