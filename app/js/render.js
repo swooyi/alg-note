@@ -1,5 +1,27 @@
 window.AlgNoteRender = (() => {
 const RECOGNITION_ORDER = [
+  "EO",
+  "1C",
+  "3C",
+  "Arrow",
+  "Axe",
+  "Bird",
+  "Bunny",
+  "Cadj",
+  "Copp",
+  "Cut",
+  "Gem",
+  "Hazard",
+  "Kite",
+  "Knight",
+  "N",
+  "Pair",
+  "Shell",
+  "Squid",
+  "T",
+  "Thumb",
+  "Tie",
+  "Yoshi",
   "is-corner-only",
   "is-corner-flipped-only",
   "is-pair-solved",
@@ -177,6 +199,22 @@ function recognitionClassName(value) {
 }
 
 
+function displayCaseName(item, state) {
+  const name = text(item.name);
+  if (state.dataset?.algset !== "obl" || state.dataset?.puzzle !== "SQ1") return name;
+  return name.replaceAll("cee", "ce").replaceAll("eec", "ec");
+}
+
+
+function splitOblCompactName(label, state) {
+  if (state.dataset?.algset !== "obl" || state.dataset?.puzzle !== "SQ1") return null;
+  const name = text(label);
+  if (name.length < 10) return null;
+  const parts = name.split("|");
+  return parts.length === 2 && parts[0] && parts[1] ? parts : null;
+}
+
+
 function makeCaseCard(template, item, state) {
   const node = template.content.firstElementChild.cloneNode(true);
   const currentBookmark = state.bookmarks?.get(item.id) || "";
@@ -193,10 +231,14 @@ function makeCaseCard(template, item, state) {
   node.classList.toggle("is-selected", state.selectedCaseId === item.id);
   node.classList.toggle("is-active-card", state.selectedCards?.has(item.id));
   node.classList.toggle("is-compact", isCompact);
+  node.classList.toggle("is-obl-case", state.dataset?.algset === "obl" && state.dataset?.puzzle === "SQ1");
   node.classList.toggle("images-hidden", !state.imagesVisible || isList);
   node.classList.toggle("has-recognition-badges", !isEditing && (isDetail || isCompact || isList) && recognitions.length > 0);
-  renderCaseTitle(node.querySelector(".case-name"), isDetail ? `[${detailGroupLabel(item, state)}] ${item.name}` : item.name, {
+  const caseName = displayCaseName(item, state);
+  const titleLabel = isDetail ? `[${detailGroupLabel(item, state)}] ${caseName}` : caseName;
+  renderCaseTitle(node.querySelector(".case-name"), titleLabel, {
     currentBookmark,
+    titleParts: isCompact ? splitOblCompactName(caseName, state) : null,
   });
   node.querySelector(".case-meta").textContent = isDetail ? "" : caseMetaParts(item).filter(Boolean).join(" · ");
   renderSvgBox(node.querySelector(".svg-box"), item.svg);
@@ -234,12 +276,20 @@ function makeCaseCard(template, item, state) {
 }
 
 
-function renderCaseTitle(title, label, { currentBookmark }) {
+function renderCaseTitle(title, label, { currentBookmark, titleParts = null }) {
   title.replaceChildren();
 
   const labelNode = document.createElement("span");
   labelNode.className = "case-title-text";
-  labelNode.textContent = label;
+  if (titleParts) {
+    const firstLine = document.createElement("span");
+    firstLine.textContent = `${titleParts[0]}|`;
+    const secondLine = document.createElement("span");
+    secondLine.textContent = titleParts[1];
+    labelNode.append(firstLine, secondLine);
+  } else {
+    labelNode.textContent = label;
+  }
   title.append(labelNode);
 
   const badges = document.createElement("span");

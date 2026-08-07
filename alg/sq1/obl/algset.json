@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "SQ1",
+  "id": "obl",
+  "name": "OBL",
+  "source": {
+    "legacyPath": "",
+    "url": "https://mihlefeld.github.io/Alg-Trainers/Sq1-OBL-Trainer/index.html?select"
+  },
+  "notes": [
+    "Imported from Michael Hilefeld's Square-1 OBL Trainer data files."
+  ]
+}

@@ -1172,14 +1172,23 @@ function saveCardEdit(card) {
 
 function renderDatasetOptions() {
   const bundled = window.AlgNoteBundledData || {};
+  const puzzleOrder = ["FTO", "SQ1", "3x3"];
   const keys = Object.keys(bundled).sort((a, b) => {
-    const nameA = bundled[a]["algset.json"]?.name || a;
-    const nameB = bundled[b]["algset.json"]?.name || b;
-    return nameA.localeCompare(nameB);
+    const algsetA = bundled[a]["algset.json"] || {};
+    const algsetB = bundled[b]["algset.json"] || {};
+    const puzzleA = algsetA.puzzle || "FTO";
+    const puzzleB = algsetB.puzzle || "FTO";
+    const puzzleCompare =
+      (puzzleOrder.indexOf(puzzleA) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleA)) -
+      (puzzleOrder.indexOf(puzzleB) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleB));
+    if (puzzleCompare !== 0) return puzzleCompare;
+    return (algsetA.name || a).localeCompare(algsetB.name || b);
   });
 
   elements.datasetSelect.replaceChildren();
   elements.datasetHomeGrid.replaceChildren();
+
+  const puzzleSections = new Map();
   for (const key of keys) {
     const algset = bundled[key]["algset.json"] || {};
     const cases = bundled[key]["cases.json"]?.cases || [];
@@ -1213,7 +1222,24 @@ function renderDatasetOptions() {
     textBlock.append(name, meta);
 
     button.append(preview, textBlock);
-    elements.datasetHomeGrid.append(button);
+
+    const puzzle = algset.puzzle || "FTO";
+    if (!puzzleSections.has(puzzle)) {
+      const section = document.createElement("section");
+      section.className = "dataset-puzzle-section";
+
+      const title = document.createElement("h3");
+      title.className = "dataset-puzzle-title";
+      title.textContent = `[${puzzle}]`;
+
+      const grid = document.createElement("div");
+      grid.className = "dataset-puzzle-grid";
+
+      section.append(title, grid);
+      elements.datasetHomeGrid.append(section);
+      puzzleSections.set(puzzle, grid);
+    }
+    puzzleSections.get(puzzle).append(button);
   }
 
   renderPresetShortcuts();
