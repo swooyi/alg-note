@@ -1,0 +1,85 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Add accent color selection on the home screen, hide the home button while already home, and remove duplicate home copy.",
+  "assumptions": [
+    "The accent theme changes only accent tokens and leaves layout, fonts, bookmark colors, recognition colors, and selected-only yellow active state unchanged.",
+    "The settings popover is shown only on the home screen.",
+    "The default accent theme is blue."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_add_accent_theme_state",
+      "order": 1,
+      "title": "Add accent theme state and persistence",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Accent theme constants",
+        "localStorage-backed state",
+        "root dataset application",
+        "CSS accent token selectors"
+      ],
+      "protected_fields": [
+        "Selected-only yellow active styling",
+        "Bookmark colors",
+        "Recognition tag colors",
+        "Dataset/card data"
+      ],
+      "summary": "Implement blue, purple, green, and red accent themes using root data attributes and persisted local state.",
+      "verify": [
+        "Invalid or missing saved theme falls back to blue.",
+        "Theme is applied to documentElement data-accent-theme.",
+        "CSS keeps selected-only active yellow."
+      ]
+    },
+    {
+      "id": "02_add_home_settings_ui",
+      "order": 2,
+      "title": "Add home settings popover",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html, C:\\dev\\alg-note\\app\\js\\app.js, and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Home header actions",
+        "Settings icon button",
+        "Settings popover markup",
+        "Accent theme option buttons",
+        "Popover open/close behavior"
+      ],
+      "protected_fields": [
+        "Sidebar preset controls",
+        "Filter panel behavior",
+        "Drill behavior"
+      ],
+      "summary": "Place a gear icon settings button on the home screen and expose color theme choices in a small popover.",
+      "verify": [
+        "Settings button is textless and has aria-label/title 설정.",
+        "Only one theme option is active at a time.",
+        "Choosing an option saves and applies the accent theme."
+      ]
+    },
+    {
+      "id": "03_cleanup_home_copy_and_visibility",
+      "order": 3,
+      "title": "Clean up home copy and header button visibility",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html, C:\\dev\\alg-note\\app\\js\\app.js, and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Home copy",
+        "Home/settings button visibility",
+        "Dataset label visibility on home"
+      ],
+      "protected_fields": [
+        "Dataset screen label format",
+        "Home navigation behavior"
+      ],
+      "summary": "Remove duplicate FTO note copy on home, hide the home button on home, and show it on dataset screens.",
+      "verify": [
+        "Home screen shows title, settings button, and 해법 선택 only.",
+        "Dataset screen shows the home button and dataset label.",
+        "Existing home navigation still works."
+      ]
+    }
+  ]
+}

@@ -9,6 +9,7 @@ const DEFAULT_SIDEBAR_WIDTH = 288;
 const MIN_SIDEBAR_WIDTH = 220;
 const MAX_SIDEBAR_WIDTH = 440;
 const VIEW_MODES = new Set(["compact", "list", "full"]);
+const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono"]);
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
 
 function initialViewMode() {
@@ -17,12 +18,23 @@ function initialViewMode() {
   return loadJson("detailModeV2", "compact") === "full" ? "full" : "compact";
 }
 
+function initialAccentTheme() {
+  const saved = loadJson("accentTheme", "blue");
+  return ACCENT_THEMES.has(saved) ? saved : "blue";
+}
+
 const elements = {
   datasetLabel: document.getElementById("datasetLabel"),
   datasetSelect: document.getElementById("datasetSelect"),
   homeButton: document.getElementById("homeButton"),
+  homeSettingsButton: document.getElementById("homeSettingsButton"),
+  homeSettingsPopover: document.getElementById("homeSettingsPopover"),
+  accentThemeButtons: [...document.querySelectorAll(".accent-theme-button")],
   homeView: document.getElementById("homeView"),
   datasetHomeGrid: document.getElementById("datasetHomeGrid"),
+  presetShortcutSection: document.getElementById("presetShortcutSection"),
+  presetShortcutGrid: document.getElementById("presetShortcutGrid"),
+  presetShortcutEmpty: document.getElementById("presetShortcutEmpty"),
   searchInput: document.getElementById("searchInput"),
   appSidebar: document.getElementById("appSidebar"),
   sidebarOpenButton: document.getElementById("sidebarOpenButton"),
@@ -59,6 +71,7 @@ const elements = {
   drillProgress: document.getElementById("drillProgress"),
   drillRecapModeButton: document.getElementById("drillRecapModeButton"),
   drillTrainModeButton: document.getElementById("drillTrainModeButton"),
+  drillRandomAufButton: document.getElementById("drillRandomAufButton"),
   drillSetupText: document.getElementById("drillSetupText"),
   drillMain: document.getElementById("drillMain"),
   drillTimerText: document.getElementById("drillTimerText"),
@@ -81,6 +94,7 @@ const state = {
   recognitionFilters: new Set(),
   bookmarkFilters: new Set(),
   viewMode: initialViewMode(),
+  accentTheme: initialAccentTheme(),
   sidebarOpen: loadJson("sidebarOpen", true),
   sidebarWidth: loadJson("sidebarWidth", DEFAULT_SIDEBAR_WIDTH),
   columns: DEFAULT_COLUMNS,
@@ -101,6 +115,7 @@ const state = {
   drill: {
     active: false,
     mode: "recap",
+    randomAuf: loadJson("drillRandomAuf", false) === true,
     source: [],
     queue: [],
     index: 0,
@@ -113,6 +128,29 @@ const state = {
     completed: false,
   },
 };
+
+
+function applyAccentTheme() {
+  document.documentElement.dataset.accentTheme = state.accentTheme;
+  for (const button of elements.accentThemeButtons) {
+    const active = button.dataset.accentTheme === state.accentTheme;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+
+function closeHomeSettings() {
+  elements.homeSettingsPopover.hidden = true;
+  elements.homeSettingsButton.setAttribute("aria-expanded", "false");
+}
+
+
+function toggleHomeSettings() {
+  const willOpen = elements.homeSettingsPopover.hidden;
+  elements.homeSettingsPopover.hidden = !willOpen;
+  elements.homeSettingsButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
 
 
 function savePersonalState() {
@@ -136,23 +174,36 @@ function loadPersonalState() {
 }
 
 
-function selectionPresetKey() {
-  return `selectionPresets.${state.key}`;
+function selectionPresetKey(key = state.key) {
+  return `selectionPresets.${key}`;
 }
 
 
 function loadSelectionPresets() {
   const saved = loadJson(selectionPresetKey(), { presets: [], activePresetId: "" });
+  let migrated = false;
   state.selectionPresets = (saved.presets || [])
-    .filter((preset) => preset && preset.id && preset.name)
+    .filter((preset) => preset && preset.name)
     .map((preset) => ({
-      id: String(preset.id),
+      id: preset.id ? String(preset.id) : makePresetId(),
       name: String(preset.name),
       selectedCards: Array.isArray(preset.selectedCards) ? preset.selectedCards.map(String) : [],
-    }));
+      pinned: preset.pinned === true,
+    }))
+    .map((preset, index, presets) => {
+      const original = (saved.presets || [])[index];
+      if (!original?.id) migrated = true;
+      if (original?.pinned !== preset.pinned) migrated = true;
+      while (presets.find((entry) => entry !== preset && entry.id === preset.id)) {
+        preset.id = makePresetId();
+        migrated = true;
+      }
+      return preset;
+    });
   state.activeSelectionPresetId = state.selectionPresets.some((preset) => preset.id === saved.activePresetId)
     ? saved.activePresetId
     : "";
+  if (migrated) saveSelectionPresets();
 }
 
 
@@ -175,10 +226,16 @@ function renderSelectionPresetOptions() {
     elements.favoritePresetList.append(empty);
   }
 
-  for (const preset of state.selectionPresets) {
+  const presets = state.selectionPresets
+    .map((preset, index) => ({ preset, index }))
+    .sort((a, b) => Number(b.preset.pinned) - Number(a.preset.pinned) || a.index - b.index)
+    .map((entry) => entry.preset);
+
+  for (const preset of presets) {
     const item = document.createElement("div");
     item.className = "preset-item";
     item.classList.toggle("is-active", preset.id === state.activeSelectionPresetId);
+    item.classList.toggle("is-pinned", preset.pinned);
     item.dataset.presetId = preset.id;
     item.setAttribute("role", "listitem");
 
@@ -190,8 +247,23 @@ function renderSelectionPresetOptions() {
     const name = document.createElement("span");
     name.textContent = preset.name;
     const count = document.createElement("strong");
-    count.textContent = preset.selectedCards.length;
-    applyButton.append(name, count);
+    count.textContent = `${preset.selectedCards.length} cases`;
+    const text = document.createElement("span");
+    text.className = "preset-file-text";
+    text.append(name, count);
+
+    const pinButton = document.createElement("button");
+    pinButton.className = "preset-file-icon-button";
+    pinButton.type = "button";
+    pinButton.dataset.presetAction = "pin";
+    pinButton.setAttribute("aria-label", `${preset.name} 프리셋 ${preset.pinned ? "고정 해제" : "고정"}`);
+    pinButton.setAttribute("aria-pressed", preset.pinned ? "true" : "false");
+    pinButton.title = preset.pinned ? "고정 해제" : "고정";
+    const icon = document.createElement("span");
+    icon.className = "preset-file-icon";
+    icon.setAttribute("aria-hidden", "true");
+    pinButton.append(icon);
+    applyButton.append(text);
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "preset-delete-button";
@@ -201,7 +273,7 @@ function renderSelectionPresetOptions() {
     deleteButton.title = "삭제";
     deleteButton.textContent = "×";
 
-    item.append(applyButton, deleteButton);
+    item.append(pinButton, applyButton, deleteButton);
     elements.favoritePresetList.append(item);
   }
 
@@ -212,6 +284,30 @@ function renderSelectionPresetOptions() {
 
 function makePresetId() {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+}
+
+
+function hasDuplicatePresetName(name) {
+  const normalized = name.trim().toLocaleLowerCase();
+  return state.selectionPresets.some((preset) => preset.name.trim().toLocaleLowerCase() === normalized);
+}
+
+
+function applySelectionPreset(preset) {
+  state.selectedCards = new Set(preset.selectedCards);
+  state.selectedOnly = true;
+  state.selectedCaseId = "";
+  state.activeSelectionPresetId = preset.id;
+  saveSelectionPresets();
+  render();
+}
+
+
+function applySelectionPresetById(presetId) {
+  const preset = state.selectionPresets.find((entry) => entry.id === presetId);
+  if (!preset) return false;
+  applySelectionPreset(preset);
+  return true;
 }
 
 
@@ -316,17 +412,26 @@ function shuffledItems(items) {
 }
 
 
-function randomUTurn() {
-  const values = ["", "U", "U'"];
+function randomItem(values) {
   return values[Math.floor(Math.random() * values.length)];
+}
+
+
+function randomAufMove() {
+  const puzzle = String(state.dataset?.puzzle || "").toLowerCase();
+  const values = puzzle.includes("fto") ? ["U", "U'"] : ["U", "U'", "U2"];
+  return randomItem(values);
 }
 
 
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return "등록된 setup이 없습니다.";
+  if (!state.drill.randomAuf) return setup;
 
-  return [randomUTurn(), setup, randomUTurn()].filter(Boolean).join(" ");
+  return Math.random() < 0.5
+    ? `${randomAufMove()} ${setup}`
+    : `${setup} ${randomAufMove()}`;
 }
 
 
@@ -475,8 +580,10 @@ function renderDrill() {
   const total = state.drill.queue.length;
   elements.drillRecapModeButton.classList.toggle("is-active", state.drill.mode === "recap");
   elements.drillTrainModeButton.classList.toggle("is-active", state.drill.mode === "train");
+  elements.drillRandomAufButton.classList.toggle("is-active", state.drill.randomAuf);
   elements.drillRecapModeButton.setAttribute("aria-pressed", state.drill.mode === "recap" ? "true" : "false");
   elements.drillTrainModeButton.setAttribute("aria-pressed", state.drill.mode === "train" ? "true" : "false");
+  elements.drillRandomAufButton.setAttribute("aria-pressed", state.drill.randomAuf ? "true" : "false");
 
   if (state.drill.mode === "recap") {
     elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} cases`;
@@ -669,7 +776,8 @@ function showHomeView() {
   state.editingCaseId = "";
   elements.homeView.hidden = false;
   elements.homeButton.hidden = true;
-  elements.datasetLabel.textContent = "FTO 공식 노트";
+  elements.datasetLabel.textContent = "";
+  renderPresetShortcuts();
   document.body.classList.add("is-home-view");
   updateSidebarLayout();
   updateDrillStartButton();
@@ -682,6 +790,7 @@ function showNoteView() {
   elements.homeView.hidden = true;
   elements.exportPanel.hidden = true;
   elements.homeButton.hidden = false;
+  closeHomeSettings();
   document.body.classList.remove("is-home-view");
   updateSidebarLayout();
   updateDrillStartButton();
@@ -811,6 +920,7 @@ function render() {
   refreshRecognitionFilters();
   elements.caseGrid.dataset.columns = state.columns;
   elements.caseGrid.dataset.viewMode = state.viewMode;
+  elements.caseGrid.classList.toggle("is-grouped", state.viewMode === "compact");
   elements.caseGrid.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.caseDetail.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.datasetLabel.textContent = `${state.dataset.puzzle} · ${state.dataset.name}`;
@@ -1106,7 +1216,73 @@ function renderDatasetOptions() {
     elements.datasetHomeGrid.append(button);
   }
 
+  renderPresetShortcuts();
   return keys;
+}
+
+
+function collectPinnedPresetShortcuts() {
+  const bundled = window.AlgNoteBundledData || {};
+  const keys = Object.keys(bundled).sort((a, b) => {
+    const nameA = bundled[a]["algset.json"]?.name || a;
+    const nameB = bundled[b]["algset.json"]?.name || b;
+    return nameA.localeCompare(nameB);
+  });
+  const shortcuts = [];
+
+  for (const key of keys) {
+    const dataset = normalizeDataset(bundled[key]);
+    const algset = bundled[key]["algset.json"] || {};
+    const saved = loadJson(selectionPresetKey(datasetKey(dataset)), { presets: [] });
+    for (const preset of saved.presets || []) {
+      if (!preset?.id || !preset.name || preset.pinned !== true) continue;
+      shortcuts.push({
+        datasetKey: key,
+        presetId: String(preset.id),
+        presetName: String(preset.name),
+        selectedCount: Array.isArray(preset.selectedCards) ? preset.selectedCards.length : 0,
+        datasetName: algset.name || key,
+        puzzle: algset.puzzle || "FTO",
+      });
+    }
+  }
+
+  return shortcuts;
+}
+
+
+function renderPresetShortcuts() {
+  const shortcuts = collectPinnedPresetShortcuts();
+  elements.presetShortcutGrid.replaceChildren();
+  elements.presetShortcutEmpty.hidden = shortcuts.length > 0;
+  if (!shortcuts.length) return;
+
+  const fragment = document.createDocumentFragment();
+  for (const shortcut of shortcuts) {
+    const button = document.createElement("button");
+    button.className = "preset-shortcut-button";
+    button.type = "button";
+    button.dataset.datasetKey = shortcut.datasetKey;
+    button.dataset.presetId = shortcut.presetId;
+
+    const icon = document.createElement("span");
+    icon.className = "preset-shortcut-icon";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "★";
+
+    const text = document.createElement("span");
+    text.className = "preset-shortcut-text";
+    const name = document.createElement("strong");
+    name.textContent = shortcut.presetName;
+    const meta = document.createElement("span");
+    meta.textContent = `${shortcut.puzzle} · ${shortcut.datasetName} · ${shortcut.selectedCount} cases`;
+    text.append(name, meta);
+
+    button.append(icon, text);
+    fragment.append(button);
+  }
+
+  elements.presetShortcutGrid.append(fragment);
 }
 
 
@@ -1117,12 +1293,13 @@ function updateDatasetChoiceButtons() {
 }
 
 
-function loadBundledDataset(key) {
+function loadBundledDataset(key, options = {}) {
   const bundled = window.AlgNoteBundledData || {};
   if (!bundled[key]) return;
   elements.datasetSelect.value = key;
   showNoteView();
   setDataset(bundled[key]);
+  if (options.presetId) applySelectionPresetById(options.presetId);
   updateDatasetChoiceButtons();
 }
 
@@ -1135,10 +1312,36 @@ elements.homeButton.addEventListener("click", () => {
   showHomeView();
 });
 
+elements.homeSettingsButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  toggleHomeSettings();
+});
+
+elements.homeSettingsPopover.addEventListener("click", (event) => {
+  event.stopPropagation();
+});
+
+for (const button of elements.accentThemeButtons) {
+  button.addEventListener("click", () => {
+    const nextTheme = button.dataset.accentTheme;
+    if (!ACCENT_THEMES.has(nextTheme) || state.accentTheme === nextTheme) return;
+    state.accentTheme = nextTheme;
+    saveJson("accentTheme", state.accentTheme);
+    applyAccentTheme();
+  });
+}
+
 elements.datasetHomeGrid.addEventListener("click", (event) => {
   const button = event.target.closest(".dataset-choice-button");
   if (!button) return;
   loadBundledDataset(button.dataset.datasetKey);
+  saveJson("lastBundledDataset", button.dataset.datasetKey);
+});
+
+elements.presetShortcutGrid.addEventListener("click", (event) => {
+  const button = event.target.closest(".preset-shortcut-button");
+  if (!button) return;
+  loadBundledDataset(button.dataset.datasetKey, { presetId: button.dataset.presetId });
   saveJson("lastBundledDataset", button.dataset.datasetKey);
 });
 
@@ -1159,6 +1362,8 @@ for (const button of elements.filterMenuButtons) {
 }
 
 document.addEventListener("click", (event) => {
+  if (event.target instanceof Element && event.target.closest(".home-settings-wrapper")) return;
+  closeHomeSettings();
   if (event.target instanceof Element && event.target.closest(".filter-menu")) return;
   closeFilterMenus();
 });
@@ -1202,16 +1407,23 @@ for (const button of elements.viewModeButtons) {
 elements.saveFavoritePresetButton.addEventListener("click", () => {
   const name = elements.favoritePresetNameInput.value.trim();
   if (!name) return;
+  if (hasDuplicatePresetName(name)) {
+    window.alert("같은 해법셋 안에 같은 이름의 프리셋이 이미 있습니다.");
+    elements.favoritePresetNameInput.focus();
+    return;
+  }
 
   const preset = {
     id: makePresetId(),
     name,
     selectedCards: [...state.selectedCards],
+    pinned: false,
   };
   state.selectionPresets.push(preset);
   state.activeSelectionPresetId = preset.id;
   elements.favoritePresetNameInput.value = "";
   saveSelectionPresets();
+  renderPresetShortcuts();
   render();
 });
 
@@ -1228,16 +1440,20 @@ elements.favoritePresetList.addEventListener("click", (event) => {
     state.selectionPresets = state.selectionPresets.filter((entry) => entry.id !== preset.id);
     if (state.activeSelectionPresetId === preset.id) state.activeSelectionPresetId = "";
     saveSelectionPresets();
+    renderPresetShortcuts();
     render();
     return;
   }
 
-  state.selectedCards = new Set(preset.selectedCards);
-  state.selectedOnly = true;
-  state.selectedCaseId = "";
-  state.activeSelectionPresetId = preset.id;
-  saveSelectionPresets();
-  render();
+  if (button.dataset.presetAction === "pin") {
+    preset.pinned = !preset.pinned;
+    saveSelectionPresets();
+    renderPresetShortcuts();
+    render();
+    return;
+  }
+
+  applySelectionPreset(preset);
 });
 
 elements.selectedOnlyButton.addEventListener("click", () => {
@@ -1274,6 +1490,15 @@ elements.drillRecapModeButton.addEventListener("click", () => {
 
 elements.drillTrainModeButton.addEventListener("click", () => {
   setDrillMode("train");
+});
+
+elements.drillRandomAufButton.addEventListener("click", () => {
+  state.drill.randomAuf = !state.drill.randomAuf;
+  saveJson("drillRandomAuf", state.drill.randomAuf);
+  if (state.drill.active && state.drill.timerStatus === "idle" && !state.drill.completed) {
+    state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+  }
+  renderDrill();
 });
 
 elements.drillCloseButton.addEventListener("click", () => {
@@ -1559,6 +1784,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 const datasetKeys = renderDatasetOptions();
+applyAccentTheme();
 updateSidebarLayout();
 updateViewModeButtons();
 if (datasetKeys.length) {

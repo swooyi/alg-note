@@ -1,0 +1,176 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Improve selection preset management, add pinned preset shortcuts on the home screen, and align selected card/export button styling.",
+  "assumptions": [
+    "Pinned presets are still stored per algset under the existing selectionPresets.<datasetKey> localStorage key.",
+    "Pinned presets appear on the home screen under the section title \"프리셋 바로가기\".",
+    "Clicking a preset shortcut loads its algset, applies that preset, turns on selected-only, and enters the note screen.",
+    "Pinned state defaults to false for existing presets.",
+    "The home export button should use the same white-background general button style as ordinary action buttons."
+  ],
+  "source_checklists": [
+    "C:\\dev\\alg-note\\docs\\archive\\[05] [05_of_05] task-checklist-drill-filter-layout-presets.json",
+    "C:\\dev\\alg-note\\docs\\archive\\[08] [04_of_04] task-checklist-accent-theme-refine.json"
+  ],
+  "tasks": [
+    {
+      "id": "01_align_selected_card_and_export_styles",
+      "order": 1,
+      "title": "Align selected card and export styles",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Selected case/card active styles",
+        "Home export button styles"
+      ],
+      "protected_fields": [
+        "Bookmark colors",
+        "Recognition tag colors",
+        "Case SVG rendering",
+        "Export panel behavior"
+      ],
+      "summary": "Make selected cards use the current accent theme and make the home 수정 JSON button look like a normal white action button.",
+      "verify": [
+        "Selected card active styles use var(--accent) and var(--accent-soft).",
+        "The home 수정 JSON button no longer uses accent fill styling.",
+        "Bookmark and recognition colors remain unchanged."
+      ]
+    },
+    {
+      "id": "02_migrate_preset_pinned_field",
+      "order": 2,
+      "title": "Add pinned field to presets",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js",
+      "allowed_fields": [
+        "Preset load migration",
+        "Preset save shape",
+        "New preset default values"
+      ],
+      "protected_fields": [
+        "Preset id migration",
+        "Duplicate preset name validation",
+        "Selected card IDs"
+      ],
+      "summary": "Extend preset objects with pinned: boolean, defaulting to false for existing and newly saved presets unless toggled.",
+      "verify": [
+        "Existing presets without pinned load successfully as pinned false.",
+        "Saving migrated presets preserves id, name, and selectedCards.",
+        "New presets include pinned false."
+      ]
+    },
+    {
+      "id": "03_redesign_sidebar_preset_rows",
+      "order": 3,
+      "title": "Redesign sidebar preset rows",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Preset list row markup",
+        "Preset list row styles",
+        "Preset apply/delete controls"
+      ],
+      "protected_fields": [
+        "Preset application behavior",
+        "Preset deletion confirmation behavior"
+      ],
+      "summary": "Render presets as file-list style rows with a document affordance, name, case count, pin control, and delete control.",
+      "verify": [
+        "Preset rows visually differ from plain general action buttons.",
+        "Clicking the row/apply area still applies the preset.",
+        "Delete remains a small separate control."
+      ]
+    },
+    {
+      "id": "04_add_preset_pin_toggle",
+      "order": 4,
+      "title": "Add preset pin toggle",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Preset pin button markup",
+        "Preset pin event handling",
+        "Pinned preset ordering",
+        "Pinned active styles"
+      ],
+      "protected_fields": [
+        "Preset apply behavior",
+        "Preset delete behavior",
+        "Selected-only behavior"
+      ],
+      "summary": "Add a pin-shaped toggle per preset; pinned presets are saved, styled, and listed above unpinned presets.",
+      "verify": [
+        "Pin button toggles pinned true/false without applying the preset.",
+        "Pinned state persists after refresh.",
+        "Pinned rows sort above unpinned rows while keeping relative order inside each group."
+      ]
+    },
+    {
+      "id": "05_render_home_preset_shortcuts",
+      "order": 5,
+      "title": "Render home preset shortcuts",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html, C:\\dev\\alg-note\\app\\js\\app.js, and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Home shortcut section markup",
+        "Pinned preset aggregation across algsets",
+        "Shortcut card styles"
+      ],
+      "protected_fields": [
+        "Dataset card rendering",
+        "Dataset sorting",
+        "Bundled data"
+      ],
+      "summary": "Add a home section titled \"프리셋 바로가기\" that lists pinned presets gathered from all algsets.",
+      "verify": [
+        "Section title is exactly \"프리셋 바로가기\".",
+        "The section is hidden or empty-state-free when no presets are pinned.",
+        "Shortcut cards show algset context, preset name, and selected case count."
+      ]
+    },
+    {
+      "id": "06_apply_home_preset_shortcut",
+      "order": 6,
+      "title": "Apply preset shortcut from home",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js",
+      "allowed_fields": [
+        "Home shortcut click handling",
+        "Dataset load flow",
+        "Preset apply flow"
+      ],
+      "protected_fields": [
+        "Normal dataset card click behavior",
+        "Sidebar preset apply behavior"
+      ],
+      "summary": "Clicking a home shortcut loads the matching algset, applies the preset, enables selected-only, and opens the note screen.",
+      "verify": [
+        "Clicking a shortcut opens the correct algset.",
+        "The shortcut preset becomes active.",
+        "Selected-only is on and selectedCards match the preset."
+      ]
+    },
+    {
+      "id": "07_refresh_and_validate_preset_shortcuts",
+      "order": 7,
+      "title": "Refresh and validate preset shortcuts",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\js\\app.js and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Refresh calls after save/delete/pin changes",
+        "Syntax and UI validation"
+      ],
+      "protected_fields": [
+        "Unrelated drill/export/filter behavior"
+      ],
+      "summary": "Ensure preset shortcut UI updates after preset saves, deletes, and pin toggles, then validate the implementation.",
+      "verify": [
+        "Run node --check app/js/app.js.",
+        "Confirm pinning/unpinning updates the home shortcut section.",
+        "Confirm deleting a pinned preset removes its shortcut.",
+        "Confirm existing filter, view, selection, and drill entry behavior still works."
+      ]
+    }
+  ]
+}

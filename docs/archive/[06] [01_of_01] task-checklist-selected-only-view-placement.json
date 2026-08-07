@@ -1,0 +1,37 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app\\index.html",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Adjust the filter toolbar placement so the selected-only control matches the intended view grouping.",
+  "assumptions": [
+    "\"선택만\" is a view/filter toggle, not a selection action.",
+    "The intended placement is beside the \"보기\" label, visually before the view mode buttons."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_place_selected_only_next_to_view_label",
+      "order": 1,
+      "title": "Place selected-only beside the View label",
+      "check": true,
+      "targets": "Filter toolbar controls in C:\\dev\\alg-note\\app\\index.html and related styling/behavior if needed.",
+      "allowed_fields": [
+        "HTML structure for the filter toolbar",
+        "CSS for selected-only/view toolbar placement",
+        "Minimal JS selectors only if the markup change requires it"
+      ],
+      "protected_fields": [
+        "Selection preset data",
+        "Card selection behavior",
+        "Drill behavior",
+        "Unrelated filter controls"
+      ],
+      "summary": "Move or adjust the \"선택만\" button so it appears next to the \"보기\" label as originally intended, while keeping \"전체 선택\" and \"선택 해제\" under selection actions.",
+      "verify": [
+        "Parse this checklist JSON successfully.",
+        "Confirm \"선택만\" is visually next to the \"보기\" label.",
+        "Confirm \"전체 선택\" and \"선택 해제\" remain in the selection action group.",
+        "Run the narrowest relevant syntax check after implementation."
+      ]
+    }
+  ]
+}

@@ -16,10 +16,29 @@
         </button>
         <div>
           <h1>swooyi's ALG note</h1>
-          <p id="datasetLabel">FTO 공식 노트</p>
+          <p id="datasetLabel"></p>
         </div>
       </div>
-      <button id="homeButton" class="home-button" type="button">해법 목록</button>
+      <div class="header-actions">
+        <button id="homeButton" class="home-button home-icon-button" type="button" aria-label="홈" title="홈">⌂</button>
+        <div class="home-settings-wrapper">
+          <button id="homeSettingsButton" class="home-settings-button home-icon-button" type="button" aria-label="설정" title="설정" aria-expanded="false">⚙</button>
+          <div id="homeSettingsPopover" class="home-settings-popover" hidden>
+            <h2>설정</h2>
+            <div class="theme-setting-group" aria-label="색상 테마">
+              <span>색상</span>
+              <div class="accent-theme-buttons">
+                <button class="accent-theme-button" type="button" data-accent-theme="red" aria-label="빨강" title="빨강"><span class="accent-theme-swatch red"></span></button>
+                <button class="accent-theme-button" type="button" data-accent-theme="yellow" aria-label="노랑" title="노랑"><span class="accent-theme-swatch yellow"></span></button>
+                <button class="accent-theme-button" type="button" data-accent-theme="green" aria-label="초록" title="초록"><span class="accent-theme-swatch green"></span></button>
+                <button class="accent-theme-button" type="button" data-accent-theme="blue" aria-label="파랑" title="파랑"><span class="accent-theme-swatch blue"></span></button>
+                <button class="accent-theme-button" type="button" data-accent-theme="purple" aria-label="보라" title="보라"><span class="accent-theme-swatch purple"></span></button>
+                <button class="accent-theme-button" type="button" data-accent-theme="mono" aria-label="흑백" title="흑백"><span class="accent-theme-swatch mono"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <select id="datasetSelect" class="dataset-select" aria-label="공식 폴더" hidden></select>
     </div>
   </header>
@@ -27,13 +46,18 @@
   <section id="homeView" class="home-view">
     <div class="home-inner">
       <div class="home-title">
-        <div>
-          <h2>해법 선택</h2>
-          <p>FTO · 공식 노트</p>
-        </div>
-        <button id="exportJsonButton" class="primary-export-button" type="button">수정 json</button>
+        <span></span>
+        <button id="exportJsonButton" class="primary-export-button" type="button">수정 JSON</button>
       </div>
-      <div id="datasetHomeGrid" class="dataset-home-grid"></div>
+      <section id="presetShortcutSection" class="home-section preset-shortcut-section">
+        <h2>프리셋 바로가기</h2>
+        <div id="presetShortcutGrid" class="preset-shortcut-grid"></div>
+        <p id="presetShortcutEmpty" class="preset-shortcut-empty">등록된 바로가기가 없습니다.</p>
+      </section>
+      <section class="home-section dataset-home-section">
+        <h2>해법 선택</h2>
+        <div id="datasetHomeGrid" class="dataset-home-grid"></div>
+      </section>
     </div>
   </section>
 
@@ -96,18 +120,18 @@
           </div>
           <div class="control-group view-group">
             <span class="control-label">보기</span>
+            <button id="selectedOnlyButton" class="selected-only-toggle" type="button">선택만</button>
             <div class="view-mode-switcher" aria-label="보기 모드">
-              <button class="view-mode-button" type="button" data-view-mode="compact">간단히 보기</button>
-              <button class="view-mode-button" type="button" data-view-mode="list">목록형 보기</button>
-              <button class="view-mode-button" type="button" data-view-mode="full">자세히 보기</button>
+              <button class="view-mode-button" type="button" data-view-mode="compact">간단히</button>
+              <button class="view-mode-button" type="button" data-view-mode="list">목록</button>
+              <button class="view-mode-button" type="button" data-view-mode="full">세부</button>
             </div>
           </div>
           <div class="control-group selection-action-group">
             <span class="control-label">선택</span>
             <div class="selection-action-buttons">
-              <button id="selectedOnlyButton" type="button">선택만</button>
-              <button id="selectAllCardsButton" type="button">전체 선택</button>
-              <button id="clearSelectedCardsButton" type="button">선택 해제</button>
+              <button id="selectAllCardsButton" type="button">전체</button>
+              <button id="clearSelectedCardsButton" type="button">해제</button>
             </div>
           </div>
         </div>
@@ -131,7 +155,7 @@
           <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
           <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
         </div>
-        <span class="drill-top-spacer" aria-hidden="true"></span>
+        <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-pressed="false">랜덤 AUF</button>
       </div>
       <div id="drillProgress" class="drill-progress">Recap 0 / 0</div>
       <div class="drill-scramble-row">

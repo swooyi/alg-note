@@ -1,0 +1,165 @@
+{
+  "target_file": "C:\\dev\\alg-note",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Implement the confirmed ALG note improvements for drill random AUF behavior, timer typography, filter panel control semantics, group layout, preset identity/duplicate handling, and an optional restrained theme based on docs/design.md.",
+  "assumptions": [
+    "The app remains a static local/web app under C:\\dev\\alg-note\\app.",
+    "Random AUF applies only when the new toggle is on and must not alter saved source algorithm data.",
+    "Preset data is treated as personal local browser/app state unless code inspection proves otherwise.",
+    "The main solution-selection preset shortcut feature is intentionally deferred until preset identity and duplicate handling are improved first.",
+    "The design refresh should be implemented as an optional theme rather than replacing the default theme immediately.",
+    "The optional theme should adapt docs/design.md to a dense ALG study tool; full Apple-style hero tiles, very low content density, decorative product photography, and negative letter spacing are out of scope."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_add_random_auf_and_timer_font_tuning",
+      "order": 1,
+      "title": "Add drill random AUF toggle and tune timer font",
+      "check": true,
+      "targets": "Drill/recap/train controls, setup generation flow, timer display styles",
+      "allowed_fields": [
+        "Recap/train adjacent control markup",
+        "Random AUF on/off state",
+        "Setup display or generated drill sequence logic",
+        "Timer number font-family, font-stretch, letter spacing, width, or related CSS"
+      ],
+      "protected_fields": [
+        "Bundled algorithm data",
+        "Saved algorithm edits",
+        "Unrelated drill scoring or navigation behavior"
+      ],
+      "summary": "Add a Random AUF on/off control next to the Recap/train buttons. When enabled, FTO drills insert U or U' before or after setup, and 3x3 drills insert U, U', or U2 before or after setup. Adjust the timer number font so it is less horizontally wide.",
+      "verify": [
+        "Confirm the Random AUF control is visible next to Recap/train and can be toggled on/off.",
+        "With Random AUF off, confirm generated drill setup text matches the previous behavior.",
+        "With Random AUF on for FTO, confirm generated setup can include U or U' before or after setup.",
+        "With Random AUF on for 3x3, confirm generated setup can include U, U', or U2 before or after setup.",
+        "Confirm timer digits look narrower while remaining readable on desktop and mobile."
+      ]
+    },
+    {
+      "id": "02_reorganize_filter_selection_controls",
+      "order": 2,
+      "title": "Separate selected-only viewing from selection actions",
+      "check": true,
+      "targets": "Filter panel view row and selection row",
+      "allowed_fields": [
+        "Selected-only filter control placement",
+        "View row markup and styling",
+        "Selection action controls",
+        "Labels for selected-only, select all, and clear selection",
+        "Filter state wiring if required by control placement"
+      ],
+      "protected_fields": [
+        "Existing filter semantics other than selected-only placement",
+        "Recognition/bookmark filter behavior",
+        "Selection data storage"
+      ],
+      "summary": "Move selected-only from the selection action group to a switch-style control on the left side of the view row. Leave only Select all and Clear selection in the selection action area.",
+      "verify": [
+        "Confirm selected-only behaves as a view/filter toggle, not as a selection action.",
+        "Confirm Select all and Clear selection still update selected cases correctly.",
+        "Confirm the revised layout is understandable and does not overflow on narrow screens.",
+        "Confirm filter reset behavior remains correct for selected-only."
+      ]
+    },
+    {
+      "id": "03_keep_group_sections_single_column",
+      "order": 3,
+      "title": "Keep groups in a single vertical flow",
+      "check": true,
+      "targets": "Group wrapper layout and card grid responsive CSS",
+      "allowed_fields": [
+        "Group container grid/flex layout",
+        "Responsive breakpoints for group sections",
+        "Card grid column sizing inside each group",
+        "Spacing between group headers and card grids"
+      ],
+      "protected_fields": [
+        "Case ordering",
+        "Group names",
+        "Card selection/bookmark/status behavior",
+        "Puzzle image assets"
+      ],
+      "summary": "Prevent medium-width screens from displaying separate groups in two columns. Group sections such as F2L 1 and F2L 2 should remain stacked vertically, while cards inside each group continue to use responsive columns.",
+      "verify": [
+        "Confirm medium-width screens no longer place separate groups side by side.",
+        "Confirm wide and narrow screens preserve natural vertical group order.",
+        "Confirm card grids still adapt column count to available width.",
+        "Confirm group headers and cards do not overlap or leave awkward empty columns."
+      ]
+    },
+    {
+      "id": "04_improve_preset_identity_and_duplicate_handling",
+      "order": 4,
+      "title": "Add preset IDs and same-set duplicate-name handling",
+      "check": true,
+      "targets": "Preset storage, preset create/apply/rename/delete handlers, migration logic",
+      "allowed_fields": [
+        "Preset internal id field",
+        "Legacy preset migration for missing ids",
+        "Same algset preset name validation",
+        "Preset apply, edit, rename, and delete lookup keys",
+        "User-facing duplicate-name error or prevention UI"
+      ],
+      "protected_fields": [
+        "Bundled algorithm data",
+        "Current preset contents unless migration requires adding ids",
+        "Different algset ability to use the same preset name",
+        "Main solution-selection preset shortcut feature"
+      ],
+      "summary": "Introduce an internal presetId so preset operations do not rely on name alone. Prevent creating duplicate preset names within the same algset, while allowing the same name in different algsets. Existing duplicate-name presets should remain distinguishable through ids after migration.",
+      "verify": [
+        "Confirm presets without ids receive stable ids through migration or load-time repair.",
+        "Confirm creating a duplicate preset name in the same algset is blocked or clearly prevented.",
+        "Confirm the same preset name can still be used in different algsets.",
+        "Confirm applying, renaming, and deleting presets use presetId rather than name-only matching.",
+        "Confirm existing duplicate-name presets are not accidentally merged or deleted."
+      ]
+    },
+    {
+      "id": "05_add_theme_setting_and_restrained_theme",
+      "order": 5,
+      "title": "Add theme setting and optional restrained theme",
+      "check": true,
+      "targets": "Header home action, hamburger panel settings area, theme state, global CSS tokens, shared buttons, filter panel, cards, group headers, preset/drill controls",
+      "allowed_fields": [
+        "Solution-list button replacement with a home icon button",
+        "Hamburger panel settings section above search",
+        "Theme selector controls inside settings",
+        "Theme persistence in localStorage",
+        "Theme root attribute or class on html/body",
+        "CSS custom properties or design tokens",
+        "Neutral surface colors and single blue action accent",
+        "Button radius and active press state",
+        "Card borders, panel backgrounds, and hairline separators",
+        "Typography stack, weights, line heights, and timer font styling",
+        "Responsive spacing and touch target sizing"
+      ],
+      "protected_fields": [
+        "Algorithm data",
+        "Core app routing and state behavior unless required by visual controls",
+        "Existing compact/list/detail view semantics",
+        "Default theme as the initial user experience",
+        "Decorative hero/landing-page additions",
+        "Negative letter-spacing"
+      ],
+      "summary": "Keep the hamburger button and move settings into the top of its panel, above search and presets. Replace the existing solution-list text button with a home icon button. Add a theme selector in the settings section and persist the choice locally. The default theme should remain the initial UI, while the optional restrained theme adapts docs/design.md through quiet neutral surfaces, a single blue action accent, thin borders, consistent control shapes, readable system typography, and practical 44px touch targets.",
+      "verify": [
+        "Confirm the header keeps the hamburger button and shows the home action as an icon button instead of the solution-list text button.",
+        "Confirm the hamburger panel order is settings first, then search, then presets.",
+        "Confirm the settings section exposes theme selection without requiring a separate settings header button.",
+        "Confirm theme selection persists after reload.",
+        "Confirm the default theme remains available and is not visually replaced for users who do not opt in.",
+        "Confirm the optional restrained theme changes visual tokens without changing core layout or app behavior.",
+        "Confirm primary interactive elements consistently use one blue accent family.",
+        "Confirm controls use consistent shape grammar: pills for mode/toggle/action chips and compact 8px radius for utility buttons/cards where appropriate.",
+        "Confirm cards and panels rely on hairline borders or surface contrast rather than heavy shadows.",
+        "Confirm text remains readable and does not use negative letter-spacing.",
+        "Confirm compact, list, detail, drill, and filter-panel views remain dense enough for ALG study workflows.",
+        "Confirm desktop and mobile layouts have no text overlap, horizontal overflow, or undersized primary touch targets."
+      ]
+    }
+  ]
+}

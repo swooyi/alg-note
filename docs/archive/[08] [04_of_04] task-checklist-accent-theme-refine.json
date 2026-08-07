@@ -1,0 +1,101 @@
+{
+  "target_file": "C:\\dev\\alg-note\\app",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Refine the home accent theme selector, selected-only active styling, and export button placement.",
+  "assumptions": [
+    "Dark/system appearance mode is deferred to a separate future task.",
+    "Accent theme order is red, yellow, green, blue, purple, mono.",
+    "Theme buttons should be swatch-only with accessible labels and titles."
+  ],
+  "source_checklists": [
+    "C:\\dev\\alg-note\\docs\\archive\\[07] [03_of_03] task-checklist-accent-theme-home-settings.json"
+  ],
+  "tasks": [
+    {
+      "id": "01_expand_accent_theme_options",
+      "order": 1,
+      "title": "Expand and reorder accent themes",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html, C:\\dev\\alg-note\\app\\js\\app.js, and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Accent theme constants",
+        "Theme option markup",
+        "Accent token selectors",
+        "Theme swatch styles"
+      ],
+      "protected_fields": [
+        "Bookmark colors",
+        "Recognition tag colors",
+        "Dataset/card data"
+      ],
+      "summary": "Change accent choices to red, yellow, green, blue, purple, and mono in that order.",
+      "verify": [
+        "All six data-accent-theme values exist in markup and CSS.",
+        "The JS accepted theme set includes all six values.",
+        "Invalid saved themes still fall back to blue."
+      ]
+    },
+    {
+      "id": "02_make_theme_buttons_swatch_only",
+      "order": 2,
+      "title": "Make theme buttons swatch-only",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Theme button labels",
+        "aria-label/title attributes",
+        "Swatch-only sizing and active state styles"
+      ],
+      "protected_fields": [
+        "Settings popover open/close behavior",
+        "Theme persistence behavior"
+      ],
+      "summary": "Remove visible color names from the settings popover while preserving accessible labels.",
+      "verify": [
+        "Theme buttons have no visible text labels.",
+        "Each theme button has aria-label and title.",
+        "Active theme remains visibly distinct."
+      ]
+    },
+    {
+      "id": "03_align_selected_only_active_with_accent",
+      "order": 3,
+      "title": "Align selected-only active with accent theme",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "selected-only active color rules"
+      ],
+      "protected_fields": [
+        "Selected-only toggle behavior",
+        "Selection action behavior"
+      ],
+      "summary": "Use the current accent color for selected-only active styling.",
+      "verify": [
+        "selected-only active uses var(--accent) and var(--accent-soft).",
+        "No fixed yellow selected-only active color remains."
+      ]
+    },
+    {
+      "id": "04_move_export_button_outside_settings",
+      "order": 4,
+      "title": "Move export button outside settings",
+      "check": true,
+      "targets": "C:\\dev\\alg-note\\app\\index.html and C:\\dev\\alg-note\\app\\css\\style.css",
+      "allowed_fields": [
+        "Home title action markup",
+        "Export button placement styles"
+      ],
+      "protected_fields": [
+        "Export panel behavior",
+        "Export mode/copy/download logic"
+      ],
+      "summary": "Move the 수정 JSON button back to the home title area outside the settings popover.",
+      "verify": [
+        "The settings popover contains only settings controls.",
+        "The 수정 JSON button is visible on the home title row.",
+        "The existing export click handler still targets the same button ID."
+      ]
+    }
+  ]
+}
