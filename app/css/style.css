@@ -2635,10 +2635,74 @@ main {
   }
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
+  main {
+    --compact-card-width: calc((100vw - 51px) / 4);
+  }
+
   .grouped-grid[data-view-mode="compact"],
   .recognition-grid[data-view-mode="compact"] {
     grid-template-columns: repeat(auto-fill, var(--compact-card-width));
+    gap: 5px;
+  }
+
+  .case-group-section {
+    gap: 5px;
+  }
+
+  .case-group-title {
+    padding: 5px 9px;
+    font-size: 14px;
+  }
+
+  .case-card.is-compact,
+  .case-card.is-compact.has-recognition-badges,
+  .case-card.is-compact.is-obl-case,
+  .case-card.is-compact.is-obl-case.has-recognition-badges {
+    grid-template-rows: auto 62px;
+    gap: 3px;
+    padding: 4px;
+  }
+
+  .case-card.is-compact.has-recognition-badges,
+  .case-card.is-compact.is-obl-case.has-recognition-badges {
+    grid-template-rows: auto auto 62px;
+  }
+
+  .is-compact .case-name {
+    gap: 2px;
+    font-size: 11px;
+    line-height: 1.05;
+  }
+
+  .case-card.is-compact.is-obl-case .case-title-text {
+    line-height: 1;
+  }
+
+  .is-compact .case-title-badges {
+    gap: 1px;
+  }
+
+  .is-compact .case-title-badge {
+    min-width: 11px;
+    min-height: 11px;
+    padding: 0 2px;
+    font-size: 7px;
+  }
+
+  .is-compact .svg-box {
+    min-height: 62px;
+  }
+
+  .is-compact .svg-box svg {
+    max-height: 60px;
+  }
+
+  .is-compact .tag-badge {
+    min-height: 14px;
+    padding: 1px 3px;
+    font-size: 8px;
+    line-height: 1;
   }
 }
 
