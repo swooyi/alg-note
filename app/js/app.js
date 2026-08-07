@@ -60,6 +60,7 @@ const elements = {
   exportJsonText: document.getElementById("exportJsonText"),
   copyJsonButton: document.getElementById("copyJsonButton"),
   downloadJsonButton: document.getElementById("downloadJsonButton"),
+  resetJsonButton: document.getElementById("resetJsonButton"),
   closeExportButton: document.getElementById("closeExportButton"),
   emptyState: document.getElementById("emptyState"),
   summary: document.getElementById("summary"),
@@ -1137,6 +1138,31 @@ function downloadExportJson() {
 }
 
 
+function resetSavedJsonEdits() {
+  const bundled = window.AlgNoteBundledData || {};
+  let changed = false;
+
+  for (const entries of Object.values(bundled)) {
+    const dataset = normalizeDataset(entries);
+    const key = datasetKey(dataset);
+    const saved = loadJson(`personal.${key}`, null);
+    if (!saved?.edits || !Object.keys(saved.edits).length) continue;
+    saved.edits = {};
+    saveJson(`personal.${key}`, saved);
+    changed = true;
+  }
+
+  state.edits = new Map();
+  state.editingCaseId = "";
+  state.selectedCaseId = "";
+  updateExportPanel();
+  if (state.dataset) {
+    if (changed) refreshRecognitionFilters();
+    render();
+  }
+}
+
+
 function saveCardEdit(card) {
   const caseId = card.dataset.caseId;
   const original = state.dataset.cases.find((item) => item.id === caseId);
@@ -1604,6 +1630,11 @@ elements.copyJsonButton.addEventListener("click", async () => {
 
 elements.downloadJsonButton.addEventListener("click", () => {
   downloadExportJson();
+});
+
+elements.resetJsonButton.addEventListener("click", () => {
+  if (!window.confirm("브라우저에 저장된 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.")) return;
+  resetSavedJsonEdits();
 });
 
 elements.closeExportButton.addEventListener("click", () => {

@@ -1472,6 +1472,10 @@ main {
   gap: 8px;
 }
 
+.reset-json-button {
+  color: #b91c1c;
+}
+
 .export-panel textarea {
   min-height: 260px;
   font-family: Consolas, "Courier New", monospace;

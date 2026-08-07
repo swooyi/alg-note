@@ -506,9 +506,9 @@
       "name": "Vb+",
       "group": "v",
       "algorithms": [
+        "[U] {U,BL} H U' S U S",
         "{Uo'} S U S U' Hl'\n(Swap R에 두고 두고 꼭짓점 우상단)",
-        "{BL,F} B R' U' S U B' R",
-        "[U] {U,BL} H U' S U S"
+        "{BL,F} B R' U' S U B' R"
       ],
       "scramble": "BR' R U' B L' B' L U L R' BR L'",
       "scrambles": [
@@ -535,7 +535,9 @@
         "sourceGroup": "V-odd",
         "parity": "odd",
         "typeCode": "b+",
-        "recognition": "O_back"
+        "recognition": [
+          "O_back"
+        ]
       }
     },
     {
@@ -642,7 +644,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "s+",
-        "recognition": "E_noT"
+        "recognition": [
+          "E_noT"
+        ]
       }
     },
     {
@@ -677,7 +681,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "s-",
-        "recognition": "E_noT"
+        "recognition": [
+          "E_noT"
+        ]
       }
     },
     {
@@ -744,7 +750,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "c+",
-        "recognition": "E_same"
+        "recognition": [
+          "E_same"
+        ]
       }
     },
     {
@@ -779,7 +787,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "c-",
-        "recognition": "E_opp"
+        "recognition": [
+          "E_opp"
+        ]
       }
     },
     {
@@ -843,7 +853,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "a+",
-        "recognition": "E_opp"
+        "recognition": [
+          "E_opp"
+        ]
       }
     },
     {
@@ -876,7 +888,9 @@
         "sourceGroup": "Q-even",
         "parity": "even",
         "typeCode": "a-",
-        "recognition": "E_same"
+        "recognition": [
+          "E_same"
+        ]
       }
     },
     {
@@ -903,7 +917,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "b0",
-        "recognition": "O_back"
+        "recognition": [
+          "O_back"
+        ]
       }
     },
     {
@@ -939,7 +955,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "b+",
-        "recognition": "O_back"
+        "recognition": [
+          "O_back"
+        ]
       }
     },
     {
@@ -966,7 +984,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "b-",
-        "recognition": "O_back"
+        "recognition": [
+          "O_back"
+        ]
       }
     },
     {
@@ -1002,7 +1022,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "r0",
-        "recognition": "O_side"
+        "recognition": [
+          "O_side"
+        ]
       }
     },
     {
@@ -1038,7 +1060,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "r+",
-        "recognition": "O_same"
+        "recognition": [
+          "O_same"
+        ]
       }
     },
     {
@@ -1061,7 +1085,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "r-",
-        "recognition": "O_opp"
+        "recognition": [
+          "O_opp"
+        ]
       }
     },
     {
@@ -1095,7 +1121,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "l0",
-        "recognition": "O_side"
+        "recognition": [
+          "O_side"
+        ]
       }
     },
     {
@@ -1115,7 +1143,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "l+",
-        "recognition": "O_opp"
+        "recognition": [
+          "O_opp"
+        ]
       }
     },
     {
@@ -1149,7 +1179,9 @@
         "sourceGroup": "Q-odd",
         "parity": "odd",
         "typeCode": "l-",
-        "recognition": "O_same"
+        "recognition": [
+          "O_same"
+        ]
       }
     },
     {
@@ -2705,7 +2737,9 @@
         "sourceGroup": "B-even",
         "parity": "even",
         "typeCode": "s0",
-        "recognition": "E_noT"
+        "recognition": [
+          "E_noT"
+        ]
       }
     },
     {
@@ -3033,6 +3067,7 @@
       "name": "Br+",
       "group": "b",
       "algorithms": [
+        "U {Br,U} R L'  U' / S' / U L R'",
         "{T'2} L' R U S' U' R' L",
         "{U,BL} B' BLw U S' U' BLw' B"
       ],
@@ -3054,7 +3089,9 @@
         "sourceGroup": "B-odd",
         "parity": "odd",
         "typeCode": "r+",
-        "recognition": "O_same"
+        "recognition": [
+          "O_same"
+        ]
       }
     },
     {

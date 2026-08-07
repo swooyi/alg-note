@@ -16472,9 +16472,9 @@ window.AlgNoteBundledData = {
           "name": "Vb+",
           "group": "v",
           "algorithms": [
+            "[U] {U,BL} H U' S U S",
             "{Uo'} S U S U' Hl'\n(Swap R에 두고 두고 꼭짓점 우상단)",
-            "{BL,F} B R' U' S U B' R",
-            "[U] {U,BL} H U' S U S"
+            "{BL,F} B R' U' S U B' R"
           ],
           "scramble": "BR' R U' B L' B' L U L R' BR L'",
           "scrambles": [
@@ -16501,7 +16501,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "V-odd",
             "parity": "odd",
             "typeCode": "b+",
-            "recognition": "O_back"
+            "recognition": [
+              "O_back"
+            ]
           }
         },
         {
@@ -16608,7 +16610,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "s+",
-            "recognition": "E_noT"
+            "recognition": [
+              "E_noT"
+            ]
           }
         },
         {
@@ -16643,7 +16647,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "s-",
-            "recognition": "E_noT"
+            "recognition": [
+              "E_noT"
+            ]
           }
         },
         {
@@ -16710,7 +16716,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "c+",
-            "recognition": "E_same"
+            "recognition": [
+              "E_same"
+            ]
           }
         },
         {
@@ -16745,7 +16753,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "c-",
-            "recognition": "E_opp"
+            "recognition": [
+              "E_opp"
+            ]
           }
         },
         {
@@ -16809,7 +16819,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "a+",
-            "recognition": "E_opp"
+            "recognition": [
+              "E_opp"
+            ]
           }
         },
         {
@@ -16842,7 +16854,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-even",
             "parity": "even",
             "typeCode": "a-",
-            "recognition": "E_same"
+            "recognition": [
+              "E_same"
+            ]
           }
         },
         {
@@ -16869,7 +16883,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "b0",
-            "recognition": "O_back"
+            "recognition": [
+              "O_back"
+            ]
           }
         },
         {
@@ -16905,7 +16921,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "b+",
-            "recognition": "O_back"
+            "recognition": [
+              "O_back"
+            ]
           }
         },
         {
@@ -16932,7 +16950,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "b-",
-            "recognition": "O_back"
+            "recognition": [
+              "O_back"
+            ]
           }
         },
         {
@@ -16968,7 +16988,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "r0",
-            "recognition": "O_side"
+            "recognition": [
+              "O_side"
+            ]
           }
         },
         {
@@ -17004,7 +17026,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "r+",
-            "recognition": "O_same"
+            "recognition": [
+              "O_same"
+            ]
           }
         },
         {
@@ -17027,7 +17051,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "r-",
-            "recognition": "O_opp"
+            "recognition": [
+              "O_opp"
+            ]
           }
         },
         {
@@ -17061,7 +17087,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "l0",
-            "recognition": "O_side"
+            "recognition": [
+              "O_side"
+            ]
           }
         },
         {
@@ -17081,7 +17109,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "l+",
-            "recognition": "O_opp"
+            "recognition": [
+              "O_opp"
+            ]
           }
         },
         {
@@ -17115,7 +17145,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "Q-odd",
             "parity": "odd",
             "typeCode": "l-",
-            "recognition": "O_same"
+            "recognition": [
+              "O_same"
+            ]
           }
         },
         {
@@ -18671,7 +18703,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "B-even",
             "parity": "even",
             "typeCode": "s0",
-            "recognition": "E_noT"
+            "recognition": [
+              "E_noT"
+            ]
           }
         },
         {
@@ -18999,6 +19033,7 @@ window.AlgNoteBundledData = {
           "name": "Br+",
           "group": "b",
           "algorithms": [
+            "U {Br,U} R L'  U' / S' / U L R'",
             "{T'2} L' R U S' U' R' L",
             "{U,BL} B' BLw U S' U' BLw' B"
           ],
@@ -19020,7 +19055,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "B-odd",
             "parity": "odd",
             "typeCode": "r+",
-            "recognition": "O_same"
+            "recognition": [
+              "O_same"
+            ]
           }
         },
         {
@@ -21647,9 +21684,7 @@ window.AlgNoteBundledData = {
           "name": "IS5",
           "group": "in-slot",
           "algorithms": [
-            "Uw' BL L' R' L R BL' Uw",
-            "BL L' R B' R' B L BL'",
-            "Uw L R' L' BL L' R L BL' Uw'"
+            "BL L' R B' R' B L BL'"
           ],
           "scramble": "R L U L R L' R' U' L' R'",
           "scrambles": [
@@ -21662,7 +21697,9 @@ window.AlgNoteBundledData = {
           ],
           "svgId": "5",
           "tags": {
-            "recognition": "is-pair-solved"
+            "recognition": [
+              "is-pair-solved"
+            ]
           }
         },
         {
@@ -21670,11 +21707,7 @@ window.AlgNoteBundledData = {
           "name": "IS6",
           "group": "in-slot",
           "algorithms": [
-            "D BR' R L R' L' BR D'",
-            "L BL' B' R B R' BL L'",
-            "Uw L BL' R B' R' B BL L' Uw'",
-            "Uw' R' L BL' L R L' BL L' Uw",
-            "Uw' L' U R' L' R L U' L Uw"
+            "L BL' B' R B R' BL L'"
           ],
           "scramble": "B' L' U' L' B' L B U L B",
           "scrambles": [
@@ -21688,7 +21721,9 @@ window.AlgNoteBundledData = {
           ],
           "svgId": "6",
           "tags": {
-            "recognition": "is-pair-solved"
+            "recognition": [
+              "is-pair-solved"
+            ]
           }
         },
         {

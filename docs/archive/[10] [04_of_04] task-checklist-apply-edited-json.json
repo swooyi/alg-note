@@ -1,0 +1,86 @@
+{
+  "target_file": "C:\\dev\\alg-note\\alg\\fto\\1l3t\\cases.json; C:\\dev\\alg-note\\alg\\fto\\lbt\\cases.json; C:\\dev\\alg-note\\app\\js\\data.js",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Apply the attached edited JSON cases to the current source JSON and rebuild bundled app data.",
+  "assumptions": [
+    "Only scramble, algorithms, and tags.recognition are updated from the edited JSON.",
+    "Case id, name, group, groupName, svg references, and other metadata remain protected.",
+    "app/js/data.js is regenerated from source JSON after edits."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_parse_attachment",
+      "order": 1,
+      "title": "Parse edited JSON attachment",
+      "check": true,
+      "targets": "C:\\Users\\seung\\.codex\\attachments\\3a334ea2-04a9-4f73-806c-b80954f557ed\\pasted-text.txt",
+      "allowed_fields": [],
+      "protected_fields": [],
+      "summary": "Confirm the attachment is valid JSON and contains the expected dataset and case counts.",
+      "verify": [
+        "Parse JSON successfully.",
+        "Confirm editedCount is 20.",
+        "Confirm datasets are FTO:1l3t and FTO:lbt."
+      ]
+    },
+    {
+      "id": "02_apply_source_cases",
+      "order": 2,
+      "title": "Apply source case edits",
+      "check": true,
+      "targets": "alg/fto/1l3t/cases.json; alg/fto/lbt/cases.json",
+      "allowed_fields": [
+        "cases[*].scramble",
+        "cases[*].algorithms",
+        "cases[*].tags.recognition"
+      ],
+      "protected_fields": [
+        "cases[*].id",
+        "cases[*].name",
+        "cases[*].group",
+        "cases[*].svgId",
+        "all non-target cases"
+      ],
+      "summary": "Update the 20 edited cases in source JSON only.",
+      "verify": [
+        "Parse both source JSON files successfully.",
+        "Confirm 18 matching ids updated in 1l3t and 2 matching ids updated in lbt.",
+        "Confirm protected fields for updated cases still match their previous values."
+      ]
+    },
+    {
+      "id": "03_rebuild_app_data",
+      "order": 3,
+      "title": "Rebuild bundled app data",
+      "check": true,
+      "targets": "app/js/data.js",
+      "allowed_fields": [
+        "generated bundled data"
+      ],
+      "protected_fields": [
+        "source JSON except edits from task 02"
+      ],
+      "summary": "Regenerate the browser bundle from source JSON.",
+      "verify": [
+        "Run scripts/build_app_data.py successfully.",
+        "Confirm app/js/data.js contains the edited case values."
+      ]
+    },
+    {
+      "id": "04_validate",
+      "order": 4,
+      "title": "Validate JSON and app script",
+      "check": true,
+      "targets": "alg/fto/1l3t; alg/fto/lbt; app/js/app.js; app/js/data.js",
+      "allowed_fields": [],
+      "protected_fields": [],
+      "summary": "Run the relevant validation checks after applying edits.",
+      "verify": [
+        "Run validate_alg_json.py for alg/fto/1l3t.",
+        "Run validate_alg_json.py for alg/fto/lbt.",
+        "Run node --check for app/js/app.js and app/js/data.js."
+      ]
+    }
+  ]
+}

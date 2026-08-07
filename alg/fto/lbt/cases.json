@@ -134,9 +134,7 @@
       "name": "IS5",
       "group": "in-slot",
       "algorithms": [
-        "Uw' BL L' R' L R BL' Uw",
-        "BL L' R B' R' B L BL'",
-        "Uw L R' L' BL L' R L BL' Uw'"
+        "BL L' R B' R' B L BL'"
       ],
       "scramble": "R L U L R L' R' U' L' R'",
       "scrambles": [
@@ -149,7 +147,9 @@
       ],
       "svgId": "5",
       "tags": {
-        "recognition": "is-pair-solved"
+        "recognition": [
+          "is-pair-solved"
+        ]
       }
     },
     {
@@ -157,11 +157,7 @@
       "name": "IS6",
       "group": "in-slot",
       "algorithms": [
-        "D BR' R L R' L' BR D'",
-        "L BL' B' R B R' BL L'",
-        "Uw L BL' R B' R' B BL L' Uw'",
-        "Uw' R' L BL' L R L' BL L' Uw",
-        "Uw' L' U R' L' R L U' L Uw"
+        "L BL' B' R B R' BL L'"
       ],
       "scramble": "B' L' U' L' B' L B U L B",
       "scrambles": [
@@ -175,7 +171,9 @@
       ],
       "svgId": "6",
       "tags": {
-        "recognition": "is-pair-solved"
+        "recognition": [
+          "is-pair-solved"
+        ]
       }
     },
     {
