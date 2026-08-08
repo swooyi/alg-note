@@ -8,6 +8,9 @@ const DEFAULT_IMAGE_SIZE = 190;
 const DEFAULT_SIDEBAR_WIDTH = 288;
 const MIN_SIDEBAR_WIDTH = 220;
 const MAX_SIDEBAR_WIDTH = 440;
+const DEFAULT_DRILL_HISTORY_WIDTH = 430;
+const MIN_DRILL_HISTORY_WIDTH = 280;
+const MAX_DRILL_HISTORY_WIDTH = 720;
 const VIEW_MODES = new Set(["compact", "list", "full"]);
 const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono"]);
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
@@ -75,10 +78,12 @@ const elements = {
   drillRandomAufButton: document.getElementById("drillRandomAufButton"),
   drillSetupText: document.getElementById("drillSetupText"),
   drillMain: document.getElementById("drillMain"),
+  drillResizeHandle: document.getElementById("drillResizeHandle"),
   drillTimerText: document.getElementById("drillTimerText"),
   drillHintText: document.getElementById("drillHintText"),
   drillTimesText: document.getElementById("drillTimesText"),
   drillAverageText: document.getElementById("drillAverageText"),
+  drillClearResultsButton: document.getElementById("drillClearResultsButton"),
   drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillNextButton: document.getElementById("drillNextButton"),
@@ -112,11 +117,13 @@ const state = {
   activeSelectionPresetId: "",
   pendingScrollY: null,
   scrollSaveTimer: 0,
+  openFilterMenu: "",
   isHomeView: true,
   drill: {
     active: false,
     mode: "recap",
     randomAuf: loadJson("drillRandomAuf", false) === true,
+    historyWidth: loadJson("drillHistoryWidth", DEFAULT_DRILL_HISTORY_WIDTH),
     source: [],
     queue: [],
     index: 0,
@@ -124,6 +131,7 @@ const state = {
     timerStatus: "idle",
     startedAt: 0,
     elapsedMs: 0,
+    displayMs: 0,
     results: [],
     tickHandle: 0,
     completed: false,
@@ -479,8 +487,9 @@ function stopDrillTicker() {
 function updateDrillTimerDisplay() {
   if (state.drill.timerStatus === "running") {
     state.drill.elapsedMs = performance.now() - state.drill.startedAt;
+    state.drill.displayMs = state.drill.elapsedMs;
   }
-  elements.drillTimerText.textContent = formatDrillTime(state.drill.elapsedMs);
+  elements.drillTimerText.textContent = formatDrillTime(state.drill.displayMs);
 }
 
 
@@ -491,11 +500,12 @@ function tickDrillTimer() {
 }
 
 
-function resetDrillTimer() {
+function resetDrillTimer({ preserveDisplay = false } = {}) {
   stopDrillTicker();
   state.drill.timerStatus = "idle";
   state.drill.startedAt = 0;
   state.drill.elapsedMs = 0;
+  if (!preserveDisplay) state.drill.displayMs = 0;
 }
 
 
@@ -522,7 +532,7 @@ function drillItemById(caseId) {
 function renderDrillResults() {
   elements.drillResultList.replaceChildren();
 
-  const results = [...state.drill.results].reverse();
+  const results = state.drill.results.map((result, index) => ({ ...result, order: index + 1 })).reverse();
   if (!results.length) {
     const empty = document.createElement("p");
     empty.className = "drill-result-empty";
@@ -538,13 +548,16 @@ function renderDrillResults() {
     body.className = "drill-result-body";
     const top = document.createElement("div");
     top.className = "drill-result-top";
+    const order = document.createElement("span");
+    order.className = "drill-result-order";
+    order.textContent = `${result.order}.`;
     const name = document.createElement("span");
     name.textContent = result.groupName ? `${result.groupName} ${result.caseName}` : result.caseName;
     const time = document.createElement("strong");
     time.textContent = formatDrillTime(result.elapsedMs);
     const setup = document.createElement("p");
     setup.textContent = result.setup;
-    top.append(name, time);
+    top.append(order, name, time);
     body.append(top, setup);
 
     const detailButton = document.createElement("button");
@@ -552,8 +565,16 @@ function renderDrillResults() {
     detailButton.type = "button";
     detailButton.dataset.resultId = result.id;
     detailButton.textContent = "세부정보";
+    const deleteButton = document.createElement("button");
+    deleteButton.className = "drill-delete-result-button";
+    deleteButton.type = "button";
+    deleteButton.dataset.resultDeleteId = result.id;
+    deleteButton.textContent = "삭제";
+    const actions = document.createElement("div");
+    actions.className = "drill-result-actions";
+    actions.append(detailButton, deleteButton);
 
-    row.append(body, detailButton);
+    row.append(body, actions);
     elements.drillResultList.append(row);
   }
 }
@@ -577,6 +598,7 @@ function renderDrill() {
 
   elements.drillOverlay.hidden = false;
   updateDrillStartButton();
+  updateDrillHistoryLayout();
 
   const total = state.drill.queue.length;
   elements.drillRecapModeButton.classList.toggle("is-active", state.drill.mode === "recap");
@@ -607,12 +629,13 @@ function renderDrill() {
   updateDrillTimerDisplay();
   elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
   elements.drillAverageText.textContent = state.drill.results.length ? `Avg ${formatDrillTime(averageDrillMs())}` : "Avg -";
+  elements.drillClearResultsButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   elements.drillUndoButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   renderDrillResults();
 }
 
 
-function startDrill() {
+function startDrill({ clearResults = true } = {}) {
   const source = selectedDrillCases();
   if (!source.length) {
     window.alert("케이스를 선택하세요.");
@@ -627,7 +650,7 @@ function startDrill() {
   state.drill.queue = queue;
   state.drill.index = 0;
   resetDrillTimer();
-  state.drill.results = [];
+  if (clearResults) state.drill.results = [];
   state.drill.completed = false;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   state.selectedCaseId = "";
@@ -650,7 +673,7 @@ function closeDrill() {
 }
 
 
-function moveToNextDrillCase() {
+function moveToNextDrillCase({ preserveTimerDisplay = false } = {}) {
   if (!state.drill.active) return;
 
   if (state.drill.mode === "train") {
@@ -660,7 +683,7 @@ function moveToNextDrillCase() {
     state.drill.index = 0;
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
     state.drill.completed = false;
-    resetDrillTimer();
+    resetDrillTimer({ preserveDisplay: preserveTimerDisplay });
     renderDrill();
     return;
   }
@@ -672,7 +695,7 @@ function moveToNextDrillCase() {
   } else {
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   }
-  resetDrillTimer();
+  resetDrillTimer({ preserveDisplay: preserveTimerDisplay });
   renderDrill();
 }
 
@@ -680,7 +703,7 @@ function moveToNextDrillCase() {
 function skipDrillCase() {
   if (!state.drill.active) return;
   if (state.drill.completed) {
-    startDrill();
+    startDrill({ clearResults: false });
     return;
   }
   moveToNextDrillCase();
@@ -690,7 +713,7 @@ function skipDrillCase() {
 function toggleDrillTimer() {
   if (!state.drill.active) return;
   if (state.drill.completed) {
-    startDrill();
+    startDrill({ clearResults: false });
     return;
   }
 
@@ -708,7 +731,7 @@ function toggleDrillTimer() {
   const item = currentDrillItem();
   const result = item ? makeDrillResult(item, state.drill.elapsedMs) : null;
   if (result) state.drill.results.push(result);
-  moveToNextDrillCase();
+  moveToNextDrillCase({ preserveTimerDisplay: true });
 }
 
 
@@ -729,6 +752,22 @@ function undoDrillResult() {
     state.drill.completed = false;
   }
   resetDrillTimer();
+  renderDrill();
+}
+
+
+function deleteDrillResult(resultId) {
+  if (!state.drill.active || state.drill.timerStatus === "running") return;
+  const nextResults = state.drill.results.filter((item) => item.id !== resultId);
+  if (nextResults.length === state.drill.results.length) return;
+  state.drill.results = nextResults;
+  renderDrill();
+}
+
+
+function clearDrillResults() {
+  if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
+  state.drill.results = [];
   renderDrill();
 }
 
@@ -766,6 +805,21 @@ function updateSidebarLayout() {
   elements.sidebarOpenButton.setAttribute("aria-expanded", state.sidebarOpen ? "true" : "false");
   elements.sidebarOpenButton.setAttribute("aria-label", state.sidebarOpen ? "패널 닫기" : "패널 열기");
   elements.sidebarOpenButton.title = state.sidebarOpen ? "패널 닫기" : "패널 열기";
+}
+
+
+function clampDrillHistoryWidth(value) {
+  const width = Number(value);
+  if (!Number.isFinite(width)) return DEFAULT_DRILL_HISTORY_WIDTH;
+  const maxByViewport = Math.max(MIN_DRILL_HISTORY_WIDTH, Math.floor(window.innerWidth * 0.6));
+  const maxWidth = Math.min(MAX_DRILL_HISTORY_WIDTH, maxByViewport);
+  return Math.min(maxWidth, Math.max(MIN_DRILL_HISTORY_WIDTH, Math.round(width)));
+}
+
+
+function updateDrillHistoryLayout() {
+  state.drill.historyWidth = clampDrillHistoryWidth(state.drill.historyWidth);
+  document.documentElement.style.setProperty("--drill-history-width", `${state.drill.historyWidth}px`);
 }
 
 
@@ -823,6 +877,17 @@ function closeFilterMenus() {
     panel.hidden = true;
     button.setAttribute("aria-expanded", "false");
   }
+  state.openFilterMenu = "";
+}
+
+
+function openFilterMenu(type) {
+  const button = document.querySelector(`[data-filter-menu="${type}"]`);
+  const panel = document.getElementById(`${type}FilterOptions`);
+  if (!button || !panel) return;
+  panel.hidden = false;
+  button.setAttribute("aria-expanded", "true");
+  state.openFilterMenu = type;
 }
 
 
@@ -930,6 +995,7 @@ function render() {
   renderBookmarkFilterOptions(elements.bookmarkFilterOptions, state.bookmarkFilters);
   updateFilterMenuButtons();
   updateViewModeButtons();
+  if (state.openFilterMenu) openFilterMenu(state.openFilterMenu);
 
   renderSummary(elements.summary, state.dataset, rows, state);
   if (state.viewMode === "compact") {
@@ -1408,8 +1474,9 @@ for (const button of elements.filterMenuButtons) {
     const panel = document.getElementById(`${button.dataset.filterMenu}FilterOptions`);
     const willOpen = panel.hidden;
     closeFilterMenus();
-    panel.hidden = !willOpen;
-    button.setAttribute("aria-expanded", willOpen ? "true" : "false");
+    if (willOpen) {
+      openFilterMenu(button.dataset.filterMenu);
+    }
   });
 }
 
@@ -1436,12 +1503,18 @@ elements.groupFilterOptions.addEventListener("change", (event) => {
 
 elements.recognitionFilterOptions.addEventListener("click", (event) => {
   const button = event.target.closest(".filter-choice-button");
-  if (button) toggleFilterValue(state.recognitionFilters, button.dataset.value);
+  if (!button) return;
+  event.stopPropagation();
+  toggleFilterValue(state.recognitionFilters, button.dataset.value);
+  openFilterMenu("recognition");
 });
 
 elements.bookmarkFilterOptions.addEventListener("click", (event) => {
   const button = event.target.closest(".filter-choice-button");
-  if (button) toggleFilterValue(state.bookmarkFilters, button.dataset.value);
+  if (!button) return;
+  event.stopPropagation();
+  toggleFilterValue(state.bookmarkFilters, button.dataset.value);
+  openFilterMenu("bookmark");
 });
 
 for (const button of elements.viewModeButtons) {
@@ -1573,7 +1646,16 @@ elements.drillUndoButton.addEventListener("click", () => {
   undoDrillResult();
 });
 
+elements.drillClearResultsButton.addEventListener("click", () => {
+  clearDrillResults();
+});
+
 elements.drillResultList.addEventListener("click", (event) => {
+  const deleteButton = event.target.closest("[data-result-delete-id]");
+  if (deleteButton) {
+    deleteDrillResult(deleteButton.dataset.resultDeleteId);
+    return;
+  }
   const button = event.target.closest(".drill-detail-button");
   if (!button) return;
   showDrillResultDetail(button.dataset.resultId);
@@ -1607,6 +1689,31 @@ elements.sidebarResizeHandle.addEventListener("pointerdown", (event) => {
   elements.sidebarResizeHandle.addEventListener("pointermove", handleMove);
   elements.sidebarResizeHandle.addEventListener("pointerup", handleUp);
   elements.sidebarResizeHandle.addEventListener("pointercancel", handleUp);
+});
+
+elements.drillResizeHandle.addEventListener("pointerdown", (event) => {
+  if (!state.drill.active || window.matchMedia("(max-width: 720px)").matches) return;
+  event.preventDefault();
+  event.stopPropagation();
+  elements.drillResizeHandle.setPointerCapture(event.pointerId);
+  document.body.classList.add("is-resizing-drill");
+
+  const handleMove = (moveEvent) => {
+    state.drill.historyWidth = clampDrillHistoryWidth(window.innerWidth - moveEvent.clientX);
+    updateDrillHistoryLayout();
+  };
+
+  const handleUp = () => {
+    saveJson("drillHistoryWidth", state.drill.historyWidth);
+    document.body.classList.remove("is-resizing-drill");
+    elements.drillResizeHandle.removeEventListener("pointermove", handleMove);
+    elements.drillResizeHandle.removeEventListener("pointerup", handleUp);
+    elements.drillResizeHandle.removeEventListener("pointercancel", handleUp);
+  };
+
+  elements.drillResizeHandle.addEventListener("pointermove", handleMove);
+  elements.drillResizeHandle.addEventListener("pointerup", handleUp);
+  elements.drillResizeHandle.addEventListener("pointercancel", handleUp);
 });
 
 elements.exportJsonButton.addEventListener("click", () => {
@@ -1857,6 +1964,10 @@ if (datasetKeys.length) {
   showHomeView();
 }
 window.addEventListener("beforeunload", saveCurrentViewState);
+window.addEventListener("resize", () => {
+  if (!state.drill.active) return;
+  updateDrillHistoryLayout();
+});
 window.addEventListener("scroll", () => {
   if (!state.key || state.pendingScrollY !== null) return;
   window.clearTimeout(state.scrollSaveTimer);
