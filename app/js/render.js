@@ -151,7 +151,7 @@ function caseMetaParts(item) {
 
 function caseGroupTitle(item, state) {
   const tags = typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {};
-  if (state.dataset?.algset === "1l3t" && tags.parity) {
+  if (state.dataset?.algset === "1l3t" && tags.parity && !String(item.groupName).toLowerCase().includes(tags.parity)) {
     return `${item.groupName} - ${tags.parity}`;
   }
   return item.groupName || "기타";
@@ -160,7 +160,7 @@ function caseGroupTitle(item, state) {
 
 function detailGroupLabel(item, state) {
   const tags = typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {};
-  if (state.dataset?.algset === "1l3t" && tags.parity) {
+  if (state.dataset?.algset === "1l3t" && tags.parity && !String(item.groupName).toLowerCase().includes(tags.parity)) {
     return `${item.groupName}-${tags.parity}`;
   }
   return item.groupName || "기타";

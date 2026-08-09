@@ -98,8 +98,11 @@
 
         <section class="sidebar-section favorite-preset-group">
           <h2>프리셋</h2>
-          <input id="favoritePresetNameInput" type="text" placeholder="선택 프리셋 이름" aria-label="새 선택 프리셋 이름">
-          <button id="saveFavoritePresetButton" type="button">저장</button>
+          <input id="favoritePresetNameInput" type="text" placeholder="저장할 프리셋 이름 입력" aria-label="저장할 프리셋 이름 입력">
+          <div class="preset-save-actions">
+            <button id="saveSelectedPresetButton" type="button">선택 저장</button>
+            <button id="saveFilteredPresetButton" type="button">필터 저장</button>
+          </div>
           <div id="favoritePresetList" class="preset-list" role="list" aria-label="저장한 프리셋"></div>
         </section>
 

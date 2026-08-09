@@ -63,6 +63,13 @@ def l3t_family_name(source_group: str) -> str:
     return source_group.split("-", 1)[0]
 
 
+def l3t_display_group_name(source_group: str) -> str:
+    name = source_group
+    if "/" in name:
+        name = name.split("/", 1)[0]
+    return name
+
+
 def l3t_case_tags(source_group: str) -> dict[str, str | bool]:
     tags = {
         "sourceGroup": source_group,
@@ -106,15 +113,15 @@ def main() -> None:
     scrambles = source["scrambles.json"]
     svgs = source["combined.json"]
 
-    family_order = []
-    family_case_ids = {}
+    group_order = []
+    group_case_ids = {}
     for full_name in algsets[algset_name]:
         display_name = strip_algset_prefix(full_name, algset_name)
-        family = l3t_family_name(display_name)
-        if family not in family_case_ids:
-            family_order.append(family)
-            family_case_ids[family] = []
-        family_case_ids[family].extend(str(case_id) for case_id in groups[full_name])
+        group_name = l3t_display_group_name(display_name)
+        if group_name not in group_case_ids:
+            group_order.append(group_name)
+            group_case_ids[group_name] = []
+        group_case_ids[group_name].extend(str(case_id) for case_id in groups[full_name])
 
     algset_data = {
         "schemaVersion": 1,
@@ -135,13 +142,13 @@ def main() -> None:
         "groups": [],
     }
 
-    for display_name in family_order:
+    for display_name in group_order:
         group_data["groups"].append(
             {
                 "id": group_id(display_name),
                 "name": display_name,
                 "sourceName": display_name,
-                "caseIds": family_case_ids[display_name],
+                "caseIds": group_case_ids[display_name],
             }
         )
 
@@ -155,7 +162,7 @@ def main() -> None:
     for case_id in sorted(algs, key=case_sort_key):
         info = algs[case_id]
         source_group = info.get("group", "")
-        family = l3t_family_name(source_group)
+        display_group = l3t_display_group_name(source_group)
         name = info.get("name", str(case_id))
         tags = l3t_case_tags(source_group)
         type_code = l3t_type_code(name)
@@ -166,7 +173,7 @@ def main() -> None:
             {
                 "id": str(case_id),
                 "name": name,
-                "group": group_id(family),
+                "group": group_id(display_group),
                 "algorithms": info.get("a", []),
                 "scramble": info.get("s", ""),
                 "scrambles": scrambles.get(case_id, []),

@@ -565,6 +565,12 @@ h1 {
   max-width: none;
 }
 
+.preset-save-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
 .preset-list {
   display: grid;
   gap: 4px;

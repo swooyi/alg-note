@@ -49,7 +49,8 @@ const elements = {
   viewModeButtons: [...document.querySelectorAll(".view-mode-button")],
   favoritePresetList: document.getElementById("favoritePresetList"),
   favoritePresetNameInput: document.getElementById("favoritePresetNameInput"),
-  saveFavoritePresetButton: document.getElementById("saveFavoritePresetButton"),
+  saveSelectedPresetButton: document.getElementById("saveSelectedPresetButton"),
+  saveFilteredPresetButton: document.getElementById("saveFilteredPresetButton"),
   selectedOnlyButton: document.getElementById("selectedOnlyButton"),
   selectAllCardsButton: document.getElementById("selectAllCardsButton"),
   clearSelectedCardsButton: document.getElementById("clearSelectedCardsButton"),
@@ -317,6 +318,39 @@ function applySelectionPresetById(presetId) {
   if (!preset) return false;
   applySelectionPreset(preset);
   return true;
+}
+
+
+function saveSelectionPresetFromIds(cardIds, emptyMessage) {
+  const selectedCards = [...new Set(cardIds.map(String))];
+  if (!selectedCards.length) {
+    window.alert(emptyMessage);
+    return;
+  }
+
+  const name = elements.favoritePresetNameInput.value.trim();
+  if (!name) {
+    elements.favoritePresetNameInput.focus();
+    return;
+  }
+  if (hasDuplicatePresetName(name)) {
+    window.alert("같은 해법셋 안에 같은 이름의 프리셋이 이미 있습니다.");
+    elements.favoritePresetNameInput.focus();
+    return;
+  }
+
+  const preset = {
+    id: makePresetId(),
+    name,
+    selectedCards,
+    pinned: false,
+  };
+  state.selectionPresets.push(preset);
+  state.activeSelectionPresetId = preset.id;
+  elements.favoritePresetNameInput.value = "";
+  saveSelectionPresets();
+  renderPresetShortcuts();
+  render();
 }
 
 
@@ -1529,27 +1563,12 @@ for (const button of elements.viewModeButtons) {
   });
 }
 
-elements.saveFavoritePresetButton.addEventListener("click", () => {
-  const name = elements.favoritePresetNameInput.value.trim();
-  if (!name) return;
-  if (hasDuplicatePresetName(name)) {
-    window.alert("같은 해법셋 안에 같은 이름의 프리셋이 이미 있습니다.");
-    elements.favoritePresetNameInput.focus();
-    return;
-  }
+elements.saveSelectedPresetButton.addEventListener("click", () => {
+  saveSelectionPresetFromIds([...state.selectedCards], "선택된 공식이 없습니다.");
+});
 
-  const preset = {
-    id: makePresetId(),
-    name,
-    selectedCards: [...state.selectedCards],
-    pinned: false,
-  };
-  state.selectionPresets.push(preset);
-  state.activeSelectionPresetId = preset.id;
-  elements.favoritePresetNameInput.value = "";
-  saveSelectionPresets();
-  renderPresetShortcuts();
-  render();
+elements.saveFilteredPresetButton.addEventListener("click", () => {
+  saveSelectionPresetFromIds(visibleCases().map((item) => item.id), "필터 결과에 보이는 공식이 없습니다.");
 });
 
 elements.favoritePresetList.addEventListener("click", (event) => {

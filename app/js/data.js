@@ -15700,9 +15700,9 @@ window.AlgNoteBundledData = {
       "algset": "1l3t",
       "groups": [
         {
-          "id": "o",
-          "name": "O",
-          "sourceName": "O",
+          "id": "o-even",
+          "name": "O-even",
+          "sourceName": "O-even",
           "caseIds": [
             "1",
             "2",
@@ -15711,16 +15711,23 @@ window.AlgNoteBundledData = {
             "5",
             "6",
             "7",
-            "8",
+            "8"
+          ]
+        },
+        {
+          "id": "o-odd",
+          "name": "O-odd",
+          "sourceName": "O-odd",
+          "caseIds": [
             "9",
             "10",
             "11"
           ]
         },
         {
-          "id": "v",
-          "name": "V",
-          "sourceName": "V",
+          "id": "v-even",
+          "name": "V-even",
+          "sourceName": "V-even",
           "caseIds": [
             "12",
             "13",
@@ -15730,16 +15737,23 @@ window.AlgNoteBundledData = {
             "17",
             "18",
             "19",
-            "20",
+            "20"
+          ]
+        },
+        {
+          "id": "v-odd",
+          "name": "V-odd",
+          "sourceName": "V-odd",
+          "caseIds": [
             "21",
             "22",
             "23"
           ]
         },
         {
-          "id": "q",
-          "name": "Q",
-          "sourceName": "Q",
+          "id": "q-even",
+          "name": "Q-even",
+          "sourceName": "Q-even",
           "caseIds": [
             "24",
             "25",
@@ -15749,7 +15763,14 @@ window.AlgNoteBundledData = {
             "29",
             "30",
             "31",
-            "32",
+            "32"
+          ]
+        },
+        {
+          "id": "q-odd",
+          "name": "Q-odd",
+          "sourceName": "Q-odd",
+          "caseIds": [
             "33",
             "34",
             "35",
@@ -15762,9 +15783,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "j",
-          "name": "J",
-          "sourceName": "J",
+          "id": "j-even",
+          "name": "J-even",
+          "sourceName": "J-even",
           "caseIds": [
             "42",
             "43",
@@ -15774,7 +15795,14 @@ window.AlgNoteBundledData = {
             "47",
             "48",
             "49",
-            "50",
+            "50"
+          ]
+        },
+        {
+          "id": "j-odd",
+          "name": "J-odd",
+          "sourceName": "J-odd",
+          "caseIds": [
             "51",
             "52",
             "53",
@@ -15787,9 +15815,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "l",
-          "name": "L",
-          "sourceName": "L",
+          "id": "l-even",
+          "name": "L-even",
+          "sourceName": "L-even",
           "caseIds": [
             "60",
             "61",
@@ -15799,7 +15827,14 @@ window.AlgNoteBundledData = {
             "65",
             "66",
             "67",
-            "68",
+            "68"
+          ]
+        },
+        {
+          "id": "l-odd",
+          "name": "L-odd",
+          "sourceName": "L-odd",
+          "caseIds": [
             "69",
             "70",
             "71",
@@ -15812,9 +15847,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "w",
-          "name": "W",
-          "sourceName": "W",
+          "id": "w-even",
+          "name": "W-even",
+          "sourceName": "W-even",
           "caseIds": [
             "78",
             "79",
@@ -15824,7 +15859,14 @@ window.AlgNoteBundledData = {
             "83",
             "84",
             "85",
-            "86",
+            "86"
+          ]
+        },
+        {
+          "id": "w-odd",
+          "name": "W-odd",
+          "sourceName": "W-odd",
+          "caseIds": [
             "87",
             "88",
             "89",
@@ -15837,9 +15879,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "b",
-          "name": "B",
-          "sourceName": "B",
+          "id": "b-even",
+          "name": "B-even",
+          "sourceName": "B-even",
           "caseIds": [
             "96",
             "97",
@@ -15849,7 +15891,14 @@ window.AlgNoteBundledData = {
             "101",
             "102",
             "103",
-            "104",
+            "104"
+          ]
+        },
+        {
+          "id": "b-odd",
+          "name": "B-odd",
+          "sourceName": "B-odd",
+          "caseIds": [
             "105",
             "106",
             "107",
@@ -15862,9 +15911,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "z",
-          "name": "Z",
-          "sourceName": "Z",
+          "id": "z-even",
+          "name": "Z-even",
+          "sourceName": "Z-even",
           "caseIds": [
             "114",
             "115",
@@ -15874,7 +15923,14 @@ window.AlgNoteBundledData = {
             "119",
             "120",
             "121",
-            "122",
+            "122"
+          ]
+        },
+        {
+          "id": "z-odd",
+          "name": "Z-odd",
+          "sourceName": "Z-odd",
+          "caseIds": [
             "123",
             "124",
             "125",
@@ -15887,9 +15943,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "s",
-          "name": "S",
-          "sourceName": "S",
+          "id": "s-even",
+          "name": "S-even",
+          "sourceName": "S-even",
           "caseIds": [
             "132",
             "133",
@@ -15899,7 +15955,14 @@ window.AlgNoteBundledData = {
             "137",
             "138",
             "139",
-            "140",
+            "140"
+          ]
+        },
+        {
+          "id": "s-odd",
+          "name": "S-odd",
+          "sourceName": "S-odd",
+          "caseIds": [
             "141",
             "142",
             "143",
@@ -15912,9 +15975,9 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "t",
-          "name": "T",
-          "sourceName": "T",
+          "id": "t-even",
+          "name": "T-even",
+          "sourceName": "T-even",
           "caseIds": [
             "150",
             "151",
@@ -15924,7 +15987,14 @@ window.AlgNoteBundledData = {
             "155",
             "156",
             "157",
-            "158",
+            "158"
+          ]
+        },
+        {
+          "id": "t-odd",
+          "name": "T-odd",
+          "sourceName": "T-odd",
+          "caseIds": [
             "159",
             "160",
             "161",
@@ -15937,26 +16007,40 @@ window.AlgNoteBundledData = {
           ]
         },
         {
-          "id": "x",
-          "name": "X",
-          "sourceName": "X",
+          "id": "x-even",
+          "name": "X-even",
+          "sourceName": "X-even",
           "caseIds": [
             "168",
             "169",
-            "170",
+            "170"
+          ]
+        },
+        {
+          "id": "x-odd",
+          "name": "X-odd",
+          "sourceName": "X-odd",
+          "caseIds": [
             "171",
             "172",
             "173"
           ]
         },
         {
-          "id": "y",
-          "name": "Y",
-          "sourceName": "Y",
+          "id": "y-even",
+          "name": "Y-even",
+          "sourceName": "Y-even",
           "caseIds": [
             "174",
             "175",
-            "176",
+            "176"
+          ]
+        },
+        {
+          "id": "y-odd",
+          "name": "Y-odd",
+          "sourceName": "Y-odd",
+          "caseIds": [
             "177",
             "178",
             "179"
@@ -15972,7 +16056,7 @@ window.AlgNoteBundledData = {
         {
           "id": "1",
           "name": "Os+",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{L,F} R' U R' D' R U' R' D R2"
           ],
@@ -15993,7 +16077,7 @@ window.AlgNoteBundledData = {
         {
           "id": "2",
           "name": "Os-",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{L,F} R2' D' R U R' D R U' R"
           ],
@@ -16014,7 +16098,7 @@ window.AlgNoteBundledData = {
         {
           "id": "3",
           "name": "Oc0",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{B,U} U' R U' R' Rw U R' U' R Rw' U'"
           ],
@@ -16037,7 +16121,7 @@ window.AlgNoteBundledData = {
         {
           "id": "4",
           "name": "Oc+",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "L R' L' R' B' R' B"
           ],
@@ -16059,7 +16143,7 @@ window.AlgNoteBundledData = {
         {
           "id": "5",
           "name": "Oc-",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{B,U} R U' R' U' {U,BL} R D' R U' R' D R'"
           ],
@@ -16082,7 +16166,7 @@ window.AlgNoteBundledData = {
         {
           "id": "6",
           "name": "Oa0",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{B,U} U Rw R' U R U' Rw' R U R' U"
           ],
@@ -16105,7 +16189,7 @@ window.AlgNoteBundledData = {
         {
           "id": "7",
           "name": "Oa+",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "{B,U} U' R U R {R,F} R' D R' U R D' R"
           ],
@@ -16126,7 +16210,7 @@ window.AlgNoteBundledData = {
         {
           "id": "8",
           "name": "Oa-",
-          "group": "o",
+          "group": "o-even",
           "algorithms": [
             "B' R B R L R L'"
           ],
@@ -16148,7 +16232,7 @@ window.AlgNoteBundledData = {
         {
           "id": "9",
           "name": "Ob0",
-          "group": "o",
+          "group": "o-odd",
           "algorithms": [
             "{B,BR} Rw U R' U' Rw' R U R U' R'"
           ],
@@ -16172,7 +16256,7 @@ window.AlgNoteBundledData = {
         {
           "id": "10",
           "name": "Ob+",
-          "group": "o",
+          "group": "o-odd",
           "algorithms": [
             "{BL,F} R' U B' S' B U' R"
           ],
@@ -16197,7 +16281,7 @@ window.AlgNoteBundledData = {
         {
           "id": "11",
           "name": "Ob-",
-          "group": "o",
+          "group": "o-odd",
           "algorithms": [
             "{BR,U} R U' L H' L' U R'"
           ],
@@ -16221,7 +16305,7 @@ window.AlgNoteBundledData = {
         {
           "id": "12",
           "name": "Vs0",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{L, D} [D' R' U'  : S H ]\n(시점변경, 노란세모 좌상단)",
             "{L,D} D' R' U' S H U R D",
@@ -16245,7 +16329,7 @@ window.AlgNoteBundledData = {
         {
           "id": "13",
           "name": "Vs+",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Uo} [B' : R Br' R'] U [B' : R Br' R']\nS U x4",
             "Rw U  R' U' R F R' U R F' U' Rw'",
@@ -16277,7 +16361,7 @@ window.AlgNoteBundledData = {
         {
           "id": "14",
           "name": "Vs-",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Uo} [B' : R Br R'] U' [B' : R Br R']",
             "Rw U F R' U' R F' R' U R U' Rw'",
@@ -16309,7 +16393,7 @@ window.AlgNoteBundledData = {
         {
           "id": "15",
           "name": "Vc0",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Uo} Br' Rw / [S', U' ] / Rw' Br\n(셋업후 OLP4)",
             "{R,BR} D' Rw U R' U' R BR' R' U R U' BR Rw' D"
@@ -16329,7 +16413,7 @@ window.AlgNoteBundledData = {
         {
           "id": "16",
           "name": "Vc+",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "R' U' S U R / L R' L' B' R B",
             "R' U' S U R L R' L' B' R B"
@@ -16349,7 +16433,7 @@ window.AlgNoteBundledData = {
         {
           "id": "17",
           "name": "Vc-",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Bl,U} L' R / U S U S U/ L R'\n{Bro'}",
             "{L,U} U' R BR R' U R U' BR R' U R U' BR U R'"
@@ -16379,7 +16463,7 @@ window.AlgNoteBundledData = {
         {
           "id": "18",
           "name": "Va0",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Uo'} Br' Rw / [S', U ] / Rw' Br\n(셋업후 OLP4)",
             "{B,BL} D' Rw U R' U' R BR R' U R U' BR' Rw' D"
@@ -16400,7 +16484,7 @@ window.AlgNoteBundledData = {
         {
           "id": "19",
           "name": "Va+",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "{Br,U} R L' / U' S' U' S' U'/ R' L\n{Blo}",
             "{B,U} R U' BR' U R' U' R BR' U R' U' R BR' R' U"
@@ -16430,7 +16514,7 @@ window.AlgNoteBundledData = {
         {
           "id": "20",
           "name": "Va-",
-          "group": "v",
+          "group": "v-even",
           "algorithms": [
             "L U S' U' L' / R' L R {Uo'} L R' L'\n{U,BL} R U H U' H L R L' R",
             "{U,BL} R U H U' H L R L' R"
@@ -16450,7 +16534,7 @@ window.AlgNoteBundledData = {
         {
           "id": "21",
           "name": "Vb0",
-          "group": "v",
+          "group": "v-odd",
           "algorithms": [
             "{Uo'} Rw' L R L' /Rw R'/ U S'\n(Swap R에 두고 꼭짓점 우상단)",
             "[U] {U,BR} Rw' L R L' Rw R' U S'"
@@ -16470,7 +16554,7 @@ window.AlgNoteBundledData = {
         {
           "id": "22",
           "name": "Vb+",
-          "group": "v",
+          "group": "v-odd",
           "algorithms": [
             "[U] {U,BL} H U' S U S",
             "{Uo'} S U S U' Hl'\n(Swap R에 두고 두고 꼭짓점 우상단)",
@@ -16509,7 +16593,7 @@ window.AlgNoteBundledData = {
         {
           "id": "23",
           "name": "Vb-",
-          "group": "v",
+          "group": "v-odd",
           "algorithms": [
             "[U] S' U' S' U {Uo'} HL\n(Swap L로 두고 꼭짓점  좌상단)",
             "B' BLw U H U' L BLw'",
@@ -16547,7 +16631,7 @@ window.AlgNoteBundledData = {
         {
           "id": "24",
           "name": "Qs0",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "[U] {L,F} R U R' U' Rw R' U R U' Rw'"
           ],
@@ -16583,7 +16667,7 @@ window.AlgNoteBundledData = {
         {
           "id": "25",
           "name": "Qs+",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo} U' H U' S'"
           ],
@@ -16618,7 +16702,7 @@ window.AlgNoteBundledData = {
         {
           "id": "26",
           "name": "Qs-",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo} U S U H'"
           ],
@@ -16655,7 +16739,7 @@ window.AlgNoteBundledData = {
         {
           "id": "27",
           "name": "Qc0",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "[U] H' U S'"
           ],
@@ -16685,7 +16769,7 @@ window.AlgNoteBundledData = {
         {
           "id": "28",
           "name": "Qc+",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo} Tr0 U' S",
             "[U'] {B,U} U' R' D R' / U R D' R / H'"
@@ -16724,7 +16808,7 @@ window.AlgNoteBundledData = {
         {
           "id": "29",
           "name": "Qc-",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo}  U' S U' S"
           ],
@@ -16761,7 +16845,7 @@ window.AlgNoteBundledData = {
         {
           "id": "30",
           "name": "Qa0",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "[U'] {U,BR} S U' H"
           ],
@@ -16791,7 +16875,7 @@ window.AlgNoteBundledData = {
         {
           "id": "31",
           "name": "Qa+",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo'} U S' U S'"
           ],
@@ -16827,7 +16911,7 @@ window.AlgNoteBundledData = {
         {
           "id": "32",
           "name": "Qa-",
-          "group": "q",
+          "group": "q-even",
           "algorithms": [
             "{Uo'} U Ta0 S'",
             "[U] {B,BL} U R D' R U' R' D R' U R' U' R"
@@ -16862,7 +16946,7 @@ window.AlgNoteBundledData = {
         {
           "id": "33",
           "name": "Qb0",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "[U'] L (R B' R') L' / B U' / B' (R' L R) B L'",
             "[U] {R,U} U' R BR' U R' U' R BR' U R' U' R BR' U R'"
@@ -16891,7 +16975,7 @@ window.AlgNoteBundledData = {
         {
           "id": "34",
           "name": "Qb+",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{Br, U} L R U' /  R' L' R L U / R' L'",
             "[U] {L,F} U R D R' U' R D' R' U R' U' R"
@@ -16929,7 +17013,7 @@ window.AlgNoteBundledData = {
         {
           "id": "35",
           "name": "Qb-",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{R,D} R U R' U / BL U BL' / U R U' R'"
           ],
@@ -16958,7 +17042,7 @@ window.AlgNoteBundledData = {
         {
           "id": "36",
           "name": "Qr0",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "[U] {R,U} U R / Rw' U' R U / R' Rw U' R'",
             "[U] {R,U} U / Rs' U' R U Rs/ U' R'"
@@ -16996,7 +17080,7 @@ window.AlgNoteBundledData = {
         {
           "id": "37",
           "name": "Qr+",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{Uo'} S U S' U S"
           ],
@@ -17034,7 +17118,7 @@ window.AlgNoteBundledData = {
         {
           "id": "38",
           "name": "Qr-",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{Uo'} Tr0 U' S'",
             "{B,BL} R D R' U R D' R2' U' R BR' U R' U' R"
@@ -17059,7 +17143,7 @@ window.AlgNoteBundledData = {
         {
           "id": "39",
           "name": "Ql0",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "[U'] {L,U} R U Rw' / R U' R' U R' / Rw U'"
           ],
@@ -17095,7 +17179,7 @@ window.AlgNoteBundledData = {
         {
           "id": "40",
           "name": "Ql+",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{Uo} U' S U Tl0",
             "[U] {B,BL} U Rw' U' R U R' Rw U' BR U R' U' R"
@@ -17117,7 +17201,7 @@ window.AlgNoteBundledData = {
         {
           "id": "41",
           "name": "Ql-",
-          "group": "q",
+          "group": "q-odd",
           "algorithms": [
             "{Uo} S' U' S U' S'"
           ],
@@ -17153,7 +17237,7 @@ window.AlgNoteBundledData = {
         {
           "id": "42",
           "name": "Js0",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "{Uo'} [D Rs : H S ]",
             "[U'] {B,BL} Rw' U R U' R' Rw BR Rw' R U R' U' Rw",
@@ -17174,7 +17258,7 @@ window.AlgNoteBundledData = {
         {
           "id": "43",
           "name": "Js+",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "[U] {LDt}\n(Rw U' Rw') (R Br R') (Rw U Rw') R Br'",
             "[U] {B,L} Rw U' Rw' R BR R' Rw U Rw' R BR'"
@@ -17211,7 +17295,7 @@ window.AlgNoteBundledData = {
         {
           "id": "44",
           "name": "Js-",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "[U] {Uo} [L : R B R']\n[U] {R,Br} [U : R D R']",
             "[U] {L,U} R' D' R U' R' D R U"
@@ -17241,7 +17325,7 @@ window.AlgNoteBundledData = {
         {
           "id": "45",
           "name": "Jc0",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "{R,U}\nRw' (R U' R') D (R' U R) D' Rw",
             "{R,U} Rw' R U' R' D R' U R D' Rw"
@@ -17262,7 +17346,7 @@ window.AlgNoteBundledData = {
         {
           "id": "46",
           "name": "Jc+",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "[U] {Bl,F /Fo}\nB R' U / S {Uo'} U' R' L",
             "[U] {BL,F} B R' U S U' B' R"
@@ -17294,7 +17378,7 @@ window.AlgNoteBundledData = {
         {
           "id": "47",
           "name": "Jc-",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "{Uo} S' U' S' U' {Uo'}  [Hl]",
             "{U,BR} S' U' S' U' H'"
@@ -17318,7 +17402,7 @@ window.AlgNoteBundledData = {
         {
           "id": "48",
           "name": "Ja0",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "[U'] {L,F}\nRw D (R' U R) D' (R U' R') Rw'",
             "[U'] {L,F} Rw D R' U R D' R U' Rw' R'"
@@ -17347,7 +17431,7 @@ window.AlgNoteBundledData = {
         {
           "id": "49",
           "name": "Ja+",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "U' S' {Uo'} U S U S",
             "{U,F} S U H' U S'",
@@ -17384,7 +17468,7 @@ window.AlgNoteBundledData = {
         {
           "id": "50",
           "name": "Ja-",
-          "group": "j",
+          "group": "j-even",
           "algorithms": [
             "[U] {F,Br / Ro}\nR' B (U S' U') R B'",
             "[U] {F,BR} R' B U S' U' R B'"
@@ -17415,7 +17499,7 @@ window.AlgNoteBundledData = {
         {
           "id": "51",
           "name": "Jb0",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[R' U R : S, H ]\n(캔슬하면) R' U F로 시작",
             "R' U R B' R B R' L R' L' U' R"
@@ -17448,7 +17532,7 @@ window.AlgNoteBundledData = {
         {
           "id": "52",
           "name": "Jb+",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "{Uo} U S' U H",
             "[U] {U,BR} S' U H"
@@ -17483,7 +17567,7 @@ window.AlgNoteBundledData = {
         {
           "id": "53",
           "name": "Jb-",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "{Uo'} U [B' Bl : S]\n U' Rs' U' S' U Rs",
             "[U] {R,U} U' R' Rw U R U' Rw' U"
@@ -17513,7 +17597,7 @@ window.AlgNoteBundledData = {
         {
           "id": "54",
           "name": "Jr0",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U] S U S'"
           ],
@@ -17543,7 +17627,7 @@ window.AlgNoteBundledData = {
         {
           "id": "55",
           "name": "Jr+",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U] {Uo'} S'(끝에w) S' Rw' R2",
             "[U] {B,BL} U R' U' Rw U R' U' Rw2 R'"
@@ -17578,7 +17662,7 @@ window.AlgNoteBundledData = {
         {
           "id": "56",
           "name": "Jr-",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U'] {Blo} L' R [U' : S']  L R'\n(U'이후 F면 노랑 - 2,0이 R쪽)",
             "[U'] {B,U} U' R BR' U R' U' R BR U R'"
@@ -17608,7 +17692,7 @@ window.AlgNoteBundledData = {
         {
           "id": "57",
           "name": "Jl0",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U,D] {R,Br}\nR' U R / D' / R U' R' / D+ ABF\n(축회전은 LDt2 -- 깔끔한3선, L 내려간형)",
             "[U] {R,BR} L R' U R D' R U' R' D L'",
@@ -17643,7 +17727,7 @@ window.AlgNoteBundledData = {
         {
           "id": "58",
           "name": "Jl+",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U'] {R,U} R U' BR' R' U R U' BR R' U"
           ],
@@ -17677,7 +17761,7 @@ window.AlgNoteBundledData = {
         {
           "id": "59",
           "name": "Jl-",
-          "group": "j",
+          "group": "j-odd",
           "algorithms": [
             "[U] S U [Hl]",
             "[U] {U,BL} H' U S"
@@ -17711,7 +17795,7 @@ window.AlgNoteBundledData = {
         {
           "id": "60",
           "name": "Ls0",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "R' U' L' R B' R B R' L R' U R",
             "D Rw H S Rw' D'"
@@ -17742,7 +17826,7 @@ window.AlgNoteBundledData = {
         {
           "id": "61",
           "name": "Ls+",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "[U'] {L,U} U' R' D' R U R' D R"
           ],
@@ -17771,7 +17855,7 @@ window.AlgNoteBundledData = {
         {
           "id": "62",
           "name": "Ls-",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "[U'] {B,L} BR R' Rw U' Rw' R BR' R' Rw U Rw'",
             "{U,BL} S U H U H"
@@ -17808,7 +17892,7 @@ window.AlgNoteBundledData = {
         {
           "id": "63",
           "name": "Lc0",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "[U] {R,U} Rw' D' R U' R' D R' U R Rw"
           ],
@@ -17827,7 +17911,7 @@ window.AlgNoteBundledData = {
         {
           "id": "64",
           "name": "Lc+",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "{U,F} Rw' S H Rw S"
           ],
@@ -17848,7 +17932,7 @@ window.AlgNoteBundledData = {
         {
           "id": "65",
           "name": "Lc-",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "[U] S U' H U' H"
           ],
@@ -17883,7 +17967,7 @@ window.AlgNoteBundledData = {
         {
           "id": "66",
           "name": "La0",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "{L,F} Rw R' U R D' R U' R' D Rw'"
           ],
@@ -17902,7 +17986,7 @@ window.AlgNoteBundledData = {
         {
           "id": "67",
           "name": "La+",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "{R,U} U' R U Rw' U' R' D R' U R D' Rw"
           ],
@@ -17924,7 +18008,7 @@ window.AlgNoteBundledData = {
         {
           "id": "68",
           "name": "La-",
-          "group": "l",
+          "group": "l-even",
           "algorithms": [
             "[U'] B' BLw U' H U L BLw'",
             "{L,F} U R' U' R BR R U R' U' Rw R' U R U' Rw'"
@@ -17952,7 +18036,7 @@ window.AlgNoteBundledData = {
         {
           "id": "69",
           "name": "Lb0",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "{U,BL} R U' R' L R' L' R B' R B U R'"
           ],
@@ -17986,7 +18070,7 @@ window.AlgNoteBundledData = {
         {
           "id": "70",
           "name": "Lb+",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U'] {L,F} U Rw' R U' R' U Rw U'"
           ],
@@ -18017,7 +18101,7 @@ window.AlgNoteBundledData = {
         {
           "id": "71",
           "name": "Lb-",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U'] {U,BR} H' U' S"
           ],
@@ -18052,7 +18136,7 @@ window.AlgNoteBundledData = {
         {
           "id": "72",
           "name": "Lr0",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "{R,BR} Rw' R U R' U' Rw BR Rw' U R U' R' Rw"
           ],
@@ -18087,7 +18171,7 @@ window.AlgNoteBundledData = {
         {
           "id": "73",
           "name": "Lr+",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U'] {U,F} S' U' H"
           ],
@@ -18121,7 +18205,7 @@ window.AlgNoteBundledData = {
         {
           "id": "74",
           "name": "Lr-",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U] {R,U} U' R BR U R' U' R BR' U R'"
           ],
@@ -18155,7 +18239,7 @@ window.AlgNoteBundledData = {
         {
           "id": "75",
           "name": "Ll0",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U'] {U,F} S' U' S"
           ],
@@ -18184,7 +18268,7 @@ window.AlgNoteBundledData = {
         {
           "id": "76",
           "name": "Ll+",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U] {L,U} R U' BR R' U R U' BR' R' U"
           ],
@@ -18216,7 +18300,7 @@ window.AlgNoteBundledData = {
         {
           "id": "77",
           "name": "Ll-",
-          "group": "l",
+          "group": "l-odd",
           "algorithms": [
             "[U'] {B,U} U' R U Rw' U' R U Rw R2'"
           ],
@@ -18245,7 +18329,7 @@ window.AlgNoteBundledData = {
         {
           "id": "78",
           "name": "Ws0",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U'] S U' / Hl {Uo} U S\n[U] S' U H U' {Uo'} S'",
             "[U] {U,F} S' U H U' {U,BL} S'"
@@ -18269,7 +18353,7 @@ window.AlgNoteBundledData = {
         {
           "id": "79",
           "name": "Ws+",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U] {B,U} BR' R' U' R D R' U R D' BR",
             "[U] {BR,U} U' R' U' R D R' U R D' U"
@@ -18303,7 +18387,7 @@ window.AlgNoteBundledData = {
         {
           "id": "80",
           "name": "Ws-",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U'] {Fo} U R U R' D' R U' R' U' D",
             "[U'] {BL,F} U R U R' D' R U' R' U' D"
@@ -18324,7 +18408,7 @@ window.AlgNoteBundledData = {
         {
           "id": "81",
           "name": "Wc0",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U'] {B,U} R U' R' U R U' (BR') R' U R U' (BR) R' U",
             "[U'] {B,U} R U' R' U R U' BR' R' U R U' BR R' U"
@@ -18350,7 +18434,7 @@ window.AlgNoteBundledData = {
         {
           "id": "82",
           "name": "Wc+",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U'] S U' / S' U S",
             "[U'] S U' S' U S"
@@ -18376,7 +18460,7 @@ window.AlgNoteBundledData = {
         {
           "id": "83",
           "name": "Wc-",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U'] Rw' L R L' / U' H' U / (Rw R')",
             "[U'] Rw' L R L' U' H' U Rw R'"
@@ -18396,7 +18480,7 @@ window.AlgNoteBundledData = {
         {
           "id": "84",
           "name": "Wa0",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U] {R,U} R U' R' U /R U' BR /R' U R U' /BR' R' U",
             "[U] {R,U} R U' R' U R U' BR R' U R U' BR' R' U"
@@ -18419,7 +18503,7 @@ window.AlgNoteBundledData = {
         {
           "id": "85",
           "name": "Wa+",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U] {Uo'} Rw B' R' B /U S' U'/ (Rw' R)",
             "[U] {U,BL} Rw B' R' B U S' U' Rw' R"
@@ -18439,7 +18523,7 @@ window.AlgNoteBundledData = {
         {
           "id": "86",
           "name": "Wa-",
-          "group": "w",
+          "group": "w-even",
           "algorithms": [
             "[U] S' U S U' S'"
           ],
@@ -18463,7 +18547,7 @@ window.AlgNoteBundledData = {
         {
           "id": "87",
           "name": "Wb0",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "[U'] H' / U S U S\nU' S U ' 8회전 olp4a",
             "[U'] H' U S U S"
@@ -18496,7 +18580,7 @@ window.AlgNoteBundledData = {
         {
           "id": "88",
           "name": "Wb+",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "{Uo} [U'] Rw B' R' B (Rw' R) U S'\n--> {Uo} U' Hw' Rs' U S'",
             "[U'] {U,BR} BR' R U' S' U R' BR"
@@ -18521,7 +18605,7 @@ window.AlgNoteBundledData = {
         {
           "id": "89",
           "name": "Wb-",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "{Uo} [U] Rw' L R L' (Rw R') U' H'\n--> {Uo} U Sw Rs U' H'",
             "[U] {U,BR} Rw' L R L' Rw R' U' H'"
@@ -18543,7 +18627,7 @@ window.AlgNoteBundledData = {
         {
           "id": "90",
           "name": "Wr0",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "[U'] Rw' L R L' / U S' U' Rw R'\n-> [U'] Sw U S' U'  Rs",
             "[U'] {U,F} Rw' L R L' U S' U' Rw R'"
@@ -18563,7 +18647,7 @@ window.AlgNoteBundledData = {
         {
           "id": "91",
           "name": "Wr+",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "{Uo'} (Rw' R) U S' U' / L R' L' Rw\n-> {Uo'} Rs' U S' U' Sw'\nU R' / U H' U' /R U / B L' B' L",
             "{U,BL} Rw' R U S' U' L R' L' Rw"
@@ -18583,7 +18667,7 @@ window.AlgNoteBundledData = {
         {
           "id": "92",
           "name": "Wr-",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "{Uo} U S / U' S' U' S'",
             "[U] {U,BR} S U' S' U' S'"
@@ -18610,7 +18694,7 @@ window.AlgNoteBundledData = {
         {
           "id": "93",
           "name": "Wl0",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "[U] (Rw' R) L R' L' Rw / U' / Rw' L R L' (R' Rw)\n-> [U] Rs' Sw' U' Sw Rs",
             "[U] Rw' R L R' L' Rw U' Rw' L R L' R' Rw"
@@ -18633,7 +18717,7 @@ window.AlgNoteBundledData = {
         {
           "id": "94",
           "name": "Wl+",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "{Uo'} U' S' / U S U S",
             "[U'] {U,BL} S' U S U S"
@@ -18664,7 +18748,7 @@ window.AlgNoteBundledData = {
         {
           "id": "95",
           "name": "Wl-",
-          "group": "w",
+          "group": "w-odd",
           "algorithms": [
             "(Rw R') U' H' U / B' R B Rw'\n-> Rs {Uo} U' S U (R' L R Br')",
             "Rw R' U' H' U B' R B Rw'"
@@ -18684,7 +18768,7 @@ window.AlgNoteBundledData = {
         {
           "id": "96",
           "name": "Bs0",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "{Uo'} R U / B' R' B / U S U' / R U' R'",
             "{U,BL} R' U' L R L' U' R B' R' B U R' U R",
@@ -18711,7 +18795,7 @@ window.AlgNoteBundledData = {
         {
           "id": "97",
           "name": "Bs+",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "{Uo'} U S U S / U H",
             "[U] {U,BL} S U S U H"
@@ -18737,7 +18821,7 @@ window.AlgNoteBundledData = {
         {
           "id": "98",
           "name": "Bs-",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "U' S {Uo'} U' S' U' S'",
             "[U'] {U,BL} H' U' S' U' S'",
@@ -18764,7 +18848,7 @@ window.AlgNoteBundledData = {
         {
           "id": "99",
           "name": "Bc0",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "{Uo} U' S' / U' S' / U' S'",
             "[U'] {U,BR} S' U' S' U' S'"
@@ -18787,7 +18871,7 @@ window.AlgNoteBundledData = {
         {
           "id": "100",
           "name": "Bc+",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "[U] {Uo'} Br' R' U' / R L R' L' / U R Br",
             "[U'] {L,F} U R D' R U' R' D' R' U R D' R' U'",
@@ -18818,7 +18902,7 @@ window.AlgNoteBundledData = {
         {
           "id": "101",
           "name": "Bc-",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "{Uo'} U S (U H) U S'",
             "[U] {U,BL} S U H U S'"
@@ -18842,7 +18926,7 @@ window.AlgNoteBundledData = {
         {
           "id": "102",
           "name": "Ba0",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "{Uo'} U S / U S / U S",
             "[U] {U,BL} S U S U S",
@@ -18868,7 +18952,7 @@ window.AlgNoteBundledData = {
         {
           "id": "103",
           "name": "Ba+",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "U' S (U' H') U' S'",
             "[U] S' U Rw R' L R' L' R' Rw2",
@@ -18890,7 +18974,7 @@ window.AlgNoteBundledData = {
         {
           "id": "104",
           "name": "Ba-",
-          "group": "b",
+          "group": "b-even",
           "algorithms": [
             "[U] Br' R' U' / L R L' R' / U R Br",
             "[U] {BR,U} U' BLw' U' L R L' R' U BLw U"
@@ -18920,7 +19004,7 @@ window.AlgNoteBundledData = {
         {
           "id": "105",
           "name": "Bb0",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "{Uo} H' U' / S U S",
             "S' U' H U S'",
@@ -18951,7 +19035,7 @@ window.AlgNoteBundledData = {
         {
           "id": "106",
           "name": "Bb+",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "U H / Rs' U' S' U Rs\nU H / {Uo'} U' B' Bl S Bl' B //// olp4a (sl.a)",
             "[U] H Rw' R U' S' U Rw R'"
@@ -18973,7 +19057,7 @@ window.AlgNoteBundledData = {
         {
           "id": "107",
           "name": "Bb-",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "U S / x' R U' Br' S Br U R'",
             "S U Rw' R B' R B R2' Rw"
@@ -18995,7 +19079,7 @@ window.AlgNoteBundledData = {
         {
           "id": "108",
           "name": "Br0",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "U S U' / B' Bl S Bl' B //// olp4a (sl.a)]",
             "[U'] {F,BR} R' B S' U R B' R' B U' R B'"
@@ -19031,7 +19115,7 @@ window.AlgNoteBundledData = {
         {
           "id": "109",
           "name": "Br+",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "U {Br,U} R L'  U' / S' / U L R'",
             "{T'2} L' R U S' U' R' L",
@@ -19063,7 +19147,7 @@ window.AlgNoteBundledData = {
         {
           "id": "110",
           "name": "Br-",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "S U / S' U' S'",
             "[U] {U,BR} S' U' S' U S"
@@ -19102,7 +19186,7 @@ window.AlgNoteBundledData = {
         {
           "id": "111",
           "name": "Bl0",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "BLw' B U S U' BLw L'"
           ],
@@ -19125,7 +19209,7 @@ window.AlgNoteBundledData = {
         {
           "id": "112",
           "name": "Bl+",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "S' U' / S U S",
             "S' U' S U S"
@@ -19163,7 +19247,7 @@ window.AlgNoteBundledData = {
         {
           "id": "113",
           "name": "Bl-",
-          "group": "b",
+          "group": "b-odd",
           "algorithms": [
             "{T'2} R L' U' S U L R'",
             "[U'] {U,BR} B' BLw U S U' BLw' B"
@@ -19200,7 +19284,7 @@ window.AlgNoteBundledData = {
         {
           "id": "114",
           "name": "Zs0",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "Rw U' Rw' H S Rw U Rw'"
           ],
@@ -19232,7 +19316,7 @@ window.AlgNoteBundledData = {
         {
           "id": "115",
           "name": "Zs+",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "U' B U' R B' R' B U R' L R L' B R B R'",
             "U' {BL,F} B R' L R' L' R U' L R' L' R U B' R"
@@ -19254,7 +19338,7 @@ window.AlgNoteBundledData = {
         {
           "id": "116",
           "name": "Zs-",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U] {U,BR} H U' S' U S"
           ],
@@ -19286,7 +19370,7 @@ window.AlgNoteBundledData = {
         {
           "id": "117",
           "name": "Zc0",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U] H' U' H' U S",
             "[U'] {U,BR} H U' S' U H"
@@ -19316,7 +19400,7 @@ window.AlgNoteBundledData = {
         {
           "id": "118",
           "name": "Zc+",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "U' {L,F} U R' U' R U R D R' U' R D' R'"
           ],
@@ -19348,7 +19432,7 @@ window.AlgNoteBundledData = {
         {
           "id": "119",
           "name": "Zc-",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U] {B,U} U' R BR' R' U R U' BR R' U"
           ],
@@ -19376,7 +19460,7 @@ window.AlgNoteBundledData = {
         {
           "id": "120",
           "name": "Za0",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U] {F,BR} B R' U' S' U B' R"
           ],
@@ -19407,7 +19491,7 @@ window.AlgNoteBundledData = {
         {
           "id": "121",
           "name": "Za+",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U] {U,BR} S U' S U S'"
           ],
@@ -19440,7 +19524,7 @@ window.AlgNoteBundledData = {
         {
           "id": "122",
           "name": "Za-",
-          "group": "z",
+          "group": "z-even",
           "algorithms": [
             "[U'] {B,BL} R' U' R U R' Rw U' R' U Rw U R' U' Rw",
             "[U'] {BR,U} D R' U R U' R D' R' U R' U' R"
@@ -19462,7 +19546,7 @@ window.AlgNoteBundledData = {
         {
           "id": "123",
           "name": "Zb0",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "{R,U} U' R BR' R' U R U' BR U R'"
           ],
@@ -19497,7 +19581,7 @@ window.AlgNoteBundledData = {
         {
           "id": "124",
           "name": "Zb+",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] {U,BL} S' U H' U' H'",
             "[U'] {U,BR} S U S U' H"
@@ -19530,7 +19614,7 @@ window.AlgNoteBundledData = {
         {
           "id": "125",
           "name": "Zb-",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] S U S"
           ],
@@ -19564,7 +19648,7 @@ window.AlgNoteBundledData = {
         {
           "id": "126",
           "name": "Zr0",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] {U,BR} S U S U' S"
           ],
@@ -19590,7 +19674,7 @@ window.AlgNoteBundledData = {
         {
           "id": "127",
           "name": "Zr+",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] H U S'"
           ],
@@ -19624,7 +19708,7 @@ window.AlgNoteBundledData = {
         {
           "id": "128",
           "name": "Zr-",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] {U,BL} Rw R' L R' L' Rw2 R'"
           ],
@@ -19654,7 +19738,7 @@ window.AlgNoteBundledData = {
         {
           "id": "129",
           "name": "Zl0",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] S U H"
           ],
@@ -19684,7 +19768,7 @@ window.AlgNoteBundledData = {
         {
           "id": "130",
           "name": "Zl+",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "{BL,F} B R' U' S' U R B'"
           ],
@@ -19714,7 +19798,7 @@ window.AlgNoteBundledData = {
         {
           "id": "131",
           "name": "Zl-",
-          "group": "z",
+          "group": "z-odd",
           "algorithms": [
             "[U'] {BR,U} U R U' R' L' R L U R' U'"
           ],
@@ -19744,7 +19828,7 @@ window.AlgNoteBundledData = {
         {
           "id": "132",
           "name": "Ss0",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U] {R,BR} U R' U' R' D R' U R D' R' U'",
             "[U] {B,U} U R' U' R D' R U' R' D R' U' R U'"
@@ -19776,7 +19860,7 @@ window.AlgNoteBundledData = {
         {
           "id": "133",
           "name": "Ss+",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U'] H' U S' U' S",
             "[U] {R,F} D' U R' U' Rw R' U' R U Rw' R D"
@@ -19809,7 +19893,7 @@ window.AlgNoteBundledData = {
         {
           "id": "134",
           "name": "Ss-",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U'] {BR,BL} B R' L R' L' R U H U' R B'"
           ],
@@ -19840,7 +19924,7 @@ window.AlgNoteBundledData = {
         {
           "id": "135",
           "name": "Sc0",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U] {BL,F} R' B U' S U R B'",
             "[U] Rw' L R L' U H U' Rw R'"
@@ -19868,7 +19952,7 @@ window.AlgNoteBundledData = {
         {
           "id": "136",
           "name": "Sc+",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U] {BL,F} D' R U' R' U R' D R U' R U R'"
           ],
@@ -19901,7 +19985,7 @@ window.AlgNoteBundledData = {
         {
           "id": "137",
           "name": "Sc-",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U'] H' U S' U' H"
           ],
@@ -19939,7 +20023,7 @@ window.AlgNoteBundledData = {
         {
           "id": "138",
           "name": "Sa0",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U'] {U,BL} S' U S' U' H"
           ],
@@ -19966,7 +20050,7 @@ window.AlgNoteBundledData = {
         {
           "id": "139",
           "name": "Sa+",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U'] {L,U} R U' BR U R' U' R BR' U R'"
           ],
@@ -19999,7 +20083,7 @@ window.AlgNoteBundledData = {
         {
           "id": "140",
           "name": "Sa-",
-          "group": "s",
+          "group": "s-even",
           "algorithms": [
             "[U] {R,U} U' R U R' U' R' D' R U R' D R"
           ],
@@ -20031,7 +20115,7 @@ window.AlgNoteBundledData = {
         {
           "id": "141",
           "name": "Sb0",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "{R,U} R U' BR U R' U' R BR' R' U"
           ],
@@ -20065,7 +20149,7 @@ window.AlgNoteBundledData = {
         {
           "id": "142",
           "name": "Sb+",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] S' U' S'"
           ],
@@ -20099,7 +20183,7 @@ window.AlgNoteBundledData = {
         {
           "id": "143",
           "name": "Sb-",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] H' U' S' U S'"
           ],
@@ -20129,7 +20213,7 @@ window.AlgNoteBundledData = {
         {
           "id": "144",
           "name": "Sr0",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] {U,BR} H' U' S'",
             "[U] {U,BL} H U' S"
@@ -20160,7 +20244,7 @@ window.AlgNoteBundledData = {
         {
           "id": "145",
           "name": "Sr+",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] {BL,F} U' R' U R B R' B' U' R U"
           ],
@@ -20179,7 +20263,7 @@ window.AlgNoteBundledData = {
         {
           "id": "146",
           "name": "Sr-",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "B' BLw U H' U' BLw' B",
             "{F,BR} B R' U R' L R L' U' R B'"
@@ -20214,7 +20298,7 @@ window.AlgNoteBundledData = {
         {
           "id": "147",
           "name": "Sl0",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] {U,BL} S' U' S' U S'"
           ],
@@ -20240,7 +20324,7 @@ window.AlgNoteBundledData = {
         {
           "id": "148",
           "name": "Sl+",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] {B,U} Rw' R U' R U Rw R"
           ],
@@ -20274,7 +20358,7 @@ window.AlgNoteBundledData = {
         {
           "id": "149",
           "name": "Sl-",
-          "group": "s",
+          "group": "s-odd",
           "algorithms": [
             "[U] {U,BL} S U' H'"
           ],
@@ -20308,7 +20392,7 @@ window.AlgNoteBundledData = {
         {
           "id": "150",
           "name": "Ts0",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "H S"
           ],
@@ -20339,7 +20423,7 @@ window.AlgNoteBundledData = {
         {
           "id": "151",
           "name": "Ts+",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{R,Br}\nR' U' (Rw' R) U' / R U (Rw R') U\n내땡내땡 올밀올밀",
             "{R,BR} R' U' R Rw' U' R U R' Rw U"
@@ -20373,7 +20457,7 @@ window.AlgNoteBundledData = {
         {
           "id": "152",
           "name": "Ts-",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{L,U}\nR U (Rw R') U / R' U' (Rw' R) U'\n올밀올밀 내땡내땡",
             "{L,U} R U R' Rw U R' U' R Rw' U'"
@@ -20408,7 +20492,7 @@ window.AlgNoteBundledData = {
         {
           "id": "153",
           "name": "Tc0",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{B,U}\nU' R' D R' / U R D' R\n떙내땡내 / 밀올밀올",
             "{B,U} U' R' D R' U R D' R"
@@ -20441,7 +20525,7 @@ window.AlgNoteBundledData = {
         {
           "id": "154",
           "name": "Tc+",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "H'"
           ],
@@ -20474,7 +20558,7 @@ window.AlgNoteBundledData = {
         {
           "id": "155",
           "name": "Tc-",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{B,U} 오반왼시\nU' R U R D R' U' R D' R' U R'\n[U' R U R' + R'DR' 시작 A펌 캔슬]",
             "{B,U} U' R U R D R' U' R D' R' U R'"
@@ -20510,7 +20594,7 @@ window.AlgNoteBundledData = {
         {
           "id": "156",
           "name": "Ta0",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{BL,L}\nU R D' R  / U' R' D R'\n미롤미롤 / 땡내땡내",
             "{B,BL} U R D' R U' R' D R'"
@@ -20541,7 +20625,7 @@ window.AlgNoteBundledData = {
         {
           "id": "157",
           "name": "Ta+",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{L,U}\nR U' R' U + (RU'R 시작 A펌)",
             "{B,BL} U R' U' R' D' R U R' D R U' R"
@@ -20578,7 +20662,7 @@ window.AlgNoteBundledData = {
         {
           "id": "158",
           "name": "Ta-",
-          "group": "t",
+          "group": "t-even",
           "algorithms": [
             "{U,Bl} S'",
             "{U,BL} S'"
@@ -20612,7 +20696,7 @@ window.AlgNoteBundledData = {
         {
           "id": "159",
           "name": "Tb0",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{B,Br} R' U' R /D' R U' R' D/ R' U' R",
             "{B,BR} R' U' R D' R U' R' D R' U' R"
@@ -20644,7 +20728,7 @@ window.AlgNoteBundledData = {
         {
           "id": "160",
           "name": "Tb+",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{R,Br} U / Rw' U' R U / Rw R2' U' R",
             "{R,BR} U Rw' U' R U Rw R2' U' R"
@@ -20680,7 +20764,7 @@ window.AlgNoteBundledData = {
         {
           "id": "161",
           "name": "Tb-",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{L,U} U' / Rw U R' U' / Rw' R2 U R'",
             "{L,U} U' Rw U R' U' Rw2 R' U R'"
@@ -20706,7 +20790,7 @@ window.AlgNoteBundledData = {
         {
           "id": "162",
           "name": "Tr0",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{U,Bl} [U]\nR Br R' / F / R Br' / R2' F' R",
             "[U] {B,BL} R D R' U R D' R U' R"
@@ -20734,7 +20818,7 @@ window.AlgNoteBundledData = {
         {
           "id": "163",
           "name": "Tr+",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{U,Bl} [U]\nR Br R' / F / R Br / R2' F' / R2 Br R'",
             "[U] {B,BL} R D R' U R D R U' R' D R'"
@@ -20769,7 +20853,7 @@ window.AlgNoteBundledData = {
         {
           "id": "164",
           "name": "Tr-",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{L,U} D / U' R' U R / D'\n{F, D} S",
             "{L,U} U' D R' U R D' {L,D} R' U R U'"
@@ -20800,7 +20884,7 @@ window.AlgNoteBundledData = {
         {
           "id": "165",
           "name": "Tl0",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{U,Br} [U']\nR' F / R2 Br R' /F' / R Br' R'",
             "[U'] {B,U} R' D' R U' R' D R' U R'"
@@ -20836,7 +20920,7 @@ window.AlgNoteBundledData = {
         {
           "id": "166",
           "name": "Tl+",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{L,Br} D' / U R U' R' / D\n{Br, U} H",
             "{R,BR} U D' R U' R' D {BR,F} R B' R' B"
@@ -20867,7 +20951,7 @@ window.AlgNoteBundledData = {
         {
           "id": "167",
           "name": "Tl-",
-          "group": "t",
+          "group": "t-odd",
           "algorithms": [
             "{U,Br}\nR Br'/ R2' F / R2 Br' /R' F' / R Br' R'",
             "[U'] {B,U} R' D' R U' R' D' R' U R D' R"
@@ -20901,7 +20985,7 @@ window.AlgNoteBundledData = {
         {
           "id": "168",
           "name": "Xs0",
-          "group": "x",
+          "group": "x-even",
           "algorithms": [
             "S U S U / S' U' H",
             "S U S U S' U' H"
@@ -20922,7 +21006,7 @@ window.AlgNoteBundledData = {
         {
           "id": "169",
           "name": "Xs+",
-          "group": "x",
+          "group": "x-even",
           "algorithms": [
             "[U'] S' U' S' U' / S U / S'",
             "[U'] S' U' S' U' S U S'"
@@ -20943,7 +21027,7 @@ window.AlgNoteBundledData = {
         {
           "id": "170",
           "name": "Xs-",
-          "group": "x",
+          "group": "x-even",
           "algorithms": [
             "[U] S U S U / S' U' / S",
             "[U] S U S U S' U' S"
@@ -20964,7 +21048,7 @@ window.AlgNoteBundledData = {
         {
           "id": "171",
           "name": "Xb0",
-          "group": "x",
+          "group": "x-odd",
           "algorithms": [
             "{Uo} S {Uo'} U S / U' S' U' S'",
             "H' U S U' S' U' S'"
@@ -20987,7 +21071,7 @@ window.AlgNoteBundledData = {
         {
           "id": "172",
           "name": "Xb+",
-          "group": "x",
+          "group": "x-odd",
           "algorithms": [
             "[U'] S' / U S / U' S' U' S'",
             "[U'] S' U S U' S' U' S'"
@@ -21008,7 +21092,7 @@ window.AlgNoteBundledData = {
         {
           "id": "173",
           "name": "Xb-",
-          "group": "x",
+          "group": "x-odd",
           "algorithms": [
             "[U] S / U' S' / U S U S",
             "[U] S U' S' U S U S"
@@ -21029,7 +21113,7 @@ window.AlgNoteBundledData = {
         {
           "id": "174",
           "name": "Ys0",
-          "group": "y",
+          "group": "y-even",
           "algorithms": [
             "[U] S {Uo'} U' S U' S",
             "[U'] S' U H U H"
@@ -21059,7 +21143,7 @@ window.AlgNoteBundledData = {
         {
           "id": "175",
           "name": "Ys+",
-          "group": "y",
+          "group": "y-even",
           "algorithms": [
             "{Uo'} S' / U' S U' S",
             "{U,BL} S' U' S U' S"
@@ -21091,7 +21175,7 @@ window.AlgNoteBundledData = {
         {
           "id": "176",
           "name": "Ys-",
-          "group": "y",
+          "group": "y-even",
           "algorithms": [
             "{Uo} S / U S' U S'",
             "{U,BR} S U S' U S'"
@@ -21120,7 +21204,7 @@ window.AlgNoteBundledData = {
         {
           "id": "177",
           "name": "Yb0",
-          "group": "y",
+          "group": "y-odd",
           "algorithms": [
             "{Uo} [U] S U' S U' [Hl]\n{Uo'} [U'] S' U S' U H",
             "[U'] {U,BL} S' U S' U H"
@@ -21149,7 +21233,7 @@ window.AlgNoteBundledData = {
         {
           "id": "178",
           "name": "Yb+",
-          "group": "y",
+          "group": "y-odd",
           "algorithms": [
             "{Uo'} S U' S U' / S'",
             "{U,BL} S U' S U' S'"
@@ -21182,7 +21266,7 @@ window.AlgNoteBundledData = {
         {
           "id": "179",
           "name": "Yb-",
-          "group": "y",
+          "group": "y-odd",
           "algorithms": [
             "{Uo} S' U S' U / S",
             "{U,BR} S' U S' U S"

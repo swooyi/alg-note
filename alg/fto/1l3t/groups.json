@@ -4,9 +4,9 @@
   "algset": "1l3t",
   "groups": [
     {
-      "id": "o",
-      "name": "O",
-      "sourceName": "O",
+      "id": "o-even",
+      "name": "O-even",
+      "sourceName": "O-even",
       "caseIds": [
         "1",
         "2",
@@ -15,16 +15,23 @@
         "5",
         "6",
         "7",
-        "8",
+        "8"
+      ]
+    },
+    {
+      "id": "o-odd",
+      "name": "O-odd",
+      "sourceName": "O-odd",
+      "caseIds": [
         "9",
         "10",
         "11"
       ]
     },
     {
-      "id": "v",
-      "name": "V",
-      "sourceName": "V",
+      "id": "v-even",
+      "name": "V-even",
+      "sourceName": "V-even",
       "caseIds": [
         "12",
         "13",
@@ -34,16 +41,23 @@
         "17",
         "18",
         "19",
-        "20",
+        "20"
+      ]
+    },
+    {
+      "id": "v-odd",
+      "name": "V-odd",
+      "sourceName": "V-odd",
+      "caseIds": [
         "21",
         "22",
         "23"
       ]
     },
     {
-      "id": "q",
-      "name": "Q",
-      "sourceName": "Q",
+      "id": "q-even",
+      "name": "Q-even",
+      "sourceName": "Q-even",
       "caseIds": [
         "24",
         "25",
@@ -53,7 +67,14 @@
         "29",
         "30",
         "31",
-        "32",
+        "32"
+      ]
+    },
+    {
+      "id": "q-odd",
+      "name": "Q-odd",
+      "sourceName": "Q-odd",
+      "caseIds": [
         "33",
         "34",
         "35",
@@ -66,9 +87,9 @@
       ]
     },
     {
-      "id": "j",
-      "name": "J",
-      "sourceName": "J",
+      "id": "j-even",
+      "name": "J-even",
+      "sourceName": "J-even",
       "caseIds": [
         "42",
         "43",
@@ -78,7 +99,14 @@
         "47",
         "48",
         "49",
-        "50",
+        "50"
+      ]
+    },
+    {
+      "id": "j-odd",
+      "name": "J-odd",
+      "sourceName": "J-odd",
+      "caseIds": [
         "51",
         "52",
         "53",
@@ -91,9 +119,9 @@
       ]
     },
     {
-      "id": "l",
-      "name": "L",
-      "sourceName": "L",
+      "id": "l-even",
+      "name": "L-even",
+      "sourceName": "L-even",
       "caseIds": [
         "60",
         "61",
@@ -103,7 +131,14 @@
         "65",
         "66",
         "67",
-        "68",
+        "68"
+      ]
+    },
+    {
+      "id": "l-odd",
+      "name": "L-odd",
+      "sourceName": "L-odd",
+      "caseIds": [
         "69",
         "70",
         "71",
@@ -116,9 +151,9 @@
       ]
     },
     {
-      "id": "w",
-      "name": "W",
-      "sourceName": "W",
+      "id": "w-even",
+      "name": "W-even",
+      "sourceName": "W-even",
       "caseIds": [
         "78",
         "79",
@@ -128,7 +163,14 @@
         "83",
         "84",
         "85",
-        "86",
+        "86"
+      ]
+    },
+    {
+      "id": "w-odd",
+      "name": "W-odd",
+      "sourceName": "W-odd",
+      "caseIds": [
         "87",
         "88",
         "89",
@@ -141,9 +183,9 @@
       ]
     },
     {
-      "id": "b",
-      "name": "B",
-      "sourceName": "B",
+      "id": "b-even",
+      "name": "B-even",
+      "sourceName": "B-even",
       "caseIds": [
         "96",
         "97",
@@ -153,7 +195,14 @@
         "101",
         "102",
         "103",
-        "104",
+        "104"
+      ]
+    },
+    {
+      "id": "b-odd",
+      "name": "B-odd",
+      "sourceName": "B-odd",
+      "caseIds": [
         "105",
         "106",
         "107",
@@ -166,9 +215,9 @@
       ]
     },
     {
-      "id": "z",
-      "name": "Z",
-      "sourceName": "Z",
+      "id": "z-even",
+      "name": "Z-even",
+      "sourceName": "Z-even",
       "caseIds": [
         "114",
         "115",
@@ -178,7 +227,14 @@
         "119",
         "120",
         "121",
-        "122",
+        "122"
+      ]
+    },
+    {
+      "id": "z-odd",
+      "name": "Z-odd",
+      "sourceName": "Z-odd",
+      "caseIds": [
         "123",
         "124",
         "125",
@@ -191,9 +247,9 @@
       ]
     },
     {
-      "id": "s",
-      "name": "S",
-      "sourceName": "S",
+      "id": "s-even",
+      "name": "S-even",
+      "sourceName": "S-even",
       "caseIds": [
         "132",
         "133",
@@ -203,7 +259,14 @@
         "137",
         "138",
         "139",
-        "140",
+        "140"
+      ]
+    },
+    {
+      "id": "s-odd",
+      "name": "S-odd",
+      "sourceName": "S-odd",
+      "caseIds": [
         "141",
         "142",
         "143",
@@ -216,9 +279,9 @@
       ]
     },
     {
-      "id": "t",
-      "name": "T",
-      "sourceName": "T",
+      "id": "t-even",
+      "name": "T-even",
+      "sourceName": "T-even",
       "caseIds": [
         "150",
         "151",
@@ -228,7 +291,14 @@
         "155",
         "156",
         "157",
-        "158",
+        "158"
+      ]
+    },
+    {
+      "id": "t-odd",
+      "name": "T-odd",
+      "sourceName": "T-odd",
+      "caseIds": [
         "159",
         "160",
         "161",
@@ -241,26 +311,40 @@
       ]
     },
     {
-      "id": "x",
-      "name": "X",
-      "sourceName": "X",
+      "id": "x-even",
+      "name": "X-even",
+      "sourceName": "X-even",
       "caseIds": [
         "168",
         "169",
-        "170",
+        "170"
+      ]
+    },
+    {
+      "id": "x-odd",
+      "name": "X-odd",
+      "sourceName": "X-odd",
+      "caseIds": [
         "171",
         "172",
         "173"
       ]
     },
     {
-      "id": "y",
-      "name": "Y",
-      "sourceName": "Y",
+      "id": "y-even",
+      "name": "Y-even",
+      "sourceName": "Y-even",
       "caseIds": [
         "174",
         "175",
-        "176",
+        "176"
+      ]
+    },
+    {
+      "id": "y-odd",
+      "name": "Y-odd",
+      "sourceName": "Y-odd",
+      "caseIds": [
         "177",
         "178",
         "179"
