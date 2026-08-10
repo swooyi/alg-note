@@ -518,11 +518,16 @@ function randomAufMove() {
 }
 
 
+function randomLeadingAufMove() {
+  return randomItem(["", ...drillAufMoves()]);
+}
+
+
 function drillAufStatusText() {
   if (!supportsDrillAuf()) return "AUF 미지원";
   if (state.drill.aufMode === "none") return "AUF 없음";
   const back = state.drill.aufMode === "random" ? "랜덤" : DRILL_AUF_LABELS[state.drill.aufMode];
-  return `앞 랜덤 · 뒤 ${back}`;
+  return `앞 없음/랜덤 · 뒤 ${back}`;
 }
 
 
@@ -532,7 +537,7 @@ function makeDrillSetup(item) {
   const mode = normalizeDrillAufMode(state.drill.aufMode);
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
-  const front = randomAufMove();
+  const front = randomLeadingAufMove();
   const back = mode === "random" ? randomAufMove() : DRILL_AUF_FIXED_MOVES[mode];
   return [front, setup, back].filter(Boolean).join(" ");
 }
