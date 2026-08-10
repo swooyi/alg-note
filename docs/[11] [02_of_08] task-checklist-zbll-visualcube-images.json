@@ -1,0 +1,167 @@
+{
+  "target_file": "C:\\dev\\alg-note\\alg\\3x3\\zbll\\svgs.json; C:\\dev\\alg-note\\app\\js\\data.js",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Regenerate all ZBLL SVG images from VisualCube while keeping existing non-ZBLL algsets, unrelated docs, and source spreadsheet files untouched.",
+  "assumptions": [
+    "Use VisualCube case= with the first algorithm in each ZBLL case.",
+    "Use fmt=svg, size=150, pzl=3, stage=ll, view=plan.",
+    "Do not use bg=t.",
+    "Keep existing ZBLL recognition colors: T purple, U yellow, L orange, H green, Pi red, Sune black, Antisune gray.",
+    "Do not modify unrelated untracked docs or source spreadsheets."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_confirm_zbll_baseline",
+      "order": 1,
+      "title": "Confirm current ZBLL baseline",
+      "check": true,
+      "targets": "alg/3x3/zbll",
+      "allowed_fields": [],
+      "protected_fields": [
+        "non-ZBLL algsets",
+        "unrelated docs",
+        "source spreadsheets"
+      ],
+      "summary": "Confirm ZBLL currently has 40 groups, 472 cases, 472 SVGs, and passes JSON validation.",
+      "verify": [
+        "Run validate_alg_json.py for alg/3x3/zbll.",
+        "Confirm groups/cases/svgs counts are 40/472/472."
+      ]
+    },
+    {
+      "id": "02_create_visualcube_script",
+      "order": 2,
+      "title": "Create VisualCube regeneration script",
+      "check": true,
+      "targets": "scripts/regenerate_zbll_visualcube_svgs.py",
+      "allowed_fields": [
+        "new script file"
+      ],
+      "protected_fields": [
+        "existing extraction scripts"
+      ],
+      "summary": "Add a resumable script that fetches VisualCube SVGs into source/cache/visualcube-zbll and writes svgs.json only when all cases succeed.",
+      "verify": [
+        "Run python py_compile for the script.",
+        "Review URL parameter construction and algorithm normalization."
+      ]
+    },
+    {
+      "id": "03_commit_script_and_checklist",
+      "order": 3,
+      "title": "Commit script and checklist",
+      "check": false,
+      "targets": "scripts/regenerate_zbll_visualcube_svgs.py; docs checklist",
+      "allowed_fields": [
+        "git index for script and checklist"
+      ],
+      "protected_fields": [
+        "generated ZBLL SVG output",
+        "unrelated worktree files"
+      ],
+      "summary": "Create a first commit containing only the regeneration script and checklist.",
+      "verify": [
+        "Inspect git diff --cached --name-status before commit.",
+        "Confirm unrelated docs and spreadsheet are not staged."
+      ]
+    },
+    {
+      "id": "04_regenerate_visualcube_svgs",
+      "order": 4,
+      "title": "Regenerate ZBLL SVGs",
+      "check": false,
+      "targets": "alg/3x3/zbll/svgs.json; source/cache/visualcube-zbll",
+      "allowed_fields": [
+        "ZBLL svgs.json",
+        "VisualCube cache files",
+        "failures.json"
+      ],
+      "protected_fields": [
+        "ZBLL cases/groups",
+        "non-ZBLL algsets"
+      ],
+      "summary": "Fetch all 472 VisualCube SVGs and replace ZBLL svgs.json only if there are no failures.",
+      "verify": [
+        "Confirm failures.json is empty or absent.",
+        "Confirm svgs.json has exactly 472 keys matching case IDs.",
+        "Confirm every SVG starts with <svg."
+      ]
+    },
+    {
+      "id": "05_rebuild_app_bundle",
+      "order": 5,
+      "title": "Rebuild app bundle and bump cache",
+      "check": false,
+      "targets": "app/js/data.js; app/sw.js",
+      "allowed_fields": [
+        "generated app data bundle",
+        "service worker cache version"
+      ],
+      "protected_fields": [
+        "app behavior outside data bundle and cache version"
+      ],
+      "summary": "Regenerate app/js/data.js and bump app/sw.js cache version by one.",
+      "verify": [
+        "Run build_app_data.py.",
+        "Confirm bundle includes zbll.",
+        "Confirm service worker cache version increased."
+      ]
+    },
+    {
+      "id": "06_validate_outputs",
+      "order": 6,
+      "title": "Validate generated outputs",
+      "check": false,
+      "targets": "ZBLL JSON; app JavaScript",
+      "allowed_fields": [],
+      "protected_fields": [],
+      "summary": "Run JSON and JavaScript checks, then inspect representative cases from each recognition.",
+      "verify": [
+        "Run validate_alg_json.py for alg/3x3/zbll.",
+        "Run node --check for app/js/data.js, app/js/render.js, app/sw.js.",
+        "Inspect one case for each of T, U, L, H, Pi, Sune, Antisune."
+      ]
+    },
+    {
+      "id": "07_commit_generated_outputs",
+      "order": 7,
+      "title": "Commit generated outputs",
+      "check": false,
+      "targets": "ZBLL source JSON, app bundle, style/render/cache changes",
+      "allowed_fields": [
+        "ZBLL algset files",
+        "ZBLL extraction script",
+        "VisualCube regenerated svgs",
+        "app bundle",
+        "recognition styles",
+        "service worker cache"
+      ],
+      "protected_fields": [
+        "unrelated docs",
+        "source spreadsheet"
+      ],
+      "summary": "Create a second commit with regenerated ZBLL app data and related app integration files only.",
+      "verify": [
+        "Inspect git diff --cached --name-status before commit.",
+        "Confirm unrelated docs and spreadsheet are not staged."
+      ]
+    },
+    {
+      "id": "08_push_after_user_approval",
+      "order": 8,
+      "title": "Push after user approval",
+      "check": false,
+      "targets": "origin/main",
+      "allowed_fields": [
+        "remote branch update after approval"
+      ],
+      "protected_fields": [],
+      "summary": "Request approval before pushing commits to GitHub.",
+      "verify": [
+        "Confirm branch and remote.",
+        "Push only after explicit user approval."
+      ]
+    }
+  ]
+}
