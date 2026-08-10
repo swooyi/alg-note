@@ -2267,6 +2267,55 @@ main {
   color: #fff;
 }
 
+.tag-t {
+  --choice-dot: #7c3aed;
+  border-color: #a78bfa;
+  background: #f1e8ff;
+  color: #5b21b6;
+}
+
+.tag-u {
+  --choice-dot: #d6a700;
+  border-color: #f2c94c;
+  background: #fff6cc;
+  color: #765800;
+}
+
+.tag-l {
+  --choice-dot: #f97316;
+  border-color: #fdba74;
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.tag-h {
+  --choice-dot: #16a34a;
+  border-color: #4ade80;
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tag-pi {
+  --choice-dot: #dc2626;
+  border-color: #f87171;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tag-sune {
+  --choice-dot: #111827;
+  border-color: #111827;
+  background: #111827;
+  color: #fff;
+}
+
+.tag-antisune {
+  --choice-dot: #6b7280;
+  border-color: #9ca3af;
+  background: #f3f4f6;
+  color: #374151;
+}
+
 .tag-is-corner-only {
   --choice-dot: #556070;
   border-color: #a7b0bd;

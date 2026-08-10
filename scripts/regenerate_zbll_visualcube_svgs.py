@@ -51,7 +51,8 @@ def visualcube_url(algorithm: str) -> str:
 
 def is_valid_svg(text: str) -> bool:
     stripped = text.lstrip()
-    return stripped.startswith("<svg") and "</svg>" in stripped and "<html" not in stripped[:200].lower()
+    head = stripped[:500].lower()
+    return "<svg" in head and "</svg>" in stripped and "<html" not in head
 
 
 def fetch_svg(url: str) -> str:

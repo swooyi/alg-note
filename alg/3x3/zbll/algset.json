@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "id": "zbll",
+  "name": "ZBLL",
+  "source": {
+    "url": "https://mihlefeld.github.io/Alg-Trainers/3x3-ZBLL-Trainer/index.html?select"
+  },
+  "notes": [
+    "Algorithms, scrambles, and SVGs are extracted from Mihlefeld's 3x3 ZBLL trainer JSON files.",
+    "Recognition tags use the top-level ZBLL set: T, U, L, H, Pi, Sune, or Antisune."
+  ]
+}

@@ -51,7 +51,7 @@
       "id": "03_commit_script_and_checklist",
       "order": 3,
       "title": "Commit script and checklist",
-      "check": false,
+      "check": true,
       "targets": "scripts/regenerate_zbll_visualcube_svgs.py; docs checklist",
       "allowed_fields": [
         "git index for script and checklist"
@@ -70,7 +70,7 @@
       "id": "04_regenerate_visualcube_svgs",
       "order": 4,
       "title": "Regenerate ZBLL SVGs",
-      "check": false,
+      "check": true,
       "targets": "alg/3x3/zbll/svgs.json; source/cache/visualcube-zbll",
       "allowed_fields": [
         "ZBLL svgs.json",
@@ -92,7 +92,7 @@
       "id": "05_rebuild_app_bundle",
       "order": 5,
       "title": "Rebuild app bundle and bump cache",
-      "check": false,
+      "check": true,
       "targets": "app/js/data.js; app/sw.js",
       "allowed_fields": [
         "generated app data bundle",
@@ -112,7 +112,7 @@
       "id": "06_validate_outputs",
       "order": 6,
       "title": "Validate generated outputs",
-      "check": false,
+      "check": true,
       "targets": "ZBLL JSON; app JavaScript",
       "allowed_fields": [],
       "protected_fields": [],
@@ -127,7 +127,7 @@
       "id": "07_commit_generated_outputs",
       "order": 7,
       "title": "Commit generated outputs",
-      "check": false,
+      "check": true,
       "targets": "ZBLL source JSON, app bundle, style/render/cache changes",
       "allowed_fields": [
         "ZBLL algset files",
