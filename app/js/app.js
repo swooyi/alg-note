@@ -242,6 +242,33 @@ function saveSelectionPresets() {
 }
 
 
+function removeCaseFromSelection(caseId) {
+  const id = String(caseId);
+  if (!state.selectedCards.has(id)) return false;
+
+  state.selectedCards.delete(id);
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+
+  if (state.drill.active) {
+    const removedQueueIndex = state.drill.queue.findIndex((item) => item.id === id);
+    state.drill.source = state.drill.source.filter((item) => item.id !== id);
+    state.drill.queue = state.drill.queue.filter((item) => item.id !== id);
+    if (!state.drill.queue.length || !state.drill.source.length) {
+      state.drill.completed = true;
+      state.drill.currentSetup = "";
+    } else if (removedQueueIndex !== -1 && removedQueueIndex < state.drill.index) {
+      state.drill.index -= 1;
+    } else if (state.drill.index >= state.drill.queue.length) {
+      state.drill.index = Math.max(0, state.drill.queue.length - 1);
+    }
+    if (!state.drill.completed) state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+  }
+
+  return true;
+}
+
+
 function renderSelectionPresetOptions() {
   elements.favoritePresetList.replaceChildren();
 
@@ -1153,6 +1180,7 @@ function render() {
         detailNav: {
           hasPrev: selectedIndex > 0,
           hasNext: selectedIndex >= 0 && selectedIndex < rows.length - 1,
+          canDeselect: state.selectedCards.has(selectedCase.id) && state.drill.timerStatus !== "running",
         },
       },
     );
@@ -1893,6 +1921,14 @@ elements.clearFiltersButton.addEventListener("click", () => {
 });
 
 function handleCaseAction(event) {
+  const deselectDetailButton = event.target.closest(".deselect-detail-button");
+  if (deselectDetailButton) {
+    const caseId = state.selectedCaseId;
+    if (!caseId || deselectDetailButton.disabled) return;
+    if (removeCaseFromSelection(caseId)) render();
+    return;
+  }
+
   if (event.target.closest(".close-detail-button")) {
     closeCaseDetail();
     return;

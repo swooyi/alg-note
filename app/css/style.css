@@ -2088,12 +2088,29 @@ main {
 .case-detail-top {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.case-detail-nav {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .detail-nav-button {
   min-width: 96px;
+}
+
+.deselect-detail-button {
+  border-color: #fecaca;
+  background: #fff5f5;
+  color: #b91c1c;
+}
+
+.deselect-detail-button:not(:disabled):hover {
+  border-color: #fca5a5;
+  background: #fee2e2;
 }
 
 .detail-nav-button:disabled,
@@ -2648,8 +2665,14 @@ main {
   }
 
   .case-detail-top {
-    grid-template-columns: 1fr 1fr auto;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .case-detail-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
     gap: 6px;
   }
 
