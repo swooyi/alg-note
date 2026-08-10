@@ -14,6 +14,19 @@ const MAX_DRILL_HISTORY_WIDTH = 720;
 const VIEW_MODES = new Set(["compact", "list", "full"]);
 const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono"]);
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
+const DRILL_AUF_MODES = new Set(["none", "u", "up", "u2", "random"]);
+const DRILL_AUF_LABELS = {
+  none: "없음",
+  u: "U",
+  up: "U'",
+  u2: "U2",
+  random: "랜덤",
+};
+const DRILL_AUF_FIXED_MOVES = {
+  u: "U",
+  up: "U'",
+  u2: "U2",
+};
 
 function initialViewMode() {
   const saved = loadJson("viewModeV3", "");
@@ -77,7 +90,10 @@ const elements = {
   drillRecapModeButton: document.getElementById("drillRecapModeButton"),
   drillTrainModeButton: document.getElementById("drillTrainModeButton"),
   drillRandomAufButton: document.getElementById("drillRandomAufButton"),
+  drillAufPanel: document.getElementById("drillAufPanel"),
+  drillAufModeButtons: [...document.querySelectorAll("[data-auf-mode]")],
   drillSetupText: document.getElementById("drillSetupText"),
+  drillAufStatus: document.getElementById("drillAufStatus"),
   drillMain: document.getElementById("drillMain"),
   drillResizeHandle: document.getElementById("drillResizeHandle"),
   drillTimerText: document.getElementById("drillTimerText"),
@@ -123,7 +139,7 @@ const state = {
   drill: {
     active: false,
     mode: "recap",
-    randomAuf: loadJson("drillRandomAuf", false) === true,
+    aufMode: "none",
     historyWidth: loadJson("drillHistoryWidth", DEFAULT_DRILL_HISTORY_WIDTH),
     source: [],
     queue: [],
@@ -460,21 +476,65 @@ function randomItem(values) {
 }
 
 
+function drillAufModeKey(key = state.key) {
+  return `drillAufMode.${key}`;
+}
+
+
+function drillAufMoves(dataset = state.dataset) {
+  const puzzle = String(dataset?.puzzle || "").toLowerCase();
+  if (puzzle.includes("sq1")) return [];
+  if (puzzle.includes("fto")) return ["U", "U'"];
+  if (puzzle.includes("3x3")) return ["U", "U'", "U2"];
+  return [];
+}
+
+
+function supportsDrillAuf(dataset = state.dataset) {
+  return drillAufMoves(dataset).length > 0;
+}
+
+
+function normalizeDrillAufMode(mode, dataset = state.dataset) {
+  const value = DRILL_AUF_MODES.has(mode) ? mode : "none";
+  if (value === "u2" && !drillAufMoves(dataset).includes("U2")) return "none";
+  return value;
+}
+
+
+function loadDrillAufMode() {
+  return normalizeDrillAufMode(loadJson(drillAufModeKey(), "none"));
+}
+
+
+function saveDrillAufMode(mode) {
+  state.drill.aufMode = normalizeDrillAufMode(mode);
+  if (state.key) saveJson(drillAufModeKey(), state.drill.aufMode);
+}
+
+
 function randomAufMove() {
-  const puzzle = String(state.dataset?.puzzle || "").toLowerCase();
-  const values = puzzle.includes("fto") ? ["U", "U'"] : ["U", "U'", "U2"];
-  return randomItem(values);
+  return randomItem(drillAufMoves());
+}
+
+
+function drillAufStatusText() {
+  if (!supportsDrillAuf()) return "AUF 미지원";
+  if (state.drill.aufMode === "none") return "AUF 없음";
+  const back = state.drill.aufMode === "random" ? "랜덤" : DRILL_AUF_LABELS[state.drill.aufMode];
+  return `앞 랜덤 · 뒤 ${back}`;
 }
 
 
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return "등록된 setup이 없습니다.";
-  if (!state.drill.randomAuf) return setup;
+  const mode = normalizeDrillAufMode(state.drill.aufMode);
+  if (mode === "none" || !supportsDrillAuf()) return setup;
 
-  return Math.random() < 0.5
-    ? `${randomAufMove()} ${setup}`
-    : `${setup} ${randomAufMove()}`;
+  const front = randomAufMove();
+  const back = mode === "random" ? randomAufMove() : DRILL_AUF_FIXED_MOVES[mode];
+  return [front, setup, back].filter(Boolean).join(" ");
 }
 
 
@@ -623,6 +683,45 @@ function updateDrillStartButton() {
 }
 
 
+function closeDrillAufPanel() {
+  elements.drillAufPanel.hidden = true;
+  elements.drillRandomAufButton.setAttribute("aria-expanded", "false");
+}
+
+
+function toggleDrillAufPanel() {
+  if (!supportsDrillAuf()) return;
+  const willOpen = elements.drillAufPanel.hidden;
+  elements.drillAufPanel.hidden = !willOpen;
+  elements.drillRandomAufButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
+
+
+function updateDrillAufControls() {
+  const supported = supportsDrillAuf();
+  const moves = drillAufMoves();
+  const mode = supported ? normalizeDrillAufMode(state.drill.aufMode) : "none";
+  const active = supported && mode !== "none";
+
+  if (state.drill.aufMode !== mode) saveDrillAufMode(mode);
+  elements.drillRandomAufButton.textContent = supported ? `AUF: ${DRILL_AUF_LABELS[mode]}` : "AUF: 미지원";
+  elements.drillRandomAufButton.disabled = !supported;
+  elements.drillRandomAufButton.classList.toggle("is-active", active);
+  elements.drillRandomAufButton.setAttribute("aria-pressed", active ? "true" : "false");
+  elements.drillAufStatus.textContent = drillAufStatusText();
+
+  if (!supported) closeDrillAufPanel();
+
+  for (const button of elements.drillAufModeButtons) {
+    const option = button.dataset.aufMode;
+    const visible = option !== "u2" || moves.includes("U2");
+    button.hidden = !visible;
+    button.classList.toggle("is-active", supported && option === mode);
+    button.setAttribute("aria-pressed", supported && option === mode ? "true" : "false");
+  }
+}
+
+
 function renderDrill() {
   if (!state.drill.active) {
     elements.drillOverlay.hidden = true;
@@ -637,10 +736,9 @@ function renderDrill() {
   const total = state.drill.queue.length;
   elements.drillRecapModeButton.classList.toggle("is-active", state.drill.mode === "recap");
   elements.drillTrainModeButton.classList.toggle("is-active", state.drill.mode === "train");
-  elements.drillRandomAufButton.classList.toggle("is-active", state.drill.randomAuf);
   elements.drillRecapModeButton.setAttribute("aria-pressed", state.drill.mode === "recap" ? "true" : "false");
   elements.drillTrainModeButton.setAttribute("aria-pressed", state.drill.mode === "train" ? "true" : "false");
-  elements.drillRandomAufButton.setAttribute("aria-pressed", state.drill.randomAuf ? "true" : "false");
+  updateDrillAufControls();
 
   if (state.drill.mode === "recap") {
     elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} cases`;
@@ -695,6 +793,7 @@ function startDrill({ clearResults = true } = {}) {
 
 function closeDrill() {
   stopDrillTicker();
+  closeDrillAufPanel();
   state.drill.active = false;
   state.drill.source = [];
   state.drill.queue = [];
@@ -1072,6 +1171,7 @@ function setDataset(entries) {
   state.entries = entries;
   state.dataset = normalizeDataset(entries);
   state.key = datasetKey(state.dataset);
+  state.drill.aufMode = loadDrillAufMode();
   state.query = "";
   state.groupFilters = new Set();
   state.recognitionFilters = new Set();
@@ -1519,6 +1619,8 @@ document.addEventListener("click", (event) => {
   closeHomeSettings();
   if (event.target instanceof Element && event.target.closest(".filter-menu")) return;
   closeFilterMenus();
+  if (event.target instanceof Element && event.target.closest(".drill-auf-control")) return;
+  closeDrillAufPanel();
 });
 
 function toggleFilterValue(set, value) {
@@ -1636,9 +1738,17 @@ elements.drillTrainModeButton.addEventListener("click", () => {
   setDrillMode("train");
 });
 
-elements.drillRandomAufButton.addEventListener("click", () => {
-  state.drill.randomAuf = !state.drill.randomAuf;
-  saveJson("drillRandomAuf", state.drill.randomAuf);
+elements.drillRandomAufButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  toggleDrillAufPanel();
+});
+
+elements.drillAufPanel.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-auf-mode]");
+  if (!button) return;
+  event.stopPropagation();
+  saveDrillAufMode(button.dataset.aufMode);
+  closeDrillAufPanel();
   if (state.drill.active && state.drill.timerStatus === "idle" && !state.drill.completed) {
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   }

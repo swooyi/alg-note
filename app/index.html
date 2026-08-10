@@ -166,11 +166,23 @@
           <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
           <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
         </div>
-        <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-pressed="false">랜덤 AUF</button>
+        <div class="drill-auf-control">
+          <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-expanded="false" aria-controls="drillAufPanel">AUF: 없음</button>
+          <div id="drillAufPanel" class="drill-auf-panel" hidden>
+            <button type="button" data-auf-mode="none">없음</button>
+            <button type="button" data-auf-mode="u">U</button>
+            <button type="button" data-auf-mode="up">U'</button>
+            <button type="button" data-auf-mode="u2">U2</button>
+            <button type="button" data-auf-mode="random">랜덤</button>
+          </div>
+        </div>
       </div>
       <div id="drillProgress" class="drill-progress">Recap 0 / 0</div>
       <div class="drill-scramble-row">
-        <p id="drillSetupText"></p>
+        <div class="drill-scramble-text">
+          <p id="drillSetupText"></p>
+          <span id="drillAufStatus" class="drill-auf-status">AUF 없음</span>
+        </div>
         <button id="drillShowAnswerButton" class="drill-help-button" type="button" aria-label="정답 패널" title="정답 패널">?</button>
       </div>
       <div class="drill-body">

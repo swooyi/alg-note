@@ -1033,18 +1033,65 @@ h1 {
   padding: 8px 12px;
 }
 
+.drill-auf-control {
+  position: relative;
+  justify-self: end;
+}
+
 .drill-random-auf-button {
   justify-self: end;
-  min-width: 92px;
+  min-width: 104px;
   padding: 0 10px;
   white-space: nowrap;
 }
 
-.drill-random-auf-button.is-active {
+.drill-random-auf-button.is-active,
+.drill-random-auf-button[aria-expanded="true"] {
   border-color: var(--accent);
   background: var(--accent-soft);
   color: var(--accent);
   font-weight: 850;
+}
+
+.drill-random-auf-button:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 0.68;
+}
+
+.drill-auf-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 80;
+  display: grid;
+  min-width: 132px;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 6px;
+  box-shadow: 0 12px 30px rgba(31, 35, 40, 0.16);
+}
+
+.drill-auf-panel[hidden] {
+  display: none;
+}
+
+.drill-auf-panel button {
+  justify-content: flex-start;
+  min-height: 32px;
+  border-color: transparent;
+  background: transparent;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.drill-auf-panel button:hover,
+.drill-auf-panel button.is-active {
+  border-color: var(--line);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .drill-mode-tabs {
@@ -1118,6 +1165,11 @@ h1 {
   padding: 10px 14px;
 }
 
+.drill-scramble-text {
+  display: grid;
+  gap: 4px;
+}
+
 .drill-scramble-row p {
   min-height: 44px;
   overflow-wrap: anywhere;
@@ -1125,6 +1177,13 @@ h1 {
   font-size: 30px;
   font-weight: 650;
   line-height: 1.35;
+}
+
+.drill-auf-status {
+  min-height: 16px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .drill-help-button {
