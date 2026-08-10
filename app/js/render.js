@@ -473,15 +473,6 @@ function renderCaseDetail(container, template, item, state) {
   const top = document.createElement("div");
   top.className = "case-detail-top";
 
-  const deselectButton = document.createElement("button");
-  deselectButton.className = "detail-nav-button deselect-detail-button";
-  deselectButton.type = "button";
-  deselectButton.textContent = "선택해제";
-  deselectButton.disabled = !state.detailNav?.canDeselect;
-
-  const nav = document.createElement("div");
-  nav.className = "case-detail-nav";
-
   const prevButton = document.createElement("button");
   prevButton.className = "detail-nav-button prev-detail-button";
   prevButton.type = "button";
@@ -499,8 +490,7 @@ function renderCaseDetail(container, template, item, state) {
   closeButton.type = "button";
   closeButton.textContent = "닫기";
 
-  nav.append(prevButton, nextButton, closeButton);
-  top.append(deselectButton, nav);
+  top.append(prevButton, nextButton, closeButton);
 
   const card = makeCaseCard(template, item, detailState);
   container.replaceChildren(top, card);

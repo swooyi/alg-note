@@ -690,15 +690,23 @@ function renderDrillResults() {
     detailButton.className = "drill-detail-button";
     detailButton.type = "button";
     detailButton.dataset.resultId = result.id;
-    detailButton.textContent = "세부정보";
+    detailButton.textContent = "세부";
+    const excludeButton = document.createElement("button");
+    excludeButton.className = "drill-exclude-result-button";
+    excludeButton.type = "button";
+    excludeButton.dataset.resultExcludeCaseId = result.caseId;
+    excludeButton.textContent = "제외";
+    excludeButton.disabled = state.drill.timerStatus === "running" || !state.selectedCards.has(result.caseId);
     const deleteButton = document.createElement("button");
     deleteButton.className = "drill-delete-result-button";
     deleteButton.type = "button";
     deleteButton.dataset.resultDeleteId = result.id;
-    deleteButton.textContent = "삭제";
+    deleteButton.textContent = "x";
+    deleteButton.setAttribute("aria-label", "기록 삭제");
+    deleteButton.title = "기록 삭제";
     const actions = document.createElement("div");
     actions.className = "drill-result-actions";
-    actions.append(detailButton, deleteButton);
+    actions.append(detailButton, excludeButton, deleteButton);
 
     row.append(body, actions);
     elements.drillResultList.append(row);
@@ -1180,7 +1188,6 @@ function render() {
         detailNav: {
           hasPrev: selectedIndex > 0,
           hasNext: selectedIndex >= 0 && selectedIndex < rows.length - 1,
-          canDeselect: state.selectedCards.has(selectedCase.id) && state.drill.timerStatus !== "running",
         },
       },
     );
@@ -1818,6 +1825,12 @@ elements.drillResultList.addEventListener("click", (event) => {
     deleteDrillResult(deleteButton.dataset.resultDeleteId);
     return;
   }
+  const excludeButton = event.target.closest("[data-result-exclude-case-id]");
+  if (excludeButton) {
+    if (state.drill.timerStatus === "running") return;
+    if (removeCaseFromSelection(excludeButton.dataset.resultExcludeCaseId)) render();
+    return;
+  }
   const button = event.target.closest(".drill-detail-button");
   if (!button) return;
   showDrillResultDetail(button.dataset.resultId);
@@ -1921,14 +1934,6 @@ elements.clearFiltersButton.addEventListener("click", () => {
 });
 
 function handleCaseAction(event) {
-  const deselectDetailButton = event.target.closest(".deselect-detail-button");
-  if (deselectDetailButton) {
-    const caseId = state.selectedCaseId;
-    if (!caseId || deselectDetailButton.disabled) return;
-    if (removeCaseFromSelection(caseId)) render();
-    return;
-  }
-
   if (event.target.closest(".close-detail-button")) {
     closeCaseDetail();
     return;
