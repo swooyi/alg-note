@@ -93,7 +93,6 @@ const elements = {
   drillAufPanel: document.getElementById("drillAufPanel"),
   drillAufModeButtons: [...document.querySelectorAll("[data-auf-mode]")],
   drillSetupText: document.getElementById("drillSetupText"),
-  drillAufStatus: document.getElementById("drillAufStatus"),
   drillMain: document.getElementById("drillMain"),
   drillResizeHandle: document.getElementById("drillResizeHandle"),
   drillTimerText: document.getElementById("drillTimerText"),
@@ -550,14 +549,6 @@ function randomLeadingAufMove() {
 }
 
 
-function drillAufStatusText() {
-  if (!supportsDrillAuf()) return "AUF 미지원";
-  if (state.drill.aufMode === "none") return "AUF 없음";
-  const back = state.drill.aufMode === "random" ? "랜덤" : DRILL_AUF_LABELS[state.drill.aufMode];
-  return `앞 없음/랜덤 · 뒤 ${back}`;
-}
-
-
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return "등록된 setup이 없습니다.";
@@ -651,6 +642,7 @@ function makeDrillResult(item, elapsedMs) {
 function drillItemById(caseId) {
   return state.drill.queue.find((item) => item.id === caseId)
     || state.drill.source.find((item) => item.id === caseId)
+    || effectiveCases().find((item) => item.id === caseId)
     || null;
 }
 
@@ -748,7 +740,6 @@ function updateDrillAufControls() {
   elements.drillRandomAufButton.disabled = !supported;
   elements.drillRandomAufButton.classList.toggle("is-active", active);
   elements.drillRandomAufButton.setAttribute("aria-pressed", active ? "true" : "false");
-  elements.drillAufStatus.textContent = drillAufStatusText();
 
   if (!supported) closeDrillAufPanel();
 

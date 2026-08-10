@@ -1165,11 +1165,6 @@ h1 {
   padding: 10px 14px;
 }
 
-.drill-scramble-text {
-  display: grid;
-  gap: 4px;
-}
-
 .drill-scramble-row p {
   min-height: 44px;
   overflow-wrap: anywhere;
@@ -1177,13 +1172,6 @@ h1 {
   font-size: 30px;
   font-weight: 650;
   line-height: 1.35;
-}
-
-.drill-auf-status {
-  min-height: 16px;
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 800;
 }
 
 .drill-help-button {
