@@ -100,6 +100,10 @@ const elements = {
   drillTimesText: document.getElementById("drillTimesText"),
   drillAverageText: document.getElementById("drillAverageText"),
   drillClearResultsButton: document.getElementById("drillClearResultsButton"),
+  drillMinResultSecondsInput: document.getElementById("drillMinResultSecondsInput"),
+  drillSelectResultsByTimeButton: document.getElementById("drillSelectResultsByTimeButton"),
+  drillRestoreSelectionButton: document.getElementById("drillRestoreSelectionButton"),
+  drillResultFilterStatus: document.getElementById("drillResultFilterStatus"),
   drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillNextButton: document.getElementById("drillNextButton"),
@@ -149,6 +153,8 @@ const state = {
     elapsedMs: 0,
     displayMs: 0,
     results: [],
+    minResultSeconds: normalizeDrillMinResultSeconds(loadJson("drillMinResultSeconds", 0.5)),
+    selectionRestoreSnapshot: null,
     tickHandle: 0,
     completed: false,
   },
@@ -792,6 +798,15 @@ function renderDrill() {
   updateDrillTimerDisplay();
   elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
   elements.drillAverageText.textContent = state.drill.results.length ? `Avg ${formatDrillTime(averageDrillMs())}` : "Avg -";
+  if (document.activeElement !== elements.drillMinResultSecondsInput) {
+    elements.drillMinResultSecondsInput.value = state.drill.minResultSeconds.toFixed(1);
+  }
+  const minSeconds = roundedDrillMinResultSeconds() ?? state.drill.minResultSeconds;
+  const matchingResultCount = drillResultsAtLeast(minSeconds).length;
+  elements.drillResultFilterStatus.textContent = `선택됨 ${matchingResultCount}/${state.drill.results.length}`;
+  elements.drillMinResultSecondsInput.disabled = state.drill.timerStatus === "running";
+  elements.drillSelectResultsByTimeButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
+  elements.drillRestoreSelectionButton.disabled = state.drill.timerStatus === "running" || !state.drill.selectionRestoreSnapshot;
   elements.drillClearResultsButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   elements.drillUndoButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   renderDrillResults();
@@ -814,6 +829,7 @@ function startDrill({ clearResults = true } = {}) {
   state.drill.index = 0;
   resetDrillTimer();
   if (clearResults) state.drill.results = [];
+  state.drill.selectionRestoreSnapshot = null;
   state.drill.completed = false;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   state.selectedCaseId = "";
@@ -831,6 +847,7 @@ function closeDrill() {
   state.drill.index = 0;
   state.drill.currentSetup = "";
   state.drill.results = [];
+  state.drill.selectionRestoreSnapshot = null;
   state.drill.completed = false;
   resetDrillTimer();
   renderDrill();
@@ -932,6 +949,107 @@ function deleteDrillResult(resultId) {
 function clearDrillResults() {
   if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
   state.drill.results = [];
+  renderDrill();
+}
+
+
+function roundedDrillMinResultSeconds() {
+  const value = Number(elements.drillMinResultSecondsInput.value);
+  if (!Number.isFinite(value) || value < 0) return null;
+  return Math.round(value * 10) / 10;
+}
+
+
+function drillResultsAtLeast(seconds) {
+  const thresholdMs = seconds * 1000;
+  return state.drill.results.filter((result) => result.elapsedMs >= thresholdMs);
+}
+
+
+function normalizeDrillMinResultSeconds(value) {
+  const seconds = Number(value);
+  if (!Number.isFinite(seconds) || seconds < 0) return 0.5;
+  return Math.round(seconds * 10) / 10;
+}
+
+
+function saveDrillSelectionRestoreSnapshot() {
+  state.drill.selectionRestoreSnapshot = {
+    selectedCards: [...state.selectedCards],
+    source: [...state.drill.source],
+    queue: [...state.drill.queue],
+    index: state.drill.index,
+    currentSetup: state.drill.currentSetup,
+    completed: state.drill.completed,
+  };
+}
+
+
+function updateDrillSelectionFromIds(selectedIds) {
+  state.selectedCards = new Set(selectedIds);
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+
+  if (!state.drill.active) return;
+
+  state.drill.source = state.drill.source.filter((item) => state.selectedCards.has(item.id));
+  state.drill.queue = state.drill.queue.filter((item) => state.selectedCards.has(item.id));
+  if (!state.drill.source.length || !state.drill.queue.length) {
+    state.drill.completed = true;
+    state.drill.currentSetup = "";
+    state.drill.index = 0;
+    resetDrillTimer();
+    return;
+  }
+
+  state.drill.index = Math.min(state.drill.index, state.drill.queue.length - 1);
+  state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+}
+
+
+function selectDrillResultsByTime() {
+  if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
+  const seconds = roundedDrillMinResultSeconds();
+  if (seconds === null) {
+    window.alert("최소 시간을 0.0초 이상으로 입력하세요.");
+    return;
+  }
+
+  state.drill.minResultSeconds = seconds;
+  elements.drillMinResultSecondsInput.value = seconds.toFixed(1);
+  saveJson("drillMinResultSeconds", seconds);
+
+  const selectedIds = drillResultsAtLeast(seconds).map((result) => result.caseId);
+  saveDrillSelectionRestoreSnapshot();
+  updateDrillSelectionFromIds(selectedIds);
+  render();
+}
+
+
+function restoreDrillSelectionBeforeTimeFilter() {
+  const snapshot = state.drill.selectionRestoreSnapshot;
+  if (!state.drill.active || state.drill.timerStatus === "running" || !snapshot) return;
+
+  state.selectedCards = new Set(snapshot.selectedCards);
+  state.activeSelectionPresetId = "";
+  saveSelectionPresets();
+
+  state.drill.source = [...snapshot.source];
+  state.drill.queue = [...snapshot.queue];
+  state.drill.index = snapshot.index;
+  state.drill.currentSetup = snapshot.currentSetup;
+  state.drill.completed = snapshot.completed;
+  state.drill.selectionRestoreSnapshot = null;
+  render();
+}
+
+
+function saveDrillMinResultSecondsFromInput({ normalize = false } = {}) {
+  const seconds = roundedDrillMinResultSeconds();
+  if (seconds === null) return;
+  state.drill.minResultSeconds = seconds;
+  saveJson("drillMinResultSeconds", seconds);
+  if (normalize) elements.drillMinResultSecondsInput.value = seconds.toFixed(1);
   renderDrill();
 }
 
@@ -1798,7 +1916,8 @@ elements.drillShowAnswerButton.addEventListener("click", () => {
   toggleDrillAnswer();
 });
 
-elements.drillMain.addEventListener("click", () => {
+elements.drillMain.addEventListener("pointerup", (event) => {
+  if (event.pointerType !== "touch") return;
   toggleDrillTimer();
 });
 
@@ -1808,6 +1927,22 @@ elements.drillUndoButton.addEventListener("click", () => {
 
 elements.drillClearResultsButton.addEventListener("click", () => {
   clearDrillResults();
+});
+
+elements.drillMinResultSecondsInput.addEventListener("input", () => {
+  saveDrillMinResultSecondsFromInput();
+});
+
+elements.drillMinResultSecondsInput.addEventListener("change", () => {
+  saveDrillMinResultSecondsFromInput({ normalize: true });
+});
+
+elements.drillSelectResultsByTimeButton.addEventListener("click", () => {
+  selectDrillResultsByTime();
+});
+
+elements.drillRestoreSelectionButton.addEventListener("click", () => {
+  restoreDrillSelectionBeforeTimeFilter();
 });
 
 elements.drillResultList.addEventListener("click", (event) => {

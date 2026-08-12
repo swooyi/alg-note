@@ -194,6 +194,14 @@
             <span id="drillAverageText">Avg -</span>
             <button id="drillClearResultsButton" class="drill-clear-results-button" type="button">전체 삭제</button>
           </div>
+          <div class="drill-result-filter">
+            <label for="drillMinResultSecondsInput">최소 시간</label>
+            <input id="drillMinResultSecondsInput" type="number" min="0" step="0.1" inputmode="decimal" value="0.5" aria-label="선택할 최소 기록 시간">
+            <span>초</span>
+            <button id="drillSelectResultsByTimeButton" type="button">기록 선택</button>
+            <button id="drillRestoreSelectionButton" type="button">원상복구</button>
+            <span id="drillResultFilterStatus" class="drill-result-filter-status">선택됨 0/0</span>
+          </div>
           <div id="drillResultList" class="drill-result-list"></div>
         </aside>
       </div>

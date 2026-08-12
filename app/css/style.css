@@ -1251,7 +1251,7 @@ h1 {
 
 .drill-history-panel {
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
   gap: 12px;
   min-width: 0;
   min-height: 0;
@@ -1269,6 +1269,39 @@ h1 {
   padding-bottom: 10px;
   font-size: 17px;
   font-weight: 800;
+}
+
+.drill-result-filter {
+  display: grid;
+  grid-template-columns: auto 72px auto auto auto minmax(76px, 1fr);
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.drill-result-filter input {
+  width: 72px;
+  min-height: 30px;
+  padding: 0 8px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.drill-result-filter button {
+  min-height: 30px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.drill-result-filter-status {
+  justify-self: end;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .drill-result-list {
@@ -2744,6 +2777,15 @@ main {
     max-height: 260px;
     min-height: 0;
     overflow: hidden;
+  }
+
+  .drill-result-filter {
+    grid-template-columns: auto 72px auto 1fr;
+  }
+
+  .drill-result-filter-status {
+    grid-column: 1 / -1;
+    justify-self: start;
   }
 
   .drill-actions {
