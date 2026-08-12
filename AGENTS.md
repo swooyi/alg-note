@@ -8,6 +8,7 @@
 - `alg/...` 원본 JSON을 수정하면 `scripts/build_app_data.py`로 `app/js/data.js`를 재생성하고, 변경값이 번들에 들어갔는지 확인한다.
 - JSON 수정은 구조적으로 처리하고, 명시 요청이 없으면 `id`, `name`, `group`, `svgId`, 그룹 배치, 이미지 참조는 보존한다.
 - CSS, JS, PWA, GitHub Pages 반영 문제는 브라우저 캐시나 service worker 캐시 가능성을 먼저 고려한다.
+- `app`의 CSS, JS, HTML 또는 PWA 자산을 배포할 때는 `app/sw.js`의 `CACHE_NAME` 버전을 올리고, activate 단계에서 이전 캐시가 정리되는지 확인한다.
 - 화면이 수정과 다르게 보이면 hard reload, cache bust query, 새 브라우저 세션, 새 로컬 서버 포트 중 하나로 재확인한다.
 - localStorage를 쓰는 필터, 보기 모드, 선택 카드, 드릴 설정, 프리셋, 수정 JSON 기능은 렌더 후 값이 되돌아가지 않는지 확인한다.
 - 드릴 타이머 입력을 바꾸면 Space, 모바일 터치, 마우스 클릭 동작을 구분해서 확인한다.
