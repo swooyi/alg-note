@@ -98,12 +98,10 @@ const elements = {
   drillTimerText: document.getElementById("drillTimerText"),
   drillHintText: document.getElementById("drillHintText"),
   drillTimesText: document.getElementById("drillTimesText"),
-  drillAverageText: document.getElementById("drillAverageText"),
   drillClearResultsButton: document.getElementById("drillClearResultsButton"),
   drillMinResultSecondsInput: document.getElementById("drillMinResultSecondsInput"),
   drillSelectResultsByTimeButton: document.getElementById("drillSelectResultsByTimeButton"),
   drillRestoreSelectionButton: document.getElementById("drillRestoreSelectionButton"),
-  drillResultFilterStatus: document.getElementById("drillResultFilterStatus"),
   drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillNextButton: document.getElementById("drillNextButton"),
@@ -593,13 +591,6 @@ function formatDrillTime(ms) {
 }
 
 
-function averageDrillMs() {
-  if (!state.drill.results.length) return 0;
-  const total = state.drill.results.reduce((sum, result) => sum + result.elapsedMs, 0);
-  return total / state.drill.results.length;
-}
-
-
 function stopDrillTicker() {
   if (!state.drill.tickHandle) return;
   window.cancelAnimationFrame(state.drill.tickHandle);
@@ -787,23 +778,22 @@ function renderDrill() {
     elements.drillSetupText.textContent = "드릴 완료";
     elements.drillShowAnswerButton.disabled = true;
     elements.drillNextButton.textContent = "다시 섞기";
-    elements.drillHintText.textContent = "Space로 다시 섞기";
+    elements.drillHintText.textContent = "Space 또는 터치로 다시 섞기";
   } else {
     elements.drillSetupText.textContent = state.drill.currentSetup;
     elements.drillShowAnswerButton.disabled = false;
     elements.drillNextButton.textContent = "스킵";
-    elements.drillHintText.textContent = state.drill.timerStatus === "running" ? "Space로 정지" : "Space로 시작";
+    elements.drillHintText.textContent = state.drill.timerStatus === "running" ? "Space 또는 터치로 정지" : "Space 또는 터치";
   }
 
   updateDrillTimerDisplay();
   elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
-  elements.drillAverageText.textContent = state.drill.results.length ? `Avg ${formatDrillTime(averageDrillMs())}` : "Avg -";
   if (document.activeElement !== elements.drillMinResultSecondsInput) {
     elements.drillMinResultSecondsInput.value = state.drill.minResultSeconds.toFixed(1);
   }
   const minSeconds = roundedDrillMinResultSeconds() ?? state.drill.minResultSeconds;
   const matchingResultCount = drillResultsAtLeast(minSeconds).length;
-  elements.drillResultFilterStatus.textContent = `선택됨 ${matchingResultCount}/${state.drill.results.length}`;
+  elements.drillSelectResultsByTimeButton.textContent = `선택 · ${matchingResultCount}/${state.drill.results.length}`;
   elements.drillMinResultSecondsInput.disabled = state.drill.timerStatus === "running";
   elements.drillSelectResultsByTimeButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   elements.drillRestoreSelectionButton.disabled = state.drill.timerStatus === "running" || !state.drill.selectionRestoreSnapshot;

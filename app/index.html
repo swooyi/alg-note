@@ -185,29 +185,27 @@
       <div class="drill-body">
         <div id="drillMain" class="drill-main">
           <div id="drillTimerText" class="drill-timer">0.00</div>
-          <div id="drillHintText" class="drill-hint">Space로 시작</div>
+          <div id="drillHintText" class="drill-hint">Space 또는 터치</div>
         </div>
         <div id="drillResizeHandle" class="drill-resize-handle" role="separator" aria-orientation="vertical" aria-label="기록 영역 크기 조절" title="기록 영역 크기 조절"></div>
         <aside class="drill-history-panel">
           <div class="drill-history-summary">
             <span id="drillTimesText">Times 0</span>
-            <span id="drillAverageText">Avg -</span>
-            <button id="drillClearResultsButton" class="drill-clear-results-button" type="button">전체 삭제</button>
+            <div class="drill-history-actions">
+              <button id="drillUndoButton" type="button">직전 취소</button>
+              <button id="drillNextButton" type="button">스킵</button>
+              <button id="drillClearResultsButton" class="drill-clear-results-button" type="button">전체 삭제</button>
+            </div>
           </div>
           <div class="drill-result-filter">
             <label for="drillMinResultSecondsInput">최소 시간</label>
             <input id="drillMinResultSecondsInput" type="number" min="0" step="0.1" inputmode="decimal" value="0.5" aria-label="선택할 최소 기록 시간">
             <span>초</span>
-            <button id="drillSelectResultsByTimeButton" type="button">기록 선택</button>
-            <button id="drillRestoreSelectionButton" type="button">원상복구</button>
-            <span id="drillResultFilterStatus" class="drill-result-filter-status">선택됨 0/0</span>
+            <button id="drillSelectResultsByTimeButton" type="button">선택 · 0/0</button>
+            <button id="drillRestoreSelectionButton" type="button">복구</button>
           </div>
           <div id="drillResultList" class="drill-result-list"></div>
         </aside>
-      </div>
-      <div class="drill-actions">
-        <button id="drillUndoButton" type="button">직전 취소</button>
-        <button id="drillNextButton" type="button">스킵</button>
       </div>
     </div>
   </section>

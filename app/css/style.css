@@ -954,8 +954,7 @@ h1 {
   animation: surfaceIn 0.18s ease both;
 }
 
-.drill-top,
-.drill-actions {
+.drill-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1012,7 +1011,7 @@ h1 {
 }
 
 .drill-panel {
-  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
   width: 100%;
   height: 100vh;
   min-height: 100vh;
@@ -1236,7 +1235,7 @@ h1 {
 }
 
 .drill-timer {
-  font-size: clamp(72px, 13vw, 150px);
+  font-size: clamp(64px, 11vw, 132px);
   font-family: "Pretendard", Arial, Helvetica, sans-serif;
   font-weight: 820;
   line-height: 1;
@@ -1262,13 +1261,24 @@ h1 {
 
 .drill-history-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 10px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 10px;
   font-size: 17px;
   font-weight: 800;
+}
+
+.drill-history-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.drill-history-actions button {
+  min-height: 30px;
+  padding: 0 8px;
+  white-space: nowrap;
 }
 
 .drill-result-filter {
@@ -1293,14 +1303,6 @@ h1 {
 .drill-result-filter button {
   min-height: 30px;
   padding: 0 10px;
-  white-space: nowrap;
-}
-
-.drill-result-filter-status {
-  justify-self: end;
-  color: var(--ink);
-  font-variant-numeric: tabular-nums;
-  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -1397,16 +1399,6 @@ h1 {
 .drill-delete-result-button {
   border-color: #f0c7c7;
   color: #b42318;
-}
-
-.drill-actions {
-  justify-content: center;
-  background: var(--panel);
-  padding: 10px 14px;
-}
-
-.drill-actions button {
-  min-width: 120px;
 }
 
 .switch-control {
@@ -2764,9 +2756,17 @@ main {
   }
 
   .drill-main {
-    min-height: 300px;
+    min-height: 180px;
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .drill-timer {
+    font-size: clamp(58px, 16vw, 76px);
+  }
+
+  .drill-hint {
+    font-size: 15px;
   }
 
   .drill-resize-handle {
@@ -2780,17 +2780,22 @@ main {
   }
 
   .drill-result-filter {
-    grid-template-columns: auto 72px auto 1fr;
+    grid-template-columns: auto 62px auto minmax(0, 1fr) minmax(0, 1fr);
+    gap: 5px;
   }
 
-  .drill-result-filter-status {
-    grid-column: 1 / -1;
-    justify-self: start;
+  .drill-result-filter input {
+    width: 62px;
   }
 
-  .drill-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .drill-history-actions {
+    gap: 4px;
+  }
+
+  .drill-history-actions button {
+    min-height: 28px;
+    padding: 0 7px;
+    font-size: 13px;
   }
 
   .case-grid,
