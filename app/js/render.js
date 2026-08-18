@@ -36,15 +36,20 @@ const RECOGNITION_ORDER = [
   "is-flipped-pair-wrong",
 ];
 const BOOKMARK_TYPES = [
-  { id: "red-sun", label: "빨간 해", mark: "☀" },
-  { id: "green-moon", label: "초록 달", mark: "☾" },
-  { id: "yellow-star", label: "노란 별", mark: "★" },
-  { id: "blue-cloud", label: "파란 구름", mark: "☁" },
+  { id: "red-sun", labelKey: "bookmarkRedSun", mark: "☀" },
+  { id: "green-moon", labelKey: "bookmarkGreenMoon", mark: "☾" },
+  { id: "yellow-star", labelKey: "bookmarkYellowStar", mark: "★" },
+  { id: "blue-cloud", labelKey: "bookmarkBlueCloud", mark: "☁" },
 ];
 
 
 function text(value) {
   return value == null ? "" : String(value);
+}
+
+
+function ui(key) {
+  return window.AlgNoteLocale?.labels?.[key] || key;
 }
 
 
@@ -124,7 +129,7 @@ function renderBookmarkFilterOptions(container, selectedValues) {
   for (const bookmark of BOOKMARK_TYPES) {
     container.append(makeFilterButton({
       value: bookmark.id,
-      label: bookmark.label,
+      label: ui(bookmark.labelKey),
       selected: selectedValues.has(bookmark.id),
       className: `bookmark-choice bookmark-${bookmark.id}`,
       mark: bookmark.mark,
@@ -135,11 +140,11 @@ function renderBookmarkFilterOptions(container, selectedValues) {
 
 function renderSummary(element, dataset, rows, state) {
   element.replaceChildren(
-    makeSummaryItem("세트", dataset.name),
-    makeSummaryItem("전체", dataset.cases.length),
-    makeSummaryItem("표시", rows.length),
-    makeSummaryItem("북마크", state.bookmarks?.size || 0),
-    makeSummaryItem("선택", state.selectedCards?.size || 0),
+    makeSummaryItem(ui("set"), dataset.name),
+    makeSummaryItem(ui("all"), dataset.cases.length),
+    makeSummaryItem(ui("shown"), rows.length),
+    makeSummaryItem(ui("bookmarks"), state.bookmarks?.size || 0),
+    makeSummaryItem(ui("selection"), state.selectedCards?.size || 0),
   );
 }
 
@@ -160,7 +165,7 @@ function caseGroupTitle(item, state) {
   if (state.dataset?.algset === "1l3t" && tags.parity && !String(item.groupName).toLowerCase().includes(tags.parity)) {
     return `${item.groupName} - ${tags.parity}`;
   }
-  return item.groupName || "기타";
+  return item.groupName || ui("other");
 }
 
 
@@ -169,7 +174,7 @@ function detailGroupLabel(item, state) {
   if (state.dataset?.algset === "1l3t" && tags.parity && !String(item.groupName).toLowerCase().includes(tags.parity)) {
     return `${item.groupName}-${tags.parity}`;
   }
-  return item.groupName || "기타";
+  return item.groupName || ui("other");
 }
 
 
@@ -271,12 +276,17 @@ function makeCaseCard(template, item, state) {
 
   for (const button of node.querySelectorAll(".bookmark-button")) {
     const active = button.dataset.bookmark === currentBookmark;
+    const bookmark = BOOKMARK_TYPES.find((item) => item.id === button.dataset.bookmark);
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
+    if (bookmark) {
+      button.setAttribute("aria-label", ui(bookmark.labelKey));
+      button.title = ui(bookmark.labelKey);
+    }
   }
   node.querySelector(".edit-button").textContent = isEditing ? "×" : "✎";
-  node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? "편집 닫기" : "편집");
-  node.querySelector(".edit-button").title = isEditing ? "편집 닫기" : "편집";
+  node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? ui("closeEdit") : ui("edit"));
+  node.querySelector(".edit-button").title = isEditing ? ui("closeEdit") : ui("edit");
 
   return node;
 }
@@ -306,7 +316,7 @@ function renderCaseTitle(title, label, { currentBookmark, titleParts = null }) {
     const badge = document.createElement("span");
     badge.className = `case-title-badge case-title-bookmark bookmark-${bookmark.id}`;
     badge.textContent = bookmark.mark;
-    badge.title = bookmark.label;
+    badge.title = ui(bookmark.labelKey);
     badges.append(badge);
   }
 
@@ -325,7 +335,7 @@ function renderSvgBox(box, svg) {
   box.classList.add("is-missing");
   const message = document.createElement("span");
   message.className = "image-missing-message";
-  message.textContent = "이미지없음";
+  message.textContent = ui("noImage");
   box.append(message);
 }
 
@@ -335,7 +345,7 @@ function makeSetupEditor(scramble) {
   textarea.className = "setup-editor";
   textarea.rows = 3;
   textarea.value = text(scramble);
-  textarea.setAttribute("aria-label", "setup 편집");
+  textarea.setAttribute("aria-label", ui("editSetup"));
   return textarea;
 }
 
@@ -355,17 +365,17 @@ function makeAlgorithmEditor(algorithms) {
   const addButton = document.createElement("button");
   addButton.className = "add-algorithm-button";
   addButton.type = "button";
-  addButton.textContent = "+ 알고리즘";
+  addButton.textContent = `+ ${ui("algorithm")}`;
 
   const saveButton = document.createElement("button");
   saveButton.className = "save-edit-button";
   saveButton.type = "button";
-  saveButton.textContent = "저장";
+  saveButton.textContent = ui("save");
 
   const cancelButton = document.createElement("button");
   cancelButton.className = "cancel-edit-button";
   cancelButton.type = "button";
-  cancelButton.textContent = "취소";
+  cancelButton.textContent = ui("cancel");
 
   actions.append(addButton, saveButton, cancelButton);
   wrapper.append(actions);
@@ -382,29 +392,29 @@ function makeAlgorithmEditorRow(algorithm) {
   moveUpButton.type = "button";
   moveUpButton.dataset.direction = "up";
   moveUpButton.textContent = "↑";
-  moveUpButton.setAttribute("aria-label", "알고리즘 위로 이동");
-  moveUpButton.title = "알고리즘 위로 이동";
+  moveUpButton.setAttribute("aria-label", ui("moveAlgorithmUp"));
+  moveUpButton.title = ui("moveAlgorithmUp");
 
   const moveDownButton = document.createElement("button");
   moveDownButton.className = "move-algorithm-button move-algorithm-down-button icon-button";
   moveDownButton.type = "button";
   moveDownButton.dataset.direction = "down";
   moveDownButton.textContent = "↓";
-  moveDownButton.setAttribute("aria-label", "알고리즘 아래로 이동");
-  moveDownButton.title = "알고리즘 아래로 이동";
+  moveDownButton.setAttribute("aria-label", ui("moveAlgorithmDown"));
+  moveDownButton.title = ui("moveAlgorithmDown");
 
   const textarea = document.createElement("textarea");
   textarea.className = "algorithm-editor";
   textarea.rows = 2;
   textarea.value = text(algorithm);
-  textarea.setAttribute("aria-label", "알고리즘 편집");
+  textarea.setAttribute("aria-label", ui("editAlgorithm"));
 
   const removeButton = document.createElement("button");
   removeButton.className = "remove-algorithm-button icon-button";
   removeButton.type = "button";
   removeButton.textContent = "×";
-  removeButton.setAttribute("aria-label", "알고리즘 삭제");
-  removeButton.title = "알고리즘 삭제";
+  removeButton.setAttribute("aria-label", ui("deleteAlgorithm"));
+  removeButton.title = ui("deleteAlgorithm");
 
   row.append(moveUpButton, moveDownButton, textarea, removeButton);
   return row;
@@ -476,19 +486,19 @@ function renderCaseDetail(container, template, item, state) {
   const prevButton = document.createElement("button");
   prevButton.className = "detail-nav-button prev-detail-button";
   prevButton.type = "button";
-  prevButton.textContent = "이전 공식";
+  prevButton.textContent = ui("previousAlgorithm");
   prevButton.disabled = !state.detailNav?.hasPrev;
 
   const nextButton = document.createElement("button");
   nextButton.className = "detail-nav-button next-detail-button";
   nextButton.type = "button";
-  nextButton.textContent = "다음 공식";
+  nextButton.textContent = ui("nextAlgorithm");
   nextButton.disabled = !state.detailNav?.hasNext;
 
   const closeButton = document.createElement("button");
   closeButton.className = "close-detail-button";
   closeButton.type = "button";
-  closeButton.textContent = "닫기";
+  closeButton.textContent = ui("close");
 
   top.append(prevButton, nextButton, closeButton);
 
@@ -553,7 +563,8 @@ function renderGroupedCases(grid, template, rows, state) {
 
 function renderCasesByRecognition(grid, template, rows, state) {
   const fragment = document.createDocumentFragment();
-  const groupOrder = [...new Set(rows.flatMap((item) => recognitionList(item.tags?.recognition).length ? recognitionList(item.tags?.recognition) : ["기타"]))].sort();
+  const otherLabel = ui("other");
+  const groupOrder = [...new Set(rows.flatMap((item) => recognitionList(item.tags?.recognition).length ? recognitionList(item.tags?.recognition) : [otherLabel]))].sort();
 
   for (const recognition of groupOrder) {
     const section = document.createElement("section");
@@ -571,7 +582,7 @@ function renderCasesByRecognition(grid, template, rows, state) {
 
     for (const item of rows.filter((candidate) => {
       const values = recognitionList(candidate.tags?.recognition);
-      return values.length ? values.includes(recognition) : recognition === "기타";
+      return values.length ? values.includes(recognition) : recognition === otherLabel;
     })) {
       groupGrid.append(makeCaseCard(template, item, state));
     }

@@ -28,13 +28,21 @@
         </div>
       </div>
       <div class="header-actions">
-        <button id="homeButton" class="home-button home-icon-button" type="button" aria-label="홈" title="홈">⌂</button>
+        <button id="homeButton" class="home-button home-icon-button" type="button" aria-label="홈" title="홈" data-i18n-attr="aria-label:title" data-i18n="home">⌂</button>
+        <div class="language-wrapper">
+          <button id="languageButton" class="language-button" type="button" aria-haspopup="true" aria-expanded="false">한국어</button>
+          <div id="languagePopover" class="language-popover" hidden>
+            <button type="button" data-language="ko">한국어</button>
+            <button type="button" data-language="en">English</button>
+            <button type="button" data-language="ja">日本語</button>
+          </div>
+        </div>
         <div class="home-settings-wrapper">
-          <button id="homeSettingsButton" class="home-settings-button home-icon-button" type="button" aria-label="설정" title="설정" aria-expanded="false">⚙</button>
+          <button id="homeSettingsButton" class="home-settings-button home-icon-button" type="button" aria-label="설정" title="설정" aria-expanded="false" data-i18n-attr="aria-label:title" data-i18n="settings">⚙</button>
           <div id="homeSettingsPopover" class="home-settings-popover" hidden>
-            <h2>설정</h2>
-            <div class="theme-setting-group" aria-label="색상 테마">
-              <span>색상</span>
+            <h2 data-i18n="settings">설정</h2>
+            <div class="theme-setting-group" aria-label="색상 테마" data-i18n-attr="aria-label" data-i18n="colorTheme">
+              <span data-i18n="color">색상</span>
               <div class="accent-theme-buttons">
                 <button class="accent-theme-button" type="button" data-accent-theme="red" aria-label="빨강" title="빨강"><span class="accent-theme-swatch red"></span></button>
                 <button class="accent-theme-button" type="button" data-accent-theme="yellow" aria-label="노랑" title="노랑"><span class="accent-theme-swatch yellow"></span></button>
@@ -44,26 +52,23 @@
                 <button class="accent-theme-button" type="button" data-accent-theme="mono" aria-label="흑백" title="흑백"><span class="accent-theme-swatch mono"></span></button>
               </div>
             </div>
+            <button id="exportJsonButton" class="primary-export-button" type="button" data-i18n="editJson">수정 JSON</button>
           </div>
         </div>
       </div>
-      <select id="datasetSelect" class="dataset-select" aria-label="공식 폴더" hidden></select>
+      <select id="datasetSelect" class="dataset-select" aria-label="공식 폴더" hidden data-i18n-attr="aria-label" data-i18n="formulaFolder"></select>
     </div>
   </header>
 
   <section id="homeView" class="home-view">
     <div class="home-inner">
-      <div class="home-title">
-        <span></span>
-        <button id="exportJsonButton" class="primary-export-button" type="button">수정 JSON</button>
-      </div>
       <section id="presetShortcutSection" class="home-section preset-shortcut-section">
-        <h2>프리셋 바로가기</h2>
+        <h2 data-i18n="presetShortcuts">프리셋 바로가기</h2>
         <div id="presetShortcutGrid" class="preset-shortcut-grid"></div>
-        <p id="presetShortcutEmpty" class="preset-shortcut-empty">등록된 바로가기가 없습니다.</p>
+        <p id="presetShortcutEmpty" class="preset-shortcut-empty" data-i18n="noShortcuts">등록된 바로가기가 없습니다.</p>
       </section>
       <section class="home-section dataset-home-section">
-        <h2>해법 선택</h2>
+        <h2 data-i18n="selectAlgset">해법 선택</h2>
         <div id="datasetHomeGrid" class="dataset-home-grid"></div>
       </section>
     </div>
@@ -76,14 +81,14 @@
         <p id="exportPanelDescription">브라우저에 저장된 수정 내용을 모은 결과입니다.</p>
       </div>
       <div class="export-actions">
-        <div class="export-mode-buttons" aria-label="출력 방식">
-          <button id="exportFullButton" class="is-active" type="button">전체 JSON</button>
-          <button id="exportEditsButton" type="button">편집분만</button>
+        <div class="export-mode-buttons" aria-label="출력 방식" data-i18n-attr="aria-label" data-i18n="exportMode">
+          <button id="exportFullButton" class="is-active" type="button" data-i18n="fullJson">전체 JSON</button>
+          <button id="exportEditsButton" type="button" data-i18n="editsOnly">편집분만</button>
         </div>
-        <button id="copyJsonButton" type="button">복사</button>
-        <button id="downloadJsonButton" type="button">다운로드</button>
-        <button id="resetJsonButton" class="reset-json-button" type="button">JSON 초기화</button>
-        <button id="closeExportButton" type="button" aria-label="출력 닫기">닫기</button>
+        <button id="copyJsonButton" type="button" data-i18n="copy">복사</button>
+        <button id="downloadJsonButton" type="button" data-i18n="download">다운로드</button>
+        <button id="resetJsonButton" class="reset-json-button" type="button" data-i18n="resetJson">JSON 초기화</button>
+        <button id="closeExportButton" type="button" aria-label="출력 닫기" data-i18n-attr="aria-label" data-i18n="closeExport" data-i18n-text="close">닫기</button>
       </div>
     </div>
     <textarea id="exportJsonText" spellcheck="false"></textarea>
@@ -93,29 +98,29 @@
     <aside id="appSidebar" class="app-sidebar">
       <div class="sidebar-inner">
         <section class="sidebar-section">
-          <h2>검색</h2>
-          <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색">
+          <h2 data-i18n="search">검색</h2>
+          <input id="searchInput" type="search" placeholder="이름, 공식, 스크램블 검색" data-i18n-attr="placeholder" data-i18n="searchPlaceholder">
         </section>
 
         <section class="sidebar-section favorite-preset-group">
-          <h2>프리셋</h2>
-          <input id="favoritePresetNameInput" type="text" placeholder="저장할 프리셋 이름 입력" aria-label="저장할 프리셋 이름 입력">
+          <h2 data-i18n="presets">프리셋</h2>
+          <input id="favoritePresetNameInput" type="text" placeholder="저장할 프리셋 이름 입력" aria-label="저장할 프리셋 이름 입력" data-i18n-attr="placeholder:aria-label" data-i18n="presetNamePlaceholder">
           <div class="preset-save-actions">
-            <button id="saveSelectedPresetButton" type="button">선택 저장</button>
-            <button id="saveFilteredPresetButton" type="button">필터 저장</button>
+            <button id="saveSelectedPresetButton" type="button" data-i18n="saveSelected">선택 저장</button>
+            <button id="saveFilteredPresetButton" type="button" data-i18n="saveFiltered">필터 저장</button>
           </div>
-          <div id="favoritePresetList" class="preset-list" role="list" aria-label="저장한 프리셋"></div>
+          <div id="favoritePresetList" class="preset-list" role="list" aria-label="저장한 프리셋" data-i18n-attr="aria-label" data-i18n="savedPresets"></div>
         </section>
 
       </div>
-      <div id="sidebarResizeHandle" class="sidebar-resize-handle" role="separator" aria-orientation="vertical" aria-label="패널 폭 조절"></div>
+      <div id="sidebarResizeHandle" class="sidebar-resize-handle" role="separator" aria-orientation="vertical" aria-label="패널 폭 조절" data-i18n-attr="aria-label" data-i18n="resizePanel"></div>
     </aside>
 
     <main>
       <div id="appToolbar" class="toolbar">
         <div class="control-row">
           <div class="control-group filter-group">
-            <span class="control-label">필터</span>
+            <span class="control-label" data-i18n="filter">필터</span>
             <div class="filter-menu">
               <button id="groupFilterButton" class="filter-menu-button" type="button" data-filter-menu="group" aria-expanded="false">group</button>
               <div id="groupFilterOptions" class="filter-option-panel" hidden></div>
@@ -128,22 +133,22 @@
               <button id="bookmarkFilterButton" class="filter-menu-button" type="button" data-filter-menu="bookmark" aria-expanded="false">bookmark</button>
               <div id="bookmarkFilterOptions" class="filter-option-panel" hidden></div>
             </div>
-            <button id="clearFiltersButton" type="button">필터 초기화</button>
+            <button id="clearFiltersButton" type="button" data-i18n="clearFilters">필터 초기화</button>
           </div>
           <div class="control-group view-group">
-            <span class="control-label">보기</span>
-            <button id="selectedOnlyButton" class="selected-only-toggle" type="button">선택만</button>
-            <div class="view-mode-switcher" aria-label="보기 모드">
-              <button class="view-mode-button" type="button" data-view-mode="compact">간단히</button>
-              <button class="view-mode-button" type="button" data-view-mode="list">목록</button>
-              <button class="view-mode-button" type="button" data-view-mode="full">세부</button>
+            <span class="control-label" data-i18n="view">보기</span>
+            <button id="selectedOnlyButton" class="selected-only-toggle" type="button" data-i18n="selectedOnly">선택만</button>
+            <div class="view-mode-switcher" aria-label="보기 모드" data-i18n-attr="aria-label" data-i18n="viewMode">
+              <button class="view-mode-button" type="button" data-view-mode="compact" data-i18n="compact">간단히</button>
+              <button class="view-mode-button" type="button" data-view-mode="list" data-i18n="list">목록</button>
+              <button class="view-mode-button" type="button" data-view-mode="full" data-i18n="detail">세부</button>
             </div>
           </div>
           <div class="control-group selection-action-group">
-            <span class="control-label">선택</span>
+            <span class="control-label" data-i18n="selection">선택</span>
             <div class="selection-action-buttons">
-              <button id="selectAllCardsButton" type="button">전체</button>
-              <button id="clearSelectedCardsButton" type="button">해제</button>
+              <button id="selectAllCardsButton" type="button" data-i18n="all">전체</button>
+              <button id="clearSelectedCardsButton" type="button" data-i18n="clear">해제</button>
             </div>
           </div>
         </div>
@@ -157,53 +162,53 @@
   </div>
 
   <section id="caseDetail" class="case-detail" hidden></section>
-  <button id="drillStartButton" class="drill-fab" type="button" aria-label="드릴 시작" title="드릴 시작">▶</button>
+  <button id="drillStartButton" class="drill-fab" type="button" aria-label="드릴 시작" title="드릴 시작" data-i18n-attr="aria-label:title" data-i18n="startDrill">▶</button>
 
   <section id="drillOverlay" class="drill-overlay" hidden>
     <div class="drill-panel">
       <div class="drill-top">
-        <button id="drillCloseButton" class="drill-icon-button" type="button" aria-label="드릴 닫기" title="드릴 닫기">←</button>
-        <div class="drill-mode-tabs" aria-label="드릴 모드">
+        <button id="drillCloseButton" class="drill-icon-button" type="button" aria-label="드릴 닫기" title="드릴 닫기" data-i18n-attr="aria-label:title" data-i18n="closeDrill">←</button>
+        <div class="drill-mode-tabs" aria-label="드릴 모드" data-i18n-attr="aria-label" data-i18n="drillMode">
           <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
           <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
         </div>
         <div class="drill-auf-control">
           <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-expanded="false" aria-controls="drillAufPanel">AUF: 없음</button>
           <div id="drillAufPanel" class="drill-auf-panel" hidden>
-            <button type="button" data-auf-mode="none">없음</button>
+            <button type="button" data-auf-mode="none" data-i18n="auf.none">없음</button>
             <button type="button" data-auf-mode="u">U</button>
             <button type="button" data-auf-mode="up">U'</button>
             <button type="button" data-auf-mode="u2">U2</button>
-            <button type="button" data-auf-mode="random">랜덤</button>
+            <button type="button" data-auf-mode="random" data-i18n="auf.random">랜덤</button>
           </div>
         </div>
       </div>
       <div id="drillProgress" class="drill-progress">Recap 0 / 0</div>
       <div class="drill-scramble-row">
         <p id="drillSetupText"></p>
-        <button id="drillShowAnswerButton" class="drill-help-button" type="button" aria-label="정답 패널" title="정답 패널">?</button>
+        <button id="drillShowAnswerButton" class="drill-help-button" type="button" aria-label="정답 패널" title="정답 패널" data-i18n-attr="aria-label:title" data-i18n="answerPanel">?</button>
       </div>
       <div class="drill-body">
         <div id="drillMain" class="drill-main">
           <div id="drillTimerText" class="drill-timer">0.00</div>
-          <div id="drillHintText" class="drill-hint">Space 또는 터치</div>
+          <div id="drillHintText" class="drill-hint" data-i18n="drillStartHint">Space 또는 터치</div>
         </div>
-        <div id="drillResizeHandle" class="drill-resize-handle" role="separator" aria-orientation="vertical" aria-label="기록 영역 크기 조절" title="기록 영역 크기 조절"></div>
+        <div id="drillResizeHandle" class="drill-resize-handle" role="separator" aria-orientation="vertical" aria-label="기록 영역 크기 조절" title="기록 영역 크기 조절" data-i18n-attr="aria-label:title" data-i18n="resizeRecords"></div>
         <aside class="drill-history-panel">
           <div class="drill-history-summary">
             <span id="drillTimesText">Times 0</span>
             <div class="drill-history-actions">
-              <button id="drillUndoButton" type="button">직전 취소</button>
-              <button id="drillToggleHistoryButton" type="button" aria-expanded="false">기록 세부</button>
-              <button id="drillClearResultsButton" class="drill-clear-results-button" type="button">전체 삭제</button>
+              <button id="drillUndoButton" type="button" data-i18n="undoLast">직전 취소</button>
+              <button id="drillToggleHistoryButton" type="button" aria-expanded="false" data-i18n="recordDetails">기록 세부</button>
+              <button id="drillClearResultsButton" class="drill-clear-results-button" type="button" data-i18n="deleteAll">전체 삭제</button>
             </div>
           </div>
           <div class="drill-result-filter">
-            <label for="drillMinResultSecondsInput">최소 시간</label>
-            <input id="drillMinResultSecondsInput" type="number" min="0" step="0.1" inputmode="decimal" value="0.5" aria-label="선택할 최소 기록 시간">
-            <span>초</span>
+            <label for="drillMinResultSecondsInput" data-i18n="minimumTime">최소 시간</label>
+            <input id="drillMinResultSecondsInput" type="number" min="0" step="0.1" inputmode="decimal" value="0.5" aria-label="선택할 최소 기록 시간" data-i18n-attr="aria-label" data-i18n="minimumRecordTime">
+            <span data-i18n="seconds">초</span>
             <button id="drillSelectResultsByTimeButton" type="button">선택 · 0/0</button>
-            <button id="drillRestoreSelectionButton" type="button">복구</button>
+            <button id="drillRestoreSelectionButton" type="button" data-i18n="restore">복구</button>
           </div>
           <div id="drillResultList" class="drill-result-list"></div>
         </aside>

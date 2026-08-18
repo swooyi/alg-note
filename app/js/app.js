@@ -13,6 +13,12 @@ const MIN_DRILL_HISTORY_WIDTH = 280;
 const MAX_DRILL_HISTORY_WIDTH = 720;
 const VIEW_MODES = new Set(["compact", "list", "full"]);
 const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono"]);
+const LANGUAGES = new Set(["ko", "en", "ja"]);
+const LANGUAGE_NAMES = {
+  ko: "한국어",
+  en: "English",
+  ja: "日本語",
+};
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
 const DRILL_AUF_MODES = new Set(["none", "u", "up", "u2", "random"]);
 const DRILL_AUF_LABELS = {
@@ -21,6 +27,341 @@ const DRILL_AUF_LABELS = {
   up: "U'",
   u2: "U2",
   random: "랜덤",
+};
+const UI_LABELS = {
+  ko: {
+    all: "전체",
+    allJsonEditsDescription: "모든 해법에서 브라우저에 저장된 수정 내용만 모은 결과입니다.",
+    allJsonEditsTitle: "수정 json",
+    algorithm: "알고리즘",
+    "auf.none": "없음",
+    "auf.random": "랜덤",
+    "auf.u": "U",
+    "auf.up": "U'",
+    "auf.u2": "U2",
+    answerPanel: "정답 패널",
+    bookmark: "bookmark",
+    bookmarkBlueCloud: "파란 구름",
+    bookmarkGreenMoon: "초록 달",
+    bookmarkRedSun: "빨간 해",
+    bookmarkYellowStar: "노란 별",
+    bookmarks: "북마크",
+    cancel: "취소",
+    caseCount: "개",
+    clear: "해제",
+    clearFilters: "필터 초기화",
+    close: "닫기",
+    closeDrill: "드릴 닫기",
+    closeEdit: "편집 닫기",
+    closeExport: "출력 닫기",
+    closePanel: "패널 닫기",
+    color: "색상",
+    colorTheme: "색상 테마",
+    compact: "간단히",
+    closeRecords: "기록 닫기",
+    copy: "복사",
+    detail: "세부",
+    deleteAlgorithm: "알고리즘 삭제",
+    delete: "삭제",
+    deletePreset: "프리셋 삭제",
+    deletePresetConfirm: "\"{name}\" 프리셋을 삭제할까요?",
+    deleteRecord: "기록 삭제",
+    download: "다운로드",
+    drillComplete: "드릴 완료",
+    drillMode: "드릴 모드",
+    drillShuffleHint: "Space 또는 터치로 다시 섞기",
+    drillStartHint: "Space 또는 터치",
+    drillStopHint: "Space 또는 터치로 정지",
+    duplicatePresetName: "같은 해법셋 안에 같은 이름의 프리셋이 이미 있습니다.",
+    exclude: "제외",
+    editAlgorithm: "알고리즘 편집",
+    edit: "편집",
+    editJson: "수정 JSON",
+    editSetup: "setup 편집",
+    editsOnly: "편집분만",
+    editsOnlyDescription: "브라우저에 저장된 편집 케이스만 모은 결과입니다.",
+    editsOnlyTitle: "편집분만 출력",
+    filter: "필터",
+    formulaFolder: "공식 폴더",
+    fullJson: "전체 JSON",
+    fullJsonDescription: "브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.",
+    fullJsonTitle: "cases.json 출력",
+    group: "group",
+    list: "목록",
+    moveAlgorithmDown: "알고리즘 아래로 이동",
+    moveAlgorithmUp: "알고리즘 위로 이동",
+    noImage: "이미지없음",
+    noFilteredAlgorithms: "필터 결과에 보이는 공식이 없습니다.",
+    noShortcuts: "등록된 바로가기가 없습니다.",
+    noSavedPresets: "저장한 프리셋 없음",
+    noSelectedAlgorithms: "선택된 공식이 없습니다.",
+    nextAlgorithm: "다음 공식",
+    noRecords: "아직 기록 없음",
+    noSetup: "등록된 setup이 없습니다.",
+    other: "기타",
+    pinPreset: "프리셋 고정",
+    openPanel: "패널 열기",
+    presetNamePlaceholder: "저장할 프리셋 이름 입력",
+    presets: "프리셋",
+    presetShortcuts: "프리셋 바로가기",
+    previousAlgorithm: "이전 공식",
+    recordDetail: "기록 세부 보기",
+    recordDetails: "기록 세부",
+    recog: "recog",
+    resetJson: "JSON 초기화",
+    resetJsonConfirm: "브라우저에 저장된 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.",
+    resizePanel: "패널 폭 조절",
+    resizeRecords: "기록 영역 크기 조절",
+    restore: "복구",
+    savedPresets: "저장한 프리셋",
+    saveFiltered: "필터 저장",
+    save: "저장",
+    saveSelected: "선택 저장",
+    search: "검색",
+    searchPlaceholder: "이름, 공식, 스크램블 검색",
+    selectAlgset: "해법 선택",
+    selectCases: "케이스를 선택하세요.",
+    selectedOnly: "선택만",
+    selection: "선택",
+    set: "세트",
+    settings: "설정",
+    shown: "표시",
+    exportMode: "출력 방식",
+    home: "홈",
+    invalidMinimumTime: "최소 시간을 0.0초 이상으로 입력하세요.",
+    minimumRecordTime: "선택할 최소 기록 시간",
+    minimumTime: "최소 시간",
+    seconds: "초",
+    startDrill: "드릴 시작",
+    unsupported: "미지원",
+    view: "보기",
+    viewMode: "보기 모드",
+    unpinPreset: "프리셋 고정 해제",
+    undoLast: "직전 취소",
+    deleteAll: "전체 삭제",
+  },
+  en: {
+    all: "All",
+    allJsonEditsDescription: "Only edited items saved in this browser across all alg sets.",
+    allJsonEditsTitle: "Edited JSON",
+    algorithm: "Algorithm",
+    "auf.none": "None",
+    "auf.random": "Random",
+    "auf.u": "U",
+    "auf.up": "U'",
+    "auf.u2": "U2",
+    answerPanel: "Answer Panel",
+    bookmark: "bookmark",
+    bookmarkBlueCloud: "Blue Cloud",
+    bookmarkGreenMoon: "Green Moon",
+    bookmarkRedSun: "Red Sun",
+    bookmarkYellowStar: "Yellow Star",
+    bookmarks: "Bookmarks",
+    cancel: "Cancel",
+    caseCount: "cases",
+    clear: "Clear",
+    clearFilters: "Reset Filters",
+    close: "Close",
+    closeDrill: "Close Drill",
+    closeEdit: "Close Edit",
+    closeExport: "Close Export",
+    closePanel: "Close Panel",
+    color: "Color",
+    colorTheme: "Color Theme",
+    compact: "Compact",
+    closeRecords: "Close Records",
+    copy: "Copy",
+    detail: "Detail",
+    deleteAlgorithm: "Delete Algorithm",
+    delete: "Delete",
+    deletePreset: "Delete Preset",
+    deletePresetConfirm: "Delete \"{name}\" preset?",
+    deleteRecord: "Delete Record",
+    download: "Download",
+    drillComplete: "Drill Complete",
+    drillMode: "Drill Mode",
+    drillShuffleHint: "Space or touch to shuffle again",
+    drillStartHint: "Space or touch",
+    drillStopHint: "Space or touch to stop",
+    duplicatePresetName: "A preset with the same name already exists in this alg set.",
+    exclude: "Exclude",
+    editAlgorithm: "Edit Algorithm",
+    edit: "Edit",
+    editJson: "Edit JSON",
+    editSetup: "Edit setup",
+    editsOnly: "Edits Only",
+    editsOnlyDescription: "Only edited cases saved in this browser.",
+    editsOnlyTitle: "Edits Only",
+    filter: "Filter",
+    formulaFolder: "Algorithm Folder",
+    fullJson: "Full JSON",
+    fullJsonDescription: "Current data merged with edits saved in this browser.",
+    fullJsonTitle: "cases.json",
+    group: "group",
+    list: "List",
+    moveAlgorithmDown: "Move Algorithm Down",
+    moveAlgorithmUp: "Move Algorithm Up",
+    noImage: "No image",
+    noFilteredAlgorithms: "No algorithms are visible in the filter results.",
+    noShortcuts: "No shortcuts saved.",
+    noSavedPresets: "No saved presets",
+    noSelectedAlgorithms: "No algorithms selected.",
+    nextAlgorithm: "Next Algorithm",
+    noRecords: "No records yet",
+    noSetup: "No setup saved.",
+    other: "Other",
+    pinPreset: "Pin Preset",
+    openPanel: "Open Panel",
+    presetNamePlaceholder: "Preset name",
+    presets: "Presets",
+    presetShortcuts: "Preset Shortcuts",
+    previousAlgorithm: "Previous Algorithm",
+    recordDetail: "record details",
+    recordDetails: "Record Details",
+    recog: "recog",
+    resetJson: "Reset JSON",
+    resetJsonConfirm: "Reset edited JSON saved in this browser? Bookmarks and presets will be kept.",
+    resizePanel: "Resize Panel",
+    resizeRecords: "Resize Records",
+    restore: "Restore",
+    savedPresets: "Saved presets",
+    saveFiltered: "Save Filter",
+    save: "Save",
+    saveSelected: "Save Selected",
+    search: "Search",
+    searchPlaceholder: "Search name, algorithm, scramble",
+    selectAlgset: "Select Alg Set",
+    selectCases: "Select cases.",
+    selectedOnly: "Selected Only",
+    selection: "Selection",
+    set: "Set",
+    settings: "Settings",
+    shown: "Shown",
+    exportMode: "Export Mode",
+    home: "Home",
+    invalidMinimumTime: "Enter a minimum time of 0.0 seconds or more.",
+    minimumRecordTime: "Minimum record time to include",
+    minimumTime: "Minimum Time",
+    seconds: "seconds",
+    startDrill: "Start Drill",
+    unsupported: "Unsupported",
+    view: "View",
+    viewMode: "View Mode",
+    unpinPreset: "Unpin Preset",
+    undoLast: "Undo Last",
+    deleteAll: "Delete All",
+  },
+  ja: {
+    all: "すべて",
+    allJsonEditsDescription: "すべての手順セットから、このブラウザに保存された編集内容のみを集めた結果です。",
+    allJsonEditsTitle: "編集JSON",
+    algorithm: "アルゴリズム",
+    "auf.none": "なし",
+    "auf.random": "ランダム",
+    "auf.u": "U",
+    "auf.up": "U'",
+    "auf.u2": "U2",
+    answerPanel: "答えパネル",
+    bookmark: "bookmark",
+    bookmarkBlueCloud: "青い雲",
+    bookmarkGreenMoon: "緑の月",
+    bookmarkRedSun: "赤い太陽",
+    bookmarkYellowStar: "黄色い星",
+    bookmarks: "ブックマーク",
+    cancel: "キャンセル",
+    caseCount: "件",
+    clear: "解除",
+    clearFilters: "フィルターリセット",
+    close: "閉じる",
+    closeDrill: "ドリルを閉じる",
+    closeEdit: "編集を閉じる",
+    closeExport: "出力を閉じる",
+    closePanel: "パネルを閉じる",
+    color: "色",
+    colorTheme: "カラーテーマ",
+    compact: "簡易",
+    closeRecords: "記録を閉じる",
+    copy: "コピー",
+    detail: "詳細",
+    deleteAlgorithm: "アルゴリズム削除",
+    delete: "削除",
+    deletePreset: "プリセット削除",
+    deletePresetConfirm: "「{name}」プリセットを削除しますか？",
+    deleteRecord: "記録削除",
+    download: "ダウンロード",
+    drillComplete: "ドリル完了",
+    drillMode: "ドリルモード",
+    drillShuffleHint: "Spaceまたはタッチで再シャッフル",
+    drillStartHint: "Spaceまたはタッチ",
+    drillStopHint: "Spaceまたはタッチで停止",
+    duplicatePresetName: "同じ手順セット内に同じ名前のプリセットが既にあります。",
+    exclude: "除外",
+    editAlgorithm: "アルゴリズム編集",
+    edit: "編集",
+    editJson: "JSON編集",
+    editSetup: "setup編集",
+    editsOnly: "編集分のみ",
+    editsOnlyDescription: "このブラウザに保存された編集ケースのみを集めた結果です。",
+    editsOnlyTitle: "編集分のみ出力",
+    filter: "フィルター",
+    formulaFolder: "手順フォルダー",
+    fullJson: "全体JSON",
+    fullJsonDescription: "このブラウザに保存された編集内容を現在のデータに反映した結果です。",
+    fullJsonTitle: "cases.json出力",
+    group: "group",
+    list: "リスト",
+    moveAlgorithmDown: "アルゴリズムを下へ移動",
+    moveAlgorithmUp: "アルゴリズムを上へ移動",
+    noImage: "画像なし",
+    noFilteredAlgorithms: "フィルター結果に表示されている手順がありません。",
+    noShortcuts: "登録されたショートカットはありません。",
+    noSavedPresets: "保存済みプリセットなし",
+    noSelectedAlgorithms: "選択された手順がありません。",
+    nextAlgorithm: "次の手順",
+    noRecords: "記録はまだありません",
+    noSetup: "登録されたsetupがありません。",
+    other: "その他",
+    pinPreset: "プリセット固定",
+    openPanel: "パネルを開く",
+    presetNamePlaceholder: "保存するプリセット名",
+    presets: "プリセット",
+    presetShortcuts: "プリセットショートカット",
+    previousAlgorithm: "前の手順",
+    recordDetail: "記録詳細を見る",
+    recordDetails: "記録詳細",
+    recog: "recog",
+    resetJson: "JSONリセット",
+    resetJsonConfirm: "このブラウザに保存された編集JSONをリセットしますか？ブックマークとプリセットは保持されます。",
+    resizePanel: "パネル幅を調整",
+    resizeRecords: "記録エリアのサイズを調整",
+    restore: "復元",
+    savedPresets: "保存済みプリセット",
+    saveFiltered: "フィルター保存",
+    save: "保存",
+    saveSelected: "選択を保存",
+    search: "検索",
+    searchPlaceholder: "名前、手順、スクランブルを検索",
+    selectAlgset: "手順セット選択",
+    selectCases: "ケースを選択してください。",
+    selectedOnly: "選択のみ",
+    selection: "選択",
+    set: "セット",
+    settings: "設定",
+    shown: "表示",
+    exportMode: "出力方式",
+    home: "ホーム",
+    invalidMinimumTime: "最小時間は0.0秒以上で入力してください。",
+    minimumRecordTime: "選択する最小記録時間",
+    minimumTime: "最小時間",
+    seconds: "秒",
+    startDrill: "ドリル開始",
+    unsupported: "未対応",
+    view: "表示",
+    viewMode: "表示モード",
+    unpinPreset: "プリセット固定解除",
+    undoLast: "直前を取り消す",
+    deleteAll: "すべて削除",
+  },
 };
 const DRILL_AUF_FIXED_MOVES = {
   u: "U",
@@ -43,10 +384,26 @@ function initialAccentTheme() {
   return ACCENT_THEMES.has(saved) ? saved : "blue";
 }
 
+function initialLanguage() {
+  const saved = loadJson("language", "ko");
+  return LANGUAGES.has(saved) ? saved : "ko";
+}
+
+function t(key) {
+  return UI_LABELS[state.language]?.[key] || UI_LABELS.ko[key] || key;
+}
+
+function drillAufLabel(mode) {
+  return t(`auf.${mode}`);
+}
+
 const elements = {
   datasetLabel: document.getElementById("datasetLabel"),
   datasetSelect: document.getElementById("datasetSelect"),
   homeButton: document.getElementById("homeButton"),
+  languageButton: document.getElementById("languageButton"),
+  languagePopover: document.getElementById("languagePopover"),
+  languageOptions: [...document.querySelectorAll("[data-language]")],
   homeSettingsButton: document.getElementById("homeSettingsButton"),
   homeSettingsPopover: document.getElementById("homeSettingsPopover"),
   accentThemeButtons: [...document.querySelectorAll(".accent-theme-button")],
@@ -124,6 +481,7 @@ const state = {
   bookmarkFilters: new Set(),
   viewMode: initialViewMode(),
   accentTheme: initialAccentTheme(),
+  language: initialLanguage(),
   sidebarOpen: loadJson("sidebarOpen", true),
   sidebarWidth: loadJson("sidebarWidth", DEFAULT_SIDEBAR_WIDTH),
   columns: DEFAULT_COLUMNS,
@@ -175,6 +533,50 @@ function applyAccentTheme() {
 }
 
 
+function applyLanguage() {
+  document.documentElement.lang = state.language;
+  window.AlgNoteLocale = { language: state.language, labels: UI_LABELS[state.language] };
+  elements.languageButton.textContent = LANGUAGE_NAMES[state.language];
+
+  for (const option of elements.languageOptions) {
+    const active = option.dataset.language === state.language;
+    option.classList.toggle("is-active", active);
+    option.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+
+  for (const node of document.querySelectorAll("[data-i18n]")) {
+    const textKey = node.dataset.i18nText || node.dataset.i18n;
+    const attrKeys = (node.dataset.i18nAttr || "").split(":").filter(Boolean);
+    if (!node.dataset.i18nText && !attrKeys.length) node.textContent = t(textKey);
+    if (node.dataset.i18nText) node.textContent = t(textKey);
+    for (const attr of attrKeys) node.setAttribute(attr, t(node.dataset.i18n));
+  }
+
+  elements.homeSettingsButton.setAttribute("aria-label", t("settings"));
+  elements.homeSettingsButton.title = t("settings");
+  elements.languageButton.setAttribute("aria-label", LANGUAGE_NAMES[state.language]);
+  elements.languageButton.title = LANGUAGE_NAMES[state.language];
+  updateSidebarLayout();
+  updateFilterMenuButtons();
+  updateExportPanelText();
+  if (state.dataset) render();
+}
+
+
+function closeLanguageMenu() {
+  elements.languagePopover.hidden = true;
+  elements.languageButton.setAttribute("aria-expanded", "false");
+}
+
+
+function toggleLanguageMenu() {
+  const willOpen = elements.languagePopover.hidden;
+  elements.languagePopover.hidden = !willOpen;
+  elements.languageButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  if (willOpen) closeHomeSettings();
+}
+
+
 function closeHomeSettings() {
   elements.homeSettingsPopover.hidden = true;
   elements.homeSettingsButton.setAttribute("aria-expanded", "false");
@@ -185,6 +587,7 @@ function toggleHomeSettings() {
   const willOpen = elements.homeSettingsPopover.hidden;
   elements.homeSettingsPopover.hidden = !willOpen;
   elements.homeSettingsButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  if (willOpen) closeLanguageMenu();
 }
 
 
@@ -284,7 +687,7 @@ function renderSelectionPresetOptions() {
   if (!state.selectionPresets.length) {
     const empty = document.createElement("p");
     empty.className = "preset-empty";
-    empty.textContent = "저장한 프리셋 없음";
+    empty.textContent = t("noSavedPresets");
     elements.favoritePresetList.append(empty);
   }
 
@@ -309,7 +712,7 @@ function renderSelectionPresetOptions() {
     const name = document.createElement("span");
     name.textContent = preset.name;
     const count = document.createElement("strong");
-    count.textContent = `${preset.selectedCards.length} cases`;
+    count.textContent = `${preset.selectedCards.length} ${t("caseCount")}`;
     const text = document.createElement("span");
     text.className = "preset-file-text";
     text.append(name, count);
@@ -318,9 +721,9 @@ function renderSelectionPresetOptions() {
     pinButton.className = "preset-file-icon-button";
     pinButton.type = "button";
     pinButton.dataset.presetAction = "pin";
-    pinButton.setAttribute("aria-label", `${preset.name} 프리셋 ${preset.pinned ? "고정 해제" : "고정"}`);
+    pinButton.setAttribute("aria-label", `${preset.name} ${preset.pinned ? t("unpinPreset") : t("pinPreset")}`);
     pinButton.setAttribute("aria-pressed", preset.pinned ? "true" : "false");
-    pinButton.title = preset.pinned ? "고정 해제" : "고정";
+    pinButton.title = preset.pinned ? t("unpinPreset") : t("pinPreset");
     const icon = document.createElement("span");
     icon.className = "preset-file-icon";
     icon.setAttribute("aria-hidden", "true");
@@ -331,8 +734,8 @@ function renderSelectionPresetOptions() {
     deleteButton.className = "preset-delete-button";
     deleteButton.type = "button";
     deleteButton.dataset.presetAction = "delete";
-    deleteButton.setAttribute("aria-label", `${preset.name} 프리셋 삭제`);
-    deleteButton.title = "삭제";
+    deleteButton.setAttribute("aria-label", `${preset.name} ${t("deletePreset")}`);
+    deleteButton.title = t("delete");
     deleteButton.textContent = "×";
 
     item.append(pinButton, applyButton, deleteButton);
@@ -386,7 +789,7 @@ function saveSelectionPresetFromIds(cardIds, emptyMessage) {
     return;
   }
   if (hasDuplicatePresetName(name)) {
-    window.alert("같은 해법셋 안에 같은 이름의 프리셋이 이미 있습니다.");
+    window.alert(t("duplicatePresetName"));
     elements.favoritePresetNameInput.focus();
     return;
   }
@@ -561,7 +964,7 @@ function randomLeadingAufMove() {
 
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
-  if (!setup) return "등록된 setup이 없습니다.";
+  if (!setup) return t("noSetup");
   const mode = normalizeDrillAufMode(state.drill.aufMode);
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
@@ -657,7 +1060,7 @@ function renderDrillResults() {
   if (!results.length) {
     const empty = document.createElement("p");
     empty.className = "drill-result-empty";
-    empty.textContent = "아직 기록 없음";
+    empty.textContent = t("noRecords");
     elements.drillResultList.append(empty);
     return;
   }
@@ -670,7 +1073,7 @@ function renderDrillResults() {
     body.dataset.resultDetailId = result.id;
     body.tabIndex = 0;
     body.setAttribute("role", "button");
-    body.setAttribute("aria-label", `${result.caseName} 기록 세부 보기`);
+    body.setAttribute("aria-label", `${result.caseName} ${t("recordDetail")}`);
     const top = document.createElement("div");
     top.className = "drill-result-top";
     const order = document.createElement("span");
@@ -689,15 +1092,15 @@ function renderDrillResults() {
     excludeButton.className = "drill-exclude-result-button";
     excludeButton.type = "button";
     excludeButton.dataset.resultExcludeCaseId = result.caseId;
-    excludeButton.textContent = "제외";
+    excludeButton.textContent = t("exclude");
     excludeButton.disabled = state.drill.timerStatus === "running" || !state.selectedCards.has(result.caseId);
     const deleteButton = document.createElement("button");
     deleteButton.className = "drill-delete-result-button";
     deleteButton.type = "button";
     deleteButton.dataset.resultDeleteId = result.id;
-    deleteButton.textContent = "삭제";
-    deleteButton.setAttribute("aria-label", "기록 삭제");
-    deleteButton.title = "기록 삭제";
+    deleteButton.textContent = t("delete");
+    deleteButton.setAttribute("aria-label", t("deleteRecord"));
+    deleteButton.title = t("deleteRecord");
     const actions = document.createElement("div");
     actions.className = "drill-result-actions";
     actions.append(excludeButton, deleteButton);
@@ -712,7 +1115,7 @@ function updateDrillStartButton() {
   const canShow = !state.isHomeView;
   elements.drillStartButton.disabled = false;
   elements.drillStartButton.hidden = state.isHomeView || state.drill.active;
-  elements.drillStartButton.title = canShow && state.selectedCards.size > 0 ? "드릴 시작" : "케이스를 선택하세요.";
+  elements.drillStartButton.title = canShow && state.selectedCards.size > 0 ? t("startDrill") : t("selectCases");
   elements.drillStartButton.setAttribute("aria-label", elements.drillStartButton.title);
 }
 
@@ -738,7 +1141,7 @@ function updateDrillAufControls() {
   const active = supported && mode !== "none";
 
   if (state.drill.aufMode !== mode) saveDrillAufMode(mode);
-  elements.drillRandomAufButton.textContent = supported ? `AUF: ${DRILL_AUF_LABELS[mode]}` : "AUF: 미지원";
+  elements.drillRandomAufButton.textContent = supported ? `AUF: ${drillAufLabel(mode)}` : `AUF: ${t("unsupported")}`;
   elements.drillRandomAufButton.disabled = !supported;
   elements.drillRandomAufButton.classList.toggle("is-active", active);
   elements.drillRandomAufButton.setAttribute("aria-pressed", active ? "true" : "false");
@@ -774,32 +1177,32 @@ function renderDrill() {
   updateDrillAufControls();
 
   if (state.drill.mode === "recap") {
-    elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} cases`;
+    elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} ${t("caseCount")}`;
   } else {
-    elements.drillProgress.textContent = `Train · ${state.drill.source.length} cases`;
+    elements.drillProgress.textContent = `Train · ${state.drill.source.length} ${t("caseCount")}`;
   }
 
   if (state.drill.completed) {
-    elements.drillSetupText.textContent = "드릴 완료";
+    elements.drillSetupText.textContent = t("drillComplete");
     elements.drillShowAnswerButton.disabled = true;
-    elements.drillHintText.textContent = "Space 또는 터치로 다시 섞기";
+    elements.drillHintText.textContent = t("drillShuffleHint");
   } else {
     elements.drillSetupText.textContent = state.drill.currentSetup;
     elements.drillShowAnswerButton.disabled = false;
-    elements.drillHintText.textContent = state.drill.timerStatus === "running" ? "Space 또는 터치로 정지" : "Space 또는 터치";
+    elements.drillHintText.textContent = state.drill.timerStatus === "running" ? t("drillStopHint") : t("drillStartHint");
   }
 
   updateDrillTimerDisplay();
   elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
   elements.drillHistoryPanel.classList.toggle("is-expanded", state.drill.historyExpanded);
-  elements.drillToggleHistoryButton.textContent = state.drill.historyExpanded ? "기록 닫기" : "기록 세부";
+  elements.drillToggleHistoryButton.textContent = state.drill.historyExpanded ? t("closeRecords") : t("recordDetails");
   elements.drillToggleHistoryButton.setAttribute("aria-expanded", state.drill.historyExpanded ? "true" : "false");
   if (document.activeElement !== elements.drillMinResultSecondsInput) {
     elements.drillMinResultSecondsInput.value = state.drill.minResultSeconds.toFixed(1);
   }
   const minSeconds = roundedDrillMinResultSeconds() ?? state.drill.minResultSeconds;
   const matchingResultCount = drillResultsAtLeast(minSeconds).length;
-  elements.drillSelectResultsByTimeButton.textContent = `선택 · ${matchingResultCount}/${state.drill.results.length}`;
+  elements.drillSelectResultsByTimeButton.textContent = `${t("selection")} · ${matchingResultCount}/${state.drill.results.length}`;
   elements.drillMinResultSecondsInput.disabled = state.drill.timerStatus === "running";
   elements.drillSelectResultsByTimeButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   elements.drillRestoreSelectionButton.disabled = state.drill.timerStatus === "running" || !state.drill.selectionRestoreSnapshot;
@@ -812,7 +1215,7 @@ function renderDrill() {
 function startDrill({ clearResults = true } = {}) {
   const source = selectedDrillCases();
   if (!source.length) {
-    window.alert("케이스를 선택하세요.");
+    window.alert(t("selectCases"));
     return;
   }
   const queue = state.drill.mode === "recap"
@@ -998,7 +1401,7 @@ function selectDrillResultsByTime() {
   if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
   const seconds = roundedDrillMinResultSeconds();
   if (seconds === null) {
-    window.alert("최소 시간을 0.0초 이상으로 입력하세요.");
+    window.alert(t("invalidMinimumTime"));
     return;
   }
 
@@ -1072,8 +1475,8 @@ function updateSidebarLayout() {
   document.documentElement.style.setProperty("--sidebar-width", `${state.sidebarWidth}px`);
   document.body.classList.toggle("sidebar-closed", state.isHomeView || !state.sidebarOpen);
   elements.sidebarOpenButton.setAttribute("aria-expanded", state.sidebarOpen ? "true" : "false");
-  elements.sidebarOpenButton.setAttribute("aria-label", state.sidebarOpen ? "패널 닫기" : "패널 열기");
-  elements.sidebarOpenButton.title = state.sidebarOpen ? "패널 닫기" : "패널 열기";
+  elements.sidebarOpenButton.setAttribute("aria-label", state.sidebarOpen ? t("closePanel") : t("openPanel"));
+  elements.sidebarOpenButton.title = state.sidebarOpen ? t("closePanel") : t("openPanel");
 }
 
 
@@ -1127,9 +1530,9 @@ function updateFilterMenuButtons() {
     bookmark: state.bookmarkFilters.size,
   };
   const labels = {
-    group: "group",
-    recognition: "recog",
-    bookmark: "bookmark",
+    group: t("group"),
+    recognition: t("recog"),
+    bookmark: t("bookmark"),
   };
   for (const button of elements.filterMenuButtons) {
     const type = button.dataset.filterMenu;
@@ -1439,18 +1842,23 @@ function exportJsonForMode() {
 }
 
 
-function updateExportPanel() {
+function updateExportPanelText() {
   const isAllEdits = state.exportMode === "allEdits";
   const isEdits = state.exportMode === "edits";
-  elements.exportPanelTitle.textContent = isAllEdits ? "수정 json" : (isEdits ? "편집분만 출력" : "cases.json 출력");
+  elements.exportPanelTitle.textContent = isAllEdits ? t("allJsonEditsTitle") : (isEdits ? t("editsOnlyTitle") : t("fullJsonTitle"));
   elements.exportPanelDescription.textContent = isAllEdits
-    ? "모든 해법에서 브라우저에 저장된 수정 내용만 모은 결과입니다."
+    ? t("allJsonEditsDescription")
     : isEdits
-    ? "브라우저에 저장된 편집 케이스만 모은 결과입니다."
-    : "브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.";
+    ? t("editsOnlyDescription")
+    : t("fullJsonDescription");
   elements.exportFullButton.parentElement.hidden = isAllEdits;
   elements.exportFullButton.classList.toggle("is-active", !isEdits && !isAllEdits);
   elements.exportEditsButton.classList.toggle("is-active", isEdits);
+}
+
+
+function updateExportPanel() {
+  updateExportPanelText();
   elements.exportJsonText.value = JSON.stringify(exportJsonForMode(), null, 2);
   elements.exportPanel.hidden = false;
   elements.exportJsonText.focus();
@@ -1568,7 +1976,7 @@ function renderDatasetOptions() {
     const name = document.createElement("strong");
     name.textContent = algset.name || key;
     const meta = document.createElement("span");
-    meta.textContent = `${algset.puzzle || "FTO"} · ${cases.length}개`;
+    meta.textContent = `${algset.puzzle || "FTO"} · ${cases.length} ${t("caseCount")}`;
 
     const preview = document.createElement("div");
     preview.className = "dataset-choice-preview";
@@ -1576,7 +1984,7 @@ function renderDatasetOptions() {
       preview.innerHTML = previewCase.svg;
     } else {
       preview.classList.add("is-missing");
-      preview.textContent = "이미지없음";
+      preview.textContent = t("noImage");
     }
 
     const textBlock = document.createElement("div");
@@ -1663,7 +2071,7 @@ function renderPresetShortcuts() {
     const name = document.createElement("strong");
     name.textContent = shortcut.presetName;
     const meta = document.createElement("span");
-    meta.textContent = `${shortcut.puzzle} · ${shortcut.datasetName} · ${shortcut.selectedCount} cases`;
+    meta.textContent = `${shortcut.puzzle} · ${shortcut.datasetName} · ${shortcut.selectedCount} ${t("caseCount")}`;
     text.append(name, meta);
 
     button.append(icon, text);
@@ -1698,6 +2106,23 @@ elements.datasetSelect.addEventListener("change", (event) => {
 
 elements.homeButton.addEventListener("click", () => {
   showHomeView();
+});
+
+elements.languageButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  toggleLanguageMenu();
+});
+
+elements.languagePopover.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-language]");
+  if (!button) return;
+  event.stopPropagation();
+  const nextLanguage = button.dataset.language;
+  if (!LANGUAGES.has(nextLanguage)) return;
+  state.language = nextLanguage;
+  saveJson("language", state.language);
+  applyLanguage();
+  closeLanguageMenu();
 });
 
 elements.homeSettingsButton.addEventListener("click", (event) => {
@@ -1751,6 +2176,8 @@ for (const button of elements.filterMenuButtons) {
 }
 
 document.addEventListener("click", (event) => {
+  if (event.target instanceof Element && event.target.closest(".language-wrapper")) return;
+  closeLanguageMenu();
   if (event.target instanceof Element && event.target.closest(".home-settings-wrapper")) return;
   closeHomeSettings();
   if (event.target instanceof Element && event.target.closest(".filter-menu")) return;
@@ -1802,11 +2229,11 @@ for (const button of elements.viewModeButtons) {
 }
 
 elements.saveSelectedPresetButton.addEventListener("click", () => {
-  saveSelectionPresetFromIds([...state.selectedCards], "선택된 공식이 없습니다.");
+  saveSelectionPresetFromIds([...state.selectedCards], t("noSelectedAlgorithms"));
 });
 
 elements.saveFilteredPresetButton.addEventListener("click", () => {
-  saveSelectionPresetFromIds(visibleCases().map((item) => item.id), "필터 결과에 보이는 공식이 없습니다.");
+  saveSelectionPresetFromIds(visibleCases().map((item) => item.id), t("noFilteredAlgorithms"));
 });
 
 elements.favoritePresetList.addEventListener("click", (event) => {
@@ -1818,7 +2245,7 @@ elements.favoritePresetList.addEventListener("click", (event) => {
   if (!preset) return;
 
   if (button.dataset.presetAction === "delete") {
-    if (!window.confirm(`"${preset.name}" 프리셋을 삭제할까요?`)) return;
+    if (!window.confirm(t("deletePresetConfirm").replace("{name}", preset.name))) return;
     state.selectionPresets = state.selectionPresets.filter((entry) => entry.id !== preset.id);
     if (state.activeSelectionPresetId === preset.id) state.activeSelectionPresetId = "";
     saveSelectionPresets();
@@ -2037,7 +2464,7 @@ elements.downloadJsonButton.addEventListener("click", () => {
 });
 
 elements.resetJsonButton.addEventListener("click", () => {
-  if (!window.confirm("브라우저에 저장된 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.")) return;
+  if (!window.confirm(t("resetJsonConfirm"))) return;
   resetSavedJsonEdits();
 });
 
@@ -2109,28 +2536,28 @@ function handleCaseAction(event) {
     moveUpButton.type = "button";
     moveUpButton.dataset.direction = "up";
     moveUpButton.textContent = "↑";
-    moveUpButton.setAttribute("aria-label", "알고리즘 위로 이동");
-    moveUpButton.title = "알고리즘 위로 이동";
+    moveUpButton.setAttribute("aria-label", t("moveAlgorithmUp"));
+    moveUpButton.title = t("moveAlgorithmUp");
 
     const moveDownButton = document.createElement("button");
     moveDownButton.className = "move-algorithm-button move-algorithm-down-button icon-button";
     moveDownButton.type = "button";
     moveDownButton.dataset.direction = "down";
     moveDownButton.textContent = "↓";
-    moveDownButton.setAttribute("aria-label", "알고리즘 아래로 이동");
-    moveDownButton.title = "알고리즘 아래로 이동";
+    moveDownButton.setAttribute("aria-label", t("moveAlgorithmDown"));
+    moveDownButton.title = t("moveAlgorithmDown");
 
     const textarea = document.createElement("textarea");
     textarea.className = "algorithm-editor";
     textarea.rows = 2;
-    textarea.setAttribute("aria-label", "알고리즘 편집");
+    textarea.setAttribute("aria-label", t("editAlgorithm"));
 
     const removeButton = document.createElement("button");
     removeButton.className = "remove-algorithm-button icon-button";
     removeButton.type = "button";
     removeButton.textContent = "×";
-    removeButton.setAttribute("aria-label", "알고리즘 삭제");
-    removeButton.title = "알고리즘 삭제";
+    removeButton.setAttribute("aria-label", t("deleteAlgorithm"));
+    removeButton.title = t("deleteAlgorithm");
 
     row.append(moveUpButton, moveDownButton, textarea, removeButton);
     list.insertBefore(row, card.querySelector(".edit-actions"));
@@ -2244,9 +2671,9 @@ document.addEventListener("keydown", (event) => {
     moveSelectedCase(1);
   }
 });
-const datasetKeys = renderDatasetOptions();
 applyAccentTheme();
-updateSidebarLayout();
+applyLanguage();
+const datasetKeys = renderDatasetOptions();
 updateViewModeButtons();
 if (datasetKeys.length) {
   const lastKey = loadJson("lastBundledDataset", datasetKeys[0]);
