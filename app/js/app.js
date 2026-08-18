@@ -28,6 +28,10 @@ const DRILL_AUF_FIXED_MOVES = {
   u2: "U2",
 };
 
+function isDrillCompactLayout() {
+  return window.matchMedia("(max-width: 720px)").matches;
+}
+
 function initialViewMode() {
   const saved = loadJson("viewModeV3", "");
   if (VIEW_MODES.has(saved)) return saved;
@@ -95,16 +99,17 @@ const elements = {
   drillSetupText: document.getElementById("drillSetupText"),
   drillMain: document.getElementById("drillMain"),
   drillResizeHandle: document.getElementById("drillResizeHandle"),
+  drillHistoryPanel: document.querySelector(".drill-history-panel"),
   drillTimerText: document.getElementById("drillTimerText"),
   drillHintText: document.getElementById("drillHintText"),
   drillTimesText: document.getElementById("drillTimesText"),
   drillClearResultsButton: document.getElementById("drillClearResultsButton"),
+  drillToggleHistoryButton: document.getElementById("drillToggleHistoryButton"),
   drillMinResultSecondsInput: document.getElementById("drillMinResultSecondsInput"),
   drillSelectResultsByTimeButton: document.getElementById("drillSelectResultsByTimeButton"),
   drillRestoreSelectionButton: document.getElementById("drillRestoreSelectionButton"),
   drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
-  drillNextButton: document.getElementById("drillNextButton"),
   drillUndoButton: document.getElementById("drillUndoButton"),
   drillCloseButton: document.getElementById("drillCloseButton"),
 };
@@ -151,6 +156,7 @@ const state = {
     elapsedMs: 0,
     displayMs: 0,
     results: [],
+    historyExpanded: !isDrillCompactLayout(),
     minResultSeconds: normalizeDrillMinResultSeconds(loadJson("drillMinResultSeconds", 0.5)),
     selectionRestoreSnapshot: null,
     tickHandle: 0,
@@ -661,6 +667,10 @@ function renderDrillResults() {
     row.className = "drill-result-row";
     const body = document.createElement("div");
     body.className = "drill-result-body";
+    body.dataset.resultDetailId = result.id;
+    body.tabIndex = 0;
+    body.setAttribute("role", "button");
+    body.setAttribute("aria-label", `${result.caseName} 기록 세부 보기`);
     const top = document.createElement("div");
     top.className = "drill-result-top";
     const order = document.createElement("span");
@@ -675,11 +685,6 @@ function renderDrillResults() {
     top.append(order, name, time);
     body.append(top, setup);
 
-    const detailButton = document.createElement("button");
-    detailButton.className = "drill-detail-button";
-    detailButton.type = "button";
-    detailButton.dataset.resultId = result.id;
-    detailButton.textContent = "세부";
     const excludeButton = document.createElement("button");
     excludeButton.className = "drill-exclude-result-button";
     excludeButton.type = "button";
@@ -690,12 +695,12 @@ function renderDrillResults() {
     deleteButton.className = "drill-delete-result-button";
     deleteButton.type = "button";
     deleteButton.dataset.resultDeleteId = result.id;
-    deleteButton.textContent = "x";
+    deleteButton.textContent = "삭제";
     deleteButton.setAttribute("aria-label", "기록 삭제");
     deleteButton.title = "기록 삭제";
     const actions = document.createElement("div");
     actions.className = "drill-result-actions";
-    actions.append(detailButton, excludeButton, deleteButton);
+    actions.append(excludeButton, deleteButton);
 
     row.append(body, actions);
     elements.drillResultList.append(row);
@@ -777,17 +782,18 @@ function renderDrill() {
   if (state.drill.completed) {
     elements.drillSetupText.textContent = "드릴 완료";
     elements.drillShowAnswerButton.disabled = true;
-    elements.drillNextButton.textContent = "다시 섞기";
     elements.drillHintText.textContent = "Space 또는 터치로 다시 섞기";
   } else {
     elements.drillSetupText.textContent = state.drill.currentSetup;
     elements.drillShowAnswerButton.disabled = false;
-    elements.drillNextButton.textContent = "스킵";
     elements.drillHintText.textContent = state.drill.timerStatus === "running" ? "Space 또는 터치로 정지" : "Space 또는 터치";
   }
 
   updateDrillTimerDisplay();
   elements.drillTimesText.textContent = `Times ${state.drill.results.length}`;
+  elements.drillHistoryPanel.classList.toggle("is-expanded", state.drill.historyExpanded);
+  elements.drillToggleHistoryButton.textContent = state.drill.historyExpanded ? "기록 닫기" : "기록 세부";
+  elements.drillToggleHistoryButton.setAttribute("aria-expanded", state.drill.historyExpanded ? "true" : "false");
   if (document.activeElement !== elements.drillMinResultSecondsInput) {
     elements.drillMinResultSecondsInput.value = state.drill.minResultSeconds.toFixed(1);
   }
@@ -819,6 +825,7 @@ function startDrill({ clearResults = true } = {}) {
   state.drill.index = 0;
   resetDrillTimer();
   if (clearResults) state.drill.results = [];
+  state.drill.historyExpanded = !isDrillCompactLayout();
   state.drill.selectionRestoreSnapshot = null;
   state.drill.completed = false;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
@@ -868,16 +875,6 @@ function moveToNextDrillCase({ preserveTimerDisplay = false } = {}) {
   }
   resetDrillTimer({ preserveDisplay: preserveTimerDisplay });
   renderDrill();
-}
-
-
-function skipDrillCase() {
-  if (!state.drill.active) return;
-  if (state.drill.completed) {
-    startDrill({ clearResults: false });
-    return;
-  }
-  moveToNextDrillCase();
 }
 
 
@@ -1898,10 +1895,6 @@ elements.drillCloseButton.addEventListener("click", () => {
   closeDrill();
 });
 
-elements.drillNextButton.addEventListener("click", () => {
-  skipDrillCase();
-});
-
 elements.drillShowAnswerButton.addEventListener("click", () => {
   toggleDrillAnswer();
 });
@@ -1913,6 +1906,11 @@ elements.drillMain.addEventListener("pointerup", (event) => {
 
 elements.drillUndoButton.addEventListener("click", () => {
   undoDrillResult();
+});
+
+elements.drillToggleHistoryButton.addEventListener("click", () => {
+  state.drill.historyExpanded = !state.drill.historyExpanded;
+  renderDrill();
 });
 
 elements.drillClearResultsButton.addEventListener("click", () => {
@@ -1947,9 +1945,17 @@ elements.drillResultList.addEventListener("click", (event) => {
     if (removeCaseFromSelection(excludeButton.dataset.resultExcludeCaseId)) render();
     return;
   }
-  const button = event.target.closest(".drill-detail-button");
-  if (!button) return;
-  showDrillResultDetail(button.dataset.resultId);
+  const detailBody = event.target.closest("[data-result-detail-id]");
+  if (!detailBody) return;
+  showDrillResultDetail(detailBody.dataset.resultDetailId);
+});
+
+elements.drillResultList.addEventListener("keydown", (event) => {
+  if (!["Enter", " "].includes(event.key)) return;
+  const detailBody = event.target.closest("[data-result-detail-id]");
+  if (!detailBody) return;
+  event.preventDefault();
+  showDrillResultDetail(detailBody.dataset.resultDetailId);
 });
 
 elements.sidebarOpenButton.addEventListener("click", () => {

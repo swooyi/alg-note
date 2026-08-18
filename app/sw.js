@@ -1,8 +1,7 @@
-const CACHE_NAME = "alg-note-v14";
+const CACHE_NAME = "alg-note-v27";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./favicon.svg",
   "./icon-192.png",
   "./icon-512.png",
   "./manifest.webmanifest",

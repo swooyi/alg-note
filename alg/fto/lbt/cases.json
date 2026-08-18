@@ -345,8 +345,8 @@
       "name": "IS13",
       "group": "in-slot",
       "algorithms": [
-        "F' L' R U' R' U L R' F R",
-        "Uo' F BL R D R' D' BL' F' (Uo)"
+        "F' L' /R U' R' U /L R' F R",
+        "L U' H U / R' L R L"
       ],
       "scramble": "B L B' U' L R' L' R U L'",
       "scrambles": [
@@ -375,8 +375,8 @@
       "name": "IS14",
       "group": "in-slot",
       "algorithms": [
-        "F' BR' L' D' L D BR F",
-        "R F U L' R' L R U' F' R'"
+        "R F U / L' R' L R/  U' F' R'",
+        "F' BR' L' D' L D BR F"
       ],
       "scramble": "L U R' L R L' U' B L B' L",
       "scrambles": [
@@ -465,7 +465,7 @@
       "name": "IS17",
       "group": "in-slot",
       "algorithms": [
-        "R' L' R U L' B L B' U' L"
+        "R' L' R U {Uo'} S U' R"
       ],
       "scramble": "L' U B L' B' L U' R' L R",
       "scrambles": [
@@ -485,7 +485,7 @@
       "name": "IS18",
       "group": "in-slot",
       "algorithms": [
-        "Uo' L R L' U' R B' R' B U R' (Uo)"
+        "{Uo'} L R L' U' / H / U R'"
       ],
       "scramble": "L U' R' L R L' U B L' B'",
       "scrambles": [
@@ -549,7 +549,7 @@
       "name": "IS22",
       "group": "in-slot",
       "algorithms": [
-        "R F' L' R U' R' U L R' F"
+        "R F' L' / R U' R' U /  L R' F"
       ],
       "scramble": "R' U B L B' U L R' L' R U' L' U' R",
       "scrambles": [

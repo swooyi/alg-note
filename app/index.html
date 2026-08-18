@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-title" content="ALG note">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="./icon-192.png">
+  <link rel="icon" href="./icon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icon-512.png">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -21,6 +21,7 @@
         <button id="sidebarOpenButton" class="sidebar-icon-button" type="button" aria-controls="appSidebar" aria-expanded="true" aria-label="패널 닫기" title="패널">
           <span class="panel-icon" aria-hidden="true"></span>
         </button>
+        <img class="app-title-icon" src="./icon-512.png" alt="" aria-hidden="true">
         <div>
           <h1>swooyi's ALG note</h1>
           <p id="datasetLabel"></p>
@@ -193,7 +194,7 @@
             <span id="drillTimesText">Times 0</span>
             <div class="drill-history-actions">
               <button id="drillUndoButton" type="button">직전 취소</button>
-              <button id="drillNextButton" type="button">스킵</button>
+              <button id="drillToggleHistoryButton" type="button" aria-expanded="false">기록 세부</button>
               <button id="drillClearResultsButton" class="drill-clear-results-button" type="button">전체 삭제</button>
             </div>
           </div>

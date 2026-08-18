@@ -142,6 +142,18 @@ textarea {
   min-width: 0;
 }
 
+.app-title-icon {
+  display: none;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 8px;
+}
+
+.is-home-view .app-title-icon {
+  display: block;
+}
+
 h1,
 h2,
 h3,
@@ -1281,6 +1293,16 @@ h1 {
   white-space: nowrap;
 }
 
+.drill-clear-results-button {
+  border-color: #f0c7c7;
+  background: #fff;
+  color: #b42318;
+}
+
+.drill-history-panel.is-expanded .drill-clear-results-button {
+  order: -1;
+}
+
 .drill-result-filter {
   display: grid;
   grid-template-columns: auto 72px auto auto auto minmax(76px, 1fr);
@@ -1312,6 +1334,12 @@ h1 {
   min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.drill-history-panel:not(.is-expanded) .drill-result-filter,
+.drill-history-panel:not(.is-expanded) .drill-clear-results-button,
+.drill-history-panel:not(.is-expanded) .drill-result-row:nth-child(n + 2) {
+  display: none;
 }
 
 .drill-result-empty {
@@ -1348,6 +1376,13 @@ h1 {
   display: grid;
   gap: 4px;
   min-width: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.drill-result-body:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .drill-result-top {
@@ -1382,12 +1417,6 @@ h1 {
   font-weight: 800;
 }
 
-.drill-detail-button {
-  min-height: 30px;
-  padding: 0 10px;
-  white-space: nowrap;
-}
-
 .drill-clear-results-button,
 .drill-exclude-result-button,
 .drill-delete-result-button {
@@ -1398,6 +1427,7 @@ h1 {
 
 .drill-delete-result-button {
   border-color: #f0c7c7;
+  background: #fff;
   color: #b42318;
 }
 
@@ -2752,6 +2782,7 @@ main {
 
   .drill-body {
     grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
     overflow: hidden;
   }
 
@@ -2774,9 +2805,22 @@ main {
   }
 
   .drill-history-panel {
-    max-height: 260px;
+    max-height: 144px;
     min-height: 0;
     overflow: hidden;
+    gap: 8px;
+    padding: 10px;
+    transition: max-height 180ms ease;
+  }
+
+  .drill-history-panel.is-expanded {
+    max-height: 420px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drill-history-panel {
+      transition: none;
+    }
   }
 
   .drill-result-filter {
@@ -2795,6 +2839,23 @@ main {
   .drill-history-actions button {
     min-height: 28px;
     padding: 0 7px;
+    font-size: 12px;
+  }
+
+  .drill-result-row {
+    min-height: 56px;
+    gap: 6px;
+    padding: 6px 0;
+  }
+
+  .drill-result-actions {
+    gap: 4px;
+  }
+
+  .drill-exclude-result-button,
+  .drill-delete-result-button {
+    min-height: 28px;
+    padding: 0 8px;
     font-size: 13px;
   }
 
