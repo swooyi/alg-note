@@ -36664,7 +36664,7 @@ window.AlgNoteBundledData = {
           "name": "Qc+",
           "group": "q-even",
           "algorithms": [
-            "{Uo} Tc0 U'",
+            "{Uo} Tr0 U' S",
             "[U'] {B,U} U' R' D R' / U R D' R / H'"
           ],
           "scramble": "R B' R' B U' L' B' BR B' L B BR' B",
@@ -36841,8 +36841,8 @@ window.AlgNoteBundledData = {
           "name": "Qb0",
           "group": "q-odd",
           "algorithms": [
-            "[U'] L (R B' R') L' / B U' B' / R' L R /B L'",
-            "[U] {R,U} U' R / BR' /U R' U' R / BR' /U R' U' R / BR' / U R'"
+            "[U'] L (R B' R') L' / B U' / B' (R' L R) B L'",
+            "[U] {R,U} U' R BR' U R' U' R BR' U R' U' R BR' U R'"
           ],
           "scramble": "L R B' R' L' B U' B' R' L R B L'",
           "scrambles": [
@@ -36870,7 +36870,7 @@ window.AlgNoteBundledData = {
           "name": "Qb+",
           "group": "q-odd",
           "algorithms": [
-            "{Br, U} L R U' /  R' L' R L / U R' L'",
+            "{Br, U} L R U' /  R' L' R L U / R' L'",
             "[U] {L,F} U R D R' U' R D' R' U R' U' R"
           ],
           "scramble": "L' B L B R BR B BR' R' B U' B'",
@@ -37038,7 +37038,7 @@ window.AlgNoteBundledData = {
           "name": "Ql0",
           "group": "q-odd",
           "algorithms": [
-            "[U'] {L,U} R U Rw' / R U' R' U / Rw / R' U'"
+            "[U'] {L,U} R U Rw' / R U' R' U R' / Rw U'"
           ],
           "scramble": "R' B BR' B R' U' B U B' R BR B R",
           "scrambles": [
@@ -37074,7 +37074,7 @@ window.AlgNoteBundledData = {
           "name": "Ql+",
           "group": "q-odd",
           "algorithms": [
-            "{Uo} Tl0 U S",
+            "{Uo} U' S U Tl0",
             "[U] {B,BL} U Rw' U' R U R' Rw U' BR U R' U' R"
           ],
           "scramble": "L' B L B' U' B BR' L R' L' R BR B'",
@@ -37558,7 +37558,7 @@ window.AlgNoteBundledData = {
           "name": "Jr-",
           "group": "j-odd",
           "algorithms": [
-            "[U'] {Blo} L' R [U' : S']  L R'\n(U'이후 F면 노랑 - 2,0이 R쪽)",
+            "[U'] {Br,U} L' R / U' S' U /  L R'",
             "[U'] {B,U} U' R BR' U R' U' R BR U R'"
           ],
           "scramble": "R B' BR' R' B R B' BR R' B",
@@ -37691,6 +37691,7 @@ window.AlgNoteBundledData = {
           "name": "Ls0",
           "group": "l-even",
           "algorithms": [
+            "D' Rw' / L R L' H / Rw R' D",
             "R' U' L' R B' R B R' L R' U R",
             "D Rw H S Rw' D'"
           ],
@@ -37788,7 +37789,7 @@ window.AlgNoteBundledData = {
           "name": "Lc0",
           "group": "l-even",
           "algorithms": [
-            "[U] {R,U} Rw' D' R U' R' D R' U R Rw"
+            "[U] {R,U} Rw' D' /R U' R' /D /R' U / Rw R'2"
           ],
           "scramble": "L R' L' R U B' R' U' R' B R B' U R B",
           "scrambles": [
@@ -37807,7 +37808,8 @@ window.AlgNoteBundledData = {
           "name": "Lc+",
           "group": "l-even",
           "algorithms": [
-            "{U,F} Rw' S H Rw S"
+            "Rw' S H Rw S",
+            "[U'] {T2} R L' / U' H' U / R' L"
           ],
           "scramble": "L' R' L' R B BR' R' L R B L B' BR B'",
           "scrambles": [
@@ -37882,7 +37884,7 @@ window.AlgNoteBundledData = {
           "name": "La+",
           "group": "l-even",
           "algorithms": [
-            "{Uo} H' U H' U S'",
+            "{Uo'} S U S U' Hl'",
             "{R,U} U' R U Rw' U' R' D R' U R D' Rw"
           ],
           "scramble": "B L' B' L U' R' L R BR' R L' R' BR",
@@ -37905,6 +37907,7 @@ window.AlgNoteBundledData = {
           "name": "La-",
           "group": "l-even",
           "algorithms": [
+            "[U'] {Br,U} L' R / U' H U / L R'",
             "[U'] B' BLw U' H U L BLw'",
             "{L,F} U R' U' R BR R U R' U' Rw R' U R U' Rw'"
           ],
@@ -37933,7 +37936,8 @@ window.AlgNoteBundledData = {
           "name": "Lb0",
           "group": "l-odd",
           "algorithms": [
-            "{U,BL} R U' R' L R' L' R B' R B U R'"
+            "{Uo'} R U' / B' R' B / S / R U R'",
+            "{Uo'} R U' R' L R' L' R B' R B U R'"
           ],
           "scramble": "L U' R' L' R L' B L B' L U L'",
           "scrambles": [
@@ -37967,6 +37971,7 @@ window.AlgNoteBundledData = {
           "name": "Lb+",
           "group": "l-odd",
           "algorithms": [
+            "[U'] L Bl' H Bl L'",
             "[U'] {L,F} U Rw' R U' R' U Rw U'"
           ],
           "scramble": "B' L' U' B' L' B L U L B",
@@ -37998,7 +38003,7 @@ window.AlgNoteBundledData = {
           "name": "Lb-",
           "group": "l-odd",
           "algorithms": [
-            "[U'] {U,BR} H' U' S"
+            "{Uo} U' H' / U' S"
           ],
           "scramble": "R B' R' B U B L' B' L",
           "scrambles": [
@@ -38033,7 +38038,9 @@ window.AlgNoteBundledData = {
           "name": "Lr0",
           "group": "l-odd",
           "algorithms": [
-            "{R,BR} Rw' R U R' U' Rw BR Rw' U R U' R' Rw"
+            "U' D' {L,U} R U' R' / D / R' U R / D' B (왼손 중지로)",
+            "{R,BR} Rw' R U R' U' Rw BR Rw' U R U' R' Rw",
+            "R B'  /BR' R' BR B /R' U R / B' R B R'  (S나 Z 섞여있음)\n{Br,U} R L'  /U' R' U L / Blw' U R H'"
           ],
           "scramble": "R B' R' B R' U' R B' BR' R BR B R'",
           "scrambles": [
@@ -38068,7 +38075,7 @@ window.AlgNoteBundledData = {
           "name": "Lr+",
           "group": "l-odd",
           "algorithms": [
-            "[U'] {U,F} S' U' H"
+            "U' S' / U' H"
           ],
           "scramble": "B' R B R' U R' L R L'",
           "scrambles": [
@@ -38102,6 +38109,7 @@ window.AlgNoteBundledData = {
           "name": "Lr-",
           "group": "l-odd",
           "algorithms": [
+            "[U] {T2} L' R / U S' U' / L R'",
             "[U] {R,U} U' R BR U R' U' R BR' U R'"
           ],
           "scramble": "R B' BR' B R' U R BR' R' B U' B'",
@@ -38136,7 +38144,7 @@ window.AlgNoteBundledData = {
           "name": "Ll0",
           "group": "l-odd",
           "algorithms": [
-            "[U'] {U,F} S' U' S"
+            "U' S' U' S"
           ],
           "scramble": "L R' L' R U R' L R L'",
           "scrambles": [
@@ -38165,6 +38173,7 @@ window.AlgNoteBundledData = {
           "name": "Ll+",
           "group": "l-odd",
           "algorithms": [
+            "U {Bl,U} R L' / U S U' / R' L",
             "[U] {L,U} R U' BR R' U R U' BR' R' U"
           ],
           "scramble": "R B' R' B U' B' R B R' U' L R' L' R",
@@ -38197,6 +38206,7 @@ window.AlgNoteBundledData = {
           "name": "Ll-",
           "group": "l-odd",
           "algorithms": [
+            "[U'] Hw' H' Rs",
             "[U'] {B,U} U' R U Rw' U' R U Rw R2'"
           ],
           "scramble": "B' R BR R L R' BR' B R' B' L' B",
@@ -38954,7 +38964,7 @@ window.AlgNoteBundledData = {
           "name": "Bb-",
           "group": "b-odd",
           "algorithms": [
-            "U S / x' R U' Br' S Br U R'",
+            "U S / {Br,U} R L' U' S U L R'",
             "S U Rw' R B' R B R2' Rw"
           ],
           "scramble": "BL' B L R' L' R' B' BL R' U' L R' L' R",

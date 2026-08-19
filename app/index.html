@@ -30,11 +30,11 @@
       <div class="header-actions">
         <button id="homeButton" class="home-button home-icon-button" type="button" aria-label="홈" title="홈" data-i18n-attr="aria-label:title" data-i18n="home">⌂</button>
         <div class="language-wrapper">
-          <button id="languageButton" class="language-button" type="button" aria-haspopup="true" aria-expanded="false">한국어</button>
+          <button id="languageButton" class="language-button" type="button" aria-haspopup="true" aria-expanded="false"><img class="language-icon" src="./images/flag-ko.svg" alt="" aria-hidden="true">한국어</button>
           <div id="languagePopover" class="language-popover" hidden>
-            <button type="button" data-language="ko">한국어</button>
-            <button type="button" data-language="en">English</button>
-            <button type="button" data-language="ja">日本語</button>
+            <button type="button" data-language="ko"><img class="language-icon" src="./images/flag-ko.svg" alt="" aria-hidden="true">한국어</button>
+            <button type="button" data-language="en"><span class="language-icon language-globe" aria-hidden="true">🌐</span>English</button>
+            <button type="button" data-language="ja"><img class="language-icon" src="./images/flag-ja.svg" alt="" aria-hidden="true">日本語</button>
           </div>
         </div>
         <div class="home-settings-wrapper">
@@ -71,6 +71,13 @@
         <h2 data-i18n="selectAlgset">해법 선택</h2>
         <div id="datasetHomeGrid" class="dataset-home-grid"></div>
       </section>
+      <footer class="home-legal-footer">
+        <span>GPL-3.0</span>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/swooyi/alg-note/blob/main/LICENSE" target="_blank" rel="noopener" data-i18n="license">라이선스</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/swooyi/alg-note/blob/main/NOTICE.md" target="_blank" rel="noopener" data-i18n="notices">고지</a>
+      </footer>
     </div>
   </section>
 

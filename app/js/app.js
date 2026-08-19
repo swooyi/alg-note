@@ -19,6 +19,10 @@ const LANGUAGE_NAMES = {
   en: "English",
   ja: "日本語",
 };
+const LANGUAGE_ICON_SOURCES = {
+  ko: "./images/flag-ko.svg",
+  ja: "./images/flag-ja.svg",
+};
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
 const DRILL_AUF_MODES = new Set(["none", "u", "up", "u2", "random"]);
 const DRILL_AUF_LABELS = {
@@ -125,6 +129,8 @@ const UI_LABELS = {
     selection: "선택",
     set: "세트",
     settings: "설정",
+    license: "라이선스",
+    notices: "고지",
     shown: "표시",
     exportMode: "출력 방식",
     home: "홈",
@@ -236,6 +242,8 @@ const UI_LABELS = {
     selection: "Selection",
     set: "Set",
     settings: "Settings",
+    license: "License",
+    notices: "Notices",
     shown: "Shown",
     exportMode: "Export Mode",
     home: "Home",
@@ -347,6 +355,8 @@ const UI_LABELS = {
     selection: "選択",
     set: "セット",
     settings: "設定",
+    license: "ライセンス",
+    notices: "表記",
     shown: "表示",
     exportMode: "出力方式",
     home: "ホーム",
@@ -391,6 +401,15 @@ function initialLanguage() {
 
 function t(key) {
   return UI_LABELS[state.language]?.[key] || UI_LABELS.ko[key] || key;
+}
+
+function formatCaseCount(count) {
+  const value = Number.isFinite(count) ? count : 0;
+  return state.language === "en" ? `${value} ${t("caseCount")}` : `${value}${t("caseCount")}`;
+}
+
+function formatCaseProgress(current, total) {
+  return state.language === "en" ? `${current}/${total} ${t("caseCount")}` : `${current}/${total}${t("caseCount")}`;
 }
 
 function drillAufLabel(mode) {
@@ -532,11 +551,30 @@ function applyAccentTheme() {
   }
 }
 
+function makeLanguageIcon(language) {
+  if (language === "en") {
+    const icon = document.createElement("span");
+    icon.className = "language-icon language-globe";
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "🌐";
+    return icon;
+  }
+
+  const icon = document.createElement("img");
+  icon.className = "language-icon";
+  icon.src = LANGUAGE_ICON_SOURCES[language];
+  icon.alt = "";
+  icon.setAttribute("aria-hidden", "true");
+  return icon;
+}
 
 function applyLanguage() {
   document.documentElement.lang = state.language;
   window.AlgNoteLocale = { language: state.language, labels: UI_LABELS[state.language] };
-  elements.languageButton.textContent = LANGUAGE_NAMES[state.language];
+  elements.languageButton.replaceChildren(
+    makeLanguageIcon(state.language),
+    document.createTextNode(LANGUAGE_NAMES[state.language]),
+  );
 
   for (const option of elements.languageOptions) {
     const active = option.dataset.language === state.language;
@@ -559,6 +597,7 @@ function applyLanguage() {
   updateSidebarLayout();
   updateFilterMenuButtons();
   updateExportPanelText();
+  if (state.isHomeView) renderDatasetOptions();
   if (state.dataset) render();
 }
 
@@ -712,7 +751,7 @@ function renderSelectionPresetOptions() {
     const name = document.createElement("span");
     name.textContent = preset.name;
     const count = document.createElement("strong");
-    count.textContent = `${preset.selectedCards.length} ${t("caseCount")}`;
+    count.textContent = formatCaseCount(preset.selectedCards.length);
     const text = document.createElement("span");
     text.className = "preset-file-text";
     text.append(name, count);
@@ -1177,9 +1216,9 @@ function renderDrill() {
   updateDrillAufControls();
 
   if (state.drill.mode === "recap") {
-    elements.drillProgress.textContent = `Recap · ${Math.min(state.drill.index + 1, total)}/${total} ${t("caseCount")}`;
+    elements.drillProgress.textContent = `Recap · ${formatCaseProgress(Math.min(state.drill.index + 1, total), total)}`;
   } else {
-    elements.drillProgress.textContent = `Train · ${state.drill.source.length} ${t("caseCount")}`;
+    elements.drillProgress.textContent = `Train · ${formatCaseCount(state.drill.source.length)}`;
   }
 
   if (state.drill.completed) {
@@ -1976,7 +2015,7 @@ function renderDatasetOptions() {
     const name = document.createElement("strong");
     name.textContent = algset.name || key;
     const meta = document.createElement("span");
-    meta.textContent = `${algset.puzzle || "FTO"} · ${cases.length} ${t("caseCount")}`;
+    meta.textContent = `${algset.puzzle || "FTO"} · ${formatCaseCount(cases.length)}`;
 
     const preview = document.createElement("div");
     preview.className = "dataset-choice-preview";
@@ -1997,6 +2036,7 @@ function renderDatasetOptions() {
     if (!puzzleSections.has(puzzle)) {
       const section = document.createElement("section");
       section.className = "dataset-puzzle-section";
+      section.dataset.puzzle = puzzle;
 
       const title = document.createElement("h3");
       title.className = "dataset-puzzle-title";
@@ -2071,7 +2111,7 @@ function renderPresetShortcuts() {
     const name = document.createElement("strong");
     name.textContent = shortcut.presetName;
     const meta = document.createElement("span");
-    meta.textContent = `${shortcut.puzzle} · ${shortcut.datasetName} · ${shortcut.selectedCount} ${t("caseCount")}`;
+    meta.textContent = `${shortcut.puzzle} · ${shortcut.datasetName} · ${formatCaseCount(shortcut.selectedCount)}`;
     text.append(name, meta);
 
     button.append(icon, text);

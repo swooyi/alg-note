@@ -301,7 +301,7 @@ h1 {
 
 .language-button {
   display: none;
-  min-width: 86px;
+  min-width: 108px;
   padding: 0 10px;
   font-weight: 750;
 }
@@ -310,6 +310,20 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
+}
+
+.language-icon {
+  display: inline-block;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.language-globe {
+  font-size: 16px;
+  line-height: 18px;
 }
 
 .language-popover {
@@ -319,7 +333,7 @@ h1 {
   z-index: 50;
   display: grid;
   gap: 6px;
-  width: 132px;
+  width: 150px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -332,6 +346,9 @@ h1 {
 }
 
 .language-popover button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   justify-content: flex-start;
   width: 100%;
   text-align: left;
@@ -440,6 +457,26 @@ h1 {
 .home-section h2 {
   font-size: 16px;
   font-weight: 850;
+}
+
+.home-legal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  padding-top: 4px;
+}
+
+.home-legal-footer a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.home-legal-footer a:hover {
+  color: var(--accent);
 }
 
 .preset-shortcut-section {
@@ -574,6 +611,16 @@ h1 {
 .dataset-choice-preview svg {
   max-width: 74px;
   max-height: 74px;
+}
+
+.dataset-puzzle-section[data-puzzle="3x3"] .dataset-choice-preview svg {
+  max-width: 59px;
+  max-height: 59px;
+}
+
+.dataset-choice-button[data-dataset-key="zbll"] .dataset-choice-preview svg {
+  max-width: 53px;
+  max-height: 53px;
 }
 
 .dataset-choice-text {
@@ -1895,12 +1942,18 @@ main {
 }
 
 .case-card.is-list-card .case-title-text,
-.case-card.is-list-card .scramble,
-.case-card.is-list-card .algorithm-list li {
+.case-card.is-list-card .scramble {
   overflow: visible;
   overflow-wrap: anywhere;
   text-overflow: clip;
   white-space: normal;
+}
+
+.case-card.is-list-card .algorithm-list li {
+  overflow: visible;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+  white-space: pre-wrap;
 }
 
 .case-card.is-list-card .case-meta,
@@ -2263,6 +2316,11 @@ main {
   line-height: 1.45;
 }
 
+.algorithm-list li {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
 .setup-editor,
 .algorithm-editor {
   font-family: "Pretendard", Consolas, "Courier New", monospace;
@@ -2602,6 +2660,16 @@ main {
   .dataset-choice-preview svg {
     max-width: 58px;
     max-height: 58px;
+  }
+
+  .dataset-puzzle-section[data-puzzle="3x3"] .dataset-choice-preview svg {
+    max-width: 46px;
+    max-height: 46px;
+  }
+
+  .dataset-choice-button[data-dataset-key="zbll"] .dataset-choice-preview svg {
+    max-width: 41px;
+    max-height: 41px;
   }
 
   .toolbar {
