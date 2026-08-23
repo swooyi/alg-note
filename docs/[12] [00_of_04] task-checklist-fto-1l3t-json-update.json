@@ -1,0 +1,56 @@
+{
+  "target_file": "C:\\dev\\alg-note\\alg\\fto\\1l3t\\cases.json; C:\\dev\\alg-note\\app\\js\\data.js",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Merge the 69 supplied FTO 1L3T case edits, rebuild the application data bundle, validate, then publish the current branch.",
+  "assumptions": [
+    "For matching case IDs, apply only algorithms, scramble, and tags.recognition from the supplied cases.",
+    "Preserve case identity, group, svgId, scrambles, and other metadata."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_merge_supplied_case_edits",
+      "order": 1,
+      "title": "Merge supplied 1L3T case edits",
+      "check": false,
+      "targets": "alg/fto/1l3t/cases.json",
+      "allowed_fields": ["algorithms", "scramble", "tags.recognition"],
+      "protected_fields": ["id", "name", "group", "svgId", "scrambles", "other tags", "groups.json", "svgs.json"],
+      "summary": "Match all supplied IDs and apply the edited algorithms, scramble, and recognition values.",
+      "verify": ["Parse JSON successfully.", "Confirm all 69 IDs match before merge.", "Confirm protected fields are unchanged."]
+    },
+    {
+      "id": "02_rebuild_app_data",
+      "order": 2,
+      "title": "Rebuild application data",
+      "check": false,
+      "targets": "app/js/data.js",
+      "allowed_fields": ["generated app data bundle"],
+      "protected_fields": ["other application assets"],
+      "summary": "Regenerate the application bundle from the updated alg JSON.",
+      "verify": ["Run scripts/build_app_data.py.", "Confirm the bundle contains the updated 1L3T case values."]
+    },
+    {
+      "id": "03_validate_data_and_bundle",
+      "order": 3,
+      "title": "Validate data and bundle",
+      "check": false,
+      "targets": "alg/fto/1l3t; app/js/data.js",
+      "allowed_fields": [],
+      "protected_fields": [],
+      "summary": "Validate the source data and generated JavaScript.",
+      "verify": ["Run validate_alg_json.py for alg/fto/1l3t.", "Run node --check for app/js/data.js.", "Inspect representative updated cases."]
+    },
+    {
+      "id": "04_commit_and_push_current_changes",
+      "order": 4,
+      "title": "Commit and push current changes",
+      "check": false,
+      "targets": "main; origin/main",
+      "allowed_fields": ["git index", "local main commit", "origin/main update"],
+      "protected_fields": [],
+      "summary": "Commit the current requested JSON update and publish it to GitHub with the user's advance approval.",
+      "verify": ["Inspect git diff before commit.", "Confirm the push succeeds."]
+    }
+  ]
+}
