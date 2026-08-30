@@ -106,6 +106,17 @@ const UI_LABELS = {
     pinPreset: "프리셋 고정",
     openPanel: "패널 열기",
     presetNamePlaceholder: "저장할 프리셋 이름 입력",
+    presetName: "이름",
+    savePresetChanges: "변경사항 저장",
+    presetChangesConfirm: "다음 변경사항을 저장할까요?\n{changes}",
+    presetChangeName: "이름 변경",
+    presetChangeAdded: "{count}개 추가",
+    presetChangeRemoved: "{count}개 제거",
+    presetStoredCount: "저장됨 {count}개",
+    presetChangeCounts: "변경 +{added} / −{removed}",
+    presetAfterSaveCount: "저장 후 {count}개",
+    addCurrentSelectionCount: "현재 선택 {count}개 추가",
+    removeCurrentSelectionCount: "현재 선택 {count}개 제거",
     presets: "프리셋",
     presetShortcuts: "프리셋 바로가기",
     previousAlgorithm: "이전 공식",
@@ -227,6 +238,17 @@ const UI_LABELS = {
     pinPreset: "Pin Preset",
     openPanel: "Open Panel",
     presetNamePlaceholder: "Preset name",
+    presetName: "Name",
+    savePresetChanges: "Save Changes",
+    presetChangesConfirm: "Save these changes?\n{changes}",
+    presetChangeName: "Rename preset",
+    presetChangeAdded: "Add {count}",
+    presetChangeRemoved: "Remove {count}",
+    presetStoredCount: "Saved {count}",
+    presetChangeCounts: "Changes +{added} / −{removed}",
+    presetAfterSaveCount: "After save {count}",
+    addCurrentSelectionCount: "Add {count} selected",
+    removeCurrentSelectionCount: "Remove {count} selected",
     presets: "Presets",
     presetShortcuts: "Preset Shortcuts",
     previousAlgorithm: "Previous Algorithm",
@@ -348,6 +370,17 @@ const UI_LABELS = {
     pinPreset: "プリセット固定",
     openPanel: "パネルを開く",
     presetNamePlaceholder: "保存するプリセット名",
+    presetName: "名前",
+    savePresetChanges: "変更を保存",
+    presetChangesConfirm: "次の変更を保存しますか？\n{changes}",
+    presetChangeName: "名前を変更",
+    presetChangeAdded: "{count}件追加",
+    presetChangeRemoved: "{count}件削除",
+    presetStoredCount: "保存済み {count}件",
+    presetChangeCounts: "変更 +{added} / −{removed}",
+    presetAfterSaveCount: "保存後 {count}件",
+    addCurrentSelectionCount: "現在の選択 {count}件を追加",
+    removeCurrentSelectionCount: "現在の選択 {count}件を削除",
     presets: "プリセット",
     presetShortcuts: "プリセットショートカット",
     previousAlgorithm: "前の手順",
@@ -492,6 +525,7 @@ const elements = {
   summary: document.getElementById("summary"),
   caseGrid: document.getElementById("caseGrid"),
   caseDetail: document.getElementById("caseDetail"),
+  presetEditModal: document.getElementById("presetEditModal"),
   caseCardTemplate: document.getElementById("caseCardTemplate"),
   drillStartButton: document.getElementById("drillStartButton"),
   drillOverlay: document.getElementById("drillOverlay"),
@@ -546,6 +580,8 @@ const state = {
   edits: new Map(),
   selectionPresets: [],
   activeSelectionPresetId: "",
+  editingSelectionPresetId: "",
+  editingSelectionPresetDraft: null,
   pendingScrollY: null,
   scrollSaveTimer: 0,
   openFilterMenu: "",
@@ -808,28 +844,91 @@ function renderSelectionPresetOptions() {
     deleteButton.title = t("delete");
     deleteButton.textContent = "×";
 
-    const addButton = document.createElement("button");
-    addButton.className = "preset-selection-button";
-    addButton.type = "button";
-    addButton.dataset.presetAction = "add-current-selection";
-    addButton.setAttribute("aria-label", `${preset.name} ${t("addCurrentSelection")}`);
-    addButton.title = t("addCurrentSelection");
-    addButton.textContent = "+";
+    const editButton = document.createElement("button");
+    editButton.className = "preset-edit-button";
+    editButton.type = "button";
+    editButton.dataset.presetAction = "edit";
+    editButton.setAttribute("aria-expanded", state.editingSelectionPresetId === preset.id ? "true" : "false");
+    editButton.textContent = t("edit");
 
-    const removeButton = document.createElement("button");
-    removeButton.className = "preset-selection-button";
-    removeButton.type = "button";
-    removeButton.dataset.presetAction = "remove-current-selection";
-    removeButton.setAttribute("aria-label", `${preset.name} ${t("removeCurrentSelection")}`);
-    removeButton.title = t("removeCurrentSelection");
-    removeButton.textContent = "−";
-
-    item.append(pinButton, applyButton, addButton, removeButton, deleteButton);
+    item.append(pinButton, applyButton, editButton, deleteButton);
     elements.favoritePresetList.append(item);
   }
 
+  renderPresetEditModal();
+
   elements.selectedOnlyButton.classList.toggle("is-active", state.selectedOnly);
   elements.selectedOnlyButton.setAttribute("aria-pressed", state.selectedOnly ? "true" : "false");
+}
+
+
+function renderPresetEditModal() {
+  elements.presetEditModal.replaceChildren();
+  const draft = state.editingSelectionPresetDraft;
+  const preset = state.selectionPresets.find((entry) => entry.id === state.editingSelectionPresetId);
+  if (!draft || !preset || draft.id !== preset.id) {
+    elements.presetEditModal.hidden = true;
+    return;
+  }
+
+  elements.presetEditModal.hidden = false;
+  elements.presetEditModal.dataset.presetId = preset.id;
+
+  const title = document.createElement("h2");
+  title.textContent = `${t("presets")} ${t("edit")}`;
+
+  const closeButton = document.createElement("button");
+  closeButton.className = "preset-edit-close-button";
+  closeButton.type = "button";
+  closeButton.dataset.presetAction = "close-edit";
+  closeButton.setAttribute("aria-label", t("close"));
+  closeButton.textContent = "×";
+
+  const nameLabel = document.createElement("label");
+  nameLabel.className = "preset-edit-name-label";
+  nameLabel.textContent = t("presetName");
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.value = draft.name;
+  nameInput.setAttribute("aria-label", t("presetNamePlaceholder"));
+  nameInput.dataset.presetEditName = "";
+  nameLabel.append(nameInput);
+
+  const { addedCount, removedCount } = presetEditChangeCounts(preset, draft);
+  const caseSummary = document.createElement("p");
+  caseSummary.className = "preset-edit-case-summary";
+  const storedCount = document.createElement("span");
+  storedCount.textContent = t("presetStoredCount").replace("{count}", preset.selectedCards.length);
+  caseSummary.append(storedCount);
+  if (addedCount || removedCount) {
+    const changes = document.createElement("span");
+    changes.textContent = t("presetChangeCounts")
+      .replace("{added}", addedCount)
+      .replace("{removed}", removedCount);
+    const afterSaveCount = document.createElement("span");
+    afterSaveCount.textContent = t("presetAfterSaveCount").replace("{count}", draft.selectedCards.length);
+    caseSummary.append(changes, afterSaveCount);
+  }
+
+  const selectionActions = document.createElement("div");
+  selectionActions.className = "preset-edit-selection-actions";
+  const addButton = document.createElement("button");
+  addButton.type = "button";
+  addButton.dataset.presetAction = "add-current-selection";
+  addButton.textContent = t("addCurrentSelectionCount").replace("{count}", state.selectedCards.size);
+  const removeButton = document.createElement("button");
+  removeButton.type = "button";
+  removeButton.dataset.presetAction = "remove-current-selection";
+  removeButton.textContent = t("removeCurrentSelectionCount").replace("{count}", state.selectedCards.size);
+  selectionActions.append(addButton, removeButton);
+
+  const saveChangesButton = document.createElement("button");
+  saveChangesButton.className = "preset-edit-save-button";
+  saveChangesButton.type = "button";
+  saveChangesButton.dataset.presetAction = "save-changes";
+  saveChangesButton.textContent = t("savePresetChanges");
+
+  elements.presetEditModal.append(title, closeButton, nameLabel, caseSummary, selectionActions, saveChangesButton);
 }
 
 
@@ -838,9 +937,28 @@ function makePresetId() {
 }
 
 
-function hasDuplicatePresetName(name) {
+function hasDuplicatePresetName(name, exceptPresetId = "") {
   const normalized = name.trim().toLocaleLowerCase();
-  return state.selectionPresets.some((preset) => preset.name.trim().toLocaleLowerCase() === normalized);
+  return state.selectionPresets.some((preset) => preset.id !== exceptPresetId && preset.name.trim().toLocaleLowerCase() === normalized);
+}
+
+
+function presetEditChangeSummary(preset, draft) {
+  const { addedCount, removedCount } = presetEditChangeCounts(preset, draft);
+  const changes = [];
+  if (preset.name !== draft.name) changes.push(t("presetChangeName"));
+  if (addedCount) changes.push(t("presetChangeAdded").replace("{count}", addedCount));
+  if (removedCount) changes.push(t("presetChangeRemoved").replace("{count}", removedCount));
+  return changes;
+}
+
+
+function presetEditChangeCounts(preset, draft) {
+  const originalIds = new Set(preset.selectedCards);
+  const editedIds = new Set(draft.selectedCards);
+  const addedCount = [...editedIds].filter((id) => !originalIds.has(id)).length;
+  const removedCount = [...originalIds].filter((id) => !editedIds.has(id)).length;
+  return { addedCount, removedCount };
 }
 
 
@@ -2345,18 +2463,20 @@ elements.saveFilteredPresetButton.addEventListener("click", () => {
   saveSelectionPresetFromIds(visibleCases().map((item) => item.id), t("noFilteredAlgorithms"));
 });
 
-elements.favoritePresetList.addEventListener("click", (event) => {
+function handleSelectionPresetAction(event) {
   const button = event.target.closest("[data-preset-action]");
-  const item = event.target.closest(".preset-item");
-  if (!button || !item) return;
+  const presetNode = event.target.closest("[data-preset-id]");
+  if (!button || !presetNode) return;
 
-  const preset = state.selectionPresets.find((entry) => entry.id === item.dataset.presetId);
+  const preset = state.selectionPresets.find((entry) => entry.id === presetNode.dataset.presetId);
   if (!preset) return;
 
   if (button.dataset.presetAction === "delete") {
     if (!window.confirm(t("deletePresetConfirm").replace("{name}", preset.name))) return;
     state.selectionPresets = state.selectionPresets.filter((entry) => entry.id !== preset.id);
     if (state.activeSelectionPresetId === preset.id) state.activeSelectionPresetId = "";
+    if (state.editingSelectionPresetId === preset.id) state.editingSelectionPresetId = "";
+    if (state.editingSelectionPresetDraft?.id === preset.id) state.editingSelectionPresetDraft = null;
     saveSelectionPresets();
     renderPresetShortcuts();
     render();
@@ -2371,23 +2491,84 @@ elements.favoritePresetList.addEventListener("click", (event) => {
     return;
   }
 
-  if (button.dataset.presetAction === "add-current-selection" || button.dataset.presetAction === "remove-current-selection") {
-    if (!state.selectedCards.size) {
-      window.alert(t("noSelectedAlgorithms"));
+  if (button.dataset.presetAction === "edit") {
+    const willOpen = state.editingSelectionPresetId !== preset.id;
+    state.editingSelectionPresetId = willOpen ? preset.id : "";
+    state.editingSelectionPresetDraft = willOpen
+      ? { id: preset.id, name: preset.name, selectedCards: [...preset.selectedCards] }
+      : null;
+    render();
+    return;
+  }
+
+  if (button.dataset.presetAction === "close-edit") {
+    state.editingSelectionPresetId = "";
+    state.editingSelectionPresetDraft = null;
+    render();
+    return;
+  }
+
+  if (button.dataset.presetAction === "save-changes") {
+    const draft = state.editingSelectionPresetDraft;
+    if (!draft || draft.id !== preset.id) return;
+    const name = draft.name.trim();
+    if (!name) {
+      presetNode.querySelector("[data-preset-edit-name]")?.focus();
       return;
     }
-    const originalIds = preset.selectedCards;
-    preset.selectedCards = button.dataset.presetAction === "add-current-selection"
-      ? [...new Set([...originalIds, ...state.selectedCards])]
-      : originalIds.filter((id) => !state.selectedCards.has(id));
+    if (hasDuplicatePresetName(name, preset.id)) {
+      window.alert(t("duplicatePresetName"));
+      presetNode.querySelector("[data-preset-edit-name]")?.focus();
+      return;
+    }
+    draft.name = name;
+    const changes = presetEditChangeSummary(preset, draft);
+    if (!changes.length) {
+      state.editingSelectionPresetId = "";
+      state.editingSelectionPresetDraft = null;
+      render();
+      return;
+    }
+    if (!window.confirm(t("presetChangesConfirm").replace("{changes}", changes.join("\n")))) return;
+    preset.name = name;
+    preset.selectedCards = [...draft.selectedCards];
+    state.editingSelectionPresetId = "";
+    state.editingSelectionPresetDraft = null;
     saveSelectionPresets();
     renderPresetShortcuts();
     render();
     return;
   }
 
+  if (button.dataset.presetAction === "add-current-selection" || button.dataset.presetAction === "remove-current-selection") {
+    if (!state.selectedCards.size) {
+      window.alert(t("noSelectedAlgorithms"));
+      return;
+    }
+    const draft = state.editingSelectionPresetDraft;
+    if (!draft || draft.id !== preset.id) return;
+    draft.selectedCards = button.dataset.presetAction === "add-current-selection"
+      ? [...new Set([...draft.selectedCards, ...state.selectedCards])]
+      : draft.selectedCards.filter((id) => !state.selectedCards.has(id));
+    render();
+    return;
+  }
+
   applySelectionPreset(preset);
-});
+}
+
+function handleSelectionPresetNameInput(event) {
+  const nameInput = event.target.closest("[data-preset-edit-name]");
+  const presetNode = event.target.closest("[data-preset-id]");
+  if (!nameInput || !presetNode || state.editingSelectionPresetDraft?.id !== presetNode.dataset.presetId) return;
+  state.editingSelectionPresetDraft.name = nameInput.value;
+}
+
+elements.favoritePresetList.addEventListener("click", handleSelectionPresetAction);
+elements.favoritePresetList.addEventListener("input", handleSelectionPresetNameInput);
+elements.presetEditModal.addEventListener("click", handleSelectionPresetAction);
+elements.presetEditModal.addEventListener("input", handleSelectionPresetNameInput);
+
 
 elements.selectedOnlyButton.addEventListener("click", () => {
   state.selectedOnly = !state.selectedOnly;
