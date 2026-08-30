@@ -140,9 +140,8 @@ function renderBookmarkFilterOptions(container, selectedValues) {
 
 function renderSummary(element, dataset, rows, state) {
   element.replaceChildren(
-    makeSummaryItem(ui("set"), dataset.name),
     makeSummaryItem(ui("all"), dataset.cases.length),
-    makeSummaryItem(ui("shown"), rows.length),
+    makeSummaryItem(ui("filteredShown"), rows.length),
     makeSummaryItem(ui("bookmarks"), state.bookmarks?.size || 0),
     makeSummaryItem(ui("selection"), state.selectedCards?.size || 0),
   );

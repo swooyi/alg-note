@@ -397,7 +397,7 @@ h1 {
 
 .toolbar {
   position: sticky;
-  top: 63px;
+  top: var(--app-header-height, 63px);
   z-index: 12;
   border: 1px solid var(--toolbar-line);
   border-radius: 0 0 8px 8px;
@@ -702,7 +702,7 @@ h1 {
 
 .preset-item {
   display: grid;
-  grid-template-columns: 32px minmax(0, 1fr) 32px;
+  grid-template-columns: 32px minmax(0, 1fr) 28px 28px 32px;
   align-items: center;
   gap: 4px;
   border: 1px solid transparent;
@@ -796,6 +796,16 @@ h1 {
   border-color: transparent;
   background: transparent;
   font-size: 20px;
+  line-height: 1;
+}
+
+.preset-selection-button {
+  display: grid;
+  place-items: center;
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -1138,7 +1148,7 @@ h1 {
 
 .drill-top {
   display: grid;
-  grid-template-columns: 56px minmax(0, 1fr) auto;
+  grid-template-columns: 56px 56px minmax(0, 1fr);
   align-items: center;
   border-bottom: 1px solid var(--line);
   background: var(--panel);
@@ -1207,7 +1217,6 @@ h1 {
 }
 
 .drill-mode-tabs {
-  justify-self: center;
   display: flex;
   gap: 4px;
   padding: 3px;
@@ -1235,10 +1244,20 @@ h1 {
   border-bottom: 1px solid var(--line);
   background: var(--soft);
   color: var(--muted);
+  padding: 7px 14px;
+}
+
+.drill-progress-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   font-size: 13px;
   font-weight: 850;
-  padding: 7px 14px;
-  text-align: center;
+}
+
+#drillProgressText {
+  white-space: nowrap;
 }
 
 .drill-top strong {
@@ -1265,6 +1284,57 @@ h1 {
   font-weight: 850;
   line-height: 1;
   padding: 0;
+}
+
+.drill-shortcut-control {
+  position: relative;
+}
+
+.drill-shortcut-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 2;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 12px 30px rgba(31, 35, 40, 0.16);
+  padding: 10px 12px;
+}
+
+.drill-shortcut-panel[hidden] {
+  display: none;
+}
+
+.drill-shortcut-panel dl {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+}
+
+.drill-shortcut-panel dl div {
+  display: grid;
+  grid-template-columns: 92px auto;
+  align-items: center;
+  gap: 8px;
+}
+
+.drill-shortcut-panel dt {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--soft);
+  padding: 2px 6px;
+  font-family: Consolas, monospace;
+  font-size: 12px;
+  text-align: center;
+}
+
+.drill-shortcut-panel dd {
+  margin: 0;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .drill-scramble-row {
@@ -1701,6 +1771,10 @@ main {
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 14px;
+}
+
+.toolbar-summary {
+  margin: 9px 0 0;
 }
 
 .summary span {
@@ -2678,7 +2752,7 @@ main {
     border-radius: 0;
     padding: 10px 12px;
     margin: -18px -18px 14px;
-    top: 59px;
+    top: var(--app-header-height, 59px);
   }
 
   .app-shell {
@@ -2688,11 +2762,11 @@ main {
 
   .app-sidebar {
     position: fixed;
-    top: 59px;
+    top: var(--app-header-height, 59px);
     left: 0;
     z-index: 30;
     width: min(84vw, 340px);
-    height: calc(100vh - 59px);
+    height: calc(100vh - var(--app-header-height, 59px));
     transform: translateX(0);
     transition: transform 0.18s ease;
     box-shadow: 16px 0 42px rgba(31, 35, 40, 0.2);
@@ -2871,8 +2945,28 @@ main {
   }
 
   .drill-top {
-    grid-template-columns: 44px minmax(0, 1fr) auto;
+    grid-template-areas:
+      "close shortcuts auf";
+    grid-template-columns: 44px 44px minmax(0, 1fr);
     padding: 7px 10px;
+  }
+
+  #drillCloseButton {
+    grid-area: close;
+  }
+
+  .drill-shortcut-control {
+    grid-area: shortcuts;
+  }
+
+  .drill-auf-control {
+    grid-area: auf;
+    justify-self: end;
+  }
+
+  .drill-auf-panel {
+    right: auto;
+    left: 0;
   }
 
   .drill-mode-tabs button {

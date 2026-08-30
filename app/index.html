@@ -159,11 +159,11 @@
             </div>
           </div>
         </div>
+        <section id="summary" class="summary toolbar-summary" hidden></section>
       </div>
 
       <section id="emptyState" class="empty-state" hidden></section>
 
-      <section id="summary" class="summary" hidden></section>
       <section id="caseGrid" class="case-grid" hidden></section>
     </main>
   </div>
@@ -175,9 +175,19 @@
     <div class="drill-panel">
       <div class="drill-top">
         <button id="drillCloseButton" class="drill-icon-button" type="button" aria-label="드릴 닫기" title="드릴 닫기" data-i18n-attr="aria-label:title" data-i18n="closeDrill">←</button>
-        <div class="drill-mode-tabs" aria-label="드릴 모드" data-i18n-attr="aria-label" data-i18n="drillMode">
-          <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
-          <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
+        <div class="drill-shortcut-control">
+          <button id="drillShortcutButton" class="drill-icon-button" type="button" aria-expanded="false" aria-controls="drillShortcutPanel" aria-label="단축키" title="단축키" data-i18n-attr="aria-label:title" data-i18n="shortcuts">⌨</button>
+          <div id="drillShortcutPanel" class="drill-shortcut-panel" hidden>
+            <strong data-i18n="shortcuts">단축키</strong>
+            <dl>
+              <div><dt>Backspace</dt><dd data-i18n="closeDrill">드릴 닫기</dd></div>
+              <div><dt>Tab</dt><dd data-i18n="toggleDrillMode">리캡/트레인 전환</dd></div>
+              <div><dt>D</dt><dd data-i18n="deleteAll">전체 삭제</dd></div>
+              <div><dt>R</dt><dd data-i18n="undoLast">직전 취소</dd></div>
+              <div><dt>A</dt><dd data-i18n="showAnswer">공식 보기</dd></div>
+              <div><dt>Esc</dt><dd data-i18n="resetTimer">타이머 초기화</dd></div>
+            </dl>
+          </div>
         </div>
         <div class="drill-auf-control">
           <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-expanded="false" aria-controls="drillAufPanel">AUF: 없음</button>
@@ -190,7 +200,15 @@
           </div>
         </div>
       </div>
-      <div id="drillProgress" class="drill-progress">Recap 0 / 0</div>
+      <div id="drillProgress" class="drill-progress">
+        <div class="drill-progress-content">
+          <div class="drill-mode-tabs" aria-label="드릴 모드" data-i18n-attr="aria-label" data-i18n="drillMode">
+            <button id="drillRecapModeButton" type="button" data-drill-mode="recap">Recap</button>
+            <button id="drillTrainModeButton" type="button" data-drill-mode="train">Train</button>
+          </div>
+          <span id="drillProgressText">0/0</span>
+        </div>
+      </div>
       <div class="drill-scramble-row">
         <p id="drillSetupText"></p>
         <button id="drillShowAnswerButton" class="drill-help-button" type="button" aria-label="정답 패널" title="정답 패널" data-i18n-attr="aria-label:title" data-i18n="answerPanel">?</button>

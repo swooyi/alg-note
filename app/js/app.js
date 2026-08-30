@@ -145,6 +145,14 @@ const UI_LABELS = {
     unpinPreset: "프리셋 고정 해제",
     undoLast: "직전 취소",
     deleteAll: "전체 삭제",
+    deleteAllConfirm: "모든 기록을 삭제할까요?",
+    filteredShown: "필터표시",
+    addCurrentSelection: "현재 선택 추가",
+    removeCurrentSelection: "현재 선택 제거",
+    shortcuts: "단축키",
+    toggleDrillMode: "리캡/트레인 전환",
+    showAnswer: "공식 보기",
+    resetTimer: "타이머 초기화",
   },
   en: {
     all: "All",
@@ -258,6 +266,14 @@ const UI_LABELS = {
     unpinPreset: "Unpin Preset",
     undoLast: "Undo Last",
     deleteAll: "Delete All",
+    deleteAllConfirm: "Delete all records?",
+    filteredShown: "Filtered Shown",
+    addCurrentSelection: "Add Current Selection",
+    removeCurrentSelection: "Remove Current Selection",
+    shortcuts: "Shortcuts",
+    toggleDrillMode: "Toggle Recap/Train",
+    showAnswer: "Show Algorithm",
+    resetTimer: "Reset Timer",
   },
   ja: {
     all: "すべて",
@@ -371,6 +387,14 @@ const UI_LABELS = {
     unpinPreset: "プリセット固定解除",
     undoLast: "直前を取り消す",
     deleteAll: "すべて削除",
+    deleteAllConfirm: "すべての記録を削除しますか？",
+    filteredShown: "フィルター表示",
+    addCurrentSelection: "現在の選択を追加",
+    removeCurrentSelection: "現在の選択を削除",
+    shortcuts: "ショートカット",
+    toggleDrillMode: "Recap/Trainを切替",
+    showAnswer: "手順を見る",
+    resetTimer: "タイマーをリセット",
   },
 };
 const DRILL_AUF_FIXED_MOVES = {
@@ -410,6 +434,11 @@ function formatCaseCount(count) {
 
 function formatCaseProgress(current, total) {
   return state.language === "en" ? `${current}/${total} ${t("caseCount")}` : `${current}/${total}${t("caseCount")}`;
+}
+
+function syncAppHeaderHeight() {
+  const header = document.querySelector(".app-header");
+  document.documentElement.style.setProperty("--app-header-height", `${header?.offsetHeight || 0}px`);
 }
 
 function drillAufLabel(mode) {
@@ -466,7 +495,7 @@ const elements = {
   caseCardTemplate: document.getElementById("caseCardTemplate"),
   drillStartButton: document.getElementById("drillStartButton"),
   drillOverlay: document.getElementById("drillOverlay"),
-  drillProgress: document.getElementById("drillProgress"),
+  drillProgressText: document.getElementById("drillProgressText"),
   drillRecapModeButton: document.getElementById("drillRecapModeButton"),
   drillTrainModeButton: document.getElementById("drillTrainModeButton"),
   drillRandomAufButton: document.getElementById("drillRandomAufButton"),
@@ -488,6 +517,8 @@ const elements = {
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillUndoButton: document.getElementById("drillUndoButton"),
   drillCloseButton: document.getElementById("drillCloseButton"),
+  drillShortcutButton: document.getElementById("drillShortcutButton"),
+  drillShortcutPanel: document.getElementById("drillShortcutPanel"),
 };
 
 const state = {
@@ -777,7 +808,23 @@ function renderSelectionPresetOptions() {
     deleteButton.title = t("delete");
     deleteButton.textContent = "×";
 
-    item.append(pinButton, applyButton, deleteButton);
+    const addButton = document.createElement("button");
+    addButton.className = "preset-selection-button";
+    addButton.type = "button";
+    addButton.dataset.presetAction = "add-current-selection";
+    addButton.setAttribute("aria-label", `${preset.name} ${t("addCurrentSelection")}`);
+    addButton.title = t("addCurrentSelection");
+    addButton.textContent = "+";
+
+    const removeButton = document.createElement("button");
+    removeButton.className = "preset-selection-button";
+    removeButton.type = "button";
+    removeButton.dataset.presetAction = "remove-current-selection";
+    removeButton.setAttribute("aria-label", `${preset.name} ${t("removeCurrentSelection")}`);
+    removeButton.title = t("removeCurrentSelection");
+    removeButton.textContent = "−";
+
+    item.append(pinButton, applyButton, addButton, removeButton, deleteButton);
     elements.favoritePresetList.append(item);
   }
 
@@ -1035,7 +1082,13 @@ function setDrillMode(mode) {
 
 
 function formatDrillTime(ms) {
-  return (Math.max(0, ms) / 1000).toFixed(2);
+  const totalHundredths = Math.round(Math.max(0, ms) / 10);
+  const minutes = Math.floor(totalHundredths / 6000);
+  const remainder = totalHundredths % 6000;
+  const seconds = Math.floor(remainder / 100);
+  const hundredths = String(remainder % 100).padStart(2, "0");
+  const time = `${minutes ? String(seconds).padStart(2, "0") : seconds}.${hundredths}`;
+  return minutes ? `${minutes}:${time}` : time;
 }
 
 
@@ -1173,6 +1226,19 @@ function toggleDrillAufPanel() {
 }
 
 
+function closeDrillShortcutPanel() {
+  elements.drillShortcutPanel.hidden = true;
+  elements.drillShortcutButton.setAttribute("aria-expanded", "false");
+}
+
+
+function toggleDrillShortcutPanel() {
+  const willOpen = elements.drillShortcutPanel.hidden;
+  elements.drillShortcutPanel.hidden = !willOpen;
+  elements.drillShortcutButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
+
+
 function updateDrillAufControls() {
   const supported = supportsDrillAuf();
   const moves = drillAufMoves();
@@ -1216,9 +1282,9 @@ function renderDrill() {
   updateDrillAufControls();
 
   if (state.drill.mode === "recap") {
-    elements.drillProgress.textContent = `Recap · ${formatCaseProgress(Math.min(state.drill.index + 1, total), total)}`;
+    elements.drillProgressText.textContent = formatCaseProgress(Math.min(state.drill.index + 1, total), total);
   } else {
-    elements.drillProgress.textContent = `Train · ${formatCaseCount(state.drill.source.length)}`;
+    elements.drillProgressText.textContent = formatCaseCount(state.drill.source.length);
   }
 
   if (state.drill.completed) {
@@ -1280,6 +1346,7 @@ function startDrill({ clearResults = true } = {}) {
 function closeDrill() {
   stopDrillTicker();
   closeDrillAufPanel();
+  closeDrillShortcutPanel();
   state.drill.active = false;
   state.drill.source = [];
   state.drill.queue = [];
@@ -1377,6 +1444,7 @@ function deleteDrillResult(resultId) {
 
 function clearDrillResults() {
   if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
+  if (!window.confirm(t("deleteAllConfirm"))) return;
   state.drill.results = [];
   renderDrill();
 }
@@ -1709,6 +1777,7 @@ function render() {
   if (state.openFilterMenu) openFilterMenu(state.openFilterMenu);
 
   renderSummary(elements.summary, state.dataset, rows, state);
+  syncAppHeaderHeight();
   if (state.viewMode === "compact") {
     renderGroupedCases(elements.caseGrid, elements.caseCardTemplate, rows, state);
   } else {
@@ -2302,6 +2371,21 @@ elements.favoritePresetList.addEventListener("click", (event) => {
     return;
   }
 
+  if (button.dataset.presetAction === "add-current-selection" || button.dataset.presetAction === "remove-current-selection") {
+    if (!state.selectedCards.size) {
+      window.alert(t("noSelectedAlgorithms"));
+      return;
+    }
+    const originalIds = preset.selectedCards;
+    preset.selectedCards = button.dataset.presetAction === "add-current-selection"
+      ? [...new Set([...originalIds, ...state.selectedCards])]
+      : originalIds.filter((id) => !state.selectedCards.has(id));
+    saveSelectionPresets();
+    renderPresetShortcuts();
+    render();
+    return;
+  }
+
   applySelectionPreset(preset);
 });
 
@@ -2360,6 +2444,11 @@ elements.drillAufPanel.addEventListener("click", (event) => {
 
 elements.drillCloseButton.addEventListener("click", () => {
   closeDrill();
+});
+
+elements.drillShortcutButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  toggleDrillShortcutPanel();
 });
 
 elements.drillShowAnswerButton.addEventListener("click", () => {
@@ -2686,10 +2775,43 @@ elements.caseGrid.addEventListener("contextmenu", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
 
-  if (state.drill.active && event.code === "Space") {
-    event.preventDefault();
-    toggleDrillTimer();
-    return;
+  if (state.drill.active) {
+    if (event.code === "Space") {
+      event.preventDefault();
+      toggleDrillTimer();
+      return;
+    }
+    if (event.key === "Escape" && state.drill.timerStatus === "running") {
+      event.preventDefault();
+      resetDrillTimer();
+      renderDrill();
+      return;
+    }
+    if (event.key === "Backspace") {
+      event.preventDefault();
+      closeDrill();
+      return;
+    }
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setDrillMode(state.drill.mode === "recap" ? "train" : "recap");
+      return;
+    }
+    if (!event.repeat && event.key.toLowerCase() === "d") {
+      event.preventDefault();
+      clearDrillResults();
+      return;
+    }
+    if (!event.repeat && event.key.toLowerCase() === "r") {
+      event.preventDefault();
+      undoDrillResult();
+      return;
+    }
+    if (!event.repeat && event.key.toLowerCase() === "a") {
+      event.preventDefault();
+      toggleDrillAnswer();
+      return;
+    }
   }
 
   if (!state.selectedCaseId) return;
@@ -2713,6 +2835,7 @@ document.addEventListener("keydown", (event) => {
 });
 applyAccentTheme();
 applyLanguage();
+new ResizeObserver(syncAppHeaderHeight).observe(document.querySelector(".app-header"));
 const datasetKeys = renderDatasetOptions();
 updateViewModeButtons();
 if (datasetKeys.length) {
