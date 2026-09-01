@@ -47,7 +47,7 @@
       "id": "04_commit_and_push_approved_changes",
       "order": 4,
       "title": "Commit and push approved changes",
-      "check": false,
+      "check": true,
       "targets": "main; origin/main",
       "allowed_fields": ["git index", "local main commit", "origin/main update"],
       "protected_fields": ["unrelated working-tree changes"],
