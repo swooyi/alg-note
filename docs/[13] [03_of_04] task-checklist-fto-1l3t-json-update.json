@@ -1,0 +1,58 @@
+{
+  "target_file": "C:\\dev\\alg-note\\alg\\fto\\1l3t\\cases.json; C:\\dev\\alg-note\\app\\js\\data.js",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Merge the supplied FTO 1L3T edits, regenerate the application data bundle, validate the result, then publish the approved changes.",
+  "assumptions": [
+    "For matching case IDs, apply only algorithms, scramble, and tags.recognition from the supplied cases.",
+    "Preserve case identity, names, groups, SVG references, existing scrambles metadata, and unrelated tags."
+  ],
+  "source_checklists": [
+    "docs/archive/[12] [04_of_04] task-checklist-fto-1l3t-json-update.json"
+  ],
+  "tasks": [
+    {
+      "id": "01_validate_supplied_case_edits",
+      "order": 1,
+      "title": "Validate supplied 1L3T edits",
+      "check": true,
+      "targets": "pasted-text.txt; alg/fto/1l3t/cases.json",
+      "allowed_fields": [],
+      "protected_fields": ["source case data"],
+      "summary": "Confirm the supplied JSON structure and case IDs before changing source data.",
+      "verify": ["Parse the supplied JSON successfully.", "Confirm every supplied ID exists exactly once in the source."]
+    },
+    {
+      "id": "02_merge_supplied_case_edits",
+      "order": 2,
+      "title": "Merge supplied 1L3T case edits",
+      "check": true,
+      "targets": "alg/fto/1l3t/cases.json",
+      "allowed_fields": ["algorithms", "scramble", "tags.recognition"],
+      "protected_fields": ["id", "name", "group", "svgId", "scrambles", "other tags", "groups.json", "svgs.json"],
+      "summary": "Apply supplied algorithms, scramble, and recognition values only to matching cases.",
+      "verify": ["Parse JSON successfully.", "Confirm all supplied IDs were updated.", "Confirm protected fields are unchanged."]
+    },
+    {
+      "id": "03_regenerate_and_validate_bundle",
+      "order": 3,
+      "title": "Regenerate and validate application data",
+      "check": true,
+      "targets": "app/js/data.js; alg/fto/1l3t",
+      "allowed_fields": ["generated app data bundle"],
+      "protected_fields": ["other application assets"],
+      "summary": "Rebuild the app data bundle and validate source and generated data.",
+      "verify": ["Run scripts/build_app_data.py.", "Run scripts/validate_alg_json.py for alg/fto/1l3t.", "Run node --check for app/js/data.js."]
+    },
+    {
+      "id": "04_commit_and_push_approved_changes",
+      "order": 4,
+      "title": "Commit and push approved changes",
+      "check": false,
+      "targets": "main; origin/main",
+      "allowed_fields": ["git index", "local main commit", "origin/main update"],
+      "protected_fields": ["unrelated working-tree changes"],
+      "summary": "Commit the completed JSON update and its generated bundle, then publish to GitHub.",
+      "verify": ["Inspect staged diff.", "Confirm the push succeeds."]
+    }
+  ]
+}
