@@ -1243,15 +1243,21 @@ h1 {
   padding: 8px 12px;
 }
 
-.drill-auf-control {
-  position: relative;
+.drill-settings {
+  display: flex;
   justify-self: end;
+  gap: 6px;
 }
 
-.drill-random-auf-button {
-  justify-self: end;
-  min-width: 104px;
-  padding: 0 10px;
+.drill-auf-control,
+.drill-order-control {
+  position: relative;
+}
+
+.drill-random-auf-button,
+.drill-order-button {
+  min-width: 0;
+  padding: 0 8px;
   white-space: nowrap;
 }
 
@@ -1282,6 +1288,43 @@ h1 {
   background: var(--panel);
   padding: 6px;
   box-shadow: 0 12px 30px rgba(31, 35, 40, 0.16);
+}
+
+.drill-order-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 80;
+  display: grid;
+  min-width: 104px;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 6px;
+  box-shadow: 0 12px 30px rgba(31, 35, 40, 0.16);
+}
+
+.drill-order-panel[hidden] {
+  display: none;
+}
+
+.drill-order-panel button {
+  justify-content: flex-start;
+  min-height: 32px;
+  border-color: transparent;
+  background: transparent;
+  padding: 0 10px;
+  text-align: left;
+}
+
+.drill-order-button.is-active,
+.drill-order-button[aria-expanded="true"],
+.drill-order-panel button:hover,
+.drill-order-panel button.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .drill-auf-panel[hidden] {
@@ -1340,6 +1383,14 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.drill-current-case {
+  margin: 5px 0 0;
+  text-align: center;
+  color: var(--ink);
   font-size: 13px;
   font-weight: 850;
 }
@@ -3047,12 +3098,13 @@ main {
     grid-area: shortcuts;
   }
 
-  .drill-auf-control {
+  .drill-settings {
     grid-area: auf;
     justify-self: end;
   }
 
-  .drill-auf-panel {
+  .drill-auf-panel,
+  .drill-order-panel {
     right: auto;
     left: 0;
   }

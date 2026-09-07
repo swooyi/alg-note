@@ -190,14 +190,23 @@
             </dl>
           </div>
         </div>
-        <div class="drill-auf-control">
-          <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-expanded="false" aria-controls="drillAufPanel">AUF: 없음</button>
-          <div id="drillAufPanel" class="drill-auf-panel" hidden>
-            <button type="button" data-auf-mode="none" data-i18n="auf.none">없음</button>
-            <button type="button" data-auf-mode="u">U</button>
-            <button type="button" data-auf-mode="up">U'</button>
-            <button type="button" data-auf-mode="u2">U2</button>
-            <button type="button" data-auf-mode="random" data-i18n="auf.random">랜덤</button>
+        <div class="drill-settings">
+          <div class="drill-auf-control">
+            <button id="drillRandomAufButton" class="drill-random-auf-button" type="button" aria-expanded="false" aria-controls="drillAufPanel">AUF:없음</button>
+            <div id="drillAufPanel" class="drill-auf-panel" hidden>
+              <button type="button" data-auf-mode="none" data-i18n="auf.none">없음</button>
+              <button type="button" data-auf-mode="u">U</button>
+              <button type="button" data-auf-mode="up">U'</button>
+              <button type="button" data-auf-mode="u2">U2</button>
+              <button type="button" data-auf-mode="random" data-i18n="auf.random">랜덤</button>
+            </div>
+          </div>
+          <div class="drill-order-control">
+            <button id="drillOrderButton" class="drill-order-button" type="button" aria-expanded="false" aria-controls="drillOrderPanel">출제:랜덤</button>
+            <div id="drillOrderPanel" class="drill-order-panel" hidden>
+              <button type="button" data-drill-order="random">랜덤</button>
+              <button type="button" data-drill-order="sequential">순차</button>
+            </div>
           </div>
         </div>
       </div>
@@ -209,6 +218,7 @@
           </div>
           <span id="drillProgressText">0/0</span>
         </div>
+        <p id="drillCurrentCaseText" class="drill-current-case" hidden></p>
       </div>
       <div class="drill-scramble-row">
         <p id="drillSetupText"></p>

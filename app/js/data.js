@@ -38783,7 +38783,7 @@ window.AlgNoteBundledData = {
           "name": "Bs-",
           "group": "b-even",
           "algorithms": [
-            "[U'] H U' H U' S",
+            "U' H / U' H / U' S",
             "U' S {Uo'} U' S' U' S'",
             "[U'] {U,BL} H' U' S' U' S'"
           ],
@@ -39081,7 +39081,7 @@ window.AlgNoteBundledData = {
           "name": "Br+",
           "group": "b-odd",
           "algorithms": [
-            "U {Br,U} R L'  U' / S' / U L R'",
+            "U {Br,U} R L' / U' S' U / L R'",
             "{T'2} L' R U S' U' R' L",
             "{U,BL} B' BLw U S' U' BLw' B"
           ],
@@ -39152,7 +39152,7 @@ window.AlgNoteBundledData = {
           "name": "Bl0",
           "group": "b-odd",
           "algorithms": [
-            "BLw' B U S U' BLw L'"
+            "BLw' B U S U' BLw L'_____ {Ro} R' B / U S U' / R B'"
           ],
           "scramble": "R' BR L' B L B' U R B' R' B U' BR' R",
           "scrambles": [
@@ -39167,7 +39167,9 @@ window.AlgNoteBundledData = {
             "sourceGroup": "B-odd",
             "parity": "odd",
             "typeCode": "l0",
-            "recognition": "O_side"
+            "recognition": [
+              "O_side"
+            ]
           }
         },
         {
@@ -39511,7 +39513,7 @@ window.AlgNoteBundledData = {
           "name": "Za-",
           "group": "z-even",
           "algorithms": [
-            "{Uo} U' S' / Tl0",
+            "U' H {Uo'} / Tl0",
             "[U'] {BR,U} D / R' U R U'/ R D' R' U / R' U' R",
             "[U'] {B,BL} R' U' R U R' Rw U' R' U Rw U R' U' Rw"
           ],
@@ -39536,7 +39538,7 @@ window.AlgNoteBundledData = {
           "name": "Zb0",
           "group": "z-odd",
           "algorithms": [
-            "{T2} L' R / U' S U / L R'",
+            "{T2} L' R / U' S U / L R' (Zc-와 마지막만 다름)",
             "{R,U} U' R BR' R' U R U' BR U R'"
           ],
           "scramble": "R' L R BR R' BR R L' R' BR' R BR'",
@@ -40148,7 +40150,7 @@ window.AlgNoteBundledData = {
           "name": "Sb0",
           "group": "s-odd",
           "algorithms": [
-            "{T2} R L' / U S' U' / R' L",
+            "{T2} R L' / U S' U' / R' L (Sa+와 뒤만다름)",
             "{R,U} R U' BR U R' U' R BR' R' U"
           ],
           "scramble": "R' L' B BR L R L R' BR' L' B' R",
@@ -40306,7 +40308,7 @@ window.AlgNoteBundledData = {
           "name": "Sr-",
           "group": "s-odd",
           "algorithms": [
-            "{Ro} B R' / U S U' / R B'",
+            "{Ro} B R' U / S / U' R B'",
             "B' BLw U H' U' BLw' B"
           ],
           "scramble": "B' R BR R' B R B' BR' R' B' L' B' L",

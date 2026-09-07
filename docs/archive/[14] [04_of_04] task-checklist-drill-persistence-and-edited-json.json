@@ -1,0 +1,56 @@
+{
+  "target_file": "C:\\dev\\alg-note",
+  "status_rule": "After completing a task, set its check field to true. In future runs, only tasks with check false are eligible for work.",
+  "scope": "Persist active drill state until the user explicitly resets it, and apply the supplied edited JSON to the matching FTO algorithm source files.",
+  "assumptions": [
+    "Closing the drill is not an explicit reset; clearing results or starting a new drill is.",
+    "Only scramble, algorithms, and recognition values from the supplied edits may overwrite matching cases."
+  ],
+  "source_checklists": [],
+  "tasks": [
+    {
+      "id": "01_inspect_persistence_and_edit_payload",
+      "order": 1,
+      "title": "Inspect drill lifecycle and supplied edit payload",
+      "check": true,
+      "targets": "app/js/app.js and pasted edited JSON",
+      "allowed_fields": [],
+      "protected_fields": ["algorithm source files"],
+      "summary": "Identify state that is reset on close or dataset changes and validate the datasets in the supplied payload.",
+      "verify": ["Parse payload JSON.", "List target dataset keys and edited case counts."]
+    },
+    {
+      "id": "02_persist_drill_state",
+      "order": 2,
+      "title": "Persist drill state until explicit reset",
+      "check": true,
+      "targets": "app/js/app.js",
+      "allowed_fields": ["drill state lifecycle and local storage helpers"],
+      "protected_fields": ["case data and non-drill UI state"],
+      "summary": "Save and restore drill progress, selected source, settings, and records without treating close or dataset navigation as a reset.",
+      "verify": ["JavaScript syntax check.", "Confirm close does not clear persistent drill data.", "Confirm explicit clear/start semantics reset the appropriate data."]
+    },
+    {
+      "id": "03_apply_edited_cases",
+      "order": 3,
+      "title": "Apply supplied case edits to algorithm JSON",
+      "check": true,
+      "targets": "alg/fto/1l3t/cases.json and alg/fto/lbt/cases.json",
+      "allowed_fields": ["scramble", "algorithms", "tags.recognition"],
+      "protected_fields": ["id", "name", "group", "svgId", "group ordering", "image references", "all non-edited cases"],
+      "summary": "Match records by dataset and case id, preserving structural metadata.",
+      "verify": ["Parse both source JSON files.", "Confirm all 86 supplied edits matched exactly once.", "Confirm protected fields are unchanged."]
+    },
+    {
+      "id": "04_regenerate_and_verify_bundle",
+      "order": 4,
+      "title": "Regenerate application data and verify outputs",
+      "check": true,
+      "targets": "app/js/data.js and app/sw.js",
+      "allowed_fields": ["generated application data", "service worker cache name"],
+      "protected_fields": ["unrelated datasets"],
+      "summary": "Rebuild bundled application data after source JSON changes and verify the edited values are present.",
+      "verify": ["Run scripts/build_app_data.py.", "Confirm generated data includes representative edited values.", "Run diff and syntax checks."]
+    }
+  ]
+}
