@@ -285,9 +285,9 @@
       "name": "Vs+",
       "group": "v-even",
       "algorithms": [
-        "{Uo} [B' : R Br' R'] U [B' : R Br' R']\nS U x4",
+        "{Uo} [B' : R Br' R'] U [B' : R Br' R']\nR B' BR' B R' U R B' BR' B R'",
         "Rw U  R' U' R F R' U R F' U' Rw'",
-        "{B,R} R' U R' U' R D R' U R D' U' R"
+        "{B,R} R' U /R' U' R /D/ R' U R /D' /U' R"
       ],
       "scramble": "R B' BR B R' U' R B' BR B R'",
       "scrambles": [
@@ -309,7 +309,9 @@
         "sourceGroup": "V-even",
         "parity": "even",
         "typeCode": "s+",
-        "recognition": "E_noT"
+        "recognition": [
+          "E_noT"
+        ]
       }
     },
     {
@@ -1312,7 +1314,7 @@
       "name": "Jc+",
       "group": "j-even",
       "algorithms": [
-        "[U] {Bl,F /Fo}\nB R' U / S {Uo'} U' R' L",
+        "[U] {Fo} B R' / U S U' / B' R",
         "[U] {BL,F} B R' U S U' B' R"
       ],
       "scramble": "B L' B' L R U' B' R BR' R' BR B R'",
@@ -1336,7 +1338,9 @@
         "sourceGroup": "J-even",
         "parity": "even",
         "typeCode": "c+",
-        "recognition": "E_same"
+        "recognition": [
+          "E_same"
+        ]
       }
     },
     {
@@ -1438,7 +1442,7 @@
       "name": "Ja-",
       "group": "j-even",
       "algorithms": [
-        "[U] {F,Br / Ro}\nR' B (U S' U') R B'",
+        "[U] {Ro} R' B / U S' U' / R B'",
         "[U] {F,BR} R' B U S' U' R B'"
       ],
       "scramble": "BR B' U B' R B R' U' L' B BR' L",
@@ -1461,7 +1465,9 @@
         "sourceGroup": "J-even",
         "parity": "even",
         "typeCode": "a-",
-        "recognition": "E_same"
+        "recognition": [
+          "E_same"
+        ]
       }
     },
     {
@@ -1632,7 +1638,7 @@
       "name": "Jr-",
       "group": "j-odd",
       "algorithms": [
-        "[U'] {Br,U} L' R / U' S' U /  L R'",
+        "[U'] {Ro'} L' R / U' S' U /  L R'",
         "[U'] {B,U} U' R BR' U R' U' R BR U R'"
       ],
       "scramble": "R B' BR' R' B R B' BR R' B",
@@ -1699,6 +1705,7 @@
       "name": "Jl+",
       "group": "j-odd",
       "algorithms": [
+        "[U'] {T2} R L' / U' S U / R' L",
         "[U'] {R,U} R U' BR' R' U R U' BR R' U"
       ],
       "scramble": "R B' BR' R' B U' R U' B' R BR' R B",
@@ -1725,7 +1732,9 @@
         "sourceGroup": "J-odd",
         "parity": "odd",
         "typeCode": "l+",
-        "recognition": "O_opp"
+        "recognition": [
+          "O_opp"
+        ]
       }
     },
     {
@@ -1998,7 +2007,7 @@
       "name": "La-",
       "group": "l-even",
       "algorithms": [
-        "[U'] {Br,U} L' R / U' H U / L R'",
+        "[U'] {Ro'} L' R / U' H U / L R'",
         "[U'] B' BLw U' H U L BLw'",
         "{L,F} U R' U' R BR R U R' U' Rw R' U R U' Rw'"
       ],
@@ -2100,6 +2109,7 @@
       "name": "Lb-",
       "group": "l-odd",
       "algorithms": [
+        "{Uo'} U' S / U' Hl",
         "{Uo} U' H' / U' S"
       ],
       "scramble": "R B' R' B U B L' B' L",
@@ -3138,7 +3148,7 @@
       "name": "Br+",
       "group": "b-odd",
       "algorithms": [
-        "U {Br,U} R L' / U' S' U / L R'",
+        "U {Ro'} R L' / U' S' U / L R'",
         "{T'2} L' R U S' U' R' L",
         "{U,BL} B' BLw U S' U' BLw' B"
       ],
@@ -3469,7 +3479,7 @@
       "name": "Zc-",
       "group": "z-even",
       "algorithms": [
-        "[U] {Br,U} L' R / U' S U / R' L (Wc0과 유사)",
+        "[U] {Ro'} L' R / U' S U / R' L (Wc0과 유사)",
         "[U] {B,U} U' R BR' R' U R U' BR R' U"
       ],
       "scramble": "R B' BR B R' U' R B' BR R' B",
@@ -4136,7 +4146,7 @@
       "name": "Sa+",
       "group": "s-even",
       "algorithms": [
-        "[U'] {BL,U} R L' / U S' U' / L R'",
+        "[U'] {Lo} R L' / U S' U' / L R'",
         "[U'] {L,U} R U' BR U R' U' R BR' U R'"
       ],
       "scramble": "R B' BR R' B U B' U R B' BR B' R'",
@@ -4402,8 +4412,8 @@
       "name": "Sl0",
       "group": "s-odd",
       "algorithms": [
-        "{Uo} U / H U' H U / H",
-        "{Uo'} U /S' U' S' U /S'"
+        "{Uo'} U /S' U' S' U /S'",
+        "{Uo} U / H U' H U / H"
       ],
       "scramble": "R B BR' B R' U' B U' R B' BR' B R'",
       "scrambles": [

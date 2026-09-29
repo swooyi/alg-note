@@ -26,6 +26,7 @@ def validate(folder: Path) -> list[str]:
     svgs = read_json(folder / "svgs.json")
 
     algset_id = algset.get("id")
+    is_csp = algset_id == "csp" and algset.get("puzzle") == "SQ1"
     for name, data in (("groups.json", groups), ("cases.json", cases), ("svgs.json", svgs)):
         if data.get("algset") != algset_id:
             errors.append(f"{name}: algset does not match algset.json id")
@@ -53,8 +54,21 @@ def validate(folder: Path) -> list[str]:
             errors.append(f"cases.json: case {case_id} has unknown group {case.get('group')}")
         if not case.get("algorithms"):
             errors.append(f"cases.json: case {case_id} has no algorithms")
-        if not case.get("scramble"):
+        if not case.get("scramble") and not is_csp:
             errors.append(f"cases.json: case {case_id} has no representative scramble")
+        if is_csp:
+            info = case.get("csp", {})
+            if len(case.get("algorithms", [])) != 2 or not all(case.get("algorithms", [])):
+                errors.append(f"cases.json: CSP case {case_id} needs Odd and Even explanations")
+            if info.get("extraCount") not in (0, 1):
+                errors.append(f"cases.json: CSP case {case_id} needs a common counting correction")
+            probability = info.get("probability")
+            if not isinstance(probability, (int, float)) or not 0 < probability <= 1:
+                errors.append(f"cases.json: CSP case {case_id} has an invalid probability")
+            for layer in ("u", "d"):
+                shape = info.get(layer, {})
+                if not shape.get("id") or not shape.get("file") or not (folder / "shapes" / shape["file"]).is_file():
+                    errors.append(f"cases.json: CSP case {case_id} has a missing {layer} shape")
         svg_id = case.get("svgId", case_id)
         if svg_id not in svg_ids:
             errors.append(f"cases.json: case {case_id} references missing svg {svg_id}")

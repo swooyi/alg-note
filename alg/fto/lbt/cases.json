@@ -224,7 +224,7 @@
       "name": "IS9",
       "group": "in-slot",
       "algorithms": [
-        "L R' L R U' B' R B R' U L"
+        "L R' L R / U' H' U / L"
       ],
       "scramble": "L U' L' B L B' U B L' B'",
       "scrambles": [
@@ -243,7 +243,9 @@
       ],
       "svgId": "9",
       "tags": {
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -251,7 +253,7 @@
       "name": "IS10",
       "group": "in-slot",
       "algorithms": [
-        "(U) R' L' R U R' L R L' U' L"
+        "(U) R' L' R / U S U' / L"
       ],
       "scramble": "R' L' R U' B' U B' L B U' B",
       "scrambles": [
@@ -272,7 +274,9 @@
       ],
       "svgId": "10",
       "tags": {
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -280,6 +284,7 @@
       "name": "IS11",
       "group": "in-slot",
       "algorithms": [
+        "[U] R' L' R L / U' S' U' / L' R' L R",
         "(U') Uw L U R' L' R L U' L R' L R Uw'"
       ],
       "scramble": "L' U' R B' R' B U L' B L' B'",
@@ -305,7 +310,9 @@
       ],
       "svgId": "11",
       "tags": {
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {
@@ -313,7 +320,7 @@
       "name": "IS12",
       "group": "in-slot",
       "algorithms": [
-        "R' L' R L' U R B' R' B U' L'"
+        "R' L' R L' / U H U' / L'"
       ],
       "scramble": "L U B' R B R' U' L R' L R",
       "scrambles": [
@@ -337,7 +344,9 @@
       ],
       "svgId": "12",
       "tags": {
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {
@@ -612,9 +621,9 @@
       "name": "IS25",
       "group": "in-slot",
       "algorithms": [
-        "L R' L R U' B' U L U' B"
+        "[내버전] U' L' / U S' U' / R' L R"
       ],
-      "scramble": "B' U L' U' B U R' L' R L'",
+      "scramble": "R' L' R U R' L R L' U' L U",
       "scrambles": [
         "B' U L' U' B U L R L' R L' R' L' R'",
         "B' U L' U' B U R' L R U R' L R L'",
@@ -628,7 +637,9 @@
       "svgId": "24",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -636,7 +647,7 @@
       "name": "IS26",
       "group": "in-slot",
       "algorithms": [
-        "R' L' F' L' R L R' F R L"
+        "{Ro'} R' B' / U' H' U / R B"
       ],
       "scramble": "R L U B' R B R' U' B L' B' R'",
       "scrambles": [
@@ -660,7 +671,9 @@
       "svgId": "25",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -668,7 +681,7 @@
       "name": "IS27",
       "group": "in-slot",
       "algorithms": [
-        "R' L' R L' U L' R' L R U' L'"
+        "R' L' R L' / U (L' R' L R) U' / L'"
       ],
       "scramble": "L U R' L' R L U' L R' L R",
       "scrambles": [
@@ -691,7 +704,9 @@
       "svgId": "26",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {
@@ -699,6 +714,7 @@
       "name": "IS28",
       "group": "in-slot",
       "algorithms": [
+        "[U'] R' L' R L / U / Bl' H' Bl",
         "U' L' R' L F' L R L' R' F R"
       ],
       "scramble": "R' L' R L' U' B L' B' L U L'",
@@ -726,7 +742,9 @@
       "svgId": "27",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {
@@ -734,7 +752,7 @@
       "name": "IS29",
       "group": "in-slot",
       "algorithms": [
-        "L BL' B' BL L R' L' R BL' B BL L'"
+        "L /BL' B' BL / S' / BL' B BL /L'"
       ],
       "scramble": "B' L' U L R' L' R U' R' L R B",
       "scrambles": [
@@ -748,7 +766,9 @@
       "svgId": "28",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -756,7 +776,7 @@
       "name": "IS30",
       "group": "in-slot",
       "algorithms": [
-        "R' L' R L U' F R B' R' F' B"
+        "R' L' R L / U' / F H F'"
       ],
       "scramble": "L' U' R' L' R L U B L' B' R' L' R",
       "scrambles": [
@@ -771,7 +791,9 @@
       "svgId": "29",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-only"
+        "recognition": [
+          "is-corner-only"
+        ]
       }
     },
     {
@@ -779,7 +801,7 @@
       "name": "IS31",
       "group": "in-slot",
       "algorithms": [
-        "R' F' R' B' R' B R' F L' R L"
+        "(쓸일없어보임)R' F' R' B' R' B R' F L' R L"
       ],
       "scramble": "L B L' B' U' L' U B L B' L' U' L",
       "scrambles": [
@@ -794,7 +816,9 @@
       "svgId": "30",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {
@@ -802,6 +826,7 @@
       "name": "IS32",
       "group": "in-slot",
       "algorithms": [
+        "L' R' L R / U S' U' / 트리플삽입",
         "Uw' L U L' B L' B' R' L' R U' L' Uw"
       ],
       "scramble": "L' U B' L R' L R B L U' B' L B",
@@ -817,7 +842,9 @@
       "svgId": "31",
       "tags": {
         "sourceNameGap": "source-name-gap",
-        "recognition": "is-corner-flipped-only"
+        "recognition": [
+          "is-corner-flipped-only"
+        ]
       }
     },
     {

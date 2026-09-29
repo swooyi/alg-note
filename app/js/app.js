@@ -72,6 +72,10 @@ const UI_LABELS = {
     deletePresetConfirm: "\"{name}\" 프리셋을 삭제할까요?",
     deleteRecord: "기록 삭제",
     download: "다운로드",
+    cspProbability: "확률",
+    cspCountPlusOne: "카운팅 +1",
+    cspCountNone: "추가 카운팅 없음",
+    cspSetupPending: "Odd/Even 셋업 준비 중 · 드릴은 셋업 추가 후 지원합니다.",
     drillComplete: "드릴 완료",
     drillMode: "드릴 모드",
     drillOrder: "출제",
@@ -207,6 +211,10 @@ const UI_LABELS = {
     deletePresetConfirm: "Delete \"{name}\" preset?",
     deleteRecord: "Delete Record",
     download: "Download",
+    cspProbability: "Probability",
+    cspCountPlusOne: "Counting +1",
+    cspCountNone: "No extra counting",
+    cspSetupPending: "Odd/Even setups pending · Drills will be available once setups are added.",
     drillComplete: "Drill Complete",
     drillMode: "Drill Mode",
     drillOrder: "Order",
@@ -342,6 +350,10 @@ const UI_LABELS = {
     deletePresetConfirm: "「{name}」プリセットを削除しますか？",
     deleteRecord: "記録削除",
     download: "ダウンロード",
+    cspProbability: "確率",
+    cspCountPlusOne: "カウント +1",
+    cspCountNone: "追加カウントなし",
+    cspSetupPending: "Odd/Evenセットアップ準備中 · 追加後にドリルを利用できます。",
     drillComplete: "ドリル完了",
     drillMode: "ドリルモード",
     drillOrder: "出題",
@@ -1080,6 +1092,9 @@ function matchesQuery(item, query) {
     item.name,
     item.groupName,
     item.scramble,
+    item.csp?.u.name,
+    item.csp?.d.name,
+    item.csp?.notes,
     ...item.algorithms,
     ...item.scrambles,
     ...tagValues,
@@ -1436,9 +1451,11 @@ function renderDrillResults() {
 
 function updateDrillStartButton() {
   const canShow = !state.isHomeView;
-  elements.drillStartButton.disabled = false;
+  const cspPending = state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp";
+  elements.drillStartButton.disabled = cspPending;
   elements.drillStartButton.hidden = state.isHomeView || state.drill.active;
   elements.drillStartButton.title = canShow && state.selectedCards.size > 0 ? t("startDrill") : t("selectCases");
+  if (cspPending) elements.drillStartButton.title = t("cspSetupPending");
   elements.drillStartButton.setAttribute("aria-label", elements.drillStartButton.title);
 }
 
@@ -1583,6 +1600,7 @@ function renderDrill() {
 
 
 function startDrill({ clearResults = true, restart = false } = {}) {
+  if (state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp") return;
   if (!restart && state.drill.source.length && drillSourceMatchesSelection()) {
     state.drill.active = true;
     render();
@@ -2035,6 +2053,7 @@ function render() {
   refreshRecognitionFilters();
   elements.caseGrid.dataset.columns = state.columns;
   elements.caseGrid.dataset.viewMode = state.viewMode;
+  elements.caseGrid.classList.toggle("is-csp-grid", state.dataset.puzzle === "SQ1" && state.dataset.algset === "csp");
   elements.caseGrid.classList.toggle("is-grouped", state.viewMode === "compact");
   elements.caseGrid.style.setProperty("--image-size", `${state.imageSize}px`);
   elements.caseDetail.style.setProperty("--image-size", `${state.imageSize}px`);
@@ -2295,7 +2314,7 @@ function saveCardEdit(card) {
   const scramble = card.querySelector(".setup-editor")?.value.trim() || "";
   const algorithms = [...card.querySelectorAll(".algorithm-editor")]
     .map((textarea) => textarea.value.trim())
-    .filter(Boolean);
+    .filter((value) => original.csp || Boolean(value));
   const recognitions = [...card.querySelectorAll(".recognition-editor:checked")].map((input) => input.value);
   const originalTags = typeof original.tags === "object" && !Array.isArray(original.tags) ? original.tags : {};
   const originalRecognitions = recognitionList(originalTags.recognition);

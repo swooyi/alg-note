@@ -3366,3 +3366,251 @@ main {
 .case-grid.is-grouped[data-view-mode="compact"][data-columns] {
   grid-template-columns: 1fr;
 }
+
+/* CSP pairs share one counting correction and two fixed parity explanations. */
+.case-card.is-csp-case,
+.case-card.is-csp-case.has-recognition-badges {
+  grid-template-rows: none;
+  grid-auto-rows: auto;
+  align-content: start;
+  min-width: 0;
+}
+
+.is-csp-grid .grouped-grid[data-view-mode="compact"] {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+.case-card.is-csp-case.is-compact {
+  width: auto;
+  gap: 7px;
+  padding: 10px;
+}
+
+.is-csp-case .case-title-text {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.is-csp-case.is-detail-card .card-top { flex-wrap: wrap; }
+.is-csp-case.is-detail-card .card-top > div:first-child { flex: 1 1 240px; }
+.is-csp-case.is-detail-card .quick-actions { flex-shrink: 0; }
+
+.is-csp-case.is-compact .case-name {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.is-csp-case .svg-box {
+  min-height: 0;
+  background: #fafbfc;
+}
+
+.is-csp-case .svg-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(var(--image-size, 190px) + 50px);
+}
+
+.is-csp-case.is-compact .svg-box svg {
+  max-height: 155px;
+}
+
+.csp-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.csp-counting {
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--soft);
+}
+
+.csp-counting.has-extra-count {
+  background: #fff0a6;
+  color: #624600;
+  font-weight: 750;
+}
+
+.csp-algorithms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.csp-parity {
+  min-width: 0;
+  align-content: start;
+}
+
+.csp-alg-text,
+.csp-notes,
+.csp-shape-names {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.csp-notes,
+.csp-pending {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.csp-algorithms .edit-actions { grid-column: 1 / -1; }
+.is-csp-case.is-compact .csp-algorithms { display: none; }
+.is-csp-case.is-editing .csp-algorithms { display: grid; }
+
+.case-card.is-csp-case.is-list-card {
+  grid-template-areas: "title summary odd even" "recognition summary odd even";
+  grid-template-columns: minmax(150px, 0.7fr) minmax(125px, 0.5fr) minmax(180px, 1fr) minmax(180px, 1fr);
+}
+
+.is-csp-case.is-list-card .csp-summary { grid-area: summary; align-content: center; }
+.is-csp-case.is-list-card .csp-algorithms { display: contents; }
+.is-csp-case.is-list-card .csp-odd { grid-area: odd; }
+.is-csp-case.is-list-card .csp-even { grid-area: even; }
+.is-csp-case.is-list-card .recognition-badges { max-width: none; }
+
+@media (max-width: 720px) {
+  .is-csp-grid .grouped-grid[data-view-mode="compact"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .case-card.is-csp-case.is-compact { padding: 7px; }
+  .is-csp-case.is-compact .case-name { font-size: 12px; }
+  .is-csp-case.is-compact .tag-badge { font-size: 10px; }
+  .csp-algorithms { grid-template-columns: 1fr; }
+  .case-card.is-csp-case.is-list-card {
+    grid-template-areas: "title" "recognition" "summary" "odd" "even";
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* CSP pairs share one counting correction and two fixed parity explanations. */
+.case-card.is-csp-case,
+.case-card.is-csp-case.has-recognition-badges {
+  grid-template-rows: none;
+  grid-auto-rows: auto;
+  align-content: start;
+  min-width: 0;
+}
+
+.is-csp-grid .grouped-grid[data-view-mode="compact"] {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+.case-card.is-csp-case.is-compact {
+  width: auto;
+  gap: 7px;
+  padding: 10px;
+}
+
+.is-csp-case .case-title-text {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.is-csp-case.is-compact .case-name {
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.is-csp-case .svg-box {
+  min-height: 0;
+  background: #fafbfc;
+}
+
+.is-csp-case .svg-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(var(--image-size, 190px) + 50px);
+}
+
+.is-csp-case.is-compact .svg-box svg {
+  max-height: 155px;
+}
+
+.csp-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.csp-counting {
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--soft);
+}
+
+.csp-counting.has-extra-count {
+  background: #fff0a6;
+  color: #624600;
+  font-weight: 750;
+}
+
+.csp-algorithms {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.csp-parity {
+  min-width: 0;
+  align-content: start;
+}
+
+.csp-alg-text,
+.csp-notes,
+.csp-shape-names {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.csp-notes,
+.csp-pending {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.csp-algorithms .edit-actions { grid-column: 1 / -1; }
+.is-csp-case.is-compact .csp-algorithms { display: none; }
+.is-csp-case.is-editing .csp-algorithms { display: grid; }
+
+.case-card.is-csp-case.is-list-card {
+  grid-template-areas: "title summary odd even" "recognition summary odd even";
+  grid-template-columns: minmax(150px, 0.7fr) minmax(125px, 0.5fr) minmax(180px, 1fr) minmax(180px, 1fr);
+}
+
+.is-csp-case.is-list-card .csp-summary { grid-area: summary; align-content: center; }
+.is-csp-case.is-list-card .csp-algorithms { display: contents; }
+.is-csp-case.is-list-card .csp-odd { grid-area: odd; }
+.is-csp-case.is-list-card .csp-even { grid-area: even; }
+.is-csp-case.is-list-card .recognition-badges { max-width: none; }
+
+@media (max-width: 720px) {
+  .is-csp-grid .grouped-grid[data-view-mode="compact"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .case-card.is-csp-case.is-compact { padding: 7px; }
+  .is-csp-case.is-compact .case-name { font-size: 12px; }
+  .is-csp-case.is-compact .tag-badge { font-size: 10px; }
+  .csp-algorithms { grid-template-columns: 1fr; }
+  .case-card.is-csp-case.is-list-card {
+    grid-template-areas: "title" "recognition" "summary" "odd" "even";
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,3327 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "SQ1",
+  "algset": "csp",
+  "cases": [
+    {
+      "id": "1",
+      "name": "4-2 Left / Pair",
+      "group": "set-1",
+      "algorithms": [
+        "Scl/Scl",
+        "Shd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "1",
+      "tags": {
+        "recognition": [
+          "4-2 Left",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-left",
+          "name": "4-2 (Left 펭귄)",
+          "label": "4-2 Left",
+          "file": "[3C 6e] 4-2 left.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.0261,
+        "probabilityLabel": "2.610%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 4
+      }
+    },
+    {
+      "id": "2",
+      "name": "4-2 Right / Pair",
+      "group": "set-1",
+      "algorithms": [
+        "Scl/Scl",
+        "Shd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "2",
+      "tags": {
+        "recognition": [
+          "4-2 Right",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-right",
+          "name": "4-2 (Right 펭귄)",
+          "label": "4-2 Right",
+          "file": "[3C 6e] 4-2 right.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.0261,
+        "probabilityLabel": "2.610%",
+        "extraCount": 1,
+        "notes": "Right 케이스 카운트 1추가\n(홀수면 Scl, 짝수면 Shd)",
+        "sourceRow": 5
+      }
+    },
+    {
+      "id": "3",
+      "name": "3-2-1 / Pair",
+      "group": "set-1",
+      "algorithms": [
+        "House/L - Shd/Sqr",
+        "5-1/Pair - Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "3",
+      "tags": {
+        "recognition": [
+          "3-2-1",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-2-1",
+          "name": "3-2-1 (Left House,참새)",
+          "label": "3-2-1",
+          "file": "[3C 6e] 3-2-1.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 6
+      }
+    },
+    {
+      "id": "4",
+      "name": "3-1-2 / Pair",
+      "group": "set-1",
+      "algorithms": [
+        "House/L - Shd/Sqr",
+        "5-1/Pair - Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "4",
+      "tags": {
+        "recognition": [
+          "3-1-2",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-1-2",
+          "name": "3-1-2 (Right House,참새)",
+          "label": "3-1-2",
+          "file": "[3C 6e] 3-1-2.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 7
+      }
+    },
+    {
+      "id": "5",
+      "name": "4-1-1 / Pair",
+      "group": "set-2",
+      "algorithms": [
+        "Good Paw/Paw (eCeC+[CCee])",
+        "Good Paw/Paw (CeCe+[eeCC])"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "5",
+      "tags": {
+        "recognition": [
+          "4-1-1",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-1-1",
+          "name": "4-1-1 (부채)",
+          "label": "4-1-1",
+          "file": "[3C 6e] 4-1-1.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.0261,
+        "probabilityLabel": "2.610%",
+        "extraCount": 0,
+        "notes": "대괄호는 Pair",
+        "sourceRow": 8
+      }
+    },
+    {
+      "id": "6",
+      "name": "3-3 / Pair",
+      "group": "set-2",
+      "algorithms": [
+        "Shd/Muf (CCC+[CCee]) \nScl/Kite (or Brl/Kite)",
+        "Shd/Muf (CCC+[eeCC]) \nScl/Kite (or Brl/Kite)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "6",
+      "tags": {
+        "recognition": [
+          "3-3",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-3",
+          "name": "3-3 (미사일)",
+          "label": "3-3",
+          "file": "[3C 6e] 3-3.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "대괄호는 Pair",
+        "sourceRow": 9
+      }
+    },
+    {
+      "id": "7",
+      "name": "6 / Pair",
+      "group": "set-2",
+      "algorithms": [
+        "Scl/Scl (eeCC+[CCee])",
+        "Scl/Scl (CCee+[eeCC])"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "7",
+      "tags": {
+        "recognition": [
+          "6",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "6",
+          "name": "6 (해파리)",
+          "label": "6",
+          "file": "[3C 6e] 6.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 1,
+        "notes": "- 대괄호는 Pair \n- Pair의 CCee가 odd alg가 되도록 일관성 위한 카운트+1",
+        "sourceRow": 10
+      }
+    },
+    {
+      "id": "8",
+      "name": "Scallop / Shield",
+      "group": "set-3",
+      "algorithms": [
+        "4-2/Pair ([Ceee]+CeeC) \nScl/Scl",
+        "4-2/Pair ([eeeC]+CeeC) \nScl/Scl"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "8",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Shield"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "대괄호는 Scl",
+        "sourceRow": 11
+      }
+    },
+    {
+      "id": "9",
+      "name": "Shield / Barrel",
+      "group": "set-3",
+      "algorithms": [
+        "Left 4-2/Pair (CCC+[CCee])\nScl/Scl",
+        "Right 4-2/Pair (CCC+[eeCC])\nScl/Scl"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "9",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Barrel"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "대괄호는 Bar",
+        "sourceRow": 12
+      }
+    },
+    {
+      "id": "10",
+      "name": "Scallop / Barrel",
+      "group": "set-3",
+      "algorithms": [
+        "4-2/Pair or 6/Pair\n(방향상관없이 편한걸로 사용)",
+        "Shd/Shd (방향은 상관없음)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "10",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Barrel"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 13
+      }
+    },
+    {
+      "id": "11",
+      "name": "Scallop / Left Fist",
+      "group": "set-4",
+      "algorithms": [
+        "Left 5-1/Pair (Ceee+eCeC)\n(Fist의 CC를 살리기)",
+        "Right 5-1/Pair  (CCC+CeeC)\n(Fist의 CC를 가르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "11",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 14
+      }
+    },
+    {
+      "id": "12",
+      "name": "Scallop / Right Fist",
+      "group": "set-4",
+      "algorithms": [
+        "Right 5-1/Pair (eeeC+CeCe)\n(Fist의 CC를 살리기)",
+        "Left 5-1/Pair (CCC+CeeC)\n(Fist의 CC를 가르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "12",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 15
+      }
+    },
+    {
+      "id": "13",
+      "name": "Shield / Left Fist",
+      "group": "set-4",
+      "algorithms": [
+        "3-3/L - OppPaw\n(L의 코너 그대로)",
+        "3-3/L - OppPaw\n(L의 코너를 교체)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "13",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 16
+      }
+    },
+    {
+      "id": "14",
+      "name": "Shield / Right Fist",
+      "group": "set-4",
+      "algorithms": [
+        "3-3/L - OppPaw\n(L의 코너 그대로)",
+        "3-3/L - OppPaw\n(L의 코너를 교체)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "14",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 1,
+        "notes": "Right 케이스 카운트 1추가\n(홀수면 L그대로, 짝수면 L반대코너)",
+        "sourceRow": 17
+      }
+    },
+    {
+      "id": "15",
+      "name": "Muffin / Left Fist",
+      "group": "set-5",
+      "algorithms": [
+        "Shd/Fist ( CeeC+(CCee or eeCC)) \n3-3 /L (L의 코너 그대로)",
+        "Shd/Fist ( CeeC+(CCee or eeCC)) \n3-3/L (L의 코너를 교체)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "15",
+      "tags": {
+        "recognition": [
+          "Muffin",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 18
+      }
+    },
+    {
+      "id": "16",
+      "name": "Muffin / Right Fist",
+      "group": "set-5",
+      "algorithms": [
+        "Shd/Fist ( CeeC+(CCee or eeCC)) \n3-3 /L (L의 코너 그대로)",
+        "Shd/Fist ( CeeC+(CCee or eeCC)) \n3-3/L (L의 코너를 교체)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "16",
+      "tags": {
+        "recognition": [
+          "Muffin",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 1,
+        "notes": "Right 케이스 카운트 1추가\n(홀수면 L그대로, 짝수면 L반대코너)",
+        "sourceRow": 19
+      }
+    },
+    {
+      "id": "17",
+      "name": "Barrel / Left Fist",
+      "group": "set-5",
+      "algorithms": [
+        "Paw/Muf - 4-2/Pair\n- Scl/Scl",
+        "Paw/Muf - 4-2/Pair\n- Shd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "17",
+      "tags": {
+        "recognition": [
+          "Barrel",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 20
+      }
+    },
+    {
+      "id": "18",
+      "name": "Barrel / Right Fist",
+      "group": "set-5",
+      "algorithms": [
+        "Paw/Muf - 4-2/Pair\n- Scl/Scl",
+        "Paw/Muf - 4-2/Pair\n- Shd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "18",
+      "tags": {
+        "recognition": [
+          "Barrel",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 21
+      }
+    },
+    {
+      "id": "19",
+      "name": "Kite / Left Fist",
+      "group": "set-6",
+      "algorithms": [
+        "Paw/Sqr\n4-1-1/L (L코너유지)",
+        "Paw/Sqr\n4-1-1/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "19",
+      "tags": {
+        "recognition": [
+          "Kite",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 22
+      }
+    },
+    {
+      "id": "20",
+      "name": "Kite / Right Fist",
+      "group": "set-6",
+      "algorithms": [
+        "Paw/Sqr\n4-1-1/L (L코너유지)",
+        "Paw/Sqr\n4-1-1/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "20",
+      "tags": {
+        "recognition": [
+          "Kite",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 23
+      }
+    },
+    {
+      "id": "21",
+      "name": "Square / Left Fist",
+      "group": "set-6",
+      "algorithms": [
+        "Paw/Kite\nhouse/L",
+        "Paw/Kite\n4-1-1/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "21",
+      "tags": {
+        "recognition": [
+          "Square",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 1,
+        "notes": "스퀘어인 경우 Left 1추가",
+        "sourceRow": 24
+      }
+    },
+    {
+      "id": "22",
+      "name": "Square / Right Fist",
+      "group": "set-6",
+      "algorithms": [
+        "Paw/Kite\nhouse/L",
+        "Paw/Kite\n4-1-1/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "22",
+      "tags": {
+        "recognition": [
+          "Square",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 25
+      }
+    },
+    {
+      "id": "23",
+      "name": "4-2 Left / L",
+      "group": "set-7",
+      "algorithms": [
+        "5-1/Pair (eeeC+CeCe)\n(4-2의 CC 살리기)",
+        "5-1/Pair (Ceee+eCeC)\n(4-2의 CC 가르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "23",
+      "tags": {
+        "recognition": [
+          "4-2 Left",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-left",
+          "name": "4-2 (Left 펭귄)",
+          "label": "4-2 Left",
+          "file": "[3C 6e] 4-2 left.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.0174,
+        "probabilityLabel": "1.740%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 26
+      }
+    },
+    {
+      "id": "24",
+      "name": "4-2 Right / L",
+      "group": "set-7",
+      "algorithms": [
+        "5-1/Pair (Ceee+eCeC)\n(4-2의 CC 살리기)",
+        "5-1/Pair (Ceee+eCeC)\n(4-2의 CC 가르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "24",
+      "tags": {
+        "recognition": [
+          "4-2 Right",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-right",
+          "name": "4-2 (Right 펭귄)",
+          "label": "4-2 Right",
+          "file": "[3C 6e] 4-2 right.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.0174,
+        "probabilityLabel": "1.740%",
+        "extraCount": 1,
+        "notes": "Right 케이스 카운트 1추가\n(홀수면 CC살리기 짝수면 CC가르기)",
+        "sourceRow": 27
+      }
+    },
+    {
+      "id": "25",
+      "name": "3-1-2 / L",
+      "group": "set-7",
+      "algorithms": [
+        "Sqr/Shd",
+        "house의 eeCee 남기고, CeCe,eCeC 교환\nShd/Sqr"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "25",
+      "tags": {
+        "recognition": [
+          "3-1-2",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-1-2",
+          "name": "3-1-2 (Right House,참새)",
+          "label": "3-1-2",
+          "file": "[3C 6e] 3-1-2.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 28
+      }
+    },
+    {
+      "id": "26",
+      "name": "3-2-1 / L",
+      "group": "set-7",
+      "algorithms": [
+        "Sqr/Shd",
+        "house의 eeCee 남기고, CeCe,eCeC 교환\nShd/Sqr"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "26",
+      "tags": {
+        "recognition": [
+          "3-2-1",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-2-1",
+          "name": "3-2-1 (Left House,참새)",
+          "label": "3-2-1",
+          "file": "[3C 6e] 3-2-1.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 29
+      }
+    },
+    {
+      "id": "27",
+      "name": "4-1-1 / L",
+      "group": "set-8",
+      "algorithms": [
+        "Kite/Scl (eeeC<>CeCe)",
+        "Kite/Scl (Ceee<>eCeC)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "27",
+      "tags": {
+        "recognition": [
+          "4-1-1",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-1-1",
+          "name": "4-1-1 (부채)",
+          "label": "4-1-1",
+          "file": "[3C 6e] 4-1-1.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.0174,
+        "probabilityLabel": "1.740%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 30
+      }
+    },
+    {
+      "id": "28",
+      "name": "3-3 / L",
+      "group": "set-8",
+      "algorithms": [
+        "good Pawn(eeCC+CeCe)",
+        "good Pawn(CCee+eCeC)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "28",
+      "tags": {
+        "recognition": [
+          "3-3",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-3",
+          "name": "3-3 (미사일)",
+          "label": "3-3",
+          "file": "[3C 6e] 3-3.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 31
+      }
+    },
+    {
+      "id": "29",
+      "name": "6 / L",
+      "group": "set-8",
+      "algorithms": [
+        "5-1/Pair (eeeC+CeCe)",
+        "5-1/Pair (Ceee+eCeC)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "29",
+      "tags": {
+        "recognition": [
+          "6",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "6",
+          "name": "6 (해파리)",
+          "label": "6",
+          "file": "[3C 6e] 6.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 32
+      }
+    },
+    {
+      "id": "30",
+      "name": "Scallop / Scallop",
+      "group": "set-9",
+      "algorithms": [
+        "최소 슬라이서",
+        "3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "30",
+      "tags": {
+        "recognition": [
+          "Scallop"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "probability": 0.00979,
+        "probabilityLabel": "0.979%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 33
+      }
+    },
+    {
+      "id": "31",
+      "name": "Barrel / Barrel",
+      "group": "set-9",
+      "algorithms": [
+        "최소 슬라이서",
+        "각도 따라 Scl/Scl or Shd/Shd로 \n간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "31",
+      "tags": {
+        "recognition": [
+          "Barrel"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 34
+      }
+    },
+    {
+      "id": "32",
+      "name": "Kite / Kite",
+      "group": "set-9",
+      "algorithms": [
+        "최소 슬라이서",
+        "Shd/Shd로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "32",
+      "tags": {
+        "recognition": [
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 35
+      }
+    },
+    {
+      "id": "33",
+      "name": "Right Fist / Left Fist",
+      "group": "set-10",
+      "algorithms": [
+        "최소 슬라이서",
+        "Good Paw/Paw로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "33",
+      "tags": {
+        "recognition": [
+          "Right Fist",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 36
+      }
+    },
+    {
+      "id": "34",
+      "name": "Shield / Square",
+      "group": "set-10",
+      "algorithms": [
+        "최소 슬라이서",
+        "Good Paw/Paw로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "34",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 37
+      }
+    },
+    {
+      "id": "35",
+      "name": "Barrel / Kite",
+      "group": "set-10",
+      "algorithms": [
+        "최소 슬라이서",
+        "Good Paw/Paw로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "35",
+      "tags": {
+        "recognition": [
+          "Barrel",
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 38
+      }
+    },
+    {
+      "id": "36",
+      "name": "Muffin / Square",
+      "group": "set-10",
+      "algorithms": [
+        "최소 슬라이서",
+        "Good Paw/Paw로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "36",
+      "tags": {
+        "recognition": [
+          "Muffin",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 39
+      }
+    },
+    {
+      "id": "37",
+      "name": "Shield / Shield",
+      "group": "set-11",
+      "algorithms": [
+        "최소 슬라이서",
+        "3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "37",
+      "tags": {
+        "recognition": [
+          "Shield"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "probability": 0.00979,
+        "probabilityLabel": "0.979%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 40
+      }
+    },
+    {
+      "id": "38",
+      "name": "Right Paw / Left Paw",
+      "group": "set-11",
+      "algorithms": [
+        "최소 슬라이서",
+        "3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "38",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Left Paw"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 41
+      }
+    },
+    {
+      "id": "39",
+      "name": "Muffin / Muffin",
+      "group": "set-11",
+      "algorithms": [
+        "최소 슬라이서",
+        "Brl/Brl - Scl/Scl로 간 후 3C교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "39",
+      "tags": {
+        "recognition": [
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 42
+      }
+    },
+    {
+      "id": "40",
+      "name": "Scallop / Kite",
+      "group": "set-11",
+      "algorithms": [
+        "최소 슬라이서",
+        "4-1-1/L 로 가서 L코너 교환"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "40",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 43
+      }
+    },
+    {
+      "id": "41",
+      "name": "Square / Square",
+      "group": "set-11",
+      "algorithms": [
+        "최소 슬라이서",
+        "Shd/Shd로 간 후 3C교환\nor OBL 예측"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "41",
+      "tags": {
+        "recognition": [
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00109,
+        "probabilityLabel": "0.109%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 44
+      }
+    },
+    {
+      "id": "42",
+      "name": "5-1 Left / Pair",
+      "group": "set-12",
+      "algorithms": [
+        "Scl/Kite \n4-1-1/L로 가서 패리티교환(슬래시 후 카이트 시계)",
+        "Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "42",
+      "tags": {
+        "recognition": [
+          "5-1 Left",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-left",
+          "name": "5-1 (Left 주전자)",
+          "label": "5-1 Left",
+          "file": "[3C 6e] 5-1 left.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 45
+      }
+    },
+    {
+      "id": "43",
+      "name": "5-1 Right / Pair",
+      "group": "set-12",
+      "algorithms": [
+        "Scl/Kite \n4-1-1/L로 가서 패리티교환(슬래시 후 카이트 반시계)",
+        "Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "43",
+      "tags": {
+        "recognition": [
+          "5-1 Right",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-right",
+          "name": "5-1 (Right 주전자)",
+          "label": "5-1 Right",
+          "file": "[3C 6e] 5-1 right.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.01958,
+        "probabilityLabel": "1.958%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 46
+      }
+    },
+    {
+      "id": "44",
+      "name": "5-1 Left / L",
+      "group": "set-12",
+      "algorithms": [
+        "4-1-1/L로 가서 패리티교환",
+        "Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "44",
+      "tags": {
+        "recognition": [
+          "5-1 Left",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-left",
+          "name": "5-1 (Left 주전자)",
+          "label": "5-1 Left",
+          "file": "[3C 6e] 5-1 left.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 47
+      }
+    },
+    {
+      "id": "45",
+      "name": "5-1 Right / L",
+      "group": "set-12",
+      "algorithms": [
+        "4-1-1/L로 가서 패리티교환",
+        "Scl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "45",
+      "tags": {
+        "recognition": [
+          "5-1 Right",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-right",
+          "name": "5-1 (Right 주전자)",
+          "label": "5-1 Right",
+          "file": "[3C 6e] 5-1 right.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 48
+      }
+    },
+    {
+      "id": "46",
+      "name": "5-1 Left / I",
+      "group": "set-12",
+      "algorithms": [
+        "4-2/Pair (CCee+CCC)\nShd/Shd\n* 5-1/L 패리티교환이 6슬이지만 핑거가 더편한듯",
+        "5-1/L"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "46",
+      "tags": {
+        "recognition": [
+          "5-1 Left",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-left",
+          "name": "5-1 (Left 주전자)",
+          "label": "5-1 Left",
+          "file": "[3C 6e] 5-1 left.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 49
+      }
+    },
+    {
+      "id": "47",
+      "name": "5-1 Right / I",
+      "group": "set-12",
+      "algorithms": [
+        "4-2/Pair (eeCC+CCC)\nShd/Shd\n* 5-1/L 패리티교환이 6슬이지만 핑거가 더편한듯",
+        "5-1/L"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "47",
+      "tags": {
+        "recognition": [
+          "5-1 Right",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-1-right",
+          "name": "5-1 (Right 주전자)",
+          "label": "5-1 Right",
+          "file": "[3C 6e] 5-1 right.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 50
+      }
+    },
+    {
+      "id": "48",
+      "name": "Left Paw / Left Fist",
+      "group": "set-13",
+      "algorithms": [
+        "3-3/L (L코너 유지)",
+        "3-3/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "48",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 1,
+        "notes": "레프트포우 +1 \n(홀수면 L그대로, 짝수면 L반대코너)",
+        "sourceRow": 51
+      }
+    },
+    {
+      "id": "49",
+      "name": "Right Paw / Right Fist",
+      "group": "set-13",
+      "algorithms": [
+        "3-3/L (L코너 유지)",
+        "3-3/L (L코너 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "49",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 52
+      }
+    },
+    {
+      "id": "50",
+      "name": "Left Paw / Right Fist",
+      "group": "set-13",
+      "algorithms": [
+        "Shd/Sqr",
+        "4-1-1/Pair (Pair의 CCee 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "50",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 1,
+        "notes": "레프트포우 +1\n(홀수면 L그대로, 짝수면 L반대코너)",
+        "sourceRow": 53
+      }
+    },
+    {
+      "id": "51",
+      "name": "Right Paw / Left Fist",
+      "group": "set-13",
+      "algorithms": [
+        "Shd/Sqr",
+        "4-1-1/Pair (Pair의 CCee 교환)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "51",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 54
+      }
+    },
+    {
+      "id": "52",
+      "name": "Left Fist / Left Fist",
+      "group": "set-14",
+      "algorithms": [
+        "(UL에 CC로 시작) Shd/Kite",
+        "(DR에 CC를 위로보냄) Shd/Kite \n(UL로 CCC 보내기, 120도 회전필요)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "52",
+      "tags": {
+        "recognition": [
+          "Left Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "d": {
+          "id": "left-fist",
+          "name": "Fist (Left 주먹)",
+          "label": "Left Fist",
+          "file": "left fist.svg"
+        },
+        "probability": 0.00979,
+        "probabilityLabel": "0.979%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 55
+      }
+    },
+    {
+      "id": "53",
+      "name": "Right Fist / Right Fist",
+      "group": "set-14",
+      "algorithms": [
+        "(UL에 CC로 시작) Shd/Kite",
+        "(DR에 CC를 위로보냄) Shd/Kite \n(UL로 CCC 보내기, 120도 회전필요)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "53",
+      "tags": {
+        "recognition": [
+          "Right Fist"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "d": {
+          "id": "right-fist",
+          "name": "Fist (Right 주먹)",
+          "label": "Right Fist",
+          "file": "right fist.svg"
+        },
+        "probability": 0.00979,
+        "probabilityLabel": "0.979%",
+        "extraCount": 1,
+        "notes": "odd에 간단한 공식을 넣기 위해 +1",
+        "sourceRow": 56
+      }
+    },
+    {
+      "id": "54",
+      "name": "Shield / Kite",
+      "group": "set-14",
+      "algorithms": [
+        "(카이트의 eCeC 사용)\nL/House",
+        "(카이트의 CeCe 사용)\nL/House"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "54",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 57
+      }
+    },
+    {
+      "id": "55",
+      "name": "Kite / Square",
+      "group": "set-14",
+      "algorithms": [
+        "same Fist (CeeC + 스퀘어eCeC)\nShd/Kite (카이트의 eCeC 사용)",
+        "same Fist (CeeC + CeCe)\nShd/Kite (카이트의 CeCe 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "55",
+      "tags": {
+        "recognition": [
+          "Kite",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 58
+      }
+    },
+    {
+      "id": "56",
+      "name": "Barrel / Square",
+      "group": "set-14",
+      "algorithms": [
+        "same Fist (CeeC + 스퀘어eCeC)\nShd/Kite (카이트의 eCeC 사용)",
+        "same Fist (CeeC + CeCe)\nShd/Kite (카이트의 CeCe 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "56",
+      "tags": {
+        "recognition": [
+          "Barrel",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "6슬도 가능하지만 이게 핑거더편함",
+        "sourceRow": 59
+      }
+    },
+    {
+      "id": "57",
+      "name": "Left Paw / Left Paw",
+      "group": "set-15",
+      "algorithms": [
+        "4-4/Star\nScl/Scl",
+        "4-4/Star\nShd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "57",
+      "tags": {
+        "recognition": [
+          "Left Paw"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "(홀수면 Scl, 짝수면 Shd) 일관성 위해 +1",
+        "sourceRow": 60
+      }
+    },
+    {
+      "id": "58",
+      "name": "Right Paw / Right Paw",
+      "group": "set-15",
+      "algorithms": [
+        "4-4/Star\nScl/Scl",
+        "4-4/Star\nShd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "58",
+      "tags": {
+        "recognition": [
+          "Right Paw"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "(홀수면 Scl, 짝수면 Shd) 일관성 위해 +1",
+        "sourceRow": 61
+      }
+    },
+    {
+      "id": "59",
+      "name": "Left Paw / Scallop",
+      "group": "set-16",
+      "algorithms": [
+        "5-1/Pair (Scl의 C를 1개3개)",
+        "5-1/Pair (Scl의 C를 2개2개)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "59",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Scallop"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 62
+      }
+    },
+    {
+      "id": "60",
+      "name": "Right Paw / Scallop",
+      "group": "set-16",
+      "algorithms": [
+        "5-1/Pair (Scl의 C를 1개3개)",
+        "5-1/Pair (Scl의 C를 2개2개)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "60",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Scallop"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 1,
+        "notes": "Right paw만 +1",
+        "sourceRow": 63
+      }
+    },
+    {
+      "id": "61",
+      "name": "Left Paw / Shield",
+      "group": "set-16",
+      "algorithms": [
+        "3C 교환 후 5-1/Pair",
+        "5-1/Pair"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "61",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Shield"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 64
+      }
+    },
+    {
+      "id": "62",
+      "name": "Right Paw / Shield",
+      "group": "set-16",
+      "algorithms": [
+        "3C 교환 후 5-1/Pair",
+        "5-1/Pair"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "62",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Shield"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 65
+      }
+    },
+    {
+      "id": "63",
+      "name": "Left Paw / Muffin",
+      "group": "set-16",
+      "algorithms": [
+        "4-2/Pair (C끼리 가깝게)\nScl/Scl",
+        "4-2/Pair (C끼리 가깝게)\nShd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "63",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "(홀수면 Scl, 짝수면 Shd) 일관성 위해 +1",
+        "sourceRow": 66
+      }
+    },
+    {
+      "id": "64",
+      "name": "Right Paw / Muffin",
+      "group": "set-16",
+      "algorithms": [
+        "4-2/Pair (C끼리 가깝게)\nScl/Scl",
+        "4-2/Pair (C끼리 가깝게)\nShd/Shd"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "64",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "(홀수면 Scl, 짝수면 Shd) 일관성 위해 +1",
+        "sourceRow": 67
+      }
+    },
+    {
+      "id": "65",
+      "name": "Left Paw / Barrel",
+      "group": "set-16",
+      "algorithms": [
+        "Scl/Fist (Fist. 그대로)\n5-1/Pair",
+        "5-1/Pair"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "65",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Barrel"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 68
+      }
+    },
+    {
+      "id": "66",
+      "name": "Right Paw / Barrel",
+      "group": "set-16",
+      "algorithms": [
+        "Scl/Fist (Fist. 그대로)\n5-1/Pair",
+        "5-1/Pair"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "66",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Barrel"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "Right paw만 +1",
+        "sourceRow": 69
+      }
+    },
+    {
+      "id": "67",
+      "name": "Left Paw / Kite",
+      "group": "set-17",
+      "algorithms": [
+        "4-1-1/L (L코너 유지)\nScl/Kite",
+        "4-1-1/L (L코너 교환)\nScl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "67",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "Left paw만 +1\nL코너 유지는 House/L - Shd/Sqr로도 대체가능",
+        "sourceRow": 70
+      }
+    },
+    {
+      "id": "68",
+      "name": "Right Paw / Kite",
+      "group": "set-17",
+      "algorithms": [
+        "4-1-1/L (L코너 유지)\nScl/Kite",
+        "4-1-1/L (L코너 교환)\nScl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "68",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Kite"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "L코너 유지는 House/L - Shd/Sqr로도 대체가능",
+        "sourceRow": 71
+      }
+    },
+    {
+      "id": "69",
+      "name": "Left Paw / Square",
+      "group": "set-17",
+      "algorithms": [
+        "4-1-1/L (L코너 유지)\nScl/Kite",
+        "4-1-1/L (L코너 교환)\nScl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "69",
+      "tags": {
+        "recognition": [
+          "Left Paw",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "left-paw",
+          "name": "Paw (Left 앞발, 잔디)",
+          "label": "Left Paw",
+          "file": "left paw.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 72
+      }
+    },
+    {
+      "id": "70",
+      "name": "Right Paw / Square",
+      "group": "set-17",
+      "algorithms": [
+        "4-1-1/L (L코너 유지)\nScl/Kite",
+        "4-1-1/L (L코너 교환)\nScl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "70",
+      "tags": {
+        "recognition": [
+          "Right Paw",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "right-paw",
+          "name": "Paw (Right 앞발, 잔디)",
+          "label": "Right Paw",
+          "file": "right paw.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 73
+      }
+    },
+    {
+      "id": "71",
+      "name": "Scallop / Muffin",
+      "group": "set-18",
+      "algorithms": [
+        "5-1/Pair \n(Muf의 CCee + Scl CCC는 어느쪽이던 무관)",
+        "5-1/Pair \n(Muf의 eeCC + Scl CCC는 어느쪽이던 무관)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "71",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 74
+      }
+    },
+    {
+      "id": "72",
+      "name": "Shield / Muffin",
+      "group": "set-18",
+      "algorithms": [
+        "3-3/Pair (Pair CC 교환)\nShd/Muf",
+        "Shd/Muf STD"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "72",
+      "tags": {
+        "recognition": [
+          "Shield",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "shield",
+          "name": "Shield (방패,닭발)",
+          "label": "Shield",
+          "file": "shield.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.01305,
+        "probabilityLabel": "1.305%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 75
+      }
+    },
+    {
+      "id": "73",
+      "name": "Barrel / Muffin",
+      "group": "set-18",
+      "algorithms": [
+        "Shd/Kite (카이트의 eCeC 사용)",
+        "Shd/Kite (카이트의 CeCe 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "73",
+      "tags": {
+        "recognition": [
+          "Barrel",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "barrel",
+          "name": "Barrel (배럴,윷)",
+          "label": "Barrel",
+          "file": "barrel.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 76
+      }
+    },
+    {
+      "id": "74",
+      "name": "Kite / Muffin",
+      "group": "set-18",
+      "algorithms": [
+        "(muf 방향은 무관)Shd/Bar (Bar의 CCee사용)\n4-2/Pair - Scl/Scl",
+        "(muf 방향은 무관)Shd/Bar (Bar의 eeCC사용)\n4-2/Pair - Scl/Scl"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "74",
+      "tags": {
+        "recognition": [
+          "Kite",
+          "Muffin"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "kite",
+          "name": "Kite (연, 튤립)",
+          "label": "Kite",
+          "file": "kite.svg"
+        },
+        "d": {
+          "id": "muffin",
+          "name": "Muffin (머핀,버섯)",
+          "label": "Muffin",
+          "file": "muffin.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 77
+      }
+    },
+    {
+      "id": "75",
+      "name": "Scallop / Square",
+      "group": "set-18",
+      "algorithms": [
+        "4-1-1/L or 5-1/L \n(스퀘어 eCeC 사용, 이후 L의 코너 교환)\nScl/Kite",
+        "4-1-1/L\n(스퀘어 CeCe 사용, 이후 L의 코너 교환)\nScl/Kite"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "75",
+      "tags": {
+        "recognition": [
+          "Scallop",
+          "Square"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "scallop",
+          "name": "Scallop (가리비)",
+          "label": "Scallop",
+          "file": "scallop.svg"
+        },
+        "d": {
+          "id": "square",
+          "name": "Square (네모)",
+          "label": "Square",
+          "file": "square.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 78
+      }
+    },
+    {
+      "id": "76",
+      "name": "4-2 Left / I",
+      "group": "set-19",
+      "algorithms": [
+        "5-1/Pair (CC 살리기)",
+        "Scl/Kite (CC 자르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "76",
+      "tags": {
+        "recognition": [
+          "4-2 Left",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-left",
+          "name": "4-2 (Left 펭귄)",
+          "label": "4-2 Left",
+          "file": "[3C 6e] 4-2 left.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 79
+      }
+    },
+    {
+      "id": "77",
+      "name": "4-2 Right / I",
+      "group": "set-19",
+      "algorithms": [
+        "5-1/Pair (CC 살리기)",
+        "Scl/Kite (CC 자르기)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "77",
+      "tags": {
+        "recognition": [
+          "4-2 Right",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-2-right",
+          "name": "4-2 (Right 펭귄)",
+          "label": "4-2 Right",
+          "file": "[3C 6e] 4-2 right.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 80
+      }
+    },
+    {
+      "id": "78",
+      "name": "3-2-1 / I",
+      "group": "set-19",
+      "algorithms": [
+        "oppsite Fist/Paw (eeeCe와 CeeC 교환)[ee잘라야함]\nSqr/Muf (CCC의 코너하나 넘기기)",
+        "4-2/Pair (4-2의 CeeC와 eCCe 교환)\nScl/Scl"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "78",
+      "tags": {
+        "recognition": [
+          "3-2-1",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-2-1",
+          "name": "3-2-1 (Left House,참새)",
+          "label": "3-2-1",
+          "file": "[3C 6e] 3-2-1.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 81
+      }
+    },
+    {
+      "id": "79",
+      "name": "3-1-2 / I",
+      "group": "set-19",
+      "algorithms": [
+        "oppsite Fist/Paw (eCeee와 CeeC 교환)[ee잘라야함]\nSqr/Muf",
+        "4-2/Pair (4-2의 CeeC와 eCCe 교환)\nScl/Scl"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "79",
+      "tags": {
+        "recognition": [
+          "3-1-2",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-1-2",
+          "name": "3-1-2 (Right House,참새)",
+          "label": "3-1-2",
+          "file": "[3C 6e] 3-1-2.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 82
+      }
+    },
+    {
+      "id": "80",
+      "name": "4-1-1 / I",
+      "group": "set-19",
+      "algorithms": [
+        "5-1/L (eCCe가 eeeC와 만남)",
+        "5-1/L (eCCe가 Ceee와 만남)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "80",
+      "tags": {
+        "recognition": [
+          "4-1-1",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-1-1",
+          "name": "4-1-1 (부채)",
+          "label": "4-1-1",
+          "file": "[3C 6e] 4-1-1.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.0087,
+        "probabilityLabel": "0.870%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 83
+      }
+    },
+    {
+      "id": "81",
+      "name": "3-3 / I",
+      "group": "set-19",
+      "algorithms": [
+        "Muf/Paw (eCCe가 eeCC와 만남)",
+        "Muf/Paw (eCCe가 CCee와 만남)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "81",
+      "tags": {
+        "recognition": [
+          "3-3",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "3-3",
+          "name": "3-3 (미사일)",
+          "label": "3-3",
+          "file": "[3C 6e] 3-3.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 84
+      }
+    },
+    {
+      "id": "82",
+      "name": "6 / I",
+      "group": "set-19",
+      "algorithms": [
+        "5-1/Pair (eCCe가 eeeC와 만남)",
+        "5-1/Pair (eCCe가 Ceee와 만남)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "82",
+      "tags": {
+        "recognition": [
+          "6",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "6",
+          "name": "6 (해파리)",
+          "label": "6",
+          "file": "[3C 6e] 6.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 85
+      }
+    },
+    {
+      "id": "83",
+      "name": "2-2-2 / Pair",
+      "group": "set-20",
+      "algorithms": [
+        "Shd/Shd (Pair의 CCee 사용)",
+        "Shd/Shd (Pair의 eeCC 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "83",
+      "tags": {
+        "recognition": [
+          "2-2-2",
+          "Pair"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "2-2-2",
+          "name": "2-2-2 (세모)",
+          "label": "2-2-2",
+          "file": "[3C 6e] 2-2-2.svg"
+        },
+        "d": {
+          "id": "pair",
+          "name": "Paired Edge (Pair, 메이플)",
+          "label": "Pair",
+          "file": "pair.svg"
+        },
+        "probability": 0.00653,
+        "probabilityLabel": "0.653%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 86
+      }
+    },
+    {
+      "id": "84",
+      "name": "2-2-2 / L",
+      "group": "set-20",
+      "algorithms": [
+        "Pair/house (L의 CeCe 사용)",
+        "Pair/house (L의 eCeC 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "84",
+      "tags": {
+        "recognition": [
+          "2-2-2",
+          "L"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "2-2-2",
+          "name": "2-2-2 (세모)",
+          "label": "2-2-2",
+          "file": "[3C 6e] 2-2-2.svg"
+        },
+        "d": {
+          "id": "l",
+          "name": "Perpendicular Edges (L, 사레레)",
+          "label": "L",
+          "file": "L.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 87
+      }
+    },
+    {
+      "id": "85",
+      "name": "2-2-2 / I",
+      "group": "set-20",
+      "algorithms": [
+        "Shd/Kite \n(이후 카이트의 eCeC 사용)",
+        "Shd/Kite \n(이후 카이트의 CeCe 사용)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "85",
+      "tags": {
+        "recognition": [
+          "2-2-2",
+          "I"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "2-2-2",
+          "name": "2-2-2 (세모)",
+          "label": "2-2-2",
+          "file": "[3C 6e] 2-2-2.svg"
+        },
+        "d": {
+          "id": "i",
+          "name": "Parallel Edges (I, 숄프)",
+          "label": "I",
+          "file": "I.svg"
+        },
+        "probability": 0.00218,
+        "probabilityLabel": "0.218%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 88
+      }
+    },
+    {
+      "id": "86",
+      "name": "4-4 / Star",
+      "group": "set-21",
+      "algorithms": [
+        "Scl/Scl \n(4-4의 1번코너가 슬래시 오른쪽)",
+        "Scl/Scl \n(4-4의 1번코너가 슬래시 왼쪽)"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "86",
+      "tags": {
+        "recognition": [
+          "4-4",
+          "Star"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "4-4",
+          "name": "4-4 (고구마)",
+          "label": "4-4",
+          "file": "[2C 8e] 4-4.svg"
+        },
+        "d": {
+          "id": "star",
+          "name": "Star",
+          "label": "Star",
+          "file": "[6C] star.svg"
+        },
+        "probability": 0.00272,
+        "probabilityLabel": "0.272%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 89
+      }
+    },
+    {
+      "id": "87",
+      "name": "8 / Star",
+      "group": "set-21",
+      "algorithms": [
+        "(U)좁은쪽 위 /",
+        "0,2 추가"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "87",
+      "tags": {
+        "recognition": [
+          "8",
+          "Star"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "8",
+          "name": "8 (농협)",
+          "label": "8",
+          "file": "[2C 8e] 8.svg"
+        },
+        "d": {
+          "id": "star",
+          "name": "Star",
+          "label": "Star",
+          "file": "[6C] star.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 90
+      }
+    },
+    {
+      "id": "88",
+      "name": "2-6 / Star",
+      "group": "set-21",
+      "algorithms": [
+        "(U)좁은쪽 위 /",
+        "0,2 추가"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "88",
+      "tags": {
+        "recognition": [
+          "2-6",
+          "Star"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "6-2",
+          "name": "2-6 (푸딩)",
+          "label": "2-6",
+          "file": "[2C 8e] 6-2.svg"
+        },
+        "d": {
+          "id": "star",
+          "name": "Star",
+          "label": "Star",
+          "file": "[6C] star.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 91
+      }
+    },
+    {
+      "id": "89",
+      "name": "1/7 / Star",
+      "group": "set-21",
+      "algorithms": [
+        "(eCee 와 Star의 TP 같은 슬래시)\nScl/Paw (이후 Scl의 코너 1/3)",
+        "0,2 추가"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "89",
+      "tags": {
+        "recognition": [
+          "1/7",
+          "Star"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "7-1",
+          "name": "1/7 (식빵)",
+          "label": "1/7",
+          "file": "7-1.svg"
+        },
+        "d": {
+          "id": "star",
+          "name": "Star",
+          "label": "Star",
+          "file": "[6C] star.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 0,
+        "notes": "",
+        "sourceRow": 92
+      }
+    },
+    {
+      "id": "90",
+      "name": "3/5 / Star",
+      "group": "set-21",
+      "algorithms": [
+        "(eCee 와 Star의 TP 같은 슬래시)\nScl/Paw  (이후 Scl의 코너 1/3)",
+        "0,2 추가"
+      ],
+      "scramble": "",
+      "scrambles": [],
+      "svgId": "90",
+      "tags": {
+        "recognition": [
+          "3/5",
+          "Star"
+        ]
+      },
+      "csp": {
+        "u": {
+          "id": "5-3",
+          "name": "3/5 (송편)",
+          "label": "3/5",
+          "file": "[2C 8e] 5-3.svg"
+        },
+        "d": {
+          "id": "star",
+          "name": "Star",
+          "label": "Star",
+          "file": "[6C] star.svg"
+        },
+        "probability": 0.00435,
+        "probabilityLabel": "0.435%",
+        "extraCount": 1,
+        "notes": "",
+        "sourceRow": 93
+      }
+    }
+  ]
+}

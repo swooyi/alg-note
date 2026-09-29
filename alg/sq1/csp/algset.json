@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "SQ1",
+  "id": "csp",
+  "name": "CSP",
+  "source": {
+    "url": "https://docs.google.com/spreadsheets/d/1uP4QGcOrWnubi4ECC338XrfC9KXEWn2bfFNQ3MWk7Ho/edit?gid=1494475855#gid=1494475855",
+    "sheet": "내CSP 학습",
+    "range": "C4:K93"
+  },
+  "notes": [
+    "사용자 제공 시트 및 직접 제작한 모양 SVG.",
+    "algorithms[0]은 Odd, algorithms[1]은 Even 설명. csp.extraCount는 케이스 공통 카운팅 보정.",
+    "셋업의 패리티는 미확정이며 드릴은 추후 지원. 원본 셋업은 수집 자료에만 보관."
+  ]
+}

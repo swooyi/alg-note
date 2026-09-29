@@ -287,7 +287,76 @@ function makeCaseCard(template, item, state) {
   node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? ui("closeEdit") : ui("edit"));
   node.querySelector(".edit-button").title = isEditing ? ui("closeEdit") : ui("edit");
 
+  if (state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp" && item.csp) {
+    renderCspCard(node, item, { isEditing, isCompact, isList });
+  }
+
   return node;
+}
+
+
+function renderCspCard(node, item, { isEditing, isCompact, isList }) {
+  node.classList.add("is-csp-case");
+  const info = item.csp;
+  node.querySelector(".case-meta").textContent = "";
+  const summary = node.querySelector(".setup-section");
+  summary.className = "csp-summary";
+  summary.replaceChildren();
+  const probability = document.createElement("span");
+  probability.textContent = `${ui("cspProbability")} ${info.probabilityLabel}`;
+  const counting = document.createElement("span");
+  counting.className = `csp-counting${info.extraCount ? " has-extra-count" : ""}`;
+  counting.textContent = info.extraCount ? ui("cspCountPlusOne") : ui("cspCountNone");
+  summary.append(probability, counting);
+
+  const algorithms = node.querySelector(".alg-section");
+  algorithms.className = "csp-algorithms";
+  algorithms.replaceChildren();
+  for (const [index, parity] of ["Odd", "Even"].entries()) {
+    const section = document.createElement("section");
+    section.className = `case-section csp-parity csp-${parity.toLowerCase()}`;
+    const heading = document.createElement("h3");
+    heading.textContent = parity;
+    const content = document.createElement(isEditing ? "textarea" : "p");
+    content.className = isEditing ? "algorithm-editor" : "csp-alg-text";
+    if (isEditing) {
+      content.rows = 4;
+      content.value = item.algorithms[index] || "";
+      content.setAttribute("aria-label", `${parity} ${ui("editAlgorithm")}`);
+    } else {
+      content.textContent = item.algorithms[index] || "—";
+    }
+    section.append(heading, content);
+    algorithms.append(section);
+  }
+  if (isEditing) {
+    const actions = document.createElement("div");
+    actions.className = "edit-actions";
+    for (const [className, label] of [["save-edit-button", "save"], ["cancel-edit-button", "cancel"]]) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = className;
+      button.textContent = ui(label);
+      actions.append(button);
+    }
+    algorithms.append(actions);
+  }
+  if (!isCompact && !isList) {
+    const shapes = document.createElement("p");
+    shapes.className = "csp-shape-names";
+    shapes.textContent = `U: ${info.u.name}\nD: ${info.d.name}`;
+    summary.before(shapes);
+    if (info.notes) {
+      const notes = document.createElement("p");
+      notes.className = "csp-notes";
+      notes.textContent = info.notes;
+      summary.after(notes);
+    }
+    const pending = document.createElement("p");
+    pending.className = "csp-pending";
+    pending.textContent = ui("cspSetupPending");
+    node.append(pending);
+  }
 }
 
 
