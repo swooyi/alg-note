@@ -125,7 +125,7 @@
 
     <main>
       <div id="appToolbar" class="toolbar">
-        <div class="control-row">
+        <div id="toolbarControls" class="control-row">
           <div class="control-group filter-group">
             <span class="control-label" data-i18n="filter">필터</span>
             <div class="filter-menu">
@@ -159,7 +159,13 @@
             </div>
           </div>
         </div>
-        <section id="summary" class="summary toolbar-summary" hidden></section>
+        <div class="toolbar-footer">
+          <section id="summary" class="summary toolbar-summary" hidden></section>
+          <button id="toolbarToggleButton" class="toolbar-toggle-button" type="button" aria-controls="toolbarControls" aria-expanded="true">
+            <span class="toolbar-toggle-label" data-i18n="collapseControls">접기</span>
+            <span class="toolbar-toggle-icon" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
 
       <section id="emptyState" class="empty-state" hidden></section>

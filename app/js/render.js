@@ -105,7 +105,8 @@ function renderGroupFilterOptions(container, groups, selectedValues) {
 
 
 function renderRecognitionFilterOptions(container, cases, selectedValues) {
-  const values = sortedRecognitionValues(cases);
+  const isCsp = isCspDataset(cases);
+  const values = sortedRecognitionValues(cases, isCsp);
   container.innerHTML = "";
   container.classList.remove("bookmark-filter-panel");
   container.classList.add("recognition-filter-panel");
@@ -115,7 +116,7 @@ function renderRecognitionFilterOptions(container, cases, selectedValues) {
       value,
       label: value,
       selected: selectedValues.has(value),
-      className: `tag-badge ${recognitionClassName(value)}`,
+      className: `tag-badge ${recognitionClassName(value, isCsp)}`,
     }));
   }
 }
@@ -179,7 +180,7 @@ function detailGroupLabel(item, state) {
 
 function recognitionValues(state) {
   const cases = state.dataset?.cases || [];
-  return sortedRecognitionValues(cases);
+  return sortedRecognitionValues(cases, state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp");
 }
 
 
@@ -189,9 +190,35 @@ function recognitionList(value) {
 }
 
 
-function sortedRecognitionValues(cases) {
+function isCspDataset(cases) {
+  return cases.some((item) => item.csp);
+}
+
+
+function cspRecognitionCategory(value) {
+  const label = text(value);
+  const digitSum = [...label.matchAll(/\d/g)].reduce((sum, match) => sum + Number(match[0]), 0);
+  if (digitSum === 8) return "sum-eight";
+  if (label === "Star") return "star";
+  if (digitSum === 6) return "sum-six";
+  if (["Pair", "I", "L"].includes(label)) return "red";
+  if (/left|right/i.test(label)) return "green";
+  return "blue";
+}
+
+
+function cspRecognitionOrder(value) {
+  return ["sum-eight", "star", "sum-six", "red", "green", "blue"].indexOf(cspRecognitionCategory(value));
+}
+
+
+function sortedRecognitionValues(cases, isCsp = false) {
   return [...new Set(cases.flatMap((item) => recognitionList(item.tags?.recognition)))]
     .sort((a, b) => {
+      if (isCsp) {
+        const categoryOrder = cspRecognitionOrder(a) - cspRecognitionOrder(b);
+        return categoryOrder || a.localeCompare(b);
+      }
       const indexA = RECOGNITION_ORDER.indexOf(a);
       const indexB = RECOGNITION_ORDER.indexOf(b);
       if (indexA !== -1 || indexB !== -1) {
@@ -204,7 +231,8 @@ function sortedRecognitionValues(cases) {
 }
 
 
-function recognitionClassName(value) {
+function recognitionClassName(value, isCsp = false) {
+  if (isCsp) return `csp-recognition-${cspRecognitionCategory(value)}`;
   return `tag-${text(value).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 }
 
@@ -232,6 +260,7 @@ function makeCaseCard(template, item, state) {
   const isCompact = state.viewMode === "compact" && !state.renderingDetail;
   const isList = state.viewMode === "list" && !state.renderingDetail;
   const isDetail = Boolean(state.renderingDetail) || state.viewMode === "full";
+  const isCsp = state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp";
   const recognitions = typeof item.tags === "object" && !Array.isArray(item.tags) ? recognitionList(item.tags.recognition) : [];
 
   node.dataset.caseId = item.id;
@@ -260,7 +289,7 @@ function makeCaseCard(template, item, state) {
   if (isEditing) {
     setupSection.querySelector(".scramble").replaceWith(makeSetupEditor(item.scramble));
     algSection.querySelector(".algorithm-list").replaceWith(makeAlgorithmEditor(item.algorithms));
-    node.append(makeRecognitionEditor(recognitions, recognitionValues(state)));
+    node.append(makeRecognitionEditor(recognitions, recognitionValues(state), isCsp));
   } else {
     node.querySelector(".scramble").textContent = item.scramble || "-";
 
@@ -270,7 +299,7 @@ function makeCaseCard(template, item, state) {
       li.textContent = text(algorithm);
       algorithmList.append(li);
     }
-    if ((isDetail || isCompact || isList) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions));
+    if ((isDetail || isCompact || isList) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions, isCsp));
   }
 
   for (const button of node.querySelectorAll(".bookmark-button")) {
@@ -287,7 +316,7 @@ function makeCaseCard(template, item, state) {
   node.querySelector(".edit-button").setAttribute("aria-label", isEditing ? ui("closeEdit") : ui("edit"));
   node.querySelector(".edit-button").title = isEditing ? ui("closeEdit") : ui("edit");
 
-  if (state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp" && item.csp) {
+  if (isCsp && item.csp) {
     renderCspCard(node, item, { isEditing, isCompact, isList });
   }
 
@@ -304,10 +333,13 @@ function renderCspCard(node, item, { isEditing, isCompact, isList }) {
   summary.replaceChildren();
   const probability = document.createElement("span");
   probability.textContent = `${ui("cspProbability")} ${info.probabilityLabel}`;
-  const counting = document.createElement("span");
-  counting.className = `csp-counting${info.extraCount ? " has-extra-count" : ""}`;
-  counting.textContent = info.extraCount ? ui("cspCountPlusOne") : ui("cspCountNone");
-  summary.append(probability, counting);
+  summary.append(probability);
+  if (info.extraCount) {
+    const counting = document.createElement("span");
+    counting.className = "csp-counting has-extra-count";
+    counting.textContent = ui("cspCountPlusOne");
+    summary.append(counting);
+  }
 
   const algorithms = node.querySelector(".alg-section");
   algorithms.className = "csp-algorithms";
@@ -489,13 +521,13 @@ function makeAlgorithmEditorRow(algorithm) {
 }
 
 
-function makeRecognitionBadges(recognitions) {
+function makeRecognitionBadges(recognitions, isCsp = false) {
   const section = document.createElement("div");
   section.className = "recognition-badges";
 
   for (const recognition of recognitions) {
     const badge = document.createElement("span");
-    badge.className = `tag-badge ${recognitionClassName(recognition)}`;
+    badge.className = `tag-badge ${recognitionClassName(recognition, isCsp)}`;
     badge.textContent = recognition;
     section.append(badge);
   }
@@ -503,7 +535,7 @@ function makeRecognitionBadges(recognitions) {
 }
 
 
-function makeRecognitionEditor(recognitions, values) {
+function makeRecognitionEditor(recognitions, values, isCsp = false) {
   const section = document.createElement("div");
   section.className = "case-section recognition-edit-section";
 
@@ -525,7 +557,7 @@ function makeRecognitionEditor(recognitions, values) {
     input.checked = selected.has(value);
 
     const badge = document.createElement("span");
-    badge.className = `tag-badge ${recognitionClassName(value)}`;
+    badge.className = `tag-badge ${recognitionClassName(value, isCsp)}`;
     badge.textContent = value;
 
     label.append(input, badge);

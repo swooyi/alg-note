@@ -3288,7 +3288,7 @@
     },
     {
       "id": "90",
-      "name": "3/5 / Star",
+      "name": "3-5 / Star",
       "group": "set-21",
       "algorithms": [
         "(eCee 와 Star의 TP 같은 슬래시)\nScl/Paw  (이후 Scl의 코너 1/3)",
@@ -3299,15 +3299,15 @@
       "svgId": "90",
       "tags": {
         "recognition": [
-          "3/5",
+          "3-5",
           "Star"
         ]
       },
       "csp": {
         "u": {
           "id": "5-3",
-          "name": "3/5 (송편)",
-          "label": "3/5",
+          "name": "3-5 (송편)",
+          "label": "3-5",
           "file": "[2C 8e] 5-3.svg"
         },
         "d": {

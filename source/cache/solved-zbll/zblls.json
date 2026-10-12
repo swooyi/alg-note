@@ -1,0 +1,1232 @@
+{
+  "algorithmStates": {},
+  "algorithmsDict": {
+    "74": {
+      "alg": "R U R' U R U2 R'",
+      "id": 74,
+      "usercount": 416
+    },
+    "75": {
+      "alg": "(U') R' U2 R U R' U R",
+      "id": 75,
+      "usercount": 38
+    },
+    "242": {
+      "alg": "(U') R' U R2 U R' U R U2 R U2 R U R' U R2",
+      "id": 242,
+      "usercount": 12
+    },
+    "243": {
+      "alg": "(U2) R' U' R2 U R U R' U' R U R2 U2 R'",
+      "id": 243,
+      "usercount": 14
+    },
+    "244": {
+      "alg": "(U') R' U2 R2 U R U' R' U R U R2 U' R'",
+      "id": 244,
+      "usercount": 13
+    },
+    "245": {
+      "alg": "(U') R' U2 R2 U R2 U R U' R U' R'",
+      "id": 245,
+      "usercount": 23
+    },
+    "246": {
+      "alg": "(U') R U R' U' R' U2 R U R U' R' U R' U R",
+      "id": 246,
+      "usercount": 19
+    },
+    "247": {
+      "alg": "(U') R' U' R U R U R' U' R' U R U R U' R'",
+      "id": 247,
+      "usercount": 19
+    },
+    "248": {
+      "alg": "(U') R U R' U' R' U2 R U R' U R U' R U' R'",
+      "id": 248,
+      "usercount": 14
+    },
+    "249": {
+      "alg": "(U) R U R' U R' U' R2 U' R' U R' U' R U R' U R",
+      "id": 249,
+      "usercount": 13
+    },
+    "250": {
+      "alg": "(U2) R' U' R U' R U R' U R U2 R' U' R' U R",
+      "id": 250,
+      "usercount": 12
+    },
+    "251": {
+      "alg": "R U R' U R2 U R U R U' R' U' R' U R'",
+      "id": 251,
+      "usercount": 12
+    },
+    "936": {
+      "alg": "(U) L' U2 L U L' U L",
+      "id": 936,
+      "usercount": 5
+    },
+    "937": {
+      "alg": "R U' R' S R2 S' R' U2 R2 U' R2 U R",
+      "id": 937,
+      "usercount": 3
+    },
+    "938": {
+      "alg": "R U R2 U' R2 U2 R' S R2 S' R' U' R",
+      "id": 938,
+      "usercount": 0
+    },
+    "939": {
+      "alg": "R U R' U R U2 R' U R U R' U R' U' R2 U' R' U R' U R",
+      "id": 939,
+      "usercount": 5
+    },
+    "940": {
+      "alg": "R U R2 U' R2 U' R2 U2 R2 U2 R'",
+      "id": 940,
+      "usercount": 7
+    },
+    "941": {
+      "alg": "R' U2 R2 U2 R2 U' R2 U' R2 U R",
+      "id": 941,
+      "usercount": 5
+    },
+    "942": {
+      "alg": "L' U' L U' L U L2 U L2 U2 L'",
+      "id": 942,
+      "usercount": 0
+    },
+    "943": {
+      "alg": "(U2) R' U' R U' R U R2 U R2 U2 R'",
+      "id": 943,
+      "usercount": 1
+    },
+    "944": {
+      "alg": "R' F' U' F U R F U R U' R' F'",
+      "id": 944,
+      "usercount": 0
+    },
+    "945": {
+      "alg": "S r U R' U R U2 r' U2 S'",
+      "id": 945,
+      "usercount": 3
+    },
+    "946": {
+      "alg": "(U2) R U' R' U' R U2 R' U2 R U R' U2 R U R'",
+      "id": 946,
+      "usercount": 1
+    },
+    "947": {
+      "alg": "R U R2 F' R U2 R U' R' U' R' F R2 U' R'",
+      "id": 947,
+      "usercount": 4
+    },
+    "948": {
+      "alg": "(U') R2 U R' U' R' U' R U2 R' U' R2 U' R2",
+      "id": 948,
+      "usercount": 2
+    },
+    "949": {
+      "alg": "(U) S l' U2 L U L' U l U2 S'",
+      "id": 949,
+      "usercount": 0
+    },
+    "950": {
+      "alg": "(U') S' U2 l' U2 L U L' U l S",
+      "id": 950,
+      "usercount": 0
+    },
+    "951": {
+      "alg": "R U R' U R U' R' U R' U' R2 U' R' U R' U R",
+      "id": 951,
+      "usercount": 5
+    },
+    "952": {
+      "alg": "R' U R U2 R' U R U2 R D R' U' R D' R'",
+      "id": 952,
+      "usercount": 9
+    },
+    "953": {
+      "alg": "(U2) r' F2 R F' r U R' U L' U L",
+      "id": 953,
+      "usercount": 0
+    },
+    "954": {
+      "alg": "R' F R f' U R U R' U2 f R' F' R",
+      "id": 954,
+      "usercount": 0
+    },
+    "955": {
+      "alg": "F' R U2 R' U2 R' F2 R U R U' R' F'",
+      "id": 955,
+      "usercount": 28
+    },
+    "956": {
+      "alg": "(U) R' D' R U' R' D R U2 R U R' U2 R U R'",
+      "id": 956,
+      "usercount": 0
+    },
+    "957": {
+      "alg": "(U2) R U R' U r' F R F' r U2 R'",
+      "id": 957,
+      "usercount": 1
+    },
+    "958": {
+      "alg": "F U' R' U R U F' R U R2 U R2 U2 R'",
+      "id": 958,
+      "usercount": 11
+    },
+    "959": {
+      "alg": "(U') R2 F' R U R U' R' F R U2 R U R2 U R2 U2 R'",
+      "id": 959,
+      "usercount": 0
+    },
+    "960": {
+      "alg": "L' U2 R U' R' U2 L U R U' R' U R U2 R'",
+      "id": 960,
+      "usercount": 7
+    },
+    "961": {
+      "alg": "(U') R U2 r' F R' F' r R U' R' U R U2 R'",
+      "id": 961,
+      "usercount": 0
+    },
+    "962": {
+      "alg": "R' U2 R U R' U' R F U' R' U' R U F'",
+      "id": 962,
+      "usercount": 9
+    },
+    "963": {
+      "alg": "R' U R' D' R2 U2 R' U' R U' R2 D R U' R",
+      "id": 963,
+      "usercount": 8
+    },
+    "964": {
+      "alg": "(U) F' R U R' D R U R' U' D' R U' R' F",
+      "id": 964,
+      "usercount": 1
+    },
+    "965": {
+      "alg": "R' U R U2 R' U2 R' F' R U R U' R' F U' R",
+      "id": 965,
+      "usercount": 1
+    },
+    "966": {
+      "alg": "F R U' R2 U2 R U R' U R2 U R' F'",
+      "id": 966,
+      "usercount": 7
+    },
+    "967": {
+      "alg": "(U2) R U R' F' R U R' U R U2 R' F R U' R'",
+      "id": 967,
+      "usercount": 2
+    },
+    "968": {
+      "alg": "(U) R2 U R2 F' R U2 R' U' R U' R' F R2 U' R2",
+      "id": 968,
+      "usercount": 9
+    },
+    "969": {
+      "alg": "(U') R' U' F U R U' R' F' R2 U R' U' R' F R F'",
+      "id": 969,
+      "usercount": 9
+    },
+    "970": {
+      "alg": "R U R2 F2 R U2 R U2 R' F2 U R U2 R'",
+      "id": 970,
+      "usercount": 9
+    },
+    "971": {
+      "alg": "R' U2 R U R' U R2 U' R' U' R U R D R' U R D' R2",
+      "id": 971,
+      "usercount": 0
+    },
+    "972": {
+      "alg": "(U') R U' R2 D' U2 R U R' U D R2 U R'",
+      "id": 972,
+      "usercount": 9
+    },
+    "973": {
+      "alg": "(U) F U R' F R F' R U' R' U R U' R' F'",
+      "id": 973,
+      "usercount": 9
+    },
+    "974": {
+      "alg": "R U' r' F R' F' r",
+      "id": 974,
+      "usercount": 42
+    },
+    "976": {
+      "alg": "(U2) z U R' D' R U' R' D z'",
+      "id": 976,
+      "usercount": 0
+    },
+    "977": {
+      "alg": "R2 D R' U2 R D' R' U' R' U R U2 R'",
+      "id": 977,
+      "usercount": 10
+    },
+    "978": {
+      "alg": "(U) R' U2 R U R' U' R' D' R U2 R' D R2",
+      "id": 978,
+      "usercount": 9
+    },
+    "979": {
+      "alg": "(U') R' U' F R U' R' U' R U2 R' U' F' U2 R",
+      "id": 979,
+      "usercount": 8
+    },
+    "980": {
+      "alg": "S U R' U' R' U R2 U' R' f' U F",
+      "id": 980,
+      "usercount": 0
+    },
+    "981": {
+      "alg": "(U') R' U' R' U' R F U' R' U2 R U F' R",
+      "id": 981,
+      "usercount": 0
+    },
+    "982": {
+      "alg": "(U') F R' F' U' F R f' R' U2 R S R' U' R",
+      "id": 982,
+      "usercount": 1
+    },
+    "983": {
+      "alg": "(U') R' U' D R' U R D' U2 R2 U R' U' R'",
+      "id": 983,
+      "usercount": 7
+    },
+    "984": {
+      "alg": "(U) f R F' R' U' R2 U R' U' R' U S'",
+      "id": 984,
+      "usercount": 0
+    },
+    "985": {
+      "alg": "R' U2 R U2 R U R' U' R' U F R U R U' R' F'",
+      "id": 985,
+      "usercount": 2
+    },
+    "986": {
+      "alg": "R U R' U R U' R' U' D R2 U' R U' R' U R' U R2 D'",
+      "id": 986,
+      "usercount": 8
+    },
+    "987": {
+      "alg": "F R2 D R' U R D' R2 U' R U R' U' R U R' U' F'",
+      "id": 987,
+      "usercount": 0
+    },
+    "988": {
+      "alg": "(U2) R U R' F' R U R' U R U' R' U' R' F R2 U' R'",
+      "id": 988,
+      "usercount": 8
+    },
+    "989": {
+      "alg": "(U') R2 U R U' R2 U' R U R' D R' U R D'",
+      "id": 989,
+      "usercount": 0
+    },
+    "990": {
+      "alg": "R U R' U R U R' U' R U R D R' U' R D' R' U2 R'",
+      "id": 990,
+      "usercount": 1
+    },
+    "991": {
+      "alg": "(U') R' U2 R U R' U' R U2 R' F R U R' U' R' F' R2",
+      "id": 991,
+      "usercount": 8
+    },
+    "992": {
+      "alg": "(U') R' U F U2 r U' r' U' R U' R' F' R",
+      "id": 992,
+      "usercount": 1
+    },
+    "993": {
+      "alg": "L U2 L F L' U' L' U L F' U2 L'",
+      "id": 993,
+      "usercount": 7
+    },
+    "994": {
+      "alg": "(U) R U R' U R U' R2 D' R U R' D R2 U2 R'",
+      "id": 994,
+      "usercount": 0
+    },
+    "995": {
+      "alg": "(U) R U2 R' U2 R' F R2 U R' U' R U R' U' F'",
+      "id": 995,
+      "usercount": 2
+    },
+    "996": {
+      "alg": "R U R' U R U' R' U' R' F R2 U' R' U' R U R' F'",
+      "id": 996,
+      "usercount": 9
+    },
+    "997": {
+      "alg": "(U) R' U2 R U R' U' R' D' r U2 r' D R2",
+      "id": 997,
+      "usercount": 0
+    },
+    "998": {
+      "alg": "(U') R' U2 F' R U R' U' R' F R U2 R",
+      "id": 998,
+      "usercount": 9
+    },
+    "999": {
+      "alg": "R2 D r' U2 r D' R' U' R' U R U2 R'",
+      "id": 999,
+      "usercount": 9
+    },
+    "1000": {
+      "alg": "L' R U R' U' L U2 R U2 R'",
+      "id": 1000,
+      "usercount": 10
+    },
+    "1001": {
+      "alg": "f R' F' R U2 R U2 R' U2 S'",
+      "id": 1001,
+      "usercount": 30
+    },
+    "1002": {
+      "alg": "(U) R' D' R U R' D R2 U R' U2 R U R'",
+      "id": 1002,
+      "usercount": 9
+    },
+    "1003": {
+      "alg": "(U2) R2 D' r U2 r' D R2 U R' U R",
+      "id": 1003,
+      "usercount": 9
+    },
+    "1004": {
+      "alg": "F U R U' R' S R' F' R U R U' R' S'",
+      "id": 1004,
+      "usercount": 9
+    },
+    "1005": {
+      "alg": "(U) R' U2 R U R2 D' R U' R' D R U2 R",
+      "id": 1005,
+      "usercount": 9
+    },
+    "1006": {
+      "alg": "R' U2 R U R' U R' D' R U2 R' D R U2 R",
+      "id": 1006,
+      "usercount": 9
+    },
+    "1007": {
+      "alg": "(U2) R' F' R U R' U' R' F R U' R U R' U' R U R' U R",
+      "id": 1007,
+      "usercount": 0
+    },
+    "1008": {
+      "alg": "(U2) R2 D' R U2 R' D R2 U R' U R",
+      "id": 1008,
+      "usercount": 9
+    },
+    "1009": {
+      "alg": "R U R' U R U2 l' R2 D2 R U R' D2 R U' R x'",
+      "id": 1009,
+      "usercount": 0
+    },
+    "1010": {
+      "alg": "(U') F R' F' r U2 R' D' R U' R' D R2 U' r'",
+      "id": 1010,
+      "usercount": 7
+    },
+    "1011": {
+      "alg": "(U) F R U R' U' R' F' R U R2 D R' U' R D' R2",
+      "id": 1011,
+      "usercount": 1
+    },
+    "1012": {
+      "alg": "R' U2 R U R' U R' D' r U2 r' D R U2 R",
+      "id": 1012,
+      "usercount": 1
+    },
+    "1013": {
+      "alg": "(U) F R' U' R2 U' R2 U2 F R F' R U' R' F'",
+      "id": 1013,
+      "usercount": 7
+    },
+    "1014": {
+      "alg": "(U) R' U2 R U R2 D' R U R' r U2 r' D R U2 R",
+      "id": 1014,
+      "usercount": 0
+    },
+    "1015": {
+      "alg": "(U') R' U2 R2 U R2 U D' R U R' D R U2 R U' R'",
+      "id": 1015,
+      "usercount": 0
+    },
+    "1016": {
+      "alg": "F R U R' U' R' F' R U2 R U' R' U R U2 R'",
+      "id": 1016,
+      "usercount": 9
+    },
+    "1017": {
+      "alg": "R' U2 R U R D R' U R D' R2 U R U' R' U R",
+      "id": 1017,
+      "usercount": 0
+    },
+    "1018": {
+      "alg": "R2 F R U R U' R' F' R U' R' U R",
+      "id": 1018,
+      "usercount": 13
+    },
+    "1019": {
+      "alg": "(U2) R' U2 R U F R' U R U' F'",
+      "id": 1019,
+      "usercount": 9
+    },
+    "1020": {
+      "alg": "L' U2 L U2 l F' L' F M'",
+      "id": 1020,
+      "usercount": 1
+    },
+    "1021": {
+      "alg": "(U) L' U2 L U F L' U' L U L F' L2 U L",
+      "id": 1021,
+      "usercount": 9
+    },
+    "1022": {
+      "alg": "(U2) S' U2 L' U2 L U2 L F' L' f",
+      "id": 1022,
+      "usercount": 2
+    },
+    "1023": {
+      "alg": "S U2 R' U2 R U2 x' R U' R' D x z'",
+      "id": 1023,
+      "usercount": 0
+    },
+    "1024": {
+      "alg": "R' U R U2 R' U R2 D R' U R D' R'",
+      "id": 1024,
+      "usercount": 10
+    },
+    "1025": {
+      "alg": "(U') R U R' U R2 D R' U' R D' R' U' R'",
+      "id": 1025,
+      "usercount": 0
+    },
+    "1026": {
+      "alg": "(U2) R U R' U R2 D r' U2 r D' R2",
+      "id": 1026,
+      "usercount": 10
+    },
+    "1027": {
+      "alg": "(U') R' U' R U R2 U' R' U' R U D' R U R' D R'",
+      "id": 1027,
+      "usercount": 8
+    },
+    "1028": {
+      "alg": "(U') R' U2 R U R' U R2 U R' F' R U R' U' R' F R2 U' R'",
+      "id": 1028,
+      "usercount": 2
+    },
+    "1029": {
+      "alg": "(U') r U' r' U' r U r' F R' F' R2 U R' U' R U' R'",
+      "id": 1029,
+      "usercount": 1
+    },
+    "1030": {
+      "alg": "S' r' F' r U r U' r' S L' U' L U F",
+      "id": 1030,
+      "usercount": 0
+    },
+    "1031": {
+      "alg": "R U R' U R U' R2 F' R U R U' R' F R U' R'",
+      "id": 1031,
+      "usercount": 11
+    },
+    "1032": {
+      "alg": "(U) R U2 R D R' U' R D' R2 U R U2 R'",
+      "id": 1032,
+      "usercount": 0
+    },
+    "1033": {
+      "alg": "(U2) R U R' U R2 D R' U2 R D' R2",
+      "id": 1033,
+      "usercount": 30
+    },
+    "1034": {
+      "alg": "R U2 R D R' U2 R D' R' U R' U R U2 R'",
+      "id": 1034,
+      "usercount": 10
+    },
+    "1035": {
+      "alg": "(U') R2 D' R U' R' D R2 F R' U R U' F'",
+      "id": 1035,
+      "usercount": 10
+    },
+    "1036": {
+      "alg": "(U) R' F R U R' U' R' F' D' R U R' D R2",
+      "id": 1036,
+      "usercount": 0
+    },
+    "1037": {
+      "alg": "F' R U R' U R U2 R' F U R U' R' U2 R U' R'",
+      "id": 1037,
+      "usercount": 10
+    },
+    "1038": {
+      "alg": "(U) R U R' U' R U R2 D' R U R' D R U R U2 R'",
+      "id": 1038,
+      "usercount": 10
+    },
+    "1039": {
+      "alg": "R U R2 F' R U2 R U2 R' F R U' R'",
+      "id": 1039,
+      "usercount": 10
+    },
+    "1040": {
+      "alg": "R U R' U' R' F R F' r U R' U R U2 r'",
+      "id": 1040,
+      "usercount": 6
+    },
+    "1041": {
+      "alg": "(U2) R2 D' R U' R' D R U' R U R' U R",
+      "id": 1041,
+      "usercount": 5
+    },
+    "1042": {
+      "alg": "(U') F R' U2 R F' R' F U2 F' R",
+      "id": 1042,
+      "usercount": 9
+    },
+    "1043": {
+      "alg": "R B R2 D2 R U2 R' D2 R U2 R B' R'",
+      "id": 1043,
+      "usercount": 1
+    },
+    "1044": {
+      "alg": "R' D R2 D' R2 U R2 D R2 D' R2 U' R'",
+      "id": 1044,
+      "usercount": 1
+    },
+    "1045": {
+      "alg": "(U) x D R2 D2 R U2 R' D2 R U2 R D' x'",
+      "id": 1045,
+      "usercount": 0
+    },
+    "1046": {
+      "alg": "(U') R U R' U R U' R D R' U' R D' R2",
+      "id": 1046,
+      "usercount": 30
+    },
+    "1047": {
+      "alg": "(U) F U R U' R' U R U' l U' R2 D' R U R' x",
+      "id": 1047,
+      "usercount": 6
+    },
+    "1048": {
+      "alg": "R U R' U R' F R F' R U' R' F' U F R U' R'",
+      "id": 1048,
+      "usercount": 0
+    },
+    "1049": {
+      "alg": "(U) R D R' U2 R D' R2 U R U2 R' U' R U' R' U' R",
+      "id": 1049,
+      "usercount": 3
+    },
+    "1050": {
+      "alg": "F R U' R' U R U2 R2 F R F' R' F R F' U' F'",
+      "id": 1050,
+      "usercount": 7
+    },
+    "1051": {
+      "alg": "R U R' U R' U' R U R' D' R U' R' U D R2 U2 R'",
+      "id": 1051,
+      "usercount": 0
+    },
+    "1052": {
+      "alg": "(U') R' U2 R' U2 R F' R U R' U' R' F U2 R U2 R",
+      "id": 1052,
+      "usercount": 0
+    },
+    "1053": {
+      "alg": "(U') R' U2 R U2 R' U R U2 R' U r' F R F' r",
+      "id": 1053,
+      "usercount": 7
+    },
+    "1054": {
+      "alg": "(U') R' U2 R F U R D r' U2 r D' R' U F'",
+      "id": 1054,
+      "usercount": 0
+    },
+    "1055": {
+      "alg": "(U') F R' U R U F' R' U F U F' R",
+      "id": 1055,
+      "usercount": 0
+    },
+    "1056": {
+      "alg": "(U') R U R' U R U' R D R' U R r' U2 r D' R2",
+      "id": 1056,
+      "usercount": 7
+    },
+    "1057": {
+      "alg": "(U2) R2 D' r U2 r' R U R' D R U' R U R' U R",
+      "id": 1057,
+      "usercount": 2
+    },
+    "1058": {
+      "alg": "R U' R' U' R U R D R' U2 R D' R2 U R U2 R'",
+      "id": 1058,
+      "usercount": 7
+    },
+    "1059": {
+      "alg": "(U) R' U2 R U R2 D' R U2 R' D R U R U' R' U' R",
+      "id": 1059,
+      "usercount": 1
+    },
+    "1060": {
+      "alg": "(U2) R U2 R' U' R U R' U' R U R D R' U2 R D' R2",
+      "id": 1060,
+      "usercount": 9
+    },
+    "1061": {
+      "alg": "(U2) R U R' U R U' R D R' U R D' R' U2 R'",
+      "id": 1061,
+      "usercount": 7
+    },
+    "1062": {
+      "alg": "(U2) R U R' U R' D' R U R' D R U' R U2 R'",
+      "id": 1062,
+      "usercount": 2
+    },
+    "1063": {
+      "alg": "(U) R' U' R U' R2 F' R U R U' R' F U2 R",
+      "id": 1063,
+      "usercount": 9
+    },
+    "1064": {
+      "alg": "(U') R' U2 R' D' R U R' D R U' R U R' U R",
+      "id": 1064,
+      "usercount": 9
+    },
+    "1680": {
+      "alg": "(U2) R2 D' R U2 R' D R' U R2 U R U' R U' R'",
+      "id": 1680,
+      "usercount": 1
+    },
+    "1703": {
+      "alg": "(U') R2 U R' U R D R' U2 R D' R' U R U' R2",
+      "id": 1703,
+      "usercount": 1
+    },
+    "1780": {
+      "alg": "(y) R U R2 F' R U R U' R' F U R U2 R'",
+      "id": 1780,
+      "usercount": 1
+    },
+    "1889": {
+      "alg": "R U' L' U R' U' L",
+      "id": 1889,
+      "usercount": 9
+    },
+    "1928": {
+      "alg": "(U') R2 U' R' U' R2 U R U R2 U R' U R",
+      "id": 1928,
+      "usercount": 0
+    },
+    "1929": {
+      "alg": "R U R' U R U R U R U R U' R' U' R2",
+      "id": 1929,
+      "usercount": 3
+    },
+    "1930": {
+      "alg": "(U') R2 U' R2 U' R U2 R U' R' U' R U R2",
+      "id": 1930,
+      "usercount": 1
+    },
+    "1934": {
+      "alg": "R' U2 R2 U R' U R U2 R' U2 R' U2 R",
+      "id": 1934,
+      "usercount": 1
+    },
+    "1966": {
+      "alg": "(U) L' U2 L2 U L U' L' U L U L2 U' L'",
+      "id": 1966,
+      "usercount": 0
+    },
+    "1969": {
+      "alg": "(U') R' U2 R U R U' R' U R U R U R' U' R U R",
+      "id": 1969,
+      "usercount": 1
+    },
+    "1974": {
+      "alg": "R U R' U R U2 R' U' R U' R U R U R U' R' U' R2",
+      "id": 1974,
+      "usercount": 1
+    },
+    "1983": {
+      "alg": "(U') R' U2 R U R' U R U R U' R U R U R U' R' U' R2",
+      "id": 1983,
+      "usercount": 1
+    },
+    "2321": {
+      "alg": "R' U2 L U' R U L' U R' U R",
+      "id": 2321,
+      "usercount": 1
+    },
+    "2322": {
+      "alg": "F R' F' R U R U' R' F U R U2 R' U' R U R' F'",
+      "id": 2322,
+      "usercount": 2
+    },
+    "2323": {
+      "alg": "R' F R F' U R U R' U2 F R' F' R",
+      "id": 2323,
+      "usercount": 1
+    },
+    "2324": {
+      "alg": "L F' U2 F L' F' L U2 L' F",
+      "id": 2324,
+      "usercount": 1
+    },
+    "2325": {
+      "alg": "(U2) R U' R' U' R U' R' U2 R U R2 D' R U2 R' D R",
+      "id": 2325,
+      "usercount": 3
+    },
+    "2326": {
+      "alg": "(U') R' U2 R U2 R2 F' R U R U' R' F R U' R' U2 R",
+      "id": 2326,
+      "usercount": 2
+    },
+    "2468": {
+      "alg": "(U') R' U' F U' R2 U R2 U F' R U' R U' R'",
+      "id": 2468,
+      "usercount": 1
+    },
+    "4449": {
+      "alg": "R U R' U' R U R' U R U R U2 R' U' R U' R' U R'",
+      "id": 4449,
+      "usercount": 3
+    },
+    "4477": {
+      "alg": "(U') F R U R' U' R' F' U2 R U R U' R' U R' U R",
+      "id": 4477,
+      "usercount": 1
+    },
+    "6377": {
+      "alg": "R2 U' S' U2 S U' R' U R' U R U2 R'",
+      "id": 6377,
+      "usercount": 1
+    },
+    "6378": {
+      "alg": "(U') R' U2 R2 U R' F' R U R' U' R' F R2 U' R2 U R",
+      "id": 6378,
+      "usercount": 1
+    },
+    "6379": {
+      "alg": "(U2) L' U' L F L' U' L U L F' L2 U' L U L' U L",
+      "id": 6379,
+      "usercount": 1
+    },
+    "6882": {
+      "alg": "S U2 R' U2 R U2 R f' U' F",
+      "id": 6882,
+      "usercount": 1
+    },
+    "7331": {
+      "alg": "(U) r U2 R' U' R U R' U' R U R' U2 r' F R F'",
+      "id": 7331,
+      "usercount": 1
+    }
+  },
+  "baseTagName": "ZBLLS",
+  "caseAlgorithms": {
+    "ZBLLS01": [
+      74
+    ],
+    "ZBLLS02": [
+      75,
+      936
+    ],
+    "ZBLLS03": [
+      242,
+      939,
+      937,
+      4449,
+      1969,
+      1974,
+      1983,
+      6377,
+      938
+    ],
+    "ZBLLS04": [
+      243,
+      940
+    ],
+    "ZBLLS05": [
+      244,
+      941,
+      1934,
+      1966
+    ],
+    "ZBLLS06": [
+      245,
+      943,
+      942
+    ],
+    "ZBLLS07": [
+      246,
+      1928
+    ],
+    "ZBLLS08": [
+      247,
+      944
+    ],
+    "ZBLLS09": [
+      248,
+      945,
+      946
+    ],
+    "ZBLLS10": [
+      249,
+      947
+    ],
+    "ZBLLS11": [
+      250,
+      1929,
+      948,
+      949,
+      950
+    ],
+    "ZBLLS12": [
+      251,
+      951,
+      1930
+    ],
+    "ZBLLS13": [
+      952,
+      2321,
+      953,
+      954
+    ],
+    "ZBLLS14": [
+      955,
+      957,
+      956
+    ],
+    "ZBLLS15": [
+      958,
+      959
+    ],
+    "ZBLLS16": [
+      960,
+      2322,
+      961
+    ],
+    "ZBLLS17": [
+      962
+    ],
+    "ZBLLS18": [
+      963,
+      964,
+      965
+    ],
+    "ZBLLS19": [
+      966,
+      967,
+      2323
+    ],
+    "ZBLLS20": [
+      968
+    ],
+    "ZBLLS21": [
+      969,
+      6378
+    ],
+    "ZBLLS22": [
+      970,
+      971
+    ],
+    "ZBLLS23": [
+      972
+    ],
+    "ZBLLS24": [
+      973
+    ],
+    "ZBLLS25": [
+      974,
+      1889,
+      976
+    ],
+    "ZBLLS26": [
+      977
+    ],
+    "ZBLLS27": [
+      978
+    ],
+    "ZBLLS28": [
+      979,
+      982,
+      980,
+      981
+    ],
+    "ZBLLS29": [
+      983,
+      985,
+      984
+    ],
+    "ZBLLS30": [
+      986,
+      7331,
+      987
+    ],
+    "ZBLLS31": [
+      988,
+      990,
+      989
+    ],
+    "ZBLLS32": [
+      991,
+      992
+    ],
+    "ZBLLS33": [
+      993,
+      995,
+      994
+    ],
+    "ZBLLS34": [
+      996,
+      997
+    ],
+    "ZBLLS35": [
+      998
+    ],
+    "ZBLLS36": [
+      999
+    ],
+    "ZBLLS37": [
+      1000
+    ],
+    "ZBLLS38": [
+      1001,
+      1780
+    ],
+    "ZBLLS39": [
+      1002
+    ],
+    "ZBLLS40": [
+      1003
+    ],
+    "ZBLLS41": [
+      1004
+    ],
+    "ZBLLS42": [
+      1005,
+      6379
+    ],
+    "ZBLLS43": [
+      1006,
+      1007
+    ],
+    "ZBLLS44": [
+      1008,
+      1009
+    ],
+    "ZBLLS45": [
+      1010,
+      1011,
+      1012
+    ],
+    "ZBLLS46": [
+      1013,
+      1680,
+      2468,
+      1014,
+      1015
+    ],
+    "ZBLLS47": [
+      1016,
+      1017
+    ],
+    "ZBLLS48": [
+      1018
+    ],
+    "ZBLLS49": [
+      1019,
+      1020
+    ],
+    "ZBLLS50": [
+      1021,
+      1022,
+      6882,
+      1023
+    ],
+    "ZBLLS51": [
+      1024,
+      1025
+    ],
+    "ZBLLS52": [
+      1026
+    ],
+    "ZBLLS53": [
+      1027,
+      1028,
+      1029,
+      1030
+    ],
+    "ZBLLS54": [
+      1031,
+      1032
+    ],
+    "ZBLLS55": [
+      1033
+    ],
+    "ZBLLS56": [
+      1034
+    ],
+    "ZBLLS57": [
+      1035,
+      1036
+    ],
+    "ZBLLS58": [
+      1037
+    ],
+    "ZBLLS59": [
+      1038
+    ],
+    "ZBLLS60": [
+      1039
+    ],
+    "ZBLLS61": [
+      1040,
+      1041
+    ],
+    "ZBLLS62": [
+      1042,
+      1043,
+      1044,
+      1703,
+      2324,
+      1045
+    ],
+    "ZBLLS63": [
+      1046
+    ],
+    "ZBLLS64": [
+      1047,
+      1049,
+      1048
+    ],
+    "ZBLLS65": [
+      1050,
+      2325,
+      1051,
+      1052
+    ],
+    "ZBLLS66": [
+      1053,
+      2326,
+      1054,
+      1055
+    ],
+    "ZBLLS67": [
+      1056,
+      1057
+    ],
+    "ZBLLS68": [
+      1058,
+      1059,
+      4477
+    ],
+    "ZBLLS69": [
+      1060
+    ],
+    "ZBLLS70": [
+      1061,
+      1062
+    ],
+    "ZBLLS71": [
+      1063
+    ],
+    "ZBLLS72": [
+      1064
+    ]
+  },
+  "caseStates": {
+    "ZBLLS01": "unknown",
+    "ZBLLS02": "unknown",
+    "ZBLLS03": "unknown",
+    "ZBLLS04": "unknown",
+    "ZBLLS05": "unknown",
+    "ZBLLS06": "unknown",
+    "ZBLLS07": "unknown",
+    "ZBLLS08": "unknown",
+    "ZBLLS09": "unknown",
+    "ZBLLS10": "unknown",
+    "ZBLLS11": "unknown",
+    "ZBLLS12": "unknown",
+    "ZBLLS13": "unknown",
+    "ZBLLS14": "unknown",
+    "ZBLLS15": "unknown",
+    "ZBLLS16": "unknown",
+    "ZBLLS17": "unknown",
+    "ZBLLS18": "unknown",
+    "ZBLLS19": "unknown",
+    "ZBLLS20": "unknown",
+    "ZBLLS21": "unknown",
+    "ZBLLS22": "unknown",
+    "ZBLLS23": "unknown",
+    "ZBLLS24": "unknown",
+    "ZBLLS25": "unknown",
+    "ZBLLS26": "unknown",
+    "ZBLLS27": "unknown",
+    "ZBLLS28": "unknown",
+    "ZBLLS29": "unknown",
+    "ZBLLS30": "unknown",
+    "ZBLLS31": "unknown",
+    "ZBLLS32": "unknown",
+    "ZBLLS33": "unknown",
+    "ZBLLS34": "unknown",
+    "ZBLLS35": "unknown",
+    "ZBLLS36": "unknown",
+    "ZBLLS37": "unknown",
+    "ZBLLS38": "unknown",
+    "ZBLLS39": "unknown",
+    "ZBLLS40": "unknown",
+    "ZBLLS41": "unknown",
+    "ZBLLS42": "unknown",
+    "ZBLLS43": "unknown",
+    "ZBLLS44": "unknown",
+    "ZBLLS45": "unknown",
+    "ZBLLS46": "unknown",
+    "ZBLLS47": "unknown",
+    "ZBLLS48": "unknown",
+    "ZBLLS49": "unknown",
+    "ZBLLS50": "unknown",
+    "ZBLLS51": "unknown",
+    "ZBLLS52": "unknown",
+    "ZBLLS53": "unknown",
+    "ZBLLS54": "unknown",
+    "ZBLLS55": "unknown",
+    "ZBLLS56": "unknown",
+    "ZBLLS57": "unknown",
+    "ZBLLS58": "unknown",
+    "ZBLLS59": "unknown",
+    "ZBLLS60": "unknown",
+    "ZBLLS61": "unknown",
+    "ZBLLS62": "unknown",
+    "ZBLLS63": "unknown",
+    "ZBLLS64": "unknown",
+    "ZBLLS65": "unknown",
+    "ZBLLS66": "unknown",
+    "ZBLLS67": "unknown",
+    "ZBLLS68": "unknown",
+    "ZBLLS69": "unknown",
+    "ZBLLS70": "unknown",
+    "ZBLLS71": "unknown",
+    "ZBLLS72": "unknown"
+  },
+  "category": "ZBLLS",
+  "loggedIn": false,
+  "profileUsername": "",
+  "puzzle": "3x3",
+  "puzzleN": 3,
+  "selectedCase": "ZBLLS01",
+  "subset": "",
+  "subsetProgress": {},
+  "tagName": "zblls",
+  "userPreferredColor": ""
+}

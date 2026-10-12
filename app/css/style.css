@@ -650,6 +650,10 @@ h1 {
   margin: 0 auto;
 }
 
+.control-row[hidden] {
+  display: none;
+}
+
 .control-group {
   min-width: 0;
 }
@@ -1913,7 +1917,38 @@ main {
 }
 
 .toolbar-summary {
-  margin: 9px 0 0;
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.toolbar-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+}
+
+.toolbar-toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  min-height: 32px;
+  padding: 0 10px;
+  color: var(--muted);
+}
+
+.toolbar-toggle-icon {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+.toolbar-toggle-button[aria-expanded="false"] .toolbar-toggle-icon {
+  transform: rotate(45deg) translate(-1px, -1px);
 }
 
 .summary span {
@@ -2894,6 +2929,25 @@ main {
     top: var(--app-header-height, 59px);
   }
 
+  .toolbar-footer {
+    align-items: flex-start;
+  }
+
+  .toolbar-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .toolbar-toggle-button {
+    width: 34px;
+    min-width: 34px;
+    padding: 0;
+  }
+
   .app-shell {
     display: block;
     min-height: auto;
@@ -3271,6 +3325,69 @@ main {
 
   .is-compact .svg-box svg {
     max-height: 92px;
+  }
+}
+
+/* CSP recognition labels use their own shape-based colors. */
+.is-csp-case .card-top > div:first-child {
+  display: none;
+}
+
+html .case-card.is-csp-case.is-list-card {
+  grid-template-areas: "recognition summary odd even";
+  grid-template-columns: minmax(150px, 0.7fr) minmax(125px, 0.5fr) minmax(180px, 1fr) minmax(180px, 1fr);
+}
+
+.is-csp-case.is-list-card .card-top {
+  display: none;
+}
+
+.csp-recognition-sum-eight {
+  --choice-dot: #d7bb42;
+  border-color: #eadb8a;
+  background: #fff8cf;
+  color: #6d5700;
+}
+
+.csp-recognition-star {
+  --choice-dot: #d6a700;
+  border-color: #f2c94c;
+  background: #fff0a6;
+  color: #765800;
+}
+
+.csp-recognition-sum-six {
+  --choice-dot: #e6813f;
+  border-color: #f4bd91;
+  background: #ffead5;
+  color: #934212;
+}
+
+.csp-recognition-red {
+  --choice-dot: #d65c5c;
+  border-color: #eea3a3;
+  background: #ffe2e2;
+  color: #982f2f;
+}
+
+.csp-recognition-green {
+  --choice-dot: #56a66f;
+  border-color: #9cd6ae;
+  background: #ddf5e5;
+  color: #267341;
+}
+
+.csp-recognition-blue {
+  --choice-dot: #5795c9;
+  border-color: #9cc8e8;
+  background: #dceeff;
+  color: #24668f;
+}
+
+@media (max-width: 720px) {
+  html .case-card.is-csp-case.is-list-card {
+    grid-template-areas: "recognition" "summary" "odd" "even";
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

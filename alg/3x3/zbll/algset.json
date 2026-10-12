@@ -4,10 +4,12 @@
   "id": "zbll",
   "name": "ZBLL",
   "source": {
-    "url": "https://mihlefeld.github.io/Alg-Trainers/3x3-ZBLL-Trainer/index.html?select"
+    "url": "https://solved.no/algs/3x3/",
+    "legacyUrl": "https://mihlefeld.github.io/Alg-Trainers/3x3-ZBLL-Trainer/index.html?select"
   },
   "notes": [
-    "Algorithms, scrambles, and SVGs are extracted from Mihlefeld's 3x3 ZBLL trainer JSON files.",
-    "Recognition tags use the top-level ZBLL set: T, U, L, H, Pi, Sune, or Antisune."
+    "Algorithms, case identifiers, and primary-algorithm-derived setups are imported from solved.no.",
+    "Stable local IDs, SVG IDs, groups, and the original SVG artwork are preserved.",
+    "Recognition tags contain the top-level ZBLL set and the existing subgroup label."
   ]
 }

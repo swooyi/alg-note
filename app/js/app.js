@@ -55,6 +55,7 @@ const UI_LABELS = {
     caseCount: "개",
     clear: "해제",
     clearFilters: "필터 초기화",
+    collapseControls: "접기",
     close: "닫기",
     closeDrill: "드릴 닫기",
     closeEdit: "편집 닫기",
@@ -161,6 +162,7 @@ const UI_LABELS = {
     unsupported: "미지원",
     view: "보기",
     viewMode: "보기 모드",
+    expandControls: "펼치기",
     unpinPreset: "프리셋 고정 해제",
     undoLast: "직전 취소",
     deleteAll: "전체 삭제",
@@ -233,6 +235,7 @@ const UI_LABELS = {
     editsOnlyDescription: "Only edited cases saved in this browser.",
     editsOnlyTitle: "Edits Only",
     filter: "Filter",
+    collapseControls: "Collapse",
     formulaFolder: "Algorithm Folder",
     fullJson: "Full JSON",
     fullJsonDescription: "Current data merged with edits saved in this browser.",
@@ -300,6 +303,7 @@ const UI_LABELS = {
     unsupported: "Unsupported",
     view: "View",
     viewMode: "View Mode",
+    expandControls: "Expand",
     unpinPreset: "Unpin Preset",
     undoLast: "Undo Last",
     deleteAll: "Delete All",
@@ -372,6 +376,7 @@ const UI_LABELS = {
     editsOnlyDescription: "このブラウザに保存された編集ケースのみを集めた結果です。",
     editsOnlyTitle: "編集分のみ出力",
     filter: "フィルター",
+    collapseControls: "折りたたむ",
     formulaFolder: "手順フォルダー",
     fullJson: "全体JSON",
     fullJsonDescription: "このブラウザに保存された編集内容を現在のデータに反映した結果です。",
@@ -439,6 +444,7 @@ const UI_LABELS = {
     unsupported: "未対応",
     view: "表示",
     viewMode: "表示モード",
+    expandControls: "展開する",
     unpinPreset: "プリセット固定解除",
     undoLast: "直前を取り消す",
     deleteAll: "すべて削除",
@@ -519,6 +525,8 @@ const elements = {
   appSidebar: document.getElementById("appSidebar"),
   sidebarOpenButton: document.getElementById("sidebarOpenButton"),
   sidebarResizeHandle: document.getElementById("sidebarResizeHandle"),
+  toolbarControls: document.getElementById("toolbarControls"),
+  toolbarToggleButton: document.getElementById("toolbarToggleButton"),
   filterMenuButtons: [...document.querySelectorAll(".filter-menu-button")],
   groupFilterOptions: document.getElementById("groupFilterOptions"),
   recognitionFilterOptions: document.getElementById("recognitionFilterOptions"),
@@ -594,6 +602,7 @@ const state = {
   language: initialLanguage(),
   sidebarOpen: loadJson("sidebarOpen", true),
   sidebarWidth: loadJson("sidebarWidth", DEFAULT_SIDEBAR_WIDTH),
+  toolbarControlsCollapsed: loadJson("toolbarControlsCollapsed", false) === true,
   columns: DEFAULT_COLUMNS,
   imagesVisible: true,
   imageSize: DEFAULT_IMAGE_SIZE,
@@ -688,6 +697,7 @@ function applyLanguage() {
   elements.homeSettingsButton.title = t("settings");
   elements.languageButton.setAttribute("aria-label", LANGUAGE_NAMES[state.language]);
   elements.languageButton.title = LANGUAGE_NAMES[state.language];
+  updateToolbarControls();
   updateSidebarLayout();
   updateFilterMenuButtons();
   updateExportPanelText();
@@ -1938,6 +1948,17 @@ function updateFilterMenuButtons() {
 }
 
 
+function updateToolbarControls() {
+  const expanded = !state.toolbarControlsCollapsed;
+  elements.toolbarControls.hidden = !expanded;
+  elements.toolbarToggleButton.setAttribute("aria-expanded", expanded ? "true" : "false");
+  const label = t(expanded ? "collapseControls" : "expandControls");
+  elements.toolbarToggleButton.querySelector(".toolbar-toggle-label").textContent = label;
+  elements.toolbarToggleButton.setAttribute("aria-label", label);
+  elements.toolbarToggleButton.title = label;
+}
+
+
 function closeFilterMenus() {
   for (const button of elements.filterMenuButtons) {
     const panel = document.getElementById(`${button.dataset.filterMenu}FilterOptions`);
@@ -2574,6 +2595,13 @@ for (const button of elements.filterMenuButtons) {
     }
   });
 }
+
+elements.toolbarToggleButton.addEventListener("click", () => {
+  state.toolbarControlsCollapsed = !state.toolbarControlsCollapsed;
+  saveJson("toolbarControlsCollapsed", state.toolbarControlsCollapsed);
+  if (state.toolbarControlsCollapsed) closeFilterMenus();
+  updateToolbarControls();
+});
 
 document.addEventListener("click", (event) => {
   if (event.target instanceof Element && event.target.closest(".language-wrapper")) return;
