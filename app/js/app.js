@@ -26,6 +26,7 @@ const LANGUAGE_ICON_SOURCES = {
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
 const DRILL_AUF_MODES = new Set(["none", "u", "up", "u2", "random"]);
 const DRILL_ORDER_MODES = new Set(["random", "sequential"]);
+const QUIZ_ORDER_MODES = new Set(["random", "sequential"]);
 const DRILL_AUF_LABELS = {
   none: "없음",
   u: "U",
@@ -159,6 +160,8 @@ const UI_LABELS = {
     minimumTime: "최소 시간",
     seconds: "초",
     startDrill: "드릴 시작",
+    drill: "드릴",
+    quiz: "퀴즈",
     unsupported: "미지원",
     view: "보기",
     viewMode: "보기 모드",
@@ -167,7 +170,7 @@ const UI_LABELS = {
     undoLast: "직전 취소",
     deleteAll: "전체 삭제",
     deleteAllConfirm: "모든 기록을 삭제할까요?",
-    filteredShown: "필터표시",
+    filteredShown: "필터",
     addCurrentSelection: "현재 선택 추가",
     removeCurrentSelection: "현재 선택 제거",
     shortcuts: "단축키",
@@ -300,6 +303,8 @@ const UI_LABELS = {
     minimumTime: "Minimum Time",
     seconds: "seconds",
     startDrill: "Start Drill",
+    drill: "Drill",
+    quiz: "Quiz",
     unsupported: "Unsupported",
     view: "View",
     viewMode: "View Mode",
@@ -441,6 +446,8 @@ const UI_LABELS = {
     minimumTime: "最小時間",
     seconds: "秒",
     startDrill: "ドリル開始",
+    drill: "ドリル",
+    quiz: "クイズ",
     unsupported: "未対応",
     view: "表示",
     viewMode: "表示モード",
@@ -557,6 +564,33 @@ const elements = {
   caseDetail: document.getElementById("caseDetail"),
   presetEditModal: document.getElementById("presetEditModal"),
   caseCardTemplate: document.getElementById("caseCardTemplate"),
+  practiceActions: document.getElementById("practiceActions"),
+  practiceSelectionHint: document.getElementById("practiceSelectionHint"),
+  quizStartButton: document.getElementById("quizStartButton"),
+  quizOverlay: document.getElementById("quizOverlay"),
+  quizCloseButton: document.getElementById("quizCloseButton"),
+  quizRecapModeButton: document.getElementById("quizRecapModeButton"),
+  quizTrainModeButton: document.getElementById("quizTrainModeButton"),
+  quizOrderButton: document.getElementById("quizOrderButton"),
+  quizOrderPanel: document.getElementById("quizOrderPanel"),
+  quizOrderButtons: [...document.querySelectorAll("[data-quiz-order]")],
+  quizProgressText: document.getElementById("quizProgressText"),
+  quizResume: document.getElementById("quizResume"),
+  quizResumeButton: document.getElementById("quizResumeButton"),
+  quizNewButton: document.getElementById("quizNewButton"),
+  quizQuestion: document.getElementById("quizQuestion"),
+  quizImage: document.getElementById("quizImage"),
+  quizAnswerReveal: document.getElementById("quizAnswerReveal"),
+  quizChoices: document.getElementById("quizChoices"),
+  quizPreviousButton: document.getElementById("quizPreviousButton"),
+  quizAnswerActions: document.getElementById("quizAnswerActions"),
+  quizDetailButton: document.getElementById("quizDetailButton"),
+  quizNextButton: document.getElementById("quizNextButton"),
+  quizResult: document.getElementById("quizResult"),
+  quizResultSummary: document.getElementById("quizResultSummary"),
+  quizWrongList: document.getElementById("quizWrongList"),
+  quizRetryButton: document.getElementById("quizRetryButton"),
+  quizRestartButton: document.getElementById("quizRestartButton"),
   drillStartButton: document.getElementById("drillStartButton"),
   drillOverlay: document.getElementById("drillOverlay"),
   drillProgressText: document.getElementById("drillProgressText"),
@@ -621,6 +655,21 @@ const state = {
   scrollSaveTimer: 0,
   openFilterMenu: "",
   isHomeView: true,
+  quiz: {
+    active: false,
+    screen: "question",
+    mode: "recap",
+    orderMode: "random",
+    selectionIds: [],
+    sourceIds: [],
+    pool: [],
+    queue: [],
+    questions: [],
+    index: 0,
+    round: 0,
+    initialResult: null,
+    pendingSession: null,
+  },
   drill: {
     active: false,
     mode: "recap",
@@ -1159,6 +1208,409 @@ function randomItem(values) {
 }
 
 
+function quizStateKey(key = state.key) {
+  return `quizState.${key}`;
+}
+
+
+function quizOrderModeKey(key = state.key) {
+  return `quizOrderMode.${key}`;
+}
+
+
+function normalizeQuizOrderMode(mode) {
+  return QUIZ_ORDER_MODES.has(mode) ? mode : "random";
+}
+
+
+function loadQuizOrderMode() {
+  return normalizeQuizOrderMode(loadJson(quizOrderModeKey(), "random"));
+}
+
+
+function saveQuizOrderMode(mode) {
+  state.quiz.orderMode = normalizeQuizOrderMode(mode);
+  if (state.key) saveJson(quizOrderModeKey(), state.quiz.orderMode);
+}
+
+
+function primaryAlgorithm(item) {
+  return (item?.algorithms || []).map((value) => String(value).trim()).find(Boolean) || "";
+}
+
+
+function makeQuizSnapshot(item, order) {
+  return {
+    id: item.id,
+    name: item.name,
+    group: item.group,
+    groupName: item.groupName,
+    algorithm: primaryAlgorithm(item),
+    recognition: recognitionList(item.tags?.recognition),
+    order,
+  };
+}
+
+
+function quizSelectionMatches(sourceIds) {
+  if (!Array.isArray(sourceIds) || sourceIds.length !== state.selectedCards.size) return false;
+  const selected = new Set(state.selectedCards);
+  return sourceIds.every((id) => selected.has(id));
+}
+
+
+function validQuizSession(saved) {
+  return saved && typeof saved === "object"
+    && ["recap", "train"].includes(saved.mode)
+    && quizSelectionMatches(saved.selectionIds || saved.sourceIds)
+    && Array.isArray(saved.pool)
+    && Array.isArray(saved.queue)
+    && saved.queue.length > 0
+    && Array.isArray(saved.questions);
+}
+
+
+function saveQuizState() {
+  if (!state.key || !state.quiz.sourceIds.length || state.quiz.screen === "resume") return;
+  saveJson(quizStateKey(), {
+    mode: state.quiz.mode,
+    orderMode: state.quiz.orderMode,
+    screen: state.quiz.screen,
+    selectionIds: state.quiz.selectionIds,
+    sourceIds: state.quiz.sourceIds,
+    pool: state.quiz.pool,
+    queue: state.quiz.queue,
+    questions: state.quiz.questions,
+    index: state.quiz.index,
+    round: state.quiz.round,
+    initialResult: state.quiz.initialResult,
+  });
+}
+
+
+function restoreQuizSession(saved) {
+  state.quiz.mode = saved.mode;
+  state.quiz.orderMode = normalizeQuizOrderMode(saved.orderMode);
+  state.quiz.screen = saved.screen === "result" ? "result" : "question";
+  state.quiz.selectionIds = (saved.selectionIds || saved.sourceIds).map(String);
+  state.quiz.sourceIds = saved.sourceIds.map(String);
+  state.quiz.pool = saved.pool;
+  state.quiz.queue = saved.queue.map(String);
+  state.quiz.questions = saved.questions;
+  state.quiz.index = Math.min(Math.max(0, Number(saved.index) || 0), Math.max(0, state.quiz.questions.length - 1));
+  state.quiz.round = Math.max(0, Number(saved.round) || 0);
+  state.quiz.initialResult = saved.initialResult || null;
+  state.quiz.pendingSession = null;
+}
+
+
+function commonAlgorithmPrefix(left, right) {
+  const leftTokens = String(left).trim().split(/\s+/).filter(Boolean);
+  const rightTokens = String(right).trim().split(/\s+/).filter(Boolean);
+  let length = 0;
+  while (length < leftTokens.length && leftTokens[length] === rightTokens[length]) length += 1;
+  return length;
+}
+
+
+function sharesRecognition(left, right) {
+  const values = new Set(left || []);
+  return (right || []).some((value) => values.has(value));
+}
+
+
+function quizDistractors(answer) {
+  const candidates = state.quiz.pool
+    .filter((item) => item.id !== answer.id && item.algorithm && item.algorithm !== answer.algorithm)
+    .map((item) => ({
+      item,
+      sameGroup: item.group === answer.group ? 1 : 0,
+      sameRecognition: sharesRecognition(item.recognition, answer.recognition) ? 1 : 0,
+      prefix: commonAlgorithmPrefix(item.algorithm, answer.algorithm),
+      distance: Math.abs(item.order - answer.order),
+      tie: Math.random(),
+    }))
+    .sort((left, right) => right.sameGroup - left.sameGroup
+      || right.sameRecognition - left.sameRecognition
+      || right.prefix - left.prefix
+      || left.distance - right.distance
+      || left.tie - right.tie);
+  const seen = new Set([answer.algorithm]);
+  const choices = [];
+  for (const candidate of candidates) {
+    if (seen.has(candidate.item.algorithm)) continue;
+    seen.add(candidate.item.algorithm);
+    choices.push(candidate.item.algorithm);
+    if (choices.length === 3) break;
+  }
+  return choices;
+}
+
+
+function makeQuizQuestion(caseId) {
+  const answer = state.quiz.pool.find((item) => item.id === caseId);
+  if (!answer) return null;
+  return {
+    caseId,
+    correctAlgorithm: answer.algorithm,
+    options: shuffledItems([answer.algorithm, ...quizDistractors(answer)]),
+    selectedAlgorithm: "",
+    correct: null,
+  };
+}
+
+
+function ensureQuizQuestion(index) {
+  while (state.quiz.questions.length <= index && state.quiz.questions.length < state.quiz.queue.length) {
+    const question = makeQuizQuestion(state.quiz.queue[state.quiz.questions.length]);
+    if (!question) break;
+    state.quiz.questions.push(question);
+  }
+  return state.quiz.questions[index] || null;
+}
+
+
+function nextTrainingCaseId() {
+  const source = state.quiz.sourceIds;
+  const previousId = state.quiz.queue[state.quiz.queue.length - 1];
+  if (state.quiz.orderMode === "sequential") {
+    const previousIndex = source.indexOf(previousId);
+    return source[(previousIndex + 1) % source.length];
+  }
+  const candidates = source.length > 1 ? source.filter((id) => id !== previousId) : source;
+  return randomItem(candidates);
+}
+
+
+function startNewQuiz(mode = "recap", sourceIds = null, round = 0, initialResult = null) {
+  const cases = effectiveCases();
+  const selectedIds = sourceIds || cases.filter((item) => state.selectedCards.has(item.id)).map((item) => item.id);
+  const selected = new Set(selectedIds);
+  const pool = cases.map(makeQuizSnapshot).filter((item) => item.algorithm);
+  const validSourceIds = pool.filter((item) => selected.has(item.id)).map((item) => item.id);
+  if (!validSourceIds.length) return;
+  state.quiz.active = true;
+  state.quiz.screen = "question";
+  state.quiz.mode = mode;
+  state.quiz.selectionIds = [...state.selectedCards];
+  state.quiz.sourceIds = validSourceIds;
+  state.quiz.pool = pool;
+  const orderedIds = state.quiz.orderMode === "sequential" ? validSourceIds : shuffledItems(validSourceIds);
+  state.quiz.queue = mode === "train" ? [orderedIds[0]] : orderedIds;
+  state.quiz.questions = [];
+  state.quiz.index = 0;
+  state.quiz.round = round;
+  state.quiz.initialResult = initialResult;
+  state.quiz.pendingSession = null;
+  ensureQuizQuestion(0);
+  saveQuizState();
+  renderQuiz();
+}
+
+
+function openQuiz() {
+  if (!state.selectedCards.size) return;
+  state.quiz.orderMode = loadQuizOrderMode();
+  const saved = loadJson(quizStateKey(), null);
+  state.quiz.active = true;
+  if (validQuizSession(saved)) {
+    state.quiz.mode = saved.mode;
+    state.quiz.screen = "resume";
+    state.quiz.pendingSession = saved;
+    renderQuiz();
+    return;
+  }
+  startNewQuiz("recap");
+}
+
+
+function closeQuiz() {
+  saveQuizState();
+  closeQuizOrderPanel();
+  state.quiz.active = false;
+  state.quiz.pendingSession = null;
+  document.body.classList.remove("is-quiz-active");
+  elements.quizOverlay.hidden = true;
+  updatePracticeActions();
+}
+
+
+function closeQuizOrderPanel() {
+  elements.quizOrderPanel.hidden = true;
+  elements.quizOrderButton.setAttribute("aria-expanded", "false");
+}
+
+
+function toggleQuizOrderPanel() {
+  const willOpen = elements.quizOrderPanel.hidden;
+  elements.quizOrderPanel.hidden = !willOpen;
+  elements.quizOrderButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+}
+
+
+function updateQuizOrderControls() {
+  const mode = normalizeQuizOrderMode(state.quiz.orderMode);
+  if (state.quiz.orderMode !== mode) saveQuizOrderMode(mode);
+  elements.quizOrderButton.textContent = `${t("drillOrder")}:${t(`drillOrder.${mode}`)}`;
+  elements.quizOrderButton.classList.toggle("is-active", mode === "sequential");
+  elements.quizOrderButton.setAttribute("aria-pressed", mode === "sequential" ? "true" : "false");
+  for (const button of elements.quizOrderButtons) {
+    const active = button.dataset.quizOrder === mode;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+
+function currentQuizQuestion() {
+  return state.quiz.questions[state.quiz.index] || null;
+}
+
+
+function quizResultData() {
+  const questions = state.quiz.questions.filter((question) => question.selectedAlgorithm);
+  const correct = questions.filter((question) => question.correct).length;
+  return { correct, total: questions.length, wrong: questions.filter((question) => !question.correct) };
+}
+
+
+function showQuizResult() {
+  if (!state.quiz.round) state.quiz.initialResult = quizResultData();
+  state.quiz.screen = "result";
+  saveQuizState();
+  renderQuiz();
+}
+
+
+function advanceQuiz() {
+  const question = currentQuizQuestion();
+  if (!question?.selectedAlgorithm) return;
+  if (state.quiz.mode === "recap" && state.quiz.index === state.quiz.queue.length - 1) {
+    showQuizResult();
+    return;
+  }
+  if (state.quiz.mode === "train" && state.quiz.index === state.quiz.queue.length - 1) {
+    state.quiz.queue.push(nextTrainingCaseId());
+  }
+  ensureQuizQuestion(state.quiz.index + 1);
+  state.quiz.index += 1;
+  saveQuizState();
+  renderQuiz();
+}
+
+
+function answerQuiz(algorithm) {
+  const question = currentQuizQuestion();
+  if (!question || question.selectedAlgorithm) return;
+  question.selectedAlgorithm = algorithm;
+  question.correct = algorithm === question.correctAlgorithm;
+  saveQuizState();
+  renderQuiz();
+}
+
+
+function updatePracticeActions() {
+  const hidden = state.isHomeView || state.drill.active || state.quiz.active;
+  const hasSelection = state.selectedCards.size > 0;
+  elements.practiceActions.hidden = hidden;
+  elements.practiceSelectionHint.hidden = hasSelection;
+  elements.quizStartButton.disabled = !hasSelection;
+  elements.drillStartButton.disabled = !hasSelection;
+  elements.quizStartButton.title = hasSelection ? t("quiz") : t("selectCases");
+  elements.drillStartButton.title = hasSelection ? t("startDrill") : t("selectCases");
+  elements.quizStartButton.setAttribute("aria-label", elements.quizStartButton.title);
+  elements.drillStartButton.setAttribute("aria-label", elements.drillStartButton.title);
+}
+
+
+function renderQuizResult() {
+  const result = quizResultData();
+  const percent = result.total ? Math.round((result.correct / result.total) * 100) : 0;
+  elements.quizResultSummary.replaceChildren();
+  const initial = state.quiz.initialResult || result;
+  const lines = [`최초 결과: ${initial.correct} / ${initial.total}`];
+  if (state.quiz.round) lines.push(`오답 다시 풀기: ${result.correct} / ${result.total}`);
+  lines.push(`정답률 ${percent}% · 정답 ${result.correct} · 오답 ${result.total - result.correct}`);
+  for (const value of lines) {
+    const line = document.createElement("p");
+    line.textContent = value;
+    elements.quizResultSummary.append(line);
+  }
+  elements.quizWrongList.replaceChildren();
+  const seen = new Set();
+  for (const question of result.wrong) {
+    if (seen.has(question.caseId)) continue;
+    seen.add(question.caseId);
+    const item = state.quiz.pool.find((entry) => entry.id === question.caseId);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.quizDetailId = question.caseId;
+    button.textContent = item ? `${item.groupName} · ${item.name}` : question.caseId;
+    elements.quizWrongList.append(button);
+  }
+  if (!result.wrong.length) {
+    const empty = document.createElement("p");
+    empty.textContent = "모든 문제를 맞혔습니다.";
+    elements.quizWrongList.append(empty);
+  }
+  elements.quizRetryButton.hidden = !result.wrong.length;
+}
+
+
+function renderQuiz() {
+  document.body.classList.toggle("is-quiz-active", state.quiz.active);
+  elements.quizOverlay.hidden = !state.quiz.active;
+  if (!state.quiz.active) return;
+  updatePracticeActions();
+  updateQuizOrderControls();
+  elements.quizRecapModeButton.classList.toggle("is-active", state.quiz.mode === "recap");
+  elements.quizTrainModeButton.classList.toggle("is-active", state.quiz.mode === "train");
+  elements.quizResume.hidden = state.quiz.screen !== "resume";
+  elements.quizQuestion.hidden = state.quiz.screen !== "question";
+  elements.quizResult.hidden = state.quiz.screen !== "result";
+  if (state.quiz.screen === "resume") {
+    elements.quizProgressText.textContent = "";
+    return;
+  }
+  if (state.quiz.screen === "result") {
+    elements.quizProgressText.textContent = "결과";
+    renderQuizResult();
+    return;
+  }
+  const question = ensureQuizQuestion(state.quiz.index);
+  if (!question) return;
+  const snapshot = state.quiz.pool.find((item) => item.id === question.caseId);
+  const liveItem = effectiveCases().find((item) => item.id === question.caseId);
+  elements.quizProgressText.textContent = state.quiz.mode === "train"
+    ? `${state.quiz.index + 1}문제째`
+    : `${state.quiz.index + 1} / ${state.quiz.queue.length}`;
+  elements.quizImage.innerHTML = liveItem?.svg || "";
+  elements.quizImage.classList.toggle("is-missing", !liveItem?.svg);
+  elements.quizAnswerReveal.hidden = !question.selectedAlgorithm;
+  elements.quizAnswerReveal.textContent = question.selectedAlgorithm
+    ? `${snapshot?.groupName || ""} · ${snapshot?.name || question.caseId}`
+    : "";
+  elements.quizChoices.replaceChildren();
+  for (const algorithm of question.options) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.quizAlgorithm = algorithm;
+    button.textContent = algorithm;
+    button.disabled = Boolean(question.selectedAlgorithm);
+    if (question.selectedAlgorithm) {
+      button.classList.toggle("is-correct", algorithm === question.correctAlgorithm);
+      button.classList.toggle("is-wrong", algorithm === question.selectedAlgorithm && !question.correct);
+    }
+    elements.quizChoices.append(button);
+  }
+  elements.quizPreviousButton.disabled = state.quiz.index === 0;
+  elements.quizAnswerActions.hidden = !question.selectedAlgorithm;
+  elements.quizNextButton.textContent = state.quiz.mode === "recap" && state.quiz.index === state.quiz.queue.length - 1
+    ? "결과 보기"
+    : "다음 문제";
+}
+
+
 function drillAufModeKey(key = state.key) {
   return `drillAufMode.${key}`;
 }
@@ -1460,12 +1912,12 @@ function renderDrillResults() {
 
 
 function updateDrillStartButton() {
-  const canShow = !state.isHomeView;
   const cspPending = state.dataset?.puzzle === "SQ1" && state.dataset?.algset === "csp";
-  elements.drillStartButton.disabled = cspPending;
-  elements.drillStartButton.hidden = state.isHomeView || state.drill.active;
-  elements.drillStartButton.title = canShow && state.selectedCards.size > 0 ? t("startDrill") : t("selectCases");
-  if (cspPending) elements.drillStartButton.title = t("cspSetupPending");
+  updatePracticeActions();
+  if (cspPending) {
+    elements.drillStartButton.disabled = true;
+    elements.drillStartButton.title = t("cspSetupPending");
+  }
   elements.drillStartButton.setAttribute("aria-label", elements.drillStartButton.title);
 }
 
@@ -2001,6 +2453,7 @@ function saveCurrentViewState() {
     recognitionFilters: [...state.recognitionFilters],
     bookmarkFilters: [...state.bookmarkFilters],
     viewMode: state.viewMode,
+    selectedCards: [...state.selectedCards],
     selectedCaseId: state.selectedCaseId,
     scrollY: Math.max(0, Math.round(window.scrollY || 0)),
   });
@@ -2018,6 +2471,8 @@ function restoreCurrentViewState() {
   state.recognitionFilters = new Set((Array.isArray(saved.recognitionFilters) ? saved.recognitionFilters : []).filter((value) => availableRecognitions.has(value)));
   state.bookmarkFilters = new Set((Array.isArray(saved.bookmarkFilters) ? saved.bookmarkFilters : []).filter((value) => BOOKMARK_TYPES.has(value)));
   state.viewMode = VIEW_MODES.has(saved.viewMode) ? saved.viewMode : state.viewMode;
+  const caseIds = new Set(state.dataset.cases.map((item) => item.id));
+  state.selectedCards = new Set((Array.isArray(saved.selectedCards) ? saved.selectedCards : []).filter((value) => caseIds.has(value)));
   state.selectedCaseId = typeof saved.selectedCaseId === "string" ? saved.selectedCaseId : "";
   state.pendingScrollY = Number.isFinite(saved.scrollY) ? saved.scrollY : null;
 
@@ -2065,7 +2520,7 @@ function render() {
 
   const rows = filteredCases();
   const selectedCase = rows.find((item) => item.id === state.selectedCaseId)
-    || (state.drill.active ? effectiveCases().find((item) => item.id === state.selectedCaseId) : null);
+    || (state.drill.active || state.quiz.active ? effectiveCases().find((item) => item.id === state.selectedCaseId) : null);
   if (state.selectedCaseId && !selectedCase) state.selectedCaseId = "";
 
   elements.emptyState.hidden = true;
@@ -2119,10 +2574,12 @@ function render() {
     requestAnimationFrame(() => window.scrollTo({ top: scrollY, left: 0 }));
   }
   renderDrill();
+  renderQuiz();
 }
 
 
 function setDataset(entries) {
+  closeQuiz();
   closeDrill();
   saveCurrentViewState();
   state.entries = entries;
@@ -2610,6 +3067,8 @@ document.addEventListener("click", (event) => {
   closeHomeSettings();
   if (event.target instanceof Element && event.target.closest(".filter-menu")) return;
   closeFilterMenus();
+  if (event.target instanceof Element && event.target.closest(".quiz-order-control")) return;
+  closeQuizOrderPanel();
   if (event.target instanceof Element && event.target.closest(".drill-auf-control")) return;
   if (event.target instanceof Element && event.target.closest(".drill-order-control")) return;
   closeDrillAufPanel();
@@ -2795,6 +3254,85 @@ elements.clearSelectedCardsButton.addEventListener("click", () => {
   state.activeSelectionPresetId = "";
   saveSelectionPresets();
   render();
+});
+
+elements.quizStartButton.addEventListener("click", openQuiz);
+
+elements.quizCloseButton.addEventListener("click", closeQuiz);
+
+elements.quizResumeButton.addEventListener("click", () => {
+  if (!state.quiz.pendingSession) return;
+  restoreQuizSession(state.quiz.pendingSession);
+  renderQuiz();
+});
+
+elements.quizNewButton.addEventListener("click", () => {
+  startNewQuiz("recap");
+});
+
+elements.quizRecapModeButton.addEventListener("click", () => {
+  if (state.quiz.screen === "question" && state.quiz.mode === "recap") return;
+  startNewQuiz("recap");
+});
+
+elements.quizTrainModeButton.addEventListener("click", () => {
+  if (state.quiz.screen === "question" && state.quiz.mode === "train") return;
+  startNewQuiz("train");
+});
+
+elements.quizOrderButton.addEventListener("click", (event) => {
+  event.stopPropagation();
+  toggleQuizOrderPanel();
+});
+
+elements.quizOrderPanel.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-quiz-order]");
+  if (!button) return;
+  event.stopPropagation();
+  const mode = normalizeQuizOrderMode(button.dataset.quizOrder);
+  if (mode !== state.quiz.orderMode) {
+    const pending = state.quiz.screen === "resume" ? state.quiz.pendingSession : null;
+    const sourceIds = pending?.sourceIds || state.quiz.sourceIds;
+    const round = pending?.round ?? state.quiz.round;
+    const initialResult = pending?.initialResult ?? state.quiz.initialResult;
+    saveQuizOrderMode(mode);
+    startNewQuiz(state.quiz.mode, sourceIds, round, initialResult);
+  }
+  closeQuizOrderPanel();
+  renderQuiz();
+});
+
+elements.quizChoices.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-quiz-algorithm]");
+  if (button) answerQuiz(button.dataset.quizAlgorithm);
+});
+
+elements.quizPreviousButton.addEventListener("click", () => {
+  if (state.quiz.index <= 0) return;
+  state.quiz.index -= 1;
+  saveQuizState();
+  renderQuiz();
+});
+
+elements.quizDetailButton.addEventListener("click", () => {
+  const question = currentQuizQuestion();
+  if (question) openCaseDetail(question.caseId);
+});
+
+elements.quizNextButton.addEventListener("click", advanceQuiz);
+
+elements.quizWrongList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-quiz-detail-id]");
+  if (button) openCaseDetail(button.dataset.quizDetailId);
+});
+
+elements.quizRetryButton.addEventListener("click", () => {
+  const wrongIds = [...new Set(quizResultData().wrong.map((question) => question.caseId))];
+  if (wrongIds.length) startNewQuiz("recap", wrongIds, state.quiz.round + 1, state.quiz.initialResult);
+});
+
+elements.quizRestartButton.addEventListener("click", () => {
+  startNewQuiz(state.quiz.mode);
 });
 
 elements.drillStartButton.addEventListener("click", () => {
@@ -3182,6 +3720,28 @@ elements.caseGrid.addEventListener("contextmenu", (event) => {
 });
 document.addEventListener("keydown", (event) => {
   if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
+
+  if (state.quiz.active && !state.selectedCaseId) {
+    if (event.key === "Escape" || event.key === "Backspace") {
+      event.preventDefault();
+      closeQuiz();
+      return;
+    }
+    if (state.quiz.screen === "question" && event.key === "ArrowLeft" && state.quiz.index > 0) {
+      event.preventDefault();
+      state.quiz.index -= 1;
+      saveQuizState();
+      renderQuiz();
+      return;
+    }
+    if (state.quiz.screen === "question" && event.key === "ArrowRight" && state.quiz.index < state.quiz.questions.length - 1) {
+      event.preventDefault();
+      state.quiz.index += 1;
+      saveQuizState();
+      renderQuiz();
+      return;
+    }
+  }
 
   if (state.drill.active) {
     if (event.code === "Space") {

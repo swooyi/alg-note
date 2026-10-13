@@ -176,7 +176,76 @@
 
   <section id="caseDetail" class="case-detail" hidden></section>
   <section id="presetEditModal" class="preset-edit-modal" hidden></section>
-  <button id="drillStartButton" class="drill-fab" type="button" aria-label="드릴 시작" title="드릴 시작" data-i18n-attr="aria-label:title" data-i18n="startDrill">▶</button>
+  <div id="practiceActions" class="practice-actions">
+    <p id="practiceSelectionHint" class="practice-selection-hint" data-i18n="selectCases">케이스를 선택하세요.</p>
+    <button id="quizStartButton" class="practice-action-button quiz-start-button" type="button">
+      <span class="practice-action-icon" aria-hidden="true">?</span>
+      <span data-i18n="quiz">퀴즈</span>
+    </button>
+    <button id="drillStartButton" class="practice-action-button drill-start-button" type="button">
+      <span class="practice-action-icon" aria-hidden="true">▶</span>
+      <span data-i18n="drill">드릴</span>
+    </button>
+  </div>
+
+  <section id="quizOverlay" class="quiz-overlay" hidden>
+    <div class="quiz-panel">
+      <header class="quiz-top">
+        <button id="quizCloseButton" class="quiz-icon-button" type="button" aria-label="퀴즈 닫기" title="퀴즈 닫기">←</button>
+        <div class="quiz-settings">
+          <div class="quiz-order-control">
+            <button id="quizOrderButton" class="quiz-order-button" type="button" aria-expanded="false" aria-controls="quizOrderPanel">출제:랜덤</button>
+            <div id="quizOrderPanel" class="quiz-order-panel" hidden>
+              <button type="button" data-quiz-order="random">랜덤</button>
+              <button type="button" data-quiz-order="sequential">순차</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="quiz-progress">
+        <div class="quiz-progress-content">
+          <div class="quiz-mode-tabs" aria-label="퀴즈 모드">
+            <button id="quizRecapModeButton" type="button" data-quiz-mode="recap">Recap</button>
+            <button id="quizTrainModeButton" type="button" data-quiz-mode="train">Train</button>
+          </div>
+          <span id="quizProgressText" class="quiz-progress-text"></span>
+        </div>
+      </div>
+
+      <div id="quizResume" class="quiz-resume" hidden>
+        <h2>진행 중인 퀴즈</h2>
+        <p>저장된 퀴즈를 이어서 풀거나 새로 시작하세요.</p>
+        <div class="quiz-resume-actions">
+          <button id="quizResumeButton" class="quiz-primary-button" type="button">이어하기</button>
+          <button id="quizNewButton" type="button">새로 시작</button>
+        </div>
+      </div>
+
+      <main id="quizQuestion" class="quiz-question" hidden>
+        <div id="quizImage" class="quiz-image"></div>
+        <div id="quizAnswerReveal" class="quiz-answer-reveal" hidden></div>
+        <div id="quizChoices" class="quiz-choices" aria-label="알고리즘 보기"></div>
+        <div id="quizAnswerActions" class="quiz-answer-actions" hidden>
+          <button id="quizPreviousButton" type="button">이전 문제</button>
+          <button id="quizDetailButton" type="button">세부정보</button>
+          <button id="quizNextButton" class="quiz-primary-button" type="button">다음 문제</button>
+        </div>
+      </main>
+
+      <div id="quizResult" class="quiz-result" hidden>
+        <h2>퀴즈 결과</h2>
+        <div id="quizResultSummary" class="quiz-result-summary"></div>
+        <section class="quiz-wrong-section">
+          <h3>틀린 케이스</h3>
+          <div id="quizWrongList" class="quiz-wrong-list"></div>
+        </section>
+        <div class="quiz-result-actions">
+          <button id="quizRetryButton" class="quiz-primary-button" type="button">오답 다시 풀기</button>
+          <button id="quizRestartButton" type="button">새로 시작</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="drillOverlay" class="drill-overlay" hidden>
     <div class="drill-panel">

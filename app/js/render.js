@@ -140,12 +140,13 @@ function renderBookmarkFilterOptions(container, selectedValues) {
 
 
 function renderSummary(element, dataset, rows, state) {
-  element.replaceChildren(
-    makeSummaryItem(ui("all"), dataset.cases.length),
-    makeSummaryItem(ui("filteredShown"), rows.length),
-    makeSummaryItem(ui("bookmarks"), state.bookmarks?.size || 0),
-    makeSummaryItem(ui("selection"), state.selectedCards?.size || 0),
-  );
+  const items = [makeSummaryItem(ui("all"), dataset.cases.length)];
+  const hasFilters = Boolean(state.groupFilters?.size || state.recognitionFilters?.size);
+  const hasBookmarkFilter = Boolean(state.bookmarkFilters?.size);
+  if (hasFilters) items.push(makeSummaryItem(ui("filteredShown"), rows.length));
+  if (hasBookmarkFilter) items.push(makeSummaryItem(ui("bookmarks"), rows.length));
+  items.push(makeSummaryItem(ui("selection"), state.selectedCards?.size || 0));
+  element.replaceChildren(...items);
 }
 
 
