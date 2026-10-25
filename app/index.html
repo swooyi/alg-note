@@ -94,9 +94,9 @@
                 <button class="design-theme-button" type="button" data-design-theme="kiyomizudera"><img src="./images/themes/kiyomizudera.png" alt="" loading="lazy"><span data-i18n="themeKiyomizudera">기요미즈데라</span></button>
                 <button class="design-theme-button" type="button" data-design-theme="pokemon"><img src="./images/themes/pokemon.png" alt="" loading="lazy"><span data-i18n="themePokemon">포켓몬</span></button>
                 <button class="design-theme-button" type="button" data-design-theme="kirby"><img src="./images/themes/kirby.png" alt="" loading="lazy"><span data-i18n="themeKirby">커비</span></button>
-                <button class="design-theme-button" type="button" data-design-theme="mitsuri"><img src="./images/themes/mitsuri.png" alt="" loading="lazy"><span data-i18n="themeMitsuri">미츠리</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="mitsuri"><img src="./images/themes/mitsuri-v2.png" alt="" loading="lazy"><span data-i18n="themeMitsuri">미츠리</span></button>
                 <button class="design-theme-button" type="button" data-design-theme="reze"><img src="./images/themes/reze.png" alt="" loading="lazy"><span data-i18n="themeReze">레제</span></button>
-                <button class="design-theme-button" type="button" data-design-theme="inori"><img src="./images/themes/inori.png" alt="" loading="lazy"><span data-i18n="themeInori">유즈리하 이노리</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="inori"><img src="./images/themes/inori-v2.png" alt="" loading="lazy"><span data-i18n="themeInori">유즈리하 이노리</span></button>
               </div>
               <button id="confirmDesignThemeButton" class="confirm-design-theme-button" type="button" data-i18n="confirm">확인</button>
             </section>
@@ -372,7 +372,10 @@
         <div id="drillResizeHandle" class="drill-resize-handle" role="separator" aria-orientation="vertical" aria-label="기록 영역 크기 조절" title="기록 영역 크기 조절" data-i18n-attr="aria-label:title" data-i18n="resizeRecords"></div>
         <aside class="drill-history-panel">
           <div class="drill-history-summary">
-            <span id="drillTimesText">Times 0</span>
+            <div class="drill-history-title">
+              <span id="drillTimesText">Times 0</span>
+              <button id="drillHistorySideButton" class="drill-history-side-button" type="button" aria-label="기록 왼쪽으로 이동" title="기록 왼쪽으로 이동">←</button>
+            </div>
             <div class="drill-history-actions">
               <button id="drillUndoButton" type="button" data-i18n="undoLast">직전 취소</button>
               <button id="drillToggleHistoryButton" type="button" aria-expanded="false" data-i18n="recordDetails">기록 세부</button>

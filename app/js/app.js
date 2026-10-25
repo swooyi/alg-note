@@ -155,6 +155,8 @@ const UI_LABELS = {
     previousAlgorithm: "이전 공식",
     recordDetail: "기록 세부 보기",
     recordDetails: "기록 세부",
+    moveRecordsLeft: "기록 왼쪽으로 이동",
+    moveRecordsRight: "기록 오른쪽으로 이동",
     recog: "recog",
     resetJson: "JSON 초기화",
     resetJsonConfirm: "브라우저에 저장된 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.",
@@ -316,6 +318,8 @@ const UI_LABELS = {
     previousAlgorithm: "Previous Algorithm",
     recordDetail: "record details",
     recordDetails: "Record Details",
+    moveRecordsLeft: "Move Records Left",
+    moveRecordsRight: "Move Records Right",
     recog: "recog",
     resetJson: "Reset JSON",
     resetJsonConfirm: "Reset edited JSON saved in this browser? Bookmarks and presets will be kept.",
@@ -477,6 +481,8 @@ const UI_LABELS = {
     previousAlgorithm: "前の手順",
     recordDetail: "記録詳細を見る",
     recordDetails: "記録詳細",
+    moveRecordsLeft: "記録を左に移動",
+    moveRecordsRight: "記録を右に移動",
     recog: "recog",
     resetJson: "JSONリセット",
     resetJsonConfirm: "このブラウザに保存された編集JSONをリセットしますか？ブックマークとプリセットは保持されます。",
@@ -681,8 +687,10 @@ const elements = {
   drillCurrentCaseText: document.getElementById("drillCurrentCaseText"),
   drillSetupText: document.getElementById("drillSetupText"),
   drillMain: document.getElementById("drillMain"),
+  drillBody: document.querySelector(".drill-body"),
   drillResizeHandle: document.getElementById("drillResizeHandle"),
   drillHistoryPanel: document.querySelector(".drill-history-panel"),
+  drillHistorySideButton: document.getElementById("drillHistorySideButton"),
   drillTimerText: document.getElementById("drillTimerText"),
   drillHintText: document.getElementById("drillHintText"),
   drillTimesText: document.getElementById("drillTimesText"),
@@ -755,6 +763,7 @@ const state = {
     viewpoints: ["none"],
     orderMode: "random",
     historyWidth: loadJson("drillHistoryWidth", DEFAULT_DRILL_HISTORY_WIDTH),
+    historySide: loadJson("drillHistorySide", "right") === "left" ? "left" : "right",
     source: [],
     queue: [],
     index: 0,
@@ -859,6 +868,7 @@ function applyLanguage() {
   updateSidebarLayout();
   updateFilterMenuButtons();
   updateExportPanelText();
+  updateDrillHistoryLayout();
   if (state.isHomeView) renderDatasetOptions();
   if (state.dataset) render();
 }
@@ -2567,6 +2577,12 @@ function clampDrillHistoryWidth(value) {
 function updateDrillHistoryLayout() {
   state.drill.historyWidth = clampDrillHistoryWidth(state.drill.historyWidth);
   document.documentElement.style.setProperty("--drill-history-width", `${state.drill.historyWidth}px`);
+  const isLeft = state.drill.historySide === "left";
+  elements.drillBody.classList.toggle("is-history-left", isLeft);
+  elements.drillHistorySideButton.textContent = isLeft ? "→" : "←";
+  const label = t(isLeft ? "moveRecordsRight" : "moveRecordsLeft");
+  elements.drillHistorySideButton.setAttribute("aria-label", label);
+  elements.drillHistorySideButton.title = label;
 }
 
 
@@ -3702,6 +3718,12 @@ elements.drillToggleHistoryButton.addEventListener("click", () => {
   renderDrill();
 });
 
+elements.drillHistorySideButton.addEventListener("click", () => {
+  state.drill.historySide = state.drill.historySide === "left" ? "right" : "left";
+  saveJson("drillHistorySide", state.drill.historySide);
+  updateDrillHistoryLayout();
+});
+
 elements.drillClearResultsButton.addEventListener("click", () => {
   clearDrillResults();
 });
@@ -3785,7 +3807,11 @@ elements.drillResizeHandle.addEventListener("pointerdown", (event) => {
   document.body.classList.add("is-resizing-drill");
 
   const handleMove = (moveEvent) => {
-    state.drill.historyWidth = clampDrillHistoryWidth(window.innerWidth - moveEvent.clientX);
+    const bounds = elements.drillBody.getBoundingClientRect();
+    const width = state.drill.historySide === "left"
+      ? moveEvent.clientX - bounds.left
+      : bounds.right - moveEvent.clientX;
+    state.drill.historyWidth = clampDrillHistoryWidth(width);
     updateDrillHistoryLayout();
   };
 

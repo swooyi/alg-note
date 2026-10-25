@@ -135,16 +135,17 @@
 :root[data-design-theme="kyoto"] { --theme-image: url("../images/themes/kyoto.png"); }
 :root[data-design-theme="kiyomizudera"] { --theme-image: url("../images/themes/kiyomizudera.png"); }
 :root[data-design-theme="reze"] { --theme-image: url("../images/themes/reze.png"); }
-:root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori.png"); }
+:root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-v2.png"); }
 :root[data-design-theme="pokemon"] { --theme-image: url("../images/themes/pokemon.png"); }
 :root[data-design-theme="kirby"] { --theme-image: url("../images/themes/kirby.png"); }
-:root[data-design-theme="mitsuri"] { --theme-image: url("../images/themes/mitsuri.png"); }
+:root[data-design-theme="mitsuri"] { --theme-image: url("../images/themes/mitsuri-v2.png"); }
 
 @media (max-width: 720px) {
   :root[data-design-theme="seoul"] { --theme-position: 75% center; }
   :root[data-design-theme="kiyomizudera"] { --theme-position: 70% center; }
   :root[data-design-theme="reze"] { --theme-position: 74% center; }
   :root[data-design-theme="mitsuri"] { --theme-position: 75% center; }
+  :root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-mobile-v2.png"); }
 }
 
 * {
@@ -2217,6 +2218,16 @@ body.is-quiz-active {
   border-bottom: 1px solid var(--line);
 }
 
+@media (min-width: 721px) {
+  .drill-body.is-history-left {
+    grid-template-columns: minmax(280px, var(--drill-history-width, 430px)) 10px minmax(0, 1fr);
+  }
+
+  .drill-body.is-history-left .drill-history-panel { grid-column: 1; grid-row: 1; }
+  .drill-body.is-history-left .drill-resize-handle { grid-column: 2; grid-row: 1; }
+  .drill-body.is-history-left .drill-main { grid-column: 3; grid-row: 1; }
+}
+
 .drill-main {
   display: grid;
   place-items: center;
@@ -2296,6 +2307,20 @@ body.is-quiz-active {
   padding-bottom: 10px;
   font-size: 17px;
   font-weight: 800;
+}
+
+.drill-history-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.drill-history-side-button {
+  min-height: 28px;
+  padding: 0 7px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .drill-history-actions {
@@ -3993,6 +4018,10 @@ main {
   }
 
   .drill-resize-handle {
+    display: none;
+  }
+
+  .drill-history-side-button {
     display: none;
   }
 
