@@ -1756,6 +1756,22 @@ function randomLeadingAufMove() {
 }
 
 
+function mergeFtoBoundaryAuf(setup) {
+  const moves = setup.trim().split(/\s+/);
+  const isAuf = (move) => move === "U" || move === "U'";
+  const merge = (run) => {
+    const turns = run.reduce((sum, move) => sum + (move === "U" ? 1 : 2), 0) % 3;
+    return ["", "U", "U'"][turns];
+  };
+  let start = 0;
+  while (start < moves.length && isAuf(moves[start])) start += 1;
+  let end = moves.length;
+  while (end > start && isAuf(moves[end - 1])) end -= 1;
+  return [merge(moves.slice(0, start)), ...moves.slice(start, end), merge(moves.slice(end))]
+    .filter(Boolean).join(" ");
+}
+
+
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return t("noSetup");
@@ -1763,8 +1779,13 @@ function makeDrillSetup(item) {
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
   const front = randomLeadingAufMove();
-  const back = mode === "random" ? randomAufMove() : DRILL_AUF_FIXED_MOVES[mode];
-  return [front, setup, back].filter(Boolean).join(" ");
+  const isFto = String(state.dataset?.puzzle || "").toLowerCase().includes("fto");
+  const hasTrailingFtoAuf = isFto && /(?:^|\s)U'?$/.test(setup);
+  const back = mode === "random"
+    ? (hasTrailingFtoAuf ? "" : randomAufMove())
+    : DRILL_AUF_FIXED_MOVES[mode];
+  const combined = [front, setup, back].filter(Boolean).join(" ");
+  return isFto ? mergeFtoBoundaryAuf(combined) : combined;
 }
 
 
