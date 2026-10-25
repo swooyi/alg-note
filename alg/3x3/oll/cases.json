@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "algset": "oll",
+  "cases": [
+    {
+      "id": "1",
+      "name": "OLL 1",
+      "group": "dot-case",
+      "algorithms": [
+        "(R U2 R') (R' F R F') U2 (R' F R F')"
+      ],
+      "scramble": "F R' F' R U2' F R' F' R2' U2' R'",
+      "scrambles": [
+        "F R' F' R U2' F R' F' R2' U2' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 1"
+      }
+    },
+    {
+      "id": "2",
+      "name": "OLL 2",
+      "group": "dot-case",
+      "algorithms": [
+        "F (R U R' U') F' f (R U R' U') f'"
+      ],
+      "scramble": "f U R U' R' f' F U R U' R' F'",
+      "scrambles": [
+        "f U R U' R' f' F U R U' R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 2"
+      }
+    },
+    {
+      "id": "3",
+      "name": "OLL 3",
+      "group": "dot-case",
+      "algorithms": [
+        "y' f (R U R' U') f' (U') F (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' F' U f U R U' R' f' y",
+      "scrambles": [
+        "F U R U' R' F' U f U R U' R' f' y"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 3"
+      }
+    },
+    {
+      "id": "4",
+      "name": "OLL 4",
+      "group": "dot-case",
+      "algorithms": [
+        "y' f (R U R' U') f' (U) F (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' F' U' f U R U' R' f' y",
+      "scrambles": [
+        "F U R U' R' F' U' f U R U' R' f' y"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 4"
+      }
+    },
+    {
+      "id": "5",
+      "name": "OLL 5",
+      "group": "square-shapes",
+      "algorithms": [
+        "r' U2 (R U R' U) r"
+      ],
+      "scramble": "r' U' R U' R' U2' r",
+      "scrambles": [
+        "r' U' R U' R' U2' r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Square Shapes",
+        "sourceId": "OLL 5"
+      }
+    },
+    {
+      "id": "6",
+      "name": "OLL 6",
+      "group": "square-shapes",
+      "algorithms": [
+        "r U2 (R' U' R U') r'"
+      ],
+      "scramble": "r U R' U R U2' r'",
+      "scrambles": [
+        "r U R' U R U2' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Square Shapes",
+        "sourceId": "OLL 6"
+      }
+    },
+    {
+      "id": "7",
+      "name": "OLL 7",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "r (U R' U R) U2 r'"
+      ],
+      "scramble": "r U2' R' U' R U' r'",
+      "scrambles": [
+        "r U2' R' U' R U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 7"
+      }
+    },
+    {
+      "id": "8",
+      "name": "OLL 8",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "y2 r' (U' R U' R') U2 r"
+      ],
+      "scramble": "r' U2' R U R' U r y2'",
+      "scrambles": [
+        "r' U2' R U R' U r y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 8"
+      }
+    },
+    {
+      "id": "9",
+      "name": "OLL 9",
+      "group": "fish-shapes",
+      "algorithms": [
+        "y (R U R' U') (R' F R) (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R2' F' R U R U' R' y'",
+      "scrambles": [
+        "F U R U' R2' F' R U R U' R' y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Fish Shapes",
+        "sourceId": "OLL 9"
+      }
+    },
+    {
+      "id": "10",
+      "name": "OLL 10",
+      "group": "fish-shapes",
+      "algorithms": [
+        "(R U R' U) (R' F R F') (R U2 R')"
+      ],
+      "scramble": "R U2' R' F R' F' R U' R U' R'",
+      "scrambles": [
+        "R U2' R' F R' F' R U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Fish Shapes",
+        "sourceId": "OLL 10"
+      }
+    },
+    {
+      "id": "11",
+      "name": "OLL 11",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "M (R U R' U R U2 R') U M'"
+      ],
+      "scramble": "M U' R U2' R' U' R U' R2' r",
+      "scrambles": [
+        "M U' R U2' R' U' R U' R2' r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 11"
+      }
+    },
+    {
+      "id": "12",
+      "name": "OLL 12",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "y' M' (R' U' R U' R' U2 R) U' M"
+      ],
+      "scramble": "F U R U' R' F' U' F U R U' R' F'",
+      "scrambles": [
+        "F U R U' R' F' U' F U R U' R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 12"
+      }
+    },
+    {
+      "id": "13",
+      "name": "OLL 13",
+      "group": "knight-move-shapes",
+      "algorithms": [
+        "(r U' r') U' (r U r') (F' U F)"
+      ],
+      "scramble": "F' U' F r U' r' U r U r'",
+      "scrambles": [
+        "F' U' F r U' r' U r U r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Knight Move Shapes",
+        "sourceId": "OLL 13"
+      }
+    },
+    {
+      "id": "14",
+      "name": "OLL 14",
+      "group": "knight-move-shapes",
+      "algorithms": [
+        "R' F (R U R') F' R (F U' F')"
+      ],
+      "scramble": "F U F' R' F R U' R' F' R",
+      "scrambles": [
+        "F U F' R' F R U' R' F' R"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Knight Move Shapes",
+        "sourceId": "OLL 14"
+      }
+    },
+    {
+      "id": "15",
+      "name": "OLL 15",
+      "group": "knight-move-shapes",
+      "algorithms": [
+        "(r' U' r) (R' U' R U) (r' U r)"
+      ],
+      "scramble": "r' U' r U' R' U R r' U r",
+      "scrambles": [
+        "r' U' r U' R' U R r' U r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Knight Move Shapes",
+        "sourceId": "OLL 15"
+      }
+    },
+    {
+      "id": "16",
+      "name": "OLL 16",
+      "group": "knight-move-shapes",
+      "algorithms": [
+        "(r U r') (R U R' U') (r U' r')"
+      ],
+      "scramble": "r U r' U R U' R' r U' r'",
+      "scrambles": [
+        "r U r' U R U' R' r U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Knight Move Shapes",
+        "sourceId": "OLL 16"
+      }
+    },
+    {
+      "id": "17",
+      "name": "OLL 17",
+      "group": "dot-case",
+      "algorithms": [
+        "(R U R' U) (R' F R F') U2 (R' F R F')"
+      ],
+      "scramble": "F R' F' R U2' F R' F' R U' R U' R'",
+      "scrambles": [
+        "F R' F' R U2' F R' F' R U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 17"
+      }
+    },
+    {
+      "id": "18",
+      "name": "OLL 18",
+      "group": "dot-case",
+      "algorithms": [
+        "y (R U2 R') (R' F R F') U2 M' (U R U' r')"
+      ],
+      "scramble": "r' U2' R U R' U r2' U2' R' U' R U' r'",
+      "scrambles": [
+        "r' U2' R U R' U r2' U2' R' U' R U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 18"
+      }
+    },
+    {
+      "id": "19",
+      "name": "OLL 19",
+      "group": "dot-case",
+      "algorithms": [
+        "M U (R U R' U') M' (R' F R F')"
+      ],
+      "scramble": "F R' F' R M U R U' R' U' M'",
+      "scrambles": [
+        "F R' F' R M U R U' R' U' M'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 19"
+      }
+    },
+    {
+      "id": "20",
+      "name": "OLL 20",
+      "group": "dot-case",
+      "algorithms": [
+        "(r U R' U') M2 (U R U' R') U' M'"
+      ],
+      "scramble": "r U R' U' M2' U R U' R' U' M'",
+      "scrambles": [
+        "r U R' U' M2' U R U' R' U' M'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Dot Case",
+        "sourceId": "OLL 20"
+      }
+    },
+    {
+      "id": "21",
+      "name": "OLL 21",
+      "group": "ocll",
+      "algorithms": [
+        "(R U R' U) (R U' R' U) (R U2 R')"
+      ],
+      "scramble": "R U R' U R U' R' U R U2' R' y'",
+      "scrambles": [
+        "R U R' U R U' R' U R U2' R' y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 21"
+      }
+    },
+    {
+      "id": "22",
+      "name": "OLL 22",
+      "group": "ocll",
+      "algorithms": [
+        "R U2 (R2' U') (R2 U') (R2' U') U' R"
+      ],
+      "scramble": "R' U2' R2' U R2' U R2' U2' R'",
+      "scrambles": [
+        "R' U2' R2' U R2' U R2' U2' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 22"
+      }
+    },
+    {
+      "id": "23",
+      "name": "OLL 23",
+      "group": "ocll",
+      "algorithms": [
+        "R2 D (R' U2 R) D' (R' U2 R')"
+      ],
+      "scramble": "R U2' R D R' U2' R D' R2'",
+      "scrambles": [
+        "R U2' R D R' U2' R D' R2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 23"
+      }
+    },
+    {
+      "id": "24",
+      "name": "OLL 24",
+      "group": "ocll",
+      "algorithms": [
+        "(r U R' U') (r' F R F')"
+      ],
+      "scramble": "F R' F' r U R U' r'",
+      "scrambles": [
+        "F R' F' r U R U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 24"
+      }
+    },
+    {
+      "id": "25",
+      "name": "OLL 25",
+      "group": "ocll",
+      "algorithms": [
+        "y (F' r U R') (U' r' F R)"
+      ],
+      "scramble": "R' F' r U R U' r' F y'",
+      "scrambles": [
+        "R' F' r U R U' r' F y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 25"
+      }
+    },
+    {
+      "id": "26",
+      "name": "OLL 26",
+      "group": "ocll",
+      "algorithms": [
+        "y R U2 (R' U' R U') R'"
+      ],
+      "scramble": "R U R' U R U2' R' y'",
+      "scrambles": [
+        "R U R' U R U2' R' y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 26"
+      }
+    },
+    {
+      "id": "27",
+      "name": "OLL 27",
+      "group": "ocll",
+      "algorithms": [
+        "(R U R' U) (R U2 R')"
+      ],
+      "scramble": "R U2' R' U' R U' R'",
+      "scrambles": [
+        "R U2' R' U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "OCLL",
+        "sourceId": "OLL 27"
+      }
+    },
+    {
+      "id": "28",
+      "name": "OLL 28",
+      "group": "all-corners-oriented",
+      "algorithms": [
+        "(r U R' U') M (U R U' R')"
+      ],
+      "scramble": "R U R' U' M' U R U' r'",
+      "scrambles": [
+        "R U R' U' M' U R U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "All Corners Oriented",
+        "sourceId": "OLL 28"
+      }
+    },
+    {
+      "id": "29",
+      "name": "OLL 29",
+      "group": "awkward-shapes",
+      "algorithms": [
+        "y (R U R') U' (R U' R') (F' U' F) (R U R')"
+      ],
+      "scramble": "M F R' F' R U R U' R' U' M'",
+      "scrambles": [
+        "M F R' F' R U R U' R' U' M'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Awkward Shapes",
+        "sourceId": "OLL 29"
+      }
+    },
+    {
+      "id": "30",
+      "name": "OLL 30",
+      "group": "awkward-shapes",
+      "algorithms": [
+        "y2 F U (R U2 R') U' (R U2 R') U' F'"
+      ],
+      "scramble": "F U R U2' R' U R U2' R' U' F' y2'",
+      "scrambles": [
+        "F U R U2' R' U R U2' R' U' F' y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Awkward Shapes",
+        "sourceId": "OLL 30"
+      }
+    },
+    {
+      "id": "31",
+      "name": "OLL 31",
+      "group": "p-shapes",
+      "algorithms": [
+        "(R' U' F) (U R U' R') F' R"
+      ],
+      "scramble": "R' F R U R' U' F' U R",
+      "scrambles": [
+        "R' F R U R' U' F' U R"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "P Shapes",
+        "sourceId": "OLL 31"
+      }
+    },
+    {
+      "id": "32",
+      "name": "OLL 32",
+      "group": "p-shapes",
+      "algorithms": [
+        "S (R U R' U') (R' F R f')"
+      ],
+      "scramble": "f R' F' R U R U' R' S'",
+      "scrambles": [
+        "f R' F' R U R U' R' S'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "P Shapes",
+        "sourceId": "OLL 32"
+      }
+    },
+    {
+      "id": "33",
+      "name": "OLL 33",
+      "group": "t-shapes",
+      "algorithms": [
+        "(R U R' U') (R' F R F')"
+      ],
+      "scramble": "F R' F' R U R U' R'",
+      "scrambles": [
+        "F R' F' R U R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "T Shapes",
+        "sourceId": "OLL 33"
+      }
+    },
+    {
+      "id": "34",
+      "name": "OLL 34",
+      "group": "c-shapes",
+      "algorithms": [
+        "y2 R U R2 U' R' F (R U R U') F'"
+      ],
+      "scramble": "F U R' U' R' F' R U R2' U' R' y2'",
+      "scrambles": [
+        "F U R' U' R' F' R U R2' U' R' y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "C Shapes",
+        "sourceId": "OLL 34"
+      }
+    },
+    {
+      "id": "35",
+      "name": "OLL 35",
+      "group": "fish-shapes",
+      "algorithms": [
+        "(R U2 R') (R' F R F') (R U2 R')"
+      ],
+      "scramble": "R U2' R' F R' F' R2' U2' R'",
+      "scrambles": [
+        "R U2' R' F R' F' R2' U2' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Fish Shapes",
+        "sourceId": "OLL 35"
+      }
+    },
+    {
+      "id": "36",
+      "name": "OLL 36",
+      "group": "w-shapes",
+      "algorithms": [
+        "y2 (L' U' L U') (L' U L U) (L F' L' F)"
+      ],
+      "scramble": "F' L F L' U' L' U' L U L' U L y2'",
+      "scrambles": [
+        "F' L F L' U' L' U' L U L' U L y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "W Shapes",
+        "sourceId": "OLL 36"
+      }
+    },
+    {
+      "id": "37",
+      "name": "OLL 37",
+      "group": "fish-shapes",
+      "algorithms": [
+        "F R (U' R' U') (R U R') F'"
+      ],
+      "scramble": "F R U' R' U R U R' F'",
+      "scrambles": [
+        "F R U' R' U R U R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Fish Shapes",
+        "sourceId": "OLL 37"
+      }
+    },
+    {
+      "id": "38",
+      "name": "OLL 38",
+      "group": "w-shapes",
+      "algorithms": [
+        "(R U R' U) (R U' R' U') (R' F R F')"
+      ],
+      "scramble": "F R' F' R U R U R' U' R U' R'",
+      "scrambles": [
+        "F R' F' R U R U R' U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "W Shapes",
+        "sourceId": "OLL 38"
+      }
+    },
+    {
+      "id": "39",
+      "name": "OLL 39",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "y L F' (L' U' L U) F U' L'"
+      ],
+      "scramble": "L U F' U' L' U L F L' y'",
+      "scrambles": [
+        "L U F' U' L' U L F L' y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 39"
+      }
+    },
+    {
+      "id": "40",
+      "name": "OLL 40",
+      "group": "lightning-shapes",
+      "algorithms": [
+        "y R' F (R U R' U') F' U R"
+      ],
+      "scramble": "R' U' F U R U' R' F' R y'",
+      "scrambles": [
+        "R' U' F U R U' R' F' R y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Lightning Shapes",
+        "sourceId": "OLL 40"
+      }
+    },
+    {
+      "id": "41",
+      "name": "OLL 41",
+      "group": "awkward-shapes",
+      "algorithms": [
+        "y2 (R U R' U) (R U2 R') F (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' F' R U2' R' U' R U' R' y2'",
+      "scrambles": [
+        "F U R U' R' F' R U2' R' U' R U' R' y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Awkward Shapes",
+        "sourceId": "OLL 41"
+      }
+    },
+    {
+      "id": "42",
+      "name": "OLL 42",
+      "group": "awkward-shapes",
+      "algorithms": [
+        "(R' U' R U') (R' U2 R) F (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' F' R' U2' R U R' U R",
+      "scrambles": [
+        "F U R U' R' F' R' U2' R U R' U R"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Awkward Shapes",
+        "sourceId": "OLL 42"
+      }
+    },
+    {
+      "id": "43",
+      "name": "OLL 43",
+      "group": "p-shapes",
+      "algorithms": [
+        "y R' U' (F' U F) R"
+      ],
+      "scramble": "f' U' L' U L f",
+      "scrambles": [
+        "f' U' L' U L f"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "P Shapes",
+        "sourceId": "OLL 43"
+      }
+    },
+    {
+      "id": "44",
+      "name": "OLL 44",
+      "group": "p-shapes",
+      "algorithms": [
+        "f (R U R' U') f'"
+      ],
+      "scramble": "f U R U' R' f'",
+      "scrambles": [
+        "f U R U' R' f'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "P Shapes",
+        "sourceId": "OLL 44"
+      }
+    },
+    {
+      "id": "45",
+      "name": "OLL 45",
+      "group": "t-shapes",
+      "algorithms": [
+        "F (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' F'",
+      "scrambles": [
+        "F U R U' R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "T Shapes",
+        "sourceId": "OLL 45"
+      }
+    },
+    {
+      "id": "46",
+      "name": "OLL 46",
+      "group": "c-shapes",
+      "algorithms": [
+        "R' U' (R' F R F') U R"
+      ],
+      "scramble": "R' U' F R' F' R U R",
+      "scrambles": [
+        "R' U' F R' F' R U R"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "C Shapes",
+        "sourceId": "OLL 46"
+      }
+    },
+    {
+      "id": "47",
+      "name": "OLL 47",
+      "group": "l-shapes",
+      "algorithms": [
+        "F' (L' U' L U) (L' U' L U) F"
+      ],
+      "scramble": "F' U' L' U L U' L' U L F",
+      "scrambles": [
+        "F' U' L' U L U' L' U L F"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 47"
+      }
+    },
+    {
+      "id": "48",
+      "name": "OLL 48",
+      "group": "l-shapes",
+      "algorithms": [
+        "F (R U R' U') (R U R' U') F'"
+      ],
+      "scramble": "F U R U' R' U R U' R' F'",
+      "scrambles": [
+        "F U R U' R' U R U' R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 48"
+      }
+    },
+    {
+      "id": "49",
+      "name": "OLL 49",
+      "group": "l-shapes",
+      "algorithms": [
+        "y2 r U' (r2 U) (r2 U) (r2) U' r"
+      ],
+      "scramble": "r' U r2' U' r2' U' r2' U r' y2'",
+      "scrambles": [
+        "r' U r2' U' r2' U' r2' U r' y2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 49"
+      }
+    },
+    {
+      "id": "50",
+      "name": "OLL 50",
+      "group": "l-shapes",
+      "algorithms": [
+        "r' U (r2 U') (r2 U') (r2) U r'"
+      ],
+      "scramble": "r U' r2' U r2' U r2' U' r",
+      "scrambles": [
+        "r U' r2' U r2' U r2' U' r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 50"
+      }
+    },
+    {
+      "id": "51",
+      "name": "OLL 51",
+      "group": "line-shapes",
+      "algorithms": [
+        "f (R U R' U') (R U R' U') f'"
+      ],
+      "scramble": "f U R U' R' U R U' R' f'",
+      "scrambles": [
+        "f U R U' R' U R U' R' f'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Line Shapes",
+        "sourceId": "OLL 51"
+      }
+    },
+    {
+      "id": "52",
+      "name": "OLL 52",
+      "group": "line-shapes",
+      "algorithms": [
+        "y2 R' (F' U' F U') (R U R' U) R"
+      ],
+      "scramble": "F R U R' d R' U' R U' R'",
+      "scrambles": [
+        "F R U R' d R' U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Line Shapes",
+        "sourceId": "OLL 52"
+      }
+    },
+    {
+      "id": "53",
+      "name": "OLL 53",
+      "group": "l-shapes",
+      "algorithms": [
+        "(r' U' R U') (R' U R U') (R' U2 r)"
+      ],
+      "scramble": "r' U2' R U R' U' R U R' U r",
+      "scrambles": [
+        "r' U2' R U R' U' R U R' U r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 53"
+      }
+    },
+    {
+      "id": "54",
+      "name": "OLL 54",
+      "group": "l-shapes",
+      "algorithms": [
+        "(r U R' U) (R U' R' U) (R U2 r')"
+      ],
+      "scramble": "r U2' R' U' R U R' U' R U' r'",
+      "scrambles": [
+        "r U2' R' U' R U R' U' R U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "L Shapes",
+        "sourceId": "OLL 54"
+      }
+    },
+    {
+      "id": "55",
+      "name": "OLL 55",
+      "group": "line-shapes",
+      "algorithms": [
+        "R U2 R2 (U' R U' R') U2 (F R F')"
+      ],
+      "scramble": "F R' F' U2' R U R' U R2' U2' R'",
+      "scrambles": [
+        "F R' F' U2' R U R' U R2' U2' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Line Shapes",
+        "sourceId": "OLL 55"
+      }
+    },
+    {
+      "id": "56",
+      "name": "OLL 56",
+      "group": "line-shapes",
+      "algorithms": [
+        "(r U r') (U R U' R') (U R U' R') (r U' r')"
+      ],
+      "scramble": "r U r' R U R' U' R U R' U' r U' r'",
+      "scrambles": [
+        "r U r' R U R' U' R U R' U' r U' r'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Line Shapes",
+        "sourceId": "OLL 56"
+      }
+    },
+    {
+      "id": "57",
+      "name": "OLL 57",
+      "group": "all-corners-oriented",
+      "algorithms": [
+        "(R U R' U') M' (U R U' r')"
+      ],
+      "scramble": "r U R' U' M U R U' R'",
+      "scrambles": [
+        "r U R' U' M U R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "All Corners Oriented",
+        "sourceId": "OLL 57"
+      }
+    }
+  ]
+}

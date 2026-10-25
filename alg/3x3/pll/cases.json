@@ -1,0 +1,364 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "algset": "pll",
+  "cases": [
+    {
+      "id": "1",
+      "name": "Aa",
+      "group": "adj-swap",
+      "algorithms": [
+        "x (R' U R') D2 (R U' R') D2 R2 x'"
+      ],
+      "scramble": "x R2' D2' R U R' D2' R U' R x'",
+      "scrambles": [
+        "x R2' D2' R U R' D2' R U' R x'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Aa"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Ab",
+      "group": "adj-swap",
+      "algorithms": [
+        "x R2 D2 (R U R') D2 (R U' R) x'"
+      ],
+      "scramble": "x R' U R' D2' R U' R' D2' R2' x'",
+      "scrambles": [
+        "x R' U R' D2' R U' R' D2' R2' x'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Ab"
+      }
+    },
+    {
+      "id": "3",
+      "name": "E",
+      "group": "opp-swap",
+      "algorithms": [
+        "y x' (R U' R' D) (R U R' D') (R U R' D) (R U' R' D') x"
+      ],
+      "scramble": "x' D R U R' D' R U' R' D R U' R' D' R U R' x y'",
+      "scrambles": [
+        "x' D R U R' D' R U' R' D R U' R' D' R U R' x y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Opp Swap",
+        "sourceId": "E"
+      }
+    },
+    {
+      "id": "4",
+      "name": "F",
+      "group": "adj-swap",
+      "algorithms": [
+        "y (R' U' F') (R U R' U') R' F R2 (U' R' U') (R U R' U) R"
+      ],
+      "scramble": "R' U' R U' R' U R U R2' F' R U R U' R' F U R y'",
+      "scrambles": [
+        "R' U' R U' R' U R U R2' F' R U R U' R' F U R y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "F"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Ga",
+      "group": "adj-swap",
+      "algorithms": [
+        "R2 (U R' U R' U' R U') R2 D (U' R' U R) D'"
+      ],
+      "scramble": "R' U' R D' U R2' U R' U R U' R U' R2' D",
+      "scrambles": [
+        "R' U' R D' U R2' U R' U R U' R U' R2' D"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Ga"
+      }
+    },
+    {
+      "id": "6",
+      "name": "Gb",
+      "group": "adj-swap",
+      "algorithms": [
+        "(R' U' R U) D' R2 (U R' U R U' R U') R2 D"
+      ],
+      "scramble": "R2' U R' U R' U' R U' R2' D U' R' U R D'",
+      "scrambles": [
+        "R2' U R' U R' U' R U' R2' D U' R' U R D'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Gb"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Gc",
+      "group": "adj-swap",
+      "algorithms": [
+        "R2 (U' R U' R U R' U) R2 D' (U R U' R') D"
+      ],
+      "scramble": "D' R U R' U' D R2' U' R U' R' U R' U R2'",
+      "scrambles": [
+        "D' R U R' U' D R2' U' R U' R' U R' U R2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Gc"
+      }
+    },
+    {
+      "id": "8",
+      "name": "Gd",
+      "group": "adj-swap",
+      "algorithms": [
+        "(R U R' U') D R2 (U' R U' R' U R' U) R2 D'"
+      ],
+      "scramble": "R2' U' R U' R U R' U R2' D' U R U' R' D",
+      "scrambles": [
+        "R2' U' R U' R U R' U R2' D' U R U' R' D"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Gd"
+      }
+    },
+    {
+      "id": "9",
+      "name": "H",
+      "group": "epll",
+      "algorithms": [
+        "(M2 U' M2) U2 (M2 U' M2)"
+      ],
+      "scramble": "M2' U' M2' U2' M2' U' M2'",
+      "scrambles": [
+        "M2' U' M2' U2' M2' U' M2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "EPLL",
+        "sourceId": "H"
+      }
+    },
+    {
+      "id": "10",
+      "name": "Ja",
+      "group": "adj-swap",
+      "algorithms": [
+        "y (R' U L') U2 (R U' R') U2 R L"
+      ],
+      "scramble": "L' R' U2' R U R' U2' L U' R y'",
+      "scrambles": [
+        "L' R' U2' R U R' U2' L U' R y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Ja"
+      }
+    },
+    {
+      "id": "11",
+      "name": "Jb",
+      "group": "adj-swap",
+      "algorithms": [
+        "(R U R' F') (R U R' U') R' F R2 U' R'"
+      ],
+      "scramble": "R U R2' F' R U R U' R' F R U' R'",
+      "scrambles": [
+        "R U R2' F' R U R U' R' F R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Jb"
+      }
+    },
+    {
+      "id": "12",
+      "name": "Na",
+      "group": "opp-swap",
+      "algorithms": [
+        "(R U R' U) (R U R' F') (R U R' U') R' F R2 U' R' U2 (R U' R')"
+      ],
+      "scramble": "R U R' U2' R U R2' F' R U R U' R' F R U' R' U' R U' R'",
+      "scrambles": [
+        "R U R' U2' R U R2' F' R U R U' R' F R U' R' U' R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Opp Swap",
+        "sourceId": "Na"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Nb",
+      "group": "opp-swap",
+      "algorithms": [
+        "(R' U R U' R') (F' U' F) (R U R') (F R' F') (R U' R)"
+      ],
+      "scramble": "F r' F' r U r U' r2' D' F r U r' F' D r",
+      "scrambles": [
+        "F r' F' r U r U' r2' D' F r U r' F' D r"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Opp Swap",
+        "sourceId": "Nb"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Ra",
+      "group": "adj-swap",
+      "algorithms": [
+        "y (R U' R' U') (R U R D) (R' U' R D') (R' U2 R')"
+      ],
+      "scramble": "R U2' R D R' U R D' R' U' R' U R U R' y'",
+      "scrambles": [
+        "R U2' R D R' U R D' R' U' R' U R U R' y'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Ra"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Rb",
+      "group": "adj-swap",
+      "algorithms": [
+        "(R' U2) (R U2) (R' F R) (U R' U' R') F' R2"
+      ],
+      "scramble": "R' U R U R' U' R' D' R U R' D R U2' R",
+      "scrambles": [
+        "R' U R U R' U' R' D' R U R' D R U2' R"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "Rb"
+      }
+    },
+    {
+      "id": "16",
+      "name": "T",
+      "group": "adj-swap",
+      "algorithms": [
+        "(R U R' U') (R' F R2) (U' R' U') (R U R' F')"
+      ],
+      "scramble": "F R U' R' U R U R2' F' R U R U' R'",
+      "scrambles": [
+        "F R U' R' U R U R2' F' R U R U' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Adj Swap",
+        "sourceId": "T"
+      }
+    },
+    {
+      "id": "17",
+      "name": "Ua",
+      "group": "epll",
+      "algorithms": [
+        "y2 (M2 U M) U2 (M' U M2)"
+      ],
+      "scramble": "M2' U' M' U2' M U' M2'",
+      "scrambles": [
+        "M2' U' M' U2' M U' M2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "EPLL",
+        "sourceId": "Ua"
+      }
+    },
+    {
+      "id": "18",
+      "name": "Ub",
+      "group": "epll",
+      "algorithms": [
+        "y2 (M2 U' M) U2 (M' U' M2)"
+      ],
+      "scramble": "M2' U M' U2' M U M2'",
+      "scrambles": [
+        "M2' U M' U2' M U M2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "EPLL",
+        "sourceId": "Ub"
+      }
+    },
+    {
+      "id": "19",
+      "name": "V",
+      "group": "opp-swap",
+      "algorithms": [
+        "(R' U R' U') (R D' R' D) (R' U D') (R2 U' R2) D R2"
+      ],
+      "scramble": "D2' R' U R D' R2' U' R' U R' U R' D' R U2' R'",
+      "scrambles": [
+        "D2' R' U R D' R2' U' R' U R' U R' D' R U2' R'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Opp Swap",
+        "sourceId": "V"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Y",
+      "group": "opp-swap",
+      "algorithms": [
+        "F R (U' R' U') (R U R' F') (R U R' U') (R' F R F')"
+      ],
+      "scramble": "F R' F' R U R U' R' F R U' R' U R U R' F'",
+      "scrambles": [
+        "F R' F' R U R U' R' F R U' R' U R U R' F'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "Opp Swap",
+        "sourceId": "Y"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Z",
+      "group": "epll",
+      "algorithms": [
+        "(M2 U) (M2 U) (M' U2) M2 (U2 M')"
+      ],
+      "scramble": "M U2' M2' U2' M U' M2' U' M2'",
+      "scrambles": [
+        "M U2' M2' U2' M U' M2' U' M2'"
+      ],
+      "svgId": null,
+      "tags": {
+        "sourceGroup": "EPLL",
+        "sourceId": "Z"
+      }
+    }
+  ]
+}

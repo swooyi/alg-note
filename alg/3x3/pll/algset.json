@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "id": "pll",
+  "name": "PLL",
+  "source": {
+    "url": "https://speedcubedb.com/a/3x3/PLL"
+  },
+  "notes": [
+    "Setup and Standard Alg from SpeedCubeDB. Images intentionally omitted."
+  ]
+}

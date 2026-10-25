@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "puzzle": "3x3",
+  "algset": "oll",
+  "groups": [
+    {
+      "id": "dot-case",
+      "name": "Dot Case",
+      "caseIds": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "17",
+        "18",
+        "19",
+        "20"
+      ]
+    },
+    {
+      "id": "square-shapes",
+      "name": "Square Shapes",
+      "caseIds": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": "lightning-shapes",
+      "name": "Lightning Shapes",
+      "caseIds": [
+        "7",
+        "8",
+        "11",
+        "12",
+        "39",
+        "40"
+      ]
+    },
+    {
+      "id": "fish-shapes",
+      "name": "Fish Shapes",
+      "caseIds": [
+        "9",
+        "10",
+        "35",
+        "37"
+      ]
+    },
+    {
+      "id": "knight-move-shapes",
+      "name": "Knight Move Shapes",
+      "caseIds": [
+        "13",
+        "14",
+        "15",
+        "16"
+      ]
+    },
+    {
+      "id": "ocll",
+      "name": "OCLL",
+      "caseIds": [
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
+        "26",
+        "27"
+      ]
+    },
+    {
+      "id": "all-corners-oriented",
+      "name": "All Corners Oriented",
+      "caseIds": [
+        "28",
+        "57"
+      ]
+    },
+    {
+      "id": "awkward-shapes",
+      "name": "Awkward Shapes",
+      "caseIds": [
+        "29",
+        "30",
+        "41",
+        "42"
+      ]
+    },
+    {
+      "id": "p-shapes",
+      "name": "P Shapes",
+      "caseIds": [
+        "31",
+        "32",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "id": "t-shapes",
+      "name": "T Shapes",
+      "caseIds": [
+        "33",
+        "45"
+      ]
+    },
+    {
+      "id": "c-shapes",
+      "name": "C Shapes",
+      "caseIds": [
+        "34",
+        "46"
+      ]
+    },
+    {
+      "id": "w-shapes",
+      "name": "W Shapes",
+      "caseIds": [
+        "36",
+        "38"
+      ]
+    },
+    {
+      "id": "l-shapes",
+      "name": "L Shapes",
+      "caseIds": [
+        "47",
+        "48",
+        "49",
+        "50",
+        "53",
+        "54"
+      ]
+    },
+    {
+      "id": "line-shapes",
+      "name": "Line Shapes",
+      "caseIds": [
+        "51",
+        "52",
+        "55",
+        "56"
+      ]
+    }
+  ]
+}
