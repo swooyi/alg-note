@@ -25,6 +25,7 @@ const LANGUAGE_ICON_SOURCES = {
 };
 const BOOKMARK_TYPES = new Set(["red-sun", "green-moon", "yellow-star", "blue-cloud"]);
 const DRILL_AUF_MODES = new Set(["none", "u", "up", "u2", "random"]);
+const DRILL_VIEWPOINTS = ["none", "y", "y2", "y'"];
 const DRILL_ORDER_MODES = new Set(["random", "sequential"]);
 const QUIZ_ORDER_MODES = new Set(["random", "sequential"]);
 const DRILL_AUF_LABELS = {
@@ -36,6 +37,9 @@ const DRILL_AUF_LABELS = {
 };
 const UI_LABELS = {
   ko: {
+    viewpoint: "시점",
+    aufEnabled: "활성화",
+    aufDisabled: "비활성화",
     all: "전체",
     allJsonEditsDescription: "모든 해법에서 브라우저에 저장된 수정 내용만 모은 결과입니다.",
     allJsonEditsTitle: "수정 json",
@@ -179,6 +183,9 @@ const UI_LABELS = {
     resetTimer: "타이머 초기화",
   },
   en: {
+    viewpoint: "Viewpoint",
+    aufEnabled: "On",
+    aufDisabled: "Off",
     all: "All",
     allJsonEditsDescription: "Only edited items saved in this browser across all alg sets.",
     allJsonEditsTitle: "Edited JSON",
@@ -322,6 +329,9 @@ const UI_LABELS = {
     resetTimer: "Reset Timer",
   },
   ja: {
+    viewpoint: "視点",
+    aufEnabled: "有効",
+    aufDisabled: "無効",
     all: "すべて",
     allJsonEditsDescription: "すべての手順セットから、このブラウザに保存された編集内容のみを集めた結果です。",
     allJsonEditsTitle: "編集JSON",
@@ -598,6 +608,8 @@ const elements = {
   drillTrainModeButton: document.getElementById("drillTrainModeButton"),
   drillRandomAufButton: document.getElementById("drillRandomAufButton"),
   drillAufPanel: document.getElementById("drillAufPanel"),
+  drillAufDialog: document.getElementById("drillAufDialog"),
+  drillAufCloseButton: document.getElementById("drillAufCloseButton"),
   drillAufModeButtons: [...document.querySelectorAll("[data-auf-mode]")],
   drillOrderButton: document.getElementById("drillOrderButton"),
   drillOrderPanel: document.getElementById("drillOrderPanel"),
@@ -674,6 +686,7 @@ const state = {
     active: false,
     mode: "recap",
     aufMode: "none",
+    viewpoints: ["none"],
     orderMode: "random",
     historyWidth: loadJson("drillHistoryWidth", DEFAULT_DRILL_HISTORY_WIDTH),
     source: [],
@@ -1646,6 +1659,7 @@ function saveDrillState() {
     index: state.drill.index,
     mode: state.drill.mode,
     aufMode: state.drill.aufMode,
+    viewpoints: state.drill.viewpoints,
     orderMode: state.drill.orderMode,
     displayMs: state.drill.displayMs,
     currentSetup: state.drill.currentSetup,
@@ -1669,6 +1683,7 @@ function restoreDrillState() {
   state.drill.index = Math.min(Math.max(0, Number(saved.index) || 0), queue.length - 1);
   state.drill.mode = ["recap", "train"].includes(saved.mode) ? saved.mode : "recap";
   state.drill.aufMode = normalizeDrillAufMode(saved.aufMode);
+  state.drill.viewpoints = normalizeDrillViewpoints(saved.viewpoints);
   state.drill.orderMode = normalizeDrillOrderMode(saved.orderMode);
   state.drill.displayMs = Math.max(0, Number(saved.displayMs) || 0);
   state.drill.results = Array.isArray(saved.results)
@@ -1680,7 +1695,8 @@ function restoreDrillState() {
   state.drill.completed = Boolean(saved.completed);
   state.drill.currentSetup = state.drill.completed
     ? ""
-    : (typeof saved.currentSetup === "string" && saved.currentSetup) || makeDrillSetup(currentDrillItem());
+    : (isZbll() && !Array.isArray(saved.viewpoints) ? "" : typeof saved.currentSetup === "string" && saved.currentSetup)
+      || makeDrillSetup(currentDrillItem());
   state.drill.timerStatus = "idle";
   state.drill.elapsedMs = 0;
 }
@@ -1730,6 +1746,7 @@ function supportsDrillAuf(dataset = state.dataset) {
 
 function normalizeDrillAufMode(mode, dataset = state.dataset) {
   const value = DRILL_AUF_MODES.has(mode) ? mode : "none";
+  if (isZbll(dataset)) return value === "none" ? "none" : "random";
   if (value === "u2" && !drillAufMoves(dataset).includes("U2")) return "none";
   return value;
 }
@@ -1756,6 +1773,35 @@ function randomLeadingAufMove() {
 }
 
 
+function isZbll(dataset = state.dataset) {
+  return dataset?.algset === "zbll";
+}
+
+
+function normalizeDrillViewpoints(values) {
+  const selected = DRILL_VIEWPOINTS.filter((value) => Array.isArray(values) && values.includes(value));
+  return selected.length ? selected : ["none"];
+}
+
+
+function rotateDrillSetup(setup, viewpoint) {
+  const turns = { none: 0, y: 1, y2: 2, "y'": 3 }[viewpoint] || 0;
+  // Conjugate the notation: y maps R -> F -> L -> B -> R.
+  const mapping = { R: "F", F: "L", L: "B", B: "R", r: "f", f: "l", l: "b", b: "r", M: "S'", S: "M", x: "z", z: "x'" };
+  let result = setup;
+  for (let i = 0; i < turns; i += 1) {
+    result = result.replace(/([URFDLBurfdlbMESxyz])(w?)(2'?|')?/g, (token, face, wide, suffix = "") => {
+      const target = mapping[face];
+      if (!target) return token;
+      const inverse = target.endsWith("'");
+      const amount = suffix.startsWith("2") ? "2" : inverse ? (suffix === "'" ? "" : "'") : suffix;
+      return target[0] + wide + amount;
+    });
+  }
+  return result;
+}
+
+
 function mergeFtoBoundaryAuf(setup) {
   const moves = setup.trim().split(/\s+/);
   const isAuf = (move) => move === "U" || move === "U'";
@@ -1776,6 +1822,11 @@ function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return t("noSetup");
   const mode = normalizeDrillAufMode(state.drill.aufMode);
+  if (isZbll()) {
+    const viewpoint = randomItem(normalizeDrillViewpoints(state.drill.viewpoints));
+    const rotated = rotateDrillSetup(setup, viewpoint);
+    return [mode === "random" ? randomLeadingAufMove() : "", rotated].filter(Boolean).join(" ");
+  }
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
   const front = randomLeadingAufMove();
@@ -1944,6 +1995,11 @@ function updateDrillStartButton() {
 
 
 function closeDrillAufPanel() {
+  if (elements.drillAufDialog.open) {
+    elements.drillAufDialog.close();
+    elements.drillRandomAufButton.parentElement.append(elements.drillAufPanel);
+    elements.drillRandomAufButton.focus();
+  }
   elements.drillAufPanel.hidden = true;
   elements.drillRandomAufButton.setAttribute("aria-expanded", "false");
 }
@@ -1965,8 +2021,34 @@ function toggleDrillOrderPanel() {
 function toggleDrillAufPanel() {
   if (!supportsDrillAuf()) return;
   const willOpen = elements.drillAufPanel.hidden;
+  if (!willOpen) {
+    closeDrillAufPanel();
+    return;
+  }
   elements.drillAufPanel.hidden = !willOpen;
   elements.drillRandomAufButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  if (isZbll()) {
+    updateDrillViewpointImages();
+    elements.drillAufDialog.append(elements.drillAufPanel);
+    elements.drillAufDialog.showModal();
+  }
+}
+
+
+function updateDrillViewpointImages() {
+  const item = state.drill.completed ? null : currentDrillItem();
+  document.getElementById("drillViewpointCaseName").textContent = item?.name || "";
+  for (const container of document.querySelectorAll(".drill-viewpoint-image")) {
+    container.replaceChildren();
+    if (item?.svg) {
+      const image = document.createElement("img");
+      image.src = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(item.svg)}`;
+      image.alt = item.name || item.id;
+      container.append(image);
+    } else {
+      container.textContent = t("noImage");
+    }
+  }
 }
 
 
@@ -1984,13 +2066,22 @@ function toggleDrillShortcutPanel() {
 
 
 function updateDrillAufControls() {
+  const zbll = isZbll();
   const supported = supportsDrillAuf();
   const moves = drillAufMoves();
   const mode = supported ? normalizeDrillAufMode(state.drill.aufMode) : "none";
-  const active = supported && mode !== "none";
+  const active = supported && (mode !== "none" || (zbll && state.drill.viewpoints.some((value) => value !== "none")));
 
   if (state.drill.aufMode !== mode) saveDrillAufMode(mode);
   elements.drillRandomAufButton.textContent = supported ? `AUF: ${drillAufLabel(mode)}` : `AUF: ${t("unsupported")}`;
+  if (zbll) elements.drillRandomAufButton.textContent = `AUF/${t("viewpoint")}`;
+  const viewpointControls = document.getElementById("drillViewpointControls");
+  viewpointControls.hidden = !zbll;
+  for (const button of viewpointControls.querySelectorAll("[data-viewpoint]")) {
+    const selected = state.drill.viewpoints.includes(button.dataset.viewpoint);
+    button.classList.toggle("is-active", selected);
+    button.setAttribute("aria-pressed", String(selected));
+  }
   elements.drillRandomAufButton.disabled = !supported;
   elements.drillRandomAufButton.classList.toggle("is-active", active);
   elements.drillRandomAufButton.setAttribute("aria-pressed", active ? "true" : "false");
@@ -1999,7 +2090,8 @@ function updateDrillAufControls() {
 
   for (const button of elements.drillAufModeButtons) {
     const option = button.dataset.aufMode;
-    const visible = option !== "u2" || moves.includes("U2");
+    const visible = zbll ? ["none", "random"].includes(option) : option !== "u2" || moves.includes("U2");
+    button.textContent = zbll ? t(option === "none" ? "aufDisabled" : "aufEnabled") : drillAufLabel(option);
     button.hidden = !visible;
     button.classList.toggle("is-active", supported && option === mode);
     button.setAttribute("aria-pressed", supported && option === mode ? "true" : "false");
@@ -2607,6 +2699,7 @@ function setDataset(entries) {
   state.dataset = normalizeDataset(entries);
   state.key = datasetKey(state.dataset);
   state.drill.aufMode = loadDrillAufMode();
+  state.drill.viewpoints = normalizeDrillViewpoints(loadJson(`drillViewpoints.${state.key}`, ["none"]));
   state.drill.orderMode = loadDrillOrderMode();
   state.query = "";
   state.groupFilters = new Set();
@@ -3093,7 +3186,7 @@ document.addEventListener("click", (event) => {
   closeFilterMenus();
   if (event.target instanceof Element && event.target.closest(".quiz-order-control")) return;
   closeQuizOrderPanel();
-  if (event.target instanceof Element && event.target.closest(".drill-auf-control")) return;
+  if (event.target instanceof Element && event.target.closest(".drill-auf-control, #drillAufDialog")) return;
   if (event.target instanceof Element && event.target.closest(".drill-order-control")) return;
   closeDrillAufPanel();
   closeDrillOrderPanel();
@@ -3400,12 +3493,34 @@ elements.drillOrderPanel.addEventListener("click", (event) => {
   renderDrill();
 });
 
+elements.drillAufCloseButton.addEventListener("click", closeDrillAufPanel);
+elements.drillAufDialog.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  closeDrillAufPanel();
+});
+elements.drillAufDialog.addEventListener("click", (event) => {
+  if (event.target !== elements.drillAufDialog) return;
+  const rect = elements.drillAufDialog.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) {
+    closeDrillAufPanel();
+  }
+});
+
 elements.drillAufPanel.addEventListener("click", (event) => {
-  const button = event.target.closest("[data-auf-mode]");
+  const button = event.target.closest("[data-auf-mode], [data-viewpoint]");
   if (!button) return;
   event.stopPropagation();
-  saveDrillAufMode(button.dataset.aufMode);
-  closeDrillAufPanel();
+  if (button.dataset.viewpoint) {
+    const value = button.dataset.viewpoint;
+    const selected = state.drill.viewpoints;
+    if (selected.includes(value) && selected.length === 1) return;
+    state.drill.viewpoints = normalizeDrillViewpoints(selected.includes(value)
+      ? selected.filter((entry) => entry !== value) : [...selected, value]);
+    saveJson(`drillViewpoints.${state.key}`, state.drill.viewpoints);
+  } else {
+    saveDrillAufMode(button.dataset.aufMode);
+  }
+  if (!isZbll()) closeDrillAufPanel();
   if (state.drill.active && state.drill.timerStatus === "idle" && !state.drill.completed) {
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   }
@@ -3743,6 +3858,7 @@ elements.caseGrid.addEventListener("contextmenu", (event) => {
   openCaseDetail(card.dataset.caseId);
 });
 document.addEventListener("keydown", (event) => {
+  if (elements.drillAufDialog.open) return;
   if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
 
   if (state.quiz.active && !state.selectedCaseId) {

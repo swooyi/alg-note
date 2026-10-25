@@ -1715,6 +1715,126 @@ body.is-quiz-active {
   display: none;
 }
 
+.drill-viewpoint-label {
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
+  padding: 8px 10px 4px;
+}
+
+.drill-viewpoint-options {
+  display: flex;
+}
+
+.drill-auf-dialog {
+  width: min(820px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  box-sizing: border-box;
+  margin: auto;
+  padding: 24px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: 0 20px 64px rgba(31, 35, 40, 0.24);
+}
+
+.drill-auf-dialog::backdrop {
+  background: rgba(20, 25, 35, 0.48);
+}
+
+.drill-auf-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.drill-auf-dialog-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.drill-viewpoint-case-name {
+  margin: 12px 0 20px;
+  color: var(--muted);
+}
+
+.drill-auf-label {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.drill-auf-dialog .drill-auf-panel {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.drill-auf-dialog #drillViewpointControls {
+  width: 100%;
+}
+
+.drill-auf-dialog .drill-viewpoint-label {
+  margin-top: 12px;
+  padding: 16px 0 12px;
+  font-weight: 700;
+}
+
+.drill-auf-dialog .drill-viewpoint-options {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.drill-auf-dialog .drill-auf-panel button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+}
+
+.drill-auf-dialog .drill-viewpoint-options button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.drill-auf-dialog .drill-auf-panel button.is-active {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.drill-viewpoint-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.drill-viewpoint-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: rotate(var(--viewpoint-angle, 0deg));
+}
+
+@media (max-width: 600px) {
+  .drill-auf-dialog {
+    padding: 16px;
+  }
+
+  .drill-auf-dialog .drill-viewpoint-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .drill-auf-panel button {
   justify-content: flex-start;
   min-height: 32px;

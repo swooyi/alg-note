@@ -247,6 +247,15 @@
     </div>
   </section>
 
+  <dialog id="drillAufDialog" class="drill-auf-dialog" aria-labelledby="drillAufDialogTitle">
+    <div class="drill-auf-dialog-header">
+      <h2 id="drillAufDialogTitle">AUF/<span data-i18n="viewpoint">시점</span></h2>
+      <button id="drillAufCloseButton" type="button" data-i18n="close">닫기</button>
+    </div>
+    <p id="drillViewpointCaseName" class="drill-viewpoint-case-name"></p>
+    <div class="drill-auf-label">AUF</div>
+  </dialog>
+
   <section id="drillOverlay" class="drill-overlay" hidden>
     <div class="drill-panel">
       <div class="drill-top">
@@ -274,6 +283,15 @@
               <button type="button" data-auf-mode="up">U'</button>
               <button type="button" data-auf-mode="u2">U2</button>
               <button type="button" data-auf-mode="random" data-i18n="auf.random">랜덤</button>
+              <div id="drillViewpointControls" hidden>
+                <div class="drill-viewpoint-label" data-i18n="viewpoint">시점</div>
+                <div class="drill-viewpoint-options">
+                  <button type="button" data-viewpoint="none"><span data-i18n="auf.none">없음</span><span class="drill-viewpoint-image"></span></button>
+                  <button type="button" data-viewpoint="y"><span>y</span><span class="drill-viewpoint-image" style="--viewpoint-angle: 90deg"></span></button>
+                  <button type="button" data-viewpoint="y2"><span>y2</span><span class="drill-viewpoint-image" style="--viewpoint-angle: 180deg"></span></button>
+                  <button type="button" data-viewpoint="y'"><span>y'</span><span class="drill-viewpoint-image" style="--viewpoint-angle: -90deg"></span></button>
+                </div>
+              </div>
             </div>
           </div>
           <div class="drill-order-control">
