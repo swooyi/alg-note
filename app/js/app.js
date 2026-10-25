@@ -1500,10 +1500,6 @@ function ensureQuizQuestion(index) {
 function nextTrainingCaseId() {
   const source = state.quiz.sourceIds;
   const previousId = state.quiz.queue[state.quiz.queue.length - 1];
-  if (state.quiz.orderMode === "sequential") {
-    const previousIndex = source.indexOf(previousId);
-    return source[(previousIndex + 1) % source.length];
-  }
   const candidates = source.length > 1 ? source.filter((id) => id !== previousId) : source;
   return randomItem(candidates);
 }
@@ -1522,7 +1518,9 @@ function startNewQuiz(mode = "recap", sourceIds = null, round = 0, initialResult
   state.quiz.selectionIds = [...state.selectedCards];
   state.quiz.sourceIds = validSourceIds;
   state.quiz.pool = pool;
-  const orderedIds = state.quiz.orderMode === "sequential" ? validSourceIds : shuffledItems(validSourceIds);
+  const orderedIds = mode === "recap" && state.quiz.orderMode === "sequential"
+    ? validSourceIds
+    : shuffledItems(validSourceIds);
   state.quiz.queue = mode === "train" ? [orderedIds[0]] : orderedIds;
   state.quiz.questions = [];
   state.quiz.index = 0;
@@ -1569,6 +1567,7 @@ function closeQuizOrderPanel() {
 
 
 function toggleQuizOrderPanel() {
+  if (state.quiz.mode === "train") return;
   const willOpen = elements.quizOrderPanel.hidden;
   elements.quizOrderPanel.hidden = !willOpen;
   elements.quizOrderButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
@@ -1577,12 +1576,16 @@ function toggleQuizOrderPanel() {
 
 function updateQuizOrderControls() {
   const mode = normalizeQuizOrderMode(state.quiz.orderMode);
+  const disabled = state.quiz.mode === "train";
   if (state.quiz.orderMode !== mode) saveQuizOrderMode(mode);
   elements.quizOrderButton.textContent = `${t("drillOrder")}:${t(`drillOrder.${mode}`)}`;
+  elements.quizOrderButton.disabled = disabled;
   elements.quizOrderButton.classList.toggle("is-active", mode === "sequential");
   elements.quizOrderButton.setAttribute("aria-pressed", mode === "sequential" ? "true" : "false");
+  if (disabled) closeQuizOrderPanel();
   for (const button of elements.quizOrderButtons) {
     const active = button.dataset.quizOrder === mode;
+    button.disabled = disabled;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
   }
@@ -1713,10 +1716,11 @@ function renderQuiz() {
     : `${state.quiz.index + 1} / ${state.quiz.queue.length}`;
   elements.quizImage.innerHTML = liveItem?.svg || "";
   elements.quizImage.classList.toggle("is-missing", !liveItem?.svg);
-  elements.quizAnswerReveal.hidden = !question.selectedAlgorithm;
-  elements.quizAnswerReveal.textContent = question.selectedAlgorithm
-    ? `${snapshot?.groupName || ""} · ${snapshot?.name || question.caseId}`
-    : "";
+  const showCaseName = state.quiz.mode === "recap" && state.quiz.orderMode === "sequential";
+  elements.quizAnswerReveal.hidden = !showCaseName && !question.selectedAlgorithm;
+  elements.quizAnswerReveal.textContent = showCaseName
+    ? `[${snapshot?.groupName || t("other")}] ${snapshot?.name || question.caseId}`
+    : (question.selectedAlgorithm ? `${snapshot?.groupName || ""} · ${snapshot?.name || question.caseId}` : "");
   elements.quizChoices.replaceChildren();
   for (const algorithm of question.options) {
     const button = document.createElement("button");
@@ -1840,7 +1844,9 @@ function saveDrillOrderMode(mode) {
 
 
 function drillQueue(items) {
-  return state.drill.orderMode === "sequential" ? [...items] : shuffledItems(items);
+  return state.drill.mode === "recap" && state.drill.orderMode === "sequential"
+    ? [...items]
+    : shuffledItems(items);
 }
 
 
@@ -1898,24 +1904,6 @@ function normalizeDrillViewpoints(values) {
 }
 
 
-function rotateDrillSetup(setup, viewpoint) {
-  const turns = { none: 0, y: 1, y2: 2, "y'": 3 }[viewpoint] || 0;
-  // Conjugate the notation: y maps R -> F -> L -> B -> R.
-  const mapping = { R: "F", F: "L", L: "B", B: "R", r: "f", f: "l", l: "b", b: "r", M: "S'", S: "M", x: "z", z: "x'" };
-  let result = setup;
-  for (let i = 0; i < turns; i += 1) {
-    result = result.replace(/([URFDLBurfdlbMESxyz])(w?)(2'?|')?/g, (token, face, wide, suffix = "") => {
-      const target = mapping[face];
-      if (!target) return token;
-      const inverse = target.endsWith("'");
-      const amount = suffix.startsWith("2") ? "2" : inverse ? (suffix === "'" ? "" : "'") : suffix;
-      return target[0] + wide + amount;
-    });
-  }
-  return result;
-}
-
-
 function mergeFtoBoundaryAuf(setup) {
   const moves = setup.trim().split(/\s+/);
   const isAuf = (move) => move === "U" || move === "U'";
@@ -1938,8 +1926,8 @@ function makeDrillSetup(item) {
   const mode = normalizeDrillAufMode(state.drill.aufMode);
   if (isZbll()) {
     const viewpoint = randomItem(normalizeDrillViewpoints(state.drill.viewpoints));
-    const rotated = rotateDrillSetup(setup, viewpoint);
-    return [mode === "random" ? randomLeadingAufMove() : "", rotated].filter(Boolean).join(" ");
+    const trailingAuf = { none: "", y: "U", y2: "U2", "y'": "U'" }[viewpoint];
+    return [mode === "random" ? randomLeadingAufMove() : "", setup, trailingAuf].filter(Boolean).join(" ");
   }
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
@@ -2126,6 +2114,7 @@ function closeDrillOrderPanel() {
 
 
 function toggleDrillOrderPanel() {
+  if (state.drill.mode === "train") return;
   const willOpen = elements.drillOrderPanel.hidden;
   elements.drillOrderPanel.hidden = !willOpen;
   elements.drillOrderButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
@@ -2215,12 +2204,16 @@ function updateDrillAufControls() {
 
 function updateDrillOrderControls() {
   const mode = normalizeDrillOrderMode(state.drill.orderMode);
+  const disabled = state.drill.mode === "train";
   if (state.drill.orderMode !== mode) saveDrillOrderMode(mode);
   elements.drillOrderButton.textContent = `${t("drillOrder")}:${t(`drillOrder.${mode}`)}`;
+  elements.drillOrderButton.disabled = disabled;
   elements.drillOrderButton.classList.toggle("is-active", mode === "sequential");
   elements.drillOrderButton.setAttribute("aria-pressed", mode === "sequential" ? "true" : "false");
+  if (disabled) closeDrillOrderPanel();
   for (const button of elements.drillOrderButtons) {
     const active = button.dataset.drillOrder === mode;
+    button.disabled = disabled;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
   }
@@ -2263,7 +2256,10 @@ function renderDrill() {
   }
 
   const item = currentDrillItem();
-  const showCurrentCase = state.drill.orderMode === "sequential" && !state.drill.completed && item;
+  const showCurrentCase = state.drill.mode === "recap"
+    && state.drill.orderMode === "sequential"
+    && !state.drill.completed
+    && item;
   elements.drillCurrentCaseText.hidden = !showCurrentCase;
   elements.drillCurrentCaseText.textContent = showCurrentCase ? `[${item.groupName || t("other")}] ${item.name || item.id}` : "";
 
@@ -2337,13 +2333,18 @@ function moveToNextDrillCase({ preserveTimerDisplay = false } = {}) {
   if (!state.drill.active) return;
 
   if (state.drill.mode === "train") {
-    if (state.drill.orderMode === "random") {
-      const source = state.drill.source.length ? state.drill.source : selectedDrillCases();
-      state.drill.source = source;
+    const previousId = currentDrillItem()?.id;
+    const source = state.drill.source.length ? state.drill.source : selectedDrillCases();
+    state.drill.source = source;
+    state.drill.index += 1;
+    if (state.drill.index >= state.drill.queue.length) {
       state.drill.queue = drillQueue(source);
       state.drill.index = 0;
-    } else {
-      state.drill.index = (state.drill.index + 1) % state.drill.queue.length;
+      // Keep each cycle balanced without repeating at the cycle boundary.
+      if (state.drill.queue.length > 1 && state.drill.queue[0].id === previousId) {
+        const swapIndex = 1 + Math.floor(Math.random() * (state.drill.queue.length - 1));
+        [state.drill.queue[0], state.drill.queue[swapIndex]] = [state.drill.queue[swapIndex], state.drill.queue[0]];
+      }
     }
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
     state.drill.completed = false;
@@ -2394,8 +2395,9 @@ function undoDrillResult() {
   const last = state.drill.results.pop();
   const lastItem = drillItemById(last.caseId);
   if (state.drill.mode === "train" && lastItem) {
-    state.drill.queue = [lastItem];
-    state.drill.index = 0;
+    if (state.drill.index === 0) {
+      state.drill.queue.unshift(lastItem);
+    }
     state.drill.currentSetup = last.setup;
     state.drill.completed = false;
   }
@@ -2436,7 +2438,11 @@ function roundedDrillMinResultSeconds() {
 
 function drillResultsAtLeast(seconds) {
   const thresholdMs = seconds * 1000;
-  return state.drill.results.filter((result) => result.elapsedMs >= thresholdMs);
+  const latestByCase = new Map();
+  for (const result of state.drill.results) {
+    latestByCase.set(result.caseId, result);
+  }
+  return [...latestByCase.values()].filter((result) => result.elapsedMs >= thresholdMs);
 }
 
 

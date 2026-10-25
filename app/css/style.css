@@ -135,7 +135,7 @@
 :root[data-design-theme="kyoto"] { --theme-image: url("../images/themes/kyoto.png"); }
 :root[data-design-theme="kiyomizudera"] { --theme-image: url("../images/themes/kiyomizudera.png"); }
 :root[data-design-theme="reze"] { --theme-image: url("../images/themes/reze.png"); }
-:root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-v2.png"); }
+:root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-v3.png"); }
 :root[data-design-theme="pokemon"] { --theme-image: url("../images/themes/pokemon.png"); }
 :root[data-design-theme="kirby"] { --theme-image: url("../images/themes/kirby.png"); }
 :root[data-design-theme="mitsuri"] { --theme-image: url("../images/themes/mitsuri-v2.png"); }
@@ -144,8 +144,8 @@
   :root[data-design-theme="seoul"] { --theme-position: 75% center; }
   :root[data-design-theme="kiyomizudera"] { --theme-position: 70% center; }
   :root[data-design-theme="reze"] { --theme-position: 74% center; }
-  :root[data-design-theme="mitsuri"] { --theme-position: 75% center; }
-  :root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-mobile-v2.png"); }
+  :root[data-design-theme="mitsuri"] { --theme-position: 100% center; }
+  :root[data-design-theme="inori"] { --theme-image: url("../images/themes/inori-mobile-v3.png"); }
 }
 
 * {
@@ -1562,6 +1562,13 @@ body.is-quiz-active {
   color: var(--accent);
 }
 
+.quiz-order-button:disabled,
+.drill-order-button:disabled {
+  color: var(--muted);
+  cursor: default;
+  opacity: 0.6;
+}
+
 .quiz-mode-tabs {
   display: flex;
   gap: 4px;
@@ -1608,14 +1615,14 @@ body.is-quiz-active {
 
 .quiz-question {
   display: grid;
-  grid-template-rows: minmax(150px, 1fr) auto auto auto;
-  align-content: center;
+  grid-template-rows: auto auto auto auto;
+  align-content: start;
   gap: 12px;
   width: min(760px, 100%);
   min-height: 0;
   overflow: auto;
   margin: 0 auto;
-  padding: 18px;
+  padding: clamp(32px, 8vh, 84px) 18px 18px;
 }
 
 .quiz-image {
@@ -2038,6 +2045,7 @@ body.is-quiz-active {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 .drill-auf-panel button {
   justify-content: flex-start;
   min-height: 32px;

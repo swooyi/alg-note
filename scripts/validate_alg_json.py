@@ -70,7 +70,7 @@ def validate(folder: Path) -> list[str]:
                 if not shape.get("id") or not shape.get("file") or not (folder / "shapes" / shape["file"]).is_file():
                     errors.append(f"cases.json: CSP case {case_id} has a missing {layer} shape")
         svg_id = case.get("svgId", case_id)
-        if svg_id not in svg_ids:
+        if svg_id is not None and svg_id not in svg_ids:
             errors.append(f"cases.json: case {case_id} references missing svg {svg_id}")
 
     for svg_id in sorted(svg_ids - case_ids, key=int):

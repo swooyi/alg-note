@@ -1,4 +1,4 @@
-const CACHE_NAME = "alg-note-v104";
+const CACHE_NAME = "alg-note-v105";
 const APP_SHELL = [
   "./",
   "./index.html",
