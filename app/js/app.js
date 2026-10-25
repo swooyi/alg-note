@@ -13,6 +13,10 @@ const MIN_DRILL_HISTORY_WIDTH = 280;
 const MAX_DRILL_HISTORY_WIDTH = 720;
 const VIEW_MODES = new Set(["compact", "list", "full"]);
 const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono"]);
+const APPEARANCES = new Set(["system", "light", "dark"]);
+const DESIGN_THEMES = new Set(["default", "seoul", "kyoto", "kiyomizudera", "pokemon", "kirby", "mitsuri", "reze", "inori"]);
+const DARK_DESIGN_THEMES = new Set(["seoul", "kyoto", "kiyomizudera", "reze", "inori"]);
+const DESIGN_THEME_ACCENTS = { seoul: "purple", kyoto: "red", kiyomizudera: "yellow", pokemon: "blue", kirby: "purple", mitsuri: "green", reze: "purple", inori: "red" };
 const LANGUAGES = new Set(["ko", "en", "ja"]);
 const LANGUAGE_NAMES = {
   ko: "한국어",
@@ -57,6 +61,7 @@ const UI_LABELS = {
     bookmarkYellowStar: "노란 별",
     bookmarks: "북마크",
     cancel: "취소",
+    confirm: "확인",
     caseCount: "개",
     clear: "해제",
     clearFilters: "필터 초기화",
@@ -68,6 +73,20 @@ const UI_LABELS = {
     closePanel: "패널 닫기",
     color: "색상",
     colorTheme: "색상 테마",
+    appearance: "화면 모드",
+    appearanceSystem: "시스템",
+    appearanceLight: "라이트",
+    appearanceDark: "다크",
+    baseSettings: "기본 설정",
+    designTheme: "디자인 테마",
+    themeSeoul: "서울",
+    themeKyoto: "교토",
+    themeKiyomizudera: "기요미즈데라",
+    themePokemon: "포켓몬",
+    themeKirby: "커비",
+    themeMitsuri: "미츠리",
+    themeReze: "레제",
+    themeInori: "유즈리하 이노리",
     compact: "간단히",
     closeRecords: "기록 닫기",
     copy: "복사",
@@ -203,6 +222,7 @@ const UI_LABELS = {
     bookmarkYellowStar: "Yellow Star",
     bookmarks: "Bookmarks",
     cancel: "Cancel",
+    confirm: "Confirm",
     caseCount: "cases",
     clear: "Clear",
     clearFilters: "Reset Filters",
@@ -213,6 +233,20 @@ const UI_LABELS = {
     closePanel: "Close Panel",
     color: "Color",
     colorTheme: "Color Theme",
+    appearance: "Appearance",
+    appearanceSystem: "System",
+    appearanceLight: "Light",
+    appearanceDark: "Dark",
+    baseSettings: "Default Settings",
+    designTheme: "Design Theme",
+    themeSeoul: "Seoul",
+    themeKyoto: "Kyoto",
+    themeKiyomizudera: "Kiyomizu-dera",
+    themePokemon: "Pokémon",
+    themeKirby: "Kirby",
+    themeMitsuri: "Mitsuri",
+    themeReze: "Reze",
+    themeInori: "Inori Yuzuriha",
     compact: "Compact",
     closeRecords: "Close Records",
     copy: "Copy",
@@ -349,6 +383,7 @@ const UI_LABELS = {
     bookmarkYellowStar: "黄色い星",
     bookmarks: "ブックマーク",
     cancel: "キャンセル",
+    confirm: "確定",
     caseCount: "件",
     clear: "解除",
     clearFilters: "フィルターリセット",
@@ -359,6 +394,20 @@ const UI_LABELS = {
     closePanel: "パネルを閉じる",
     color: "色",
     colorTheme: "カラーテーマ",
+    appearance: "表示モード",
+    appearanceSystem: "システム",
+    appearanceLight: "ライト",
+    appearanceDark: "ダーク",
+    baseSettings: "基本設定",
+    designTheme: "デザインテーマ",
+    themeSeoul: "ソウル",
+    themeKyoto: "京都",
+    themeKiyomizudera: "清水寺",
+    themePokemon: "ポケモン",
+    themeKirby: "カービィ",
+    themeMitsuri: "蜜璃",
+    themeReze: "レゼ",
+    themeInori: "楪いのり",
     compact: "簡易",
     closeRecords: "記録を閉じる",
     copy: "コピー",
@@ -496,6 +545,16 @@ function initialAccentTheme() {
   return ACCENT_THEMES.has(saved) ? saved : "blue";
 }
 
+function initialAppearance() {
+  const saved = loadJson("appearance", "system");
+  return APPEARANCES.has(saved) ? saved : "system";
+}
+
+function initialDesignTheme() {
+  const saved = loadJson("designTheme", "default");
+  return DESIGN_THEMES.has(saved) ? saved : "default";
+}
+
 function initialLanguage() {
   const saved = loadJson("language", "ko");
   return LANGUAGES.has(saved) ? saved : "ko";
@@ -531,8 +590,13 @@ const elements = {
   languagePopover: document.getElementById("languagePopover"),
   languageOptions: [...document.querySelectorAll("[data-language]")],
   homeSettingsButton: document.getElementById("homeSettingsButton"),
+  homeSettingsBackdrop: document.getElementById("homeSettingsBackdrop"),
   homeSettingsPopover: document.getElementById("homeSettingsPopover"),
+  confirmDesignThemeButton: document.getElementById("confirmDesignThemeButton"),
+  baseSettingsSection: document.getElementById("baseSettingsSection"),
   accentThemeButtons: [...document.querySelectorAll(".accent-theme-button")],
+  appearanceButtons: [...document.querySelectorAll(".appearance-buttons button")],
+  designThemeButtons: [...document.querySelectorAll(".design-theme-button")],
   homeView: document.getElementById("homeView"),
   datasetHomeGrid: document.getElementById("datasetHomeGrid"),
   presetShortcutSection: document.getElementById("presetShortcutSection"),
@@ -645,6 +709,8 @@ const state = {
   bookmarkFilters: new Set(),
   viewMode: initialViewMode(),
   accentTheme: initialAccentTheme(),
+  appearance: initialAppearance(),
+  designTheme: initialDesignTheme(),
   language: initialLanguage(),
   sidebarOpen: loadJson("sidebarOpen", true),
   sidebarWidth: loadJson("sidebarWidth", DEFAULT_SIDEBAR_WIDTH),
@@ -708,12 +774,42 @@ const state = {
 
 
 function applyAccentTheme() {
-  document.documentElement.dataset.accentTheme = state.accentTheme;
+  const accent = DESIGN_THEME_ACCENTS[state.designTheme] || state.accentTheme;
+  document.documentElement.dataset.accentTheme = accent;
   for (const button of elements.accentThemeButtons) {
-    const active = button.dataset.accentTheme === state.accentTheme;
+    const active = button.dataset.accentTheme === accent;
     button.classList.toggle("is-active", active);
     button.setAttribute("aria-pressed", active ? "true" : "false");
   }
+}
+
+function applyAppearance() {
+  const baseScheme = state.appearance === "system"
+    ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+    : state.appearance;
+  const scheme = state.designTheme === "default" ? baseScheme : (DARK_DESIGN_THEMES.has(state.designTheme) ? "dark" : "light");
+  document.documentElement.dataset.appearance = state.appearance;
+  document.documentElement.dataset.colorScheme = scheme;
+  document.querySelector('meta[name="theme-color"]').content = state.designTheme === "default"
+    ? (scheme === "dark" ? "#12161d" : "#fbf8ff")
+    : getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
+  for (const button of elements.appearanceButtons) {
+    const active = button.dataset.appearance === state.appearance;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+}
+
+function applyDesignTheme() {
+  document.documentElement.dataset.designTheme = state.designTheme;
+  elements.baseSettingsSection?.classList.toggle("is-active", state.designTheme === "default");
+  for (const button of elements.designThemeButtons) {
+    const active = button.dataset.designTheme === state.designTheme;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  }
+  applyAppearance();
+  applyAccentTheme();
 }
 
 function makeLanguageIcon(language) {
@@ -783,16 +879,25 @@ function toggleLanguageMenu() {
 
 
 function closeHomeSettings() {
+  if (elements.homeSettingsPopover.hidden) return;
   elements.homeSettingsPopover.hidden = true;
+  elements.homeSettingsBackdrop.hidden = true;
   elements.homeSettingsButton.setAttribute("aria-expanded", "false");
+  state.designTheme = initialDesignTheme();
+  applyDesignTheme();
 }
 
 
 function toggleHomeSettings() {
   const willOpen = elements.homeSettingsPopover.hidden;
-  elements.homeSettingsPopover.hidden = !willOpen;
-  elements.homeSettingsButton.setAttribute("aria-expanded", willOpen ? "true" : "false");
-  if (willOpen) closeLanguageMenu();
+  if (!willOpen) {
+    closeHomeSettings();
+    return;
+  }
+  elements.homeSettingsPopover.hidden = false;
+  elements.homeSettingsBackdrop.hidden = false;
+  elements.homeSettingsButton.setAttribute("aria-expanded", "true");
+  closeLanguageMenu();
 }
 
 
@@ -3129,15 +3234,58 @@ elements.homeSettingsPopover.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
+elements.homeSettingsBackdrop.addEventListener("click", (event) => {
+  event.stopPropagation();
+  closeHomeSettings();
+});
+
 for (const button of elements.accentThemeButtons) {
   button.addEventListener("click", () => {
     const nextTheme = button.dataset.accentTheme;
-    if (!ACCENT_THEMES.has(nextTheme) || state.accentTheme === nextTheme) return;
+    if (!ACCENT_THEMES.has(nextTheme)) return;
     state.accentTheme = nextTheme;
     saveJson("accentTheme", state.accentTheme);
     applyAccentTheme();
+    if (state.designTheme !== "default") {
+      state.designTheme = "default";
+      saveJson("designTheme", state.designTheme);
+      applyDesignTheme();
+    }
   });
 }
+
+for (const button of elements.appearanceButtons) {
+  button.addEventListener("click", () => {
+    const nextAppearance = button.dataset.appearance;
+    if (!APPEARANCES.has(nextAppearance)) return;
+    state.appearance = nextAppearance;
+    saveJson("appearance", state.appearance);
+    if (state.designTheme !== "default") {
+      state.designTheme = "default";
+      saveJson("designTheme", state.designTheme);
+      applyDesignTheme();
+    }
+    applyAppearance();
+  });
+}
+
+for (const button of elements.designThemeButtons) {
+  button.addEventListener("click", () => {
+    const nextTheme = button.dataset.designTheme;
+    if (!DESIGN_THEMES.has(nextTheme) || state.designTheme === nextTheme) return;
+    state.designTheme = nextTheme;
+    applyDesignTheme();
+  });
+}
+
+elements.confirmDesignThemeButton.addEventListener("click", () => {
+  saveJson("designTheme", state.designTheme);
+  closeHomeSettings();
+});
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  if (state.appearance === "system") applyAppearance();
+});
 
 elements.datasetHomeGrid.addEventListener("click", (event) => {
   const button = event.target.closest(".dataset-choice-button");
@@ -3858,6 +4006,11 @@ elements.caseGrid.addEventListener("contextmenu", (event) => {
   openCaseDetail(card.dataset.caseId);
 });
 document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !elements.homeSettingsPopover.hidden) {
+    event.preventDefault();
+    closeHomeSettings();
+    return;
+  }
   if (elements.drillAufDialog.open) return;
   if (event.target instanceof Element && event.target.closest("input, select, textarea, [contenteditable='true']")) return;
 
@@ -3942,6 +4095,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 applyAccentTheme();
+applyDesignTheme();
 applyLanguage();
 new ResizeObserver(syncAppHeaderHeight).observe(document.querySelector(".app-header"));
 const datasetKeys = renderDatasetOptions();

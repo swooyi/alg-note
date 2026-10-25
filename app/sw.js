@@ -1,4 +1,4 @@
-const CACHE_NAME = "alg-note-v89";
+const CACHE_NAME = "alg-note-v100";
 const APP_SHELL = [
   "./",
   "./index.html",
@@ -36,6 +36,19 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   const url = new URL(event.request.url);
+
+  if (url.origin === self.location.origin && url.pathname.includes("/images/themes/") && url.pathname.endsWith(".png")) {
+    event.respondWith(
+      caches.match(event.request).then((cached) => cached || fetch(event.request).then((response) => {
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+        }
+        return response;
+      })),
+    );
+    return;
+  }
 
   if (url.origin === self.location.origin && url.pathname.endsWith("/js/data.js")) {
     event.respondWith(

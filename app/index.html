@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>swooyi's ALG note</title>
   <meta name="theme-color" content="#fbf8ff">
+  <script>
+    try {
+      const appearance = JSON.parse(localStorage.getItem("algNote.appearance")) || "system";
+      document.documentElement.dataset.appearance = appearance === "light" || appearance === "dark" ? appearance : "system";
+      document.documentElement.dataset.colorScheme = document.documentElement.dataset.appearance === "system"
+        ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+        : document.documentElement.dataset.appearance;
+      const designTheme = JSON.parse(localStorage.getItem("algNote.designTheme")) || "default";
+      document.documentElement.dataset.designTheme = designTheme;
+      if (designTheme !== "default") {
+        document.documentElement.dataset.colorScheme = ["seoul", "kyoto", "kiyomizudera", "reze", "inori"].includes(designTheme) ? "dark" : "light";
+      }
+    } catch {
+      document.documentElement.dataset.appearance = "system";
+      document.documentElement.dataset.colorScheme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.designTheme = "default";
+    }
+  </script>
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="ALG note">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,20 +57,49 @@
         </div>
         <div class="home-settings-wrapper">
           <button id="homeSettingsButton" class="home-settings-button home-icon-button" type="button" aria-label="설정" title="설정" aria-expanded="false" data-i18n-attr="aria-label:title" data-i18n="settings">⚙</button>
+          <div id="homeSettingsBackdrop" class="home-settings-backdrop" aria-hidden="true" hidden></div>
           <div id="homeSettingsPopover" class="home-settings-popover" hidden>
             <h2 data-i18n="settings">설정</h2>
-            <div class="theme-setting-group" aria-label="색상 테마" data-i18n-attr="aria-label" data-i18n="colorTheme">
-              <span data-i18n="color">색상</span>
-              <div class="accent-theme-buttons">
-                <button class="accent-theme-button" type="button" data-accent-theme="red" aria-label="빨강" title="빨강"><span class="accent-theme-swatch red"></span></button>
-                <button class="accent-theme-button" type="button" data-accent-theme="yellow" aria-label="노랑" title="노랑"><span class="accent-theme-swatch yellow"></span></button>
-                <button class="accent-theme-button" type="button" data-accent-theme="green" aria-label="초록" title="초록"><span class="accent-theme-swatch green"></span></button>
-                <button class="accent-theme-button" type="button" data-accent-theme="blue" aria-label="파랑" title="파랑"><span class="accent-theme-swatch blue"></span></button>
-                <button class="accent-theme-button" type="button" data-accent-theme="purple" aria-label="보라" title="보라"><span class="accent-theme-swatch purple"></span></button>
-                <button class="accent-theme-button" type="button" data-accent-theme="mono" aria-label="흑백" title="흑백"><span class="accent-theme-swatch mono"></span></button>
-              </div>
-            </div>
             <button id="exportJsonButton" class="primary-export-button" type="button" data-i18n="editJson">수정 JSON</button>
+            <section id="baseSettingsSection" class="settings-section base-settings-section" aria-label="기본 설정" data-i18n-attr="aria-label" data-i18n="baseSettings">
+              <h3 data-i18n="baseSettings">기본 설정</h3>
+              <div class="base-theme-controls">
+                <div class="theme-setting-group" aria-label="색상 테마" data-i18n-attr="aria-label" data-i18n="colorTheme">
+                  <span data-i18n="color">색상</span>
+                  <div class="accent-theme-buttons">
+                    <button class="accent-theme-button" type="button" data-accent-theme="red" aria-label="빨강" title="빨강"><span class="accent-theme-swatch red"></span></button>
+                    <button class="accent-theme-button" type="button" data-accent-theme="yellow" aria-label="노랑" title="노랑"><span class="accent-theme-swatch yellow"></span></button>
+                    <button class="accent-theme-button" type="button" data-accent-theme="green" aria-label="초록" title="초록"><span class="accent-theme-swatch green"></span></button>
+                    <button class="accent-theme-button" type="button" data-accent-theme="blue" aria-label="파랑" title="파랑"><span class="accent-theme-swatch blue"></span></button>
+                    <button class="accent-theme-button" type="button" data-accent-theme="purple" aria-label="보라" title="보라"><span class="accent-theme-swatch purple"></span></button>
+                    <button class="accent-theme-button" type="button" data-accent-theme="mono" aria-label="흑백" title="흑백"><span class="accent-theme-swatch mono"></span></button>
+                  </div>
+                </div>
+                <div class="theme-setting-group" aria-label="화면 모드" data-i18n-attr="aria-label" data-i18n="appearance">
+                  <span data-i18n="appearance">화면 모드</span>
+                  <div class="appearance-buttons">
+                    <button type="button" data-appearance="system" data-i18n="appearanceSystem">시스템</button>
+                    <button type="button" data-appearance="light" data-i18n="appearanceLight">라이트</button>
+                    <button type="button" data-appearance="dark" data-i18n="appearanceDark">다크</button>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="settings-section design-settings-section" aria-label="디자인 테마" data-i18n-attr="aria-label" data-i18n="designTheme">
+              <h3 data-i18n="designTheme">디자인 테마</h3>
+              <div class="design-theme-grid">
+                <button class="design-theme-button" type="button" data-design-theme="default"><span class="design-theme-preview design-theme-preview-default"></span><span data-i18n="baseSettings">기본 설정</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="seoul"><img src="./images/themes/seoul.png" alt="" loading="lazy"><span data-i18n="themeSeoul">서울</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="kyoto"><img src="./images/themes/kyoto.png" alt="" loading="lazy"><span data-i18n="themeKyoto">교토</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="kiyomizudera"><img src="./images/themes/kiyomizudera.png" alt="" loading="lazy"><span data-i18n="themeKiyomizudera">기요미즈데라</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="pokemon"><img src="./images/themes/pokemon.png" alt="" loading="lazy"><span data-i18n="themePokemon">포켓몬</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="kirby"><img src="./images/themes/kirby.png" alt="" loading="lazy"><span data-i18n="themeKirby">커비</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="mitsuri"><img src="./images/themes/mitsuri.png" alt="" loading="lazy"><span data-i18n="themeMitsuri">미츠리</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="reze"><img src="./images/themes/reze.png" alt="" loading="lazy"><span data-i18n="themeReze">레제</span></button>
+                <button class="design-theme-button" type="button" data-design-theme="inori"><img src="./images/themes/inori.png" alt="" loading="lazy"><span data-i18n="themeInori">유즈리하 이노리</span></button>
+              </div>
+              <button id="confirmDesignThemeButton" class="confirm-design-theme-button" type="button" data-i18n="confirm">확인</button>
+            </section>
           </div>
         </div>
       </div>
