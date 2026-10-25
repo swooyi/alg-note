@@ -16,7 +16,6 @@ const ACCENT_THEMES = new Set(["red", "yellow", "green", "blue", "purple", "mono
 const APPEARANCES = new Set(["system", "light", "dark"]);
 const DESIGN_THEMES = new Set(["default", "seoul", "kyoto", "kiyomizudera", "pokemon", "kirby", "mitsuri", "reze", "inori"]);
 const DARK_DESIGN_THEMES = new Set(["seoul", "kyoto", "kiyomizudera", "reze", "inori"]);
-const DESIGN_THEME_ACCENTS = { seoul: "purple", kyoto: "red", kiyomizudera: "yellow", pokemon: "blue", kirby: "purple", mitsuri: "green", reze: "purple", inori: "red" };
 const LANGUAGES = new Set(["ko", "en", "ja"]);
 const LANGUAGE_NAMES = {
   ko: "한국어",
@@ -783,7 +782,7 @@ const state = {
 
 
 function applyAccentTheme() {
-  const accent = DESIGN_THEME_ACCENTS[state.designTheme] || state.accentTheme;
+  const accent = state.accentTheme;
   document.documentElement.dataset.accentTheme = accent;
   for (const button of elements.accentThemeButtons) {
     const active = button.dataset.accentTheme === accent;
@@ -3262,11 +3261,6 @@ for (const button of elements.accentThemeButtons) {
     state.accentTheme = nextTheme;
     saveJson("accentTheme", state.accentTheme);
     applyAccentTheme();
-    if (state.designTheme !== "default") {
-      state.designTheme = "default";
-      saveJson("designTheme", state.designTheme);
-      applyDesignTheme();
-    }
   });
 }
 
