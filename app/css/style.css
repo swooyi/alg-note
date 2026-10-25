@@ -4481,28 +4481,6 @@ html .case-card.is-csp-case.is-list-card {
   text-shadow: 0 2px 18px var(--bg), 0 0 4px var(--bg);
 }
 
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) body,
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) .quiz-overlay,
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) .drill-panel {
-  isolation: isolate;
-  background: transparent;
-}
-
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) body::before,
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) .quiz-overlay::before,
-:root:is([data-design-theme="reze"], [data-design-theme="mitsuri"]) .drill-panel::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background-color: var(--bg);
-  background-image: var(--theme-scrim), var(--theme-image);
-  background-position: center, var(--theme-position);
-  background-size: cover;
-  transform: scaleX(-1);
-}
-
 /* CSP pairs share one counting correction and two fixed parity explanations. */
 .case-card.is-csp-case,
 .case-card.is-csp-case.has-recognition-badges {
