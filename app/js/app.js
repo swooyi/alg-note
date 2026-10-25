@@ -2840,12 +2840,15 @@ function saveCardEdit(card) {
 
 function renderDatasetOptions() {
   const bundled = window.AlgNoteBundledData || {};
-  const puzzleOrder = ["FTO", "SQ1", "3x3"];
+  const sectionName = (algset) => algset.puzzle === "3x3"
+    ? `3x3 ${["oll", "pll"].includes(algset.id) ? "CFOP" : "ZB"}`
+    : algset.puzzle || "FTO";
+  const puzzleOrder = ["FTO", "SQ1", "3x3 CFOP", "3x3 ZB"];
   const keys = Object.keys(bundled).sort((a, b) => {
     const algsetA = bundled[a]["algset.json"] || {};
     const algsetB = bundled[b]["algset.json"] || {};
-    const puzzleA = algsetA.puzzle || "FTO";
-    const puzzleB = algsetB.puzzle || "FTO";
+    const puzzleA = sectionName(algsetA);
+    const puzzleB = sectionName(algsetB);
     const puzzleCompare =
       (puzzleOrder.indexOf(puzzleA) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleA)) -
       (puzzleOrder.indexOf(puzzleB) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleB));
@@ -2891,7 +2894,7 @@ function renderDatasetOptions() {
 
     button.append(preview, textBlock);
 
-    const puzzle = algset.puzzle || "FTO";
+    const puzzle = sectionName(algset);
     if (!puzzleSections.has(puzzle)) {
       const section = document.createElement("section");
       section.className = "dataset-puzzle-section";
