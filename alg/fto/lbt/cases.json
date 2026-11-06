@@ -224,6 +224,7 @@
       "name": "IS9",
       "group": "in-slot",
       "algorithms": [
+        "L S- / U' H' U / L",
         "L R' L R / U' H' U / L"
       ],
       "scramble": "L U' L' B L B' U B L' B'",
@@ -253,6 +254,7 @@
       "name": "IS10",
       "group": "in-slot",
       "algorithms": [
+        "(U) I- / U S U' / L",
         "(U) R' L' R / U S U' / L"
       ],
       "scramble": "R' L' R U' B' U B' L B U' B",
@@ -621,7 +623,7 @@
       "name": "IS25",
       "group": "in-slot",
       "algorithms": [
-        "[내버전] U' L' / U S' U' / R' L R"
+        "[내버전] U' L' / U S' U' / S-"
       ],
       "scramble": "R' L' R U R' L R L' U' L U",
       "scrambles": [
@@ -776,6 +778,7 @@
       "name": "IS30",
       "group": "in-slot",
       "algorithms": [
+        "I U' / F H F'",
         "R' L' R L / U' / F H F'"
       ],
       "scramble": "L' U' R' L' R L U B L' B' R' L' R",

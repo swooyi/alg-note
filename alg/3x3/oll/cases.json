@@ -14,7 +14,7 @@
       "scrambles": [
         "F R' F' R U2' F R' F' R2' U2' R'"
       ],
-      "svgId": null,
+      "svgId": "1",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 1"
@@ -31,7 +31,7 @@
       "scrambles": [
         "f U R U' R' f' F U R U' R' F'"
       ],
-      "svgId": null,
+      "svgId": "2",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 2"
@@ -48,7 +48,7 @@
       "scrambles": [
         "F U R U' R' F' U f U R U' R' f' y"
       ],
-      "svgId": null,
+      "svgId": "3",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 3"
@@ -65,7 +65,7 @@
       "scrambles": [
         "F U R U' R' F' U' f U R U' R' f' y"
       ],
-      "svgId": null,
+      "svgId": "4",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 4"
@@ -82,7 +82,7 @@
       "scrambles": [
         "r' U' R U' R' U2' r"
       ],
-      "svgId": null,
+      "svgId": "5",
       "tags": {
         "sourceGroup": "Square Shapes",
         "sourceId": "OLL 5"
@@ -99,7 +99,7 @@
       "scrambles": [
         "r U R' U R U2' r'"
       ],
-      "svgId": null,
+      "svgId": "6",
       "tags": {
         "sourceGroup": "Square Shapes",
         "sourceId": "OLL 6"
@@ -116,7 +116,7 @@
       "scrambles": [
         "r U2' R' U' R U' r'"
       ],
-      "svgId": null,
+      "svgId": "7",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 7"
@@ -133,7 +133,7 @@
       "scrambles": [
         "r' U2' R U R' U r y2'"
       ],
-      "svgId": null,
+      "svgId": "8",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 8"
@@ -150,7 +150,7 @@
       "scrambles": [
         "F U R U' R2' F' R U R U' R' y'"
       ],
-      "svgId": null,
+      "svgId": "9",
       "tags": {
         "sourceGroup": "Fish Shapes",
         "sourceId": "OLL 9"
@@ -167,7 +167,7 @@
       "scrambles": [
         "R U2' R' F R' F' R U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "10",
       "tags": {
         "sourceGroup": "Fish Shapes",
         "sourceId": "OLL 10"
@@ -184,7 +184,7 @@
       "scrambles": [
         "M U' R U2' R' U' R U' R2' r"
       ],
-      "svgId": null,
+      "svgId": "11",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 11"
@@ -201,7 +201,7 @@
       "scrambles": [
         "F U R U' R' F' U' F U R U' R' F'"
       ],
-      "svgId": null,
+      "svgId": "12",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 12"
@@ -218,7 +218,7 @@
       "scrambles": [
         "F' U' F r U' r' U r U r'"
       ],
-      "svgId": null,
+      "svgId": "13",
       "tags": {
         "sourceGroup": "Knight Move Shapes",
         "sourceId": "OLL 13"
@@ -235,7 +235,7 @@
       "scrambles": [
         "F U F' R' F R U' R' F' R"
       ],
-      "svgId": null,
+      "svgId": "14",
       "tags": {
         "sourceGroup": "Knight Move Shapes",
         "sourceId": "OLL 14"
@@ -252,7 +252,7 @@
       "scrambles": [
         "r' U' r U' R' U R r' U r"
       ],
-      "svgId": null,
+      "svgId": "15",
       "tags": {
         "sourceGroup": "Knight Move Shapes",
         "sourceId": "OLL 15"
@@ -269,7 +269,7 @@
       "scrambles": [
         "r U r' U R U' R' r U' r'"
       ],
-      "svgId": null,
+      "svgId": "16",
       "tags": {
         "sourceGroup": "Knight Move Shapes",
         "sourceId": "OLL 16"
@@ -286,7 +286,7 @@
       "scrambles": [
         "F R' F' R U2' F R' F' R U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "17",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 17"
@@ -303,7 +303,7 @@
       "scrambles": [
         "r' U2' R U R' U r2' U2' R' U' R U' r'"
       ],
-      "svgId": null,
+      "svgId": "18",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 18"
@@ -320,7 +320,7 @@
       "scrambles": [
         "F R' F' R M U R U' R' U' M'"
       ],
-      "svgId": null,
+      "svgId": "19",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 19"
@@ -337,7 +337,7 @@
       "scrambles": [
         "r U R' U' M2' U R U' R' U' M'"
       ],
-      "svgId": null,
+      "svgId": "20",
       "tags": {
         "sourceGroup": "Dot Case",
         "sourceId": "OLL 20"
@@ -354,7 +354,7 @@
       "scrambles": [
         "R U R' U R U' R' U R U2' R' y'"
       ],
-      "svgId": null,
+      "svgId": "21",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 21"
@@ -371,7 +371,7 @@
       "scrambles": [
         "R' U2' R2' U R2' U R2' U2' R'"
       ],
-      "svgId": null,
+      "svgId": "22",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 22"
@@ -388,7 +388,7 @@
       "scrambles": [
         "R U2' R D R' U2' R D' R2'"
       ],
-      "svgId": null,
+      "svgId": "23",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 23"
@@ -405,7 +405,7 @@
       "scrambles": [
         "F R' F' r U R U' r'"
       ],
-      "svgId": null,
+      "svgId": "24",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 24"
@@ -422,7 +422,7 @@
       "scrambles": [
         "R' F' r U R U' r' F y'"
       ],
-      "svgId": null,
+      "svgId": "25",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 25"
@@ -439,7 +439,7 @@
       "scrambles": [
         "R U R' U R U2' R' y'"
       ],
-      "svgId": null,
+      "svgId": "26",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 26"
@@ -456,7 +456,7 @@
       "scrambles": [
         "R U2' R' U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "27",
       "tags": {
         "sourceGroup": "OCLL",
         "sourceId": "OLL 27"
@@ -473,7 +473,7 @@
       "scrambles": [
         "R U R' U' M' U R U' r'"
       ],
-      "svgId": null,
+      "svgId": "28",
       "tags": {
         "sourceGroup": "All Corners Oriented",
         "sourceId": "OLL 28"
@@ -490,7 +490,7 @@
       "scrambles": [
         "M F R' F' R U R U' R' U' M'"
       ],
-      "svgId": null,
+      "svgId": "29",
       "tags": {
         "sourceGroup": "Awkward Shapes",
         "sourceId": "OLL 29"
@@ -507,7 +507,7 @@
       "scrambles": [
         "F U R U2' R' U R U2' R' U' F' y2'"
       ],
-      "svgId": null,
+      "svgId": "30",
       "tags": {
         "sourceGroup": "Awkward Shapes",
         "sourceId": "OLL 30"
@@ -524,7 +524,7 @@
       "scrambles": [
         "R' F R U R' U' F' U R"
       ],
-      "svgId": null,
+      "svgId": "31",
       "tags": {
         "sourceGroup": "P Shapes",
         "sourceId": "OLL 31"
@@ -541,7 +541,7 @@
       "scrambles": [
         "f R' F' R U R U' R' S'"
       ],
-      "svgId": null,
+      "svgId": "32",
       "tags": {
         "sourceGroup": "P Shapes",
         "sourceId": "OLL 32"
@@ -558,7 +558,7 @@
       "scrambles": [
         "F R' F' R U R U' R'"
       ],
-      "svgId": null,
+      "svgId": "33",
       "tags": {
         "sourceGroup": "T Shapes",
         "sourceId": "OLL 33"
@@ -575,7 +575,7 @@
       "scrambles": [
         "F U R' U' R' F' R U R2' U' R' y2'"
       ],
-      "svgId": null,
+      "svgId": "34",
       "tags": {
         "sourceGroup": "C Shapes",
         "sourceId": "OLL 34"
@@ -592,7 +592,7 @@
       "scrambles": [
         "R U2' R' F R' F' R2' U2' R'"
       ],
-      "svgId": null,
+      "svgId": "35",
       "tags": {
         "sourceGroup": "Fish Shapes",
         "sourceId": "OLL 35"
@@ -609,7 +609,7 @@
       "scrambles": [
         "F' L F L' U' L' U' L U L' U L y2'"
       ],
-      "svgId": null,
+      "svgId": "36",
       "tags": {
         "sourceGroup": "W Shapes",
         "sourceId": "OLL 36"
@@ -626,7 +626,7 @@
       "scrambles": [
         "F R U' R' U R U R' F'"
       ],
-      "svgId": null,
+      "svgId": "37",
       "tags": {
         "sourceGroup": "Fish Shapes",
         "sourceId": "OLL 37"
@@ -643,7 +643,7 @@
       "scrambles": [
         "F R' F' R U R U R' U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "38",
       "tags": {
         "sourceGroup": "W Shapes",
         "sourceId": "OLL 38"
@@ -660,7 +660,7 @@
       "scrambles": [
         "L U F' U' L' U L F L' y'"
       ],
-      "svgId": null,
+      "svgId": "39",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 39"
@@ -677,7 +677,7 @@
       "scrambles": [
         "R' U' F U R U' R' F' R y'"
       ],
-      "svgId": null,
+      "svgId": "40",
       "tags": {
         "sourceGroup": "Lightning Shapes",
         "sourceId": "OLL 40"
@@ -694,7 +694,7 @@
       "scrambles": [
         "F U R U' R' F' R U2' R' U' R U' R' y2'"
       ],
-      "svgId": null,
+      "svgId": "41",
       "tags": {
         "sourceGroup": "Awkward Shapes",
         "sourceId": "OLL 41"
@@ -711,7 +711,7 @@
       "scrambles": [
         "F U R U' R' F' R' U2' R U R' U R"
       ],
-      "svgId": null,
+      "svgId": "42",
       "tags": {
         "sourceGroup": "Awkward Shapes",
         "sourceId": "OLL 42"
@@ -728,7 +728,7 @@
       "scrambles": [
         "f' U' L' U L f"
       ],
-      "svgId": null,
+      "svgId": "43",
       "tags": {
         "sourceGroup": "P Shapes",
         "sourceId": "OLL 43"
@@ -745,7 +745,7 @@
       "scrambles": [
         "f U R U' R' f'"
       ],
-      "svgId": null,
+      "svgId": "44",
       "tags": {
         "sourceGroup": "P Shapes",
         "sourceId": "OLL 44"
@@ -762,7 +762,7 @@
       "scrambles": [
         "F U R U' R' F'"
       ],
-      "svgId": null,
+      "svgId": "45",
       "tags": {
         "sourceGroup": "T Shapes",
         "sourceId": "OLL 45"
@@ -779,7 +779,7 @@
       "scrambles": [
         "R' U' F R' F' R U R"
       ],
-      "svgId": null,
+      "svgId": "46",
       "tags": {
         "sourceGroup": "C Shapes",
         "sourceId": "OLL 46"
@@ -796,7 +796,7 @@
       "scrambles": [
         "F' U' L' U L U' L' U L F"
       ],
-      "svgId": null,
+      "svgId": "47",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 47"
@@ -813,7 +813,7 @@
       "scrambles": [
         "F U R U' R' U R U' R' F'"
       ],
-      "svgId": null,
+      "svgId": "48",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 48"
@@ -830,7 +830,7 @@
       "scrambles": [
         "r' U r2' U' r2' U' r2' U r' y2'"
       ],
-      "svgId": null,
+      "svgId": "49",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 49"
@@ -847,7 +847,7 @@
       "scrambles": [
         "r U' r2' U r2' U r2' U' r"
       ],
-      "svgId": null,
+      "svgId": "50",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 50"
@@ -864,7 +864,7 @@
       "scrambles": [
         "f U R U' R' U R U' R' f'"
       ],
-      "svgId": null,
+      "svgId": "51",
       "tags": {
         "sourceGroup": "Line Shapes",
         "sourceId": "OLL 51"
@@ -881,7 +881,7 @@
       "scrambles": [
         "F R U R' d R' U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "52",
       "tags": {
         "sourceGroup": "Line Shapes",
         "sourceId": "OLL 52"
@@ -898,7 +898,7 @@
       "scrambles": [
         "r' U2' R U R' U' R U R' U r"
       ],
-      "svgId": null,
+      "svgId": "53",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 53"
@@ -915,7 +915,7 @@
       "scrambles": [
         "r U2' R' U' R U R' U' R U' r'"
       ],
-      "svgId": null,
+      "svgId": "54",
       "tags": {
         "sourceGroup": "L Shapes",
         "sourceId": "OLL 54"
@@ -932,7 +932,7 @@
       "scrambles": [
         "F R' F' U2' R U R' U R2' U2' R'"
       ],
-      "svgId": null,
+      "svgId": "55",
       "tags": {
         "sourceGroup": "Line Shapes",
         "sourceId": "OLL 55"
@@ -949,7 +949,7 @@
       "scrambles": [
         "r U r' R U R' U' R U R' U' r U' r'"
       ],
-      "svgId": null,
+      "svgId": "56",
       "tags": {
         "sourceGroup": "Line Shapes",
         "sourceId": "OLL 56"
@@ -966,7 +966,7 @@
       "scrambles": [
         "r U R' U' M U R U' R'"
       ],
-      "svgId": null,
+      "svgId": "57",
       "tags": {
         "sourceGroup": "All Corners Oriented",
         "sourceId": "OLL 57"

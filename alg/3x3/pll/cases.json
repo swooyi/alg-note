@@ -14,7 +14,7 @@
       "scrambles": [
         "x R2' D2' R U R' D2' R U' R x'"
       ],
-      "svgId": null,
+      "svgId": "1",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Aa"
@@ -31,7 +31,7 @@
       "scrambles": [
         "x R' U R' D2' R U' R' D2' R2' x'"
       ],
-      "svgId": null,
+      "svgId": "2",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ab"
@@ -48,7 +48,7 @@
       "scrambles": [
         "x' D R U R' D' R U' R' D R U' R' D' R U R' x y'"
       ],
-      "svgId": null,
+      "svgId": "3",
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "E"
@@ -65,7 +65,7 @@
       "scrambles": [
         "R' U' R U' R' U R U R2' F' R U R U' R' F U R y'"
       ],
-      "svgId": null,
+      "svgId": "4",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "F"
@@ -82,7 +82,7 @@
       "scrambles": [
         "R' U' R D' U R2' U R' U R U' R U' R2' D"
       ],
-      "svgId": null,
+      "svgId": "5",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ga"
@@ -99,7 +99,7 @@
       "scrambles": [
         "R2' U R' U R' U' R U' R2' D U' R' U R D'"
       ],
-      "svgId": null,
+      "svgId": "6",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gb"
@@ -116,7 +116,7 @@
       "scrambles": [
         "D' R U R' U' D R2' U' R U' R' U R' U R2'"
       ],
-      "svgId": null,
+      "svgId": "7",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gc"
@@ -133,7 +133,7 @@
       "scrambles": [
         "R2' U' R U' R U R' U R2' D' U R U' R' D"
       ],
-      "svgId": null,
+      "svgId": "8",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gd"
@@ -150,7 +150,7 @@
       "scrambles": [
         "M2' U' M2' U2' M2' U' M2'"
       ],
-      "svgId": null,
+      "svgId": "9",
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "H"
@@ -167,7 +167,7 @@
       "scrambles": [
         "L' R' U2' R U R' U2' L U' R y'"
       ],
-      "svgId": null,
+      "svgId": "10",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ja"
@@ -184,7 +184,7 @@
       "scrambles": [
         "R U R2' F' R U R U' R' F R U' R'"
       ],
-      "svgId": null,
+      "svgId": "11",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Jb"
@@ -201,7 +201,7 @@
       "scrambles": [
         "R U R' U2' R U R2' F' R U R U' R' F R U' R' U' R U' R'"
       ],
-      "svgId": null,
+      "svgId": "12",
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Na"
@@ -218,7 +218,7 @@
       "scrambles": [
         "F r' F' r U r U' r2' D' F r U r' F' D r"
       ],
-      "svgId": null,
+      "svgId": "13",
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Nb"
@@ -235,7 +235,7 @@
       "scrambles": [
         "R U2' R D R' U R D' R' U' R' U R U R' y'"
       ],
-      "svgId": null,
+      "svgId": "14",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ra"
@@ -252,7 +252,7 @@
       "scrambles": [
         "R' U R U R' U' R' D' R U R' D R U2' R"
       ],
-      "svgId": null,
+      "svgId": "15",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Rb"
@@ -269,7 +269,7 @@
       "scrambles": [
         "F R U' R' U R U R2' F' R U R U' R'"
       ],
-      "svgId": null,
+      "svgId": "16",
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "T"
@@ -286,7 +286,7 @@
       "scrambles": [
         "M2' U' M' U2' M U' M2'"
       ],
-      "svgId": null,
+      "svgId": "17",
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Ua"
@@ -303,7 +303,7 @@
       "scrambles": [
         "M2' U M' U2' M U M2'"
       ],
-      "svgId": null,
+      "svgId": "18",
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Ub"
@@ -320,7 +320,7 @@
       "scrambles": [
         "D2' R' U R D' R2' U' R' U R' U R' D' R U2' R'"
       ],
-      "svgId": null,
+      "svgId": "19",
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "V"
@@ -337,7 +337,7 @@
       "scrambles": [
         "F R' F' R U R U' R' F R U' R' U R U R' F'"
       ],
-      "svgId": null,
+      "svgId": "20",
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Y"
@@ -354,7 +354,7 @@
       "scrambles": [
         "M U2' M2' U2' M U' M2' U' M2'"
       ],
-      "svgId": null,
+      "svgId": "21",
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Z"
