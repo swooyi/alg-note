@@ -897,7 +897,7 @@
       "name": "F2L 5-6",
       "group": "f2l-5",
       "algorithms": [
-        "U L F' L' F L' U2 L2' F' L' F",
+        "U L F' L' F L' U2 L'2 F' L' F",
         "F U' R U R' U R U R' U F'"
       ],
       "scramble": "F2 B2 D2 F D2 B' L F L' B'",
@@ -1212,7 +1212,7 @@
       "name": "F2L 7-3",
       "group": "f2l-7",
       "algorithms": [
-        "l U2 L2 U' L2' U' l'",
+        "l U2 L2 U' L'2 U' l'",
         "U F U R U2 R' U2 F'"
       ],
       "scramble": "B2 L2 B2 R B' R' B' L2 B2",
@@ -1287,7 +1287,7 @@
       "name": "F2L 7-6",
       "group": "f2l-7",
       "algorithms": [
-        "F R' U' R2 U' R2' U2 R U2 F'",
+        "F R' U' R2 U' R'2 U2 R U2 F'",
         "U' F U' R U' R' U' R U' R' U2 F'"
       ],
       "scramble": "F U F' U2 F' L F L2 U' B' U B L",
@@ -1313,7 +1313,7 @@
       "algorithms": [
         "F U R U2 R' U2 R U' R' F'",
         "U' r' F' r F R U R' U2 F'",
-        "U F U2' R U R' U R U' R' U F'"
+        "U F U'2 R U R' U R U' R' U F'"
       ],
       "scramble": "F U' F' U2 D R U' B U B' U R' D'",
       "scrambles": [
@@ -2056,7 +2056,7 @@
       "name": "F2L 11-6",
       "group": "f2l-11",
       "algorithms": [
-        "U2 r U2 R' U' R U' r2' F' r"
+        "U2 r U2 R' U' R U' r'2 F' r"
       ],
       "scramble": "R U' L' B' U2 B L U R' F U2 F'",
       "scrambles": [
@@ -2393,7 +2393,7 @@
       "name": "F2L 13-4",
       "group": "f2l-13",
       "algorithms": [
-        "(U2) L' U' L U' L' U2 L2' F' L' F",
+        "(U2) L' U' L U' L' U2 L'2 F' L' F",
         "U' F U2 R U' R' U' R U R' U2 F'",
         "(U') R' F U' F' U R U r' F' r"
       ],
@@ -3407,7 +3407,7 @@
       "name": "F2L 18-6",
       "group": "f2l-18",
       "algorithms": [
-        "(U) L' U L U2 L' U2 L2' F' L' F",
+        "(U) L' U L U2 L' U2 L'2 F' L' F",
         "U2 F U' R U2 R' U F' U r' F' r"
       ],
       "scramble": "F2 D B' R' F' R2 B U2 F2 D' F",
@@ -4032,7 +4032,7 @@
       "group": "f2l-21",
       "algorithms": [
         "U F' L F L' U2 R' F R U' R' F' R",
-        "F R U' R2' F R F' U' F'"
+        "F R U' R'2 F R F' U' F'"
       ],
       "scramble": "F U' F2 L F L B L B' U' L",
       "scrambles": [
@@ -6539,7 +6539,7 @@
       "name": "F2L 34-8",
       "group": "f2l-34",
       "algorithms": [
-        "U F' L F L2' U2 L2 F' L' F",
+        "U F' L F L'2 U2 L2 F' L' F",
         "U' r' D R U R U R' U' R' D' r"
       ],
       "scramble": "F B' U R2 U R' U' R' U' R' F' B",

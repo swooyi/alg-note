@@ -1,6 +1,6 @@
 (() => {
 const { normalizeDataset } = window.AlgNoteNormalize;
-const { renderCases, renderGroupedCases, renderCaseDetail, renderGroupFilterOptions, renderRecognitionFilterOptions, renderBookmarkFilterOptions, renderSummary } = window.AlgNoteRender;
+const { renderCases, renderGroupedCases, renderCaseDetail, renderGroupFilterOptions, renderRecognitionFilterOptions, renderBookmarkFilterOptions, renderDrillFilterOptions, renderSummary, makeAlgorithmNoteEditor } = window.AlgNoteRender;
 const { datasetKey, loadJson, saveJson } = window.AlgNoteStorage;
 
 const DEFAULT_COLUMNS = "4";
@@ -40,6 +40,30 @@ const DRILL_AUF_LABELS = {
 };
 const UI_LABELS = {
   ko: {
+    addNote: "메모 추가",
+    resetCaseRatingsConfirm: "이 케이스의 엄지 평가를 모두 초기화할까요? 기록 시간과 메모는 유지됩니다.",
+    goodPresent: "만족한 기록 있음",
+    badPresent: "추가 연습 표시 있음",
+    unrated: "평가 없음",
+    algorithmNotes: "ALG 메모",
+    moreNote: "더 보기",
+    lessNote: "접기",
+
+    case: "케이스",
+    reset: "초기화",
+    session: "세션",
+    statistics: "통계",
+    practiceFilter: "연습 필터",
+    excludeGood: "있는 케이스 제외",
+    practiceTarget: "연습 대상",
+    onlyBad: "있는 케이스만",
+    onlyUnpracticed: "미연습 케이스만",
+    attempts: "등장 횟수",
+    averageTime: "평균 기록",
+    goodPractice: "만족스러운 연습",
+    needsPractice: "추가 연습 필요",
+    noPracticeTargets: "조건에 맞는 케이스가 없습니다. 필터를 해제해 주세요.",
+
     viewpoint: "시점",
     aufEnabled: "활성화",
     aufDisabled: "비활성화",
@@ -112,6 +136,7 @@ const UI_LABELS = {
     exclude: "제외",
     editAlgorithm: "알고리즘 편집",
     edit: "편집",
+    imageSimulator: "이미지 · 시뮬레이터",
     editJson: "수정 JSON",
     editSetup: "setup 편집",
     editsOnly: "편집분만",
@@ -121,6 +146,7 @@ const UI_LABELS = {
     formulaFolder: "공식 폴더",
     fullJson: "전체 JSON",
     fullJsonDescription: "브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.",
+    svgsJsonDescription: "현재 세트의 그림입니다. cases.json의 svgId로 연결되며 svgs.json에 저장합니다.",
     fullJsonTitle: "cases.json 출력",
     group: "group",
     list: "목록",
@@ -158,7 +184,7 @@ const UI_LABELS = {
     moveRecordsRight: "기록 오른쪽으로 이동",
     recog: "recog",
     resetJson: "JSON 초기화",
-    resetJsonConfirm: "브라우저에 저장된 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.",
+    resetJsonConfirm: "브라우저에 저장된 공식·메모 등 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.",
     resizePanel: "패널 폭 조절",
     resizeRecords: "기록 영역 크기 조절",
     restore: "복구",
@@ -179,9 +205,6 @@ const UI_LABELS = {
     shown: "표시",
     exportMode: "출력 방식",
     home: "홈",
-    invalidMinimumTime: "최소 시간을 0.0초 이상으로 입력하세요.",
-    minimumRecordTime: "선택할 최소 기록 시간",
-    minimumTime: "최소 시간",
     seconds: "초",
     startDrill: "드릴 시작",
     drill: "드릴",
@@ -203,6 +226,30 @@ const UI_LABELS = {
     resetTimer: "타이머 초기화",
   },
   en: {
+    addNote: "Add note",
+    resetCaseRatingsConfirm: "Reset all ratings for this case? Times and notes will be kept.",
+    goodPresent: "Has good ratings",
+    badPresent: "Needs practice",
+    unrated: "Unrated",
+    algorithmNotes: "ALG notes",
+    moreNote: "Show more",
+    lessNote: "Show less",
+
+    case: "Case",
+    reset: "Reset",
+    session: "Session",
+    statistics: "Statistics",
+    practiceFilter: "Practice filters",
+    excludeGood: "Exclude cases with good ratings",
+    practiceTarget: "Practice targets",
+    onlyBad: "Needs practice",
+    onlyUnpracticed: "Only unpracticed cases",
+    attempts: "Attempts",
+    averageTime: "Average time",
+    goodPractice: "Good practice",
+    needsPractice: "Needs practice",
+    noPracticeTargets: "No matching cases. Clear the filters.",
+
     viewpoint: "Viewpoint",
     aufEnabled: "On",
     aufDisabled: "Off",
@@ -274,6 +321,7 @@ const UI_LABELS = {
     exclude: "Exclude",
     editAlgorithm: "Edit Algorithm",
     edit: "Edit",
+    imageSimulator: "Image · Simulator",
     editJson: "Edit JSON",
     editSetup: "Edit setup",
     editsOnly: "Edits Only",
@@ -284,6 +332,7 @@ const UI_LABELS = {
     formulaFolder: "Algorithm Folder",
     fullJson: "Full JSON",
     fullJsonDescription: "Current data merged with edits saved in this browser.",
+    svgsJsonDescription: "Images for the current set. Save as svgs.json; cases link to them by svgId.",
     fullJsonTitle: "cases.json",
     group: "group",
     list: "List",
@@ -321,7 +370,7 @@ const UI_LABELS = {
     moveRecordsRight: "Move Records Right",
     recog: "recog",
     resetJson: "Reset JSON",
-    resetJsonConfirm: "Reset edited JSON saved in this browser? Bookmarks and presets will be kept.",
+    resetJsonConfirm: "Reset edited JSON, including algorithms and notes, saved in this browser? Bookmarks and presets will be kept.",
     resizePanel: "Resize Panel",
     resizeRecords: "Resize Records",
     restore: "Restore",
@@ -342,9 +391,6 @@ const UI_LABELS = {
     shown: "Shown",
     exportMode: "Export Mode",
     home: "Home",
-    invalidMinimumTime: "Enter a minimum time of 0.0 seconds or more.",
-    minimumRecordTime: "Minimum record time to include",
-    minimumTime: "Minimum Time",
     seconds: "seconds",
     startDrill: "Start Drill",
     drill: "Drill",
@@ -366,6 +412,30 @@ const UI_LABELS = {
     resetTimer: "Reset Timer",
   },
   ja: {
+    addNote: "メモを追加",
+    resetCaseRatingsConfirm: "このケースの評価をすべてリセットしますか？タイムとメモは保持されます。",
+    goodPresent: "満足した記録あり",
+    badPresent: "追加練習の評価あり",
+    unrated: "評価なし",
+    algorithmNotes: "ALGメモ",
+    moreNote: "もっと見る",
+    lessNote: "折りたたむ",
+
+    case: "ケース",
+    reset: "リセット",
+    session: "セッション",
+    statistics: "統計",
+    practiceFilter: "練習フィルター",
+    excludeGood: "評価済みケースを除外",
+    practiceTarget: "練習対象",
+    onlyBad: "追加練習のみ",
+    onlyUnpracticed: "未練習のケースのみ",
+    attempts: "出現回数",
+    averageTime: "平均タイム",
+    goodPractice: "満足した練習",
+    needsPractice: "追加練習が必要",
+    noPracticeTargets: "条件に合うケースがありません。フィルターを解除してください。",
+
     viewpoint: "視点",
     aufEnabled: "有効",
     aufDisabled: "無効",
@@ -437,6 +507,7 @@ const UI_LABELS = {
     exclude: "除外",
     editAlgorithm: "アルゴリズム編集",
     edit: "編集",
+    imageSimulator: "画像 · シミュレーター",
     editJson: "JSON編集",
     editSetup: "setup編集",
     editsOnly: "編集分のみ",
@@ -447,6 +518,7 @@ const UI_LABELS = {
     formulaFolder: "手順フォルダー",
     fullJson: "全体JSON",
     fullJsonDescription: "このブラウザに保存された編集内容を現在のデータに反映した結果です。",
+    svgsJsonDescription: "現在のセットの画像です。svgs.jsonに保存し、ケースのsvgIdで参照します。",
     fullJsonTitle: "cases.json出力",
     group: "group",
     list: "リスト",
@@ -484,7 +556,7 @@ const UI_LABELS = {
     moveRecordsRight: "記録を右に移動",
     recog: "recog",
     resetJson: "JSONリセット",
-    resetJsonConfirm: "このブラウザに保存された編集JSONをリセットしますか？ブックマークとプリセットは保持されます。",
+    resetJsonConfirm: "このブラウザに保存された手順・メモなどの編集JSONをリセットしますか？ブックマークとプリセットは保持されます。",
     resizePanel: "パネル幅を調整",
     resizeRecords: "記録エリアのサイズを調整",
     restore: "復元",
@@ -505,9 +577,6 @@ const UI_LABELS = {
     shown: "表示",
     exportMode: "出力方式",
     home: "ホーム",
-    invalidMinimumTime: "最小時間は0.0秒以上で入力してください。",
-    minimumRecordTime: "選択する最小記録時間",
-    minimumTime: "最小時間",
     seconds: "秒",
     startDrill: "ドリル開始",
     drill: "ドリル",
@@ -617,6 +686,7 @@ const elements = {
   groupFilterOptions: document.getElementById("groupFilterOptions"),
   recognitionFilterOptions: document.getElementById("recognitionFilterOptions"),
   bookmarkFilterOptions: document.getElementById("bookmarkFilterOptions"),
+  drillFilterOptions: document.getElementById("drillFilterOptions"),
   viewModeButtons: [...document.querySelectorAll(".view-mode-button")],
   favoritePresetList: document.getElementById("favoritePresetList"),
   favoritePresetNameInput: document.getElementById("favoritePresetNameInput"),
@@ -628,8 +698,6 @@ const elements = {
   exportJsonButton: document.getElementById("exportJsonButton"),
   exportPanelTitle: document.getElementById("exportPanelTitle"),
   exportPanelDescription: document.getElementById("exportPanelDescription"),
-  exportFullButton: document.getElementById("exportFullButton"),
-  exportEditsButton: document.getElementById("exportEditsButton"),
   clearFiltersButton: document.getElementById("clearFiltersButton"),
   exportPanel: document.getElementById("exportPanel"),
   exportJsonText: document.getElementById("exportJsonText"),
@@ -695,9 +763,13 @@ const elements = {
   drillTimesText: document.getElementById("drillTimesText"),
   drillClearResultsButton: document.getElementById("drillClearResultsButton"),
   drillToggleHistoryButton: document.getElementById("drillToggleHistoryButton"),
-  drillMinResultSecondsInput: document.getElementById("drillMinResultSecondsInput"),
-  drillSelectResultsByTimeButton: document.getElementById("drillSelectResultsByTimeButton"),
-  drillRestoreSelectionButton: document.getElementById("drillRestoreSelectionButton"),
+  drillExcludeGoodInput: document.getElementById("drillExcludeGoodInput"),
+  drillTargetInputs: [...document.querySelectorAll("input[name=drillTarget]")],
+  drillResetFilterButton: document.getElementById("drillResetFilterButton"),
+  drillFilterCount: document.getElementById("drillFilterCount"),
+  drillSessionTab: document.getElementById("drillSessionTab"),
+  drillStatsTab: document.getElementById("drillStatsTab"),
+  drillStatsPanel: document.getElementById("drillStatsPanel"),
   drillResultList: document.getElementById("drillResultList"),
   drillShowAnswerButton: document.getElementById("drillShowAnswerButton"),
   drillUndoButton: document.getElementById("drillUndoButton"),
@@ -714,6 +786,11 @@ const state = {
   groupFilters: new Set(),
   recognitionFilters: new Set(),
   bookmarkFilters: new Set(),
+  drillFilters: new Set(),
+  caseRatings: new Map(),
+  algorithmNotes: new Map(),
+  imageOverrides: new Map(),
+  allImageOverrides: new Map(),
   viewMode: initialViewMode(),
   accentTheme: initialAccentTheme(),
   appearance: initialAppearance(),
@@ -725,7 +802,6 @@ const state = {
   columns: DEFAULT_COLUMNS,
   imagesVisible: true,
   imageSize: DEFAULT_IMAGE_SIZE,
-  exportMode: "full",
   editingCaseId: "",
   selectedCaseId: "",
   selectedCards: new Set(),
@@ -773,12 +849,14 @@ const state = {
     displayMs: 0,
     results: [],
     historyExpanded: !isDrillCompactLayout(),
-    minResultSeconds: normalizeDrillMinResultSeconds(loadJson("drillMinResultSeconds", 0.5)),
-    selectionRestoreSnapshot: null,
+    filters: { excludeGood: false, target: "all" },
+    recordTab: "session",
+    statsSort: { key: "name", descending: false },
     tickHandle: 0,
     completed: false,
   },
 };
+const imageEngineWindows = new Set();
 
 
 function applyAccentTheme() {
@@ -912,22 +990,68 @@ function toggleHomeSettings() {
 
 function savePersonalState() {
   if (!state.key) return;
+  const sourceKey = state.key === "FTO:tcp" ? "FTO:1l3t" : state.key;
+  const shared = loadJson(`personal.${sourceKey}`, {});
+  // A TCP save updates only its 18 cases, preserving other 1L3T edits.
+  for (const field of ["edits", "algorithmNotes"]) {
+    const values = { ...shared[field] };
+    for (const item of state.dataset.cases) {
+      if (state[field].has(item.id)) values[item.id] = state[field].get(item.id);
+      else delete values[item.id];
+    }
+    shared[field] = values;
+  }
+  saveJson(`personal.${sourceKey}`, shared);
   saveJson(`personal.${state.key}`, {
     bookmarks: Object.fromEntries(state.bookmarks),
-    edits: Object.fromEntries(state.edits),
+    ...(sourceKey === state.key ? { edits: shared.edits, algorithmNotes: shared.algorithmNotes } : {}),
+    caseRatings: Object.fromEntries(state.caseRatings),
   });
+}
+
+
+function migrateFto1l3tTrailingAuf(saved) {
+  if (!["FTO:1l3t", "FTO:tcp"].includes(state.key)) return;
+  const migrationKey = "migrations.fto1l3tTrailingAuf20261112v2";
+  if (loadJson(migrationKey, false)) return;
+  let changed = false;
+  const cases = state.key === "FTO:tcp"
+    ? window.AlgNoteBundledData["1l3t"]["cases.json"].cases
+    : state.dataset.cases;
+  for (const item of cases) {
+    const edit = saved.edits?.[item.id];
+    if (!edit || !/ U'?$/.test(item.scramble)) continue;
+    if (edit.scramble !== item.scramble.replace(/ U'?$/, "")) continue;
+    edit.scramble = item.scramble;
+    changed = true;
+  }
+  if (changed) saveJson("personal.FTO:1l3t", saved);
+  saveJson(migrationKey, true);
 }
 
 
 function loadPersonalState() {
   const saved = loadJson(`personal.${state.key}`, { favorites: [] });
+  const shared = state.key === "FTO:tcp" ? loadJson("personal.FTO:1l3t", {}) : saved;
+  migrateFto1l3tTrailingAuf(shared);
   state.bookmarks = new Map(
     Object.entries(saved.bookmarks || {}).filter(([, value]) => BOOKMARK_TYPES.has(value)),
   );
   for (const id of saved.favorites || []) {
     if (!state.bookmarks.has(id)) state.bookmarks.set(id, "yellow-star");
   }
-  state.edits = new Map(Object.entries(saved.edits || {}));
+  const caseIds = new Set(state.dataset.cases.map((item) => item.id));
+  state.edits = new Map(Object.entries(shared.edits || {}).filter(([id]) => caseIds.has(id)));
+  state.caseRatings = new Map(Object.entries(saved.caseRatings || {}).map(([id, counts]) => [id, {
+    good: Math.max(0, Number(counts?.good) || 0),
+    bad: Math.max(0, Number(counts?.bad) || 0),
+  }]));
+  state.algorithmNotes = new Map(state.dataset.cases
+    .filter((item) => item.algorithmNotes && typeof item.algorithmNotes === "object")
+    .map((item) => [item.id, item.algorithmNotes]));
+  for (const [id, notes] of Object.entries(shared.algorithmNotes || {})) {
+    if (caseIds.has(id)) state.algorithmNotes.set(id, notes);
+  }
 }
 
 
@@ -970,33 +1094,6 @@ function saveSelectionPresets() {
     presets: state.selectionPresets,
     activePresetId: state.activeSelectionPresetId,
   });
-}
-
-
-function removeCaseFromSelection(caseId) {
-  const id = String(caseId);
-  if (!state.selectedCards.has(id)) return false;
-
-  state.selectedCards.delete(id);
-  state.activeSelectionPresetId = "";
-  saveSelectionPresets();
-
-  if (state.drill.active) {
-    const removedQueueIndex = state.drill.queue.findIndex((item) => item.id === id);
-    state.drill.source = state.drill.source.filter((item) => item.id !== id);
-    state.drill.queue = state.drill.queue.filter((item) => item.id !== id);
-    if (!state.drill.queue.length || !state.drill.source.length) {
-      state.drill.completed = true;
-      state.drill.currentSetup = "";
-    } else if (removedQueueIndex !== -1 && removedQueueIndex < state.drill.index) {
-      state.drill.index -= 1;
-    } else if (state.drill.index >= state.drill.queue.length) {
-      state.drill.index = Math.max(0, state.drill.queue.length - 1);
-    }
-    if (!state.drill.completed) state.drill.currentSetup = makeDrillSetup(currentDrillItem());
-  }
-
-  return true;
 }
 
 
@@ -1266,7 +1363,33 @@ function applyCaseEdit(item) {
 
 
 function effectiveCases() {
-  return state.dataset.cases.map(applyCaseEdit);
+  return state.dataset.cases.map((item) => {
+    const edited = applyCaseEdit(item);
+    const image = state.imageOverrides.get(item.id);
+    return image ? { ...edited, imageState: image.imageState, svg: image.svg } : edited;
+  });
+}
+
+
+async function loadImageOverrides() {
+  const key = state.key;
+  try {
+    const records = await window.AlgNoteImageStore.list();
+    if (state.key !== key) return;
+    state.allImageOverrides = new Map();
+    for (const record of records) {
+      if (!state.allImageOverrides.has(record.dataset)) state.allImageOverrides.set(record.dataset, new Map());
+      state.allImageOverrides.get(record.dataset).set(record.caseId, {
+        svg: record.svg || record.imageState?.svg,
+        imageState: imageStateForJson(record.imageState),
+      });
+    }
+    state.imageOverrides = state.allImageOverrides.get(key === "FTO:tcp" ? "FTO:1l3t" : key) || new Map();
+    if (!elements.exportPanel.hidden) updateExportPanel();
+    render();
+  } catch (error) {
+    console.error("이미지 불러오기 실패", error);
+  }
 }
 
 
@@ -1299,7 +1422,10 @@ function filteredCases() {
     const bookmarkOk = state.bookmarkFilters.size === 0 || state.bookmarkFilters.has(state.bookmarks.get(item.id));
     const queryOk = matchesQuery(item, query);
     const selectedOk = !state.selectedOnly || state.selectedCards.has(item.id);
-    return groupOk && recognitionOk && bookmarkOk && queryOk && selectedOk;
+    const ratings = state.caseRatings.get(item.id) || { good: 0, bad: 0 };
+    const drillOk = [...state.drillFilters].every((filter) => filter === "unrated"
+      ? !ratings.good && !ratings.bad : ratings[filter] > 0);
+    return groupOk && recognitionOk && bookmarkOk && queryOk && selectedOk && drillOk;
   });
 }
 
@@ -1783,22 +1909,31 @@ function saveDrillState() {
     currentSetup: state.drill.currentSetup,
     results: state.drill.results,
     historyExpanded: state.drill.historyExpanded,
+    filters: state.drill.filters,
+    recordTab: state.drill.recordTab,
     completed: state.drill.completed,
   });
 }
 
 
 function restoreDrillState() {
+  state.drill.source = [];
+  state.drill.queue = [];
+  state.drill.results = [];
+  state.drill.filters = normalizeDrillFilters();
+  state.drill.recordTab = "session";
   const saved = loadJson(drillStateKey(), null);
   if (!saved || typeof saved !== "object") return;
 
   const source = drillCasesFromIds(saved.sourceIds);
   const queue = drillCasesFromIds(saved.queueIds);
-  if (!source.length || !queue.length) return;
+  if (!source.length) return;
 
   state.drill.source = source;
+  state.drill.filters = normalizeDrillFilters(saved.filters);
+  state.drill.recordTab = saved.recordTab === "stats" ? "stats" : "session";
   state.drill.queue = queue;
-  state.drill.index = Math.min(Math.max(0, Number(saved.index) || 0), queue.length - 1);
+  state.drill.index = Math.min(Math.max(0, Number(saved.index) || 0), Math.max(0, queue.length - 1));
   state.drill.mode = ["recap", "train"].includes(saved.mode) ? saved.mode : "recap";
   state.drill.aufMode = normalizeDrillAufMode(saved.aufMode);
   state.drill.viewpoints = normalizeDrillViewpoints(saved.viewpoints);
@@ -1807,16 +1942,29 @@ function restoreDrillState() {
   state.drill.results = Array.isArray(saved.results)
     ? saved.results.filter((result) => result && typeof result.caseId === "string")
     : [];
+  let migratedRatings = false;
+  for (const result of state.drill.results) {
+    if (["good", "bad"].includes(result.rating) && !result.ratingCounted) {
+      adjustCaseRating(result.caseId, result.rating, 1);
+      result.ratingCounted = true;
+      migratedRatings = true;
+    }
+  }
   state.drill.historyExpanded = typeof saved.historyExpanded === "boolean"
     ? saved.historyExpanded
     : !isDrillCompactLayout();
-  state.drill.completed = Boolean(saved.completed);
+  state.drill.completed = !queue.length || Boolean(saved.completed);
   state.drill.currentSetup = state.drill.completed
     ? ""
     : (isZbll() && !Array.isArray(saved.viewpoints) ? "" : typeof saved.currentSetup === "string" && saved.currentSetup)
       || makeDrillSetup(currentDrillItem());
+  if (isZbll()) state.drill.currentSetup = simplifyCubeSetup(state.drill.currentSetup);
   state.drill.timerStatus = "idle";
   state.drill.elapsedMs = 0;
+  if (migratedRatings) {
+    savePersonalState();
+    saveDrillState();
+  }
 }
 
 
@@ -1844,6 +1992,7 @@ function saveDrillOrderMode(mode) {
 
 
 function drillQueue(items) {
+  items = filteredDrillCases(items);
   return state.drill.mode === "recap" && state.drill.orderMode === "sequential"
     ? [...items]
     : shuffledItems(items);
@@ -1920,6 +2069,28 @@ function mergeFtoBoundaryAuf(setup) {
 }
 
 
+function simplifyCubeSetup(setup) {
+  const moves = [];
+  for (const move of setup.trim().split(/\s+/).filter(Boolean)) {
+    const match = /^([URFDLB])(2|')?$/.exec(move);
+    const previous = moves[moves.length - 1];
+    if (!match) {
+      moves.push({ text: move });
+      continue;
+    }
+    const turns = match[2] === "2" ? 2 : match[2] === "'" ? 3 : 1;
+    if (previous?.face === match[1]) {
+      const total = (previous.turns + turns) % 4;
+      moves.pop();
+      if (total) moves.push({ face: match[1], turns: total });
+    } else {
+      moves.push({ face: match[1], turns });
+    }
+  }
+  return moves.map((move) => move.text || move.face + ["", "", "2", "'"][move.turns]).join(" ");
+}
+
+
 function makeDrillSetup(item) {
   const setup = (item?.scramble || "").trim();
   if (!setup) return t("noSetup");
@@ -1927,7 +2098,7 @@ function makeDrillSetup(item) {
   if (isZbll()) {
     const viewpoint = randomItem(normalizeDrillViewpoints(state.drill.viewpoints));
     const trailingAuf = { none: "", y: "U", y2: "U2", "y'": "U'" }[viewpoint];
-    return [mode === "random" ? randomLeadingAufMove() : "", setup, trailingAuf].filter(Boolean).join(" ");
+    return simplifyCubeSetup([mode === "random" ? randomLeadingAufMove() : "", setup, trailingAuf].filter(Boolean).join(" "));
   }
   if (mode === "none" || !supportsDrillAuf()) return setup;
 
@@ -1957,7 +2128,7 @@ function setDrillMode(mode) {
   state.drill.queue = drillQueue(source);
   state.drill.index = 0;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
-  state.drill.completed = false;
+  state.drill.completed = !state.drill.queue.length;
   resetDrillTimer();
   renderDrill();
 }
@@ -2027,6 +2198,45 @@ function drillItemById(caseId) {
 }
 
 
+function makeDrillRatingIcon(rating) {
+  const icon = document.createElement("span");
+  icon.className = `drill-rating-icon is-${rating}`;
+  icon.setAttribute("aria-hidden", "true");
+  return icon;
+}
+
+
+function adjustCaseRating(caseId, rating, delta) {
+  if (!["good", "bad"].includes(rating)) return;
+  const counts = { good: 0, bad: 0, ...state.caseRatings.get(caseId) };
+  counts[rating] = Math.max(0, counts[rating] + delta);
+  state.caseRatings.set(caseId, counts);
+}
+
+
+function removeResultRating(result) {
+  if (!result?.rating || !result.ratingCounted) return;
+  adjustCaseRating(result.caseId, result.rating, -1);
+  result.ratingCounted = false;
+  savePersonalState();
+}
+
+
+function resetCaseRatings(caseId) {
+  if (state.drill.timerStatus === "running" || !window.confirm(t("resetCaseRatingsConfirm"))) return;
+  state.caseRatings.delete(caseId);
+  for (const result of state.drill.results) {
+    if (result.caseId !== caseId) continue;
+    result.rating = "";
+    result.ratingCounted = true;
+  }
+  savePersonalState();
+  saveDrillState();
+  if (state.drill.active) refreshDrillFilterTargets();
+  render();
+}
+
+
 function renderDrillResults() {
   elements.drillResultList.replaceChildren();
 
@@ -2062,12 +2272,19 @@ function renderDrillResults() {
     top.append(order, name, time);
     body.append(top, setup);
 
-    const excludeButton = document.createElement("button");
-    excludeButton.className = "drill-exclude-result-button";
-    excludeButton.type = "button";
-    excludeButton.dataset.resultExcludeCaseId = result.caseId;
-    excludeButton.textContent = t("exclude");
-    excludeButton.disabled = state.drill.timerStatus === "running" || !state.selectedCards.has(result.caseId);
+    const ratings = ["good", "bad"].map((rating) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `drill-rating-button is-${rating}`;
+      button.dataset.resultRatingId = result.id;
+      button.dataset.rating = rating;
+      button.append(makeDrillRatingIcon(rating));
+      button.setAttribute("aria-pressed", String(result.rating === rating));
+      button.setAttribute("aria-label", t(rating === "good" ? "goodPractice" : "needsPractice"));
+      button.title = button.getAttribute("aria-label");
+      button.disabled = state.drill.timerStatus === "running";
+      return button;
+    });
     const deleteButton = document.createElement("button");
     deleteButton.className = "drill-delete-result-button";
     deleteButton.type = "button";
@@ -2077,7 +2294,8 @@ function renderDrillResults() {
     deleteButton.title = t("deleteRecord");
     const actions = document.createElement("div");
     actions.className = "drill-result-actions";
-    actions.append(excludeButton, deleteButton);
+    deleteButton.disabled = state.drill.timerStatus === "running";
+    actions.append(...ratings, deleteButton);
 
     row.append(body, actions);
     elements.drillResultList.append(row);
@@ -2242,7 +2460,7 @@ function renderDrill() {
   if (state.drill.mode === "recap") {
     elements.drillProgressText.textContent = formatCaseProgress(Math.min(state.drill.index + 1, total), total);
   } else {
-    elements.drillProgressText.textContent = formatCaseCount(state.drill.source.length);
+    elements.drillProgressText.textContent = formatCaseCount(filteredDrillCases().length);
   }
 
   if (state.drill.completed) {
@@ -2268,18 +2486,26 @@ function renderDrill() {
   elements.drillHistoryPanel.classList.toggle("is-expanded", state.drill.historyExpanded);
   elements.drillToggleHistoryButton.textContent = state.drill.historyExpanded ? t("closeRecords") : t("recordDetails");
   elements.drillToggleHistoryButton.setAttribute("aria-expanded", state.drill.historyExpanded ? "true" : "false");
-  if (document.activeElement !== elements.drillMinResultSecondsInput) {
-    elements.drillMinResultSecondsInput.value = state.drill.minResultSeconds.toFixed(1);
+  const running = state.drill.timerStatus === "running";
+  elements.drillExcludeGoodInput.checked = state.drill.filters.excludeGood;
+  for (const input of elements.drillTargetInputs) {
+    input.checked = input.value === state.drill.filters.target;
+    input.disabled = running;
   }
-  const minSeconds = roundedDrillMinResultSeconds() ?? state.drill.minResultSeconds;
-  const matchingResultCount = drillResultsAtLeast(minSeconds).length;
-  elements.drillSelectResultsByTimeButton.textContent = `${t("selection")} · ${matchingResultCount}/${state.drill.results.length}`;
-  elements.drillMinResultSecondsInput.disabled = state.drill.timerStatus === "running";
-  elements.drillSelectResultsByTimeButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
-  elements.drillRestoreSelectionButton.disabled = state.drill.timerStatus === "running" || !state.drill.selectionRestoreSnapshot;
+  elements.drillExcludeGoodInput.disabled = running;
+  elements.drillResetFilterButton.disabled = running;
+  const targetCount = filteredDrillCases().length;
+  elements.drillFilterCount.textContent = `${t("practiceTarget")} ${targetCount} / ${state.drill.source.length}`;
+  if (!targetCount) elements.drillHintText.textContent = t("noPracticeTargets");
+  const stats = state.drill.recordTab === "stats";
+  elements.drillSessionTab.setAttribute("aria-selected", String(!stats));
+  elements.drillStatsTab.setAttribute("aria-selected", String(stats));
+  elements.drillResultList.hidden = stats;
+  elements.drillStatsPanel.hidden = !stats;
   elements.drillClearResultsButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   elements.drillUndoButton.disabled = state.drill.timerStatus === "running" || state.drill.results.length === 0;
   renderDrillResults();
+  renderDrillStatistics();
   saveDrillState();
 }
 
@@ -2297,17 +2523,14 @@ function startDrill({ clearResults = true, restart = false } = {}) {
     window.alert(t("selectCases"));
     return;
   }
-  const queue = drillQueue(source);
-
   state.drill.active = true;
   state.drill.source = source;
-  state.drill.queue = queue;
+  if (clearResults) state.drill.results = [];
+  state.drill.queue = drillQueue(source);
   state.drill.index = 0;
   resetDrillTimer();
-  if (clearResults) state.drill.results = [];
   state.drill.historyExpanded = !isDrillCompactLayout();
-  state.drill.selectionRestoreSnapshot = null;
-  state.drill.completed = false;
+  state.drill.completed = !state.drill.queue.length;
   state.drill.currentSetup = makeDrillSetup(currentDrillItem());
   state.selectedCaseId = "";
   state.editingCaseId = "";
@@ -2321,7 +2544,6 @@ function closeDrill() {
   closeDrillOrderPanel();
   closeDrillShortcutPanel();
   state.drill.active = false;
-  state.drill.selectionRestoreSnapshot = null;
   state.drill.timerStatus = "idle";
   state.drill.elapsedMs = 0;
   saveDrillState();
@@ -2347,7 +2569,7 @@ function moveToNextDrillCase({ preserveTimerDisplay = false } = {}) {
       }
     }
     state.drill.currentSetup = makeDrillSetup(currentDrillItem());
-    state.drill.completed = false;
+    state.drill.completed = !state.drill.queue.length;
     resetDrillTimer({ preserveDisplay: preserveTimerDisplay });
     renderDrill();
     return;
@@ -2368,6 +2590,7 @@ function moveToNextDrillCase({ preserveTimerDisplay = false } = {}) {
 function toggleDrillTimer() {
   if (!state.drill.active) return;
   if (state.drill.completed) {
+    if (!filteredDrillCases().length) return;
     startDrill({ clearResults: false, restart: true });
     return;
   }
@@ -2386,6 +2609,12 @@ function toggleDrillTimer() {
   const item = currentDrillItem();
   const result = item ? makeDrillResult(item, state.drill.elapsedMs) : null;
   if (result) state.drill.results.push(result);
+  if (state.drill.filters.target === "unpracticed") {
+    resetDrillTimer({ preserveDisplay: true });
+    applyDrillFilters();
+    renderDrill();
+    return;
+  }
   moveToNextDrillCase({ preserveTimerDisplay: true });
 }
 
@@ -2393,7 +2622,14 @@ function toggleDrillTimer() {
 function undoDrillResult() {
   if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
   const last = state.drill.results.pop();
+  removeResultRating(last);
+  refreshDrillFilterTargets();
   const lastItem = drillItemById(last.caseId);
+  if (!filteredDrillCases().some((item) => item.id === last.caseId)) {
+    resetDrillTimer();
+    renderDrill();
+    return;
+  }
   if (state.drill.mode === "train" && lastItem) {
     if (state.drill.index === 0) {
       state.drill.queue.unshift(lastItem);
@@ -2416,7 +2652,9 @@ function deleteDrillResult(resultId) {
   if (!state.drill.active || state.drill.timerStatus === "running") return;
   const nextResults = state.drill.results.filter((item) => item.id !== resultId);
   if (nextResults.length === state.drill.results.length) return;
+  removeResultRating(state.drill.results.find((result) => result.id === resultId));
   state.drill.results = nextResults;
+  refreshDrillFilterTargets();
   renderDrill();
 }
 
@@ -2424,113 +2662,119 @@ function deleteDrillResult(resultId) {
 function clearDrillResults() {
   if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
   if (!window.confirm(t("deleteAllConfirm"))) return;
+  for (const result of state.drill.results) removeResultRating(result);
   state.drill.results = [];
+  refreshDrillFilterTargets();
   renderDrill();
 }
 
 
-function roundedDrillMinResultSeconds() {
-  const value = Number(elements.drillMinResultSecondsInput.value);
-  if (!Number.isFinite(value) || value < 0) return null;
-  return Math.round(value * 10) / 10;
-}
-
-
-function drillResultsAtLeast(seconds) {
-  const thresholdMs = seconds * 1000;
-  const latestByCase = new Map();
-  for (const result of state.drill.results) {
-    latestByCase.set(result.caseId, result);
-  }
-  return [...latestByCase.values()].filter((result) => result.elapsedMs >= thresholdMs);
-}
-
-
-function normalizeDrillMinResultSeconds(value) {
-  const seconds = Number(value);
-  if (!Number.isFinite(seconds) || seconds < 0) return 0.5;
-  return Math.round(seconds * 10) / 10;
-}
-
-
-function saveDrillSelectionRestoreSnapshot() {
-  state.drill.selectionRestoreSnapshot = {
-    selectedCards: [...state.selectedCards],
-    source: [...state.drill.source],
-    queue: [...state.drill.queue],
-    index: state.drill.index,
-    currentSetup: state.drill.currentSetup,
-    completed: state.drill.completed,
+function normalizeDrillFilters(filters) {
+  return {
+    excludeGood: filters?.excludeGood === true,
+    target: ["bad", "unpracticed"].includes(filters?.target) ? filters.target : "all",
   };
 }
 
 
-function updateDrillSelectionFromIds(selectedIds) {
-  state.selectedCards = new Set(selectedIds);
-  state.activeSelectionPresetId = "";
-  saveSelectionPresets();
-
-  if (!state.drill.active) return;
-
-  state.drill.source = state.drill.source.filter((item) => state.selectedCards.has(item.id));
-  state.drill.queue = state.drill.queue.filter((item) => state.selectedCards.has(item.id));
-  if (!state.drill.source.length || !state.drill.queue.length) {
-    state.drill.completed = true;
-    state.drill.currentSetup = "";
-    state.drill.index = 0;
-    resetDrillTimer();
-    return;
+function drillCaseStatistics() {
+  const stats = new Map(state.drill.source.map((item) => [item.id, { item, count: 0, totalMs: 0, timedCount: 0, good: 0, bad: 0 }]));
+  for (const result of state.drill.results) {
+    if (!stats.has(result.caseId)) {
+      stats.set(result.caseId, { item: { id: result.caseId, name: result.caseName, groupName: result.groupName }, count: 0, totalMs: 0, timedCount: 0, good: 0, bad: 0 });
+    }
+    const entry = stats.get(result.caseId);
+    entry.count += 1;
+    if (Number.isFinite(result.elapsedMs) && result.elapsedMs >= 0) {
+      entry.totalMs += result.elapsedMs;
+      entry.timedCount += 1;
+    }
+    if (result.rating === "good") entry.good += 1;
+    if (result.rating === "bad") entry.bad += 1;
   }
-
-  state.drill.index = Math.min(state.drill.index, state.drill.queue.length - 1);
-  state.drill.currentSetup = makeDrillSetup(currentDrillItem());
+  return stats;
 }
 
 
-function selectDrillResultsByTime() {
-  if (!state.drill.active || state.drill.timerStatus === "running" || !state.drill.results.length) return;
-  const seconds = roundedDrillMinResultSeconds();
-  if (seconds === null) {
-    window.alert(t("invalidMinimumTime"));
-    return;
-  }
-
-  state.drill.minResultSeconds = seconds;
-  elements.drillMinResultSecondsInput.value = seconds.toFixed(1);
-  saveJson("drillMinResultSeconds", seconds);
-
-  const selectedIds = drillResultsAtLeast(seconds).map((result) => result.caseId);
-  saveDrillSelectionRestoreSnapshot();
-  updateDrillSelectionFromIds(selectedIds);
-  render();
+function filteredDrillCases(items = state.drill.source) {
+  const stats = drillCaseStatistics();
+  const { excludeGood, target } = state.drill.filters;
+  return items.filter((item) => {
+    const entry = stats.get(item.id);
+    const ratings = state.caseRatings.get(item.id);
+    return !(excludeGood && ratings?.good)
+      && (target !== "bad" || ratings?.bad > 0)
+      && (target !== "unpracticed" || !entry?.count);
+  });
 }
 
 
-function restoreDrillSelectionBeforeTimeFilter() {
-  const snapshot = state.drill.selectionRestoreSnapshot;
-  if (!state.drill.active || state.drill.timerStatus === "running" || !snapshot) return;
-
-  state.selectedCards = new Set(snapshot.selectedCards);
-  state.activeSelectionPresetId = "";
-  saveSelectionPresets();
-
-  state.drill.source = [...snapshot.source];
-  state.drill.queue = [...snapshot.queue];
-  state.drill.index = snapshot.index;
-  state.drill.currentSetup = snapshot.currentSetup;
-  state.drill.completed = snapshot.completed;
-  state.drill.selectionRestoreSnapshot = null;
-  render();
+function applyDrillFilters() {
+  state.drill.queue = drillQueue(state.drill.source);
+  state.drill.index = 0;
+  state.drill.completed = !state.drill.queue.length;
+  state.drill.currentSetup = state.drill.completed ? "" : makeDrillSetup(currentDrillItem());
+  resetDrillTimer({ preserveDisplay: true });
 }
 
 
-function saveDrillMinResultSecondsFromInput({ normalize = false } = {}) {
-  const seconds = roundedDrillMinResultSeconds();
-  if (seconds === null) return;
-  state.drill.minResultSeconds = seconds;
-  saveJson("drillMinResultSeconds", seconds);
-  if (normalize) elements.drillMinResultSecondsInput.value = seconds.toFixed(1);
+function refreshDrillFilterTargets() {
+  if (state.drill.filters.excludeGood || state.drill.filters.target !== "all") applyDrillFilters();
+}
+
+
+function changeDrillFilters(filters) {
+  if (state.drill.timerStatus === "running") return;
+  state.drill.filters = normalizeDrillFilters(filters);
+  applyDrillFilters();
   renderDrill();
+}
+
+
+function renderDrillStatistics() {
+  const table = document.createElement("table");
+  const head = table.createTHead().insertRow();
+  const sort = state.drill.statsSort;
+  for (const [key, label] of [["name", t("case")], ["count", t("attempts")], ["average", t("averageTime")], ["good", t("goodPractice")], ["bad", t("needsPractice")]]) {
+    const cell = document.createElement("th");
+    cell.scope = "col";
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.statsSort = key;
+    if (key === "good" || key === "bad") {
+      button.append(makeDrillRatingIcon(key));
+      button.setAttribute("aria-label", label);
+    } else {
+      button.textContent = label;
+    }
+    button.title = label;
+    if (sort.key === key) {
+      cell.setAttribute("aria-sort", sort.descending ? "descending" : "ascending");
+      button.append(sort.descending ? " ↓" : " ↑");
+    }
+    cell.append(button);
+    head.append(cell);
+  }
+  const body = table.createTBody();
+  const entries = [...drillCaseStatistics().values()];
+  const value = (entry) => sort.key === "average"
+    ? (entry.timedCount ? entry.totalMs / entry.timedCount : null)
+    : sort.key === "name" ? [entry.item.groupName, entry.item.name || entry.item.id].filter(Boolean).join(" ") : entry[sort.key];
+  entries.sort((a, b) => {
+    const first = value(a);
+    const second = value(b);
+    if (first === null || second === null) return first === second ? 0 : first === null ? 1 : -1;
+    const compared = typeof first === "string" ? first.localeCompare(second, state.language, { numeric: true }) : first - second;
+    return sort.descending ? -compared : compared;
+  });
+  for (const entry of entries) {
+    const row = body.insertRow();
+    const name = [entry.item.groupName, entry.item.name || entry.item.id].filter(Boolean).join(" ");
+    for (const value of [name, entry.count, entry.timedCount ? formatDrillTime(entry.totalMs / entry.timedCount) : "—", entry.good, entry.bad]) {
+      row.insertCell().textContent = value;
+    }
+  }
+  elements.drillStatsPanel.replaceChildren(table);
 }
 
 
@@ -2624,11 +2868,13 @@ function updateFilterMenuButtons() {
     group: state.groupFilters.size,
     recognition: state.recognitionFilters.size,
     bookmark: state.bookmarkFilters.size,
+    drill: state.drillFilters.size,
   };
   const labels = {
     group: t("group"),
     recognition: t("recog"),
     bookmark: t("bookmark"),
+    drill: "Drill",
   };
   for (const button of elements.filterMenuButtons) {
     const type = button.dataset.filterMenu;
@@ -2691,6 +2937,7 @@ function saveCurrentViewState() {
     groupFilters: [...state.groupFilters],
     recognitionFilters: [...state.recognitionFilters],
     bookmarkFilters: [...state.bookmarkFilters],
+    drillFilters: [...state.drillFilters],
     viewMode: state.viewMode,
     selectedCards: [...state.selectedCards],
     selectedCaseId: state.selectedCaseId,
@@ -2709,6 +2956,7 @@ function restoreCurrentViewState() {
   state.groupFilters = new Set(savedGroups.filter((value) => groupIds.has(value)));
   state.recognitionFilters = new Set((Array.isArray(saved.recognitionFilters) ? saved.recognitionFilters : []).filter((value) => availableRecognitions.has(value)));
   state.bookmarkFilters = new Set((Array.isArray(saved.bookmarkFilters) ? saved.bookmarkFilters : []).filter((value) => BOOKMARK_TYPES.has(value)));
+  state.drillFilters = new Set((Array.isArray(saved.drillFilters) ? saved.drillFilters : []).filter((value) => ["good", "bad", "unrated"].includes(value)));
   state.viewMode = VIEW_MODES.has(saved.viewMode) ? saved.viewMode : state.viewMode;
   const caseIds = new Set(state.dataset.cases.map((item) => item.id));
   state.selectedCards = new Set((Array.isArray(saved.selectedCards) ? saved.selectedCards : []).filter((value) => caseIds.has(value)));
@@ -2730,6 +2978,7 @@ function openCaseDetail(caseId) {
   state.selectedCaseId = caseId;
   state.editingCaseId = "";
   render();
+  if (state.dataset?.puzzle === "FTO") window.AlgNoteCasePlayer.prepare();
 }
 
 
@@ -2776,6 +3025,7 @@ function render() {
   renderSelectionPresetOptions();
   renderGroupFilterOptions(elements.groupFilterOptions, state.dataset.groups, state.groupFilters);
   renderBookmarkFilterOptions(elements.bookmarkFilterOptions, state.bookmarkFilters);
+  renderDrillFilterOptions(elements.drillFilterOptions, state.drillFilters);
   updateFilterMenuButtons();
   updateViewModeButtons();
   if (state.openFilterMenu) openFilterMenu(state.openFilterMenu);
@@ -2824,6 +3074,7 @@ function setDataset(entries) {
   state.entries = entries;
   state.dataset = normalizeDataset(entries);
   state.key = datasetKey(state.dataset);
+  state.imageOverrides = new Map();
   state.drill.aufMode = loadDrillAufMode();
   state.drill.viewpoints = normalizeDrillViewpoints(loadJson(`drillViewpoints.${state.key}`, ["none"]));
   state.drill.orderMode = loadDrillOrderMode();
@@ -2831,6 +3082,7 @@ function setDataset(entries) {
   state.groupFilters = new Set();
   state.recognitionFilters = new Set();
   state.bookmarkFilters = new Set();
+  state.drillFilters = new Set();
   state.editingCaseId = "";
   state.selectedCaseId = "";
   state.selectedCards = new Set();
@@ -2845,78 +3097,57 @@ function setDataset(entries) {
   restoreDrillState();
   saveJson("lastDataset", state.key);
   render();
+  loadImageOverrides();
 }
 
 
-function makeMergedCasesJson() {
-  const source = state.entries?.["cases.json"];
-  const cases = (source?.cases || []).map((item) => {
-    const edit = state.edits.get(item.id);
-    if (!edit) return item;
-    const tags = { ...(typeof item.tags === "object" && !Array.isArray(item.tags) ? item.tags : {}) };
-    if (Object.prototype.hasOwnProperty.call(edit, "recognition")) {
-      const recognitions = recognitionList(edit.recognition);
-      if (recognitions.length) {
-        tags.recognition = recognitionValueForJson(recognitions);
-      } else {
-        delete tags.recognition;
-      }
-    }
-    return {
-      ...item,
-      scramble: edit.scramble,
-      algorithms: edit.algorithms,
-      tags,
-    };
-  });
-
-  return {
-    ...source,
-    cases,
-  };
+function notesForAlgorithms(algorithms, notes = {}) {
+  return Object.fromEntries(algorithms.filter((algorithm) => typeof notes?.[algorithm] === "string" && notes[algorithm].trim())
+    .map((algorithm) => [algorithm, notes[algorithm]]));
 }
 
 
-function makeEditedCasesJson() {
-  const cases = [...state.edits.entries()].map(([id, edit]) => {
-    const original = state.dataset.cases.find((item) => item.id === id) || {};
-    return {
-      id,
-      name: original.name || "",
-      group: original.group || "",
-      groupName: original.groupName || "",
-      scramble: edit.scramble,
-      algorithms: edit.algorithms || [],
-      recognition: recognitionList(edit.recognition),
-    };
-  });
-
-  return {
-    dataset: {
-      key: state.key,
-      algset: state.dataset.algset,
-      name: state.dataset.name,
-      puzzle: state.dataset.puzzle,
-    },
-    editedCount: cases.length,
-    cases,
-  };
+function imageStateForJson(value) {
+  if (!value) return undefined;
+  const settings = { ...value };
+  delete settings.svg;
+  return Object.keys(settings).length ? settings : undefined;
 }
 
 
-function editedCasesForDataset(entries, savedEdits) {
+function editedCasesForDataset(entries, savedEdits, savedNotes) {
   const dataset = normalizeDataset(entries);
-  return [...savedEdits.entries()].map(([id, edit]) => {
-    const original = dataset.cases.find((item) => item.id === id) || {};
-    return {
-      id,
+  const notation = (value) => (value || "").replace(/([A-Za-z]+)2['’′]/g, "$1'2");
+  const notes = (algorithms, values) => Object.fromEntries(
+    Object.entries(notesForAlgorithms(algorithms.map(notation), Object.fromEntries(
+      Object.entries(values || {}).map(([algorithm, note]) => [notation(algorithm), note]),
+    )))
+      .sort(([a], [b]) => a.localeCompare(b)),
+  );
+  return dataset.cases.flatMap((original) => {
+    const edit = savedEdits.get(original.id);
+    const sourceAlgorithms = original.algorithms || [];
+    const editedAlgorithms = edit?.algorithms || sourceAlgorithms;
+    const algorithms = editedAlgorithms.map(notation);
+    const scramble = notation(edit ? edit.scramble : original.scramble);
+    const recognition = recognitionList(edit ? edit.recognition : original.tags?.recognition);
+    const algorithmNotes = notes(editedAlgorithms, savedNotes.has(original.id) ? savedNotes.get(original.id) : original.algorithmNotes);
+    const unchanged = scramble === notation(original.scramble)
+      && JSON.stringify(algorithms) === JSON.stringify(sourceAlgorithms.map(notation))
+      && JSON.stringify([...new Set(recognition)].sort()) === JSON.stringify([...new Set(recognitionList(original.tags?.recognition))].sort())
+      && JSON.stringify(algorithmNotes) === JSON.stringify(notes(sourceAlgorithms, original.algorithmNotes));
+    if (unchanged) return [];
+    return [{
+      id: original.id,
       name: original.name || "",
       group: original.group || "",
       groupName: original.groupName || "",
-      scramble: edit.scramble,
-      algorithms: edit.algorithms || [],
-      recognition: recognitionList(edit.recognition),
-    };
+      ...(original.svgId !== undefined ? { svgId: original.svgId } : {}),
+      scramble,
+      algorithms,
+      algorithmNotes,
+      recognition,
+    }];
   });
 }
 
@@ -2926,13 +3157,15 @@ function makeAllEditedCasesJson() {
   const datasets = [];
 
   for (const [bundleKey, entries] of Object.entries(bundled)) {
+    if (entries["algset.json"].sourceAlgset) continue;
     const dataset = normalizeDataset(entries);
     const key = datasetKey(dataset);
     const saved = loadJson(`personal.${key}`, { edits: {} });
     const edits = key === state.key
       ? state.edits
       : new Map(Object.entries(saved.edits || {}));
-    const cases = editedCasesForDataset(entries, edits);
+    const notes = key === state.key ? state.algorithmNotes : new Map(Object.entries(saved.algorithmNotes || {}));
+    const cases = editedCasesForDataset(entries, edits, notes);
     if (!cases.length) continue;
 
     datasets.push({
@@ -2953,30 +3186,15 @@ function makeAllEditedCasesJson() {
 }
 
 
-function exportJsonForMode() {
-  if (state.exportMode === "allEdits") return makeAllEditedCasesJson();
-  return state.exportMode === "edits" ? makeEditedCasesJson() : makeMergedCasesJson();
-}
-
-
 function updateExportPanelText() {
-  const isAllEdits = state.exportMode === "allEdits";
-  const isEdits = state.exportMode === "edits";
-  elements.exportPanelTitle.textContent = isAllEdits ? t("allJsonEditsTitle") : (isEdits ? t("editsOnlyTitle") : t("fullJsonTitle"));
-  elements.exportPanelDescription.textContent = isAllEdits
-    ? t("allJsonEditsDescription")
-    : isEdits
-    ? t("editsOnlyDescription")
-    : t("fullJsonDescription");
-  elements.exportFullButton.parentElement.hidden = isAllEdits;
-  elements.exportFullButton.classList.toggle("is-active", !isEdits && !isAllEdits);
-  elements.exportEditsButton.classList.toggle("is-active", isEdits);
+  elements.exportPanelTitle.textContent = t("allJsonEditsTitle");
+  elements.exportPanelDescription.textContent = t("allJsonEditsDescription");
 }
 
 
 function updateExportPanel() {
   updateExportPanelText();
-  elements.exportJsonText.value = JSON.stringify(exportJsonForMode(), null, 2);
+  elements.exportJsonText.value = JSON.stringify(makeAllEditedCasesJson(), null, 2);
   elements.exportPanel.hidden = false;
   elements.exportJsonText.focus();
 }
@@ -2987,11 +3205,7 @@ function downloadExportJson() {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = state.exportMode === "allEdits"
-    ? "alg-note-edited-cases.json"
-    : state.exportMode === "edits"
-      ? `${state.dataset.algset}-edited-cases.json`
-      : `${state.dataset.algset}-cases.json`;
+  link.download = "alg-note-edited-cases.json";
   document.body.append(link);
   link.click();
   link.remove();
@@ -3007,13 +3221,15 @@ function resetSavedJsonEdits() {
     const dataset = normalizeDataset(entries);
     const key = datasetKey(dataset);
     const saved = loadJson(`personal.${key}`, null);
-    if (!saved?.edits || !Object.keys(saved.edits).length) continue;
+    if (!saved || (!Object.keys(saved.edits || {}).length && !Object.keys(saved.algorithmNotes || {}).length)) continue;
     saved.edits = {};
+    saved.algorithmNotes = {};
     saveJson(`personal.${key}`, saved);
     changed = true;
   }
 
   state.edits = new Map();
+  state.algorithmNotes = new Map((state.dataset?.cases || []).filter((item) => item.algorithmNotes).map((item) => [item.id, item.algorithmNotes]));
   state.editingCaseId = "";
   state.selectedCaseId = "";
   updateExportPanel();
@@ -3050,6 +3266,13 @@ function saveCardEdit(card) {
     state.edits.set(caseId, { scramble, algorithms, recognition: recognitions });
   }
 
+  const notes = {};
+  for (const editor of card.querySelectorAll(".algorithm-editor")) {
+    const algorithm = editor.value.trim();
+    const note = editor.parentElement.querySelector(".card-algorithm-note-editor")?.value.trim();
+    if (algorithm && note) notes[algorithm] = note;
+  }
+  state.algorithmNotes.set(caseId, notes);
   state.editingCaseId = "";
   savePersonalState();
   refreshRecognitionFilters();
@@ -3072,6 +3295,12 @@ function renderDatasetOptions() {
       (puzzleOrder.indexOf(puzzleA) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleA)) -
       (puzzleOrder.indexOf(puzzleB) === -1 ? puzzleOrder.length : puzzleOrder.indexOf(puzzleB));
     if (puzzleCompare !== 0) return puzzleCompare;
+    if (puzzleA === "FTO") {
+      const order = ["tcp", "1l3t", "lbt"];
+      const rank = (id) => order.includes(id) ? order.indexOf(id) : order.length;
+      const compare = rank(algsetA.id) - rank(algsetB.id);
+      if (compare !== 0) return compare;
+    }
     return (algsetA.name || a).localeCompare(algsetB.name || b);
   });
 
@@ -3386,6 +3615,22 @@ elements.bookmarkFilterOptions.addEventListener("click", (event) => {
   openFilterMenu("bookmark");
 });
 
+elements.drillFilterOptions.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-value]");
+  if (!button) return;
+  event.stopPropagation();
+  const value = button.dataset.value;
+  if (value === "all") state.drillFilters.clear();
+  else if (state.drillFilters.has(value)) state.drillFilters.delete(value);
+  else {
+    if (value === "unrated") state.drillFilters.clear();
+    else state.drillFilters.delete("unrated");
+    state.drillFilters.add(value);
+  }
+  render();
+  openFilterMenu("drill");
+});
+
 for (const button of elements.viewModeButtons) {
   button.addEventListener("click", () => {
     const nextMode = button.dataset.viewMode;
@@ -3649,7 +3894,7 @@ elements.drillOrderPanel.addEventListener("click", (event) => {
       state.drill.queue = drillQueue(state.drill.source);
       state.drill.index = 0;
       state.drill.currentSetup = makeDrillSetup(currentDrillItem());
-      state.drill.completed = false;
+      state.drill.completed = !state.drill.queue.length;
       resetDrillTimer();
     }
   }
@@ -3728,21 +3973,34 @@ elements.drillClearResultsButton.addEventListener("click", () => {
   clearDrillResults();
 });
 
-elements.drillMinResultSecondsInput.addEventListener("input", () => {
-  saveDrillMinResultSecondsFromInput();
+elements.drillExcludeGoodInput.addEventListener("change", () => {
+  changeDrillFilters({ ...state.drill.filters, excludeGood: elements.drillExcludeGoodInput.checked });
 });
 
-elements.drillMinResultSecondsInput.addEventListener("change", () => {
-  saveDrillMinResultSecondsFromInput({ normalize: true });
+for (const input of elements.drillTargetInputs) {
+  input.addEventListener("change", () => {
+    if (input.checked) changeDrillFilters({ ...state.drill.filters, target: input.value });
+  });
+}
+
+elements.drillResetFilterButton.addEventListener("click", () => changeDrillFilters({}));
+
+elements.drillStatsPanel.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-stats-sort]");
+  if (!button) return;
+  const key = button.dataset.statsSort;
+  const previous = state.drill.statsSort;
+  state.drill.statsSort = { key, descending: previous.key === key ? !previous.descending : key !== "name" };
+  renderDrillStatistics();
 });
 
-elements.drillSelectResultsByTimeButton.addEventListener("click", () => {
-  selectDrillResultsByTime();
-});
-
-elements.drillRestoreSelectionButton.addEventListener("click", () => {
-  restoreDrillSelectionBeforeTimeFilter();
-});
+for (const [button, tab] of [[elements.drillSessionTab, "session"], [elements.drillStatsTab, "stats"]]) {
+  button.addEventListener("click", () => {
+    state.drill.recordTab = tab;
+    state.drill.historyExpanded = true;
+    renderDrill();
+  });
+}
 
 elements.drillResultList.addEventListener("click", (event) => {
   const deleteButton = event.target.closest("[data-result-delete-id]");
@@ -3750,10 +4008,18 @@ elements.drillResultList.addEventListener("click", (event) => {
     deleteDrillResult(deleteButton.dataset.resultDeleteId);
     return;
   }
-  const excludeButton = event.target.closest("[data-result-exclude-case-id]");
-  if (excludeButton) {
+  const ratingButton = event.target.closest("[data-result-rating-id]");
+  if (ratingButton) {
     if (state.drill.timerStatus === "running") return;
-    if (removeCaseFromSelection(excludeButton.dataset.resultExcludeCaseId)) render();
+    const result = state.drill.results.find((item) => item.id === ratingButton.dataset.resultRatingId);
+    if (!result) return;
+    removeResultRating(result);
+    result.rating = result.rating === ratingButton.dataset.rating ? "" : ratingButton.dataset.rating;
+    if (result.rating) adjustCaseRating(result.caseId, result.rating, 1);
+    result.ratingCounted = true;
+    savePersonalState();
+    refreshDrillFilterTargets();
+    renderDrill();
     return;
   }
   const detailBody = event.target.closest("[data-result-detail-id]");
@@ -3829,17 +4095,6 @@ elements.drillResizeHandle.addEventListener("pointerdown", (event) => {
 });
 
 elements.exportJsonButton.addEventListener("click", () => {
-  state.exportMode = "allEdits";
-  updateExportPanel();
-});
-
-elements.exportFullButton.addEventListener("click", () => {
-  state.exportMode = "full";
-  updateExportPanel();
-});
-
-elements.exportEditsButton.addEventListener("click", () => {
-  state.exportMode = "edits";
   updateExportPanel();
 });
 
@@ -3865,12 +4120,20 @@ elements.clearFiltersButton.addEventListener("click", () => {
   state.groupFilters = new Set();
   state.recognitionFilters = new Set();
   state.bookmarkFilters = new Set();
+  state.drillFilters = new Set();
   state.selectedCaseId = "";
   elements.searchInput.value = "";
   render();
 });
 
 function handleCaseAction(event) {
+  const playAlgorithm = event.target.closest(".play-case-algorithm");
+  if (playAlgorithm) {
+    const item = effectiveCases().find(item => item.id === playAlgorithm.closest(".case-card")?.dataset.caseId);
+    const index = Number(playAlgorithm.dataset.algorithmIndex);
+    if (item && item.algorithms[index]) window.AlgNoteCasePlayer.open(item, item.algorithms[index], index, playAlgorithm, ["1l3t", "tcp"].includes(state.dataset.algset) ? "cif" : undefined);
+    return;
+  }
   if (event.target.closest(".close-detail-button")) {
     closeCaseDetail();
     return;
@@ -3908,6 +4171,36 @@ function handleCaseAction(event) {
   if (!card) return;
 
   const caseId = card.dataset.caseId;
+  if (event.target.closest(".reset-case-ratings")) {
+    resetCaseRatings(caseId);
+    return;
+  }
+  if (event.target.closest(".case-note-indicator")) {
+    openCaseDetail(caseId);
+    return;
+  }
+  const noteToggle = event.target.closest(".toggle-card-algorithm-note");
+  if (noteToggle) {
+    const field = noteToggle.closest(".card-algorithm-note-field");
+    const input = field.querySelector(".card-algorithm-note-input");
+    const expanded = input.hidden;
+    input.hidden = !expanded;
+    noteToggle.setAttribute("aria-expanded", String(expanded));
+    noteToggle.textContent = t(expanded ? "lessNote" : "addNote");
+    if (expanded) input.querySelector("textarea").focus();
+    return;
+  }
+  const note = event.target.closest(".algorithm-note");
+  if (note) {
+    if (event.target.closest(".toggle-algorithm-note")) {
+      const text = note.querySelector(".algorithm-note-text");
+      const expanded = text.classList.toggle("is-expanded");
+      const button = note.querySelector(".toggle-algorithm-note");
+      button.textContent = t(expanded ? "lessNote" : "moreNote");
+      button.setAttribute("aria-expanded", String(expanded));
+    }
+    return;
+  }
   if (event.target.closest(".edit-button")) {
     state.editingCaseId = state.editingCaseId === caseId ? "" : caseId;
     render();
@@ -3947,7 +4240,7 @@ function handleCaseAction(event) {
     removeButton.setAttribute("aria-label", t("deleteAlgorithm"));
     removeButton.title = t("deleteAlgorithm");
 
-    row.append(moveUpButton, moveDownButton, textarea, removeButton);
+    row.append(moveUpButton, moveDownButton, textarea, removeButton, makeAlgorithmNoteEditor());
     list.insertBefore(row, card.querySelector(".edit-actions"));
     row.querySelector(".algorithm-editor").focus();
     return;
@@ -3990,7 +4283,7 @@ function handleCaseAction(event) {
     return;
   }
 
-  if (event.target.closest(".setup-editor, .algorithm-editor, .recognition-edit-section")) {
+  if (event.target.closest(".setup-editor, .algorithm-editor, .card-algorithm-note-field, .recognition-edit-section")) {
     return;
   }
 
@@ -4025,6 +4318,23 @@ function handleCaseAction(event) {
 
 elements.caseGrid.addEventListener("click", handleCaseAction);
 elements.caseDetail.addEventListener("click", handleCaseAction);
+document.querySelector(".app-title-link").addEventListener("click", (event) => {
+  event.preventDefault();
+  const toolWindow = window.open(event.currentTarget.href, "_blank");
+  if (toolWindow) imageEngineWindows.add(toolWindow);
+  else location.href = event.currentTarget.href;
+});
+window.addEventListener("focus", loadImageOverrides);
+window.addEventListener("message", (event) => {
+  if (!imageEngineWindows.has(event.source) || event.origin !== location.origin ||
+      event.data?.type !== "alg-note-image-changed") return;
+  const { dataset, caseId, svg, imageState } = event.data;
+  const action = svg ? window.AlgNoteImageStore.save(dataset, caseId, svg, imageState)
+    : window.AlgNoteImageStore.remove(dataset, caseId);
+  action.then(() => {
+    loadImageOverrides();
+  }).catch((error) => console.error("이미지 반영 실패", error));
+});
 elements.caseGrid.addEventListener("contextmenu", (event) => {
   const card = event.target.closest(".case-card");
   if (!card) return;
@@ -4032,6 +4342,7 @@ elements.caseGrid.addEventListener("contextmenu", (event) => {
   openCaseDetail(card.dataset.caseId);
 });
 document.addEventListener("keydown", (event) => {
+  if (document.querySelector(".case-player-dialog[open]")) return;
   if (event.key === "Escape" && !elements.homeSettingsPopover.hidden) {
     event.preventDefault();
     closeHomeSettings();

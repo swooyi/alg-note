@@ -2,6 +2,10 @@
 
 A browser-based algorithm note and trainer for FTO, Square-1, and 3x3 cases.
 
+## Simulator Development
+
+Read [SIMULATOR_GUIDE.md](SIMULATOR_GUIDE.md) before adding or changing a puzzle simulator. It covers case playback, setup/imageState restoration, initial views, persistent session controls, file/HTTP messaging, and validation. The project [AGENTS.md](AGENTS.md) also points to this guide.
+
 ## License
 
 This project is licensed under the GNU General Public License, version 3 only.

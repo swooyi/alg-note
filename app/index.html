@@ -39,7 +39,9 @@
         <button id="sidebarOpenButton" class="sidebar-icon-button" type="button" aria-controls="appSidebar" aria-expanded="true" aria-label="패널 닫기" title="패널">
           <span class="panel-icon" aria-hidden="true"></span>
         </button>
-        <img class="app-title-icon" src="./icon-512.png" alt="" aria-hidden="true">
+        <a class="app-title-link" href="../image-simulator-engine/index.html" target="_blank" rel="noopener" aria-label="이미지 수정 페이지 열기">
+          <img class="app-title-icon" src="./icon-512.png" alt="">
+        </a>
         <div>
           <h1>swooyi's ALG note</h1>
           <p id="datasetLabel"></p>
@@ -135,10 +137,6 @@
         <p id="exportPanelDescription">브라우저에 저장된 수정 내용을 모은 결과입니다.</p>
       </div>
       <div class="export-actions">
-        <div class="export-mode-buttons" aria-label="출력 방식" data-i18n-attr="aria-label" data-i18n="exportMode">
-          <button id="exportFullButton" class="is-active" type="button" data-i18n="fullJson">전체 JSON</button>
-          <button id="exportEditsButton" type="button" data-i18n="editsOnly">편집분만</button>
-        </div>
         <button id="copyJsonButton" type="button" data-i18n="copy">복사</button>
         <button id="downloadJsonButton" type="button" data-i18n="download">다운로드</button>
         <button id="resetJsonButton" class="reset-json-button" type="button" data-i18n="resetJson">JSON 초기화</button>
@@ -186,6 +184,10 @@
             <div class="filter-menu">
               <button id="bookmarkFilterButton" class="filter-menu-button" type="button" data-filter-menu="bookmark" aria-expanded="false">bookmark</button>
               <div id="bookmarkFilterOptions" class="filter-option-panel" hidden></div>
+            </div>
+            <div class="filter-menu">
+              <button id="drillFilterButton" class="filter-menu-button" type="button" data-filter-menu="drill" aria-expanded="false">Drill</button>
+              <div id="drillFilterOptions" class="filter-option-panel drill-filter-options" hidden></div>
             </div>
             <button id="clearFiltersButton" type="button" data-i18n="clearFilters">필터 초기화</button>
           </div>
@@ -383,13 +385,25 @@
             </div>
           </div>
           <div class="drill-result-filter">
-            <label for="drillMinResultSecondsInput" data-i18n="minimumTime">최소 시간</label>
-            <input id="drillMinResultSecondsInput" type="number" min="0" step="0.1" inputmode="decimal" value="0.5" aria-label="선택할 최소 기록 시간" data-i18n-attr="aria-label" data-i18n="minimumRecordTime">
-            <span data-i18n="seconds">초</span>
-            <button id="drillSelectResultsByTimeButton" type="button">선택 · 0/0</button>
-            <button id="drillRestoreSelectionButton" type="button" data-i18n="restore">복구</button>
+            <details id="drillFilterPanel">
+              <summary data-i18n="practiceFilter">연습 필터</summary>
+              <label class="drill-good-filter"><input id="drillExcludeGoodInput" type="checkbox"><span class="drill-rating-icon is-good" role="img" aria-label="만족스러운 연습" data-i18n="goodPractice" data-i18n-attr="aria-label"></span><span data-i18n="excludeGood">있는 케이스 제외</span></label>
+              <fieldset class="drill-target-options">
+                <legend data-i18n="practiceTarget">연습 대상</legend>
+                <label><input type="radio" name="drillTarget" value="all" checked><span data-i18n="all">전체</span></label>
+                <label class="is-bad"><input type="radio" name="drillTarget" value="bad"><span class="drill-rating-icon is-bad" role="img" aria-label="추가 연습 필요" data-i18n="needsPractice" data-i18n-attr="aria-label"></span><span data-i18n="onlyBad">있는 케이스만</span></label>
+                <label><input type="radio" name="drillTarget" value="unpracticed"><span data-i18n="onlyUnpracticed">미연습 케이스만</span></label>
+              </fieldset>
+            </details>
+            <span id="drillFilterCount" aria-live="polite"></span>
+            <button id="drillResetFilterButton" type="button" data-i18n="reset">초기화</button>
           </div>
-          <div id="drillResultList" class="drill-result-list"></div>
+          <div class="drill-record-tabs" role="tablist" data-i18n="recordDetails" data-i18n-attr="aria-label" aria-label="기록 세부">
+            <button id="drillSessionTab" type="button" role="tab" aria-selected="true" aria-controls="drillResultList" data-i18n="session">세션</button>
+            <button id="drillStatsTab" type="button" role="tab" aria-selected="false" aria-controls="drillStatsPanel" data-i18n="statistics">통계</button>
+          </div>
+          <div id="drillResultList" class="drill-result-list" role="tabpanel" aria-labelledby="drillSessionTab"></div>
+          <div id="drillStatsPanel" class="drill-stats-panel" role="tabpanel" aria-labelledby="drillStatsTab" hidden></div>
         </aside>
       </div>
     </div>
@@ -426,9 +440,11 @@
   <script src="./js/data.js"></script>
   <script src="./js/normalize.js"></script>
   <script src="./js/render.js"></script>
+  <script src="./js/image-store.js"></script>
+  <script src="./js/case-player.js"></script>
   <script src="./js/app.js"></script>
   <script>
-    if ("serviceWorker" in navigator) {
+    if (location.protocol !== "file:" && "serviceWorker" in navigator) {
       window.addEventListener("load", () => {
         let refreshing = false;
         navigator.serviceWorker.addEventListener("controllerchange", () => {

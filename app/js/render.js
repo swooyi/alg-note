@@ -141,12 +141,85 @@ function renderBookmarkFilterOptions(container, selectedValues) {
 
 function renderSummary(element, dataset, rows, state) {
   const items = [makeSummaryItem(ui("all"), dataset.cases.length)];
-  const hasFilters = Boolean(state.groupFilters?.size || state.recognitionFilters?.size);
+  const hasFilters = Boolean(state.groupFilters?.size || state.recognitionFilters?.size || state.drillFilters?.size);
   const hasBookmarkFilter = Boolean(state.bookmarkFilters?.size);
   if (hasFilters) items.push(makeSummaryItem(ui("filteredShown"), rows.length));
   if (hasBookmarkFilter) items.push(makeSummaryItem(ui("bookmarks"), rows.length));
   items.push(makeSummaryItem(ui("selection"), state.selectedCards?.size || 0));
   element.replaceChildren(...items);
+}
+
+
+function ratingIcon(rating) {
+  const icon = document.createElement("span");
+  icon.className = `drill-rating-icon is-${rating}`;
+  icon.setAttribute("aria-hidden", "true");
+  return icon;
+}
+
+
+function renderDrillFilterOptions(container, selected) {
+  container.replaceChildren();
+  for (const [value, label] of [["all", ui("all")], ["good", ui("goodPresent")], ["bad", ui("badPresent")], ["unrated", ui("unrated")]]) {
+    const button = makeFilterButton({ value, label, selected: value === "all" ? !selected.size : selected.has(value), className: `drill-filter-choice is-${value}` });
+    if (["good", "bad"].includes(value)) button.prepend(ratingIcon(value));
+    container.append(button);
+  }
+}
+
+
+function makeAlgorithmNote(algorithm, value = "") {
+  const wrapper = document.createElement("div");
+  wrapper.className = "algorithm-note";
+  wrapper.dataset.algorithm = algorithm;
+  const display = document.createElement("div");
+  display.className = "algorithm-note-display";
+  const text = document.createElement("p");
+  text.className = "algorithm-note-text";
+  text.textContent = value;
+  if (value) display.append(text);
+  const button = (className, label) => {
+    const element = document.createElement("button");
+    element.type = "button";
+    element.className = className;
+    element.textContent = ui(label);
+    return element;
+  };
+  if (value) {
+    const more = button("toggle-algorithm-note", "moreNote");
+    more.setAttribute("aria-expanded", "false");
+    display.append(more);
+  }
+  wrapper.append(display);
+  return wrapper;
+}
+
+
+function makeCaseRatingCounts(item, state, allowReset = true) {
+  const counts = state.caseRatings?.get(item.id) || { good: 0, bad: 0 };
+  const section = document.createElement("div");
+  section.className = "case-rating-counts";
+  if (!(counts.good > 0 || counts.bad > 0)) {
+    section.hidden = true;
+    return section;
+  }
+  for (const rating of ["good", "bad"]) {
+    if (!(counts[rating] > 0)) continue;
+    const count = document.createElement("span");
+    count.className = `case-rating-count is-${rating}`;
+    count.setAttribute("aria-label", `${ui(rating === "good" ? "goodPractice" : "needsPractice")} ${counts[rating]}`);
+    count.append(ratingIcon(rating), String(counts[rating]));
+    section.append(count);
+  }
+  if (allowReset) {
+    const reset = document.createElement("button");
+    reset.className = "reset-case-ratings";
+    reset.type = "button";
+    reset.textContent = ui("reset");
+    reset.disabled = !(counts.good || counts.bad) || state.drill?.timerStatus === "running";
+    section.append(reset);
+  }
+  return section;
 }
 
 
@@ -295,9 +368,24 @@ function makeCaseCard(template, item, state) {
     node.querySelector(".scramble").textContent = item.scramble || "-";
 
     const algorithmList = node.querySelector(".algorithm-list");
-    for (const algorithm of item.algorithms) {
+    for (const [index, algorithm] of item.algorithms.entries()) {
       const li = document.createElement("li");
       li.textContent = text(algorithm);
+      if (state.renderingDetail && state.dataset?.puzzle === "FTO") {
+        li.classList.add("algorithm-playable");
+        const play = document.createElement("button");
+        play.type = "button";
+        play.className = "play-case-algorithm";
+        play.dataset.algorithmIndex = index;
+        play.textContent = "▶";
+        play.setAttribute("aria-label", `${ui("imageSimulator")} · ALG ${index + 1}`);
+        play.title = `${ui("imageSimulator")} · ALG ${index + 1}`;
+        const algorithmText = document.createElement("span");
+        algorithmText.textContent = text(algorithm);
+        li.replaceChildren(play, algorithmText);
+      }
+      const note = state.algorithmNotes?.get(item.id)?.[text(algorithm)];
+      if (isDetail && note) li.append(makeAlgorithmNote(text(algorithm), note));
       algorithmList.append(li);
     }
     if ((isDetail || isCompact || isList) && recognitions.length) cardTop.after(makeRecognitionBadges(recognitions, isCsp));
@@ -319,6 +407,44 @@ function makeCaseCard(template, item, state) {
 
   if (isCsp && item.csp) {
     renderCspCard(node, item, { isEditing, isCompact, isList });
+    if (isDetail && !isEditing) {
+      for (const [index, section] of [...node.querySelectorAll(".csp-parity")].entries()) {
+        const algorithm = item.algorithms[index] || "";
+        const note = state.algorithmNotes?.get(item.id)?.[algorithm];
+        if (note) section.append(makeAlgorithmNote(algorithm, note));
+      }
+    }
+  }
+  for (const [index, editor] of [...node.querySelectorAll(".algorithm-editor")].entries()) {
+    editor.dataset.originalAlgorithm = item.algorithms[index] || "";
+    editor.parentElement.append(makeAlgorithmNoteEditor(state.algorithmNotes?.get(item.id)?.[editor.dataset.originalAlgorithm]));
+  }
+  if (isDetail) {
+    const meta = document.createElement("div");
+    meta.className = "case-detail-meta";
+    const badges = node.querySelector(".recognition-badges");
+    if (badges) meta.append(badges);
+    meta.append(makeCaseRatingCounts(item, state));
+    cardTop.after(meta);
+  } else {
+    const counts = makeCaseRatingCounts(item, state, false);
+    if (isCompact) node.append(counts);
+    else cardTop.firstElementChild.append(counts);
+  }
+  if (!isDetail && item.algorithms.some((algorithm) => state.algorithmNotes?.get(item.id)?.[text(algorithm)])) {
+    const indicator = document.createElement("button");
+    indicator.type = "button";
+    indicator.className = "case-note-indicator";
+    indicator.textContent = "▤";
+    indicator.title = ui("algorithmNotes");
+    indicator.setAttribute("aria-label", ui("algorithmNotes"));
+    let badges = node.querySelector(".case-title-badges");
+    if (!badges) {
+      badges = document.createElement("span");
+      badges.className = "case-title-badges";
+      node.querySelector(".case-name").append(badges);
+    }
+    badges.append(indicator);
   }
 
   return node;
@@ -484,6 +610,29 @@ function makeAlgorithmEditor(algorithms) {
 }
 
 
+function makeAlgorithmNoteEditor(value = "") {
+  const field = document.createElement("div");
+  field.className = "card-algorithm-note-field";
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "toggle-card-algorithm-note";
+  toggle.textContent = ui("addNote");
+  toggle.setAttribute("aria-expanded", "false");
+  const label = document.createElement("label");
+  label.className = "card-algorithm-note-input";
+  label.hidden = true;
+  const title = document.createElement("span");
+  title.textContent = ui("algorithmNotes");
+  const input = document.createElement("textarea");
+  input.className = "card-algorithm-note-editor";
+  input.rows = 2;
+  input.value = value;
+  label.append(title, input);
+  field.append(toggle, label);
+  return field;
+}
+
+
 function makeAlgorithmEditorRow(algorithm) {
   const row = document.createElement("div");
   row.className = "algorithm-editor-row";
@@ -606,6 +755,18 @@ function renderCaseDetail(container, template, item, state) {
   const card = makeCaseCard(template, item, detailState);
   container.replaceChildren(top, card);
   container.hidden = false;
+  updateAlgorithmNoteOverflow(container);
+}
+
+
+function updateAlgorithmNoteOverflow(container) {
+  requestAnimationFrame(() => {
+    for (const note of container.querySelectorAll(".algorithm-note")) {
+      const text = note.querySelector(".algorithm-note-text");
+      const more = note.querySelector(".toggle-algorithm-note");
+      if (more) more.hidden = text.scrollHeight <= text.clientHeight;
+    }
+  });
 }
 
 
@@ -617,6 +778,7 @@ function renderCases(grid, template, rows, state) {
   }
 
   grid.replaceChildren(fragment);
+  if (state.viewMode === "full") updateAlgorithmNoteOverflow(grid);
 }
 
 
@@ -704,6 +866,8 @@ return {
   renderGroupFilterOptions,
   renderRecognitionFilterOptions,
   renderBookmarkFilterOptions,
+  renderDrillFilterOptions,
   renderSummary,
+  makeAlgorithmNoteEditor,
 };
 })();

@@ -50,7 +50,7 @@
       "name": "F2L 1-3",
       "group": "f2l-1",
       "algorithms": [
-        "U2' R' F R F' R U2 R'",
+        "U'2 R' F R F' R U2 R'",
         "U R B U' B' R'",
         "U R' F R F2 U F"
       ],
@@ -97,7 +97,7 @@
       "group": "f2l-1",
       "algorithms": [
         "R' U' F U R2 U' R' F'",
-        "U R U R' U2' R' F R F'",
+        "U R U R' U'2 R' F R F'",
         "U R U R' U2 M' U R U' r'"
       ],
       "scramble": "L F R' F R F' R' F' R L'",
@@ -164,7 +164,7 @@
       "name": "F2L 1-8",
       "group": "f2l-1",
       "algorithms": [
-        "M' U R U' r2 U2' R U R' U r",
+        "M' U R U' r2 U'2 R U R' U r",
         "U2 R' F R F' U2 R' F R F'"
       ],
       "scramble": "B L F' L F L2 F B' R' F' R",
@@ -251,7 +251,7 @@
       "algorithms": [
         "U' R B U B' R'",
         "y U' F R U R' F'",
-        "U2' R U R' U' R' F R F' R U' R'"
+        "U'2 R U R' U' R' F R F' R U' R'"
       ],
       "scramble": "R B U L U L' B' U2 R'",
       "scrambles": [
@@ -337,7 +337,7 @@
       "name": "F2L 2-8",
       "group": "f2l-2",
       "algorithms": [
-        "U' R U' R2' D' r U r' D R",
+        "U' R U' R'2 D' r U r' D R",
         "r U r' U2 M' U R r'"
       ],
       "scramble": "R' D' L F' L' U F2 U F2 U' D R",
@@ -636,7 +636,7 @@
       "group": "f2l-4",
       "algorithms": [
         "R U2 B U' B' R'",
-        "U F U R U' R2' F' R",
+        "U F U R U' R'2 F' R",
         "R U R' U' r' U2 R U R' U r"
       ],
       "scramble": "L F U F' U' L' U2 R U' R'",
@@ -658,7 +658,7 @@
       "name": "F2L 4-7",
       "group": "f2l-4",
       "algorithms": [
-        "R U' R2' F R F' R U2' R'",
+        "R U' R'2 F R F' R U'2 R'",
         "R U' R' F2 r U r' F"
       ],
       "scramble": "F' L F' L' F L' U2 L F R U R'",
@@ -870,7 +870,7 @@
       "name": "F2L 6-1",
       "group": "f2l-6",
       "algorithms": [
-        "y' U R' U' R U R' U2' R"
+        "y' U R' U' R U R' U'2 R"
       ],
       "scramble": "B' R2 F R2 F' B U F' U F",
       "scrambles": [
@@ -979,7 +979,7 @@
       "name": "F2L 6-6",
       "group": "f2l-6",
       "algorithms": [
-        "U' R' F R F' R U2' R2' F R F'",
+        "U' R' F R F' R U'2 R'2 F R F'",
         "R2 D r' U' r D' R' U R'"
       ],
       "scramble": "R2 B' R' B U' R' F R' F' R",
@@ -1001,9 +1001,9 @@
       "name": "F2L 6-7",
       "group": "f2l-6",
       "algorithms": [
-        "U2 y' R' F' U' F U2' R",
-        "U2 F' L' U' L U2' F",
-        "U R U R2' F R F' r U' r' U' r U r'"
+        "U2 y' R' F' U' F U'2 R",
+        "U2 F' L' U' L U'2 F",
+        "U R U R'2 F R F' r U' r' U' r U r'"
       ],
       "scramble": "F' D2 R2 L2 U2 D2 R2 L U L F",
       "scrambles": [
@@ -1024,7 +1024,7 @@
       "name": "F2L 6-8",
       "group": "f2l-6",
       "algorithms": [
-        "U R U R D r' U' r D' R2' U' R U R'",
+        "U R U R D r' U' r D' R'2 U' R U R'",
         "U R U' R' d' L' U L2 F' L' F",
         "U R U' R' F' L' U2 L U' F"
       ],
@@ -1111,7 +1111,7 @@
       "algorithms": [
         "R' D' r U2 r' D F R F'",
         "r R' U' R U2 R' U' R U2 r'",
-        "y' R2' F R F' U R U2' R' U R"
+        "y' R'2 F R F' U R U'2 R' U R"
       ],
       "scramble": "F' U' F U2 F' U2 F2 R' F' R",
       "scrambles": [
@@ -1260,7 +1260,7 @@
       "name": "F2L 8-3",
       "group": "f2l-8",
       "algorithms": [
-        "r' U2 R2 U R2' U r",
+        "r' U2 R2 U R'2 U r",
         "U2 r' D' r U r' D r2 U' R' U R U r'"
       ],
       "scramble": "R2 L' F B' D2 B' D2 F' R2 B2 L",
@@ -1350,8 +1350,8 @@
       "name": "F2L 8-7",
       "group": "f2l-8",
       "algorithms": [
-        "U2 r' U r2 U' r2' U' r U2' r U r'",
-        "U' r' F' r U r U' r2' F2 r F",
+        "U2 r' U r2 U' r'2 U' r U'2 r U r'",
+        "U' r' F' r U r U' r'2 F2 r F",
         "r' U2 R U R' U r2 U' R' U' R U r'"
       ],
       "scramble": "F B2 R' D2 R F2 B2 L F U L U' L'",
@@ -1394,7 +1394,7 @@
       "name": "F2L 9-1",
       "group": "f2l-9",
       "algorithms": [
-        "y' U2' R' U R U R' U' R",
+        "y' U'2 R' U R U R' U' R",
         "d R' U' R U' R' U' R"
       ],
       "scramble": "R U2 B U B' R' U' F' U F",
@@ -1504,7 +1504,7 @@
       "group": "f2l-9",
       "algorithms": [
         "U' r U2 r' U' r U' r' U r U2 r'",
-        "U r U' r' U2' r U r' R U' R'"
+        "U r U' r' U'2 r U r' R U' R'"
       ],
       "scramble": "R' F R D R2 B R2 D2 F L2 D F2",
       "scrambles": [
@@ -1546,7 +1546,7 @@
       "group": "f2l-9",
       "algorithms": [
         "U r U r' U2 M' U M R U' R'",
-        "U2 R U R' U' R' F R F' R U2' R2' F R F'",
+        "U2 R U R' U' R' F R F' R U'2 R'2 F R F'",
         "U2 R U R D r' U' r D' R' U R'"
       ],
       "scramble": "F2 R U' R2 F R U R U R2 F2 R",
@@ -1611,7 +1611,7 @@
       "group": "f2l-10",
       "algorithms": [
         "R U R2 F R F' R U R'",
-        "U2' r U' R' U' R U r'",
+        "U'2 r U' R' U' R U r'",
         "U F' U' F' U' R U R'"
       ],
       "scramble": "R F' U' F R' F D R2 D' R2 F'",
@@ -1635,7 +1635,7 @@
       "algorithms": [
         "U' r' D' r U' r' D r2 U' r' U' r U r'",
         "U' F' U' F r U' r' U' r U r'",
-        "R' F R F' U2' R U R' U' R U R'"
+        "R' F R F' U'2 R U R' U' R U R'"
       ],
       "scramble": "R U' R' U F' U2 L' U' L F2 R' F' R",
       "scrambles": [
@@ -1721,7 +1721,7 @@
       "name": "F2L 10-8",
       "group": "f2l-10",
       "algorithms": [
-        "r U' r' U' r U r' U2' R' F R F'",
+        "r U' r' U' r U r' U'2 R' F R F'",
         "R U' R D r' U' r D' R' U' R'",
         "R' D' R U M' U r' D R2 U R'"
       ],
@@ -1743,7 +1743,7 @@
       "group": "f2l-11",
       "algorithms": [
         "y' R U2 R2 U' R2 U' R'",
-        "R U2' R' U R U R' F' U' F"
+        "R U'2 R' U R U R' F' U' F"
       ],
       "scramble": "L F2 D F D' L' U F2 U2 F'",
       "scrambles": [
@@ -1765,7 +1765,7 @@
       "group": "f2l-11",
       "algorithms": [
         "U' R U R' U' R U' R' U' F' U' F",
-        "R U' R' U R U' R2' F R F' R U' R'"
+        "R U' R' U R U' R'2 F R F' R U' R'"
       ],
       "scramble": "R U R' F R' F' R2 U R' U' R U R'",
       "scrambles": [
@@ -1869,7 +1869,7 @@
       "algorithms": [
         "F' L' U' L U' L' U L U' F",
         "F' r' F' r U' r' F r U' F",
-        "R' D' r U r U R U' r2' D"
+        "R' D' r U r U R U' r'2 D"
       ],
       "scramble": "R' F R F' U F' U L' U L F",
       "scrambles": [
@@ -1910,7 +1910,7 @@
       "name": "F2L 12-1",
       "group": "f2l-12",
       "algorithms": [
-        "R' U2' R2 U R2' U R",
+        "R' U'2 R2 U R'2 U R",
         "R U' R' U R U' R' U2 R U' R'"
       ],
       "scramble": "R B' U2 B U2 R' U' B' R U R' B",
@@ -2215,7 +2215,7 @@
       "group": "f2l-13",
       "algorithms": [
         "R' F R U2 r U' r' U2 F'",
-        "U2' r U2' r' U' r U r' U r U2' r'"
+        "U'2 r U'2 r' U' r U r' U r U'2 r'"
       ],
       "scramble": "F D2 B' R' B2 R B2 R B D2 F'",
       "scrambles": [
@@ -2404,7 +2404,7 @@
       "name": "F2L 14-8",
       "group": "f2l-14",
       "algorithms": [
-        "U2 r U' r' U M' U2' R U r'",
+        "U2 r U' r' U M' U'2 R U r'",
         "U2 r U' r' U2 r U r' U R U R'",
         "U2 r U' r' U' R U2 R' r U' r'"
       ],
@@ -2472,7 +2472,7 @@
       "name": "F2L 15-3",
       "group": "f2l-15",
       "algorithms": [
-        "F' U L' U L U2' F",
+        "F' U L' U L U'2 F",
         "F' U F U2 R U R'",
         "U R' F R F' U R U R'"
       ],
@@ -2495,9 +2495,9 @@
       "name": "F2L 15-4",
       "group": "f2l-15",
       "algorithms": [
-        "R U2' R' U R U R2' F R F'",
+        "R U'2 R' U R U R'2 F R F'",
         "R' D' R U' R' D F R F'",
-        "U' R' F R F' R U R' U2' R U R'"
+        "U' R' F R F' R U R' U'2 R U R'"
       ],
       "scramble": "L F' L' F R U F U' F' R'",
       "scrambles": [
@@ -2537,7 +2537,7 @@
       "name": "F2L 15-6",
       "group": "f2l-15",
       "algorithms": [
-        "R U2' R2' F R F' U' R U2' R'"
+        "R U'2 R'2 F R F' U' R U'2 R'"
       ],
       "scramble": "R B L U' L F' L' F U2 L' B' R'",
       "scrambles": [
@@ -2621,7 +2621,7 @@
       "name": "F2L 16-2",
       "group": "f2l-16",
       "algorithms": [
-        "R U R' U2' R U' R' U' F' U F",
+        "R U R' U'2 R U' R' U' F' U F",
         "U F R U R' U' F' U R U' R'",
         "U R F R U R' U' F' R'"
       ],
@@ -2689,7 +2689,7 @@
       "group": "f2l-16",
       "algorithms": [
         "r U' r' U l' U2 R U' R' U2 l",
-        "U2 r' F' r U' r' F2' r2 U' r' U2' r U r'",
+        "U2 r' F' r U' r' F'2 r2 U' r' U'2 r U r'",
         "U r U' r' U2 r U r' U r U' r' U' r U r'"
       ],
       "scramble": "F' U' L' U L U F U2 R U R'",
@@ -2712,7 +2712,7 @@
       "group": "f2l-16",
       "algorithms": [
         "U2 R' D' r U' M U' R' D R",
-        "U r U' r' U2' r U r' U' R U R'"
+        "U r U' r' U'2 r U r' U' R U R'"
       ],
       "scramble": "L D' L' D R' D' L F D R L'",
       "scrambles": [
@@ -2732,7 +2732,7 @@
       "group": "f2l-16",
       "algorithms": [
         "F' U R U R' U' R' F2 R F'",
-        "U2 R U R' r U' r' U2' r U r'"
+        "U2 R U R' r U' r' U'2 r U r'"
       ],
       "scramble": "R U' R U B U' B' R2 F R' F' R",
       "scrambles": [
@@ -2754,7 +2754,7 @@
       "group": "f2l-16",
       "algorithms": [
         "U' r U' R' U' M U2 r U r'",
-        "U R U2' R' r U' r' U2' r U r'",
+        "U R U'2 R' r U' r' U'2 r U r'",
         "R U' R2 D' r U' r' D R2 U' R'"
       ],
       "scramble": "F' L' U2 L F R B U B' R'",
@@ -2798,7 +2798,7 @@
       "group": "f2l-17",
       "algorithms": [
         "F' U' F U R U' R' U R U' R'",
-        "R U2' R' U r U' r' U' r U r'"
+        "R U'2 R' U r U' r' U' r U r'"
       ],
       "scramble": "R U R' U' R B' U' R' U R B U R'",
       "scrambles": [
@@ -2840,7 +2840,7 @@
       "name": "F2L 17-4",
       "group": "f2l-17",
       "algorithms": [
-        "F' U2' F R U R' U2 R U' R'",
+        "F' U'2 F R U R' U2 R U' R'",
         "r' R2 U2 R' U' R U R' U' r R'"
       ],
       "scramble": "R U L' B U' B2 U R B R2 L",
@@ -2886,7 +2886,7 @@
       "group": "f2l-17",
       "algorithms": [
         "R U2 R' F U R U' R2 F' R",
-        "U' R U' R' U2 R U2 R2' F R F'",
+        "U' R U' R' U2 R U2 R'2 F R F'",
         "R U R' U2 F' U F R U R'"
       ],
       "scramble": "L' U2 R B' U' R' U R2 B R' U2 R' L",
@@ -2928,8 +2928,8 @@
       "name": "F2L 17-8",
       "group": "f2l-17",
       "algorithms": [
-        "r' D' r U2' r' D r2 U' R' U2' R U r'",
-        "F' r U' r' F2 R U2' R2 F R F'",
+        "r' D' r U'2 r' D r2 U' R' U'2 R U r'",
+        "F' r U' r' F2 R U'2 R2 F R F'",
         "U2 F' U2 F U' F R' F' R2 U R'"
       ],
       "scramble": "R U2 B' R B R2 U2 F' U2 F",
@@ -2995,7 +2995,7 @@
       "group": "f2l-18",
       "algorithms": [
         "R U' R' F' U F U R U R'",
-        "U R U' R2' F R F' U R U' R'",
+        "U R U' R'2 F R F' U R U' R'",
         "U R' F R F' R U' R' U F' U' F"
       ],
       "scramble": "R U' R' U R B U' B' U' R'",
@@ -3017,7 +3017,7 @@
       "name": "F2L 18-4",
       "group": "f2l-18",
       "algorithms": [
-        "R' F R F' R U' R2' F R F'",
+        "R' F R F' R U' R'2 F R F'",
         "R U R' U' R U2 R' F' U2 F"
       ],
       "scramble": "R2 B' R' B U2 R' F R' F' R",
@@ -3041,7 +3041,7 @@
       "algorithms": [
         "U2 R U R2 D' r U' r' D R U R U' R'",
         "r U R' U R U r' U M' U2 R U r'",
-        "R' D' R U2 R' D R r U' r' U2' r U r'"
+        "R' D' R U2 R' D R r U' r' U'2 r U r'"
       ],
       "scramble": "R2 B' R F' U F U' R B2 U' B'",
       "scrambles": [
@@ -3062,8 +3062,8 @@
       "name": "F2L 18-6",
       "group": "f2l-18",
       "algorithms": [
-        "R U' R2' F R F' r U' r' U' r U r'",
-        "R' D R2 U2' r' U2 R U r D' R2"
+        "R U' R'2 F R F' r U' r' U' r U r'",
+        "R' D R2 U'2 r' U2 R U r D' R2"
       ],
       "scramble": "R2 D L' B' R' B2 L U2 R2 D' R",
       "scrambles": [
@@ -3084,7 +3084,7 @@
       "algorithms": [
         "R U R' d' r' F r2 U' r' F",
         "R U R' F' L' U2 L U' F",
-        "R U' R D r' U' r D' R2' U' R U R'"
+        "R U' R D r' U' r D' R'2 U' R U R'"
       ],
       "scramble": "F' U2 F B' R' F R' F' R2 B",
       "scrambles": [
@@ -3105,8 +3105,8 @@
       "name": "F2L 18-8",
       "group": "f2l-18",
       "algorithms": [
-        "F R' F' R2 U' R' U R U2' R2' F R F'",
-        "F R U R' U' F' R U2' R2 F R F'"
+        "F R' F' R2 U' R' U R U'2 R'2 F R F'",
+        "F R U R' U' F' R U'2 R2 F R F'"
       ],
       "scramble": "R2 B' R' B U' R' F U R U' R' F'",
       "scrambles": [
@@ -3147,7 +3147,7 @@
       "group": "f2l-19",
       "algorithms": [
         "U R U2 R2 U' F U R U' F'",
-        "U' R U' R' U r U' R' U2' R U r'",
+        "U' R U' R' U r U' R' U'2 R U r'",
         "R' U R U' R2 F R2 U R' U' R F'"
       ],
       "scramble": "F' U' F2 U R U' B' R B R2 F'",
@@ -3171,7 +3171,7 @@
       "algorithms": [
         "U R' F R F' R U' R' U2 R U' R'",
         "F' U R U R' U' R' F R2 U R'",
-        "U R U2' r' U R U' R' U' M'"
+        "U R U'2 r' U R U' R' U' M'"
       ],
       "scramble": "R U' R' U F' L' U' B' U' B L F",
       "scrambles": [
@@ -3194,7 +3194,7 @@
       "algorithms": [
         "F' U' F U2 R U' R' U R U' R'",
         "U' r U' R' U' R U r' U R U' R'",
-        "U R U2' R' U R U R' U2' R' F R F'"
+        "U R U'2 R' U R U R' U'2 R' F R F'"
       ],
       "scramble": "R U B U B' R' U' R U R'",
       "scrambles": [
@@ -3280,7 +3280,7 @@
       "name": "F2L 19-8",
       "group": "f2l-19",
       "algorithms": [
-        "U2 R U R2' r U' M U2' r U' r'",
+        "U2 R U R'2 r U' M U'2 r U' r'",
         "R' U' F' U F2 R2 U R' U' R' F' R"
       ],
       "scramble": "R U2 B' R B R2 U F' U' F",
@@ -3325,7 +3325,7 @@
       "group": "f2l-20",
       "algorithms": [
         "R' U' R' F R F' U R2 U' R'",
-        "U2' r U' R' U R U r' F' U' F"
+        "U'2 r U' R' U R U r' F' U' F"
       ],
       "scramble": "R' U' F U R U' F2 U2 F",
       "scrambles": [
@@ -3409,8 +3409,8 @@
       "name": "F2L 20-6",
       "group": "f2l-20",
       "algorithms": [
-        "r' D' r U r' D r2 U' r' U2' r U r'",
-        "U' R U' r' U r U2' r' U' r U R'",
+        "r' D' r U r' D r2 U' r' U'2 r U r'",
+        "U' R U' r' U r U'2 r' U' r U R'",
         "F D R2 U' R' U2 R U R2 D' F'"
       ],
       "scramble": "F D R2 U' R' U2 R U R2 D' F'",
@@ -3454,7 +3454,7 @@
       "name": "F2L 20-8",
       "group": "f2l-20",
       "algorithms": [
-        "U' R U' R2' F R F' U' R' F R F'",
+        "U' R U' R'2 F R F' U' R' F R F'",
         "U' R U R' U r U' r' U2 r U r'",
         "U2 R U' R' U' r U' r' U2 r U r'"
       ],
@@ -3520,7 +3520,7 @@
       "name": "F2L 21-3",
       "group": "f2l-21",
       "algorithms": [
-        "U2' R U R2' F R F'"
+        "U'2 R U R'2 F R F'"
       ],
       "scramble": "F' B U2 B' U2 F B' R B R'",
       "scrambles": [
@@ -3541,7 +3541,7 @@
       "name": "F2L 21-4",
       "group": "f2l-21",
       "algorithms": [
-        "U R U' R' U2 R U' R2' F R F'",
+        "U R U' R' U2 R U' R'2 F R F'",
         "R U R' U' F' U F R U R'",
         "U2 F' r U R' U' r' F2 R F'"
       ],
@@ -3610,7 +3610,7 @@
       "group": "f2l-21",
       "algorithms": [
         "U F R' F' R2 U' R' U R U R'",
-        "U2' R U r' U R U' R' U' M'",
+        "U'2 R U r' U R U' R' U' M'",
         "r' U2 R' U R2 U' R U2 r"
       ],
       "scramble": "F' U2 F U R U' B U' B' R'",
@@ -3632,9 +3632,9 @@
       "name": "F2L 21-8",
       "group": "f2l-21",
       "algorithms": [
-        "U2' F' r' F2 r2 U' r' F2",
+        "U'2 F' r' F2 r2 U' r' F2",
         "U R' F R F2 U' F R U2 R'",
-        "U M' U R U' r' U R U R2' F R F'"
+        "U M' U R U' r' U R U R'2 F R F'"
       ],
       "scramble": "R U' R2 F R F L F L' U' F",
       "scrambles": [
@@ -3678,7 +3678,7 @@
       "name": "F2L 22-2",
       "group": "f2l-22",
       "algorithms": [
-        "U2' R U R' F' U' F",
+        "U'2 R U R' F' U' F",
         "y' R' F' U F U R",
         "F' L' U L U F"
       ],
@@ -3746,7 +3746,7 @@
       "name": "F2L 22-5",
       "group": "f2l-22",
       "algorithms": [
-        "r U' r' U2' r U r'",
+        "r U' r' U'2 r U r'",
         "F' L' U2 L F"
       ],
       "scramble": "F' L' B' U' B L U2 F",
@@ -3791,7 +3791,7 @@
       "name": "F2L 22-7",
       "group": "f2l-22",
       "algorithms": [
-        "U2' R' F R F' R U R2' F R F'",
+        "U'2 R' F R F' R U R'2 F R F'",
         "r U' r' U2 r U' R' U' R U' r'"
       ],
       "scramble": "R2 B' R' B R' F R' F' R",
@@ -3814,7 +3814,7 @@
       "group": "f2l-22",
       "algorithms": [
         "U' R U2 r' U r U2 r' U' r U R'",
-        "U' F R' F' R U2' r U' r' U r U r'",
+        "U' F R' F' R U'2 r U' r' U r U r'",
         "M' U R U' r' F2 r U r' U2 F"
       ],
       "scramble": "F' U F2 R' F' R U F R' F' R",
@@ -3837,8 +3837,8 @@
       "group": "f2l-23",
       "algorithms": [
         "U R U' R' U' R U' R' U R U' R'",
-        "U2 R2 U2' R' U' R U' R2'",
-        "R U' R2' D' R U2 R' D R"
+        "U2 R2 U'2 R' U' R U' R'2",
+        "R U' R'2 D' R U2 R' D R"
       ],
       "scramble": "R2 U R' U' R2 L2 D2 R D2 L2",
       "scrambles": [
@@ -3880,7 +3880,7 @@
       "name": "F2L 23-3",
       "group": "f2l-23",
       "algorithms": [
-        "U R U' R' U' R U' R2' F R F'",
+        "U R U' R' U' R U' R'2 F R F'",
         "F' U' F U' R U' R' U R U' R'"
       ],
       "scramble": "R2 B' R' B U2 R' U R U R'",
@@ -3944,7 +3944,7 @@
       "name": "F2L 23-6",
       "group": "f2l-23",
       "algorithms": [
-        "R U2' R' U r U' R' U' R U r'",
+        "R U'2 R' U r U' R' U' R U r'",
         "R U2 R' F' U F U' R U R'"
       ],
       "scramble": "R U R' U R B' R B R' U' R'",
@@ -3968,7 +3968,7 @@
       "algorithms": [
         "U2 r U' r' U r U r' U R U' R'",
         "M U2 R U R' U r U' R'",
-        "U2' r U' r' U r U r' U R U' R'"
+        "U'2 r U' r' U r U r' U R U' R'"
       ],
       "scramble": "R U L' B' R B' R' B2 R' L",
       "scrambles": [
@@ -3989,8 +3989,8 @@
       "name": "F2L 23-8",
       "group": "f2l-23",
       "algorithms": [
-        "F' U' F U' R U' R2' F R F'",
-        "U' R' F R F' U2' R U' R' U R' F R F'",
+        "F' U' F U' R U' R'2 F R F'",
+        "U' R' F R F' U'2 R U' R' U R' F R F'",
         "U F R' F' R2 r' U R U R' U' M'"
       ],
       "scramble": "F B' D R' D' F2 B U' F R U' R'",
@@ -4010,7 +4010,7 @@
       "name": "F2L 24-1",
       "group": "f2l-24",
       "algorithms": [
-        "U' R U R2' F R F' R U' R'"
+        "U' R U R'2 F R F' R U' R'"
       ],
       "scramble": "F R2 D2 B' D' B D' R2 F'",
       "scrambles": [
@@ -4091,8 +4091,8 @@
       "name": "F2L 24-5",
       "group": "f2l-24",
       "algorithms": [
-        "U' R U R2' F R F' U' R' F R F'",
-        "U' R U' R' U r U' r' U2' r U r'",
+        "U' R U R'2 F R F' U' R' F R F'",
+        "U' R U' R' U r U' r' U'2 r U r'",
         "F U R U' R' F2 U' F R U' R'"
       ],
       "scramble": "F' U F R2 B' R' B U R'",
@@ -4114,9 +4114,9 @@
       "name": "F2L 24-6",
       "group": "f2l-24",
       "algorithms": [
-        "r U' r' U' r U r2' D' r U2' r' D r",
+        "r U' r' U' r U r'2 D' r U'2 r' D r",
         "r U R' U R U r' U' r U r'",
-        "r U' r' U' r U r' F' U2' F"
+        "r U' r' U' r U r' F' U'2 F"
       ],
       "scramble": "R U F' L' F R' F' U2 L F",
       "scrambles": [
@@ -4137,8 +4137,8 @@
       "name": "F2L 24-7",
       "group": "f2l-24",
       "algorithms": [
-        "U r U' r' U2' r U r' R U2' R' U R U' R'",
-        "F' U' r U2 R' U' R U' r' U2' F",
+        "U r U' r' U'2 r U r' R U'2 R' U R U' R'",
+        "F' U' r U2 R' U' R U' r' U'2 F",
         "U' R U' R' F' L' U' L U' F"
       ],
       "scramble": "F2 U' F U' F' U2 F' R' F' R",
@@ -4291,7 +4291,7 @@
       "name": "F2L 25-6",
       "group": "f2l-25",
       "algorithms": [
-        "U2 r U2' R' U R U' R' U2' R U' r'",
+        "U2 r U'2 R' U R U' R' U'2 R U' r'",
         "r' U' R' U' R' U R U r"
       ],
       "scramble": "F D B' R F' B U' F D' F'",
@@ -4360,7 +4360,7 @@
       "group": "f2l-26",
       "algorithms": [
         "U2 R U' R' U' r U' R' U R U r'",
-        "r2 U2' R2' F R2 U2' r2' F"
+        "r2 U'2 R'2 F R2 U'2 r'2 F"
       ],
       "scramble": "R F B' D' R' D F' B R'",
       "scrambles": [
@@ -4470,7 +4470,7 @@
       "name": "F2L 26-6",
       "group": "f2l-26",
       "algorithms": [
-        "r U r' U2' r U' R' U2' R U' r'",
+        "r U r' U'2 r U' R' U'2 R U' r'",
         "R' D' R U' M' U r' D R"
       ],
       "scramble": "D2 B L F L F' L' F' L' B' D2",
@@ -4516,7 +4516,7 @@
       "group": "f2l-26",
       "algorithms": [
         "r U2 R' U R U' r' U2 r U' r'",
-        "U R U R D r' U' r D' R2'"
+        "U R U R D r' U' r D' R'2"
       ],
       "scramble": "D R2 D L' B L D' R' U' R' D'",
       "scrambles": [
@@ -4645,9 +4645,9 @@
       "name": "F2L 27-6",
       "group": "f2l-27",
       "algorithms": [
-        "U2 r U' r' U r U r' R U2' R'",
+        "U2 r U' r' U r U r' R U'2 R'",
         "R U' R2 U' F U R2 U' R' F'",
-        "R U' R' U R U R' U2' R' F R F'"
+        "R U' R' U R U R' U'2 R' F R F'"
       ],
       "scramble": "F' L' U' L U F2 R' F' R2 U R'",
       "scrambles": [
@@ -4668,7 +4668,7 @@
       "group": "f2l-27",
       "algorithms": [
         "R U' R2 U' F U R U' F'",
-        "U2 R U R' U R U R2' F R F'"
+        "U2 R U R' U R U R'2 F R F'"
       ],
       "scramble": "R B2 U' B R' B' U B R2 B R2",
       "scrambles": [
@@ -4780,7 +4780,7 @@
       "group": "f2l-28",
       "algorithms": [
         "R U2 R' F' U2 F",
-        "U2 R' F R F' r U' r' U2' r U r'"
+        "U2 R' F R F' r U' r' U'2 r U r'"
       ],
       "scramble": "F' U2 F L F2 R' F2 R L'",
       "scrambles": [
@@ -4802,7 +4802,7 @@
       "group": "f2l-28",
       "algorithms": [
         "y L' U L2 F' L' F",
-        "F' U2' r U' r' F2",
+        "F' U'2 r U' r' F2",
         "R U R2 D' r U' r' D R"
       ],
       "scramble": "F' U' F R U' R' U F' U' F",
@@ -4824,7 +4824,7 @@
       "name": "F2L 28-6",
       "group": "f2l-28",
       "algorithms": [
-        "R U2 R' U R2 D r' U r D' R2'",
+        "R U2 R' U R2 D r' U r D' R'2",
         "R U R' F R U R' U' F2 U' F"
       ],
       "scramble": "R U2 B U B' U R' F' U' F",
@@ -4871,7 +4871,7 @@
       "algorithms": [
         "U r U r' U2 r R' U r' R2 U R'",
         "R U2 R' U R' D' r U r' D R",
-        "R U2' R2' F R F2 U2' F"
+        "R U'2 R'2 F R F2 U'2 F"
       ],
       "scramble": "F' U2 F U' R2 B' R' B U' R'",
       "scrambles": [
@@ -4957,9 +4957,9 @@
       "name": "F2L 29-4",
       "group": "f2l-29",
       "algorithms": [
-        "R' F R F' U R U R' U2' R' F R F'",
-        "R U' R2' D' r U' r' D F R F'",
-        "U2 R U' R' U' R' F R U R U' R2' F' R"
+        "R' F R F' U R U R' U'2 R' F R F'",
+        "R U' R'2 D' r U' r' D F R F'",
+        "U2 R U' R' U' R' F R U R U' R'2 F' R"
       ],
       "scramble": "F' U F R' U' D' F2 U F2 D R",
       "scrambles": [
@@ -5001,7 +5001,7 @@
       "name": "F2L 29-6",
       "group": "f2l-29",
       "algorithms": [
-        "U R2 D r' U' r D' R2' U' R U2 R'",
+        "U R2 D r' U' r D' R'2 U' R U2 R'",
         "F' r2 D2 r' U r D2 r' U2 r' F2",
         "U2 r U' r' U2 r U r' U' R U2 R' U R U R'"
       ],
@@ -5046,7 +5046,7 @@
       "name": "F2L 29-8",
       "group": "f2l-29",
       "algorithms": [
-        "R U' R2' D' r U' r' D R U R U' R'",
+        "R U' R'2 D' r U' r' D R U R U' R'",
         "M' U' M U2 r U' R' U R U' r'"
       ],
       "scramble": "R U L' B' R' D2 L2 F' L2 D2 L",
@@ -5087,7 +5087,7 @@
       "name": "F2L 30-2",
       "group": "f2l-30",
       "algorithms": [
-        "U2' F' U F R U R'",
+        "U'2 F' U F R U R'",
         "R U R' F U R U' R2 F' R"
       ],
       "scramble": "F' U' R U B U' B' R' F",
@@ -5195,7 +5195,7 @@
       "algorithms": [
         "R U R' U r U' r' U' r U r'",
         "U' R U' R' r U' R' U2 R U r'",
-        "U' R d' R U2' R' F'"
+        "U' R d' R U'2 R' F'"
       ],
       "scramble": "R F R2 B' R2 F' B U' R'",
       "scrambles": [
@@ -5217,7 +5217,7 @@
       "group": "f2l-30",
       "algorithms": [
         "R U R' U' R' D' r U r' D R2 U R'",
-        "r U R' U' R U r' U2' M' U M",
+        "r U R' U' R U r' U'2 M' U M",
         "U2 F R' F' R U F R' F' R U' R U2 R'"
       ],
       "scramble": "D B' D' F D R' B D' F2 U' F",
@@ -5302,7 +5302,7 @@
       "name": "F2L 31-4",
       "group": "f2l-31",
       "algorithms": [
-        "F' U F R U2' R'",
+        "F' U F R U'2 R'",
         "R' F' R U R U' R' U2 F"
       ],
       "scramble": "R L' B' U' B U L U2 R'",
@@ -5565,8 +5565,8 @@
       "name": "F2L 32-8",
       "group": "f2l-32",
       "algorithms": [
-        "U2' r U2' r' U2 r U' r' U2 r U2' r'",
-        "U2' R' F R F' U2' r U' r' U2' r U r'"
+        "U'2 r U'2 r' U2 r U' r' U2 r U'2 r'",
+        "U'2 R' F R F' U'2 r U' r' U'2 r U r'"
       ],
       "scramble": "D2 B' R' U2 R B U2 B L' B' L D2",
       "scrambles": [
@@ -5631,7 +5631,7 @@
       "name": "F2L 33-3",
       "group": "f2l-33",
       "algorithms": [
-        "U' R U' R' U2' R U R' U2' R' F R F'",
+        "U' R U' R' U'2 R U R' U'2 R' F R F'",
         "R' F R F' R2 U R' U' R' F R F' R'"
       ],
       "scramble": "D B' U' D' R' U R D B D'",
@@ -5742,7 +5742,7 @@
       "name": "F2L 33-8",
       "group": "f2l-33",
       "algorithms": [
-        "U' F R' F' R2 U2' R2' F R F'",
+        "U' F R' F' R2 U'2 R'2 F R F'",
         "D' r U' r' F2 U R' F R F2 D"
       ],
       "scramble": "R2 B' R' B U' R2 F R F'",
@@ -5808,7 +5808,7 @@
       "group": "f2l-34",
       "algorithms": [
         "U R U' R' F R' F' R2 U R'",
-        "U' R U2' R' U' r U' r' U' r U r'",
+        "U' R U'2 R' U' r U' r' U' r U r'",
         "R U' R' U' R' F R F' U R U R'"
       ],
       "scramble": "D B U L U L' U2 B' D'",
@@ -5918,7 +5918,7 @@
       "name": "F2L 34-8",
       "group": "f2l-34",
       "algorithms": [
-        "U r U2' r' U2' r U r' U2' r U2' r'",
+        "U r U'2 r' U'2 r U r' U'2 r U'2 r'",
         "R U R D r' U r D' R' U' R'"
       ],
       "scramble": "R L' U B2 U B' U' B' U' B' R' L",
@@ -5939,7 +5939,7 @@
       "name": "F2L 35-1",
       "group": "f2l-35",
       "algorithms": [
-        "U2' R U R' y' U' R' U R",
+        "U'2 R U R' y' U' R' U R",
         "R' D' r U' r' D F R F'"
       ],
       "scramble": "R U' B' R' U' R U B R'",
@@ -6006,7 +6006,7 @@
       "name": "F2L 35-4",
       "group": "f2l-35",
       "algorithms": [
-        "U2' R U R' F R' F' R",
+        "U'2 R U R' F R' F' R",
         "R2 D R' U2 R D' R2 F' U' F"
       ],
       "scramble": "F2 L F L' U' F R U' R'",
@@ -6029,7 +6029,7 @@
       "group": "f2l-35",
       "algorithms": [
         "R2 D r' U' r D' R2 U R U' R'",
-        "U2 r U' r' U R' F R F' r U2' r'",
+        "U2 r U' r' U R' F R F' r U'2 r'",
         "U2 R U' r' U r U2 r' U' r R'"
       ],
       "scramble": "R U R' D' F2 U R' F R U' F2 D",
@@ -6087,8 +6087,8 @@
       "name": "F2L 35-8",
       "group": "f2l-35",
       "algorithms": [
-        "U R' D' r U r' D R2 U2' R'",
-        "R' F R F' U2' R' F R F' R U R'"
+        "U R' D' r U r' D R2 U'2 R'",
+        "R' F R F' U'2 R' F R F' R U R'"
       ],
       "scramble": "R U' F' U2 F2 R2 B' R2 B R' F'",
       "scrambles": [
@@ -6132,7 +6132,7 @@
       "algorithms": [
         "U2 F' U' F U R U' R'",
         "R U R' U R U' R' d' r' F r",
-        "R U R' F U2' r U r' U2' F'"
+        "R U R' F U'2 r U r' U'2 F'"
       ],
       "scramble": "R U2 F' U' L' U L F U' R'",
       "scrambles": [
@@ -6154,7 +6154,7 @@
       "group": "f2l-36",
       "algorithms": [
         "U2 F' U' F R' F R F'",
-        "U2' R' F R F' U2 R U R'",
+        "U'2 R' F R F' U2 R U R'",
         "R U R2 U' R F' R' U R F"
       ],
       "scramble": "R2 B' R' B U R' F' U F",
@@ -6239,8 +6239,8 @@
       "name": "F2L 36-7",
       "group": "f2l-36",
       "algorithms": [
-        "U2 R2 D r' U' r D' R2' U' R U R'",
-        "F' U2' r' F2 r2 U' r' F U' F",
+        "U2 R2 D r' U' r D' R'2 U' R U R'",
+        "F' U'2 r' F2 r2 U' r' F U' F",
         "R2 D R' U2 R r' U' r D' R' U R'"
       ],
       "scramble": "R U2 B U B' U2 B' R B R2",
@@ -6262,8 +6262,8 @@
       "name": "F2L 36-8",
       "group": "f2l-36",
       "algorithms": [
-        "R U R2' D' r U r' D R U' R U R'",
-        "R U R2' D' r U' r' D R U R U R'",
+        "R U R'2 D' r U r' D R U' R U R'",
+        "R U R'2 D' r U' r' D R U R U R'",
         "R' F R F' U F' U F R U R'"
       ],
       "scramble": "R U' R' F' U' L' U L U' F",
@@ -6285,7 +6285,7 @@
       "group": "f2l-37",
       "algorithms": [
         "U' R' F R F' R U' R' U R U' R' U2 R U' R'",
-        "U' R' F R F' R' U2' R2 U R2' U R"
+        "U' R' F R F' R' U'2 R2 U R'2 U R"
       ],
       "scramble": "R' U D2 L2 U' L2 D2 R F R' F' R",
       "scrambles": [
@@ -6307,7 +6307,7 @@
       "group": "f2l-37",
       "algorithms": [
         "U' r U' r' R U R' U r U' r' R U R'",
-        "R' F R F' U F' U2' F U' R U R'"
+        "R' F R F' U F' U'2 F U' R U R'"
       ],
       "scramble": "R U' R' U F' U2 L' U L U' F",
       "scrambles": [
@@ -6349,7 +6349,7 @@
       "group": "f2l-38",
       "algorithms": [
         "U R U' R' U' R U R' U R' F R F'",
-        "R' F R U R U' R2 F' R U' R U2' R'"
+        "R' F R U R U' R2 F' R U' R U'2 R'"
       ],
       "scramble": "R U' B U B' U' R' U R U R'",
       "scrambles": [
@@ -6367,7 +6367,7 @@
       "name": "F2L 38-3",
       "group": "f2l-38",
       "algorithms": [
-        "F R' F' R2 U2' R' U' R U R'"
+        "F R' F' R2 U'2 R' U' R U R'"
       ],
       "scramble": "R U' R' U R U B' R B R2",
       "scrambles": [
@@ -6389,7 +6389,7 @@
       "group": "f2l-38",
       "algorithms": [
         "M' U R U' R' U' R U' r' U2 r U' r'",
-        "R U' R' U' r U' r' U2' r U r' R U2 R'",
+        "R U' R' U' r U' r' U'2 r U r' R U2 R'",
         "R U' R' U2 R2 D r' U' r D' R' U' R'"
       ],
       "scramble": "F R' F' R2 B U B2 R B R' U R'",
@@ -6410,7 +6410,7 @@
       "group": "f2l-39",
       "algorithms": [
         "R U2 R' U R U' R' U R U R'",
-        "R U' R' U R U2' R' U R U' R'"
+        "R U' R' U R U'2 R' U R U' R'"
       ],
       "scramble": "R U2 D' F' U' F U2 F' U' F D R'",
       "scrambles": [
@@ -6429,7 +6429,7 @@
       "name": "F2L 39-2",
       "group": "f2l-39",
       "algorithms": [
-        "R U2' R' U R' F R2 U R' U' R' F' R"
+        "R U'2 R' U R' F R2 U R' U' R' F' R"
       ],
       "scramble": "F' U L' U' L U F U' F' U' F",
       "scrambles": [
@@ -6468,9 +6468,9 @@
       "name": "F2L 39-4",
       "group": "f2l-39",
       "algorithms": [
-        "R U2' R' r U' r' U M' U2' R U r'",
-        "R U R D r' U r D' R2' U2' R U R'",
-        "R U2' R' r U' r' U' R U2 R' r U' r'"
+        "R U'2 R' r U' r' U M' U'2 R U r'",
+        "R U R D r' U r D' R'2 U'2 R U R'",
+        "R U'2 R' r U' r' U' R U2 R' r U' r'"
       ],
       "scramble": "F' R L' U B U' B L' B2 R' L2 F",
       "scrambles": [
@@ -6511,7 +6511,7 @@
       "name": "F2L 40-2",
       "group": "f2l-40",
       "algorithms": [
-        "r U' r' U2' r U r' R U R'"
+        "r U' r' U'2 r U r' R U R'"
       ],
       "scramble": "R U' R' F' U2 R' L F2 L' F2 R F",
       "scrambles": [

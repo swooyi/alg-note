@@ -3143,8 +3143,8 @@
       "name": "4-4 / Star",
       "group": "set-21",
       "algorithms": [
-        "Scl/Scl \n(4-4의 1번코너가 슬래시 오른쪽)",
-        "Scl/Scl \n(4-4의 1번코너가 슬래시 왼쪽)"
+        "Shd/Shd or\n1번코너를 슬래시 오른쪽으로 넘기고 Scl/Scl",
+        "Scl/Scl \n(1번코너 슬래시 왼쪽 유지)"
       ],
       "scramble": "",
       "scrambles": [],
