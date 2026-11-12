@@ -3512,9 +3512,10 @@ main {
   font-size: 12px;
 }
 
-.drill-filter-options {
-  display: flex;
-  flex-wrap: wrap;
+.filter-option-panel.drill-filter-options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 220px;
   gap: 6px;
 }
 
@@ -3523,8 +3524,10 @@ main {
 }
 
 .drill-filter-choice {
-  width: auto;
-  min-width: 36px;
+  width: 100%;
+  min-width: 0;
+  min-height: 36px;
+  padding: 4px 28px;
   justify-content: center;
   display: inline-flex;
   align-items: center;
@@ -3956,7 +3959,7 @@ body.has-case-player { overflow: hidden; }
   .is-home-view .header-main { flex-wrap: wrap; }
   .is-home-view .header-title-row { flex-basis: 100%; }
   .is-home-view .header-actions { margin-left: auto; }
-  .filter-option-panel.drill-filter-options { left: auto; right: 0; width: 200px; }
+  .filter-option-panel.drill-filter-options { left: auto; right: 0; }
 
   .header-main {
     display: flex;
