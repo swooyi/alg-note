@@ -27,7 +27,8 @@ const server = http.createServer((req, res) => {
       });
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
-      page.on("dialog", (dialog) => dialog.accept());
+      let acceptDialog = true;
+      page.on("dialog", (dialog) => acceptDialog ? dialog.accept() : dialog.dismiss());
       await page.goto(`http://127.0.0.1:${server.address().port}`);
       await page.locator('[data-dataset-key="zbll"]').click();
       if (await page.locator("#sidebarOpenButton").getAttribute("aria-expanded") === "true") await page.locator("#sidebarOpenButton").click();
@@ -51,6 +52,7 @@ const server = http.createServer((req, res) => {
         await page.locator("#drillStartButton").click();
       };
       await reopen();
+      const personal = () => page.evaluate(() => JSON.parse(localStorage.getItem("algNote.personal.3x3:zbll")));
       const saved = () => page.evaluate(() => JSON.parse(localStorage.getItem("algNote.drillState.3x3:zbll")));
       const queue = async () => (await saved()).queueIds.slice().sort();
       assert.equal(await page.locator("#drillMinResultSecondsInput").count(), 0);
@@ -92,6 +94,12 @@ const server = http.createServer((req, res) => {
       assert.equal((await saved()).results.find((r) => r.id === "b1").rating, "good");
       await page.locator('[data-result-rating-id="b1"][data-rating="bad"]').click();
       assert.equal(await page.locator('[data-result-rating-id="b1"][data-rating="good"]').getAttribute("aria-pressed"), "false");
+      const beforeDelete = await saved(), ratingsBeforeDelete = await personal();
+      acceptDialog = false;
+      await page.locator('[data-result-delete-id="a1"]').click();
+      assert.deepEqual(await saved(), beforeDelete);
+      assert.deepEqual(await personal(), ratingsBeforeDelete);
+      acceptDialog = true;
       await page.locator('[data-result-delete-id="a1"]').click();
       await page.locator("#drillStatsTab").click();
       assert.ok((await page.locator("#drillStatsPanel tbody tr").allTextContents()).some((text) => text.includes("3.00")));
@@ -129,7 +137,7 @@ const server = http.createServer((req, res) => {
       }
       const detail = page.locator("#caseDetail");
       const openCase = async (id) => page.locator(`#caseGrid .case-card[data-case-id="${id}"]`).click({ button: "right" });
-      const personal = () => page.evaluate(() => JSON.parse(localStorage.getItem("algNote.personal.3x3:zbll")));
+
       assert.deepEqual((await personal()).caseRatings[a], { good: 0, bad: 1 });
       await openCase(a);
       assert.match(await detail.locator(".case-rating-count.is-bad").textContent(), /1$/);

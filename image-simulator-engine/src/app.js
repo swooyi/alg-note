@@ -26,7 +26,7 @@ const state = {
   baseColors: {},
   stickerTexts: {},
   colorLayoutOrigin: null,
-  selectedColor: "#2c2d2d",
+  selectedColor: "#424242",
   selectedPaletteName: "U",
   activePresetName: "",
   lastTokens: [],

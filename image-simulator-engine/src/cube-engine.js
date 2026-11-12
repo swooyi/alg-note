@@ -1,6 +1,6 @@
 // Face rows and columns are defined while looking directly at each face.
 export const FACE_COLORS = { U: "#ffffff", R: "#ff0d00", F: "#67e000", D: "#fff100", L: "#ff981c", B: "#1265ff" };
-export const BLANK_COLOR = "#2c2d2d";
+export const BLANK_COLOR = "#424242";
 export const FRAMES = {
   U: [[0, 1, 0], [1, 0, 0], [0, 0, 1]],
   R: [[1, 0, 0], [0, 0, -1], [0, -1, 0]],

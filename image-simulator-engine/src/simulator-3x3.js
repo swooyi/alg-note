@@ -1,10 +1,11 @@
 const cubeCanvas = $('cube-sim-canvas'), cubeContext = cubeCanvas.getContext('2d');
+let cubeCaseSources = null, cubePlayerDraw = null;
 let cubeSteps = [], cubeIndex = 0, cubeSignature = '', cubeAnimation = null, cubePlaying = false;
 let cubeSources = identityState(), cubeYaw = -Math.PI / 4, cubePitch = Math.PI / 6, cubeZoom = 1, cubePointer = null;
 let cubeHits = [];
 let cubeBasis = [[1,0,0], [0,1,0], [0,0,1]];
 function cubeStateAt(index) {
-  return applyTokens(state.mode === 'alg' ? applyTokens(identityState(state.size), invertTokens(cubeSteps), state.size) : identityState(state.size), cubeSteps.slice(0,index), state.size);
+  return applyTokens(cubeCaseSources || (state.mode === 'alg' ? applyTokens(identityState(state.size), invertTokens(cubeSteps), state.size) : identityState(state.size)), cubeSteps.slice(0,index), state.size);
 }
 function cubeSimulatorRefresh() {
   const signature = JSON.stringify([state.size, state.notation, state.mode, valid]);
@@ -71,6 +72,7 @@ function cubeDraw() {
     }
   }
   $('cube-sim-progress').textContent = `${cubeIndex} / ${cubeSteps.length} 단계${cubeAnimation ? cubeAnimation.token.move === '.' ? ' · 대기 중' : ' · 회전 중' : ''}`;
+  cubePlayerDraw?.();
   const playButton = $('cube-sim-play');
   playButton.setAttribute('data-playing', String(cubePlaying));
   playButton.setAttribute('aria-label', cubePlaying ? '일시정지' : '자동 재생');

@@ -10,7 +10,7 @@
     "D": "#fff100",
     "BL": "#ff981c"
   },
-  "blank": "#2c2d2d",
+  "blank": "#424242",
   "line": "#211f20",
   "palette": [
     {
@@ -56,7 +56,7 @@
     {
       "name": "Blank dark",
       "face": null,
-      "color": "#2c2d2d"
+      "color": "#424242"
     }
   ]
 }

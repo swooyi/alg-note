@@ -1120,6 +1120,16 @@ h1 {
   white-space: nowrap;
 }
 
+#clearFiltersButton {
+  border-color: transparent;
+  background: transparent;
+  color: var(--muted);
+  box-shadow: none;
+  white-space: nowrap;
+}
+#clearFiltersButton::before { content: "↺"; margin-right: 4px; }
+#clearFiltersButton:hover { background: var(--accent-soft); color: var(--accent); }
+
 .filter-menu-button.is-active {
   border-color: var(--accent);
   background: var(--accent-soft);
@@ -1352,6 +1362,7 @@ h1 {
 }
 
 .practice-actions {
+  grid-template-columns: minmax(0, 1fr);
   position: fixed;
   right: 18px;
   bottom: 18px;
@@ -1366,6 +1377,8 @@ h1 {
 }
 
 .practice-action-button {
+  width: 100%;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3510,6 +3523,9 @@ main {
 }
 
 .drill-filter-choice {
+  width: auto;
+  min-width: 36px;
+  justify-content: center;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -3659,6 +3675,7 @@ body.has-case-player { overflow: hidden; }
 .case-player-header h2 { margin: 0; font-size: 16px; }
 .case-player-header button { flex: none; min-height: 36px; padding: 6px 14px; border: 1px solid #cbd5e1; border-radius: 7px; background: #fff; cursor: pointer; }
 .case-player-dialog iframe { display: block; width: 100%; min-height: 0; flex: 1; border: 0; background: #f5f7fb; }
+.case-player-dialog iframe[hidden] { display: none; }
 @media (max-width: 600px) {
   .case-player-dialog { width: 100vw; height: 100dvh; margin: 0; border: 0; border-radius: 0; }
   .case-player-header { padding: 9px 12px; }
@@ -3936,6 +3953,11 @@ body.has-case-player { overflow: hidden; }
 }
 
 @media (max-width: 720px) {
+  .is-home-view .header-main { flex-wrap: wrap; }
+  .is-home-view .header-title-row { flex-basis: 100%; }
+  .is-home-view .header-actions { margin-left: auto; }
+  .filter-option-panel.drill-filter-options { left: auto; right: 0; width: 200px; }
+
   .header-main {
     display: flex;
     align-items: center;
@@ -4097,7 +4119,7 @@ body.has-case-player { overflow: hidden; }
   .filter-group {
     align-items: center;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 4px;
     width: 100%;
   }
@@ -4111,6 +4133,7 @@ body.has-case-player { overflow: hidden; }
 
   .filter-menu,
   .filter-menu-button {
+    flex-shrink: 0;
     width: auto;
   }
 
@@ -4120,6 +4143,7 @@ body.has-case-player { overflow: hidden; }
   }
 
   #clearFiltersButton {
+    flex-shrink: 0;
     width: auto;
     min-width: 0;
     padding: 0 8px;

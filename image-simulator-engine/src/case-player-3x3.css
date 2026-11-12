@@ -1,0 +1,8 @@
+@import url('./case-player-fto.css');
+.player-root #cube-sim-canvas { width: 100%; height: clamp(240px, 39vh, 380px); touch-action: none; }
+.player-root #player-algorithm { white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; padding: 10px 12px; border: 1px solid #c8d4e3; border-radius: 8px; background: white; font: 15px/1.9 Consolas, monospace; }
+.player-root .notation-current { outline: 2px solid #2475bd; border-radius: 3px; background: #e1f0ff; }
+@media (max-width: 600px) {
+  .player-root #cube-sim-canvas { height: clamp(230px, 36vh, 310px); }
+  .player-root #cube-sim-progress { flex-basis: 100%; }
+}

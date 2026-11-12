@@ -18,6 +18,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Aa"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "x R'2 D'2 R U R' D'2 R U' R x'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -35,6 +161,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ab"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "x R' U R' D'2 R U' R' D'2 R'2 x'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -52,6 +304,132 @@
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "E"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "x' D R U R' D' R U' R' D R U' R' D' R U R' x y'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -69,6 +447,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "F"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R' U' R U' R' U R U R'2 F' R U R U' R' F U R y'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -86,6 +590,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ga"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R' U' R D' U R'2 U R' U R U' R U' R'2 D",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -103,6 +733,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gb"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R'2 U R' U R' U' R U' R'2 D U' R' U R D'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -120,6 +876,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gc"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "D' R U R' U' D R'2 U' R U' R' U R' U R'2",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -137,6 +1019,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Gd"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R'2 U' R U' R U R' U R'2 D' U R U' R' D",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -154,6 +1162,132 @@
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "H"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "M'2 U' M'2 U'2 M'2 U' M'2",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -171,6 +1305,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ja"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "L' R' U'2 R U R' U'2 L U' R y'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -188,6 +1448,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Jb"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R U R'2 F' R U R U' R' F R U' R'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -205,6 +1591,132 @@
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Na"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R U R' U'2 R U R'2 F' R U R U' R' F R U' R' U' R U' R'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -222,6 +1734,132 @@
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Nb"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "F r' F' r U r U' r'2 D' F r U r' F' D r",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -239,6 +1877,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Ra"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R U'2 R D R' U R D' R' U' R' U R U R' y'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -256,6 +2020,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "Rb"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "R' U R U R' U' R' D' R U R' D R U'2 R",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -273,6 +2163,132 @@
       "tags": {
         "sourceGroup": "Adj Swap",
         "sourceId": "T"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "F R U' R' U R U R'2 F' R U R U' R'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -290,6 +2306,132 @@
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Ua"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "M'2 U' M' U'2 M U' M'2",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -307,6 +2449,132 @@
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Ub"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "M'2 U M' U'2 M U M'2",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -324,6 +2592,132 @@
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "V"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "D'2 R' U R D' R'2 U' R' U R' U R' D' R U'2 R'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -341,6 +2735,132 @@
       "tags": {
         "sourceGroup": "Opp Swap",
         "sourceId": "Y"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "F R' F' R U R U' R' F R U' R' U R U R' F'",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     },
     {
@@ -358,6 +2878,132 @@
       "tags": {
         "sourceGroup": "EPLL",
         "sourceId": "Z"
+      },
+      "imageState": {
+        "view": "ll",
+        "settings": {
+          "schemaVersion": 1,
+          "application": "nxnxn-image-generator",
+          "puzzle": "NxNxN",
+          "description": "image: 현재 크기의 스티커 색과 공식, 팔레트 및 3D/LL 시점. simulator: 진행 단계와 3D 관찰 방향. 재생은 정지 상태로 복원됩니다.",
+          "image": {
+            "size": 3,
+            "base": {
+              "U0": "#fff100",
+              "U1": "#fff100",
+              "U2": "#fff100",
+              "U3": "#fff100",
+              "U4": "#fff100",
+              "U5": "#fff100",
+              "U6": "#fff100",
+              "U7": "#fff100",
+              "U8": "#fff100",
+              "R0": "#ef8b2c",
+              "R1": "#ef8b2c",
+              "R2": "#ef8b2c",
+              "R3": "#ef8b2c",
+              "R4": "#ef8b2c",
+              "R5": "#ef8b2c",
+              "R6": "#ef8b2c",
+              "R7": "#ef8b2c",
+              "R8": "#ef8b2c",
+              "F0": "#38a05a",
+              "F1": "#38a05a",
+              "F2": "#38a05a",
+              "F3": "#38a05a",
+              "F4": "#38a05a",
+              "F5": "#38a05a",
+              "F6": "#38a05a",
+              "F7": "#38a05a",
+              "F8": "#38a05a",
+              "D0": "#ffffff",
+              "D1": "#ffffff",
+              "D2": "#ffffff",
+              "D3": "#ffffff",
+              "D4": "#ffffff",
+              "D5": "#ffffff",
+              "D6": "#ffffff",
+              "D7": "#ffffff",
+              "D8": "#ffffff",
+              "L0": "#d93636",
+              "L1": "#d93636",
+              "L2": "#d93636",
+              "L3": "#d93636",
+              "L4": "#d93636",
+              "L5": "#d93636",
+              "L6": "#d93636",
+              "L7": "#d93636",
+              "L8": "#d93636",
+              "B0": "#3971c9",
+              "B1": "#3971c9",
+              "B2": "#3971c9",
+              "B3": "#3971c9",
+              "B4": "#3971c9",
+              "B5": "#3971c9",
+              "B6": "#3971c9",
+              "B7": "#3971c9",
+              "B8": "#3971c9"
+            },
+            "notation": "M U'2 M'2 U'2 M U' M'2 U' M'2",
+            "mode": "setup",
+            "orientations": {
+              "3d": [],
+              "ll": []
+            },
+            "labels": false,
+            "markingMode": false,
+            "showMarkings": true,
+            "stickerNames": {},
+            "faceSymbols": false,
+            "faceSymbolSize": 100,
+            "showBackFaces": true,
+            "backFaceDistance": 100,
+            "singleView": "ll",
+            "batchView": "ll",
+            "colorOrigin": null,
+            "palette": {
+              "U": "#ffffff",
+              "R": "#ff0d00",
+              "F": "#67e000",
+              "D": "#fff100",
+              "L": "#ff981c",
+              "B": "#1265ff",
+              "Blank": "#2c2d2d"
+            }
+          },
+          "selectedPaletteName": "U",
+          "controls": {
+            "save-filename": "nxnxn",
+            "batch-json": "",
+            "batch-format": "png",
+            "cube-sim-speed": "600",
+            "cube-sim-paint": true
+          },
+          "tab": "single",
+          "simulator": {
+            "index": 0,
+            "yaw": -0.7853981633974483,
+            "pitch": 0.5235987755982988,
+            "zoom": 1,
+            "basis": [
+              [
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1
+              ]
+            ]
+          }
+        }
       }
     }
   ]

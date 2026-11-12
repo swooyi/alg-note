@@ -6,7 +6,7 @@
 
 ## 1. 현재 구현과 진입점
 
-현재 **케이스 세부 모달의 ALG 재생은 FTO만 지원**한다. 독립 이미지 생성기에 3×3·Square-1 시뮬레이터가 있다는 사실은 해당 퍼즐의 케이스 재생 연동이 완료되었다는 뜻이 아니다.
+현재 **케이스 세부 모달의 ALG 재생은 FTO와 3×3 OLL·PLL을 지원**한다. 다른 3×3 세트와 Square-1은 아직 케이스 재생을 연결하지 않았다.
 
 | 역할 | 파일 또는 위치 |
 | --- | --- |
@@ -14,6 +14,7 @@
 | 버튼 클릭, 유효한 케이스 조회, 세트별 초기 시점 지정 | `app/js/app.js`의 `handleCaseAction`, `openCaseDetail` |
 | 모달 생성, iframe 준비·재사용, 메시지 전달 | `app/js/case-player.js`의 `AlgNoteCasePlayer` |
 | FTO 케이스 복원, 재생 UI, 표시 설정 유지 | `image-simulator-engine/src/case-player-fto.js` |
+| 3×3 OLL·PLL 케이스 복원·재생 UI | `image-simulator-engine/src/case-player-3x3.js`, `src/case-player-3x3.css` |
 | FTO 플레이어 전용 스타일 | `image-simulator-engine/src/case-player-fto.css` |
 | FTO 회전·시점변환·원문 강조 위치 해석 | `image-simulator-engine/src/fto-eif.js` |
 | FTO 기본 회전 표기와 스티커 상태 연산 | `image-simulator-engine/src/fto-engine.js` |
@@ -21,13 +22,15 @@
 | 원본 및 생성 번들 빌드 | `image-simulator-engine/scripts/build-static.js` |
 | 캐시 | `app/sw.js` |
 
-FTO 플레이어 HTML인 `image-simulator-engine/case-player-fto.html`과 `src/*.bundle.js`는 생성 파일이다. 원본과 빌드 스크립트를 수정하고 재생성한다.
+플레이어 HTML인 `image-simulator-engine/case-player-fto.html`, `case-player-3x3.html`과 `src/*.bundle.js`는 생성 파일이다. 원본과 빌드 스크립트를 수정하고 재생성한다.
 
 새 퍼즐의 기존 엔진을 찾을 때는 다음 파일부터 확인한다.
 
 - 3×3/N×N: `src/cube-engine.js`, `src/cube-simulator-model.js`, `src/cube-3x3.js`, `src/simulator-3x3.js`, `src/cube-share.js`.
 - Square-1: `src/square1-engine.js`, `src/square1-render.js`, `src/square1-app.js`.
 - 위 경로들은 `image-simulator-engine/` 기준이다. 새 퍼즐을 위해 기존 퍼즐을 일괄 재설계하지 말고 필요한 연결만 추가한다.
+
+FTO·3×3 이미지 생성기의 Blank 기본색은 RGB `66, 66, 66` (`#424242`)이다. 저장된 케이스·프리셋의 사용자 지정 색상은 그대로 복원한다.
 
 ## 2. 케이스와 이미지 데이터
 
@@ -75,9 +78,11 @@ FTO 플레이어 HTML인 `image-simulator-engine/case-player-fto.html`과 `src/*
 
 ## 5. 로딩과 창 사이 통신
 
-준비된 엔진에 선택한 케이스 정보만 전달하는 흐름을 유지한다. 현재 FTO는 세부 모달을 열 때 iframe을 준비하고 이후 같은 엔진을 재사용한다. 케이스마다 iframe을 제거·생성하거나 대용량 앱 데이터 번들을 다시 읽지 않는다. 새 퍼즐 추가 시에도 해당 퍼즐에 맞는 준비·재사용 흐름을 구현한다.
+준비된 엔진에 선택한 케이스 정보만 전달하는 흐름을 유지한다. FTO와 3×3 OLL·PLL은 세부 모달을 열 때 해당 퍼즐의 iframe을 준비하고 이후 같은 엔진을 재사용한다. 퍼즐 전환 시 기존 프레임은 재생을 중단하고 숨기며, 각 프레임의 표시 설정을 유지한다. 케이스마다 iframe을 제거·생성하거나 대용량 앱 데이터 번들을 다시 읽지 않는다. 새 퍼즐 추가 시에도 해당 퍼즐에 맞는 준비·재사용 흐름을 구현한다.
 
-현재 전달 정보는 `scramble`, `algorithm`, `imageState`, 선택적인 `initialView`다. 여러 퍼즐을 지원하게 되면 퍼즐 식별과 엔진 선택도 연결해야 한다. 현재 `AlgNoteCasePlayer`의 iframe 경로와 제목은 FTO에 고정되어 있으므로 버튼 조건만 확대해서는 안 된다.
+현재 전달 정보는 `scramble`, `algorithm`, `imageState`, 선택적인 `initialView`다. `prepare(puzzle)`과 `open(..., initialView, puzzle)`의 퍼즐 인자로 엔진을 선택한다. 기본값은 기존 호출과 호환되는 FTO다.
+
+3×3 OLL·PLL은 `imageState.settings.image.base`를 기준 색으로 사용하고 `scramble`을 한 번 적용한 스티커 출처를 시작 상태로 저장한다. 선택 ALG의 역공식으로 대체하지 않으며 처음·이전·끝 이동에서도 동일한 시작 상태를 사용한다. 이미지의 notation이나 저장된 simulator.index는 케이스 재생 시작 단계를 결정하지 않는다. 마킹과 색은 회전한 스티커 출처를 따라간다. 저장된 simulator 관찰 방향을 적용하며 시점 초기화도 이 방향으로 돌아간다. OLL 57개와 PLL 21개 원본의 그림과 `imageState.view`, `singleView`, `batchView`는 LL로 저장한다.
 
 현재 메시지 종류는 다음과 같다.
 
@@ -140,6 +145,8 @@ node --check app/js/app.js
 node --check app/js/render.js
 node scripts/test_case_player.cjs
 node scripts/test_case_images.cjs
+node scripts/test_oll_images.cjs
+node scripts/test_pll_images.cjs
 node scripts/test_algorithm_notes.cjs
 node image-simulator-engine/scripts/build-static.js
 ```

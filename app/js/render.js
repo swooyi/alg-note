@@ -162,7 +162,7 @@ function renderDrillFilterOptions(container, selected) {
   container.replaceChildren();
   for (const [value, label] of [["all", ui("all")], ["good", ui("goodPresent")], ["bad", ui("badPresent")], ["unrated", ui("unrated")]]) {
     const button = makeFilterButton({ value, label, selected: value === "all" ? !selected.size : selected.has(value), className: `drill-filter-choice is-${value}` });
-    if (["good", "bad"].includes(value)) button.prepend(ratingIcon(value));
+    if (["good", "bad"].includes(value)) button.replaceChildren(ratingIcon(value));
     container.append(button);
   }
 }
@@ -371,7 +371,7 @@ function makeCaseCard(template, item, state) {
     for (const [index, algorithm] of item.algorithms.entries()) {
       const li = document.createElement("li");
       li.textContent = text(algorithm);
-      if (state.renderingDetail && state.dataset?.puzzle === "FTO") {
+      if (state.renderingDetail && (state.dataset?.puzzle === "FTO" || (state.dataset?.puzzle === "3x3" && ["oll", "pll"].includes(state.dataset?.algset)))) {
         li.classList.add("algorithm-playable");
         const play = document.createElement("button");
         play.type = "button";

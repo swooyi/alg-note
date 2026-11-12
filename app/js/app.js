@@ -77,7 +77,7 @@ const UI_LABELS = {
     "auf.up": "U'",
     "auf.u2": "U2",
     answerPanel: "정답 패널",
-    bookmark: "bookmark",
+    bookmark: "북마크",
     bookmarkBlueCloud: "파란 구름",
     bookmarkGreenMoon: "초록 달",
     bookmarkRedSun: "빨간 해",
@@ -87,7 +87,7 @@ const UI_LABELS = {
     confirm: "확인",
     caseCount: "개",
     clear: "해제",
-    clearFilters: "필터 초기화",
+    clearFilters: "초기화",
     collapseControls: "접기",
     close: "닫기",
     closeDrill: "드릴 닫기",
@@ -119,6 +119,7 @@ const UI_LABELS = {
     deletePreset: "프리셋 삭제",
     deletePresetConfirm: "\"{name}\" 프리셋을 삭제할까요?",
     deleteRecord: "기록 삭제",
+    deleteRecordConfirm: "이 기록을 삭제할까요?",
     download: "다운로드",
     cspProbability: "확률",
     cspCountPlusOne: "카운팅 +1",
@@ -148,7 +149,7 @@ const UI_LABELS = {
     fullJsonDescription: "브라우저에 저장된 편집 내용을 현재 데이터에 병합한 결과입니다.",
     svgsJsonDescription: "현재 세트의 그림입니다. cases.json의 svgId로 연결되며 svgs.json에 저장합니다.",
     fullJsonTitle: "cases.json 출력",
-    group: "group",
+    group: "그룹",
     list: "목록",
     moveAlgorithmDown: "알고리즘 아래로 이동",
     moveAlgorithmUp: "알고리즘 위로 이동",
@@ -182,7 +183,7 @@ const UI_LABELS = {
     recordDetails: "기록 세부",
     moveRecordsLeft: "기록 왼쪽으로 이동",
     moveRecordsRight: "기록 오른쪽으로 이동",
-    recog: "recog",
+    recog: "인식",
     resetJson: "JSON 초기화",
     resetJsonConfirm: "브라우저에 저장된 공식·메모 등 수정 JSON을 초기화할까요? 북마크와 프리셋은 유지됩니다.",
     resizePanel: "패널 폭 조절",
@@ -304,6 +305,7 @@ const UI_LABELS = {
     deletePreset: "Delete Preset",
     deletePresetConfirm: "Delete \"{name}\" preset?",
     deleteRecord: "Delete Record",
+    deleteRecordConfirm: "Delete this record?",
     download: "Download",
     cspProbability: "Probability",
     cspCountPlusOne: "Counting +1",
@@ -490,6 +492,7 @@ const UI_LABELS = {
     deletePreset: "プリセット削除",
     deletePresetConfirm: "「{name}」プリセットを削除しますか？",
     deleteRecord: "記録削除",
+    deleteRecordConfirm: "この記録を削除しますか？",
     download: "ダウンロード",
     cspProbability: "確率",
     cspCountPlusOne: "カウント +1",
@@ -2652,6 +2655,7 @@ function deleteDrillResult(resultId) {
   if (!state.drill.active || state.drill.timerStatus === "running") return;
   const nextResults = state.drill.results.filter((item) => item.id !== resultId);
   if (nextResults.length === state.drill.results.length) return;
+  if (!window.confirm(t("deleteRecordConfirm"))) return;
   removeResultRating(state.drill.results.find((result) => result.id === resultId));
   state.drill.results = nextResults;
   refreshDrillFilterTargets();
@@ -2874,7 +2878,7 @@ function updateFilterMenuButtons() {
     group: t("group"),
     recognition: t("recog"),
     bookmark: t("bookmark"),
-    drill: "Drill",
+    drill: t("drill"),
   };
   for (const button of elements.filterMenuButtons) {
     const type = button.dataset.filterMenu;
@@ -2978,7 +2982,7 @@ function openCaseDetail(caseId) {
   state.selectedCaseId = caseId;
   state.editingCaseId = "";
   render();
-  if (state.dataset?.puzzle === "FTO") window.AlgNoteCasePlayer.prepare();
+  if (state.dataset?.puzzle === "FTO" || (state.dataset?.puzzle === "3x3" && ["oll", "pll"].includes(state.dataset?.algset))) window.AlgNoteCasePlayer.prepare(state.dataset.puzzle);
 }
 
 
@@ -4131,7 +4135,7 @@ function handleCaseAction(event) {
   if (playAlgorithm) {
     const item = effectiveCases().find(item => item.id === playAlgorithm.closest(".case-card")?.dataset.caseId);
     const index = Number(playAlgorithm.dataset.algorithmIndex);
-    if (item && item.algorithms[index]) window.AlgNoteCasePlayer.open(item, item.algorithms[index], index, playAlgorithm, ["1l3t", "tcp"].includes(state.dataset.algset) ? "cif" : undefined);
+    if (item && item.algorithms[index]) window.AlgNoteCasePlayer.open(item, item.algorithms[index], index, playAlgorithm, ["1l3t", "tcp"].includes(state.dataset.algset) ? "cif" : undefined, state.dataset.puzzle);
     return;
   }
   if (event.target.closest(".close-detail-button")) {

@@ -77992,7 +77992,7 @@
       "name": "Ss0",
       "group": "s-even",
       "algorithms": [
-        "{Uo'} Rw' U Rw / S H / Rw U' Rw",
+        "{Uo'} Rw' U Rw / S H / Rw' U' Rw",
         "[U] {B,U} U / Tb0 / U'",
         "[U] {R,BR} U R' U' R' D R' U R D' R' U'"
       ],
@@ -78586,7 +78586,8 @@
             }
           }
         }
-      }
+      },
+      "algorithmNotes": {}
     },
     {
       "id": "133",
