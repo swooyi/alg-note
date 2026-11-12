@@ -3515,7 +3515,8 @@ main {
 .filter-option-panel.drill-filter-options {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  width: 220px;
+  width: 132px;
+  min-width: 0;
   gap: 6px;
 }
 
@@ -3527,8 +3528,9 @@ main {
   width: 100%;
   min-width: 0;
   min-height: 36px;
-  padding: 4px 28px;
-  justify-content: center;
+  padding: 4px 26px 4px 10px;
+  justify-content: flex-start;
+  text-align: left;
   display: inline-flex;
   align-items: center;
   gap: 5px;
