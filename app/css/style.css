@@ -4992,10 +4992,6 @@ html .case-card.is-csp-case.is-list-card {
   }
 }
 
-.case-card.is-compact:has(> .case-rating-counts:not([hidden])) {
-  padding-bottom: 32px;
-}
-
 .card-algorithm-note-field {
   display: grid;
   gap: 4px;
